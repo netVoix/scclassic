@@ -1,0 +1,56 @@
+---
+projectName: scclassic
+buildMapData:
+  name: MyMapName
+  fileName: MyMapFile
+  author: voix
+  players:
+    - id: 0
+      name: Player 1
+      race: HUMAN
+      controller: COMPUTER
+    - id: 1
+      name: Player 2
+      race: HUMAN
+      controller: COMPUTER
+    - id: 4
+      name: Player 3
+      race: HUMAN
+      controller: COMPUTER
+    - id: 6
+      name: Player 5
+      race: HUMAN
+      controller: COMPUTER
+    - id: 5
+      name: Player 4
+      race: HUMAN
+      controller: USER
+    - id: 7
+      name: Player 6
+      race: HUMAN
+      controller: COMPUTER
+    - id: 9
+      name: Player 8
+      race: HUMAN
+      controller: COMPUTER
+    - id: 10
+      name: Player 9
+      race: HUMAN
+      controller: COMPUTER
+  forces:
+    - name: Yellow
+      playerIds:
+        - 4
+        - 5
+    - name: Red
+      playerIds:
+        - 0
+        - 7
+    - name: Blue
+      playerIds:
+        - 1
+        - 9
+    - name: Green
+      playerIds:
+        - 6
+        - 10
