@@ -5892,7 +5892,7 @@ set UX[1]='R01Y'
 set AB[1]='R02W'
 set WX[1]='R02B'
 set GR[1]='npfm'
-set TR[1]=$C
+set TR[1]=11
 set KR[1]='unp1'
 set KR[2]='unp2'
 set KR[3]='ugol'
@@ -5901,10 +5901,10 @@ set KR[5]='nef3'
 set KR[6]='nef4'
 set KR[7]='nef5'
 set KR[8]='nef6'
-set KR[9]='ushp'
+set KR[9]='uzg2'
 set KR[$A]='negm'
 set KR[$B]='nmrd'
-set KR[$C]='uzg2'
+// set KR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A8D())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -5958,7 +5958,7 @@ set UX[2]='R01Y'
 set AB[2]='R02W'
 set WX[2]='R02B'
 set GR[2]='npfm'
-set TR[2]=$C
+set TR[2]=11
 set LR[1]='unp1'
 set LR[2]='unp2'
 set LR[3]='ugol'
@@ -5967,10 +5967,10 @@ set LR[5]='nef3'
 set LR[6]='nef4'
 set LR[7]='nef5'
 set LR[8]='nef6'
-set LR[9]='ushp'
+set LR[9]='uzg2'
 set LR[$A]='negm'
 set LR[$B]='nmrd'
-set LR[$C]='uzg2'
+// set LR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A_D())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -6024,7 +6024,7 @@ set UX[3]='R01Y'
 set AB[3]='R02W'
 set WX[3]='R02B'
 set GR[3]='npfm'
-set TR[3]=$C
+set TR[3]=11
 set MR[1]='unp1'
 set MR[2]='unp2'
 set MR[3]='ugol'
@@ -6033,10 +6033,10 @@ set MR[5]='nef3'
 set MR[6]='nef4'
 set MR[7]='nef5'
 set MR[8]='nef6'
-set MR[9]='ushp'
+set MR[9]='uzg2'
 set MR[$A]='negm'
 set MR[$B]='nmrd'
-set MR[$C]='uzg2'
+// set MR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A1D())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -6090,7 +6090,7 @@ set UX[4]='R01Y'
 set AB[4]='R02W'
 set WX[4]='R02B'
 set GR[4]='npfm'
-set TR[4]=$C
+set TR[4]=11
 set PR[1]='unp1'
 set PR[2]='unp2'
 set PR[3]='ugol'
@@ -6099,10 +6099,10 @@ set PR[5]='nef3'
 set PR[6]='nef4'
 set PR[7]='nef5'
 set PR[8]='nef6'
-set PR[9]='ushp'
+set PR[9]='uzg2'
 set PR[$A]='negm'
 set PR[$B]='nmrd'
-set PR[$C]='uzg2'
+// set PR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A3D())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
