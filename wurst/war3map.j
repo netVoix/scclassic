@@ -3885,9 +3885,9 @@ set AB[1]='R04K'
 set WX[1]='R024'
 set GR[1]='ngsp'
 set ZB[1]='nftr'
-set TR[1]=$C
+set TR[1]=11
 set KR[1]='hlum'
-set KR[2]='hkee'
+set KR[2]='ndh0'
 set KR[3]='hcas'
 set KR[4]='halt'
 set KR[5]='ngwr'
@@ -3897,7 +3897,7 @@ set KR[8]='nmr4'
 set KR[9]='nmr5'
 set KR[$A]='nef7'
 set KR[$B]='ndh1'
-set KR[$C]='ndh0'
+// set KR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(GMC())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -3953,9 +3953,9 @@ set AB[2]='R04K'
 set WX[2]='R024'
 set GR[2]='ngsp'
 set ZB[2]='nftr'
-set TR[2]=$C
+set TR[2]=11
 set LR[1]='hlum'
-set LR[2]='hkee'
+set LR[2]='ndh0'
 set LR[3]='hcas'
 set LR[4]='halt'
 set LR[5]='ngwr'
@@ -3965,7 +3965,7 @@ set LR[8]='nmr4'
 set LR[9]='nmr5'
 set LR[$A]='nef7'
 set LR[$B]='ndh1'
-set LR[$C]='ndh0'
+// set LR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(BHC())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -4021,9 +4021,9 @@ set AB[3]='R04K'
 set WX[3]='R024'
 set GR[3]='ngsp'
 set ZB[3]='nftr'
-set TR[3]=$C
+set TR[3]=11
 set MR[1]='hlum'
-set MR[2]='hkee'
+set MR[2]='ndh0'
 set MR[3]='hcas'
 set MR[4]='halt'
 set MR[5]='ngwr'
@@ -4033,7 +4033,7 @@ set MR[8]='nmr4'
 set MR[9]='nmr5'
 set MR[$A]='nef7'
 set MR[$B]='ndh1'
-set MR[$C]='ndh0'
+// set MR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(C0C())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -4089,9 +4089,9 @@ set AB[4]='R04K'
 set WX[4]='R024'
 set GR[4]='ngsp'
 set ZB[4]='nftr'
-set TR[4]=$C
+set TR[4]=11
 set PR[1]='hlum'
-set PR[2]='hkee'
+set PR[2]='ndh0'
 set PR[3]='hcas'
 set PR[4]='halt'
 set PR[5]='ngwr'
@@ -4101,7 +4101,7 @@ set PR[8]='nmr4'
 set PR[9]='nmr5'
 set PR[$A]='nef7'
 set PR[$B]='ndh1'
-set PR[$C]='ndh0'
+// set PR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(DKC())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
@@ -6963,19 +6963,19 @@ set AB[2]='R04I'
 set WX[2]='R028'
 set GR[2]='narg'
 set ZB[2]='hspt'
-set TR[2]=$C
+set TR[2]=11
 set LR[1]='nfv4'
 set LR[2]='nfv1'
 set LR[3]='nfv2'
 set LR[4]='nvr2'
 set LR[5]='nvr0'
 set LR[6]='nvr1'
-set LR[7]='hatw'
+set LR[7]='ncb7'
 set LR[8]='nef7'
 set LR[9]='ncb4'
 set LR[$A]='ncb5'
 set LR[$B]='ncb6'
-set LR[$C]='ncb7'
+// set LR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BOD())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -7030,19 +7030,19 @@ set AB[3]='R04I'
 set WX[3]='R028'
 set GR[3]='narg'
 set ZB[3]='hspt'
-set TR[3]=$C
+set TR[3]=11
 set MR[1]='nfv4'
 set MR[2]='nfv1'
 set MR[3]='nfv2'
 set MR[4]='nvr2'
 set MR[5]='nvr0'
 set MR[6]='nvr1'
-set MR[7]='hatw'
+set MR[7]='ncb7'
 set MR[8]='nef7'
 set MR[9]='ncb4'
 set MR[$A]='ncb5'
 set MR[$B]='ncb6'
-set MR[$C]='ncb7'
+// set MR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BID())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -7097,19 +7097,19 @@ set AB[4]='R04I'
 set WX[4]='R028'
 set GR[4]='narg'
 set ZB[4]='hspt'
-set TR[4]=$C
+set TR[4]=11
 set PR[1]='nfv4'
 set PR[2]='nfv1'
 set PR[3]='nfv2'
 set PR[4]='nvr2'
 set PR[5]='nvr0'
 set PR[6]='nvr1'
-set PR[7]='hatw'
+set PR[7]='ncb7'
 set PR[8]='nef7'
 set PR[9]='ncb4'
 set PR[$A]='ncb5'
 set PR[$B]='ncb6'
-set PR[$C]='ncb7'
+// set PR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BND())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
