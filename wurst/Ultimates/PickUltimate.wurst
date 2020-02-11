@@ -1,0 +1,26 @@
+package PickUltimate
+
+import RegisterEvents
+import EmergencyRepair
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+        let sid = GetSpellAbilityId()
+        let castle = GetTriggerUnit()
+        if (sid == EMERGENCY_REPAIR_PICK_ID)
+            castle.removeAbility('A0OA')
+            castle.removeAbility('A0OI')
+            castle.removeAbility('A0OJ')
+            castle.removeAbility('A0OW')
+            castle.removeAbility('A0OX')
+            castle.removeAbility('A0OY')
+            castle.removeAbility('A0P7')
+            castle.removeAbility('A0P8')
+            castle.removeAbility('A0P9')
+            castle.removeAbility('A0PA')
+            castle.removeAbility('A0PB')
+            castle.removeAbility('A0PC')
+            castle.addAbility(EMERGENCY_REPAIR_ID)
