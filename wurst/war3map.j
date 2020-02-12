@@ -4558,8 +4558,8 @@ set AB[1]='R02L'
 set WX[1]='R025'
 set GR[1]='nplb'
 set ZB[1]='nitw'
-set TR[1]=$C
-set KR[1]='otrb'
+set TR[1]=11
+set KR[1]='ncbb'
 set KR[2]='ovln'
 set KR[3]='oshy'
 set KR[4]='nwc1'
@@ -4570,7 +4570,7 @@ set KR[8]='ocbw'
 set KR[9]='npgf'
 set KR[$A]='net1'
 set KR[$B]='nef0'
-set KR[$C]='ncbb'
+// set KR[12]='otrb'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffTroll|r!"))
 if(SOC())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -4625,8 +4625,8 @@ set AB[2]='R02L'
 set WX[2]='R025'
 set GR[2]='nplb'
 set ZB[2]='nitw'
-set TR[2]=$C
-set LR[1]='otrb'
+set TR[2]=11
+set LR[1]='ncbb'
 set LR[2]='ovln'
 set LR[3]='oshy'
 set LR[4]='nwc1'
@@ -4637,7 +4637,7 @@ set LR[8]='ocbw'
 set LR[9]='npgf'
 set LR[$A]='net1'
 set LR[$B]='nef0'
-set LR[$C]='ncbb'
+// set LR[12]='otrb'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffTroll|r!"))
 if(QUC())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -4692,8 +4692,8 @@ set WX[3]='R025'
 set GR[3]='nplb'
 set ZB[3]='nitw'
 set AB[3]='R02L'
-set TR[3]=$C
-set MR[1]='otrb'
+set TR[3]=11
+set MR[1]='ncbb'
 set MR[2]='ovln'
 set MR[3]='oshy'
 set MR[4]='nwc1'
@@ -4704,7 +4704,7 @@ set MR[8]='ocbw'
 set MR[9]='npgf'
 set MR[$A]='net1'
 set MR[$B]='nef0'
-set MR[$C]='ncbb'
+// set MR[12]='otrb'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffTroll|r!"))
 if(Q_C())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -4759,8 +4759,8 @@ set WX[4]='R025'
 set GR[4]='nplb'
 set ZB[4]='nitw'
 set AB[4]='R02L'
-set TR[4]=$C
-set PR[1]='otrb'
+set TR[4]=11
+set PR[1]='ncbb'
 set PR[2]='ovln'
 set PR[3]='oshy'
 set PR[4]='nwc1'
@@ -4771,7 +4771,7 @@ set PR[8]='ocbw'
 set PR[9]='npgf'
 set PR[$A]='net1'
 set PR[$B]='nef0'
-set PR[$C]='ncbb'
+// set PR[12]='otrb'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffTroll|r!"))
 if(Q3C())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
