@@ -1,0 +1,43 @@
+package PoisonFix
+
+import AbilityObjEditing
+import BuffObjEditing
+import ObjectIdGenerator
+import ObjectIds
+import Icons
+import InstantDummyCaster
+import OrderIds
+import ClosureTimers
+
+public let FAKE_POISON_ID = compiletime(ABIL_ID_GEN.next())
+public let FAKE_POISON_BUFF_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function fakeShadowStrike()
+    new AbilityDefinitionWardenShadowStrike(FAKE_POISON_ID)
+    ..setDummyAbility()
+    ..setDurationHero(1, 999999)
+    ..setDurationNormal(1, 999999)
+    ..setAttackSpeedFactor(1, 0)
+    ..setMovementSpeedFactor(1, 0)
+    ..setDecayPower(1, 0)
+    ..setDecayingDamage(1, 0)
+    ..setInitialDamage(1, 0)
+    ..setBuffs(1, FAKE_POISON_BUFF_ID.toRawCode())
+    ..setTargetsAllowed(1, TargetsAllowed.structure)
+
+@compiletime function makeFakePoisonBuff()
+    new BuffDefinition(FAKE_POISON_BUFF_ID, 'Bpoi')
+    ..setArtTarget(1, "")
+    ..setTooltipNormalExtended(1, "http://forum.onligamez.ru")
+    ..setTooltipNormal(1, "Survival Chaos OZGame Edition")
+    ..setIcon(Icons.bTNAnkh)
+
+    
+function isStruct() returns bool
+    return GetFilterUnit().isType(UNIT_TYPE_STRUCTURE)
+
+init
+    doAfter(100) ->
+        let g = GetUnitsInRectMatching(bj_mapInitialPlayableArea, Filter(function isStruct))
+        for u from g
+            InstantDummyCaster.castTarget(Player(13), FAKE_POISON_ID, 1, OrderIds.shadowstrike, u)
