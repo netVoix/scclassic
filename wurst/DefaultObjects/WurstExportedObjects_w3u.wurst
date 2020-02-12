@@ -23396,7 +23396,8 @@ import ObjEditingNatives
 	createObjectDefinition("w3u", 'nerw', 'nerw')
 	..setString("urac", "undead")
 	..setString("udaa", "A01I")
-	..setString("uabi", "A002,ACdc,ACrg,ACad,A01I,A0GW,A0GX")
+	..setString("uabi", "A002,ACdc,ACrg,ACad,A01I,A0GW")
+	// ..setString("uabi", "A002,ACdc,ACrg,ACad,A01I,A0GW,A0GX")
 	..setInt("ubpx", 2)
 	..setInt("ubpy", 1)
 	..setUnreal("ulpz", 90.0)
@@ -23552,7 +23553,7 @@ import ObjEditingNatives
 	..setString("uspa", "Objects\\Spawnmodels\\Undead\\UCancelDeath\\UCancelDeath.mdl")
 	..setString("uaap", "large")
 	..setString("utip", "Sargeras First Chosen [|cffffcc00A|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadShadow Dance|r |n|n|cffffcc00Eredar Witch|r replaces |cffffcc00Diabolist|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cffff0000Finger of Death|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(50/75/100/125 dmg to 1 unit)|r |n|cffa020f0Void Rift|r |cff6c7b8b(Summoning Spell)|r |n |cffffdead(1 unit for 20/30/40/50s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadFel Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadDemonic Armor|r |n|cffffdeadShadow Dance|r |n|n|cffffdeadIdea by:|r |cff00ff00Matthias Rehn|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadShadow Dance|r |n|n|cffffcc00Eredar Witch|r replaces |cffffcc00Diabolist|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cffff0000Finger of Death|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(50/75/100/125 dmg to 1 unit)|r |n |cffffdead(1 unit for 20/30/40/50s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadFel Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadDemonic Armor|r |n|cffffdeadShadow Dance|r |n|n|cffffdeadIdea by:|r |cff00ff00Matthias Rehn|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
 	..setString("uhot", "A")
 	..setInt("ubpy", 1)
 

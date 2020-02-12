@@ -18909,13 +18909,12 @@ import ObjEditingNatives
 	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
 	..setLvlDataInt("abpx", 0, 0, 0)
 
-
 @compiletime function create_w3a_A0DU()
 	createObjectDefinition("w3a", 'A0DU', 'ACev')
 	..setLvlDataString("arac", 0, 0, "undead")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCorruption Aura|r |n+1 level of |cffffdeadImpenetrable Flesh|r |n|n|cffffcc00Flesh Giant|r replaces |cffffcc00Meat Wagon|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(200 damage in a line)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCorruption Aura|r |n+1 level of |cffffdeadImpenetrable Flesh|r |n|n|cffffcc00Flesh Giant|r replaces |cffffcc00Meat Wagon|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Heap of Flesh")
 	..setLvlDataString("atp1", 1, 0, "Heap of Flesh")
@@ -21467,7 +21466,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "undead")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadShadow Dance|r |n|n|cffffcc00Eredar Witch|r replaces |cffffcc00Diabolist|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cffff0000Finger of Death|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(50/75/100/125 dmg to 1 unit)|r |n|cffa020f0Void Rift|r |cff6c7b8b(Summoning Spell)|r |n |cffffdead(1 unit for 20/30/40/50s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadFel Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadDemonic Armor|r |n|cffffdeadShadow Dance|r |n|n|cffffdeadIdea by:|r |cff00ff00Matthias Rehn|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadShadow Dance|r |n|n|cffffcc00Eredar Witch|r replaces |cffffcc00Diabolist|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cffff0000Finger of Death|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(50/75/100/125 dmg to 1 unit)|r |n |cffffdead(1 unit for 20/30/40/50s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadFel Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadDemonic Armor|r |n|cffffdeadShadow Dance|r |n|n|cffffdeadIdea by:|r |cff00ff00Matthias Rehn|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Sargeras First Chosen")
 	..setLvlDataString("atp1", 1, 0, "Sargeras First Chosen")
