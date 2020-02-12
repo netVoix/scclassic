@@ -16534,9 +16534,9 @@ import ObjEditingNatives
 	..setLvlDataString("anam", 0, 0, "Spell Resist")
 	..setLvlDataInt("abpx", 0, 0, 2)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataUnreal("isr2", 1, 2, 0.45)
+	..setLvlDataUnreal("isr2", 1, 2, 0.20)
 	..setLvlDataString("atp1", 1, 0, "Spell Resist")
-	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 45%.")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 20%.")
 
 
 @compiletime function create_w3a_A0B7()
@@ -19974,7 +19974,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "nightelf")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPhantom Warriors|r |n|nReduces spell damage to |cffffcc00Strider|r, |cffffcc00Archer|r, |cffffcc00Guardian|r, |cffffcc00Sorceress|r, |cffffcc00Bladedancer|r and |cffffcc00Dragonhawk Rider|r by 45% and increases their hit point regeneration by 3 HP/s. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPhantom Warriors|r |n|nReduces spell damage to |cffffcc00Strider|r, |cffffcc00Archer|r, |cffffcc00Guardian|r, |cffffcc00Sorceress|r, |cffffcc00Bladedancer|r and |cffffcc00Dragonhawk Rider|r by 20% and increases their hit point regeneration by 3 HP/s. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Arcane Mastery")
 	..setLvlDataString("atp1", 1, 0, "Arcane Mastery")

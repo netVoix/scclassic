@@ -21348,7 +21348,7 @@ import ObjEditingNatives
 	..setString("unam", "Arcane Academy")
 	..setString("utip", "Arcane Mastery [|cffffcc00Q|r]")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPhantom Warriors|r |n|nReduces spell damage to |cffffcc00Strider|r, |cffffcc00Archer|r, |cffffcc00Guardian|r, |cffffcc00Sorceress|r, |cffffcc00Bladedancer|r and |cffffcc00Dragonhawk Rider|r by 45% and increases their hit point regeneration by 3 HP/s. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPhantom Warriors|r |n|nReduces spell damage to |cffffcc00Strider|r, |cffffcc00Archer|r, |cffffcc00Guardian|r, |cffffcc00Sorceress|r, |cffffcc00Bladedancer|r and |cffffcc00Dragonhawk Rider|r by 20% and increases their hit point regeneration by 3 HP/s. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
 	..setString("uhot", "Q")
 	..setInt("usid", 600)
 
