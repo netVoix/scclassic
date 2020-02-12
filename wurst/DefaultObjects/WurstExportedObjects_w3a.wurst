@@ -16795,13 +16795,12 @@ import ObjEditingNatives
 	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
 	..setLvlDataInt("abpx", 0, 0, 0)
 
-
 @compiletime function create_w3a_A0BJ()
 	createObjectDefinition("w3a", 'A0BJ', 'ACev')
 	..setLvlDataString("arac", 0, 0, "human")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "Reduces spell damage to buildings by 90%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage to buildings by 80%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Anti-Magic Shield")
 	..setLvlDataString("atp1", 1, 0, "Anti-Magic Shield")
@@ -16830,9 +16829,9 @@ import ObjEditingNatives
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNGenericSpellImmunity.blp")
 	..setLvlDataInt("abpx", 0, 0, 2)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataUnreal("isr2", 1, 2, 0.9)
+	..setLvlDataUnreal("isr2", 1, 2, 0.8)
 	..setLvlDataString("atp1", 1, 0, "Anti-Magic Shield")
-	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 90%.")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 80%.")
 
 
 @compiletime function create_w3a_A0BN()
