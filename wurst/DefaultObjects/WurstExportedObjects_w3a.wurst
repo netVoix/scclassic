@@ -52703,7 +52703,7 @@ import ObjEditingNatives
 	..setLvlDataUnreal("Ucs2", 1, 2, 99999.0)
 	..setLvlDataInt("amcs", 1, 0, 0)
 	..setLvlDataString("aub1", 1, 0, "Sends a horde of bats to deal <ACca,DataA1> damage to each enemy land unit in a line.")
-	..setLvlDataUnreal("Ucs1", 1, 1, 200.0)
+	..setLvlDataUnreal("Ucs1", 1, 1, 100.0)
 	..setLvlDataUnreal("acdn", 1, 0, 30.0)
 	..setLvlDataString("acat", 0, 0, "Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl")
 	..setLvlDataString("acap", 0, 0, "hand,left")

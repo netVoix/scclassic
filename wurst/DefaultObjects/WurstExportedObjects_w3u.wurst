@@ -19394,7 +19394,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_uslh()
 	createObjectDefinition("w3u", 'uslh', 'uslh')
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCorruption Aura|r |n+1 level of |cffffdeadImpenetrable Flesh|r |n|n|cffffcc00Flesh Giant|r replaces |cffffcc00Meat Wagon|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(200 damage in a line)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCorruption Aura|r |n+1 level of |cffffdeadImpenetrable Flesh|r |n|n|cffffcc00Flesh Giant|r replaces |cffffcc00Meat Wagon|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setString("utip", "Heap of Flesh [|cffffcc00F|r]")
 	..setString("uhot", "F")
 	..setString("upgr", "")
