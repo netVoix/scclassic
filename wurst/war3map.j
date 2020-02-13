@@ -5904,7 +5904,7 @@ set KR[8]='nef6'
 set KR[9]='uzg2'
 set KR[$A]='negm'
 set KR[$B]='nmrd'
-// set KR[12]='ushp'
+set KR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A8D())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -5970,7 +5970,7 @@ set LR[8]='nef6'
 set LR[9]='uzg2'
 set LR[$A]='negm'
 set LR[$B]='nmrd'
-// set LR[12]='ushp'
+set LR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A_D())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -6036,7 +6036,7 @@ set MR[8]='nef6'
 set MR[9]='uzg2'
 set MR[$A]='negm'
 set MR[$B]='nmrd'
-// set MR[12]='ushp'
+set MR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A1D())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -6102,7 +6102,7 @@ set PR[8]='nef6'
 set PR[9]='uzg2'
 set PR[$A]='negm'
 set PR[$B]='nmrd'
-// set PR[12]='ushp'
+set PR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A3D())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
@@ -47995,174 +47995,122 @@ endif
 endif
 endif
 endfunction
-function E2M takes nothing returns boolean
+function QGG1 takes nothing returns nothing
+call IssueTargetOrderById(GetAttacker(),852209,GetAttacker())
+endfunction
+function QIG1 takes nothing returns boolean
 return(GetRandomInt(1,3)==1)
 endfunction
-function E3M takes nothing returns boolean
+function QJG1 takes nothing returns boolean
 return(GetRandomInt(1,2)==1)
 endfunction
-function E4M takes nothing returns boolean
+function QKG1 takes nothing returns boolean
 return(QE[1]!=1)
 endfunction
-function E5M takes nothing returns boolean
+function QMG1 takes nothing returns boolean
 return(GetRandomInt(1,3)==1)
 endfunction
-function E6M takes nothing returns boolean
+function QNG1 takes nothing returns boolean
 return(GetRandomInt(1,2)==1)
 endfunction
-function E7M takes nothing returns boolean
+function QOG1 takes nothing returns boolean
 return(QE[2]!=1)
 endfunction
-function E8M takes nothing returns boolean
+function QPG1 takes nothing returns boolean
 return(GetRandomInt(1,3)==1)
 endfunction
-function E9M takes nothing returns boolean
+function QQG1 takes nothing returns boolean
 return(GetRandomInt(1,2)==1)
 endfunction
-function XVM takes nothing returns boolean
+function QRG1 takes nothing returns boolean
 return(QE[3]!=1)
 endfunction
-function XEM takes nothing returns boolean
+function QSG1 takes nothing returns boolean
 return(GetRandomInt(1,3)==1)
 endfunction
-function XXM takes nothing returns boolean
+function QTG1 takes nothing returns boolean
 return(GetRandomInt(1,2)==1)
 endfunction
-function XOM takes nothing returns boolean
+function QUG1 takes nothing returns boolean
 return(QE[4]!=1)
 endfunction
-function XRM takes nothing returns boolean
-return(BA[7]==BA[6])
-endfunction
-function XIM takes nothing returns boolean
-return(BA[8]==BA[7])or(BA[8]==BA[6])
-endfunction
-function XAM takes nothing returns boolean
-return(XIM())
-endfunction
-function XNM takes nothing returns boolean
-return(BA[7]==BA[6])
-endfunction
-function XBM takes nothing returns boolean
-return(BA[8]==BA[6])or(BA[8]==BA[7])
-endfunction
-function XCM takes nothing returns boolean
-return(XBM())
-endfunction
-function XDM takes nothing returns boolean
+function QVG1 takes nothing returns boolean
 return(IsUnitAliveBJ(HB[$E]))
 endfunction
-function XFM takes nothing returns nothing
-if(XDM())then
-if(E4M())then
-if(E2M())then
+function QWG1 takes nothing returns nothing
+if(QVG1())then
+if(QKG1())then
+if(QIG1())then
 set FC[1]=GetRectCenter(OJ)
 else
-if(E3M())then
+if(QJG1())then
 set FC[1]=GetRectCenter(DJ)
 else
 set FC[1]=GetRectCenter(HJ)
 endif
 endif
-else
-set FC[1]=GetRectCenter(GJ)
+call CreateNUnitsAtLoc(1,'u000',Player(11),FC[1],270.)
+call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
+call IssuePointOrderByIdLoc(bj_lastCreatedUnit,852504,FC[1])
+call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
+call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[1],3.4,1,100.,.0,.0)
+call RemoveLocation(FC[1])
 endif
-if(E7M())then
-if(E5M())then
+if(QOG1())then
+if(QMG1())then
 set FC[2]=GetRectCenter(QJ)
 else
-if(E6M())then
+if(QNG1())then
 set FC[2]=GetRectCenter(VJ)
 else
 set FC[2]=GetRectCenter(UH)
 endif
 endif
-else
-set FC[2]=GetRectCenter(XJ)
+call CreateNUnitsAtLoc(1,'u000',Player(11),FC[2],270.)
+call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
+call IssuePointOrderByIdLoc(bj_lastCreatedUnit,852504,FC[2])
+call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
+call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[2],3.4,1,100.,.0,.0)
+call RemoveLocation(FC[2])
 endif
-if(XVM())then
-if(E8M())then
+if(QRG1())then
+if(QPG1())then
 set FC[3]=GetRectCenter(LH)
 else
-if(E9M())then
+if(QQG1())then
 set FC[3]=GetRectCenter(HH)
 else
 set FC[3]=GetRectCenter(AH)
 endif
 endif
-else
-set FC[3]=GetRectCenter(KH)
+call CreateNUnitsAtLoc(1,'u000',Player(11),FC[3],270.)
+call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
+call IssuePointOrderByIdLoc(bj_lastCreatedUnit,852504,FC[3])
+call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
+call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[3],3.4,1,100.,.0,.0)
+call RemoveLocation(FC[3])
 endif
-if(XOM())then
-if(XEM())then
+if(QUG1())then
+if(QSG1())then
 set FC[4]=GetRectCenter(GH)
 else
-if(XXM())then
+if(QTG1())then
 set FC[4]=GetRectCenter(WH)
 else
 set FC[4]=GetRectCenter(CJ)
 endif
 endif
-else
-set FC[4]=GetRectCenter(ZH)
-endif
-set FC[5]=GetRectCenter(WD)
-set BA[6]=GetRandomInt(1,5)
-set BA[7]=GetRandomInt(1,5)
-set KN[$E]=1
-loop
-exitwhen KN[$E]>'d'
-if(XRM())then
-set BA[7]=GetRandomInt(1,5)
-endif
-set KN[$E]=KN[$E]+1
-endloop
-set BA[8]=GetRandomInt(1,5)
-set KN[$E]=1
-loop
-exitwhen KN[$E]>'d'
-if(XAM())then
-set BA[8]=GetRandomInt(1,5)
-endif
-set KN[$E]=KN[$E]+1
-endloop
-set FC[6]=FC[BA[6]]
-call CreateNUnitsAtLoc(1,'u000',Player($B),FC[6],270.)
+call CreateNUnitsAtLoc(1,'u000',Player(11),FC[4],270.)
 call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0218,FC[6])
+call IssuePointOrderByIdLoc(bj_lastCreatedUnit,852504,FC[4])
 call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
-call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[6],3.4,1,100.,.0,.0)
-call RemoveLocation(FC[6])
-if(XNM())then
-else
-set FC[7]=FC[BA[7]]
-call CreateNUnitsAtLoc(1,'u000',Player($B),FC[7],270.)
-call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0218,FC[7])
-call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
-call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[7],3.4,1,100.,.0,.0)
-call RemoveLocation(FC[7])
-endif
-if(XCM())then
-else
-set FC[8]=FC[BA[8]]
-call CreateNUnitsAtLoc(1,'u000',Player($B),FC[8],270.)
-call UnitAddAbility(bj_lastCreatedUnit,'A0SL')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0218,FC[8])
-call UnitApplyTimedLifeBJ(7.,'BTLF',bj_lastCreatedUnit)
-call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[8],3.4,1,100.,.0,.0)
-call RemoveLocation(FC[8])
+call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,FC[4],3.4,1,100.,.0,.0)
+call RemoveLocation(FC[4])
 endif
 call RemoveLocation(FC[1])
 call RemoveLocation(FC[2])
 call RemoveLocation(FC[3])
 call RemoveLocation(FC[4])
-call RemoveLocation(FC[5])
-call RemoveLocation(FC[7])
-call RemoveLocation(FC[8])
-set BA[6]=0
-set BA[7]=0
-set BA[8]=0
 else
 call DisableTrigger(GetTriggeringTrigger())
 endif
@@ -57280,11 +57228,11 @@ set UQ=CreateSound("Units\\Orc\\Hellscream\\GromYesAttack1.wav",false,false,fals
 call SetSoundParamsFromLabel(UQ,"GromYesAttack")
 call SetSoundDuration(UQ,$503)
 call SetSoundChannel(UQ,0)
-set WQ=CreateSound("Units\\Demon\\Infernal\\InfernalDeath.wav",false,false,false,$A,$A,"DefaultEAXON")
-call SetSoundParamsFromLabel(WQ,"InfernalDeath")
-call SetSoundDuration(WQ,5000)
+set WQ=CreateSound("Sound\\Dialogue\\UndeadCampaign\\Undead08\\U08Archimonde19.mp3",false,false,false,10,10,"DefaultEAXON")
+call SetSoundParamsFromLabel(WQ,"U08Archimonde19")
+call SetSoundDuration(WQ,1216)
 call SetSoundChannel(WQ,0)
-call SetSoundVolume(WQ,300)
+// call SetSoundVolume(WQ,100)
 set YQ=CreateSound("Units\\Demon\\ChaosWarlord\\WarlordReady1.wav",false,false,false,$A,$A,"DefaultEAXON")
 call SetSoundParamsFromLabel(YQ,"ChaosWarlordReady")
 call SetSoundDuration(YQ,$AC6)
@@ -61059,7 +61007,7 @@ call TriggerAddAction(KMO,function E1M)
 set KUO=CreateTrigger()
 call DisableTrigger(KUO)
 call TriggerRegisterTimerEventPeriodic(KUO,125.)
-call TriggerAddAction(KUO,function XFM)
+call TriggerAddAction(KUO,function QWG1)
 set KZO=CreateTrigger()
 call DisableTrigger(KZO)
 call TriggerRegisterAnyUnitEventBJ(KZO,EVENT_PLAYER_UNIT_ATTACKED)
