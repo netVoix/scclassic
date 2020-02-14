@@ -1,0 +1,36 @@
+package StunAggroFix
+
+import RegisterEvents
+import ClosureForGroups
+import OrderIds
+import ClosureTimers
+
+group SG_STUN_USERS = CreateGroup()
+
+function stunAbilityBoolean() returns boolean
+	let aid = GetSpellAbilityId()
+	return aid == 'A0W6' or aid == 'A0Jl' or aid == 'A04J' or aid == 'A03F' or aid == 'A0JL'
+
+function isEnemyUnit() returns bool
+	let fu = GetFilterUnit()
+	let uid = fu.getTypeId()
+	return  fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+init 
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+		if stunAbilityBoolean()
+			let u = GetTriggerUnit()
+			SG_STUN_USERS.addUnit(u)
+			doAfter(6) ->
+				SG_STUN_USERS.removeUnit(u)
+		
+				
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+		let stunUser = GetAttacker()
+		if IsUnitInGroup(stunUser, SG_STUN_USERS)
+			let u = GetTriggerUnit()
+			if u.isType(UNIT_TYPE_STRUCTURE)
+				forNearestUnit(stunUser.getPos(), 1000,  Filter(function isEnemyUnit)) x ->
+					stunUser.issueTargetOrderById(OrderIds.attack, x)
+
+					
