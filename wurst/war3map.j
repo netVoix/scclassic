@@ -75,6 +75,10 @@ integer KE=0
 integer LE=0
 integer ME=0
 integer PE=0
+string array Voodo
+texttag VoodoText=null
+location TextLoc=null
+integer CurrentAbility=null
 integer array QE
 integer array SE
 integer array TE
@@ -43202,6 +43206,7 @@ function FYL takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='npgf')
 endfunction
 function FZL takes nothing returns nothing
+local integer i
 if(FYL())then
 call SetUnitScalePercent(GetTriggerUnit(),90.,90.,90.)
 call PlaySoundBJ(UK)
@@ -43526,6 +43531,7 @@ call PlaySoundBJ(RL)
 call SetUnitScalePercent(GetTriggerUnit(),250.,250.,250.)
 call EnableTrigger(GUO)
 set HB[$A]=GetTriggerUnit()
+set TextLoc = Location(GetUnitX(HB[$A]) - 512,GetUnitY(HB[$A]) + 128)
 set BC[2]='S003'
 set BC[3]='S002'
 set BC[4]='A0RT'
@@ -43541,12 +43547,34 @@ set BC[$D]='S008'
 set BC[$E]='S007'
 set BC[$F]='A0T3'
 set BC[16]='A0T4'
+set Voodo[2] = "Next: |cff00ff00Increase|r |cffeeff00Attack Speed|r for |cff5900ffunits|r"
+set Voodo[3] = "Next: |cffff0000Reduce|r |cffeeff00Attack Speed|r for |cff5900ffunits|r"
+set Voodo[4] = "Next: |cff00ff00Increase|r |cffeeff00Damage|r for |cff5900ffunits|r"
+set Voodo[5] = "Next: |cffff0000Reduce|r |cffeeff00Damage|r for |cff5900ffunits|r"
+set Voodo[6] = "Next: |cffffbb00BUUUUUURN!!!|r"
+set Voodo[7] = "Next: |cff00ff00Increase|r |cffeeff00Armour|r for |cff5900ffall|r"
+set Voodo[8] = "Next: |cffff0000Reduce|r |cffeeff00Armour|r for |cff5900ffall|r"
+set Voodo[9] = "Next: |cff00ff00Increase|r |cffeeff00Regeneration|r for |cff5900ffall|r"
+set Voodo[10] = "Next: |cffff0000Reduce|r |cffeeff00Movement Speed|r for |cff5900ffunits|r"
+set Voodo[11] = "Next: |cffff0000Burn mana|r for |cff5900ffbuildings|r"
+set Voodo[12] = "Next: |cffff0000Burn mana|r for |cff5900ffunits|r"
+set Voodo[13] = "Next: |cff00ff00Increase|r |cffeeff00Attack Speed|r for |cff5900ffbuildings|r"
+set Voodo[14] = "Next: |cffff0000Reduce|r |cffeeff00Attack Speed|r for |cff5900ffbuildings|r"
+set Voodo[15] = "Next: |cff00ff00Increase|r |cffeeff00Damage|r for |cff5900ffbuildings|r"
+set Voodo[16] = "Next: |cffff0000Reduce|r |cffeeff00Damage|r for |cff5900ffbuildings|r"
 set BC[1]=BC[GetRandomInt(2,16)]
+set CurrentAbility = BC[1]
 call UnitAddAbility(HB[$A],BC[1])
 set MI[$D]=60
 call CreateTextTagUnitBJ(I2S(MI[$D]),HB[$A],100.,13.,100.,.0,100.,0)
 call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
 set LI[$D]=bj_lastCreatedTextTag
+set i = GetRandomInt(2,16)
+set BC[1]=BC[i]
+set Voodo[1]=Voodo[i]
+call CreateTextTagLocBJ(Voodo[1], TextLoc, 100.,8.,255.,255.,255.,0)
+call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+set VoodoText=bj_lastCreatedTextTag
 call StartTimerBJ(FI[$D],false,60.)
 else
 if(DNL())then
@@ -44031,21 +44059,44 @@ endfunction
 function H2L takes nothing returns boolean
 return(IsUnitAliveBJ(HB[$A]))
 endfunction
+
+function ChangeEffect takes nothing returns nothing
+local integer i
+set i = GetRandomInt(2,16)
+set BC[1]=BC[i]
+set Voodo[1]=Voodo[i]
+call DestroyTextTag(VoodoText)
+call CreateTextTagLocBJ(Voodo[1], TextLoc, 100.,8.,255.,255.,255.,0)
+call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+set VoodoText=bj_lastCreatedTextTag
+endfunction
+
 function H3L takes nothing returns nothing
+local integer i
 if(H2L())then
 set XO[$8B]=GetUnitLoc(HB[$A])
 call AddSpecialEffectLocBJ(XO[$8B],"LightningNovaR.mdx")
 call DestroyEffect(bj_lastCreatedEffect)
 call RemoveLocation(XO[$8B])
-call UnitRemoveAbility(HB[$A],BC[1])
-set BC[1]=BC[GetRandomInt(2,16)]
+call UnitRemoveAbility(HB[$A],CurrentAbility)
+set CurrentAbility = BC[1]
 call UnitAddAbility(HB[$A],BC[1])
+set i = GetRandomInt(2,16)
+set BC[1]=BC[i]
 call StartTimerBJ(FI[$D],false,60.)
+set Voodo[1]=Voodo[i]
+call DestroyTextTag(VoodoText)
+call CreateTextTagLocBJ(Voodo[1], TextLoc, 100.,8.,255.,255.,255.,0)
+call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+set VoodoText=bj_lastCreatedTextTag
 set MI[$D]=60
+call PingMinimapLocForForceEx(bj_FORCE_ALL_PLAYERS,TextLoc ,3.4,1,100.,.0,.0)
 else
 call DestroyTextTag(LI[$D])
+call DestroyTextTag(VoodoText)
 endif
 endfunction
+
 function H4L takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='nft1')or(GetUnitTypeId(GetTriggerUnit())=='ncbc')or(GetUnitTypeId(GetTriggerUnit())=='ncbd')or(GetUnitTypeId(GetTriggerUnit())=='nmr9')or(GetUnitTypeId(GetTriggerUnit())=='otto')or(GetUnitTypeId(GetTriggerUnit())=='ostr')or(GetUnitTypeId(GetTriggerUnit())=='ogre')or(GetUnitTypeId(GetTriggerUnit())=='ofor')or(GetUnitTypeId(GetTriggerUnit())=='nmr0')or(GetUnitTypeId(GetTriggerUnit())=='nmr8')
 endfunction
