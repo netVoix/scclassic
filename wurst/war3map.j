@@ -20966,9 +20966,6 @@ endfunction
 function H4G takes nothing returns nothing
 call IssueTargetOrderById(GetAttacker(),$D000F,M)
 endfunction
-function H5G takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o004')
-endfunction
 function H6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -21034,9 +21031,6 @@ call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
-endfunction
-function JIG takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o000')
 endfunction
 function JAG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21104,9 +21098,6 @@ call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
 endfunction
-function JKG takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o009')
-endfunction
 function JLG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -21172,9 +21163,6 @@ call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
-endfunction
-function JZG takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o00D')
 endfunction
 function J_G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21242,9 +21230,6 @@ call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
 endfunction
-function J8G takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o00J')
-endfunction
 function J9G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -21270,49 +21255,143 @@ function KAG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
 endfunction
 function KNG takes nothing returns nothing
+local player p = GetTriggerPlayer()
 if(J9G())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0P0')
+if p == P then
+set TB[1] = 'A0P0'  
+endif
+if p == S then
+set TB[2] = 'A0P0'  
+endif
+if p == Q then
+set TB[3] = 'A0P0'  
+endif
+if p == T then
+set TB[4] = 'A0P0'  
+endif
 endif
 if(KVG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0OZ')
+if p == P then
+set TB[1] = 'A0OZ'  
+endif
+if p == S then
+set TB[2] = 'A0OZ'  
+endif
+if p == Q then
+set TB[3] = 'A0OZ'  
+endif
+if p == T then
+set TB[4] = 'A0OZ'  
+endif
 endif
 if(KEG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0MF')
+if p == P then
+set TB[1] = 'A0MF'  
+endif
+if p == S then
+set TB[2] = 'A0MF'  
+endif
+if p == Q then
+set TB[3] = 'A0MF'  
+endif
+if p == T then
+set TB[4] = 'A0MF'  
+endif
 endif
 if(KXG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0PU')
+if p == P then
+set TB[1] = 'A0PU'  
+endif
+if p == S then
+set TB[2] = 'A0PU'  
+endif
+if p == Q then
+set TB[3] = 'A0PU'  
+endif
+if p == T then
+set TB[4] = 'A0PU'  
+endif
 endif
 if(KOG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0QV')
+if p == P then
+set TB[1] = 'A0QV'  
+endif
+if p == S then
+set TB[2] = 'A0QV'  
+endif
+if p == Q then
+set TB[3] = 'A0QV'  
+endif
+if p == T then
+set TB[4] = 'A0QV'  
+endif
 endif
 if(KRG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'ACsm')
+if p == P then
+set TB[1] = 'ACsm'  
+endif
+if p == S then
+set TB[2] = 'ACsm'  
+endif
+if p == Q then
+set TB[3] = 'ACsm'  
+endif
+if p == T then
+set TB[4] = 'ACsm'  
+endif
 endif
 if(KIG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'A0R9')
+if p == P then
+set TB[1] = 'A0R9'  
+endif
+if p == S then
+set TB[2] = 'A0R9'  
+endif
+if p == Q then
+set TB[3] = 'A0R9'  
+endif
+if p == T then
+set TB[4] = 'A0R9'  
+endif
 endif
 if(KAG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
+if p == P then
+set TB[1] = 'Awrh'  
 endif
-endfunction
-function KBG takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o00H')
+if p == S then
+set TB[2] = 'Awrh'  
+endif
+if p == Q then
+set TB[3] = 'Awrh'  
+endif
+if p == T then
+set TB[4] = 'Awrh'  
+endif
+endif
 endfunction
 function KCG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21380,9 +21459,6 @@ call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
 endfunction
-function KPG takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o00P')
-endfunction
 function KQG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -21448,9 +21524,6 @@ call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
 call UnitAddAbility(GetTriggerUnit(),'Awrh')
 endif
-endfunction
-function K1G takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='o00M')
 endfunction
 function K2G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -24597,8 +24670,8 @@ function OTH takes nothing returns nothing
 if(OGH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[1])
 call UnitAddAbility(GetTriggerUnit(),IR[1])
-call UnitRemoveAbility(GetTriggerUnit(),TB[1])
-call UnitAddAbility(GetTriggerUnit(),TB[1])
+// call UnitRemoveAbility(GetTriggerUnit(),TB[1])
+// call UnitAddAbility(GetTriggerUnit(),TB[1])
 set YX[1]=2
 if(ONH())then
 call UnitAddAbility(GetTriggerUnit(),XI[1])
@@ -24629,8 +24702,10 @@ endif
 if(OSH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[1])
 call UnitAddAbility(GetTriggerUnit(),IR[1])
+if GetPlayerTechCountSimple(WX[1],P) > 0 then
 call UnitRemoveAbility(GetTriggerUnit(),TB[1])
 call UnitAddAbility(GetTriggerUnit(),TB[1])
+endif
 set YX[1]=3
 if(OKH())then
 call UnitAddAbility(GetTriggerUnit(),XI[1])
@@ -24708,8 +24783,8 @@ function RXH takes nothing returns nothing
 if(O3H())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[2])
 call UnitAddAbility(GetTriggerUnit(),IR[2])
-call UnitRemoveAbility(GetTriggerUnit(),TB[2])
-call UnitAddAbility(GetTriggerUnit(),TB[2])
+// call UnitRemoveAbility(GetTriggerUnit(),TB[2])
+// call UnitAddAbility(GetTriggerUnit(),TB[2])
 set YX[2]=2
 if(OZH())then
 call UnitAddAbility(GetTriggerUnit(),XI[2])
@@ -24740,8 +24815,11 @@ endif
 if(REH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[2])
 call UnitAddAbility(GetTriggerUnit(),IR[2])
+// zddd
+if GetPlayerTechCountSimple(WX[2],S) > 0 then
 call UnitRemoveAbility(GetTriggerUnit(),TB[2])
 call UnitAddAbility(GetTriggerUnit(),TB[2])
+endif
 set YX[2]=3
 if(O6H())then
 call UnitAddAbility(GetTriggerUnit(),XI[2])
@@ -24819,8 +24897,8 @@ function RSH takes nothing returns nothing
 if(RFH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[3])
 call UnitAddAbility(GetTriggerUnit(),IR[3])
-call UnitRemoveAbility(GetTriggerUnit(),TB[3])
-call UnitAddAbility(GetTriggerUnit(),TB[3])
+// call UnitRemoveAbility(GetTriggerUnit(),TB[3])
+// call UnitAddAbility(GetTriggerUnit(),TB[3])
 set YX[3]=2
 if(RAH())then
 call UnitAddAbility(GetTriggerUnit(),XI[3])
@@ -24851,8 +24929,10 @@ endif
 if(RQH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[3])
 call UnitAddAbility(GetTriggerUnit(),IR[3])
+if GetPlayerTechCountSimple(WX[3],Q) > 0 then
 call UnitRemoveAbility(GetTriggerUnit(),TB[3])
 call UnitAddAbility(GetTriggerUnit(),TB[3])
+endif
 set YX[3]=3
 if(RJH())then
 call UnitAddAbility(GetTriggerUnit(),XI[3])
@@ -24930,8 +25010,8 @@ function IEH takes nothing returns nothing
 if(R2H())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[4])
 call UnitAddAbility(GetTriggerUnit(),IR[4])
-call UnitRemoveAbility(GetTriggerUnit(),TB[4])
-call UnitAddAbility(GetTriggerUnit(),TB[4])
+// call UnitRemoveAbility(GetTriggerUnit(),TB[4])
+// call UnitAddAbility(GetTriggerUnit(),TB[4])
 set YX[4]=2
 if(RYH())then
 call UnitAddAbility(GetTriggerUnit(),XI[4])
@@ -24962,8 +25042,10 @@ endif
 if(IVH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[4])
 call UnitAddAbility(GetTriggerUnit(),IR[4])
+if GetPlayerTechCountSimple(WX[4],T) > 0 then
 call UnitRemoveAbility(GetTriggerUnit(),TB[4])
 call UnitAddAbility(GetTriggerUnit(),TB[4])
+endif
 set YX[4]=3
 if(R5H())then
 call UnitAddAbility(GetTriggerUnit(),XI[4])
@@ -25271,6 +25353,7 @@ function APH takes nothing returns nothing
 if(AMH())then
 if(ANH())then
 call CreateFogModifierRectBJ(true,P,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
+call UnitAddAbility(GetTriggerUnit(),TB[1])
 if(AAH())then
 call EnableTrigger(U8R)
 endif
@@ -25281,6 +25364,7 @@ else
 if(ALH())then
 if(ACH())then
 call CreateFogModifierRectBJ(true,S,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
+call UnitAddAbility(GetTriggerUnit(),TB[2])
 if(ABH())then
 call EnableTrigger(OMI)
 endif
@@ -25291,6 +25375,7 @@ else
 if(AKH())then
 if(AFH())then
 call CreateFogModifierRectBJ(true,Q,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
+call UnitAddAbility(GetTriggerUnit(),TB[3])
 if(ADH())then
 call EnableTrigger(DHI)
 endif
@@ -25301,6 +25386,7 @@ else
 if(AJH())then
 if(AHH())then
 call CreateFogModifierRectBJ(true,T,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
+call UnitAddAbility(GetTriggerUnit(),TB[4])
 if(AGH())then
 call EnableTrigger(L_I)
 endif
@@ -59668,51 +59754,39 @@ call TriggerAddCondition(WQE,Condition(function H3G))
 call TriggerAddAction(WQE,function H4G)
 set WZE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(WZE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(WZE,Condition(function H5G))
 call TriggerAddAction(WZE,function JRG)
 set W4E=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(W4E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(W4E,Condition(function JIG))
 call TriggerAddAction(W4E,function JJG)
 set YVE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(YVE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(YVE,Condition(function JKG))
 call TriggerAddAction(YVE,function JYG)
 set YAE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(YAE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(YAE,Condition(function JZG))
 call TriggerAddAction(YAE,function J7G)
 set YGE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(YGE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(YGE,Condition(function J8G))
 call TriggerAddAction(YGE,function KNG)
 set YPE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(YPE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(YPE,Condition(function KBG))
 call TriggerAddAction(YPE,function KMG)
 set YYE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(YYE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(YYE,Condition(function KPG))
 call TriggerAddAction(YYE,function K0G)
 set Y3E=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(Y3E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(Y3E,Condition(function K1G))
 call TriggerAddAction(Y3E,function LVG)
 set Y9E=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(Y9E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(Y9E,Condition(function LEG))
 call TriggerAddAction(Y9E,function LDG)
 set ZIE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(ZIE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(ZIE,Condition(function LFG))
 call TriggerAddAction(ZIE,function LSG)
 set ZFE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(ZFE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(ZFE,Condition(function LTG))
 call TriggerAddAction(ZFE,function L3G)
 set ZME=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(ZME,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(ZME,Condition(function L4G))
 call TriggerAddAction(ZME,function MOG)
 set ZWE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(ZWE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
