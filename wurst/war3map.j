@@ -2702,9 +2702,6 @@ set OR[4]=GetRandomInt(1,$C)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-// Говнокод игроков можно расшифровать по этому месту ( связь игрока с замком )
-// P = 1 S = 2 Q = 3 T = 4
-// X     O     R     I
 call IssueImmediateOrderById(X,XE[OR[1]])
 call TriggerSleepAction(.1)
 call IssueImmediateOrderById(O,XE[OR[2]])
@@ -2712,7 +2709,7 @@ call TriggerSleepAction(.1)
 call IssueImmediateOrderById(R,XE[OR[3]])
 call TriggerSleepAction(.1)
 call IssueImmediateOrderById(I,XE[OR[4]])
-call SelectUnitForPlayerSingle(R,Q) // ( R(замок) = Q(игрок) ) и т.д.
+call SelectUnitForPlayerSingle(R,Q)
 call SelectUnitForPlayerSingle(I,T)
 call SelectUnitForPlayerSingle(O,S)
 call SelectUnitForPlayerSingle(X,P)
@@ -38467,12 +38464,10 @@ function PHK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
 function PJK takes nothing returns nothing
-call SetUnitScalePercent(GetTriggerUnit(),150.,150.,150.)
+call SetUnitScalePercent(GetTriggerUnit(),200.,200.,200.)
 set XO[97]=GetUnitLoc(GetTriggerUnit())
-call RemoveLocation(XO[97])
 call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[97],3500.)
 if(PHK())then
-set XO[97]=GetUnitLoc(X)
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
@@ -38483,7 +38478,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PDK())then
-set XO[97]=GetUnitLoc(O)
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
@@ -38494,7 +38488,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PNK())then
-set XO[97]=GetUnitLoc(R)
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
@@ -38505,7 +38498,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PRK())then
-set XO[97]=GetUnitLoc(I)
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true
@@ -38550,10 +38542,8 @@ endfunction
 function PYK takes nothing returns nothing
 call SetUnitScalePercent(GetTriggerUnit(),180.,180.,180.)
 set XO[99]=GetUnitLoc(GetTriggerUnit())
-call RemoveLocation(XO[99])
 call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[99],3500.)
 if(PWK())then
-set XO[99]=GetUnitLoc(X)
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
@@ -38564,7 +38554,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PTK())then
-set XO[99]=GetUnitLoc(O)
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
@@ -38575,7 +38564,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PQK())then
-set XO[99]=GetUnitLoc(R)
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
@@ -38586,7 +38574,6 @@ call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 endif
 else
 if(PMK())then
-set XO[99]=GetUnitLoc(I)
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true
@@ -38635,28 +38622,23 @@ endif
 endif
 call SetPlayerTechResearchedSwap('Rnsi',4,GetOwningPlayer(GetTriggerUnit()))
 set XO['d']=GetUnitLoc(GetTriggerUnit())
-call RemoveLocation(XO['d'])
 call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO['d'],3500.)
 if(P5K())then
-set XO['d']=GetUnitLoc(X)
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
 else
 if(P4K())then
-set XO['d']=GetUnitLoc(O)
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
 else
 if(P3K())then
-set XO['d']=GetUnitLoc(R)
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
 else
 if(P2K())then
-set XO['d']=GetUnitLoc(I)
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true
@@ -38685,28 +38667,23 @@ function QXK takes nothing returns nothing
 call SetUnitScalePercent(GetTriggerUnit(),110.,110.,110.)
 call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
 set XO[98]=GetUnitLoc(GetTriggerUnit())
-call RemoveLocation(XO[98])
 call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[98],3500.)
 if(QEK())then
-set XO[98]=GetUnitLoc(X)
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
 else
 if(QVK())then
-set XO[98]=GetUnitLoc(O)
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
 else
 if(P9K())then
-set XO[98]=GetUnitLoc(R)
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
 else
 if(P8K())then
-set XO[98]=GetUnitLoc(I)
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true
@@ -38735,28 +38712,23 @@ function QBK takes nothing returns nothing
 call SetUnitScalePercent(GetTriggerUnit(),250.,250.,250.)
 call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
 set XO['e']=GetUnitLoc(GetTriggerUnit())
-call RemoveLocation(XO['e'])
 call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO['e'],3500.)
 if(QNK())then
-set XO['e']=GetUnitLoc(X)
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
 else
 if(QAK())then
-set XO['e']=GetUnitLoc(O)
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
 else
 if(QIK())then
-set XO['e']=GetUnitLoc(R)
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
 else
 if(QRK())then
-set XO['e']=GetUnitLoc(I)
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true

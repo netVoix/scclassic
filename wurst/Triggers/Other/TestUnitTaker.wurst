@@ -4,9 +4,5 @@
 // 
 // init
 // 	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
-//         GetTriggerUnit().setOwner(GetTriggerPlayer(), true)
-//         R.remove()
-//         I.remove()
-//         O.remove()
-//         X.remove()
+// 		GetTriggerUnit().setOwner(GetTriggerPlayer(), true)
 // 
