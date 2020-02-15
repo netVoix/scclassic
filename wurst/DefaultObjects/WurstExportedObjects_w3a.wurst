@@ -51087,11 +51087,11 @@ import ObjEditingNatives
 
 @compiletime function create_w3a_ACc2()
 	createObjectDefinition("w3a", 'ACc2', 'ACc2')
-	..setLvlDataUnreal("Ucs1", 1, 1, 300.0)
+	..setLvlDataUnreal("Ucs1", 1, 1, 150.0)
 	..setLvlDataUnreal("Ucs2", 1, 2, 99999.0)
 	..setLvlDataUnreal("acdn", 1, 0, 15.0)
 	..setLvlDataInt("amcs", 1, 0, 0)
-	..setLvlDataString("aub1", 1, 0, "Sends a gigantic wave which deals 300 damage to each enemy land unit in a line.")
+	..setLvlDataString("aub1", 1, 0, "Sends a gigantic wave which deals 150 damage to each enemy land unit in a line.")
 	..setLvlDataString("ahky", 0, 0, "")
 
 
