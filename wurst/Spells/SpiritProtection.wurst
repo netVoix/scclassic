@@ -1,0 +1,73 @@
+package SpiritProtection
+
+import ChannelAbilityPreset
+import BuffObjEditing
+import Abilities
+import RegisterEvents
+import ClosureForGroups
+import InstantDummyCaster
+import Orders
+import ClosureTimers
+
+public let SPIRIT_PROTECTION_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+public let SPIRIT_PROTECTION_ID = compiletime(ABIL_ID_GEN.next())
+public let SPIRIT_PROTECTION_SPELL_ID = compiletime(ABIL_ID_GEN.next())
+public let SPIRIT_PROTECTION_BUFF_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function spiritProtectionSpell()
+  new AbilityDefinitionInnerFire(SPIRIT_PROTECTION_SPELL_ID)
+  ..setLevels(3)
+  ..setHeroAbility(false)
+  ..presetLifeRegenRate(lvl -> 0)
+  ..presetTargetsAllowed(lvl -> "air,friend,ground,nonhero,organic,self")
+  ..presetCooldown(lvl -> 20. - lvl)
+  ..presetManaCost(lvl -> 30)
+  ..presetCastRange(lvl -> 700)
+  ..presetDurationNormal(lvl -> 0)
+  ..presetDamageIncrease(lvl -> 0)
+  ..presetDefenseIncrease(lvl -> 0)
+  ..presetBuffs(lvl -> "")
+  ..setRequirements("Rowt")
+  ..setRequirementsLevels("1")
+
+@compiletime function spiritProtectionDummy()
+  new AbilityDefinitionInnerFire(SPIRIT_PROTECTION_DUMMY_ID)
+  ..setLevels(3)
+  ..setDummyAbility()
+  ..setHeroAbility(false)
+  ..setRequirements("")
+  ..presetTargetsAllowed(lvl -> "air,friend,ground,nonhero,organic,self")
+  ..presetDurationNormal(lvl -> 17)
+  ..presetDamageIncrease(lvl -> 0)
+  ..presetDefenseIncrease(lvl -> 0)
+  ..presetLifeRegenRate(lvl -> 0)
+  ..presetBuffs(lvl -> SPIRIT_PROTECTION_BUFF_ID.toRawCode())
+  ..setArtTarget(Abilities.darkPortalTarget)
+
+@compiletime function spiritProtection()
+  new AbilityDefinitionThornyShieldCreep(SPIRIT_PROTECTION_ID)
+  ..setHeroAbility(false)
+  ..setLevels(3)
+  ..presetDefenseBonus(lvl -> 0)
+  ..presetReceivedDamageFactor(lvl -> 0.9 - lvl * 0.1)
+  ..presetReturnedDamageFactor(lvl -> 0.)
+  ..presetTargetsAllowed(lvl -> "self")
+
+@compiletime function spiritProtectionBuff()
+  new BuffDefinition(SPIRIT_PROTECTION_BUFF_ID, 'BUts')
+  ..setTooltipNormal(1, "This unit takes reduced damage and return some amount of melee damage")
+
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+    if GetSpellAbilityId() == SPIRIT_PROTECTION_SPELL_ID
+      let t = GetSpellTargetUnit()
+      let lvl = t.getAbilityLevel(SPIRIT_PROTECTION_SPELL_ID)
+      let pos = t.getPos()
+      forUnitsInRange(pos, 200) u ->
+        if u.getOwner() == t.getOwner()
+          InstantDummyCaster.castTarget(t.getOwner(), SPIRIT_PROTECTION_DUMMY_ID, 1, OrderIds.innerfire, u, u.getPos())
+          u.addAbility(SPIRIT_PROTECTION_ID)
+          u.setAbilityLevel(SPIRIT_PROTECTION_ID, lvl)
+          doAfter(17) ->
+            if u.isAlive()
+              u.removeAbility(SPIRIT_PROTECTION_ID)
