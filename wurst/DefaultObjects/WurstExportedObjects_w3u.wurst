@@ -25293,7 +25293,7 @@ import ObjEditingNatives
 	..setUnreal("ubs1", 0.56)
 	..setUnreal("udp1", 0.5)
 	..setString("ua1t", "chaos")
-	..setUnreal("ua1c", 1.5)
+	..setUnreal("ua1c", 1.25)
 	..setInt("ua1b", 449)
 	..setInt("ua1s", 91)
 	..setInt("ua1d", 1)
