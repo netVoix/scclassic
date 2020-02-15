@@ -6895,7 +6895,7 @@ set AB[1]='R04I'
 set WX[1]='R028'
 set GR[1]='narg'
 set ZB[1]='hspt'
-set TR[1]=11
+set TR[1]=12
 set KR[1]='nfv4'
 set KR[2]='nfv1'
 set KR[3]='nfv2'
@@ -6907,7 +6907,7 @@ set KR[8]='nef7'
 set KR[9]='ncb4'
 set KR[$A]='ncb5'
 set KR[$B]='ncb6'
-// set KR[12]='hatw'
+set KR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BGD())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -6962,7 +6962,7 @@ set AB[2]='R04I'
 set WX[2]='R028'
 set GR[2]='narg'
 set ZB[2]='hspt'
-set TR[2]=11
+set TR[2]=12
 set LR[1]='nfv4'
 set LR[2]='nfv1'
 set LR[3]='nfv2'
@@ -6974,7 +6974,7 @@ set LR[8]='nef7'
 set LR[9]='ncb4'
 set LR[$A]='ncb5'
 set LR[$B]='ncb6'
-// set LR[12]='hatw'
+set LR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BOD())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -7029,7 +7029,7 @@ set AB[3]='R04I'
 set WX[3]='R028'
 set GR[3]='narg'
 set ZB[3]='hspt'
-set TR[3]=11
+set TR[3]=12
 set MR[1]='nfv4'
 set MR[2]='nfv1'
 set MR[3]='nfv2'
@@ -7041,7 +7041,7 @@ set MR[8]='nef7'
 set MR[9]='ncb4'
 set MR[$A]='ncb5'
 set MR[$B]='ncb6'
-// set MR[12]='hatw'
+set MR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BID())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -7096,7 +7096,7 @@ set AB[4]='R04I'
 set WX[4]='R028'
 set GR[4]='narg'
 set ZB[4]='hspt'
-set TR[4]=11
+set TR[4]=12
 set PR[1]='nfv4'
 set PR[2]='nfv1'
 set PR[3]='nfv2'
@@ -7108,7 +7108,7 @@ set PR[8]='nef7'
 set PR[9]='ncb4'
 set PR[$A]='ncb5'
 set PR[$B]='ncb6'
-// set PR[12]='hatw'
+set PR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
 if(BND())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
@@ -59922,14 +59922,14 @@ set P0X=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(P0X,EVENT_PLAYER_UNIT_ATTACKED)
 call TriggerAddCondition(P0X,Condition(function G4J))
 call TriggerAddAction(P0X,function G8J)
-set P3X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(P3X,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(P3X,Condition(function HVJ))
-call TriggerAddAction(P3X,function HEJ)
-set P6X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(P6X,EVENT_PLAYER_UNIT_SPELL_FINISH)
-call TriggerAddCondition(P6X,Condition(function HOJ))
-call TriggerAddAction(P6X,function HFJ)
+// set P3X=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(P3X,EVENT_PLAYER_UNIT_ATTACKED)
+// call TriggerAddCondition(P3X,Condition(function HVJ))
+// call TriggerAddAction(P3X,function HEJ)
+// set P6X=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(P6X,EVENT_PLAYER_UNIT_SPELL_FINISH)
+// call TriggerAddCondition(P6X,Condition(function HOJ))
+// call TriggerAddAction(P6X,function HFJ)
 set P9X=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(P9X,EVENT_PLAYER_UNIT_ATTACKED)
 call TriggerAddCondition(P9X,Condition(function HHJ))

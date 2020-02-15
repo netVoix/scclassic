@@ -1,0 +1,25 @@
+package AssassinsHelpers
+import LinkedList
+// import FlintShadowmore
+import ClosureForGroups
+import Orders
+
+let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg')
+// let data = asList('Hapm', 'Ogrh', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', FLINT_SHADOWMORE_ID)
+
+unit affectedUnit
+
+public function unit.isAssassin() returns bool
+  return data.has(this.getTypeId())
+
+public function unit.tryAttackNearestHeroInRange(real range)
+  affectedUnit = this
+  forNearestUnit(this.getPos(), range, Filter(function isEnemyHero)) x ->
+    if x!=null
+      this.issueTargetOrderById(OrderIds.attack, x)
+
+function isEnemyHero() returns bool
+  let fu = GetFilterUnit()
+  let u = affectedUnit
+  return fu.isType(UNIT_TYPE_HERO) and fu.isEnemyOf(u.getOwner()) and not fu.isType(UNIT_TYPE_DEAD)
+  

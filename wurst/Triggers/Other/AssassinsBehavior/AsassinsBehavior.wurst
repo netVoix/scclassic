@@ -1,0 +1,16 @@
+package AsassinsBehavior
+import AssassinsHelpers
+import RegisterEvents
+
+
+function handleUnit(unit u)
+	if u.isAssassin() and u.getLevel() >= 4
+		u.tryAttackNearestHeroInRange(800)
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+		if not GetTriggerUnit().isType(UNIT_TYPE_HERO) and not GetTriggerUnit().isType(UNIT_TYPE_STRUCTURE) and not GetTriggerUnit().isType(UNIT_TYPE_STUNNED)
+			handleUnit(GetAttacker())
+	
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+		handleUnit(GetSpellAbilityUnit())
