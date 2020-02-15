@@ -61,7 +61,7 @@ timerdialog EE=null
 integer array XE
 integer array OE
 integer array RE
-integer array IE
+integer array IE 
 integer array AE
 integer NE=0
 integer BE=0
@@ -1265,10 +1265,6 @@ trigger I_O=null
 trigger I3O=null
 trigger I7O=null
 trigger AEO=null
-trigger AIO=null
-trigger ACO=null
-trigger AHO=null
-trigger AMO=null
 trigger AUO=null
 trigger AZO=null
 trigger A1O=null
@@ -4235,7 +4231,7 @@ set KR[3]='osld'
 set KR[4]='ofrt'
 set KR[5]='oalt'
 set KR[6]='npgr'
-set KR[7]='owtw'
+set KR[7]='nef7'
 set KR[8]='nef0'
 set KR[9]='ncb0'
 set KR[$A]='ncb1'
@@ -4301,7 +4297,7 @@ set LR[3]='osld'
 set LR[4]='ofrt'
 set LR[5]='oalt'
 set LR[6]='npgr'
-set LR[7]='owtw'
+set LR[7]='nef7'
 set LR[8]='nef0'
 set LR[9]='ncb0'
 set LR[$A]='ncb1'
@@ -4367,7 +4363,7 @@ set MR[3]='osld'
 set MR[4]='ofrt'
 set MR[5]='oalt'
 set MR[6]='npgr'
-set MR[7]='owtw'
+set MR[7]='nef7'
 set MR[8]='nef0'
 set MR[9]='ncb0'
 set MR[$A]='ncb1'
@@ -4433,7 +4429,7 @@ set PR[3]='osld'
 set PR[4]='ofrt'
 set PR[5]='oalt'
 set PR[6]='npgr'
-set PR[7]='owtw'
+set PR[7]='nef7'
 set PR[8]='nef0'
 set PR[9]='ncb0'
 set PR[$A]='ncb1'
@@ -4568,7 +4564,7 @@ set KR[2]='ovln'
 set KR[3]='oshy'
 set KR[4]='nwc1'
 set KR[5]='nwc2'
-set KR[6]='owtw'
+set KR[6]='nef7'
 set KR[7]='ndrb'
 set KR[8]='ocbw'
 set KR[9]='npgf'
@@ -4635,7 +4631,7 @@ set LR[2]='ovln'
 set LR[3]='oshy'
 set LR[4]='nwc1'
 set LR[5]='nwc2'
-set LR[6]='owtw'
+set LR[6]='nef7'
 set LR[7]='ndrb'
 set LR[8]='ocbw'
 set LR[9]='npgf'
@@ -4702,7 +4698,7 @@ set MR[2]='ovln'
 set MR[3]='oshy'
 set MR[4]='nwc1'
 set MR[5]='nwc2'
-set MR[6]='owtw'
+set MR[6]='nef7'
 set MR[7]='ndrb'
 set MR[8]='ocbw'
 set MR[9]='npgf'
@@ -4769,7 +4765,7 @@ set PR[2]='ovln'
 set PR[3]='oshy'
 set PR[4]='nwc1'
 set PR[5]='nwc2'
-set PR[6]='owtw'
+set PR[6]='nef7'
 set PR[7]='ndrb'
 set PR[8]='ocbw'
 set PR[9]='npgf'
@@ -4907,7 +4903,7 @@ set KR[5]='nft1'
 set KR[6]='nmr8'
 set KR[7]='nmr9'
 set KR[8]='nmr0'
-set KR[9]='owtw'
+set KR[9]='nef7'
 set KR[$A]='nef0'
 set KR[$B]='ncbc'
 set KR[$C]='ncbd'
@@ -4973,7 +4969,7 @@ set LR[5]='nft1'
 set LR[6]='nmr8'
 set LR[7]='nmr9'
 set LR[8]='nmr0'
-set LR[9]='owtw'
+set LR[9]='nef7'
 set LR[$A]='nef0'
 set LR[$B]='ncbc'
 set LR[$C]='ncbd'
@@ -5039,7 +5035,7 @@ set MR[5]='nft1'
 set MR[6]='nmr8'
 set MR[7]='nmr9'
 set MR[8]='nmr0'
-set MR[9]='owtw'
+set MR[9]='nef7'
 set MR[$A]='nef0'
 set MR[$B]='ncbc'
 set MR[$C]='ncbd'
@@ -5105,7 +5101,7 @@ set PR[5]='nft1'
 set PR[6]='nmr8'
 set PR[7]='nmr9'
 set PR[8]='nmr0'
-set PR[9]='owtw'
+set PR[9]='nef7'
 set PR[$A]='nef0'
 set PR[$B]='ncbc'
 set PR[$C]='ncbd'
@@ -5240,7 +5236,7 @@ set KR[6]='uzg2'
 set KR[7]='nmra'
 set KR[8]='nmrb'
 set KR[9]='nmrc'
-set KR[$A]='nmrd'
+set KR[$A]='nef7'
 set KR[$B]='nmrf'
 set KR[$C]='ncnt'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffDemon|r!"))
@@ -5306,7 +5302,7 @@ set LR[6]='uzg2'
 set LR[7]='nmra'
 set LR[8]='nmrb'
 set LR[9]='nmrc'
-set LR[$A]='nmrd'
+set LR[$A]='nef7'
 set LR[$B]='nmrf'
 set LR[$C]='ncnt'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffDemon|r!"))
@@ -5372,7 +5368,7 @@ set MR[6]='uzg2'
 set MR[7]='nmra'
 set MR[8]='nmrb'
 set MR[9]='nmrc'
-set MR[$A]='nmrd'
+set MR[$A]='nef7'
 set MR[$B]='nmrf'
 set MR[$C]='ncnt'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffDemon|r!"))
@@ -5438,7 +5434,7 @@ set PR[6]='uzg2'
 set PR[7]='nmra'
 set PR[8]='nmrb'
 set PR[9]='nmrc'
-set PR[$A]='nmrd'
+set PR[$A]='nef7'
 set PR[$B]='nmrf'
 set PR[$C]='ncnt'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffDemon|r!"))
@@ -5575,7 +5571,7 @@ set KR[8]='nfrm'
 set KR[9]='ngni'
 set KR[$A]='ndmg'
 set KR[$B]='uzg2'
-set KR[$C]='nmre'
+set KR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(APD())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -5641,7 +5637,7 @@ set LR[8]='nfrm'
 set LR[9]='ngni'
 set LR[$A]='ndmg'
 set LR[$B]='uzg2'
-set LR[$C]='nmre'
+set LR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(EGD())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -5707,7 +5703,7 @@ set MR[8]='nfrm'
 set MR[9]='ngni'
 set MR[$A]='ndmg'
 set MR[$B]='uzg2'
-set MR[$C]='nmre'
+set MR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(O1D())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -5773,7 +5769,7 @@ set PR[8]='nfrm'
 set PR[9]='ngni'
 set PR[$A]='ndmg'
 set PR[$B]='uzg2'
-set PR[$C]='nmre'
+set PR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(AND())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
@@ -5896,7 +5892,7 @@ set UX[1]='R01Y'
 set AB[1]='R02W'
 set WX[1]='R02B'
 set GR[1]='npfm'
-set TR[1]=11
+set TR[1]=12
 set KR[1]='unp1'
 set KR[2]='unp2'
 set KR[3]='ugol'
@@ -5907,7 +5903,7 @@ set KR[7]='nef5'
 set KR[8]='nef6'
 set KR[9]='uzg2'
 set KR[$A]='negm'
-set KR[$B]='nmrd'
+set KR[$B]='nef7'
 set KR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A8D())then
@@ -5962,7 +5958,7 @@ set UX[2]='R01Y'
 set AB[2]='R02W'
 set WX[2]='R02B'
 set GR[2]='npfm'
-set TR[2]=11
+set TR[2]=12
 set LR[1]='unp1'
 set LR[2]='unp2'
 set LR[3]='ugol'
@@ -5973,7 +5969,7 @@ set LR[7]='nef5'
 set LR[8]='nef6'
 set LR[9]='uzg2'
 set LR[$A]='negm'
-set LR[$B]='nmrd'
+set LR[$B]='nef7'
 set LR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A_D())then
@@ -6028,7 +6024,7 @@ set UX[3]='R01Y'
 set AB[3]='R02W'
 set WX[3]='R02B'
 set GR[3]='npfm'
-set TR[3]=11
+set TR[3]=12
 set MR[1]='unp1'
 set MR[2]='unp2'
 set MR[3]='ugol'
@@ -6039,7 +6035,7 @@ set MR[7]='nef5'
 set MR[8]='nef6'
 set MR[9]='uzg2'
 set MR[$A]='negm'
-set MR[$B]='nmrd'
+set MR[$B]='nef7'
 set MR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A1D())then
@@ -6094,7 +6090,7 @@ set UX[4]='R01Y'
 set AB[4]='R02W'
 set WX[4]='R02B'
 set GR[4]='npfm'
-set TR[4]=11
+set TR[4]=12
 set PR[1]='unp1'
 set PR[2]='unp2'
 set PR[3]='ugol'
@@ -6105,7 +6101,7 @@ set PR[7]='nef5'
 set PR[8]='nef6'
 set PR[9]='uzg2'
 set PR[$A]='negm'
-set PR[$B]='nmrd'
+set PR[$B]='nef7'
 set PR[12]='ushp'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffFel Orc|r!"))
 if(A3D())then
@@ -6241,7 +6237,7 @@ set KR[8]='egol'
 set KR[9]='eaom'
 set KR[$A]='nmr6'
 set KR[$B]='ncbe'
-set KR[$C]='ncbf'
+set KR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNight Elf|r!"))
 if(NKD())then
 call PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
@@ -6307,7 +6303,7 @@ set LR[8]='egol'
 set LR[9]='eaom'
 set LR[$A]='nmr6'
 set LR[$B]='ncbe'
-set LR[$C]='ncbf'
+set LR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNight Elf|r!"))
 if(NAD())then
 call PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
@@ -6373,7 +6369,7 @@ set MR[8]='egol'
 set MR[9]='eaom'
 set MR[$A]='nmr6'
 set MR[$B]='ncbe'
-set MR[$C]='ncbf'
+set MR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNight Elf|r!"))
 if(NBD())then
 call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
@@ -6439,7 +6435,7 @@ set PR[8]='egol'
 set PR[9]='eaom'
 set PR[$A]='nmr6'
 set PR[$B]='ncbe'
-set PR[$C]='ncbf'
+set PR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNight Elf|r!"))
 if(NDD())then
 call PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
@@ -6574,7 +6570,7 @@ set KR[7]='nshp'
 set KR[8]='nmrk'
 set KR[9]='nfv3'
 set KR[$A]='nfv0'
-set KR[$B]='ngob'
+set KR[$B]='nef7'
 set KR[$C]='nct1'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNaga|r!"))
 if(N5D())then
@@ -6641,7 +6637,7 @@ set LR[7]='nshp'
 set LR[8]='nmrk'
 set LR[9]='nfv3'
 set LR[$A]='nfv0'
-set LR[$B]='ngob'
+set LR[$B]='nef7'
 set LR[$C]='nct1'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNaga|r!"))
 if(NWD())then
@@ -6708,7 +6704,7 @@ set MR[7]='nshp'
 set MR[8]='nmrk'
 set MR[9]='nfv3'
 set MR[$A]='nfv0'
-set MR[$B]='ngob'
+set MR[$B]='nef7'
 set MR[$C]='nct1'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNaga|r!"))
 if(NZD())then
@@ -6775,7 +6771,7 @@ set PR[7]='nshp'
 set PR[8]='nmrk'
 set PR[9]='nfv3'
 set PR[$A]='nfv0'
-set PR[$B]='ngob'
+set PR[$B]='nef7'
 set PR[$C]='nct1'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffNaga|r!"))
 if(N0D())then
@@ -38471,49 +38467,26 @@ if(PHK())then
 set XA[1]='R03X'
 set TA[1]=bj_lastCreatedFogModifier
 set RC[1]=true
-if(PGK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
 else
 if(PDK())then
 set XA[2]='R03X'
 set TA[2]=bj_lastCreatedFogModifier
 set RC[2]=true
-if(PCK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
 else
 if(PNK())then
 set XA[3]='R03X'
 set TA[3]=bj_lastCreatedFogModifier
 set RC[3]=true
-if(PAK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
 else
 if(PRK())then
 set XA[4]='R03X'
 set TA[4]=bj_lastCreatedFogModifier
 set RC[4]=true
-if(POK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
 endif
 endif
 endif
 endif
 call RemoveLocation(XO[97])
-endfunction
-function PKK takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='owtw')
 endfunction
 function PLK takes nothing returns boolean
 return(NX[4]=='o00C')
@@ -38539,67 +38512,6 @@ endfunction
 function PWK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
-function PYK takes nothing returns nothing
-call SetUnitScalePercent(GetTriggerUnit(),180.,180.,180.)
-set XO[99]=GetUnitLoc(GetTriggerUnit())
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[99],3500.)
-if(PWK())then
-set XA[1]='R03X'
-set TA[1]=bj_lastCreatedFogModifier
-set RC[1]=true
-if(PUK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
-else
-if(PTK())then
-set XA[2]='R03X'
-set TA[2]=bj_lastCreatedFogModifier
-set RC[2]=true
-if(PSK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
-else
-if(PQK())then
-set XA[3]='R03X'
-set TA[3]=bj_lastCreatedFogModifier
-set RC[3]=true
-if(PPK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
-else
-if(PMK())then
-set XA[4]='R03X'
-set TA[4]=bj_lastCreatedFogModifier
-set RC[4]=true
-if(PLK())then
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-else
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-endif
-endif
-endif
-endif
-endif
-call RemoveLocation(XO[99])
-endfunction
-function PZK takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='nmrd')or(GetUnitTypeId(GetTriggerUnit())=='nmre')
-endfunction
-function P_K takes nothing returns boolean
-return(PZK())
-endfunction
-function P0K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='nmre')
-endfunction
-function P1K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='nmrd')
-endfunction
 function P2K takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)
 endfunction
@@ -38611,45 +38523,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function P5K takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function P6K takes nothing returns nothing
-if(P1K())then
-call SetUnitScalePercent(GetTriggerUnit(),220.,220.,220.)
-else
-if(P0K())then
-call SetUnitScalePercent(GetTriggerUnit(),130.,130.,130.)
-endif
-endif
-call SetPlayerTechResearchedSwap('Rnsi',4,GetOwningPlayer(GetTriggerUnit()))
-set XO['d']=GetUnitLoc(GetTriggerUnit())
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO['d'],3500.)
-if(P5K())then
-set XA[1]='R03X'
-set TA[1]=bj_lastCreatedFogModifier
-set RC[1]=true
-else
-if(P4K())then
-set XA[2]='R03X'
-set TA[2]=bj_lastCreatedFogModifier
-set RC[2]=true
-else
-if(P3K())then
-set XA[3]='R03X'
-set TA[3]=bj_lastCreatedFogModifier
-set RC[3]=true
-else
-if(P2K())then
-set XA[4]='R03X'
-set TA[4]=bj_lastCreatedFogModifier
-set RC[4]=true
-endif
-endif
-endif
-endif
-call RemoveLocation(XO['d'])
-endfunction
-function P7K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='ncbf')
 endfunction
 function P8K takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)
@@ -38663,39 +38536,6 @@ endfunction
 function QEK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
-function QXK takes nothing returns nothing
-call SetUnitScalePercent(GetTriggerUnit(),110.,110.,110.)
-call SetPlayerTechResearchedSwap('Rnsi',5,GetOwningPlayer(GetTriggerUnit()))
-set XO[98]=GetUnitLoc(GetTriggerUnit())
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[98],3500.)
-if(QEK())then
-set XA[1]='R03X'
-set TA[1]=bj_lastCreatedFogModifier
-set RC[1]=true
-else
-if(QVK())then
-set XA[2]='R03X'
-set TA[2]=bj_lastCreatedFogModifier
-set RC[2]=true
-else
-if(P9K())then
-set XA[3]='R03X'
-set TA[3]=bj_lastCreatedFogModifier
-set RC[3]=true
-else
-if(P8K())then
-set XA[4]='R03X'
-set TA[4]=bj_lastCreatedFogModifier
-set RC[4]=true
-endif
-endif
-endif
-endif
-call RemoveLocation(XO[98])
-endfunction
-function QOK takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='ngob')
-endfunction
 function QRK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)
 endfunction
@@ -38707,36 +38547,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function QNK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function QBK takes nothing returns nothing
-call SetUnitScalePercent(GetTriggerUnit(),250.,250.,250.)
-call SetPlayerTechResearchedSwap('Rnsi',6,GetOwningPlayer(GetTriggerUnit()))
-set XO['e']=GetUnitLoc(GetTriggerUnit())
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO['e'],3500.)
-if(QNK())then
-set XA[1]='R03X'
-set TA[1]=bj_lastCreatedFogModifier
-set RC[1]=true
-else
-if(QAK())then
-set XA[2]='R03X'
-set TA[2]=bj_lastCreatedFogModifier
-set RC[2]=true
-else
-if(QIK())then
-set XA[3]='R03X'
-set TA[3]=bj_lastCreatedFogModifier
-set RC[3]=true
-else
-if(QRK())then
-set XA[4]='R03X'
-set TA[4]=bj_lastCreatedFogModifier
-set RC[4]=true
-endif
-endif
-endif
-endif
-call RemoveLocation(XO['e'])
 endfunction
 function QCK takes nothing returns boolean
 return(GetSpellAbilityId()=='A0HW')and(GetTriggerUnit()==BR)
@@ -60697,22 +60507,6 @@ set AEO=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(AEO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
 call TriggerAddCondition(AEO,Condition(function PEK))
 call TriggerAddAction(AEO,function PJK)
-set AIO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(AIO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(AIO,Condition(function PKK))
-call TriggerAddAction(AIO,function PYK)
-set ACO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(ACO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(ACO,Condition(function P_K))
-call TriggerAddAction(ACO,function P6K)
-set AHO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(AHO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(AHO,Condition(function P7K))
-call TriggerAddAction(AHO,function QXK)
-set AMO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(AMO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(AMO,Condition(function QOK))
-call TriggerAddAction(AMO,function QBK)
 set AUO=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(AUO,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(AUO,Condition(function QCK))

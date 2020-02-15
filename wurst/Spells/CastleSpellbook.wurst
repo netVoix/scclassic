@@ -1,0 +1,22 @@
+package CastleSpellbook
+
+import AbilityObjEditing
+import ObjectIds
+import AntiheroDamageReduction
+import RegisterEvents
+
+public let CASTLE_SPELLBOOK_ID = 'A0CV'
+
+@compiletime function createCastleSpellbook()
+    new AbilityDefinitionSpellBook(CASTLE_SPELLBOOK_ID)
+    ..setLevels(5)
+    ..presetMaximumSpells(lvl -> 11)
+    ..presetMinimumSpells(lvl -> 11)
+    ..presetSharedSpellCooldown(lvl -> false)
+    ..presetSpellList(lvl -> ANTIHERO_DAMAGE_REDUCTION_ID.toRawCode())
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        let u = GetTriggerUnit()
+        if (u.hasAbility(CASTLE_SPELLBOOK_ID))
+            u.getOwner().setAbilityAvailable(CASTLE_SPELLBOOK_ID, true)
