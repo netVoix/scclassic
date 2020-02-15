@@ -1,0 +1,45 @@
+package ManaSteal
+
+import ObjEditingNatives
+
+public let MANA_STEAL_PICK_ID = 'A0R2'
+public let MANA_STEAL_ID = 'ACsm'
+
+@compiletime function create_w3a_A0R2()
+	createObjectDefinition("w3a", MANA_STEAL_PICK_ID, 'ANcl')
+	..setLvlDataString("anam", 0, 0, "Steal Mana UW")
+	..setLvlDataInt("alev", 0, 0, 1)
+	..setLvlDataInt("aher", 0, 0, 0)
+	..setLvlDataString("ahky", 0, 0, "S")
+	..setLvlDataString("acat", 0, 0, "")
+	..setLvlDataString("acap", 0, 0, "")
+	..setLvlDataString("aeat", 0, 0, "")
+	..setLvlDataString("atat", 0, 0, "")
+	..setLvlDataString("ata0", 0, 0, "")
+	..setLvlDataUnreal("Ncl1", 1, 1, 0.98)
+	..setLvlDataInt("Ncl3", 1, 3, 17)
+	..setLvlDataUnreal("acdn", 1, 0, 1.0)
+	..setLvlDataInt("Ncl5", 1, 5, 0)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Effect:|r drains 1 MP/s for 90s |n|cffffcc00Target:|r One building |n|cffffcc00Mana Cost:|r 5 |n|cffffcc00Cooldown:|r 180 seconds")
+	..setLvlDataString("atp1", 1, 0, "Mana Steal [|cffffcc00S|r]")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNManaBreathe.blp")
+	..setLvlDataString("Ncl6", 1, 6, "defend")
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataInt("abpx", 0, 0, 1)
+	..setLvlDataString("areq", 0, 0, "R043,R044,R04R,R04S,R04T")
+	..setLvlDataString("arqa", 0, 0, "6,6,6,4,3")
+
+@compiletime function create_w3a_ACsm()
+	createObjectDefinition("w3a", MANA_STEAL_ID, 'ACsm')
+	..setLvlDataString("ahky", 0, 0, "C")
+	..setLvlDataInt("amcs", 1, 0, 5)
+	..setLvlDataString("atar", 1, 0, "enemies,ground,mechanical,structure")
+	..setLvlDataString("atp1", 1, 0, "Siphon Mana [|cffffcc00C|r]")
+	..setLvlDataString("aub1", 1, 0, "Drains 1 mana per second. |nLasts 90 seconds. |n|cffc3dbffCooldown:|r 180 seconds.")
+	..setLvlDataUnreal("aare", 1, 0, 99999.0)
+	..setLvlDataUnreal("aran", 1, 0, 99999.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 90.0)
+	..setLvlDataUnreal("adur", 1, 0, 90.0)
+	..setLvlDataUnreal("acdn", 1, 0, 180.0)
+	..setLvlDataUnreal("Ndr2", 1, 2, 1.0)
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNManaBreathe.blp")

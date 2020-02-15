@@ -1,0 +1,6 @@
+package Filters
+
+function isStruct() returns bool
+    return GetFilterUnit().isType(UNIT_TYPE_STRUCTURE)
+
+public let isStructFilter = Filter(function isStruct)

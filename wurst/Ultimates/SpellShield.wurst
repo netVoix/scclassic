@@ -1,0 +1,47 @@
+package SpellShield
+
+import ObjEditingNatives
+
+public let SPELL_SHIELD_PICK_ID = 'A0SF'
+public let SPELL_SHIELD_ID = 'Awrh'
+
+@compiletime function create_w3a_A0SF()
+    createObjectDefinition("w3a", SPELL_SHIELD_PICK_ID, 'ANcl')
+    ..setLvlDataString("anam", 0, 0, "UW Shield UW")
+    ..setLvlDataInt("alev", 0, 0, 1)
+    ..setLvlDataInt("aher", 0, 0, 0)
+    ..setLvlDataString("ahky", 0, 0, "F")
+    ..setLvlDataString("acat", 0, 0, "")
+    ..setLvlDataString("acap", 0, 0, "")
+    ..setLvlDataString("aeat", 0, 0, "")
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("ata0", 0, 0, "")
+    ..setLvlDataUnreal("Ncl1", 1, 1, 0.98)
+    ..setLvlDataInt("Ncl3", 1, 3, 17)
+    ..setLvlDataUnreal("acdn", 1, 0, 1.0)
+    ..setLvlDataInt("Ncl5", 1, 5, 0)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Effect:|r blocks 5000 spell damage |n|cffffcc00Duration:|r 120 seconds |n|cffffcc00Target:|r All your buildings |n|cffffcc00Mana Cost:|r 30 |n|cffffcc00Cooldown:|r 240 seconds")
+    ..setLvlDataString("atp1", 1, 0, "Spell Shield [|cffffcc00F|r]")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNShieldUW.blp")
+    ..setLvlDataString("Ncl6", 1, 6, "disenchant")
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataInt("abpx", 0, 0, 3)
+    ..setLvlDataString("areq", 0, 0, "R043,R044,R04R,R04S,R04T")
+    ..setLvlDataString("arqa", 0, 0, "2,2,2,2,1")
+    
+@compiletime function create_w3a_Awrh()
+    createObjectDefinition("w3a", SPELL_SHIELD_ID, 'Awrh')
+    ..setLvlDataString("ahky", 0, 0, "C")
+    ..setLvlDataString("anam", 0, 0, "Spell Shield")
+    ..setLvlDataString("atp1", 1, 0, "Spell Shield [|cffffcc00C|r]")
+    ..setLvlDataUnreal("aare", 1, 0, 10.0)
+    ..setLvlDataUnreal("acdn", 1, 0, 240.0)
+    ..setLvlDataUnreal("ahdu", 1, 0, 0.0)
+    ..setLvlDataUnreal("adur", 1, 0, 0.0)
+    ..setLvlDataString("atar", 1, 0, "enemies,ground")
+    ..setLvlDataInt("amcs", 1, 0, 30)
+    ..setLvlDataUnreal("Wrs1", 1, 1, 0.0)
+    ..setLvlDataString("acat", 0, 0, "")
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNShieldUW.blp")
+    ..setLvlDataString("aub1", 1, 0, "Blocks 5000 spell damage. |nAffects all buildings for 120 seconds. |n|cffc3dbffCooldown:|r 240 seconds.")
