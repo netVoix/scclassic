@@ -5432,8 +5432,8 @@ import ObjEditingNatives
 	..setLvlDataInt("gtib", 0, 0, 30)
 	..setLvlDataInt("gtim", 0, 0, 5)
 	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNNoHero.blp")
-	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n+20% damage reduction  |n+2250 Aura range")
-	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n+20% damage reduction  |n+2250 Aura range")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n+20% damage reduction  |n+1000 Aura range")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n+20% damage reduction  |n+1000 Aura range")
 	..setLvlDataString("gtp1", 1, 0, "Fuck Heroes! [|cffffcc00Q|r]")
 	..setLvlDataString("gtp1", 2, 0, "Fuck Heroes! [|cffffcc00Q|r]")
 
