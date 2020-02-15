@@ -20900,7 +20900,7 @@ import ObjEditingNatives
 	..setString("ua1m", "")
 	..setInt("ua1s", 91)
 	..setInt("ua1d", 1)
-	..setUnreal("ua1c", 1.75)
+	..setUnreal("ua1c", 1.25)
 	..setInt("ua1b", 499)
 	..setInt("ua1f", 0)
 	..setInt("ua1q", 0)
