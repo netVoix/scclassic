@@ -52726,7 +52726,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3a_Adda()
 	createObjectDefinition("w3a", 'Adda', 'Adda')
-	..setLvlDataUnreal("Dda2", 1, 2, 100.0)
+	..setLvlDataUnreal("Dda2", 1, 2, 80.0)
 	..setLvlDataUnreal("Dda1", 1, 1, 300.0)
 	..setLvlDataUnreal("Dda4", 1, 4, 1.0)
 	..setLvlDataUnreal("Dda3", 1, 3, 300.0)
