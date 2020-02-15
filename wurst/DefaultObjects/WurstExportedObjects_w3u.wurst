@@ -6479,7 +6479,7 @@ import ObjEditingNatives
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "nef3,nef4,negm,nef5,nef6,nef2,ugol,unp2,ushp,uzg2,unp1,nmrd")
+	..setString("uupt", "nef3,nef4,negm,nef5,nef6,nef2,ugol,unp2,ushp,uzg2,unp1,nef7")
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
