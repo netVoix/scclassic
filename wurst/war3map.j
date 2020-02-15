@@ -1264,7 +1264,6 @@ trigger IUO=null
 trigger I_O=null
 trigger I3O=null
 trigger I7O=null
-trigger AEO=null
 trigger AUO=null
 trigger AZO=null
 trigger A1O=null
@@ -38420,9 +38419,6 @@ call IssueImmediateOrderById(FR,LR[GetRandomInt(1,TR[2])])
 call IssueImmediateOrderById(CR,MR[GetRandomInt(1,TR[3])])
 call IssueImmediateOrderById(DR,PR[GetRandomInt(1,TR[4])])
 endfunction
-function PEK takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='nef7')
-endfunction
 function PXK takes nothing returns boolean
 return(NX[4]=='o006')or(NX[4]=='o008')
 endfunction
@@ -38458,35 +38454,6 @@ return(PFK())
 endfunction
 function PHK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function PJK takes nothing returns nothing
-call SetUnitScalePercent(GetTriggerUnit(),200.,200.,200.)
-set XO[97]=GetUnitLoc(GetTriggerUnit())
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,XO[97],3500.)
-if(PHK())then
-set XA[1]='R03X'
-set TA[1]=bj_lastCreatedFogModifier
-set RC[1]=true
-else
-if(PDK())then
-set XA[2]='R03X'
-set TA[2]=bj_lastCreatedFogModifier
-set RC[2]=true
-else
-if(PNK())then
-set XA[3]='R03X'
-set TA[3]=bj_lastCreatedFogModifier
-set RC[3]=true
-else
-if(PRK())then
-set XA[4]='R03X'
-set TA[4]=bj_lastCreatedFogModifier
-set RC[4]=true
-endif
-endif
-endif
-endif
-call RemoveLocation(XO[97])
 endfunction
 function PLK takes nothing returns boolean
 return(NX[4]=='o00C')
@@ -60503,10 +60470,6 @@ call TriggerAddAction(I3O,function M9K)
 set I7O=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(I7O,SR)
 call TriggerAddAction(I7O,function PVK)
-set AEO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(AEO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(AEO,Condition(function PEK))
-call TriggerAddAction(AEO,function PJK)
 set AUO=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(AUO,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(AUO,Condition(function QCK))
@@ -60523,22 +60486,6 @@ set A4O=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(A4O,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(A4O,Condition(function QKK))
 call TriggerAddAction(A4O,function QLK)
-set A7O=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(A7O,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-call TriggerAddCondition(A7O,Condition(function QMK))
-call TriggerAddAction(A7O,function QSK)
-set NVO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(NVO,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-call TriggerAddCondition(NVO,Condition(function QTK))
-call TriggerAddAction(NVO,function QYK)
-set NOO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(NOO,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-call TriggerAddCondition(NOO,Condition(function QZK))
-call TriggerAddAction(NOO,function Q1K)
-set NAO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(NAO,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-call TriggerAddCondition(NAO,Condition(function Q2K))
-call TriggerAddAction(NAO,function Q5K)
 set NDO=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(NDO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
 call TriggerAddCondition(NDO,Condition(function Q7K))

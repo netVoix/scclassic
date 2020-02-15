@@ -13,10 +13,30 @@ public let CASTLE_SPELLBOOK_ID = 'A0CV'
     ..presetMaximumSpells(lvl -> 11)
     ..presetMinimumSpells(lvl -> 11)
     ..presetSharedSpellCooldown(lvl -> false)
-    ..presetSpellList(lvl -> ANTIHERO_DAMAGE_REDUCTION_ID.toRawCode())
+    ..presetSpellList(lvl -> commaList(ANTIHERO_DAMAGE_REDUCTION_ID))
+
+let castles = [X, O, R, I]
 
 init
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         let u = GetTriggerUnit()
+        let p = GetTriggerPlayer()
         if (u.hasAbility(CASTLE_SPELLBOOK_ID))
-            u.getOwner().setAbilityAvailable(CASTLE_SPELLBOOK_ID, true)
+            let rlvl = GetPlayerTechCountSimple(ANTIHERO_DAMAGE_REDUCTION_UPGRADE_ID, p)
+            u.removeAbility(CASTLE_SPELLBOOK_ID)
+            u.addAbility(CASTLE_SPELLBOOK_ID)
+            u.setAbilityLevel(ANTIHERO_DAMAGE_REDUCTION_ID, rlvl + 1)
+            u.getOwner().setAbilityAvailable(CASTLE_SPELLBOOK_ID, false)
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+        let r = GetResearched()
+        let p = GetTriggerPlayer()
+        if r == ANTIHERO_DAMAGE_REDUCTION_UPGRADE_ID
+            let rlvl = GetPlayerTechCountSimple(r, p)
+            for i = 0 to 3
+                if castles[i].getOwner() == p
+                    castles[i].setAbilityLevel(ANTIHERO_DAMAGE_REDUCTION_ID, rlvl + 1)
+
+
+
+    
