@@ -3884,7 +3884,7 @@ set AB[1]='R04K'
 set WX[1]='R024'
 set GR[1]='ngsp'
 set ZB[1]='nftr'
-set TR[1]=10
+set TR[1]=11
 set KR[1]='hlum'
 set KR[2]='ndh0'
 set KR[3]='hcas'
@@ -3895,7 +3895,7 @@ set KR[7]='nef0'
 set KR[8]='nmr4'
 set KR[9]='nmr5'
 set KR[$A]='nef7'
-// set KR[11]='nefm'
+set KR[11]='nefm'
 // set KR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(GMC())then
@@ -3952,7 +3952,7 @@ set AB[2]='R04K'
 set WX[2]='R024'
 set GR[2]='ngsp'
 set ZB[2]='nftr'
-set TR[2]=10
+set TR[2]=11
 set LR[1]='hlum'
 set LR[2]='ndh0'
 set LR[3]='hcas'
@@ -3963,7 +3963,7 @@ set LR[7]='nef0'
 set LR[8]='nmr4'
 set LR[9]='nmr5'
 set LR[$A]='nef7'
-// set LR[11]='nefm'
+set LR[11]='nefm'
 // set LR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(BHC())then
@@ -4020,7 +4020,7 @@ set AB[3]='R04K'
 set WX[3]='R024'
 set GR[3]='ngsp'
 set ZB[3]='nftr'
-set TR[3]=10
+set TR[3]=11
 set MR[1]='hlum'
 set MR[2]='ndh0'
 set MR[3]='hcas'
@@ -4031,7 +4031,7 @@ set MR[7]='nef0'
 set MR[8]='nmr4'
 set MR[9]='nmr5'
 set MR[$A]='nef7'
-// set MR[11]='nefm'
+set MR[11]='nefm'
 // set MR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(C0C())then
@@ -4088,7 +4088,7 @@ set AB[4]='R04K'
 set WX[4]='R024'
 set GR[4]='ngsp'
 set ZB[4]='nftr'
-set TR[4]=10
+set TR[4]=11
 set PR[1]='hlum'
 set PR[2]='ndh0'
 set PR[3]='hcas'
@@ -4099,7 +4099,7 @@ set PR[7]='nef0'
 set PR[8]='nmr4'
 set PR[9]='nmr5'
 set PR[$A]='nef7'
-// set PR[11]='nefm'
+set PR[11]='nefm'
 // set PR[12]='hkee'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffGoblin|r!"))
 if(DKC())then
