@@ -20970,62 +20970,14 @@ endfunction
 function H8G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function H9G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function JVG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function JEG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function JXG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function JOG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function JRG takes nothing returns nothing
-if(H6G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0OH')
-endif
-if(H7G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0OG')
-endif
-if(H8G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0MB')
-endif
-if(H9G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0PP')
-endif
-if(JVG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(JEG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(JXG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'A0R5')
-endif
-if(JOG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OA')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function JAG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21036,62 +20988,14 @@ endfunction
 function JBG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function JCG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function JDG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function JFG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function JGG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function JHG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function JJG takes nothing returns nothing
-if(JAG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0OL')
-endif
-if(JNG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0OK')
-endif
-if(JBG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0MC')
-endif
-if(JCG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0PS')
-endif
-if(JDG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(JFG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(JGG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'A0R8')
-endif
-if(JHG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OI')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function JLG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21102,62 +21006,14 @@ endfunction
 function JPG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function JQG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function JSG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function JTG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function JUG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function JWG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function JYG takes nothing returns nothing
-if(JLG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0OP')
-endif
-if(JMG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0OO')
-endif
-if(JPG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0ME')
-endif
-if(JQG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0PR')
-endif
-if(JSG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(JTG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(JUG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'A0RA')
-endif
-if(JWG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OJ')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function J_G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21168,62 +21024,14 @@ endfunction
 function J1G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function J2G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function J3G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function J4G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function J5G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function J6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function J7G takes nothing returns nothing
-if(J_G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0OT')
-endif
-if(J0G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0OS')
-endif
-if(J1G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0MD')
-endif
-if(J2G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0PT')
-endif
-if(J3G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(J4G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(J5G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'A0R5')
-endif
-if(J6G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OW')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function J9G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21234,159 +21042,14 @@ endfunction
 function KEG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function KXG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function KOG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function KRG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function KIG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function KAG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function KNG takes nothing returns nothing
-local player p = GetTriggerPlayer()
-if(J9G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0P0')
-if p == P then
-set TB[1] = 'A0P0'  
-endif
-if p == S then
-set TB[2] = 'A0P0'  
-endif
-if p == Q then
-set TB[3] = 'A0P0'  
-endif
-if p == T then
-set TB[4] = 'A0P0'  
-endif
-endif
-if(KVG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0OZ')
-if p == P then
-set TB[1] = 'A0OZ'  
-endif
-if p == S then
-set TB[2] = 'A0OZ'  
-endif
-if p == Q then
-set TB[3] = 'A0OZ'  
-endif
-if p == T then
-set TB[4] = 'A0OZ'  
-endif
-endif
-if(KEG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0MF')
-if p == P then
-set TB[1] = 'A0MF'  
-endif
-if p == S then
-set TB[2] = 'A0MF'  
-endif
-if p == Q then
-set TB[3] = 'A0MF'  
-endif
-if p == T then
-set TB[4] = 'A0MF'  
-endif
-endif
-if(KXG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0PU')
-if p == P then
-set TB[1] = 'A0PU'  
-endif
-if p == S then
-set TB[2] = 'A0PU'  
-endif
-if p == Q then
-set TB[3] = 'A0PU'  
-endif
-if p == T then
-set TB[4] = 'A0PU'  
-endif
-endif
-if(KOG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-if p == P then
-set TB[1] = 'A0QV'  
-endif
-if p == S then
-set TB[2] = 'A0QV'  
-endif
-if p == Q then
-set TB[3] = 'A0QV'  
-endif
-if p == T then
-set TB[4] = 'A0QV'  
-endif
-endif
-if(KRG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-if p == P then
-set TB[1] = 'ACsm'  
-endif
-if p == S then
-set TB[2] = 'ACsm'  
-endif
-if p == Q then
-set TB[3] = 'ACsm'  
-endif
-if p == T then
-set TB[4] = 'ACsm'  
-endif
-endif
-if(KIG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'A0R9')
-if p == P then
-set TB[1] = 'A0R9'  
-endif
-if p == S then
-set TB[2] = 'A0R9'  
-endif
-if p == Q then
-set TB[3] = 'A0R9'  
-endif
-if p == T then
-set TB[4] = 'A0R9'  
-endif
-endif
-if(KAG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OX')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-if p == P then
-set TB[1] = 'Awrh'  
-endif
-if p == S then
-set TB[2] = 'Awrh'  
-endif
-if p == Q then
-set TB[3] = 'Awrh'  
-endif
-if p == T then
-set TB[4] = 'Awrh'  
-endif
-endif
 endfunction
 function KCG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21397,62 +21060,14 @@ endfunction
 function KFG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function KGG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function KHG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function KJG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function KKG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function KLG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function KMG takes nothing returns nothing
-if(KCG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0P4')
-endif
-if(KDG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0P3')
-endif
-if(KFG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0MG')
-endif
-if(KGG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0PV')
-endif
-if(KHG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(KJG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(KKG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'A0R9')
-endif
-if(KLG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0OY')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function KQG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21463,62 +21078,14 @@ endfunction
 function KTG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function KUG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function KWG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function KYG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function KZG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function K_G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function K0G takes nothing returns nothing
-if(KQG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0PE')
-endif
-if(KSG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0PD')
-endif
-if(KTG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0MH')
-endif
-if(KUG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0PW')
-endif
-if(KWG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(KYG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(KZG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'A0R7')
-endif
-if(K_G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P8')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function K2G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
@@ -21529,62 +21096,14 @@ endfunction
 function K4G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function K5G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function K6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function K7G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function K8G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function K9G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function LVG takes nothing returns nothing
-if(K2G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0PF')
-endif
-if(K3G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0PG')
-endif
-if(K4G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0MI')
-endif
-if(K5G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0PX')
-endif
-if(K6G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(K7G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(K8G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'A0RA')
-endif
-if(K9G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P7')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function LEG takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='o00R')
@@ -21598,62 +21117,14 @@ endfunction
 function LRG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function LIG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function LAG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function LNG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function LBG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function LCG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function LDG takes nothing returns nothing
-if(LXG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0PH')
-endif
-if(LOG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0PI')
-endif
-if(LRG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0MJ')
-endif
-if(LIG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0PY')
-endif
-if(LAG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(LNG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(LBG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'A0RA')
-endif
-if(LCG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0P9')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function LFG takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='e000')
@@ -21667,62 +21138,14 @@ endfunction
 function LJG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function LKG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function LLG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function LMG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function LPG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function LQG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function LSG takes nothing returns nothing
-if(LGG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0PK')
-endif
-if(LHG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0PJ')
-endif
-if(LJG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0MK')
-endif
-if(LKG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0PZ')
-endif
-if(LLG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(LMG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(LPG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'A0R5')
-endif
-if(LQG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PA')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function LTG takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='o00S')
@@ -21736,62 +21159,14 @@ endfunction
 function LYG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OD')
 endfunction
-function LZG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
-endfunction
 function L_G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function L0G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function L1G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function L2G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function L3G takes nothing returns nothing
-if(LUG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0PM')
-endif
-if(LWG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0PL')
-endif
-if(LYG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0ML')
-endif
-if(LZG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0Q0')
-endif
-if(L_G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(L0G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(L1G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'A0R5')
-endif
-if(L2G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PB')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function L4G takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='o00V')
@@ -21803,64 +21178,16 @@ function L6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OC')
 endfunction
 function L7G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0OD')
-endfunction
-function L8G takes nothing returns boolean
-return(GetSpellAbilityId()=='A0PQ')
+return(GetSpellAbilityId()=='A0OD') 
 endfunction
 function L9G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0QW')
-endfunction
-function MVG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0R2')
 endfunction
 function MEG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0R6')
 endfunction
 function MXG takes nothing returns boolean
 return(GetSpellAbilityId()=='A0SF')
-endfunction
-function MOG takes nothing returns nothing
-if(L5G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0PO')
-endif
-if(L6G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0PN')
-endif
-if(L7G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0MM')
-endif
-if(L8G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0Q1')
-endif
-if(L9G())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0QV')
-endif
-if(MVG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'ACsm')
-endif
-if(MEG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'A0R5')
-endif
-if(MXG())then
-call DisableTrigger(GetTriggeringTrigger())
-call UnitRemoveAbility(GetTriggerUnit(),'A0PC')
-call UnitAddAbility(GetTriggerUnit(),'Awrh')
-endif
 endfunction
 function MRG takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='o003')or(GetUnitTypeId(GetTriggerUnit())=='o004')
@@ -30722,15 +30049,6 @@ endloop
 call TriggerSleepAction(.3)
 call RemoveLocation(OO[7])
 endfunction
-function NUJ takes nothing returns boolean
-return(GetSpellAbilityId()=='A0ML')or(GetSpellAbilityId()=='A0PL')or(GetSpellAbilityId()=='A0PM')or(GetSpellAbilityId()=='A0Q0')
-endfunction
-function NWJ takes nothing returns boolean
-return(NUJ())
-endfunction
-function NYJ takes nothing returns boolean
-return(GetSpellAbilityId()=='A0Q0')
-endfunction
 function NZJ takes nothing returns boolean
 return(GetSpellAbilityId()=='A0PM')
 endfunction
@@ -30751,41 +30069,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function N4J takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function N5J takes nothing returns nothing
-set HB[28]=GetTriggerUnit()
-set HB[29]=GetSpellTargetUnit()
-if(N0J())then
-set IB[8]=1
-else
-if(N_J())then
-set IB[8]=2
-else
-if(NZJ())then
-set IB[8]=3
-else
-if(NYJ())then
-set IB[8]=4
-endif
-endif
-endif
-endif
-if(N4J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(N3J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(N2J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(N1J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[20],false,3.)
 endfunction
 function N6J takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
@@ -59529,42 +58812,42 @@ set WQE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(WQE,EVENT_PLAYER_UNIT_ATTACKED)
 call TriggerAddCondition(WQE,Condition(function H3G))
 call TriggerAddAction(WQE,function H4G)
-set WZE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WZE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(WZE,function JRG)
+// set WZE=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(WZE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(WZE,function JRG)
 set W4E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(W4E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(W4E,function JJG)
+// call TriggerRegisterAnyUnitEventBJ(W4E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(W4E,function JJG)
 set YVE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(YVE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(YVE,function JYG)
+// call TriggerRegisterAnyUnitEventBJ(YVE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(YVE,function JYG)
 set YAE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(YAE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(YAE,function J7G)
+// call TriggerRegisterAnyUnitEventBJ(YAE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(YAE,function J7G)
 set YGE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(YGE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(YGE,function KNG)
+// call TriggerRegisterAnyUnitEventBJ(YGE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(YGE,function KNG)
 set YPE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(YPE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(YPE,function KMG)
+// call TriggerRegisterAnyUnitEventBJ(YPE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(YPE,function KMG)
 set YYE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(YYE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(YYE,function K0G)
+// call TriggerRegisterAnyUnitEventBJ(YYE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(YYE,function K0G)
 set Y3E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(Y3E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(Y3E,function LVG)
+// call TriggerRegisterAnyUnitEventBJ(Y3E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(Y3E,function LVG)
 set Y9E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(Y9E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(Y9E,function LDG)
+// call TriggerRegisterAnyUnitEventBJ(Y9E,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(Y9E,function LDG)
 set ZIE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(ZIE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(ZIE,function LSG)
+// call TriggerRegisterAnyUnitEventBJ(ZIE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(ZIE,function LSG)
 set ZFE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(ZFE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(ZFE,function L3G)
-set ZME=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(ZME,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddAction(ZME,function MOG)
+// call TriggerRegisterAnyUnitEventBJ(ZFE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(ZFE,function L3G)
+// set ZME=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(ZME,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddAction(ZME,function MOG)
 set ZWE=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(ZWE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(ZWE,Condition(function MIG))
@@ -59801,10 +59084,11 @@ set JHX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(JHX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(JHX,Condition(function GBH))
 call TriggerAddAction(JHX,function GCH)
-set JLX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(JLX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(JLX,Condition(function GFH))
-call TriggerAddAction(JLX,function GSH)
+// set JLX=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(JLX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddCondition(JLX,Condition(function GFH))
+// call TriggerAddAction(JLX,function GSH)
+
 set JQX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(JQX,FI[$E])
 call TriggerAddAction(JQX,function JKH)
@@ -59887,10 +59171,6 @@ set MPX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(MPX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(MPX,Condition(function NSJ))
 call TriggerAddAction(MPX,function NTJ)
-set MTX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(MTX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(MTX,Condition(function NWJ))
-call TriggerAddAction(MTX,function N5J)
 set MYX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(MYX,FI[20])
 call TriggerAddAction(MYX,function CUJ)
@@ -59899,9 +59179,9 @@ call TriggerRegisterAnyUnitEventBJ(M7X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(M7X,Condition(function CWJ))
 call TriggerAddAction(M7X,function CYJ)
 set PVX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(PVX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(PVX,Condition(function C_J))
-call TriggerAddAction(PVX,function FZJ)
+// call TriggerRegisterAnyUnitEventBJ(PVX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
+// call TriggerAddCondition(PVX,Condition(function C_J))
+// call TriggerAddAction(PVX,function FZJ) 
 set PRX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(PRX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(PRX,Condition(function F_J))

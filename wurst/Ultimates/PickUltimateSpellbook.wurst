@@ -1,4 +1,5 @@
 package PickUltimateSpellbook
+
 import ObjEditingNatives
 
 public let PICK_ULTIMATE_SPELLBOOK_ID = 'A0OA'
