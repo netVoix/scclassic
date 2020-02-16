@@ -2,25 +2,57 @@ package PickUltimate
 
 import RegisterEvents
 import EmergencyRepair
+import HashMap
+import PickUltimateSpellbook
+import FocusedUW
+import GlobalUW
+import ManaCombustion
+import ManaShield
+import ManaSteal
+import OverchargedUW
+import PrecisionUW
+import SpellShield
+
+int array selectedUlt = []
+
+let castles = [X, O, R, I]
+
+let ultMap = new HashMap<int, int>()
+            ..put(EMERGENCY_REPAIR_PICK_ID, EMERGENCY_REPAIR_ID)
+            ..put(FOCUSED_UW_PICK_ID, FOCUSED_UW_ID)
+            ..put(GLOBAL_UW_PICK_ID, GLOBAL_UW_ID)
+            ..put(MANA_COMBUSTION_PICK_ID, MANA_COMBUSTION_ID)
+            ..put(MANA_SHIELD_PICK_ID, MANA_SHIELD_ID)
+            ..put(MANA_STEAL_PICK_ID, MANA_STEAL_ID)
+            ..put(OVERCHARGED_UW_PICK_ID, OVERCHARGED_UW_ID)
+            ..put(PRECISION_UW_PICK_ID, PRECISION_UW_ID)
+            ..put(SPELL_SHIELD_PICK_ID, SPELL_SHIELD_ID)
 
 init
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
-
+        let r = GetResearched()
+        let castle = GetTriggerUnit()
+        let p = castle.getOwner()
+        if r == 'R026'
+            castle.addMana(200)
+        if r == 'R027'
+            CreateFogModifierRectBJ(true, p, FOG_OF_WAR_VISIBLE, bj_mapInitialPlayableArea)
+            castle.addAbility(PICK_ULTIMATE_SPELLBOOK_ID)
+            selectedUlt[p.getId()] = PICK_ULTIMATE_SPELLBOOK_ID
 
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
         let sid = GetSpellAbilityId()
         let castle = GetTriggerUnit()
-        if (sid == EMERGENCY_REPAIR_PICK_ID)
-            castle.removeAbility('A0OA')
-            castle.removeAbility('A0OI')
-            castle.removeAbility('A0OJ')
-            castle.removeAbility('A0OW')
-            castle.removeAbility('A0OX')
-            castle.removeAbility('A0OY')
-            castle.removeAbility('A0P7')
-            castle.removeAbility('A0P8')
-            castle.removeAbility('A0P9')
-            castle.removeAbility('A0PA')
-            castle.removeAbility('A0PB')
-            castle.removeAbility('A0PC')
-            castle.addAbility(EMERGENCY_REPAIR_ID)
+        let pid = castle.getOwner().getId()
+        if ultMap.has(sid)
+            let s = ultMap.get(sid)
+            castle.removeAbility(PICK_ULTIMATE_SPELLBOOK_ID)
+            castle.addAbility(s)
+            selectedUlt[pid] = s
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        let p = GetTriggerPlayer()
+        for i = 0 to 3
+            let u = selectedUlt[p.getId()]
+            if castles[i].getOwner() == p and u != 0
+                castles[i].addAbility(u)
