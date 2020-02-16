@@ -3206,7 +3206,6 @@ set RX[1]='Rhan'
 set IX[1]='Rhfl'
 set UX[1]='R01Q'
 set AB[1]='R04L'
-set WX[1]='R023'
 set GR[1]='nrog'
 set ZB[1]='hmil'
 set TR[1]=$C
@@ -3273,7 +3272,6 @@ set RX[2]='Rhan'
 set IX[2]='Rhfl'
 set UX[2]='R01Q'
 set AB[2]='R04L'
-set WX[2]='R023'
 set GR[2]='nrog'
 set ZB[2]='hmil'
 set TR[2]=$C
@@ -3340,7 +3338,6 @@ set RX[3]='Rhan'
 set IX[3]='Rhfl'
 set UX[3]='R01Q'
 set AB[3]='R04L'
-set WX[3]='R023'
 set GR[3]='nrog'
 set ZB[3]='hmil'
 set TR[3]=$C
@@ -3407,7 +3404,6 @@ set RX[4]='Rhan'
 set IX[4]='Rhfl'
 set UX[4]='R01Q'
 set AB[4]='R04L'
-set WX[4]='R023'
 set GR[4]='nrog'
 set ZB[4]='hmil'
 set TR[4]=$C
@@ -3544,7 +3540,6 @@ set RX[1]='R006'
 set IX[1]='R007'
 set UX[1]='R01R'
 set AB[1]='R03F'
-set WX[1]='R022'
 set GR[1]='nwwg'
 set TR[1]=$C
 set KR[1]='hbla'
@@ -3611,7 +3606,6 @@ set RX[2]='R006'
 set IX[2]='R007'
 set UX[2]='R01R'
 set AB[2]='R03F'
-set WX[2]='R022'
 set GR[2]='nwwg'
 set TR[2]=$C
 set LR[1]='hbla'
@@ -3678,7 +3672,6 @@ set RX[3]='R006'
 set IX[3]='R007'
 set UX[3]='R01R'
 set AB[3]='R03F'
-set WX[3]='R022'
 set GR[3]='nwwg'
 set TR[3]=$C
 set MR[1]='hbla'
@@ -3745,7 +3738,6 @@ set RX[4]='R006'
 set IX[4]='R007'
 set UX[4]='R01R'
 set AB[4]='R03F'
-set WX[4]='R022'
 set GR[4]='nwwg'
 set TR[4]=$C
 set PR[1]='hbla'
@@ -3881,7 +3873,6 @@ set RX[1]='R00E'
 set IX[1]='R008'
 set UX[1]='R01S'
 set AB[1]='R04K'
-set WX[1]='R024'
 set GR[1]='ngsp'
 set ZB[1]='nftr'
 set TR[1]=12
@@ -3949,7 +3940,6 @@ set RX[2]='R00E'
 set IX[2]='R008'
 set UX[2]='R01S'
 set AB[2]='R04K'
-set WX[2]='R024'
 set GR[2]='ngsp'
 set ZB[2]='nftr'
 set TR[2]=12
@@ -4017,7 +4007,6 @@ set RX[3]='R00E'
 set IX[3]='R008'
 set UX[3]='R01S'
 set AB[3]='R04K'
-set WX[3]='R024'
 set GR[3]='ngsp'
 set ZB[3]='nftr'
 set TR[3]=12
@@ -4085,7 +4074,6 @@ set RX[4]='R00E'
 set IX[4]='R008'
 set UX[4]='R01S'
 set AB[4]='R04K'
-set WX[4]='R024'
 set GR[4]='ngsp'
 set ZB[4]='nftr'
 set TR[4]=12
@@ -4221,7 +4209,6 @@ set RX[1]='Robf'
 set IX[1]='R00H'
 set UX[1]='R01T'
 set AB[1]='R04N'
-set WX[1]='R027'
 set GR[1]='osw2'
 set TR[1]=$C
 set KR[1]='obea'
@@ -4287,7 +4274,6 @@ set RX[2]='Robf'
 set IX[2]='R00H'
 set UX[2]='R01T'
 set AB[2]='R04N'
-set WX[2]='R027'
 set GR[2]='osw2'
 set TR[2]=$C
 set LR[1]='obea'
@@ -4353,7 +4339,6 @@ set RX[3]='Robf'
 set IX[3]='R00H'
 set UX[3]='R01T'
 set AB[3]='R04N'
-set WX[3]='R027'
 set GR[3]='osw2'
 set TR[3]=$C
 set MR[1]='obea'
@@ -4419,7 +4404,6 @@ set RX[4]='Robf'
 set IX[4]='R00H'
 set UX[4]='R01T'
 set AB[4]='R04N'
-set WX[4]='R027'
 set GR[4]='osw2'
 set TR[4]=$C
 set PR[1]='obea'
@@ -4554,7 +4538,6 @@ set RX[1]='R00N'
 set IX[1]='R00O'
 set UX[1]='R01U'
 set AB[1]='R02L'
-set WX[1]='R025'
 set GR[1]='nplb'
 set ZB[1]='nitw'
 set TR[1]=12
@@ -4621,7 +4604,6 @@ set RX[2]='R00N'
 set IX[2]='R00O'
 set UX[2]='R01U'
 set AB[2]='R02L'
-set WX[2]='R025'
 set GR[2]='nplb'
 set ZB[2]='nitw'
 set TR[2]=12
@@ -4687,7 +4669,6 @@ set OX[3]='R00M'
 set RX[3]='R00N'
 set IX[3]='R00O'
 set UX[3]='R01U'
-set WX[3]='R025'
 set GR[3]='nplb'
 set ZB[3]='nitw'
 set AB[3]='R02L'
@@ -4754,7 +4735,6 @@ set OX[4]='R00M'
 set RX[4]='R00N'
 set IX[4]='R00O'
 set UX[4]='R01U'
-set WX[4]='R025'
 set GR[4]='nplb'
 set ZB[4]='nitw'
 set AB[4]='R02L'
@@ -4891,7 +4871,6 @@ set RX[1]='R00R'
 set IX[1]='R00V'
 set UX[1]='R01V'
 set AB[1]='R04Q'
-set WX[1]='R026'
 set GR[1]='nspp'
 set TR[1]=$C
 set KR[1]='ogre'
@@ -4957,7 +4936,6 @@ set RX[2]='R00R'
 set IX[2]='R00V'
 set UX[2]='R01V'
 set AB[2]='R04Q'
-set WX[2]='R026'
 set GR[2]='nspp'
 set TR[2]=$C
 set LR[1]='ogre'
@@ -5023,7 +5001,6 @@ set RX[3]='R00R'
 set IX[3]='R00V'
 set UX[3]='R01V'
 set AB[3]='R04Q'
-set WX[3]='R026'
 set GR[3]='nspp'
 set TR[3]=$C
 set MR[1]='ogre'
@@ -5089,7 +5066,6 @@ set RX[4]='R00R'
 set IX[4]='R00V'
 set UX[4]='R01V'
 set AB[4]='R04Q'
-set WX[4]='R026'
 set GR[4]='nspp'
 set TR[4]=$C
 set PR[1]='ogre'
@@ -5223,7 +5199,6 @@ set RX[1]='R010'
 set IX[1]='R011'
 set UX[1]='R01W'
 set AB[1]='R04J'
-set WX[1]='R029'
 set GR[1]='nsts'
 set TR[1]=$C
 set KR[1]='usap'
@@ -5289,7 +5264,6 @@ set RX[2]='R010'
 set IX[2]='R011'
 set UX[2]='R01W'
 set AB[2]='R04J'
-set WX[2]='R029'
 set GR[2]='nsts'
 set TR[2]=$C
 set LR[1]='usap'
@@ -5355,7 +5329,6 @@ set RX[3]='R010'
 set IX[3]='R011'
 set UX[3]='R01W'
 set AB[3]='R04J'
-set WX[3]='R029'
 set GR[3]='nsts'
 set TR[3]=$C
 set MR[1]='usap'
@@ -5421,7 +5394,6 @@ set RX[4]='R010'
 set IX[4]='R011'
 set UX[4]='R01W'
 set AB[4]='R04J'
-set WX[4]='R029'
 set GR[4]='nsts'
 set TR[4]=$C
 set PR[1]='usap'
@@ -5556,7 +5528,6 @@ set RX[1]='R016'
 set IX[1]='R017'
 set UX[1]='R01X'
 set AB[1]='R04H'
-set WX[1]='R02A'
 set GR[1]='nzom'
 set TR[1]=$C
 set KR[1]='uzg1'
@@ -5622,7 +5593,6 @@ set RX[2]='R016'
 set IX[2]='R017'
 set UX[2]='R01X'
 set AB[2]='R04H'
-set WX[2]='R02A'
 set GR[2]='nzom'
 set TR[2]=$C
 set LR[1]='uzg1'
@@ -5688,7 +5658,6 @@ set RX[3]='R016'
 set IX[3]='R017'
 set UX[3]='R01X'
 set AB[3]='R04H'
-set WX[3]='R02A'
 set GR[3]='nzom'
 set TR[3]=$C
 set MR[1]='uzg1'
@@ -5754,7 +5723,6 @@ set RX[4]='R016'
 set IX[4]='R017'
 set UX[4]='R01X'
 set AB[4]='R04H'
-set WX[4]='R02A'
 set GR[4]='nzom'
 set TR[4]=$C
 set PR[1]='uzg1'
@@ -5889,7 +5857,6 @@ set RX[1]='Rusp'
 set IX[1]='R01D'
 set UX[1]='R01Y'
 set AB[1]='R02W'
-set WX[1]='R02B'
 set GR[1]='npfm'
 set TR[1]=12
 set KR[1]='unp1'
@@ -5955,7 +5922,6 @@ set RX[2]='Rusp'
 set IX[2]='R01D'
 set UX[2]='R01Y'
 set AB[2]='R02W'
-set WX[2]='R02B'
 set GR[2]='npfm'
 set TR[2]=12
 set LR[1]='unp1'
@@ -6021,7 +5987,6 @@ set RX[3]='Rusp'
 set IX[3]='R01D'
 set UX[3]='R01Y'
 set AB[3]='R02W'
-set WX[3]='R02B'
 set GR[3]='npfm'
 set TR[3]=12
 set MR[1]='unp1'
@@ -6087,7 +6052,6 @@ set RX[4]='Rusp'
 set IX[4]='R01D'
 set UX[4]='R01Y'
 set AB[4]='R02W'
-set WX[4]='R02B'
 set GR[4]='npfm'
 set TR[4]=12
 set PR[1]='unp1'
@@ -6222,7 +6186,6 @@ set RX[1]='Reec'
 set IX[1]='Rerh'
 set UX[1]='R01Z'
 set AB[1]='Rgfo'
-set WX[1]='R02C'
 set GR[1]='nwat'
 set TR[1]=$C
 set KR[1]='edos'
@@ -6288,7 +6251,6 @@ set RX[2]='Reec'
 set IX[2]='Rerh'
 set UX[2]='R01Z'
 set AB[2]='Rgfo'
-set WX[2]='R02C'
 set GR[2]='nwat'
 set TR[2]=$C
 set LR[1]='edos'
@@ -6354,7 +6316,6 @@ set RX[3]='Reec'
 set IX[3]='Rerh'
 set UX[3]='R01Z'
 set AB[3]='Rgfo'
-set WX[3]='R02C'
 set GR[3]='nwat'
 set TR[3]=$C
 set MR[1]='edos'
@@ -6420,7 +6381,6 @@ set RX[4]='Reec'
 set IX[4]='Rerh'
 set UX[4]='R01Z'
 set AB[4]='Rgfo'
-set WX[4]='R02C'
 set GR[4]='nwat'
 set TR[4]=$C
 set PR[1]='edos'
@@ -6555,7 +6515,6 @@ set RX[1]='R01F'
 set IX[1]='R01H'
 set UX[1]='R020'
 set AB[1]='R03Y'
-set WX[1]='R02D'
 set GR[1]='nmfs'
 set ZB[1]='nfod'
 set TR[1]=$C
@@ -6622,7 +6581,6 @@ set RX[2]='R01F'
 set IX[2]='R01H'
 set UX[2]='R020'
 set AB[2]='R03Y'
-set WX[2]='R02D'
 set GR[2]='nmfs'
 set ZB[2]='nfod'
 set TR[2]=$C
@@ -6689,7 +6647,6 @@ set RX[3]='R01F'
 set IX[3]='R01H'
 set UX[3]='R020'
 set AB[3]='R03Y'
-set WX[3]='R02D'
 set GR[3]='nmfs'
 set ZB[3]='nfod'
 set TR[3]=$C
@@ -6756,7 +6713,6 @@ set RX[4]='R01F'
 set IX[4]='R01H'
 set UX[4]='R020'
 set AB[4]='R03Y'
-set WX[4]='R02D'
 set GR[4]='nmfs'
 set ZB[4]='nfod'
 set TR[4]=$C
@@ -6892,7 +6848,6 @@ set RX[1]='R01O'
 set IX[1]='R01P'
 set UX[1]='R021'
 set AB[1]='R04I'
-set WX[1]='R028'
 set GR[1]='narg'
 set ZB[1]='hspt'
 set TR[1]=12
@@ -6959,7 +6914,6 @@ set RX[2]='R01O'
 set IX[2]='R01P'
 set UX[2]='R021'
 set AB[2]='R04I'
-set WX[2]='R028'
 set GR[2]='narg'
 set ZB[2]='hspt'
 set TR[2]=12
@@ -7026,7 +6980,6 @@ set RX[3]='R01O'
 set IX[3]='R01P'
 set UX[3]='R021'
 set AB[3]='R04I'
-set WX[3]='R028'
 set GR[3]='narg'
 set ZB[3]='hspt'
 set TR[3]=12
@@ -7093,7 +7046,6 @@ set RX[4]='R01O'
 set IX[4]='R01P'
 set UX[4]='R021'
 set AB[4]='R04I'
-set WX[4]='R028'
 set GR[4]='narg'
 set ZB[4]='hspt'
 set TR[4]=12
@@ -24024,10 +23976,6 @@ endif
 if(OSH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[1])
 call UnitAddAbility(GetTriggerUnit(),IR[1])
-if GetPlayerTechCountSimple(WX[1],P) > 0 then
-call UnitRemoveAbility(GetTriggerUnit(),TB[1])
-call UnitAddAbility(GetTriggerUnit(),TB[1])
-endif
 set YX[1]=3
 if(OKH())then
 call UnitAddAbility(GetTriggerUnit(),XI[1])
@@ -24137,11 +24085,6 @@ endif
 if(REH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[2])
 call UnitAddAbility(GetTriggerUnit(),IR[2])
-// zddd
-if GetPlayerTechCountSimple(WX[2],S) > 0 then
-call UnitRemoveAbility(GetTriggerUnit(),TB[2])
-call UnitAddAbility(GetTriggerUnit(),TB[2])
-endif
 set YX[2]=3
 if(O6H())then
 call UnitAddAbility(GetTriggerUnit(),XI[2])
@@ -24251,10 +24194,6 @@ endif
 if(RQH())then
 call UnitRemoveAbility(GetTriggerUnit(),IR[3])
 call UnitAddAbility(GetTriggerUnit(),IR[3])
-if GetPlayerTechCountSimple(WX[3],Q) > 0 then
-call UnitRemoveAbility(GetTriggerUnit(),TB[3])
-call UnitAddAbility(GetTriggerUnit(),TB[3])
-endif
 set YX[3]=3
 if(RJH())then
 call UnitAddAbility(GetTriggerUnit(),XI[3])
@@ -24361,13 +24300,9 @@ call AddUnitToStockBJ(HX[4],M,1,1)
 call AddUnitToStockBJ(JX[4],M,1,1)
 endif
 endif
-if(IVH())then
+if(IVH())then 
 call UnitRemoveAbility(GetTriggerUnit(),IR[4])
 call UnitAddAbility(GetTriggerUnit(),IR[4])
-if GetPlayerTechCountSimple(WX[4],T) > 0 then
-call UnitRemoveAbility(GetTriggerUnit(),TB[4])
-call UnitAddAbility(GetTriggerUnit(),TB[4])
-endif
 set YX[4]=3
 if(R5H())then
 call UnitAddAbility(GetTriggerUnit(),XI[4])
@@ -24629,96 +24564,17 @@ endif
 endif
 endif
 endfunction
-function ARH takes nothing returns boolean
-return(GetResearched()==WX[1])or(GetResearched()==WX[2])or(GetResearched()==WX[3])or(GetResearched()==WX[4])
-endfunction
-function AIH takes nothing returns boolean
-return(ARH())
-endfunction
 function AAH takes nothing returns boolean
 return(GetPlayerController(P)==MAP_CONTROL_COMPUTER)
-endfunction
-function ANH takes nothing returns boolean
-return(GetPlayerTechCountSimple(WX[1],P)<2)
 endfunction
 function ABH takes nothing returns boolean
 return(GetPlayerController(S)==MAP_CONTROL_COMPUTER)
 endfunction
-function ACH takes nothing returns boolean
-return(GetPlayerTechCountSimple(WX[2],S)<2)
-endfunction
 function ADH takes nothing returns boolean
 return(GetPlayerController(Q)==MAP_CONTROL_COMPUTER)
 endfunction
-function AFH takes nothing returns boolean
-return(GetPlayerTechCountSimple(WX[3],Q)<2)
-endfunction
 function AGH takes nothing returns boolean
 return(GetPlayerController(T)==MAP_CONTROL_COMPUTER)
-endfunction
-function AHH takes nothing returns boolean
-return(GetPlayerTechCountSimple(WX[4],T)<2)
-endfunction
-function AJH takes nothing returns boolean
-return(GetOwningPlayer(GetTriggerUnit())==T)and(GetResearched()==WX[4])
-endfunction
-function AKH takes nothing returns boolean
-return(GetOwningPlayer(GetTriggerUnit())==Q)and(GetResearched()==WX[3])
-endfunction
-function ALH takes nothing returns boolean
-return(GetOwningPlayer(GetTriggerUnit())==S)and(GetResearched()==WX[2])
-endfunction
-function AMH takes nothing returns boolean
-return(GetOwningPlayer(GetTriggerUnit())==P)and(GetResearched()==WX[1])
-endfunction
-function APH takes nothing returns nothing
-if(AMH())then
-if(ANH())then
-call CreateFogModifierRectBJ(true,P,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
-call UnitAddAbility(GetTriggerUnit(),TB[1])
-if(AAH())then
-call EnableTrigger(U8R)
-endif
-else
-call SetUnitManaBJ(GetTriggerUnit(),(GetUnitStateSwap(UNIT_STATE_MANA,GetTriggerUnit())+200.))
-endif
-else
-if(ALH())then
-if(ACH())then
-call CreateFogModifierRectBJ(true,S,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
-call UnitAddAbility(GetTriggerUnit(),TB[2])
-if(ABH())then
-call EnableTrigger(OMI)
-endif
-else
-call SetUnitManaBJ(GetTriggerUnit(),(GetUnitStateSwap(UNIT_STATE_MANA,GetTriggerUnit())+200.))
-endif
-else
-if(AKH())then
-if(AFH())then
-call CreateFogModifierRectBJ(true,Q,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
-call UnitAddAbility(GetTriggerUnit(),TB[3])
-if(ADH())then
-call EnableTrigger(DHI)
-endif
-else
-call SetUnitManaBJ(GetTriggerUnit(),(GetUnitStateSwap(UNIT_STATE_MANA,GetTriggerUnit())+200.))
-endif
-else
-if(AJH())then
-if(AHH())then
-call CreateFogModifierRectBJ(true,T,FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
-call UnitAddAbility(GetTriggerUnit(),TB[4])
-if(AGH())then
-call EnableTrigger(L_I)
-endif
-else
-call SetUnitManaBJ(GetTriggerUnit(),(GetUnitStateSwap(UNIT_STATE_MANA,GetTriggerUnit())+200.))
-endif
-endif
-endif
-endif
-endif
 endfunction
 function AQH takes nothing returns boolean
 return(GetResearched()==ZE[1])or(GetResearched()==ZE[2])or(GetResearched()==ZE[3])or(GetResearched()==ZE[4])
@@ -51325,7 +51181,6 @@ endif
 call IssueImmediateOrderById(N,CX[1])
 call IssueImmediateOrderById(X,NX[1])
 call IssueImmediateOrderById(X,BX[1])
-call IssueImmediateOrderById(X,WX[1])
 call IssueImmediateOrderById(N,JX[1])
 if(P7M())then
 if(P6M())then
@@ -51855,7 +51710,6 @@ endif
 call IssueImmediateOrderById(J,CX[2])
 call IssueImmediateOrderById(O,NX[2])
 call IssueImmediateOrderById(O,BX[2])
-call IssueImmediateOrderById(O,WX[2])
 call IssueImmediateOrderById(J,JX[2])
 if(TMM())then
 if(TLM())then
@@ -52385,7 +52239,6 @@ endif
 call IssueImmediateOrderById(F,CX[3])
 call IssueImmediateOrderById(R,NX[3])
 call IssueImmediateOrderById(R,BX[3])
-call IssueImmediateOrderById(R,WX[3])
 call IssueImmediateOrderById(F,JX[3])
 if(YVM())then
 if(W9M())then
@@ -52915,7 +52768,6 @@ endif
 call IssueImmediateOrderById(B,CX[4])
 call IssueImmediateOrderById(I,NX[4])
 call IssueImmediateOrderById(I,BX[4])
-call IssueImmediateOrderById(I,WX[4])
 call IssueImmediateOrderById(B,JX[4])
 if(VSP())then
 if(VQP())then
@@ -58980,10 +58832,6 @@ set A8X=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(A8X,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
 call TriggerAddCondition(A8X,Condition(function I4H))
 call TriggerAddAction(A8X,function AOH)
-set NOX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(NOX,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-call TriggerAddCondition(NOX,Condition(function AIH))
-call TriggerAddAction(NOX,function APH)
 set NBX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(NBX,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
 call TriggerAddCondition(NBX,Condition(function ASH))
