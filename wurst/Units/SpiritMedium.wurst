@@ -27,7 +27,7 @@ public let SPIRIT_MEDIUM_ID = 'ospw'
 	..setString("utip", "Train Spirit Medium")
 	..setString("utub", "|cffffcc00Spellcaster|r |nStrong Vs Melee Unit |nWeak Vs Ranged Unit")
 	..setString("udty", "small")
-	..setUnreal("ua1c", 3.6)
+	..setUnreal("ua1c", 3.3)
 	..setInt("ua1b", 22)
 	..setInt("ua1s", 5)
 	..setInt("udu1", 12)
