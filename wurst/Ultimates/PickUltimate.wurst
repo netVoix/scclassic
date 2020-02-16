@@ -29,7 +29,7 @@ let ultMap = new HashMap<int, int>()
             ..put(SPELL_SHIELD_PICK_ID, SPELL_SHIELD_ID)
 
 init
-    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
         let r = GetResearched()
         let castle = GetTriggerUnit()
         let p = castle.getOwner()

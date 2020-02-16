@@ -49,7 +49,7 @@ init
             let t = GetSpellTargetUnit()
             QuestMessageBJ(bj_FORCE_ALL_PLAYERS, bj_QUESTMESSAGE_WARNING, owner.getNameColored() + " has fired Ultimate weapon!")
             doAfter(3) ->
-                InstantDummyCaster.castTarget(owner, ULTIMATE_DAMAGE_SPELL_ID, 3, OrderIds.chainlightning, t, u.getPos())
+                InstantDummyCaster.castTarget(owner, ULTIMATE_DAMAGE_SPELL_ID, 3, OrderIds.chainlightning, t)
                 
         if GetSpellAbilityId() == OVERCHARGED_UW_ID
             let owner = GetTriggerUnit().getOwner()

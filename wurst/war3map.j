@@ -25928,41 +25928,6 @@ endfunction
 function GQH takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
-function GSH takes nothing returns nothing
-set HB[16]=GetTriggerUnit()
-set HB[17]=GetSpellTargetUnit()
-if(GKH())then
-set IB[2]=1
-else
-if(GJH())then
-set IB[2]=2
-else
-if(GHH())then
-set IB[2]=3
-else
-if(GGH())then
-set IB[2]=4
-endif
-endif
-endif
-endif
-if(GQH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(GPH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(GMH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(GLH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[$E],false,3.)
-endfunction
 function GTH takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
 endfunction
@@ -26443,146 +26408,6 @@ endfunction
 function LDH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MC')
 endfunction
-function LFH takes nothing returns nothing
-if(JTH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(JSH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(JQH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(JPH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-if(LDH())then
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-set KN[1]=1
-set DN[2]=J2N(bj_mapInitialPlayableArea,Condition(function LCH))
-set GN[1]=CountUnitsInGroup(DN[2])
-set KN[1]=1
-loop
-exitwhen KN[1]>GN[1]
-set HN[KN[1]]=GroupPickRandomUnit(DN[2])
-call GroupRemoveUnit(DN[2],HN[KN[1]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A086')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,HN[KN[1]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[1]=KN[1]+1
-endloop
-call RemoveLocation(FN[1])
-call DestroyGroup(DN[2])
-set GN[1]=0
-set KN[1]=0
-else
-if(K8H())then
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-set KN[1]=1
-set DN[2]=LAN(GetOwningPlayer(GetSpellTargetUnit()),Condition(function K7H))
-set GN[1]=CountUnitsInGroup(DN[2])
-set KN[1]=1
-loop
-exitwhen KN[1]>GN[1]
-set HN[KN[1]]=GroupPickRandomUnit(DN[2])
-call GroupRemoveUnit(DN[2],HN[KN[1]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OM')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,HN[KN[1]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[1]=KN[1]+1
-endloop
-call RemoveLocation(FN[1])
-call DestroyGroup(DN[2])
-set GN[1]=0
-set KN[1]=0
-else
-if(KZH())then
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0ON')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,GetSpellTargetUnit())
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call RemoveLocation(FN[1])
-else
-if(KYH())then
-if(KWH())then
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-set KN[1]=1
-set DN[2]=J2N(bj_mapInitialPlayableArea,Condition(function KRH))
-set GN[1]=CountUnitsInGroup(DN[2])
-set KN[1]=1
-loop
-exitwhen KN[1]>GN[1]
-set HN[KN[1]]=GroupPickRandomUnit(DN[2])
-call GroupRemoveUnit(DN[2],HN[KN[1]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0ON')
-call SetUnitAbilityLevelSwapped('A0ON',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,HN[KN[1]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[1]=KN[1]+1
-endloop
-call RemoveLocation(FN[1])
-call DestroyGroup(DN[2])
-set GN[1]=0
-set KN[1]=0
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-set KN[1]=1
-set DN[2]=LAN(GetOwningPlayer(GetTriggerUnit()),Condition(function KHH))
-set GN[1]=CountUnitsInGroup(DN[2])
-set KN[1]=1
-loop
-exitwhen KN[1]>GN[1]
-set HN[KN[1]]=GroupPickRandomUnit(DN[2])
-call GroupRemoveUnit(DN[2],HN[KN[1]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0ON')
-call SetUnitAbilityLevelSwapped('A0ON',bj_lastCreatedUnit,2)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,HN[KN[1]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[1]=KN[1]+1
-endloop
-call RemoveLocation(FN[1])
-call DestroyGroup(DN[2])
-set GN[1]=0
-set KN[1]=0
-else
-set FN[1]=GetUnitLoc(GetTriggerUnit())
-set KN[1]=1
-set DN[2]=J2N(bj_mapInitialPlayableArea,Condition(function J3H))
-set GN[1]=CountUnitsInGroup(DN[2])
-set KN[1]=1
-loop
-exitwhen KN[1]>GN[1]
-set HN[KN[1]]=GroupPickRandomUnit(DN[2])
-call GroupRemoveUnit(DN[2],HN[KN[1]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[1],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0ON')
-call SetUnitAbilityLevelSwapped('A0ON',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,HN[KN[1]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[1]=KN[1]+1
-endloop
-call RemoveLocation(FN[1])
-call DestroyGroup(DN[2])
-set GN[1]=0
-set KN[1]=0
-endif
-endif
-endif
-endif
-endif
-endfunction
 function LGH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0L1')
 endfunction
@@ -26943,146 +26768,6 @@ endfunction
 function PGH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0ME')
 endfunction
-function PHH takes nothing returns nothing
-if(LWH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(LUH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(LTH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(LSH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-if(PGH())then
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-set KN[2]=1
-set DN[3]=J2N(bj_mapInitialPlayableArea,Condition(function PFH))
-set GN[2]=CountUnitsInGroup(DN[3])
-set KN[2]=1
-loop
-exitwhen KN[2]>GN[2]
-set JN[KN[2]]=GroupPickRandomUnit(DN[3])
-call GroupRemoveUnit(DN[3],JN[KN[2]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A08A')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,JN[KN[2]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[2]=KN[2]+1
-endloop
-call RemoveLocation(FN[2])
-call DestroyGroup(DN[3])
-set GN[2]=0
-set KN[2]=0
-else
-if(PVH())then
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-set KN[2]=1
-set DN[3]=LAN(GetOwningPlayer(GetSpellTargetUnit()),Condition(function L5H))
-set GN[2]=CountUnitsInGroup(DN[3])
-set KN[2]=1
-loop
-exitwhen KN[2]>GN[2]
-set JN[KN[2]]=GroupPickRandomUnit(DN[3])
-call GroupRemoveUnit(DN[3],JN[KN[2]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OQ')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,JN[KN[2]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[2]=KN[2]+1
-endloop
-call RemoveLocation(FN[2])
-call DestroyGroup(DN[3])
-set GN[2]=0
-set KN[2]=0
-else
-if(M9H())then
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OR')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,GetSpellTargetUnit())
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call RemoveLocation(FN[2])
-else
-if(M8H())then
-if(M7H())then
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-set KN[2]=1
-set DN[3]=J2N(bj_mapInitialPlayableArea,Condition(function MKH))
-set GN[2]=CountUnitsInGroup(DN[3])
-set KN[2]=1
-loop
-exitwhen KN[2]>GN[2]
-set JN[KN[2]]=GroupPickRandomUnit(DN[3])
-call GroupRemoveUnit(DN[3],JN[KN[2]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OR')
-call SetUnitAbilityLevelSwapped('A0OR',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,JN[KN[2]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[2]=KN[2]+1
-endloop
-call RemoveLocation(FN[2])
-call DestroyGroup(DN[3])
-set GN[2]=0
-set KN[2]=0
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-set KN[2]=1
-set DN[3]=LAN(GetOwningPlayer(GetTriggerUnit()),Condition(function MYH))
-set GN[2]=CountUnitsInGroup(DN[3])
-set KN[2]=1
-loop
-exitwhen KN[2]>GN[2]
-set JN[KN[2]]=GroupPickRandomUnit(DN[3])
-call GroupRemoveUnit(DN[3],JN[KN[2]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OR')
-call SetUnitAbilityLevelSwapped('A0OR',bj_lastCreatedUnit,2)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,JN[KN[2]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[2]=KN[2]+1
-endloop
-call RemoveLocation(FN[2])
-call DestroyGroup(DN[3])
-set GN[2]=0
-set KN[2]=0
-else
-set FN[2]=GetUnitLoc(GetTriggerUnit())
-set KN[2]=1
-set DN[3]=J2N(bj_mapInitialPlayableArea,Condition(function MRH))
-set GN[2]=CountUnitsInGroup(DN[3])
-set KN[2]=1
-loop
-exitwhen KN[2]>GN[2]
-set JN[KN[2]]=GroupPickRandomUnit(DN[3])
-call GroupRemoveUnit(DN[3],JN[KN[2]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[2],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0OR')
-call SetUnitAbilityLevelSwapped('A0OR',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,JN[KN[2]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[2]=KN[2]+1
-endloop
-call RemoveLocation(FN[2])
-call DestroyGroup(DN[3])
-set GN[2]=0
-set KN[2]=0
-endif
-endif
-endif
-endif
-endif
-endfunction
 function PJH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0L2')
 endfunction
@@ -27123,41 +26808,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function PZH takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function P_H takes nothing returns nothing
-set HB[18]=GetTriggerUnit()
-set HB[19]=GetSpellTargetUnit()
-if(PTH())then
-set IB[3]=1
-else
-if(PSH())then
-set IB[3]=2
-else
-if(PQH())then
-set IB[3]=3
-else
-if(PPH())then
-set IB[3]=4
-endif
-endif
-endif
-endif
-if(PZH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(PYH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(PWH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(PUH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[$F],false,3.)
 endfunction
 function P0H takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
@@ -27684,146 +27334,6 @@ endfunction
 function UDH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MF')
 endfunction
-function UFH takes nothing returns nothing
-if(STH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(SSH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(SQH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(SPH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-if(UDH())then
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-set KN[4]=1
-set DN[5]=J2N(bj_mapInitialPlayableArea,Condition(function UCH))
-set GN[4]=CountUnitsInGroup(DN[5])
-set KN[4]=1
-loop
-exitwhen KN[4]>GN[4]
-set MN[KN[4]]=GroupPickRandomUnit(DN[5])
-call GroupRemoveUnit(DN[5],MN[KN[4]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A08B')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,MN[KN[4]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[4]=KN[4]+1
-endloop
-call RemoveLocation(FN[4])
-call DestroyGroup(DN[5])
-set GN[4]=0
-set KN[4]=0
-else
-if(T8H())then
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-set KN[4]=1
-set DN[5]=LAN(GetOwningPlayer(GetSpellTargetUnit()),Condition(function T7H))
-set GN[4]=CountUnitsInGroup(DN[5])
-set KN[4]=1
-loop
-exitwhen KN[4]>GN[4]
-set MN[KN[4]]=GroupPickRandomUnit(DN[5])
-call GroupRemoveUnit(DN[5],MN[KN[4]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0P1')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,MN[KN[4]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[4]=KN[4]+1
-endloop
-call RemoveLocation(FN[4])
-call DestroyGroup(DN[5])
-set GN[4]=0
-set KN[4]=0
-else
-if(TZH())then
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0P2')
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,GetSpellTargetUnit())
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call RemoveLocation(FN[4])
-else
-if(TYH())then
-if(TWH())then
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-set KN[4]=1
-set DN[5]=J2N(bj_mapInitialPlayableArea,Condition(function TRH))
-set GN[4]=CountUnitsInGroup(DN[5])
-set KN[4]=1
-loop
-exitwhen KN[4]>GN[4]
-set MN[KN[4]]=GroupPickRandomUnit(DN[5])
-call GroupRemoveUnit(DN[5],MN[KN[4]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0P2')
-call SetUnitAbilityLevelSwapped('A0P2',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,MN[KN[4]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[4]=KN[4]+1
-endloop
-call RemoveLocation(FN[4])
-call DestroyGroup(DN[5])
-set GN[4]=0
-set KN[4]=0
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-set KN[4]=1
-set DN[5]=LAN(GetOwningPlayer(GetTriggerUnit()),Condition(function THH))
-set GN[4]=CountUnitsInGroup(DN[5])
-set KN[4]=1
-loop
-exitwhen KN[4]>GN[4]
-set MN[KN[4]]=GroupPickRandomUnit(DN[5])
-call GroupRemoveUnit(DN[5],MN[KN[4]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0P2')
-call SetUnitAbilityLevelSwapped('A0P2',bj_lastCreatedUnit,2)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,MN[KN[4]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[4]=KN[4]+1
-endloop
-call RemoveLocation(FN[4])
-call DestroyGroup(DN[5])
-set GN[4]=0
-set KN[4]=0
-else
-set FN[4]=GetUnitLoc(GetTriggerUnit())
-set KN[4]=1
-set DN[5]=J2N(bj_mapInitialPlayableArea,Condition(function S3H))
-set GN[4]=CountUnitsInGroup(DN[5])
-set KN[4]=1
-loop
-exitwhen KN[4]>GN[4]
-set MN[KN[4]]=GroupPickRandomUnit(DN[5])
-call GroupRemoveUnit(DN[5],MN[KN[4]])
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[4],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A0P2')
-call SetUnitAbilityLevelSwapped('A0P2',bj_lastCreatedUnit,1)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,MN[KN[4]])
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.1)
-set KN[4]=KN[4]+1
-endloop
-call RemoveLocation(FN[4])
-call DestroyGroup(DN[5])
-set GN[4]=0
-set KN[4]=0
-endif
-endif
-endif
-endif
-endif
-endfunction
 function UGH takes nothing returns boolean
 return(GetSpellAbilityId()=='A0L3')
 endfunction
@@ -28006,42 +27516,7 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function U0H takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function U1H takes nothing returns nothing
-set HB[20]=GetTriggerUnit()
-set HB[21]=GetSpellTargetUnit()
-if(UWH())then
-set IB[4]=1
-else
-if(UUH())then
-set IB[4]=2
-else
-if(UTH())then
-set IB[4]=3
-else
-if(USH())then
-set IB[4]=4
-endif
-endif
-endif
-endif
-if(U0H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(U_H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(UZH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(UYH())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[16],false,3.)
-endfunction
+endfunction 
 function U2H takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
 endfunction
@@ -28630,69 +28105,6 @@ endfunction
 function V2J takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MH')
 endfunction
-function V3J takes nothing returns nothing
-if(Y8H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(Y7H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(Y6H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(Y5H())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-if(V2J())then
-set DN[7]=J2N(bj_mapInitialPlayableArea,Condition(function V0J))
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[7],function V1J)
-call DestroyGroup(DN[7])
-call RemoveLocation(FN[5])
-else
-if(VLJ())then
-set DN[7]=LAN(GetOwningPlayer(GetSpellTargetUnit()),Condition(function VJJ))
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[7],function VKJ)
-call DestroyGroup(DN[7])
-call RemoveLocation(FN[5])
-else
-if(VIJ())then
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[5],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A08F')
-call SetUnitAbilityLevelSwapped('A08F',bj_lastCreatedUnit,3)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,GetSpellTargetUnit())
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call RemoveLocation(FN[5])
-else
-if(VRJ())then
-if(VOJ())then
-set DN[7]=J2N(bj_mapInitialPlayableArea,Condition(function ZCH))
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[7],function ZDH)
-call DestroyGroup(DN[7])
-call RemoveLocation(FN[5])
-set DN[7]=LAN(GetOwningPlayer(GetTriggerUnit()),Condition(function ZQH))
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[7],function ZSH)
-call DestroyGroup(DN[7])
-call RemoveLocation(FN[5])
-else
-set DN[7]=J2N(bj_mapInitialPlayableArea,Condition(function VEJ))
-set FN[5]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[7],function VXJ)
-call DestroyGroup(DN[7])
-call RemoveLocation(FN[5])
-endif
-endif
-endif
-endif
-endif
-endfunction
 function V4J takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MI')or(GetSpellAbilityId()=='A0PG')or(GetSpellAbilityId()=='A0PF')or(GetSpellAbilityId()=='A0PX')
 endfunction
@@ -28722,41 +28134,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function EOJ takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function ERJ takes nothing returns nothing
-set HB[22]=GetTriggerUnit()
-set HB[23]=GetSpellTargetUnit()
-if(V9J())then
-set IB[5]=1
-else
-if(V8J())then
-set IB[5]=2
-else
-if(V7J())then
-set IB[5]=3
-else
-if(V6J())then
-set IB[5]=4
-endif
-endif
-endif
-endif
-if(EOJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(EXJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(EEJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(EVJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[17],false,3.)
 endfunction
 function EIJ takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
@@ -29223,41 +28600,6 @@ endfunction
 function OKJ takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
-function OLJ takes nothing returns nothing
-set HB[24]=GetTriggerUnit()
-set HB[25]=GetSpellTargetUnit()
-if(OFJ())then
-set IB[6]=1
-else
-if(ODJ())then
-set IB[6]=2
-else
-if(OCJ())then
-set IB[6]=3
-else
-if(OBJ())then
-set IB[6]=4
-endif
-endif
-endif
-endif
-if(OKJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(OJJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(OHJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(OGJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[18],false,3.)
-endfunction
 function OMJ takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
 endfunction
@@ -29573,41 +28915,6 @@ return(GetOwningPlayer(GetTriggerUnit())==S)
 endfunction
 function IWJ takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
-endfunction
-function IYJ takes nothing returns nothing
-set HB[26]=GetTriggerUnit()
-set HB[27]=GetSpellTargetUnit()
-if(IQJ())then
-set IB[7]=1
-else
-if(IPJ())then
-set IB[7]=2
-else
-if(IMJ())then
-set IB[7]=3
-else
-if(ILJ())then
-set IB[7]=4
-endif
-endif
-endif
-endif
-if(IWJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(IUJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(ITJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(ISJ())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-call StartTimerBJ(FI[19],false,3.)
 endfunction
 function IZJ takes nothing returns boolean
 return((IsUnitType(GetFilterUnit(),UNIT_TYPE_STRUCTURE))!=false)!=false
@@ -30516,69 +29823,6 @@ call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
 endfunction
 function FYJ takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MM')
-endfunction
-function FZJ takes nothing returns nothing
-if(C3J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(C2J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(C1J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-else
-if(C0J())then
-call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,$C,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has fired Ultimate weapon!"))
-endif
-endif
-endif
-endif
-if(FYJ())then
-set DN[$C]=J2N(bj_mapInitialPlayableArea,Condition(function FUJ))
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[$C],function FWJ)
-call DestroyGroup(DN[$C])
-call RemoveLocation(FN[9])
-else
-if(FFJ())then
-set DN[$C]=LAN(GetOwningPlayer(GetSpellTargetUnit()),Condition(function FCJ))
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[$C],function FDJ)
-call DestroyGroup(DN[$C])
-call RemoveLocation(FN[9])
-else
-if(FVJ())then
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),FN[9],bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A08L')
-call SetUnitAbilityLevelSwapped('A08L',bj_lastCreatedUnit,3)
-call IssueTargetOrderById(bj_lastCreatedUnit,$D007F,GetSpellTargetUnit())
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call RemoveLocation(FN[9])
-else
-if(D9J())then
-if(D8J())then
-set DN[$C]=J2N(bj_mapInitialPlayableArea,Condition(function DJJ))
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[$C],function DKJ)
-call DestroyGroup(DN[$C])
-call RemoveLocation(FN[9])
-set DN[$C]=LAN(GetOwningPlayer(GetTriggerUnit()),Condition(function DYJ))
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[$C],function DZJ)
-call DestroyGroup(DN[$C])
-call RemoveLocation(FN[9])
-else
-set DN[$C]=J2N(bj_mapInitialPlayableArea,Condition(function DXJ))
-set FN[9]=GetUnitLoc(GetTriggerUnit())
-call ForGroupBJ(DN[$C],function DOJ)
-call DestroyGroup(DN[$C])
-call RemoveLocation(FN[9])
-endif
-endif
-endif
-endif
-endif
 endfunction
 function F_J takes nothing returns boolean
 return(GetSpellAbilityId()=='Awrh')
@@ -58940,41 +58184,21 @@ call TriggerAddAction(JHX,function GCH)
 set JQX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(JQX,FI[$E])
 call TriggerAddAction(JQX,function JKH)
-set JUX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(JUX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(JUX,Condition(function JMH))
-call TriggerAddAction(JUX,function LFH)
 set J5X=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(J5X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(J5X,Condition(function LGH))
 call TriggerAddAction(J5X,function LMH)
-set J8X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(J8X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(J8X,Condition(function LQH))
-call TriggerAddAction(J8X,function PHH)
 set KEX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(KEX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(KEX,Condition(function PJH))
 call TriggerAddAction(KEX,function PKH)
-set KFX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(KFX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(KFX,Condition(function PMH))
-call TriggerAddAction(KFX,function P_H)
 set KJX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(KJX,FI[$F])
 call TriggerAddAction(KJX,function SKH)
-set KMX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(KMX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(KMX,Condition(function SMH))
-call TriggerAddAction(KMX,function UFH)
 set K0X=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(K0X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(K0X,Condition(function UGH))
 call TriggerAddAction(K0X,function UMH)
-set K3X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(K3X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(K3X,Condition(function UQH))
-call TriggerAddAction(K3X,function U1H)
 set K7X=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(K7X,FI[16])
 call TriggerAddAction(K7X,function YWH)
@@ -58982,14 +58206,6 @@ set LBX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(LBX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(LBX,Condition(function YYH))
 call TriggerAddAction(LBX,function Y2H)
-set LGX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(LGX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(LGX,Condition(function Y4H))
-call TriggerAddAction(LGX,function V3J)
-set LLX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(LLX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(LLX,Condition(function V5J))
-call TriggerAddAction(LLX,function ERJ)
 set LSX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(LSX,FI[17])
 call TriggerAddAction(LSX,function X9J)
@@ -58997,21 +58213,13 @@ set LWX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(LWX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(LWX,Condition(function OVJ))
 call TriggerAddAction(LWX,function OIJ)
-set L_X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(L_X,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(L_X,Condition(function ONJ))
-call TriggerAddAction(L_X,function OLJ)
 set L2X=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(L2X,FI[18])
 call TriggerAddAction(L2X,function IFJ)
 set MXX=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(MXX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(MXX,Condition(function IGJ))
+call TriggerAddCondition(MXX,Condition(function IGJ)) 
 call TriggerAddAction(MXX,function IHJ)
-set MIX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(MIX,EVENT_PLAYER_UNIT_SPELL_EFFECT)
-call TriggerAddCondition(MIX,Condition(function IKJ))
-call TriggerAddAction(MIX,function IYJ)
 set MBX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(MBX,FI[19])
 call TriggerAddAction(MBX,function NQJ)

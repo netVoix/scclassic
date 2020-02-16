@@ -3389,6 +3389,8 @@ import ObjEditingNatives
 	..setLvlDataString("gef1", 0, 0, "")
 	..setLvlDataInt("gglm", 0, 0, 5000)
 	..setLvlDataInt("gtim", 0, 0, 30)
+	..setLvlDataString("greq", 1, 0, "")
+	..setLvlDataString("greq", 2, 0, "")
 
 
 @compiletime function create_w3q_R027()
@@ -3411,6 +3413,7 @@ import ObjEditingNatives
 	..setLvlDataString("grac", 0, 0, "orc")
 	..setLvlDataInt("gglm", 0, 0, 4000)
 	..setLvlDataInt("gtim", 0, 0, 30)
+	..setLvlDataString("greq", 1, 0, "")
 
 
 @compiletime function create_w3q_R028()

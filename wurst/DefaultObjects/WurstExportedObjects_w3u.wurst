@@ -5,7 +5,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o000()
 	createObjectDefinition("w3u", 'o000', 'ogre')
-	..setString("ures", "Rhrt,Rhpm,Rhra,Rhse,Rhcd,R022")
+	..setString("ures", "Rhrt,Rhpm,Rhra,Rhse,Rhcd,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -168,7 +168,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o003()
 	createObjectDefinition("w3u", 'o003', 'ogre')
-	..setString("ures", "Rhme,Rhar,Rhlh,Rhac,Rhpt,R023")
+	..setString("ures", "Rhme,Rhar,Rhlh,Rhac,Rhpt,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -231,7 +231,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o004()
 	createObjectDefinition("w3u", 'o004', 'ogre')
-	..setString("ures", "Rhme,Rhar,Rhlh,Rhac,Rhpt,R023")
+	..setString("ures", "Rhme,Rhar,Rhlh,Rhac,Rhpt,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -365,7 +365,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o006()
 	createObjectDefinition("w3u", 'o006', 'ogre')
-	..setString("ures", "Rhrt,Rhpm,Rhra,Rhse,Rhcd,R022")
+	..setString("ures", "Rhrt,Rhpm,Rhra,Rhse,Rhcd,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -500,7 +500,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o008()
 	createObjectDefinition("w3u", 'o008', 'ogre')
-	..setString("ures", "Rhhb,Rhla,Rhst,Rhri,Rhfc,R024")
+	..setString("ures", "Rhhb,Rhla,Rhst,Rhri,Rhfc,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -565,7 +565,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o009()
 	createObjectDefinition("w3u", 'o009', 'ogre')
-	..setString("ures", "Rhhb,Rhla,Rhst,Rhri,Rhfc,R024")
+	..setString("ures", "Rhhb,Rhla,Rhst,Rhri,Rhfc,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -814,7 +814,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00D()
 	createObjectDefinition("w3u", 'o00D', 'ogre')
-	..setString("ures", "Ropg,Roar,Rora,Rosp,Rost,R027")
+	..setString("ures", "Ropg,Roar,Rora,Rosp,Rost,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -936,7 +936,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00F()
 	createObjectDefinition("w3u", 'o00F', 'ogre')
-	..setString("ures", "Rolf,Rwdm,Rows,Ropm,Rowd,R025")
+	..setString("ures", "Rolf,Rwdm,Rows,Ropm,Rowd,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -997,7 +997,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00G()
 	createObjectDefinition("w3u", 'o00G', 'ogre')
-	..setString("ures", "Rusl,Rusm,Rupm,Rura,Rugf,R02B")
+	..setString("ures", "Rusl,Rusm,Rupm,Rura,Rugf,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -1063,7 +1063,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00H()
 	createObjectDefinition("w3u", 'o00H', 'ogre')
-	..setString("ures", "Rome,Rotr,Robs,Robk,Rowt,R026")
+	..setString("ures", "Rome,Rotr,Robs,Robk,Rowt,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -1124,7 +1124,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00I()
 	createObjectDefinition("w3u", 'o00I', 'ogre')
-	..setString("ures", "Rome,Rotr,Robs,Robk,Rowt,R026")
+	..setString("ures", "Rome,Rotr,Robs,Robk,Rowt,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -1185,7 +1185,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00J()
 	createObjectDefinition("w3u", 'o00J', 'ogre')
-	..setString("ures", "Rolf,Rwdm,Rows,Ropm,Rowd,R025")
+	..setString("ures", "Rolf,Rwdm,Rows,Ropm,Rowd,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -1317,7 +1317,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00L()
 	createObjectDefinition("w3u", 'o00L', 'ogre')
-	..setString("ures", "Ruwb,Rusf,Rune,Ruac,Rufb,R02A")
+	..setString("ures", "Ruwb,Rusf,Rune,Ruac,Rufb,R027")
 	..setString("utra", "")
 	..setInt("umpi", 675)
 	..setInt("umpm", 675)
@@ -1385,7 +1385,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00M()
 	createObjectDefinition("w3u", 'o00M', 'ogre')
-	..setString("ures", "Ruwb,Rusf,Rune,Ruac,Rufb,R02A")
+	..setString("ures", "Ruwb,Rusf,Rune,Ruac,Rufb,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 900)
 	..setInt("umpm", 900)
@@ -1527,7 +1527,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00O()
 	createObjectDefinition("w3u", 'o00O', 'ogre')
-	..setString("ures", "Rume,Ruar,Ruba,Rubu,Ruex,R029")
+	..setString("ures", "Rume,Ruar,Ruba,Rubu,Ruex,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -1599,7 +1599,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00P()
 	createObjectDefinition("w3u", 'o00P', 'ogre')
-	..setString("ures", "Rume,Ruar,Ruba,Rubu,Ruex,R029")
+	..setString("ures", "Rume,Ruar,Ruba,Rubu,Ruex,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -1741,7 +1741,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00R()
 	createObjectDefinition("w3u", 'o00R', 'ogre')
-	..setString("ures", "Rusl,Rusm,Rupm,Rura,Rugf,R02B")
+	..setString("ures", "Rusl,Rusm,Rupm,Rura,Rugf,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -1845,7 +1845,7 @@ import ObjEditingNatives
 	..setInt("umpm", 800)
 	..setUnreal("umpr", 0.2)
 	..setString("utyp", "Mechanical")
-	..setString("ures", "Resw,Resm,Rema,Renb,Redt,R02C")
+	..setString("ures", "Resw,Resm,Rema,Renb,Redt,R026,R027")
 	..setString("utra", "")
 	..setString("upgr", "Resw,Renb,R02R,R030,R046,R04B")
 	..setString("uhot", "R")
@@ -1970,7 +1970,7 @@ import ObjEditingNatives
 	..setInt("umpm", 600)
 	..setUnreal("umpr", 0.2)
 	..setString("utyp", "Mechanical")
-	..setString("ures", "Resw,Resm,Rema,Renb,Redt,R02C")
+	..setString("ures", "Resw,Resm,Rema,Renb,Redt,R027")
 	..setString("utra", "")
 	..setString("upgr", "Resw,Renb,R02R,R030,R046,R04B")
 	..setString("uhot", "R")
@@ -1993,7 +1993,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00S()
 	createObjectDefinition("w3u", 'o00S', 'ogre')
-	..setString("ures", "Rnat,Recb,Rnam,Rnsw,Reht,R02D")
+	..setString("ures", "Rnat,Recb,Rnam,Rnsw,Reht,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 800)
 	..setInt("umpm", 800)
@@ -2134,7 +2134,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00U()
 	createObjectDefinition("w3u", 'o00U', 'ogre')
-	..setString("ures", "Rnat,Recb,Rnam,Rnsw,Reht,R02D")
+	..setString("ures", "Rnat,Recb,Rnam,Rnsw,Reht,R027")
 	..setString("utra", "")
 	..setInt("umpi", 600)
 	..setInt("umpm", 600)
@@ -2202,7 +2202,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00V()
 	createObjectDefinition("w3u", 'o00V', 'ogre')
-	..setString("ures", "Resc,Rers,Repm,Resi,Redc,R028")
+	..setString("ures", "Resc,Rers,Repm,Resi,Redc,R026,R027")
 	..setString("utra", "")
 	..setInt("umpi", 900)
 	..setInt("umpm", 900)
@@ -2335,7 +2335,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_o00X()
 	createObjectDefinition("w3u", 'o00X', 'ogre')
-	..setString("ures", "Resc,Rers,Repm,Resi,Redc,R028")
+	..setString("ures", "Resc,Rers,Repm,Resi,Redc,R027")
 	..setString("utra", "")
 	..setInt("umpi", 675)
 	..setInt("umpm", 675)
