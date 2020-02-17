@@ -1,4 +1,4 @@
-package AntiheroDamageReduction
+package Antihero
 
 import ObjectIdGenerator
 import AbilityObjEditing
