@@ -176,6 +176,7 @@ button array BI
 button array CI
 button array DI
 timer array FI
+player array playerss
 player array GI
 button HI=null
 integer JI=0
@@ -2189,14 +2190,18 @@ call ForceAddPlayer(V,Player($A))
 set P=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,P)
 call TriggerSleepAction(.1)
+set playerss[1] = P
 set S=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,S)
 call TriggerSleepAction(.1)
+set playerss[2] = S
 set Q=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,Q)
 call TriggerSleepAction(.1)
+set playerss[3] = Q
 set T=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,T)
+set playerss[4] = T
 call SetPlayerMaxHeroesAllowed(4,Player(0))
 call SetPlayerMaxHeroesAllowed(4,Player(1))
 call SetPlayerMaxHeroesAllowed(4,Player(4))
@@ -2697,6 +2702,7 @@ set OR[4]=GetRandomInt(1,$C)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
+//игроки
 call IssueImmediateOrderById(X,XE[OR[1]])
 call TriggerSleepAction(.1)
 call IssueImmediateOrderById(O,XE[OR[2]])
@@ -7464,6 +7470,7 @@ endfunction
 function C_D takes nothing returns boolean
 return(NX[1]=='o003')
 endfunction
+//Доска
 function C0D takes nothing returns nothing
 call CreateMultiboardBJ(2,26,"|cffFDD017Survival Chaos|r")
 set WA[1]=bj_lastCreatedMultiboard
@@ -8497,6 +8504,7 @@ function G7D takes nothing returns nothing
 set ZA=(ZA+1)
 if(GGD())then
 set YA[1]=(I2R(UA[1])/I2R(ZA))
+// here
 call MultiboardSetItemValueBJ(WA[1],2,4,I2S(R2I(YA[1])))
 if(GFD())then
 set RN[1]=YA[1]
