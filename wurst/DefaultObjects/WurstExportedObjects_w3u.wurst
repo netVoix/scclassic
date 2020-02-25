@@ -13347,7 +13347,7 @@ import ObjEditingNatives
 	..setInt("ubdi", 0)
 	..setInt("ubsi", 0)
 	..setInt("ugol", 2750)
-	..setInt("uhpm", 23000)
+	..setInt("uhpm", 25000)
 	..setUnreal("uhpr", 5.0)
 	..setUnreal("uinp", 1.0)
 	..setInt("ulum", 0)
@@ -21890,7 +21890,7 @@ import ObjEditingNatives
 	..setString("uaap", "medium")
 	..setUnreal("udtm", 0.64000005)
 	..setInt("ubpx", 3)
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadBerserk|r |n|n|cffffcc00Berserker|r replaces |cffffcc00Skullsplinter|r |n|cffffcc00Melee Unit|r |n+10% attack rate |n+125 HP |n|cffffcc00Abilities:|r |n|cffff00ffMaim|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(25% to reduce damage by 25%)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cff00ffffLightning Reflexes|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(evasion increased by 15%)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadArcanite Blades|r |n|cffffdeadArcanite Armor|r |n|cffffdeadTroll Regeneration|r |n|cffffdeadBerserk|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadBerserk|r |n|n|cffffcc00Berserker|r replaces |cffffcc00Skullsplinter|r |n|cffffcc00Melee Unit|r |n+10% attack rate |n+125 HP |n|cffffcc00Abilities:|r |n|cffff00ffMaim|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(25% to reduce damage by 25%)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cff00ffffLightning Reflexes|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(evasion increased by 10%)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadArcanite Blades|r |n|cffffdeadArcanite Armor|r |n|cffffdeadTroll Regeneration|r |n|cffffdeadBerserk|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
 	..setString("uhot", "R")
 
 

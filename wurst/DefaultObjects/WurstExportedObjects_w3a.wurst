@@ -20345,7 +20345,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "orc")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadBerserk|r |n|n|cffffcc00Berserker|r replaces |cffffcc00Skullsplinter|r |n|cffffcc00Melee Unit|r |n+10% attack rate |n+125 HP |n|cffffcc00Abilities:|r |n|cffff00ffMaim|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(25% to reduce damage by 25%)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cff00ffffLightning Reflexes|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(evasion increased by 15%)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadArcanite Blades|r |n|cffffdeadArcanite Armor|r |n|cffffdeadTroll Regeneration|r |n|cffffdeadBerserk|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadBerserk|r |n|n|cffffcc00Berserker|r replaces |cffffcc00Skullsplinter|r |n|cffffcc00Melee Unit|r |n+10% attack rate |n+125 HP |n|cffffcc00Abilities:|r |n|cffff00ffMaim|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(25% to reduce damage by 25%)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cff00ffffLightning Reflexes|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(evasion increased by 10%)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadArcanite Blades|r |n|cffffdeadArcanite Armor|r |n|cffffdeadTroll Regeneration|r |n|cffffdeadBerserk|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Dark Troll Berserker")
 	..setLvlDataString("atp1", 1, 0, "Dark Troll Berserker")
@@ -21316,10 +21316,10 @@ import ObjEditingNatives
 
 @compiletime function create_w3a_A0GP()
 	createObjectDefinition("w3a", 'A0GP', 'ACes')
-	..setLvlDataUnreal("Eev1", 1, 1, 0.25)
+	..setLvlDataUnreal("Eev1", 1, 1, 0.2)
 	..setLvlDataInt("abpy", 0, 0, 1)
 	..setLvlDataString("arac", 0, 0, "other")
-	..setLvlDataString("aub1", 1, 0, "Gives a 25% percent chance to avoid an attack.")
+	..setLvlDataString("aub1", 1, 0, "Gives a 20% percent chance to avoid an attack.")
 
 
 @compiletime function create_w3a_A0GQ()
