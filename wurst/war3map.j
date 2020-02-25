@@ -35,6 +35,7 @@ timer EV=null
 timer XV=null
 timer OV=null
 timer RV=null
+sound portal = null
 real IV=0
 real AV=0
 real NV=0
@@ -45954,7 +45955,7 @@ call SetPlayerAllianceStateBJ(Player(5),Player($B),0)
 call SetPlayerAllianceStateBJ(Player(6),Player($B),0)
 call SetPlayerAllianceStateBJ(Player($A),Player($B),0)
 call SetPlayerName(Player($B),"The Void")
-call PlaySoundBJ(WQ)
+call PlaySoundBJ(portal)
 else
 if(ZOL())then
 call SetUnitScalePercent(GetTriggerUnit(),140.,140.,140.)
@@ -55529,11 +55530,15 @@ set UQ=CreateSound("Units\\Orc\\Hellscream\\GromYesAttack1.wav",false,false,fals
 call SetSoundParamsFromLabel(UQ,"GromYesAttack")
 call SetSoundDuration(UQ,$503)
 call SetSoundChannel(UQ,0)
-set WQ=CreateSound("Sound\\Dialogue\\UndeadCampaign\\Undead08\\U08Archimonde19.mp3",false,false,false,10,10,"DefaultEAXON")
-call SetSoundParamsFromLabel(WQ,"U08Archimonde19")
-call SetSoundDuration(WQ,1216)
+set WQ=CreateSound("Units\\Demon\\Infernal\\InfernalDeath.wav",false,false,false,$A,$A,"DefaultEAXON")
+call SetSoundParamsFromLabel(WQ,"InfernalDeath")
+call SetSoundDuration(WQ,5000)
 call SetSoundChannel(WQ,0)
-// call SetSoundVolume(WQ,100)
+set portal=CreateSound("Sound\\Dialogue\\UndeadCampaign\\Undead08\\U08Archimonde19.mp3",false,false,false,10,10,"DefaultEAXON")
+call SetSoundParamsFromLabel(portal,"U08Archimonde19")
+call SetSoundDuration(portal,1216)
+call SetSoundChannel(portal,0)
+call SetSoundVolume(portal,1000)
 set YQ=CreateSound("Units\\Demon\\ChaosWarlord\\WarlordReady1.wav",false,false,false,$A,$A,"DefaultEAXON")
 call SetSoundParamsFromLabel(YQ,"ChaosWarlordReady")
 call SetSoundDuration(YQ,$AC6)
