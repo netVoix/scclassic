@@ -40068,12 +40068,12 @@ import ObjEditingNatives
 	..setLvlDataString("Hwe1", 1, 0, "n006")
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNReincarnation.blp")
 	..setLvlDataString("anam", 0, 0, "Totem of Might")
-	..setLvlDataUnreal("ahdu", 2, 0, 120.0)
-	..setLvlDataUnreal("ahdu", 3, 0, 180.0)
-	..setLvlDataUnreal("ahdu", 4, 0, 240.0)
-	..setLvlDataUnreal("adur", 2, 0, 120.0)
-	..setLvlDataUnreal("adur", 3, 0, 180.0)
-	..setLvlDataUnreal("adur", 4, 0, 240.0)
+	..setLvlDataUnreal("ahdu", 2, 0, 100.0)
+	..setLvlDataUnreal("ahdu", 3, 0, 140.0)
+	..setLvlDataUnreal("ahdu", 4, 0, 180.0)
+	..setLvlDataUnreal("adur", 2, 0, 100.0)
+	..setLvlDataUnreal("adur", 3, 0, 140.0)
+	..setLvlDataUnreal("adur", 4, 0, 180.0)
 
 
 @compiletime function create_w3a_A0S5()
