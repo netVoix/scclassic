@@ -21388,6 +21388,14 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "other")
 	..setLvlDataString("aub1", 1, 0, "Reveals invisible units.")
 
+@compiletime function create_w3a_A322()
+	createObjectDefinition("w3a", 'A322', 'Agyv')
+	..setLvlDataUnreal("aran", 1, 0, 1000.0)
+	..setLvlDataString("anam", 0, 0, "A True Sight")
+	..setLvlDataString("atp1", 1, 0, "A True Sight")
+	..setLvlDataString("arac", 0, 0, "other")
+	..setLvlDataString("aub1", 1, 0, "Reveals invisible units.")
+
 
 @compiletime function create_w3a_A0GW()
 	createObjectDefinition("w3a", 'A0GW', 'ACfl')
