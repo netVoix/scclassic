@@ -1,8 +1,8 @@
-// package TestUnitTaker
-// 
-// import RegisterEvents
-// 
-// init
-// 	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
-// 		GetTriggerUnit().setOwner(GetTriggerPlayer(), true)
-// 
+//package TestUnitTaker
+//
+//import RegisterEvents
+//
+//init
+//	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
+//        GetTriggerUnit().setOwner(GetTriggerPlayer(), true)
+//        GetTriggerUnit().setLevel(25, true)

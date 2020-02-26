@@ -30718,14 +30718,14 @@ return(GetOwningPlayer(GetKillingUnit())==Z)
 endfunction
 function MDJ takes nothing returns nothing
 set XO[$84]=GetUnitLoc(GetKillingUnit())
-call CreateTextTagLocBJ(("+"+I2S((5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit()))))),XO[$84],0,$A,100.,100.,.0,0)
+call CreateTextTagLocBJ(("+"+I2S((6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit()))))),XO[$84],0,$A,100.,100.,.0,0)
 call SetTextTagVelocityBJ(bj_lastCreatedTextTag,40.,90)
 call SetTextTagPermanentBJ(bj_lastCreatedTextTag,false)
 call SetTextTagLifespanBJ(bj_lastCreatedTextTag,7.)
 call SetTextTagFadepointBJ(bj_lastCreatedTextTag,4.)
 call RemoveLocation(XO[$84])
 if(MCJ())then
-set QN[1]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[1]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[1],P,PLAYER_STATE_RESOURCE_GOLD)
 set TN[1]=(TN[5]+QN[1])
 call MultiboardSetItemValueBJ(WA[1],2,21,I2S(TN[1]))
@@ -30733,7 +30733,7 @@ set QN[1]=0
 set TN[5]=TN[1]
 else
 if(MBJ())then
-set QN[2]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[2]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[2],S,PLAYER_STATE_RESOURCE_GOLD)
 set TN[2]=(TN[6]+QN[2])
 call MultiboardSetItemValueBJ(WA[2],2,21,I2S(TN[2]))
@@ -30741,7 +30741,7 @@ set QN[2]=0
 set TN[6]=TN[2]
 else
 if(MNJ())then
-set QN[3]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[3]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[3],Q,PLAYER_STATE_RESOURCE_GOLD)
 set TN[3]=(TN[7]+QN[3])
 call MultiboardSetItemValueBJ(WA[3],2,21,I2S(TN[3]))
@@ -30749,7 +30749,7 @@ set QN[3]=0
 set TN[7]=TN[3]
 else
 if(MAJ())then
-set QN[4]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[4]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[4],T,PLAYER_STATE_RESOURCE_GOLD)
 set TN[4]=(TN[8]+QN[4])
 call MultiboardSetItemValueBJ(WA[4],2,21,I2S(TN[4]))
