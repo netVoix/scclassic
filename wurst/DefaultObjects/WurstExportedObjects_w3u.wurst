@@ -25010,7 +25010,7 @@ import ObjEditingNatives
 	..setString("ides", "")
 	..setString("uhot", "W")
 	..setString("utip", "Bloodhoof Veterans [|cffffcc00W|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadProof of Strength|r |n+1 level of |cffffdeadIndomitable Will|r |n|nReduces spell damage to |cffffcc00Axeman|r, |cffffcc00Pikeslinger|r, |cffffcc00Spirit Medium|r and |cffffcc00Champion|r by 25%, increases their hit points by 25 and armor by 2. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadProof of Strength|r |n+1 level of |cffffdeadIndomitable Will|r |n|nReduces spell damage to |cffffcc00Axeman|r, |cffffcc00Pikeslinger|r, |cffffcc00Spirit Medium|r and |cffffcc00Champion|r by 20%, increases their hit points by 25 and armor by 2. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
 	..setString("uubs", "OMED")
 	..setInt("ubpx", 1)
 
@@ -25119,7 +25119,7 @@ import ObjEditingNatives
 	..setUnreal("ubs1", 0.56)
 	..setUnreal("udp1", 0.5)
 	..setString("ua1t", "chaos")
-	..setUnreal("ua1c", 1.25)
+	..setUnreal("ua1c", 1.35)
 	..setInt("ua1b", 449)
 	..setInt("ua1s", 91)
 	..setInt("ua1d", 1)
