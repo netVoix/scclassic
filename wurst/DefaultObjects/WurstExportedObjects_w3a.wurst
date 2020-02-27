@@ -4600,7 +4600,7 @@ import ObjEditingNatives
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNRainOfFel.blp")
 	..setLvlDataString("anam", 0, 0, "Rain of Fel")
-	..setLvlDataString("aeff", 1, 0, "X001")
+	..setLvlDataString("aeff", 1, 0, "X100")
 
 
 @compiletime function create_w3a_A073()
@@ -45764,8 +45764,8 @@ import ObjEditingNatives
 	..setLvlDataString("atar", 3, 0, "enemies")
 	..setLvlDataString("atp1", 2, 0, "Rain of Fel")
 	..setLvlDataString("atp1", 3, 0, "Rain of Fel")
-	..setLvlDataString("aeff", 2, 0, "X001")
-	..setLvlDataString("aeff", 3, 0, "X001")
+	..setLvlDataString("aeff", 2, 0, "X100")
+	..setLvlDataString("aeff", 3, 0, "X100")
 	..setLvlDataUnreal("adur", 2, 0, 1.0)
 	..setLvlDataUnreal("adur", 3, 0, 1.0)
 	..setLvlDataUnreal("ahdu", 2, 0, 1.0)
@@ -45791,7 +45791,7 @@ import ObjEditingNatives
 	..setLvlDataUnreal("ahdu", 1, 0, 1.0)
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNRainOfFel.blp")
 	..setLvlDataString("anam", 0, 0, "Rain of Fel")
-	..setLvlDataString("aeff", 1, 0, "X001")
+	..setLvlDataString("aeff", 1, 0, "X100")
 
 
 @compiletime function create_w3a_Arej()
