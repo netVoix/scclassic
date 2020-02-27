@@ -1,0 +1,22 @@
+package LoadHero
+
+import SaveHero
+
+
+function filter() returns bool
+  return GetFilterUnit().isType(UNIT_TYPE_HERO)
+
+function reviveHero() returns bool
+  let u = GetTriggerUnit()
+  let uid = u.getTypeId()
+  if heroes.has(uid)
+    u.remove()
+    heroes.get(uid).revive(u.getPos(), true)
+  return false
+  
+
+init
+  let r = CreateRegion()..addRect(bj_mapInitialPlayableArea)
+  CreateTrigger()
+    ..registerEnterRegion(r, Filter(function filter))
+    ..addCondition(Condition(function reviveHero))

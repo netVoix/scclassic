@@ -1,0 +1,7 @@
+package HeroesDemon
+
+
+public let TICHONDRIUS_ID = 'Udre'
+public let MAGTHERIDON_ID = 'Nplh'
+public let RAGEPYRE_ID = 'Nfir'
+public let KAZZAK_ID = 'Ucrl'

@@ -1,0 +1,27 @@
+package Heroes
+
+import public HeroesBloodElf
+import public HeroesDemon
+import public HeroesDwarf
+import public HeroesFelOrc
+import public HeroesGoblin
+import public HeroesHuman
+import public HeroesNaga
+import public HeroesNightElf
+import public HeroesOrc
+import public HeroesTauren
+import public HeroesTroll
+import public HeroesUndead
+
+import public HeroesIconsBloodEld
+import public HeroesIconsDemon
+import public HeroesIconsDwarf
+import public HeroesIconsFelOrc
+import public HeroesIconsGoblin
+import public HeroesIconsHuman
+import public HeroesIconsNaga
+import public HeroesIconsNightElf
+import public HeroesIconsOrc
+import public HeroesIconsTauren
+import public HeroesIconsTroll
+import public HeroesIconsUndead

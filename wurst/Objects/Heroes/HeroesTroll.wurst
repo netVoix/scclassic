@@ -1,0 +1,7 @@
+package HeroesTroll
+
+
+public let URUZIN_ID = 'Obla'
+public let ROKHAN_ID = 'Oshd'
+public let VOLJIN_ID = 'Odrt'
+public let SPIKE_ID = 'Orex'

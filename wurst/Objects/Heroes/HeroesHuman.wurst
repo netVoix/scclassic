@@ -1,0 +1,7 @@
+package HeroesHuman
+
+
+public let ANTONIDAS_ID = 'Hamg'
+public let UTHER_ID = 'Hpal'
+public let ADMIRAL_ID = 'Hapm'
+public let WATER_ELEMENTAL_ID = 'Hgam'

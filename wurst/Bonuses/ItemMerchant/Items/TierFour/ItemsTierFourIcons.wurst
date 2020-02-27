@@ -1,0 +1,59 @@
+package ItemsTierFourIcons
+
+import ChannelAbilityPreset
+import Icons
+
+public let BANNER_OF_THE_HORDE_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let CORNERSTONE_GRIMOIRE_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let MASK_OF_DEATH_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let ASHES_OF_KING_TERENAS_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let NEPTULON_SPEAR_SHARD_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let HEART_OF_ASZUNE_ICON_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function heartOfAszuneIcon()
+	new ChannelAbilityPreset(HEART_OF_ASZUNE_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNMoonStone)
+	..setTooltipNormal(1, "Sell Heart of Aszune")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function neptulonSpearShardIcon()
+	new ChannelAbilityPreset(NEPTULON_SPEAR_SHARD_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNStaffOfTeleportation)
+	..setTooltipNormal(1, "Sell Neptulon Spear Shard")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function ashesOfKingTerenasIcon()
+	new ChannelAbilityPreset(ASHES_OF_KING_TERENAS_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNUrnOfKelThuzad)
+	..setTooltipNormal(1, "Sell Ashes of King Terenas")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function maskOfDeathIcon()
+	new ChannelAbilityPreset(MASK_OF_DEATH_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNMaskOfDeath)
+	..setTooltipNormal(1, "Sell Mask of Death")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function cornerstoneGrimoireIcon()
+	new ChannelAbilityPreset(CORNERSTONE_GRIMOIRE_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNNecromancerMaster)
+	..setTooltipNormal(1, "Sell Cornerstone Grimoire")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function bannerOfTheHordeIcon()
+	new ChannelAbilityPreset(BANNER_OF_THE_HORDE_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNOrcBattleStandard)
+	..setTooltipNormal(1, "Sell Banner of the Horde")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)

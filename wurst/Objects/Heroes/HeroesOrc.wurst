@@ -1,0 +1,7 @@
+package HeroesOrc
+
+
+public let SAMURO_ID = 'Ogrh'
+public let THRALL_ID = 'Othr'
+public let REXXAR_ID = 'Nbst'
+public let KORGALL_ID = 'Nsjs'

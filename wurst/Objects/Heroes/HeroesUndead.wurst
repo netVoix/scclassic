@@ -1,0 +1,7 @@
+package HeroesUndead
+
+
+public let ARTHAS_ID = 'Udea'
+public let SYLVANA_ID = 'Nbrn'
+public let KEL_THUZAD_ID = 'Ulic'
+public let GHOST_SHIP_ID = 'Uktl'

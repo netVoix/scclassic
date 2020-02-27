@@ -1,0 +1,90 @@
+package HeroIconsStore
+
+import Castles
+import Heroes
+
+public tuple heroMap(int heroId, int activeIconId, int disabledIconId)
+
+public let HEROES_BLOOD_ELF = [heroMap(LADY_LIADRIN_ID, LADY_LIADRIN_ICON_ACTIVE_ID,LADY_LIADRIN_ICON_DISABLED_ID),
+                               heroMap(LORTHEMAR_ID, LORTHEMAR_ICON_ACTIVE_ID, LORTHEMAR_ICON_DISABLED_ID),
+                               heroMap(KAEL_ID, KAEL_ICON_ACTIVE_ID, KAEL_ICON_DISABLED_ID),
+                               heroMap(PHOENIX_ID, PHOENIX_ICON_ACTIVE_ID, PHOENIX_ICON_DISABLED_ID)]
+public let HEROES_DEMON = [heroMap(MAGTHERIDON_ID, MAGTHERIDON_ICON_ACTIVE_ID, MAGTHERIDON_ICON_DISABLED_ID),
+                           heroMap(TICHONDRIUS_ID, TICHONDRIUS_ICON_ACTIVE_ID, TICHONDRIUS_ICON_DISABLED_ID),
+                           heroMap(RAGEPYRE_ID, RAGEPYRE_ICON_ACTIVE_ID, RAGEPYRE_ICON_DISABLED_ID),
+                           heroMap(KAZZAK_ID, KAZZAK_ICON_ACTIVE_ID, KAZZAK_ICON_DISABLED_ID)]
+public let HEROES_DWARF = [heroMap(MURADIN_ID, MURADIN_ICON_ACTIVE_ID, MURADIN_ICON_DISABLED_ID),
+                           heroMap(GARRIM_ID, GARRIM_ICON_ACTIVE_ID, GARRIM_ICON_DISABLED_ID),
+                           heroMap(BOR_THORDIN_ID, BOR_THORDIN_ICON_ACTIVE_ID, BOR_THORDIN_ICON_DISABLED_ID),
+                           heroMap(HELGA_ID, HELGA_ICON_ACTIVE_ID, HELGA_ICON_DISABLED_ID)]
+public let HEROES_FEL_ORC = [heroMap(AXEMASTER_ID, AXEMASTER_ICON_ACTIVE_ID, AXEMASTER_ICON_DISABLED_ID),
+                             heroMap(JUBEITHOS_ID, JUBEITHOS_ICON_ACTIVE_ID, JUBEITHOS_ICON_DISABLED_ID),
+                             heroMap(GORR_ID, GORR_ICON_ACTIVE_ID, GORR_ICON_DISABLED_ID),
+                             heroMap(XEROX_ID, XEROX_ICON_ACTIVE_ID, XEROX_ICON_DISABLED_ID)]
+public let HEROES_GOBLIN = [heroMap(GAZLOWE_ID, GAZLOWE_ICON_ACTIVE_ID, GAZLOWE_ICON_DISABLED_ID),
+                            heroMap(RAZZIL_ID, RAZZIL_ICON_ACTIVE_ID, RAZZIL_ICON_DISABLED_ID),
+                            heroMap(RIKET_ID, RIKET_ICON_ACTIVE_ID, RIKET_ICON_DISABLED_ID),
+                            heroMap(ATTACKBOT_ID, ATTACKBOT_ICON_ACTIVE_ID, ATTACKBOT_ICON_DISABLED_ID)]
+public let HEROES_HUMAN = [heroMap(UTHER_ID, UTHER_ICON_ACTIVE_ID, UTHER_ICON_DISABLED_ID),
+                           heroMap(ADMIRAL_ID, ADMIRAL_ICON_ACTIVE_ID, ADMIRAL_ICON_DISABLED_ID),
+                           heroMap(ANTONIDAS_ID, ANTONIDAS_ICON_ACTIVE_ID, ANTONIDAS_ICON_DISABLED_ID),
+                           heroMap(WATER_ELEMENTAL_ID, WATER_ELEMENTAL_ICON_ACTIVE_ID, WATER_ELEMENTAL_ICON_DISABLED_ID)] 
+public let HEROES_NAGA = [heroMap(NAJENTUS_ID, NAJENTUS_ICON_ACTIVE_ID, NAJENTUS_ICON_DISABLED_ID),
+                          heroMap(LADY_VASHJ_ID, LADY_VASHJ_ICON_ACTIVE_ID, LADY_VASHJ_ICON_DISABLED_ID),
+                          heroMap(ATHISSA_ID, ATHISSA_ICON_ACTIVE_ID, ATHISSA_ICON_DISABLED_ID),
+                          heroMap(CHEREPAHA_ID, CHEREPAHA_ICON_ACTIVE_ID, CHEREPAHA_ICON_DISABLED_ID)]
+public let HEROES_NIGHT_ELF = [heroMap(JAROD_ID, JAROD_ICON_ACTIVE_ID, JAROD_ICON_DISABLED_ID),
+                               heroMap(TYRANDE_ID, TYRANDE_ICON_ACTIVE_ID, TYRANDE_ICON_DISABLED_ID),
+                               heroMap(FURION_ID, FURION_ICON_ACTIVE_ID, FURION_ICON_DISABLED_ID),
+                               heroMap(TINY_ID, TINY_ICON_ACTIVE_ID, TINY_ICON_DISABLED_ID)]
+public let HEROES_ORC = [heroMap(REXXAR_ID, REXXAR_ICON_ACTIVE_ID, REXXAR_ICON_DISABLED_ID),
+                         heroMap(SAMURO_ID, SAMURO_ICON_ACTIVE_ID, SAMURO_ICON_DISABLED_ID),
+                         heroMap(THRALL_ID, THRALL_ICON_ACTIVE_ID, THRALL_ICON_DISABLED_ID),
+                         heroMap(KORGALL_ID, KORGALL_ICON_ACTIVE_ID, KORGALL_ICON_DISABLED_ID)]
+// public let HEROES_ROGUE = [heroMap(GARITHOS_ID, GARITHOS_ICON_ACTIVE_ID, GARITHOS_ICON_DISABLED_ID),
+//                            heroMap(FLINT_SHADOWMORE_ID, FLINT_ICON_ACTIVE_ID, FLINT_ICON_DISABLED_ID),
+//                            heroMap(SALLY_ID, SALLY_ICON_ACTIVE_ID, SALLY_ICON_DISABLED_ID),
+//                            heroMap(FLOOR_ELEVATOR_ID, SIEGE_TOWER_ICON_ACTIVE_ID, SIEGE_TOWER_ICON_DISABLED_ID)]
+public let HEROES_TAUREN = [heroMap(CAIRNE_ID, CAIRNE_ICON_ACTIVE_ID, CAIRNE_ICON_DISABLED_ID),
+                            heroMap(BAINE_ID, BAINE_ICON_ACTIVE_ID, BAINE_ICON_DISABLED_ID),
+                            heroMap(BOVAN_ID, BOVAN_ICON_ACTIVE_ID, BOVAN_ICON_DISABLED_ID),
+                            heroMap(IRON_TUSK_ID, IRON_TUSK_ICON_ACTIVE_ID, IRON_TUSK_ICON_DISABLED_ID)]
+public let HEROES_TROLL = [heroMap(URUZIN_ID, URUZIN_ICON_ACTIVE_ID, URUZIN_ICON_DISABLED_ID),
+                           heroMap(ROKHAN_ID, ROKHAN_ICON_ACTIVE_ID, ROKHAN_ICON_DISABLED_ID),
+                           heroMap(VOLJIN_ID, VOLJIN_ICON_ACTIVE_ID, VOLJIN_ICON_DISABLED_ID),
+                           heroMap(SPIKE_ID, SPIKE_ICON_ACTIVE_ID, SPIKE_ICON_DISABLED_ID)]
+public let HEROES_UNDEAD = [heroMap(ARTHAS_ID, ARTHAS_ICON_ACTIVE_ID, ARTHAS_ICON_DISABLED_ID),
+                            heroMap(SYLVANA_ID, SYLVANA_ICON_ACTIVE_ID, SYLVANA_ICON_DISABLED_ID),
+                            heroMap(KEL_THUZAD_ID, KEL_THUZAD_ICON_ACTIVE_ID, KEL_THUZAD_ICON_DISABLED_ID),
+                            heroMap(GHOST_SHIP_ID, GHOST_SHIP_ICON_ACTIVE_ID, GHOST_SHIP_ICON_DISABLED_ID)]
+
+public function getHero(int rid, int index) returns heroMap
+  switch rid
+    case MAIN_CASTLE_BLOOD_ELF_ID
+      return HEROES_BLOOD_ELF[index]
+    case MAIN_CASTLE_DEMON_ID
+      return HEROES_DEMON[index]
+    case MAIN_CASTLE_DWARF_ID
+      return HEROES_DWARF[index]
+    case MAIN_CASTLE_FEL_ORC_ID
+      return HEROES_FEL_ORC[index]
+    case MAIN_CASTLE_GOBLIN_ID
+      return HEROES_GOBLIN[index]
+    case MAIN_CASTLE_HUMAN_ID
+      return HEROES_HUMAN[index]
+    case MAIN_CASTLE_NAGA_ID
+      return HEROES_NAGA[index]
+    case MAIN_CASTLE_NIGHT_ELD_ID
+      return HEROES_NIGHT_ELF[index]
+    case MAIN_CASTLE_ORC_ID
+      return HEROES_ORC[index]
+    // case MAIN_CASTLE_ROGUE_ID
+    //   return HEROES_ROGUE[index]
+    case MAIN_CASTLE_TAUREN_ID
+      return HEROES_TAUREN[index]
+    case MAIN_CASTLE_TROLL_ID
+      return HEROES_TROLL[index]
+    case MAIN_CASTLE_UNDEAD_ID
+      return HEROES_UNDEAD[index]
+    default
+      return heroMap(0, 0, 0)
