@@ -1,0 +1,14 @@
+package HeroAgroFix
+import ClosureTimers
+
+function heroAgro()
+    let u = GetEnteringUnit()
+    if u.isType(UNIT_TYPE_HERO)
+        SetUnitAcquireRange(u, 1000)
+        doAfter(6) ->
+            SetUnitAcquireRange(u, 700)
+
+init
+    let t = CreateTrigger()
+    TriggerRegisterEnterRectSimple(t, bj_mapInitialPlayableArea)
+    t.addCondition(Condition(function heroAgro))

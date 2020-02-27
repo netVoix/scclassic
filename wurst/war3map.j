@@ -1032,18 +1032,6 @@ trigger TOE=null
 trigger TCE=null
 trigger TKE=null
 trigger TTE=null
-trigger T0E=null
-trigger T6E=null
-trigger UXE=null
-trigger UBE=null
-trigger UJE=null
-trigger USE=null
-trigger U_E=null
-trigger U5E=null
-trigger WEE=null
-trigger WNE=null
-trigger WHE=null
-trigger WQE=null
 trigger WZE=null
 trigger W4E=null
 trigger YVE=null
@@ -20814,114 +20802,7 @@ else
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,GetRectCenter(AG))
 endif
 endfunction
-function G6G takes nothing returns boolean
-return(GetTriggerUnit()==FUA)or(GetTriggerUnit()==FCA)
-endfunction
-function G7G takes nothing returns boolean
-return(((G6G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(OH,GetAttacker()))and(IsUnitAliveBJ(A)))!=false)!=false
-endfunction
-function G8G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,A)
-endfunction
-function G9G takes nothing returns boolean
-return(GetTriggerUnit()==FCA)or(GetTriggerUnit()==FXA)
-endfunction
-function HVG takes nothing returns boolean
-return(((G9G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(RH,GetAttacker()))and(IsUnitAliveBJ(N)))!=false)!=false
-endfunction
-function HEG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,N)
-endfunction
-function HXG takes nothing returns boolean
-return(GetTriggerUnit()==FXA)or(GetTriggerUnit()==FIA)
-endfunction
-function HOG takes nothing returns boolean
-return(((HXG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(IH,GetAttacker()))and(IsUnitAliveBJ(L)))!=false)!=false
-endfunction
-function HRG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,L)
-endfunction
-function HIG takes nothing returns boolean
-return(GetTriggerUnit()==FZA)or(GetTriggerUnit()==GXA)
-endfunction
-function HAG takes nothing returns boolean
-return(((HIG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(XH,GetAttacker()))and(IsUnitAliveBJ(K)))!=false)!=false
-endfunction
-function HNG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,K)
-endfunction
-function HBG takes nothing returns boolean
-return(GetTriggerUnit()==GXA)or(GetTriggerUnit()==GKA)
-endfunction
-function HCG takes nothing returns boolean
-return(((HBG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(EH,GetAttacker()))and(IsUnitAliveBJ(J)))!=false)!=false
-endfunction
-function HDG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,J)
-endfunction
-function HFG takes nothing returns boolean
-return(GetTriggerUnit()==GKA)or(GetTriggerUnit()==GBA)
-endfunction
-function HGG takes nothing returns boolean
-return(((HFG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(VH,GetAttacker()))and(IsUnitAliveBJ(H)))!=false)!=false
-endfunction
-function HHG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,H)
-endfunction
-function HJG takes nothing returns boolean
-return(GetTriggerUnit()==CZA)or(GetTriggerUnit()==DXA)
-endfunction
-function HKG takes nothing returns boolean
-return(((HJG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(UG,GetAttacker()))and(IsUnitAliveBJ(G)))!=false)!=false
-endfunction
-function HLG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,G)
-endfunction
-function HMG takes nothing returns boolean
-return(GetTriggerUnit()==DXA)or(GetTriggerUnit()==CUA)
-endfunction
-function HPG takes nothing returns boolean
-return(((HMG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(TG,GetAttacker()))and(IsUnitAliveBJ(F)))!=false)!=false
-endfunction
-function HQG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,F)
-endfunction
-function HSG takes nothing returns boolean
-return(GetTriggerUnit()==CUA)or(GetTriggerUnit()==CKA)
-endfunction
-function HTG takes nothing returns boolean
-return(((HSG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(SG,GetAttacker()))and(IsUnitAliveBJ(D)))!=false)!=false
-endfunction
-function HUG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,D)
-endfunction
-function HWG takes nothing returns boolean
-return(GetTriggerUnit()==DDA)or(GetTriggerUnit()==DNA)
-endfunction
-function HYG takes nothing returns boolean
-return(((HWG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(WG,GetAttacker()))and(IsUnitAliveBJ(C)))!=false)!=false
-endfunction
-function HZG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,C)
-endfunction
-function H_G takes nothing returns boolean
-return(GetTriggerUnit()==DNA)or(GetTriggerUnit()==DHA)
-endfunction
-function H0G takes nothing returns boolean
-return(((H_G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(YG,GetAttacker()))and(IsUnitAliveBJ(B)))!=false)!=false
-endfunction
-function H1G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,B)
-endfunction
-function H2G takes nothing returns boolean
-return(GetTriggerUnit()==DHA)or(GetTriggerUnit()==D0A)
-endfunction
-function H3G takes nothing returns boolean
-return(((H2G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(ZG,GetAttacker()))and(IsUnitAliveBJ(M)))!=false)!=false
-endfunction
-function H4G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,M)
-endfunction
+// Прямые приказы
 function H6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -28447,7 +28328,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(OH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28458,7 +28338,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(RH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28469,7 +28348,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(IH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28482,7 +28360,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(XH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28493,7 +28370,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(EH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28504,7 +28380,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(VH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28517,7 +28392,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(UG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28528,7 +28402,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(TG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28539,7 +28412,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(SG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28552,7 +28424,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(WG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28563,7 +28434,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(YG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28574,7 +28444,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(ZG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -30313,11 +30182,8 @@ set ZX[22]=LHN(GetOwningPlayer(GetTriggerUnit()),'o014')
 call ForGroupBJ(ZX[22],function J_J)
 call DestroyGroup(ZX[22])
 endfunction
-function J1J takes nothing returns boolean
-return(RectContainsUnit(AD,GetTriggerUnit()))or(RectContainsUnit(ID,GetTriggerUnit()))or(RectContainsUnit(OD,GetTriggerUnit()))or(RectContainsUnit(RD,GetTriggerUnit()))
-endfunction
 function J2J takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='Hgam')and(J1J())
+return(GetUnitTypeId(GetTriggerUnit())=='Hgam')
 endfunction
 function J3J takes nothing returns nothing
 call IssueImmediateOrderById(GetTriggerUnit(),$D026A)
@@ -57873,54 +57739,6 @@ set TTE=CreateTrigger()
 call TriggerRegisterEnterRectSimple(TTE,UH)
 call TriggerAddCondition(TTE,Condition(function G3G))
 call TriggerAddAction(TTE,function G5G)
-set T0E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(T0E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(T0E,Condition(function G7G))
-call TriggerAddAction(T0E,function G8G)
-set T6E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(T6E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(T6E,Condition(function HVG))
-call TriggerAddAction(T6E,function HEG)
-set UXE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UXE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UXE,Condition(function HOG))
-call TriggerAddAction(UXE,function HRG)
-set UBE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UBE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UBE,Condition(function HAG))
-call TriggerAddAction(UBE,function HNG)
-set UJE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UJE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UJE,Condition(function HCG))
-call TriggerAddAction(UJE,function HDG)
-set USE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(USE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(USE,Condition(function HGG))
-call TriggerAddAction(USE,function HHG)
-set U_E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(U_E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(U_E,Condition(function HKG))
-call TriggerAddAction(U_E,function HLG)
-set U5E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(U5E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(U5E,Condition(function HPG))
-call TriggerAddAction(U5E,function HQG)
-set WEE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WEE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WEE,Condition(function HTG))
-call TriggerAddAction(WEE,function HUG)
-set WNE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WNE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WNE,Condition(function HYG))
-call TriggerAddAction(WNE,function HZG)
-set WHE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WHE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WHE,Condition(function H0G))
-call TriggerAddAction(WHE,function H1G)
-set WQE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WQE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WQE,Condition(function H3G))
-call TriggerAddAction(WQE,function H4G)
 // set WZE=CreateTrigger()
 // call TriggerRegisterAnyUnitEventBJ(WZE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 // call TriggerAddAction(WZE,function JRG)
@@ -58279,10 +58097,10 @@ call TriggerAddAction(P0X,function G8J)
 // call TriggerRegisterAnyUnitEventBJ(P6X,EVENT_PLAYER_UNIT_SPELL_FINISH)
 // call TriggerAddCondition(P6X,Condition(function HOJ))
 // call TriggerAddAction(P6X,function HFJ)
-set P9X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(P9X,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(P9X,Condition(function HHJ))
-call TriggerAddAction(P9X,function HJJ)
+// set P9X=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(P9X,EVENT_PLAYER_UNIT_ATTACKED)
+// call TriggerAddCondition(P9X,Condition(function HHJ))
+// call TriggerAddAction(P9X,function HJJ)
 set QCX=CreateTrigger()
 call DisableTrigger(QCX)
 call TriggerRegisterAnyUnitEventBJ(QCX,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
