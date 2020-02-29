@@ -65,7 +65,7 @@ public let SORCERESS_ID = 'hsor'
 	..setInt("ua2f", 275)
 	..setUnreal("ucbs", 0.3)
 	..setUnreal("ucpt", 0.3)
-	..setUnreal("uacq", 600.0)
+	..setUnreal("uacq", 700.0)
 	..setInt("usid", 1000)
 	..setString("ua1m", "BEMissile.mdl")
 	..setString("uspa", "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl")
