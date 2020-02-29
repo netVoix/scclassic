@@ -2,7 +2,7 @@ package CastleSpellbook
 
 import AbilityObjEditing
 import ObjectIds
-import AntiheroDamageReduction
+import Antihero
 import RegisterEvents
 
 public let CASTLE_SPELLBOOK_ID = 'A0CV'

@@ -48939,30 +48939,26 @@ endif
 endif
 else
 if(GYM())then
-call SetUnitScalePercent(GetTriggerUnit(),140.,140.,140.)
-call SetPlayerTechResearchedSwap('R02U',1,GetOwningPlayer(GetTriggerUnit()))
-if(GWM())then
-call SetPlayerTechResearchedSwap('R02U',1,Z)
-set XA[1]='R02U'
-else
-if(GUM())then
-call SetPlayerTechResearchedSwap('R02U',1,Y)
-set XA[2]='R02U'
-else
-if(GTM())then
-call SetPlayerTechResearchedSwap('R02U',1,U)
-set XA[3]='R02U'
-else
-if(GSM())then
-call SetPlayerTechResearchedSwap('R02U',1,W)
-set XA[4]='R02U'
-endif
-endif
-endif
-endif
-call EnableTrigger(TUO)
-call EnableTrigger(T6O)
-call EnableTrigger(UKO)
+    call SetUnitScalePercent(GetTriggerUnit(),140.,140.,140.)
+    call SetPlayerTechResearchedSwap('R02U',1,GetOwningPlayer(GetTriggerUnit()))
+    if(GWM())then
+        call SetPlayerTechResearchedSwap('R02U',1,Z)
+    else
+        if(GUM())then
+            call SetPlayerTechResearchedSwap('R02U',1,Y)
+        else
+            if(GTM())then
+                call SetPlayerTechResearchedSwap('R02U',1,U)
+            else
+                if(GSM())then
+                    call SetPlayerTechResearchedSwap('R02U',1,W)
+                endif
+            endif
+        endif
+    endif
+    call EnableTrigger(TUO)
+    call EnableTrigger(T6O)
+    call EnableTrigger(UKO)
 else
 if(GQM())then
 call SetUnitScalePercent(GetTriggerUnit(),140.,140.,140.)
