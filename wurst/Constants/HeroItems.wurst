@@ -1,0 +1,15 @@
+package HeroItems
+
+import public ItemsTierOne
+import public ItemsTierTwo
+import public ItemsTierThree
+import public ItemsTierFour
+import public ItemsTierOneIcons
+import public ItemsTierTwoIcons
+import public ItemsTierThreeIcons
+import public ItemsTierFourIcons
+
+public let TIER_ONE_SIMPLE = [SOBI_MASK_ID, RING_OF_REGENERATION_ID, CLAWS_OF_ATTACK_ID,
+                              HEALTH_STONE_ID, GLOVES_OF_HASTE_ID, RING_OF_PROTECTION_ID]
+public let TIER_ONE_AURAS = [NECRONOMICON_ID, LION_HORN_ID, BATTLE_DRUMS_ID,
+                             ALLERIAS_FLUTE_ID, LEGION_DOOM_HORN_ID, FROST_SHARD_ID]

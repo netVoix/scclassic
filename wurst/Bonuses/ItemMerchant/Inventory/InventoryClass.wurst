@@ -1,0 +1,42 @@
+package InventoryClass
+
+import InventoryStore
+
+public class Inventory
+  private int array[6] inventory
+  private unit canvasUnit
+
+  construct(unit w)
+    canvasUnit = w
+  
+  private function addToSlot(int x, int iid)
+    inventory[x] = iid
+    canvasUnit.addAbility(iid)
+
+  function removeById(int x) returns int
+    for i = 0 to 5
+      if inventory[i] == x
+        removeFromSlot(i)
+        return i
+    return -1
+
+  private function removeFromSlot(int x)
+    if inventory[x] != 0
+      canvasUnit.removeAbility(inventory[x])
+      inventory[x] = 0
+
+  private function getIconForItem(item i) returns int
+    return INVENTORY_MAP.get(i.getTypeId())
+
+  function clearInventory()
+    for i = 0 to 5
+      removeFromSlot(i)
+
+  function renderUnitInventory(unit u)
+    clearInventory()
+    for i = 0 to 5
+      let fi = u.itemInSlot(i)
+      if fi != null
+        addToSlot(i, getIconForItem(fi))
+  
+  

@@ -1,0 +1,7 @@
+package HeroesGoblin
+
+
+public let GAZLOWE_ID = 'Nrob'
+public let RAZZIL_ID = 'Nalc'
+public let RIKET_ID = 'Ntin'
+public let ATTACKBOT_ID = 'Hdgo'

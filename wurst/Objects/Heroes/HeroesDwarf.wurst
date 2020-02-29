@@ -1,0 +1,8 @@
+package HeroesDwarf
+
+
+public let MURADIN_ID = 'Hmkg'
+public let GARRIM_ID = 'Hkal'
+public let BOR_THORDIN_ID = 'Hant'
+public let HELGA_ID = 'Hhkl'
+	

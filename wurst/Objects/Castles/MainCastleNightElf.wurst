@@ -1,0 +1,3 @@
+package MainCastleNightElf
+
+public let MAIN_CASTLE_NIGHT_ELD_ID = 'e001'

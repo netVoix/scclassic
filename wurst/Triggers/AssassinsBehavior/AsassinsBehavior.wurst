@@ -4,8 +4,9 @@ import RegisterEvents
 
 
 function handleUnit(unit u)
-	if u.isAssassin() and u.getLevel() >= 4
-		u.tryAttackNearestHeroInRange(800)
+	if u.isType(UNIT_TYPE_HERO) and u.getLevel() >= 4
+		let range = u.isAssassin() ? 800.0 : 260.0
+		u.tryAttackNearestHeroInRange(range)
 
 init
 	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->

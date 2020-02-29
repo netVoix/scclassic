@@ -1,0 +1,3 @@
+package MainCastleTauren
+
+public let MAIN_CASTLE_TAUREN_ID = 'o00A'

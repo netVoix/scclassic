@@ -1,0 +1,3 @@
+package MainCastleFelOrc
+
+public let MAIN_CASTLE_FEL_ORC_ID = 'o00Q'

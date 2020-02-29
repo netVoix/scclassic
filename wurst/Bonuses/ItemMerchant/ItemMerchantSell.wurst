@@ -1,0 +1,44 @@
+package ItemMerchantSell
+
+import RegisterEvents
+import ItemMerchantPick
+import HeroIconsClass
+import InventoryStore
+import SaveHero
+
+function sellItem(player p, int iid)
+  let h = heroes.get(heroIcons[p.getTeam()].getActiveHero().heroId)
+  let slotNum = inventories[p.getTeam()].removeById(iid)
+  if slotNum != -1
+    let sold = h.removeItemFromSlot(slotNum)
+    let sum = 75 * sold.getLevel()
+    let f = M_N(p)
+    DisplayTimedTextToForce(f, 7, "You sold an {0} for {1} gold.".format(sold.getName(), sum.toString()))
+    f.destr()
+    p.addGold(sum)
+    sold.remove()     
+    saveHero(h) 
+    inventories[p.getTeam()].renderUnitInventory(h)
+  else
+    let f = M_N(p)
+    DisplayTimedTextToForce(f, 7, "Item not found.")
+    f.destr()
+  
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+    let tid = GetTriggerPlayer().getTeam()
+    let aid = GetSpellAbilityId()
+    if inventories[tid] != null and heroIcons[tid].check(aid)
+      inventories[tid].clearInventory()
+      if heroIcons[tid].click(aid)      
+        let h = heroes.get(heroIcons[tid].getActiveHero().heroId)
+        if h != null
+          inventories[tid].renderUnitInventory(h)
+
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) -> 
+    let p = GetTriggerPlayer()
+    let sid = GetSpellAbilityId()
+    if inventories[p.getTeam()] != null and p.isIngame()
+      for ic from INVENTORY_MAP.iterator()
+        if INVENTORY_MAP.get(ic) == sid
+          sellItem(p, INVENTORY_MAP.get(ic))         

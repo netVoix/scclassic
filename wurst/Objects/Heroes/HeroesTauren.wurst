@@ -1,0 +1,6 @@
+package HeroesTauren
+
+public let BOVAN_ID = 'Ogld'
+public let BAINE_ID = 'Osam'
+public let CAIRNE_ID = 'Otch'
+public let IRON_TUSK_ID = 'Ocb2'

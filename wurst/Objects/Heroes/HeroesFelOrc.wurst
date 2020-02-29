@@ -1,0 +1,7 @@
+package HeroesFelOrc
+
+
+public let JUBEITHOS_ID = 'Nbbc'
+public let GORR_ID = 'Ofar'
+public let AXEMASTER_ID = 'Opgh'
+public let XEROX_ID = 'Ubal'

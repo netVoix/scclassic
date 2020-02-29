@@ -1,0 +1,3 @@
+package MainCastleDwarf
+
+public let MAIN_CASTLE_DWARF_ID = 'o005'

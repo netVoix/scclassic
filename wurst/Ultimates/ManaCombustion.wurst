@@ -78,4 +78,4 @@ public let MANA_COMBUSTION_ID = 'A0QV'
 	..setLvlDataUnreal("Emb1", 1, 1, 150.0)
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNMana2.blp")
 	..setLvlDataString("arac", 0, 0, "naga")
-	..setLvlDataInt("amcs", 1, 0, 40)
+	..setLvlDataInt("amcs", 1, 0, 60)

@@ -1,0 +1,7 @@
+package HeroesBloodElf
+
+
+public let KAEL_ID = 'Hblm'
+public let LADY_LIADRIN_ID = 'Eill'
+public let LORTHEMAR_ID = 'Ewar'
+public let PHOENIX_ID = 'Etyr'

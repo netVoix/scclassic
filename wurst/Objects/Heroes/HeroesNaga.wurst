@@ -1,0 +1,7 @@
+package HeroesNaga
+
+
+public let ATHISSA_ID = 'Emfr'
+public let LADY_VASHJ_ID = 'Nngs'
+public let NAJENTUS_ID = 'Edem'
+public let CHEREPAHA_ID = 'Eilm'

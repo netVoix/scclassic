@@ -35,6 +35,7 @@ timer EV=null
 timer XV=null
 timer OV=null
 timer RV=null
+sound portal = null
 real IV=0
 real AV=0
 real NV=0
@@ -176,6 +177,7 @@ button array BI
 button array CI
 button array DI
 timer array FI
+player array playerss
 player array GI
 button HI=null
 integer JI=0
@@ -1030,18 +1032,6 @@ trigger TOE=null
 trigger TCE=null
 trigger TKE=null
 trigger TTE=null
-trigger T0E=null
-trigger T6E=null
-trigger UXE=null
-trigger UBE=null
-trigger UJE=null
-trigger USE=null
-trigger U_E=null
-trigger U5E=null
-trigger WEE=null
-trigger WNE=null
-trigger WHE=null
-trigger WQE=null
 trigger WZE=null
 trigger W4E=null
 trigger YVE=null
@@ -2189,14 +2179,18 @@ call ForceAddPlayer(V,Player($A))
 set P=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,P)
 call TriggerSleepAction(.1)
+set playerss[1] = P
 set S=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,S)
 call TriggerSleepAction(.1)
+set playerss[2] = S
 set Q=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,Q)
 call TriggerSleepAction(.1)
+set playerss[3] = Q
 set T=ForcePickRandomPlayer(V)
 call ForceRemovePlayer(V,T)
+set playerss[4] = T
 call SetPlayerMaxHeroesAllowed(4,Player(0))
 call SetPlayerMaxHeroesAllowed(4,Player(1))
 call SetPlayerMaxHeroesAllowed(4,Player(4))
@@ -2697,6 +2691,7 @@ set OR[4]=GetRandomInt(1,$C)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
+//игроки
 call IssueImmediateOrderById(X,XE[OR[1]])
 call TriggerSleepAction(.1)
 call IssueImmediateOrderById(O,XE[OR[2]])
@@ -3217,7 +3212,7 @@ set KR[5]='hars'
 set KR[6]='hhou'
 set KR[7]='nef7'
 set KR[8]='nmr7'
-set KR[9]='ncb5'
+set KR[9]='nef0'
 set KR[$A]='ncb8'
 set KR[$B]='ncb9'
 set KR[$C]='ncba'
@@ -3283,7 +3278,7 @@ set LR[5]='hars'
 set LR[6]='hhou'
 set LR[7]='nef7'
 set LR[8]='nmr7'
-set LR[9]='ncb5'
+set LR[9]='nef0'
 set LR[$A]='ncb8'
 set LR[$B]='ncb9'
 set LR[$C]='ncba'
@@ -3349,7 +3344,7 @@ set MR[5]='hars'
 set MR[6]='hhou'
 set MR[7]='nef7'
 set MR[8]='nmr7'
-set MR[9]='ncb5'
+set MR[9]='nef0'
 set MR[$A]='ncb8'
 set MR[$B]='ncb9'
 set MR[$C]='ncba'
@@ -3415,7 +3410,7 @@ set PR[5]='hars'
 set PR[6]='hhou'
 set PR[7]='nef7'
 set PR[8]='nmr7'
-set PR[9]='ncb5'
+set PR[9]='nef0'
 set PR[$A]='ncb8'
 set PR[$B]='ncb9'
 set PR[$C]='ncba'
@@ -3547,7 +3542,7 @@ set KR[2]='harm'
 set KR[3]='htow'
 set KR[4]='hgra'
 set KR[5]='hctw'
-set KR[6]='nef1'
+set KR[6]='nef0'
 set KR[7]='nmer'
 set KR[8]='nmr3'
 set KR[9]='nef7'
@@ -3613,7 +3608,7 @@ set LR[2]='harm'
 set LR[3]='htow'
 set LR[4]='hgra'
 set LR[5]='hctw'
-set LR[6]='nef1'
+set LR[6]='nef0'
 set LR[7]='nmer'
 set LR[8]='nmr3'
 set LR[9]='nef7'
@@ -3679,7 +3674,7 @@ set MR[2]='harm'
 set MR[3]='htow'
 set MR[4]='hgra'
 set MR[5]='hctw'
-set MR[6]='nef1'
+set MR[6]='nef0'
 set MR[7]='nmer'
 set MR[8]='nmr3'
 set MR[9]='nef7'
@@ -3745,7 +3740,7 @@ set PR[2]='harm'
 set PR[3]='htow'
 set PR[4]='hgra'
 set PR[5]='hctw'
-set PR[6]='nef1'
+set PR[6]='nef0'
 set PR[7]='nmer'
 set PR[8]='nmr3'
 set PR[9]='nef7'
@@ -5206,7 +5201,7 @@ set KR[2]='ugrv'
 set KR[3]='usep'
 set KR[4]='uaod'
 set KR[5]='uzig'
-set KR[6]='uzg2'
+set KR[6]='nef0'
 set KR[7]='nmra'
 set KR[8]='nmrb'
 set KR[9]='nmrc'
@@ -5271,7 +5266,7 @@ set LR[2]='ugrv'
 set LR[3]='usep'
 set LR[4]='uaod'
 set LR[5]='uzig'
-set LR[6]='uzg2'
+set LR[6]='nef0'
 set LR[7]='nmra'
 set LR[8]='nmrb'
 set LR[9]='nmrc'
@@ -5336,7 +5331,7 @@ set MR[2]='ugrv'
 set MR[3]='usep'
 set MR[4]='uaod'
 set MR[5]='uzig'
-set MR[6]='uzg2'
+set MR[6]='nef0'
 set MR[7]='nmra'
 set MR[8]='nmrb'
 set MR[9]='nmrc'
@@ -5401,7 +5396,7 @@ set PR[2]='ugrv'
 set PR[3]='usep'
 set PR[4]='uaod'
 set PR[5]='uzig'
-set PR[6]='uzg2'
+set PR[6]='nef0'
 set PR[7]='nmra'
 set PR[8]='nmrb'
 set PR[9]='nmrc'
@@ -5540,7 +5535,7 @@ set KR[7]='nbsm'
 set KR[8]='nfrm'
 set KR[9]='ngni'
 set KR[$A]='ndmg'
-set KR[$B]='uzg2'
+set KR[$B]='nef0'
 set KR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(APD())then
@@ -5605,7 +5600,7 @@ set LR[7]='nbsm'
 set LR[8]='nfrm'
 set LR[9]='ngni'
 set LR[$A]='ndmg'
-set LR[$B]='uzg2'
+set LR[$B]='nef0'
 set LR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(EGD())then
@@ -5670,7 +5665,7 @@ set MR[7]='nbsm'
 set MR[8]='nfrm'
 set MR[9]='ngni'
 set MR[$A]='ndmg'
-set MR[$B]='uzg2'
+set MR[$B]='nef0'
 set MR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(O1D())then
@@ -5735,7 +5730,7 @@ set PR[7]='nbsm'
 set PR[8]='nfrm'
 set PR[9]='ngni'
 set PR[$A]='ndmg'
-set PR[$B]='uzg2'
+set PR[$B]='nef0'
 set PR[$C]='nef7'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffUndead|r!"))
 if(AND())then
@@ -5867,7 +5862,7 @@ set KR[5]='nef3'
 set KR[6]='nef4'
 set KR[7]='nef5'
 set KR[8]='nef6'
-set KR[9]='uzg2'
+set KR[9]='nef0'
 set KR[$A]='negm'
 set KR[$B]='nef7'
 set KR[12]='ushp'
@@ -5932,7 +5927,7 @@ set LR[5]='nef3'
 set LR[6]='nef4'
 set LR[7]='nef5'
 set LR[8]='nef6'
-set LR[9]='uzg2'
+set LR[9]='nef0'
 set LR[$A]='negm'
 set LR[$B]='nef7'
 set LR[12]='ushp'
@@ -5997,7 +5992,7 @@ set MR[5]='nef3'
 set MR[6]='nef4'
 set MR[7]='nef5'
 set MR[8]='nef6'
-set MR[9]='uzg2'
+set MR[9]='nef0'
 set MR[$A]='negm'
 set MR[$B]='nef7'
 set MR[12]='ushp'
@@ -6062,7 +6057,7 @@ set PR[5]='nef3'
 set PR[6]='nef4'
 set PR[7]='nef5'
 set PR[8]='nef6'
-set PR[9]='uzg2'
+set PR[9]='nef0'
 set PR[$A]='negm'
 set PR[$B]='nef7'
 set PR[12]='ushp'
@@ -6195,7 +6190,7 @@ set KR[4]='edob'
 set KR[5]='etrp'
 set KR[6]='eaow'
 set KR[7]='eden'
-set KR[8]='egol'
+set KR[8]='nef0'
 set KR[9]='eaom'
 set KR[$A]='nmr6'
 set KR[$B]='ncbe'
@@ -6260,7 +6255,7 @@ set LR[4]='edob'
 set LR[5]='etrp'
 set LR[6]='eaow'
 set LR[7]='eden'
-set LR[8]='egol'
+set LR[8]='nef0'
 set LR[9]='eaom'
 set LR[$A]='nmr6'
 set LR[$B]='ncbe'
@@ -6325,7 +6320,7 @@ set MR[4]='edob'
 set MR[5]='etrp'
 set MR[6]='eaow'
 set MR[7]='eden'
-set MR[8]='egol'
+set MR[8]='nef0'
 set MR[9]='eaom'
 set MR[$A]='nmr6'
 set MR[$B]='ncbe'
@@ -6390,7 +6385,7 @@ set PR[4]='edob'
 set PR[5]='etrp'
 set PR[6]='eaow'
 set PR[7]='eden'
-set PR[8]='egol'
+set PR[8]='nef0'
 set PR[9]='eaom'
 set PR[$A]='nmr6'
 set PR[$B]='ncbe'
@@ -6523,7 +6518,7 @@ set KR[2]='emow'
 set KR[3]='etoe'
 set KR[4]='etoa'
 set KR[5]='nnad'
-set KR[6]='ntav'
+set KR[6]='nef0'
 set KR[7]='nshp'
 set KR[8]='nmrk'
 set KR[9]='nfv3'
@@ -6589,7 +6584,7 @@ set LR[2]='emow'
 set LR[3]='etoe'
 set LR[4]='etoa'
 set LR[5]='nnad'
-set LR[6]='ntav'
+set LR[6]='nef0'
 set LR[7]='nshp'
 set LR[8]='nmrk'
 set LR[9]='nfv3'
@@ -6655,7 +6650,7 @@ set MR[2]='emow'
 set MR[3]='etoe'
 set MR[4]='etoa'
 set MR[5]='nnad'
-set MR[6]='ntav'
+set MR[6]='nef0'
 set MR[7]='nshp'
 set MR[8]='nmrk'
 set MR[9]='nfv3'
@@ -6721,7 +6716,7 @@ set PR[2]='emow'
 set PR[3]='etoe'
 set PR[4]='etoa'
 set PR[5]='nnad'
-set PR[6]='ntav'
+set PR[6]='nef0'
 set PR[7]='nshp'
 set PR[8]='nmrk'
 set PR[9]='nfv3'
@@ -6860,7 +6855,7 @@ set KR[6]='nvr1'
 set KR[7]='ncb7'
 set KR[8]='nef7'
 set KR[9]='ncb4'
-set KR[$A]='ncb5'
+set KR[$A]='nef0'
 set KR[$B]='ncb6'
 set KR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
@@ -6926,7 +6921,7 @@ set LR[6]='nvr1'
 set LR[7]='ncb7'
 set LR[8]='nef7'
 set LR[9]='ncb4'
-set LR[$A]='ncb5'
+set LR[$A]='nef0'
 set LR[$B]='ncb6'
 set LR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
@@ -6992,7 +6987,7 @@ set MR[6]='nvr1'
 set MR[7]='ncb7'
 set MR[8]='nef7'
 set MR[9]='ncb4'
-set MR[$A]='ncb5'
+set MR[$A]='nef0'
 set MR[$B]='ncb6'
 set MR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
@@ -7058,7 +7053,7 @@ set PR[6]='nvr1'
 set PR[7]='ncb7'
 set PR[8]='nef7'
 set PR[9]='ncb4'
-set PR[$A]='ncb5'
+set PR[$A]='nef0'
 set PR[$B]='ncb6'
 set PR[12]='hatw'
 call QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00ffffBlood Elf|r!"))
@@ -7464,6 +7459,7 @@ endfunction
 function C_D takes nothing returns boolean
 return(NX[1]=='o003')
 endfunction
+//Доска
 function C0D takes nothing returns nothing
 call CreateMultiboardBJ(2,26,"|cffFDD017Survival Chaos|r")
 set WA[1]=bj_lastCreatedMultiboard
@@ -8497,6 +8493,7 @@ function G7D takes nothing returns nothing
 set ZA=(ZA+1)
 if(GGD())then
 set YA[1]=(I2R(UA[1])/I2R(ZA))
+// here
 call MultiboardSetItemValueBJ(WA[1],2,4,I2S(R2I(YA[1])))
 if(GFD())then
 set RN[1]=YA[1]
@@ -20805,114 +20802,7 @@ else
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,GetRectCenter(AG))
 endif
 endfunction
-function G6G takes nothing returns boolean
-return(GetTriggerUnit()==FUA)or(GetTriggerUnit()==FCA)
-endfunction
-function G7G takes nothing returns boolean
-return(((G6G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(OH,GetAttacker()))and(IsUnitAliveBJ(A)))!=false)!=false
-endfunction
-function G8G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,A)
-endfunction
-function G9G takes nothing returns boolean
-return(GetTriggerUnit()==FCA)or(GetTriggerUnit()==FXA)
-endfunction
-function HVG takes nothing returns boolean
-return(((G9G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(RH,GetAttacker()))and(IsUnitAliveBJ(N)))!=false)!=false
-endfunction
-function HEG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,N)
-endfunction
-function HXG takes nothing returns boolean
-return(GetTriggerUnit()==FXA)or(GetTriggerUnit()==FIA)
-endfunction
-function HOG takes nothing returns boolean
-return(((HXG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(IH,GetAttacker()))and(IsUnitAliveBJ(L)))!=false)!=false
-endfunction
-function HRG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,L)
-endfunction
-function HIG takes nothing returns boolean
-return(GetTriggerUnit()==FZA)or(GetTriggerUnit()==GXA)
-endfunction
-function HAG takes nothing returns boolean
-return(((HIG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(XH,GetAttacker()))and(IsUnitAliveBJ(K)))!=false)!=false
-endfunction
-function HNG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,K)
-endfunction
-function HBG takes nothing returns boolean
-return(GetTriggerUnit()==GXA)or(GetTriggerUnit()==GKA)
-endfunction
-function HCG takes nothing returns boolean
-return(((HBG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(EH,GetAttacker()))and(IsUnitAliveBJ(J)))!=false)!=false
-endfunction
-function HDG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,J)
-endfunction
-function HFG takes nothing returns boolean
-return(GetTriggerUnit()==GKA)or(GetTriggerUnit()==GBA)
-endfunction
-function HGG takes nothing returns boolean
-return(((HFG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(VH,GetAttacker()))and(IsUnitAliveBJ(H)))!=false)!=false
-endfunction
-function HHG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,H)
-endfunction
-function HJG takes nothing returns boolean
-return(GetTriggerUnit()==CZA)or(GetTriggerUnit()==DXA)
-endfunction
-function HKG takes nothing returns boolean
-return(((HJG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(UG,GetAttacker()))and(IsUnitAliveBJ(G)))!=false)!=false
-endfunction
-function HLG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,G)
-endfunction
-function HMG takes nothing returns boolean
-return(GetTriggerUnit()==DXA)or(GetTriggerUnit()==CUA)
-endfunction
-function HPG takes nothing returns boolean
-return(((HMG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(TG,GetAttacker()))and(IsUnitAliveBJ(F)))!=false)!=false
-endfunction
-function HQG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,F)
-endfunction
-function HSG takes nothing returns boolean
-return(GetTriggerUnit()==CUA)or(GetTriggerUnit()==CKA)
-endfunction
-function HTG takes nothing returns boolean
-return(((HSG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(SG,GetAttacker()))and(IsUnitAliveBJ(D)))!=false)!=false
-endfunction
-function HUG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,D)
-endfunction
-function HWG takes nothing returns boolean
-return(GetTriggerUnit()==DDA)or(GetTriggerUnit()==DNA)
-endfunction
-function HYG takes nothing returns boolean
-return(((HWG())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(WG,GetAttacker()))and(IsUnitAliveBJ(C)))!=false)!=false
-endfunction
-function HZG takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,C)
-endfunction
-function H_G takes nothing returns boolean
-return(GetTriggerUnit()==DNA)or(GetTriggerUnit()==DHA)
-endfunction
-function H0G takes nothing returns boolean
-return(((H_G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(YG,GetAttacker()))and(IsUnitAliveBJ(B)))!=false)!=false
-endfunction
-function H1G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,B)
-endfunction
-function H2G takes nothing returns boolean
-return(GetTriggerUnit()==DHA)or(GetTriggerUnit()==D0A)
-endfunction
-function H3G takes nothing returns boolean
-return(((H2G())and(IsUnitType(GetAttacker(),UNIT_TYPE_HERO))and(IsUnitType(GetAttacker(),UNIT_TYPE_MELEE_ATTACKER))and(IsUnitType(GetAttacker(),UNIT_TYPE_ANCIENT)==false)and(RectContainsUnit(ZG,GetAttacker()))and(IsUnitAliveBJ(M)))!=false)!=false
-endfunction
-function H4G takes nothing returns nothing
-call IssueTargetOrderById(GetAttacker(),$D000F,M)
-endfunction
+// Прямые приказы
 function H6G takes nothing returns boolean
 return(GetSpellAbilityId()=='A0OB')
 endfunction
@@ -28438,7 +28328,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(OH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28449,7 +28338,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(RH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28460,7 +28348,6 @@ call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(IH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28473,7 +28360,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(XH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28484,7 +28370,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(EH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28495,7 +28380,6 @@ call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(VH))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28508,7 +28392,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(UG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28519,7 +28402,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(TG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28530,7 +28412,6 @@ call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(SG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -28543,7 +28424,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(WG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28554,7 +28434,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(YG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -28565,7 +28444,6 @@ call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
 call UnitAddAbility(bj_lastCreatedUnit,'A076')
 call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(ZG))
 call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-call TriggerSleepAction(.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
@@ -30304,11 +30182,8 @@ set ZX[22]=LHN(GetOwningPlayer(GetTriggerUnit()),'o014')
 call ForGroupBJ(ZX[22],function J_J)
 call DestroyGroup(ZX[22])
 endfunction
-function J1J takes nothing returns boolean
-return(RectContainsUnit(AD,GetTriggerUnit()))or(RectContainsUnit(ID,GetTriggerUnit()))or(RectContainsUnit(OD,GetTriggerUnit()))or(RectContainsUnit(RD,GetTriggerUnit()))
-endfunction
 function J2J takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='Hgam')and(J1J())
+return(GetUnitTypeId(GetTriggerUnit())=='Hgam')
 endfunction
 function J3J takes nothing returns nothing
 call IssueImmediateOrderById(GetTriggerUnit(),$D026A)
@@ -30709,14 +30584,14 @@ return(GetOwningPlayer(GetKillingUnit())==Z)
 endfunction
 function MDJ takes nothing returns nothing
 set XO[$84]=GetUnitLoc(GetKillingUnit())
-call CreateTextTagLocBJ(("+"+I2S((5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit()))))),XO[$84],0,$A,100.,100.,.0,0)
+call CreateTextTagLocBJ(("+"+I2S((6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit()))))),XO[$84],0,$A,100.,100.,.0,0)
 call SetTextTagVelocityBJ(bj_lastCreatedTextTag,40.,90)
 call SetTextTagPermanentBJ(bj_lastCreatedTextTag,false)
 call SetTextTagLifespanBJ(bj_lastCreatedTextTag,7.)
 call SetTextTagFadepointBJ(bj_lastCreatedTextTag,4.)
 call RemoveLocation(XO[$84])
 if(MCJ())then
-set QN[1]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[1]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[1],P,PLAYER_STATE_RESOURCE_GOLD)
 set TN[1]=(TN[5]+QN[1])
 call MultiboardSetItemValueBJ(WA[1],2,21,I2S(TN[1]))
@@ -30724,7 +30599,7 @@ set QN[1]=0
 set TN[5]=TN[1]
 else
 if(MBJ())then
-set QN[2]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[2]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[2],S,PLAYER_STATE_RESOURCE_GOLD)
 set TN[2]=(TN[6]+QN[2])
 call MultiboardSetItemValueBJ(WA[2],2,21,I2S(TN[2]))
@@ -30732,7 +30607,7 @@ set QN[2]=0
 set TN[6]=TN[2]
 else
 if(MNJ())then
-set QN[3]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[3]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[3],Q,PLAYER_STATE_RESOURCE_GOLD)
 set TN[3]=(TN[7]+QN[3])
 call MultiboardSetItemValueBJ(WA[3],2,21,I2S(TN[3]))
@@ -30740,7 +30615,7 @@ set QN[3]=0
 set TN[7]=TN[3]
 else
 if(MAJ())then
-set QN[4]=(5*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
+set QN[4]=(6*GetPlayerTechCountSimple('R00E',GetOwningPlayer(GetKillingUnit())))
 call AdjustPlayerStateBJ(QN[4],T,PLAYER_STATE_RESOURCE_GOLD)
 set TN[4]=(TN[8]+QN[4])
 call MultiboardSetItemValueBJ(WA[4],2,21,I2S(TN[4]))
@@ -37042,24 +36917,24 @@ set TA[4]=bj_lastCreatedFogModifier
 call RemoveLocation(XO[$81])
 endif
 endfunction
-function Q6K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='ncb5')or(GetUnitTypeId(GetTriggerUnit())=='ntav')or(GetUnitTypeId(GetTriggerUnit())=='egol')or(GetUnitTypeId(GetTriggerUnit())=='nef1')or(GetUnitTypeId(GetTriggerUnit())=='uzg2')or(GetUnitTypeId(GetTriggerUnit())=='nef0')
-endfunction
-function Q7K takes nothing returns boolean
-return(Q6K())
-endfunction
-function Q8K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='egol')or(GetUnitTypeId(GetTriggerUnit())=='nef1')
-endfunction
-function Q9K takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='uzg2')
-endfunction
-function SVK takes nothing returns boolean
-return(Q8K())
-endfunction
-function SEK takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='ntav')
-endfunction
+// function Q6K takes nothing returns boolean
+// return(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')
+// endfunction
+// function Q7K takes nothing returns boolean
+// return(Q6K())
+// endfunction
+// function Q8K takes nothing returns boolean
+// return(GetUnitTypeId(GetTriggerUnit())=='nef0')or(GetUnitTypeId(GetTriggerUnit())=='nef0')
+// endfunction
+// function Q9K takes nothing returns boolean
+// return(GetUnitTypeId(GetTriggerUnit())=='nef0')
+// endfunction
+// function SVK takes nothing returns boolean
+// return(Q8K())
+// endfunction
+// function SEK takes nothing returns boolean
+// return(GetUnitTypeId(GetTriggerUnit())=='nef0')
+// endfunction
 function SXK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)
 endfunction
@@ -37072,45 +36947,45 @@ endfunction
 function SIK takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
-function SAK takes nothing returns nothing
-if(SEK())then
-call SetUnitScalePercent(GetTriggerUnit(),115.,115.,115.)
-else
-if(SVK())then
-call SetUnitScalePercent(GetTriggerUnit(),120.,120.,120.)
-else
-if(Q9K())then
-call SetUnitScalePercent(GetTriggerUnit(),80.,80.,80.)
-else
-call SetUnitScalePercent(GetTriggerUnit(),100.,100.,100.)
-endif
-endif
-endif
-call EnableTrigger(RFO)
-if(SIK())then
-set YR[1]=true
-call EnableTrigger(RJO)
-call EnableTrigger(R5O)
-else
-if(SRK())then
-set YR[2]=true
-call EnableTrigger(RSO)
-call EnableTrigger(R8O)
-else
-if(SOK())then
-set YR[3]=true
-call EnableTrigger(RWO)
-call EnableTrigger(IEO)
-else
-if(SXK())then
-set YR[4]=true
-call EnableTrigger(R_O)
-call EnableTrigger(IRO)
-endif
-endif
-endif
-endif
-endfunction
+// function SAK takes nothing returns nothing
+// if(SEK())then
+// call SetUnitScalePercent(GetTriggerUnit(),115.,115.,115.)
+// else
+// if(SVK())then
+// call SetUnitScalePercent(GetTriggerUnit(),120.,120.,120.)
+// else
+// if(Q9K())then
+// call SetUnitScalePercent(GetTriggerUnit(),80.,80.,80.)
+// else
+// call SetUnitScalePercent(GetTriggerUnit(),100.,100.,100.)
+// endif
+// endif
+// endif
+// call EnableTrigger(RFO)
+// if(SIK())then
+// set YR[1]=true
+// call EnableTrigger(RJO)
+// call EnableTrigger(R5O)
+// else
+// if(SRK())then
+// set YR[2]=true
+// call EnableTrigger(RSO)
+// call EnableTrigger(R8O)
+// else
+// if(SOK())then
+// set YR[3]=true
+// call EnableTrigger(RWO)
+// call EnableTrigger(IEO)
+// else
+// if(SXK())then
+// set YR[4]=true
+// call EnableTrigger(R_O)
+// call EnableTrigger(IRO)
+// endif
+// endif
+// endif
+// endif
+// endfunction
 function SNK takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='hvlt')or(GetUnitTypeId(GetTriggerUnit())=='hwtw')or(GetUnitTypeId(GetTriggerUnit())=='hgtw')or(GetUnitTypeId(GetTriggerUnit())=='nmr7')or(GetUnitTypeId(GetTriggerUnit())=='ncb8')or(GetUnitTypeId(GetTriggerUnit())=='ncb9')or(GetUnitTypeId(GetTriggerUnit())=='hbar')or(GetUnitTypeId(GetTriggerUnit())=='ncba')or(GetUnitTypeId(GetTriggerUnit())=='hars')or(GetUnitTypeId(GetTriggerUnit())=='hhou')
 endfunction
@@ -45946,7 +45821,7 @@ call SetPlayerAllianceStateBJ(Player(5),Player($B),0)
 call SetPlayerAllianceStateBJ(Player(6),Player($B),0)
 call SetPlayerAllianceStateBJ(Player($A),Player($B),0)
 call SetPlayerName(Player($B),"The Void")
-call PlaySoundBJ(WQ)
+call PlaySoundBJ(portal)
 else
 if(ZOL())then
 call SetUnitScalePercent(GetTriggerUnit(),140.,140.,140.)
@@ -55517,11 +55392,15 @@ set UQ=CreateSound("Units\\Orc\\Hellscream\\GromYesAttack1.wav",false,false,fals
 call SetSoundParamsFromLabel(UQ,"GromYesAttack")
 call SetSoundDuration(UQ,$503)
 call SetSoundChannel(UQ,0)
-set WQ=CreateSound("Sound\\Dialogue\\UndeadCampaign\\Undead08\\U08Archimonde19.mp3",false,false,false,10,10,"DefaultEAXON")
-call SetSoundParamsFromLabel(WQ,"U08Archimonde19")
-call SetSoundDuration(WQ,1216)
+set WQ=CreateSound("Units\\Demon\\Infernal\\InfernalDeath.wav",false,false,false,$A,$A,"DefaultEAXON")
+call SetSoundParamsFromLabel(WQ,"InfernalDeath")
+call SetSoundDuration(WQ,5000)
 call SetSoundChannel(WQ,0)
-// call SetSoundVolume(WQ,100)
+set portal=CreateSound("Sound\\Dialogue\\UndeadCampaign\\Undead08\\U08Archimonde19.mp3",false,false,false,10,10,"DefaultEAXON")
+call SetSoundParamsFromLabel(portal,"U08Archimonde19")
+call SetSoundDuration(portal,1216)
+call SetSoundChannel(portal,0)
+call SetSoundVolume(portal,1000)
 set YQ=CreateSound("Units\\Demon\\ChaosWarlord\\WarlordReady1.wav",false,false,false,$A,$A,"DefaultEAXON")
 call SetSoundParamsFromLabel(YQ,"ChaosWarlordReady")
 call SetSoundDuration(YQ,$AC6)
@@ -57856,54 +57735,6 @@ set TTE=CreateTrigger()
 call TriggerRegisterEnterRectSimple(TTE,UH)
 call TriggerAddCondition(TTE,Condition(function G3G))
 call TriggerAddAction(TTE,function G5G)
-set T0E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(T0E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(T0E,Condition(function G7G))
-call TriggerAddAction(T0E,function G8G)
-set T6E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(T6E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(T6E,Condition(function HVG))
-call TriggerAddAction(T6E,function HEG)
-set UXE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UXE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UXE,Condition(function HOG))
-call TriggerAddAction(UXE,function HRG)
-set UBE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UBE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UBE,Condition(function HAG))
-call TriggerAddAction(UBE,function HNG)
-set UJE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(UJE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(UJE,Condition(function HCG))
-call TriggerAddAction(UJE,function HDG)
-set USE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(USE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(USE,Condition(function HGG))
-call TriggerAddAction(USE,function HHG)
-set U_E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(U_E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(U_E,Condition(function HKG))
-call TriggerAddAction(U_E,function HLG)
-set U5E=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(U5E,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(U5E,Condition(function HPG))
-call TriggerAddAction(U5E,function HQG)
-set WEE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WEE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WEE,Condition(function HTG))
-call TriggerAddAction(WEE,function HUG)
-set WNE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WNE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WNE,Condition(function HYG))
-call TriggerAddAction(WNE,function HZG)
-set WHE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WHE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WHE,Condition(function H0G))
-call TriggerAddAction(WHE,function H1G)
-set WQE=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(WQE,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(WQE,Condition(function H3G))
-call TriggerAddAction(WQE,function H4G)
 // set WZE=CreateTrigger()
 // call TriggerRegisterAnyUnitEventBJ(WZE,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 // call TriggerAddAction(WZE,function JRG)
@@ -58262,10 +58093,10 @@ call TriggerAddAction(P0X,function G8J)
 // call TriggerRegisterAnyUnitEventBJ(P6X,EVENT_PLAYER_UNIT_SPELL_FINISH)
 // call TriggerAddCondition(P6X,Condition(function HOJ))
 // call TriggerAddAction(P6X,function HFJ)
-set P9X=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(P9X,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddCondition(P9X,Condition(function HHJ))
-call TriggerAddAction(P9X,function HJJ)
+// set P9X=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(P9X,EVENT_PLAYER_UNIT_ATTACKED)
+// call TriggerAddCondition(P9X,Condition(function HHJ))
+// call TriggerAddAction(P9X,function HJJ)
 set QCX=CreateTrigger()
 call DisableTrigger(QCX)
 call TriggerRegisterAnyUnitEventBJ(QCX,EVENT_PLAYER_UNIT_RESEARCH_FINISH)
@@ -58818,10 +58649,11 @@ set A4O=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(A4O,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(A4O,Condition(function QKK))
 call TriggerAddAction(A4O,function QLK)
-set NDO=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(NDO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-call TriggerAddCondition(NDO,Condition(function Q7K))
-call TriggerAddAction(NDO,function SAK)
+// Предметы выпилить тут
+// set NDO=CreateTrigger()
+// call TriggerRegisterAnyUnitEventBJ(NDO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
+// call TriggerAddCondition(NDO,Condition(function Q7K))
+// call TriggerAddAction(NDO,function SAK)
 set NJO=CreateTrigger()
 call DisableTrigger(NJO)
 call TriggerRegisterAnyUnitEventBJ(NJO,EVENT_PLAYER_UNIT_UPGRADE_FINISH)

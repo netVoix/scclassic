@@ -1,0 +1,3 @@
+package MainCastleGoblin
+
+public let MAIN_CASTLE_GOBLIN_ID = 'o007'

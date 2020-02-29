@@ -1,0 +1,32 @@
+package ItemMerchantPick
+
+import ItemsBonus
+import RegisterEvents
+import Castles
+import HeroIconsClass
+import InventoryClass
+
+public Inventory array inventories
+public HeroIcons array heroIcons
+public int array raceCastles
+
+function isCastle() returns bool
+  for i = 0 to MAIN_CASTLES_SIZE
+    if GetFilterUnit().getTypeId() == MAIN_CASTLES[i]
+      return true
+  return false
+  
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+    let u = GetTriggerUnit()
+    if u.getTypeId() == ITEM_MERCHANT_BONUS_ID
+      let tid = u.getOwner().getTeam()
+      let g = GetUnitsInRectMatching(u.getPos().withRadiusRect(1500), Filter(function isCastle))
+      for un from g
+        if un.getOwner() == u.getOwner()
+          inventories[tid] = new Inventory(u)
+          heroIcons[tid] = new HeroIcons(u)
+          heroIcons[tid].setAndRenderHeroesByCastleId(un.getTypeId())
+          raceCastles[tid] = un.getTypeId()
+      g.destr()
+      

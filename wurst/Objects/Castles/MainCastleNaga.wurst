@@ -1,0 +1,3 @@
+package MainCastleNaga
+
+public let MAIN_CASTLE_NAGA_ID = 'o00T'

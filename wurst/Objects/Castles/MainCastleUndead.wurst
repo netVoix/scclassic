@@ -1,0 +1,3 @@
+package MainCastleUndead
+
+public let MAIN_CASTLE_UNDEAD_ID = 'h006'

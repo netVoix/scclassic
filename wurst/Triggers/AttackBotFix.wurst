@@ -1,0 +1,22 @@
+package AttackBotFix
+import ClosureTimers
+import Orders
+import ClosureForGroups
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+function attackBotAct()
+    let aid = GetSpellAbilityId()
+    if aid == 'A0FX'
+        let u = GetSpellAbilityUnit()
+        doAfter(1) ->
+            forNearestUnit(u.getPos(), 800, Filter(function isEnemyUnit)) (unit x) ->
+                u.issueTargetOrderById(OrderIds.attack, x)
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function attackBotAct))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH)

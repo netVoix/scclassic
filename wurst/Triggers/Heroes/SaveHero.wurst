@@ -1,0 +1,19 @@
+package SaveHero
+
+import HashMap
+import RegisterEvents
+
+public let heroes = new HashMap<int, unit>
+
+public function saveHero(unit u)
+  heroes.put(u.getTypeId(), u)
+
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+    let u = GetDyingUnit()
+    if u.isType(UNIT_TYPE_HERO)
+      if u.getTypeId() == 'H01D' or u.getTypeId() == 'Ekgg' or u.getTypeId() == 'Nalm' or u.getTypeId() == 'Edmm'
+        u.revive(u.getPos(), false)
+        u.kill()
+      else
+        saveHero(u)

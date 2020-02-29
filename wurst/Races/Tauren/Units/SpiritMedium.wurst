@@ -32,7 +32,7 @@ public let SPIRIT_MEDIUM_ID = 'ospw'
 	..setInt("ua1s", 5)
 	..setInt("udu1", 12)
 	..setInt("ua1z", 1400)
-	..setUnreal("uacq", 600.0)
+	..setUnreal("uacq", 700.0)
 	..setReal("usca", 0.85)
 	..setReal("ussc", 1.5)
 	..setString("ua1m", "Abilities\\Weapons\\LavaSpawnMissile\\LavaSpawnMissile.mdl")

@@ -1,0 +1,63 @@
+package HeroIconsClass
+
+import public HeroIconsStore
+
+public class HeroIcons
+  private unit canvasUnit
+  private heroMap activeHero
+  private heroMap array[4] allHeroes
+
+  construct(unit w)
+    canvasUnit = w
+
+  function setAndRenderHeroesByCastleId(int cid)
+    setHeroesByCastleId(cid)
+    renderHeroes()
+
+  function click(int aid) returns bool
+    bool active = false
+    clearActiveHero()
+    for i = 0 to 3
+      let he = allHeroes[i]
+      if he.activeIconId == aid or he.disabledIconId == aid
+        if he.disabledIconId == aid
+          active = true
+        toggleIcon(he)
+      else if canvasUnit.hasAbility(he.activeIconId)
+        disableIcon(he)
+    return active
+
+  function getActiveHero() returns heroMap
+    return activeHero
+
+  private function toggleIcon(heroMap h)
+    if canvasUnit.hasAbility(h.activeIconId)
+      disableIcon(h)
+    else
+      enableIcon(h)
+
+  private function clearActiveHero()
+    activeHero = heroMap(0, 0, 0)
+
+  private function disableIcon(heroMap h)
+    canvasUnit.removeAbility(h.activeIconId)
+    canvasUnit.addAbility(h.disabledIconId)
+
+  private function enableIcon(heroMap h)
+    canvasUnit.removeAbility(h.disabledIconId)
+    canvasUnit.addAbility(h.activeIconId)
+    activeHero = h
+
+  function check(int aid) returns bool
+    for i = 0 to 3
+      if allHeroes[i].activeIconId == aid or allHeroes[i].disabledIconId == aid
+        return true
+    return false
+
+  private function setHeroesByCastleId(int cid)
+    for i = 0 to 3
+      allHeroes[i] = getHero(cid, i)
+
+  private function renderHeroes()
+    for i = 0 to 3
+      canvasUnit.addAbility(allHeroes[i].disabledIconId)

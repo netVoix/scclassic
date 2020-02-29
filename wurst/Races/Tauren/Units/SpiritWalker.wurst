@@ -20,7 +20,7 @@ public let SPIRIT_WALKER_ID = 'ospm'
 	..setUnreal("ulpz", 110.0)
 	..setReal("usca", 0.85)
 	..setReal("ussc", 1.5)
-	..setUnreal("uacq", 600.0)
+	..setUnreal("uacq", 700.0)
 	..setUnreal("udp1", 0.5)
 	..setUnreal("ubs1", 0.6)
 	..setString("ua1t", "magic")

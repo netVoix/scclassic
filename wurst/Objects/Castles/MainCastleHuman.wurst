@@ -1,0 +1,3 @@
+package MainCastleHuman
+
+public let MAIN_CASTLE_HUMAN_ID = 'o002'

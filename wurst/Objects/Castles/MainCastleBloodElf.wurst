@@ -1,0 +1,3 @@
+package MainCastleBloodElf
+
+public let MAIN_CASTLE_BLOOD_ELF_ID = 'o00W'

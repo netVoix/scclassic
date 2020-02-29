@@ -6,6 +6,7 @@ import Antihero
 import RegisterEvents
 
 public let CASTLE_SPELLBOOK_ID = 'A0CV'
+let CASTLE_TRUE_SIGHT_AURA = 'A322'
 
 @compiletime function createCastleSpellbook()
     new AbilityDefinitionSpellBook(CASTLE_SPELLBOOK_ID)
@@ -13,7 +14,7 @@ public let CASTLE_SPELLBOOK_ID = 'A0CV'
     ..presetMaximumSpells(lvl -> 11)
     ..presetMinimumSpells(lvl -> 11)
     ..presetSharedSpellCooldown(lvl -> false)
-    ..presetSpellList(lvl -> commaList(ANTIHERO_DAMAGE_REDUCTION_ID))
+    ..presetSpellList(lvl -> commaList(ANTIHERO_DAMAGE_REDUCTION_ID, CASTLE_TRUE_SIGHT_AURA))
 
 let castles = [X, O, R, I]
 

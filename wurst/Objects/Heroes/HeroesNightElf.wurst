@@ -1,0 +1,6 @@
+package HeroesNightElf
+
+public let TYRANDE_ID = 'Emoo'
+public let FURION_ID = 'Efur'
+public let JAROD_ID = 'Hmgd'
+public let TINY_ID = 'Ecen'

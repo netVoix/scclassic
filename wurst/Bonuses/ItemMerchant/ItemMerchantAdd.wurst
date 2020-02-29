@@ -1,0 +1,63 @@
+package ItemMerchantAdd
+
+import RegisterEvents
+import ItemMerchantPick
+import HeroItems
+import HeroIconsClass
+import SaveHero
+
+public function unit.addRandomItem()
+  if this.itemCount() < 6
+    let iid = GetRandomInt(0, 4) < 4 ? TIER_ONE_SIMPLE[GetRandomInt(0, 5)] : TIER_ONE_AURAS[GetRandomInt(0, 5)]
+    let newitem = this.addItemById(iid) 
+    if newitem != null
+      let f = M_N(this.getOwner())
+      DisplayTimedTextToForce(f, 7, "{0} get item {1}".format(this.getProperName(), newitem.getName()))
+      f.destr()
+    saveHero(this)
+  else
+    let f = M_N(this.getOwner())
+    DisplayTimedTextToForce(f, 7, "{0} has full inventory. Item wasn't added.".format(this.getProperName()))
+    f.destr()
+function isHero() returns bool
+  return GetFilterUnit().isType(UNIT_TYPE_HERO)
+
+function hasItemMerchantBonus(int tid) returns bool
+  return inventories[tid] != null
+
+function addRandomItem(unit u)
+  let tid = u.getOwner().getTeam()
+  u.addRandomItem()
+  if heroIcons[tid].getActiveHero().heroId == u.getTypeId()
+    inventories[tid].renderUnitInventory(u)
+
+function addForLevel()
+  let u = GetTriggerUnit()
+  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO) and u.getLevel() mod 4 == 0
+    addRandomItem(u)
+
+function addForRevive()
+  let u = GetTriggerUnit()
+  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO)
+    addRandomItem(u)
+
+function addForKill()
+  let du = GetDyingUnit()
+  if du.isType(UNIT_TYPE_HERO)
+    unit ku = GetKillingUnit()
+    let kuOwner = ku.getOwner()
+    if hasItemMerchantBonus(kuOwner.getTeam())
+      let deathPos = du.getPos()
+      if not ku.isType(UNIT_TYPE_HERO)
+        let g = GetUnitsInRectMatching(deathPos.withRadiusRect(900), Filter(function isHero))
+        for fu in g
+          if not fu.getOwner().isAllyOf(kuOwner)
+            g.removeUnit(fu)
+        ku = g.getRandomUnit()
+      if ku != null
+        addRandomItem(ku)
+        
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel)
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
+  registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)

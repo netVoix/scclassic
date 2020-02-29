@@ -1,0 +1,3 @@
+package MainCastleDemon
+
+public let MAIN_CASTLE_DEMON_ID = 'o00N'

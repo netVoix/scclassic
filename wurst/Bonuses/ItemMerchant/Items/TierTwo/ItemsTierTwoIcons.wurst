@@ -1,0 +1,59 @@
+package ItemsTierTwoIcons
+
+import ChannelAbilityPreset
+import Icons
+
+public let FIGHTER_GAUNTLETS_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let RING_OF_BASILIUS_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let WARRIOR_GAUNTLETS_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let SOUL_RING_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let RING_OF_POWER_ICON_ID = compiletime(ABIL_ID_GEN.next())
+public let SPIDER_KNUCKLES_ICON_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function spiderKnucklesIcon()
+	new ChannelAbilityPreset(SPIDER_KNUCKLES_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNSpiderSilkBroach)
+	..setTooltipNormal(1, "Sell Spider Knuckles")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function ringOfPowerIcon()
+	new ChannelAbilityPreset(RING_OF_POWER_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNRingGreen)
+	..setTooltipNormal(1, "Sell Ring of Power")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function soulRingIcon()
+	new ChannelAbilityPreset(SOUL_RING_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNRingLionHead)
+	..setTooltipNormal(1, "Sell Soul Ring")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function warriorGauntletsIcon()
+	new ChannelAbilityPreset(WARRIOR_GAUNTLETS_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNAdvancedUnholyStrength)
+	..setTooltipNormal(1, "Sell Warrior's Gauntlets")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function ringOfBasiliusIcon()
+	new ChannelAbilityPreset(RING_OF_BASILIUS_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNRingVioletSpider)
+	..setTooltipNormal(1, "Sell Ring of Basilius")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
+
+@compiletime function fighterGauntletsIcon()
+	new ChannelAbilityPreset(FIGHTER_GAUNTLETS_ICON_ID, 1, true)
+	..setIconNormal(Icons.bTNGauntletsOfOgrePower)
+	..setTooltipNormal(1, "Sell Fighter's Gauntlets")
+	..setTooltipNormalExtended(1, "")
+	..setButtonPositionNormalX(0)
+	..setButtonPositionNormalY(0)
