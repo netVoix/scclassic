@@ -1,0 +1,11 @@
+package MercenaryCamp
+
+import UnitObjEditing
+import ObjectIdGenerator
+import UnitIds
+
+public let MERCENARY_CAMP_ID = compiletime(UNIT_ID_GEN.next())
+
+@compiletime function createMercCamp()
+    new UnitDefinition(MERCENARY_CAMP_ID, UnitIds.gryphonaviary)
+    

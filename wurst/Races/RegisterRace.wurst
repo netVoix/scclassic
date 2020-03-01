@@ -1,0 +1,30 @@
+package RegisterRace
+
+import ClosureEvents
+import ClosureForGroups
+import Fort
+import MercenaryCamp
+import MortarTower
+import RogueFoundation
+
+public function registerRace(int castleId, int barrackId, int towerId, int foundationId)
+    EventListener.add(EVENT_PLAYER_UNIT_ISSUED_ORDER) ->
+        let oid = GetIssuedOrderId()
+        let p = GetTriggerPlayer()
+        if oid == castleId
+            forUnitsOfPlayer(p) u ->
+                if u.getTypeId() == 'o00Y'
+                    let pos = u.getPos()
+                    u.remove()
+                    createUnit(p, barrackId, pos, angle(180))
+                if u.getTypeId() == 'o01C'
+                    let pos = u.getPos()
+                    u.remove()
+                    createUnit(p, towerId, pos, angle(180))
+                if u.getTypeId() == 'o01L'
+                    let pos = u.getPos()
+                    u.remove()
+                    createUnit(p, foundationId, pos, angle(180))
+
+init
+    registerRace(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID)

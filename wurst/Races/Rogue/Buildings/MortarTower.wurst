@@ -1,0 +1,11 @@
+package MortarTower
+
+import UnitObjEditing
+import ObjectIdGenerator
+import UnitIds
+
+public let MORTAR_TOWER_ID = compiletime(UNIT_ID_GEN.next())
+
+@compiletime function createMercCamp()
+    new UnitDefinition(MORTAR_TOWER_ID, UnitIds.guardtower)
+    
