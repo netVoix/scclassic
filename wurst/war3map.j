@@ -59791,7 +59791,7 @@ call TriggerAddAction(L2A,function JRP)
 call ConditionalTriggerExecute(ST)
 endfunction
 function config takes nothing returns nothing
-call SetMapName("Survival Chaos 2.99p")
+call SetMapName("Survival Chaos OZGame Edition")
 call SetMapDescription("Join us for feedback:
 SurvivalChaos.enjin.com/forum
 www.W3Sur5al.com")
