@@ -20155,24 +20155,6 @@ import ObjEditingNatives
 	..setLvlDataString("atp1", 1, 0, "Spell Resist")
 	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 60%.")
 
-
-@compiletime function create_w3a_A0F3()
-	createObjectDefinition("w3a", 'A0F3', 'ACev')
-	..setLvlDataString("arac", 0, 0, "nightelf")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPhantom Warriors|r |n|nReduces spell damage to |cffffcc00Strider|r, |cffffcc00Archer|r, |cffffcc00Guardian|r, |cffffcc00Sorceress|r, |cffffcc00Bladedancer|r and |cffffcc00Dragonhawk Rider|r by 20% and increases their hit point regeneration by 3 HP/s. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r / |cffffff00Unit Power|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "Arcane Mastery")
-	..setLvlDataString("atp1", 1, 0, "Arcane Mastery")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
-
-
 @compiletime function create_w3a_A0F5()
 	createObjectDefinition("w3a", 'A0F5', 'ACev')
 	..setLvlDataString("arac", 0, 0, "nightelf")
