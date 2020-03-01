@@ -3,9 +3,15 @@ package MercenaryCamp
 import UnitObjEditing
 import ObjectIdGenerator
 import UnitIds
+import AxeThrower
+import Javelineer
+import RogueWizard
+import ObjectIds
 
 public let MERCENARY_CAMP_ID = compiletime(UNIT_ID_GEN.next())
 
 @compiletime function createMercCamp()
-    new UnitDefinition(MERCENARY_CAMP_ID, UnitIds.gryphonaviary)
+    new UnitOrBuildingOrHeroDefinition(MERCENARY_CAMP_ID, UnitIds.gryphonaviary)
+        ..setUnitsSold(commaList(AXE_THROWER_ID,JAVELINEER_ID,ROGUE_WIZARD_ID))
+    
     
