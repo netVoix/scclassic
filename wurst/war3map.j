@@ -18148,6 +18148,150 @@ endfunction
 function WKF takes nothing returns boolean
 return(GetOwningPlayer(GetEnumUnit())==Player($B))
 endfunction
+function UnstuckManual takes unit unn returns nothing
+    call IssueImmediateOrderById(unn,$D0058)
+    if(WKF())then
+    if(U5F())then
+    set EA[4]=GetRectCenter(NG)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    if(U4F())then
+    set EA[4]=GetRectCenter(AG)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    if(U3F())then
+    set EA[4]=GetRectCenter(RG)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(IG)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    endif
+    endif
+    else
+    if(WJF())then
+    if(U6F())then
+    set EA[4]=GetRectCenter(NJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(IJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WHF())then
+    if(U7F())then
+    set EA[4]=GetRectCenter(KJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(MJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WGF())then
+    if(U8F())then
+    set EA[4]=GetRectCenter(SH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(PH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WFF())then
+    if(WDF())then
+    set EA[4]=GetRectCenter(BH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(DH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WCF())then
+    if(U9F())then
+    set EA[4]=GetRectCenter(NJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(IJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WBF())then
+    if(WVF())then
+    set EA[4]=GetRectCenter(KJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(MJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WNF())then
+    if(WEF())then
+    set EA[4]=GetRectCenter(SH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(PH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WAF())then
+    if(WXF())then
+    set EA[4]=GetRectCenter(BH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(DH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    else
+    if(WIF())then
+    set EA[4]=GetRectCenter(ZH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    if(WRF())then
+    set EA[4]=GetRectCenter(GJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    if(WOF())then
+    set EA[4]=GetRectCenter(XJ)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    else
+    set EA[4]=GetRectCenter(KH)
+    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+    call RemoveLocation(EA[4])
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endif
+    endfunction
 function WLF takes nothing returns nothing
 call IssueImmediateOrderById(GetEnumUnit(),$D0058)
 if(WKF())then
