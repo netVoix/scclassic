@@ -44672,7 +44672,7 @@ import ObjEditingNatives
 	..setLvlDataInt("abpx", 0, 0, 3)
 	..setLvlDataUnreal("ahdu", 1, 0, 45.0)
 	..setLvlDataUnreal("adur", 1, 0, 45.0)
-	..setLvlDataString("Hwe1", 1, 0, "o01Z")
+	..setLvlDataString("Hwe1", 1, 0, "o11Z")
 	..setLvlDataString("arac", 0, 0, "human")
 	..setLvlDataString("anam", 0, 0, "Sentry Gun")
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNCannonTower.blp")
