@@ -61,3 +61,5 @@ init
   registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel)
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
   registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DROP_ITEM) ->
+    GetManipulatedItem().remove()

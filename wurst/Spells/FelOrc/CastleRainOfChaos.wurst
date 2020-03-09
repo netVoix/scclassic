@@ -1,0 +1,50 @@
+package CastleRainOfChaos
+
+import DummyCaster
+import Orders
+import RegisterEvents
+
+real array xXExactCoords = [-530, -530, -190, 380, 530, 530]
+real array xOExactCoords = [4800, 5300, 4225, 4225, 5300, 4800]
+real array xRExactCoords = [-530, -530, -190, 380, 530, 530]
+real array xIExactCoords = [-4800, -5300, -4225, -4225, -5300, -4800]
+
+real array yXExactCoords = [5300, 4800, 4225, 4225, 4800, 5300]
+real array yOExactCoords = [-530, -530, -190, 380, 530, 530]
+real array yRExactCoords = [-5300, -4800, -4225, -4225, -4800, -5300]
+real array yIExactCoords = [-530, -530, -190, 380, 530, 530]
+
+init 
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        if GetSpellAbilityId() == 'A0L5'
+            let u = GetTriggerUnit()
+//             let castles = [X, O, R, I]
+//             let playerib = [Z, Y, U, W]
+            if u == X
+                for i = 0 to 6
+                    new DummyCaster()
+                    ..owner(Z)
+                    ..delay(5)
+                    ..origin(u.getPos())
+                    ..castPoint('A076', 1, OrderIds.dreadlordinferno , vec2(xXExactCoords[i], yXExactCoords[i]))
+            if u == O
+                for i = 0 to 6
+                    new DummyCaster()
+                    ..owner(Y)
+                    ..delay(5)
+                    ..origin(u.getPos())
+                    ..castPoint('A076', 1, OrderIds.dreadlordinferno , vec2(xOExactCoords[i], yOExactCoords[i]))
+            if u == R
+                for i = 0 to 6
+                    new DummyCaster()
+                    ..owner(U)
+                    ..delay(5)
+                    ..origin(u.getPos())
+                    ..castPoint('A076', 1, OrderIds.dreadlordinferno , vec2(xRExactCoords[i], yRExactCoords[i]))
+            if u == I
+                for i = 0 to 6
+                    new DummyCaster()
+                    ..owner(W)
+                    ..delay(5)
+                    ..origin(u.getPos())
+                    ..castPoint('A076', 1, OrderIds.dreadlordinferno , vec2(xIExactCoords[i], yIExactCoords[i]))    

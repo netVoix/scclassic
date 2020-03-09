@@ -1116,7 +1116,7 @@ trigger LBX=null
 trigger LGX=null
 trigger LLX=null
 trigger LSX=null
-trigger LWX=null
+// trigger LWX=null
 trigger L_X=null
 trigger L2X=null
 trigger MXX=null
@@ -18148,151 +18148,152 @@ endfunction
 function WKF takes nothing returns boolean
 return(GetOwningPlayer(GetEnumUnit())==Player($B))
 endfunction
-function UnstuckManual takes unit unn returns nothing
-    call IssueImmediateOrderById(unn,$D0058)
-    if(WKF())then
-    if(U5F())then
-    set EA[4]=GetRectCenter(NG)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    if(U4F())then
-    set EA[4]=GetRectCenter(AG)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    if(U3F())then
-    set EA[4]=GetRectCenter(RG)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(IG)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    endif
-    endif
-    else
-    if(WJF())then
-    if(U6F())then
-    set EA[4]=GetRectCenter(NJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(IJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WHF())then
-    if(U7F())then
-    set EA[4]=GetRectCenter(KJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(MJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WGF())then
-    if(U8F())then
-    set EA[4]=GetRectCenter(SH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(PH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WFF())then
-    if(WDF())then
-    set EA[4]=GetRectCenter(BH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(DH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WCF())then
-    if(U9F())then
-    set EA[4]=GetRectCenter(NJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(IJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WBF())then
-    if(WVF())then
-    set EA[4]=GetRectCenter(KJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(MJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WNF())then
-    if(WEF())then
-    set EA[4]=GetRectCenter(SH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(PH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WAF())then
-    if(WXF())then
-    set EA[4]=GetRectCenter(BH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(DH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    else
-    if(WIF())then
-    set EA[4]=GetRectCenter(ZH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    if(WRF())then
-    set EA[4]=GetRectCenter(GJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    if(WOF())then
-    set EA[4]=GetRectCenter(XJ)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    else
-    set EA[4]=GetRectCenter(KH)
-    call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-    call RemoveLocation(EA[4])
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endif
-    endfunction
+function TolchokGeroev takes unit unn returns nothing
+call IssueImmediateOrderById(unn,$D0058)
+if(WKF())then
+if(U5F())then
+set EA[4]=GetRectCenter(NG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(U4F())then
+set EA[4]=GetRectCenter(AG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(U3F())then
+set EA[4]=GetRectCenter(RG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+endif
+endif
+else
+if(RectContainsUnit(SJ,unn))then
+if(U6F())then
+set EA[4]=GetRectCenter(NJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(NK,unn))then
+if(U7F())then
+set EA[4]=GetRectCenter(KJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(MJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(OF,unn))then
+if(U8F())then
+set EA[4]=GetRectCenter(SH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(PH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(XF,unn))then
+if(WDF())then
+set EA[4]=GetRectCenter(BH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(DH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==1)then
+if(U9F())then
+set EA[4]=GetRectCenter(NJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==2)then
+if(WVF())then
+set EA[4]=GetRectCenter(KJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(MJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==3)then
+if(WEF())then
+set EA[4]=GetRectCenter(SH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(PH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==4)then
+if(WXF())then
+set EA[4]=GetRectCenter(BH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(DH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(WIF())then
+set EA[4]=GetRectCenter(ZH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(WRF())then
+set EA[4]=GetRectCenter(GJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(WOF())then
+set EA[4]=GetRectCenter(XJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(KH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endfunction
 function WLF takes nothing returns nothing
+// call UnitAddAbility(GetEnumUnit(), 'Apiv')
 call IssueImmediateOrderById(GetEnumUnit(),$D0058)
 if(WKF())then
 if(U5F())then
@@ -28446,151 +28447,6 @@ endif
 set HB[22]=null
 set HB[23]=null
 set IB[5]=0
-endfunction
-function OVJ takes nothing returns boolean
-return(GetSpellAbilityId()=='A0L5')
-endfunction
-function OEJ takes nothing returns boolean
-return(GetTriggerUnit()==X)
-endfunction
-function OXJ takes nothing returns boolean
-return(GetTriggerUnit()==O)
-endfunction
-function OOJ takes nothing returns boolean
-return(GetTriggerUnit()==R)
-endfunction
-function ORJ takes nothing returns boolean
-return(GetTriggerUnit()==I)
-endfunction
-function OIJ takes nothing returns nothing
-if(OEJ())then
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(OH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(RH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Z,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(IH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-endif
-if(OXJ())then
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(XH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(EH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',Y,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(VH))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-endif
-if(OOJ())then
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(UG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(TG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',U,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(SG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-endif
-if(ORJ())then
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(WG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(YG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=2
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call CreateNUnitsAtLoc(1,'u000',W,GetUnitLoc(GetTriggerUnit()),bj_UNIT_FACING)
-call UnitAddAbility(bj_lastCreatedUnit,'A076')
-call IssuePointOrderByIdLoc(bj_lastCreatedUnit,$D0100,GetRandomLocInRect(ZG))
-call UnitApplyTimedLifeBJ(5.,'BTLF',bj_lastCreatedUnit)
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
-endif
 endfunction
 function OAJ takes nothing returns boolean
 return(GetSpellAbilityId()=='A0MJ')or(GetSpellAbilityId()=='A0PI')or(GetSpellAbilityId()=='A0PH')or(GetSpellAbilityId()=='A0PY')
@@ -58180,10 +58036,6 @@ call TriggerAddAction(LBX,function Y2H)
 set LSX=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(LSX,FI[17])
 call TriggerAddAction(LSX,function X9J)
-set LWX=CreateTrigger()
-call TriggerRegisterAnyUnitEventBJ(LWX,EVENT_PLAYER_UNIT_SPELL_CAST)
-call TriggerAddCondition(LWX,Condition(function OVJ))
-call TriggerAddAction(LWX,function OIJ)
 set L2X=CreateTrigger()
 call TriggerRegisterTimerExpireEvent(L2X,FI[18])
 call TriggerAddAction(L2X,function IFJ)

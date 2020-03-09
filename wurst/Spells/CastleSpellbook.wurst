@@ -14,6 +14,7 @@ let CASTLE_TRUE_SIGHT_AURA = 'A322'
     ..presetMaximumSpells(lvl -> 11)
     ..presetMinimumSpells(lvl -> 11)
     ..presetSharedSpellCooldown(lvl -> false)
+    //..presetSpellList(lvl -> commaList(ANTIHERO_DAMAGE_REDUCTION_ID))
     ..presetSpellList(lvl -> commaList(ANTIHERO_DAMAGE_REDUCTION_ID, CASTLE_TRUE_SIGHT_AURA))
 
 let castles = [X, O, R, I]

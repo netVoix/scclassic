@@ -4675,7 +4675,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "naga")
 	..setLvlDataString("ahky", 0, 0, "")
 	..setLvlDataString("atp1", 1, 0, "Inferno")
-	..setLvlDataUnreal("Uin2", 1, 2, 60.0)
+	..setLvlDataUnreal("Uin2", 1, 2, 90.0)
 	..setLvlDataUnreal("acdn", 1, 0, 0.0)
 	..setLvlDataInt("amcs", 1, 0, 0)
 	..setLvlDataUnreal("adur", 1, 0, 3.0)
@@ -21513,7 +21513,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3a_A322()
 	createObjectDefinition("w3a", 'A322', 'Agyv')
-	..setLvlDataUnreal("aran", 1, 0, 1000.0)
+	..setLvlDataUnreal("aran", 1, 0, 1250.0)
 	..setLvlDataString("anam", 0, 0, "A True Sight")
 	..setLvlDataString("atp1", 1, 0, "A True Sight")
 	..setLvlDataString("arac", 0, 0, "other")
