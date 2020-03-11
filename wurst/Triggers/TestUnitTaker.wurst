@@ -6,12 +6,12 @@
 // 
 // init
 //     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
-//         GetTriggerUnit().addAbility('A6CX')
-//         GetTriggerUnit().addAbility('A5CX')
-//         // GetTriggerUnit().issueImmediateOrderById(OrderIds.stop)
-//         // if GetOwningPlayer(GetTriggerUnit()) != GetTriggerPlayer()
-//         //     GetTriggerUnit().setLevel(26, true)
-//         //     GetTriggerUnit().setOwner(GetTriggerPlayer(), false)
+//         //GetTriggerUnit().addAbility('A6CX')
+//         //GetTriggerUnit().addAbility('A5CX')
+//         GetTriggerUnit().issueImmediateOrderById(OrderIds.stop)
+//         if GetOwningPlayer(GetTriggerUnit()) != GetTriggerPlayer()
+//             GetTriggerUnit().setLevel(26, true)
+//             GetTriggerUnit().setOwner(GetTriggerPlayer(), false)
 //         // if GetTriggerUnit().isType(UNIT_TYPE_HERO)
 //         //     let u = GetTriggerUnit()
 //         //     doAfter(10) ->

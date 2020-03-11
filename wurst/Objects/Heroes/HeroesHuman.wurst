@@ -15,4 +15,4 @@ init
             if u2.isType(UNIT_TYPE_MELEE_ATTACKER)
                 u.issueImmediateOrderById(OrderIds.stomp)
         if u2.getTypeId() == 'Hgam'
-            u.issuePointOrderById(OrderIds.carrionswarm, vec2(u2.getX(), u2.getY()))
+            u2.issuePointOrderById(OrderIds.carrionswarm, vec2(u.getX(), u.getY()))

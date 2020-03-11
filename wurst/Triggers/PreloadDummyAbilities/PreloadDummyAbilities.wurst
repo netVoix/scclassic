@@ -1,13 +1,15 @@
 package PreloadDummyAbilities
 
 init
-    let u3 = createUnit(Player(5), 'u000', vec2(0, 0), angle(270))
+    let u3 = createUnit(Player(12), 'u000', vec2(0, 0), angle(270))
     u3.addAbility('A0S4')
     u3.removeAbility('A0S4')
     u3.addAbility('Awrs')
     u3.removeAbility('Awrs')
     u3.addAbility('A0KZ')
     u3.removeAbility('A0KZ')
+    u3.addAbility('A076')
+    u3.removeAbility('A076')
     u3.addAbility('A0OF')
     u3.removeAbility('A0OF')
     u3.addAbility('A0OE')
