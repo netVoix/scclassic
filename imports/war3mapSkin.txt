@@ -59,4 +59,4 @@ RESOURCE_UBERTIP_SUPPLY=Shows passed time
 RESOURCE_UBERTIP_UPKEEP=|cffff0000https://forum.onligamez.ru|r
 RESOURCE_UBERTIP_UPKEEP_INFO= 
 UPGRADE_TOOLTIP=%s - Lv %d
-UPKEEP_NONE=|cff191cc9OZGame|r|Cffffff00Edition v1.1|r
+UPKEEP_NONE=|cff191cc9OZGame|r|Cffffff00Edition v1.12|r
