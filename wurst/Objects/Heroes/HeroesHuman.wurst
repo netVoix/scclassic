@@ -1,7 +1,18 @@
 package HeroesHuman
-
+import RegisterEvents
+import Orders
 
 public let ANTONIDAS_ID = 'Hamg'
 public let UTHER_ID = 'Hpal'
 public let ADMIRAL_ID = 'Hapm'
 public let WATER_ELEMENTAL_ID = 'Hgam'
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        let u = GetTriggerUnit()
+        let u2 = GetAttacker()
+        if u.getTypeId() == 'Hgam'
+            if u2.isType(UNIT_TYPE_MELEE_ATTACKER)
+                u.issueImmediateOrderById(OrderIds.stomp)
+        if u2.getTypeId() == 'Hgam'
+            u.issuePointOrderById(OrderIds.carrionswarm, vec2(u2.getX(), u2.getY()))
