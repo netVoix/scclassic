@@ -67,7 +67,7 @@ public let FORT_TWO_ID = compiletime(UNIT_ID_GEN.next())
 	..setAttack1AreaofEffectMediumDamage(50)
 	..setAttack1DamageFactorMedium(0.5)
 	..setSelectionScale(6.7)
-	// ..setString("umdl", "WCIITownHall.mdl")
+	..setModelFile("WCIITownHall.mdl")
 	
 @compiletime function create_w3u_o02D()
 	new UnitDefinition(FORT_TWO_ID, UnitIds.greathall)
