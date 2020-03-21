@@ -15,16 +15,19 @@ public function registerRace(int castleId, int barrackId, int towerId, int found
             forUnitsOfPlayer(p) u ->
                 if u.getTypeId() == 'o00Y'
                     let pos = u.getPos()
+                    let facing = u.getFacingAngle()
                     u.remove()
-                    createUnit(p, barrackId, pos, angle(180))
+                    createUnit(p, barrackId, pos, facing)
                 if u.getTypeId() == 'o01C'
                     let pos = u.getPos()
+                    let facing = u.getFacingAngle()
                     u.remove()
-                    createUnit(p, towerId, pos, angle(180))
+                    createUnit(p, towerId, pos, facing)
                 if u.getTypeId() == 'o01L'
                     let pos = u.getPos()
+                    let facing = u.getFacingAngle()
                     u.remove()
-                    createUnit(p, foundationId, pos, angle(180))
+                    createUnit(p, foundationId, pos, facing)
 
 init
     registerRace(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID)
