@@ -6,28 +6,18 @@ import Fort
 import MercenaryCamp
 import MortarTower
 import RogueFoundation
+import RaceBuildingTemplates
 
-public function registerRace(int castleId, int barrackId, int towerId, int foundationId)
-    EventListener.add(EVENT_PLAYER_UNIT_ISSUED_ORDER) ->
-        let oid = GetIssuedOrderId()
+function registerRace(int castleId, int barrackId, int towerId, int foundationId)
+    EventListener.add(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        let tu = GetTriggerUnit()
         let p = GetTriggerPlayer()
-        if oid == castleId
+        if tu.getTypeId() == castleId
             forUnitsOfPlayer(p) u ->
-                if u.getTypeId() == 'o00Y'
-                    let pos = u.getPos()
-                    let facing = u.getFacingAngle()
-                    u.remove()
-                    createUnit(p, barrackId, pos, facing)
-                if u.getTypeId() == 'o01C'
-                    let pos = u.getPos()
-                    let facing = u.getFacingAngle()
-                    u.remove()
-                    createUnit(p, towerId, pos, facing)
-                if u.getTypeId() == 'o01L'
-                    let pos = u.getPos()
-                    let facing = u.getFacingAngle()
-                    u.remove()
-                    createUnit(p, foundationId, pos, facing)
+                let ut = u.getTypeId()
+                if ut == BARRACK_TEMPLATE_ID or ut == TOWER_TEMPLATE_ID or ut == FOUNDATION_TEMPLATE_ID
+                    let order = ut == BARRACK_TEMPLATE_ID ? barrackId : (ut == TOWER_TEMPLATE_ID ? towerId : foundationId)
+                    u.issueImmediateOrderById(order)
 
 init
     registerRace(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID)

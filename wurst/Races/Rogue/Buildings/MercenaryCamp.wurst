@@ -7,11 +7,16 @@ import AxeThrower
 import Javelineer
 import RogueWizard
 import ObjectIds
+import Fort
 
 public let MERCENARY_CAMP_ID = compiletime(UNIT_ID_GEN.next())
 
 @compiletime function createMercCamp()
     new UnitOrBuildingOrHeroDefinition(MERCENARY_CAMP_ID, UnitIds.gryphonaviary)
         ..setUnitsSold(commaList(AXE_THROWER_ID,JAVELINEER_ID,ROGUE_WIZARD_ID))
+        ..setRequirements(FORT_ONE_ID.toRawCode())
+        ..setGoldCost(0)
+        ..setLumberCost(0)
+        ..setBuildTime(1)
     
     

@@ -1,17 +1,12 @@
 package MortarTower
 
-import UnitObjEditing
 import ObjectIdGenerator
-import UnitIds
 import ObjEditingNatives
 import ObjectIds
 import CriticalStrikes
+import Fort
 
 public let MORTAR_TOWER_ID = compiletime(UNIT_ID_GEN.next())
-
-// @compiletime function createMercCamp()
-//     new UnitDefinition(MORTAR_TOWER_ID, UnitIds.guardtower)
-//     ..setModelFile("buildings\\human\\HumanTower\\HumanTower.mdl")
 
 @compiletime function createMortarTower()
     createObjectDefinition("w3u", MORTAR_TOWER_ID, 'owtw')
@@ -32,7 +27,7 @@ public let MORTAR_TOWER_ID = compiletime(UNIT_ID_GEN.next())
     ..setInt("ucam", 1)
     ..setInt("udef", 0)
     ..setInt("uhpm", 4000)
-    ..setString("ureq", "o02C")
+    ..setString("ureq", FORT_ONE_ID.toRawCode())
     ..setString("uhot", "")
     ..setInt("uspe", 1)
     ..setString("urac", "human")
