@@ -7,17 +7,55 @@ import MercenaryCamp
 import MortarTower
 import RogueFoundation
 import RaceBuildingTemplates
+import AxeThrower
+import Javelineer
+import RogueWizard
+import HashMap
+import LinkedList
+import ObjectIds
 
-function registerRace(int castleId, int barrackId, int towerId, int foundationId)
+tuple spawnPair(unit barrack, timer spawnTimer)
+let spawns = [spawnPair(A, EV), spawnPair(N, UV), spawnPair(L, WV), spawnPair(K, XV), spawnPair(J, SV), spawnPair(H, TV),
+                spawnPair(G, MV), spawnPair(F, LV), spawnPair(D, OV), spawnPair(C, QV), spawnPair(B, PV), spawnPair(M, RV)]
+
+tuple raceBuildings(int fortId, int barrackId, int towerId, int foundationId)
+tuple raceUnits(int meeleeId, int rangeId, int mageId)
+                
+let spawnUnits = new HashMap<int, LinkedList<int>>()
+
+function onSpawnTimerExpire()
+    let id = GetExpiredTimer().getHandleId()
+    let units = spawnUnits.get(id)
+    for u from units.staticItr()
+        print(u.toRawCode())
+
+function setPlayerUnits(player p, raceUnits units)
+    let index = p == T ? 4 : (p == Q ? 3 : (p == S ? 2 : 1))
+    OE[index] = units.meeleeId
+    LX[index] = units.rangeId
+    SX[index] = units.mageId
+
+function registerRace(raceBuildings buildings, raceUnits units)
     EventListener.add(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         let tu = GetTriggerUnit()
         let p = GetTriggerPlayer()
-        if tu.getTypeId() == castleId
+        if tu.getTypeId() == buildings.fortId
+            print(p.getId())
+            setPlayerUnits(p, units)
             forUnitsOfPlayer(p) u ->
                 let ut = u.getTypeId()
                 if ut == BARRACK_TEMPLATE_ID or ut == TOWER_TEMPLATE_ID or ut == FOUNDATION_TEMPLATE_ID
-                    let order = ut == BARRACK_TEMPLATE_ID ? barrackId : (ut == TOWER_TEMPLATE_ID ? towerId : foundationId)
+                    let order = ut == BARRACK_TEMPLATE_ID ? buildings.barrackId : (ut == TOWER_TEMPLATE_ID ? buildings.towerId : buildings.foundationId)
                     u.issueImmediateOrderById(order)
+                    // for i = 0 to 11
+                    //     if spawns[i].barrack == u
+                    //         let spawnTimer = spawns[i].spawnTimer
+                    //         spawnUnits.put(spawnTimer.getHandleId(), asList(units.meeleeId, units.rangeId, units.mageId))
+                    //         let t = CreateTrigger()
+                    //         t..registerTimerExpireEvent(spawnTimer).addCondition(Condition(function onSpawnTimerExpire))
 
 init
-    registerRace(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID)
+    registerRace(
+        raceBuildings(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID),
+        raceUnits(AXE_THROWER_ID,JAVELINEER_ID,ROGUE_WIZARD_ID)
+    )
