@@ -1,5 +1,7 @@
 ---
 projectName: scclassic
+dependencies:
+  - https://github.com/netVoix/WurstLib
 buildMapData:
   name: Survival ChaOZ 2.99
   fileName: MyMapFile
