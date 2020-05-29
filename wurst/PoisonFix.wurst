@@ -16,6 +16,7 @@ public let FAKE_POISON_BUFF_ID = compiletime(ABIL_ID_GEN.next())
     new AbilityDefinitionWardenShadowStrike(FAKE_POISON_ID)
     ..setDummyAbility()
     ..setDurationHero(1, 999999)
+    
     ..setDurationNormal(1, 999999)
     ..setAttackSpeedFactor(1, 0)
     ..setMovementSpeedFactor(1, 0)
