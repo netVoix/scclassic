@@ -1,0 +1,1688 @@
+package WurstExportedObjects_w3t
+import ObjEditingNatives
+
+// Original Table (contains all modified default objects)
+// Wurst does not support modifying default objects
+// but you can copy these functions and replace 'xxxx' with a new, custom id.
+
+@compiletime function create_w3t_ratc()
+	createObjectDefinition("w3t", 'ratc', 'ratc')
+	..setString("iabi", "AItn")
+	..setString("icid", "AItn")
+	..setString("unam", "|cffffdeadClaws of Attack|r  |cff6c7b8b(Lv1)|r")
+	..setString("ides", "Increases damage.")
+	..setString("utip", "|cffffdeadClaws of Attack|r |cff6c7b8bLv1|r")
+	..setString("utub", "+10 damage")
+	..setInt("igol", 0)
+	..setString("icla", "Artifact")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+
+
+@compiletime function create_w3t_gcel()
+	createObjectDefinition("w3t", 'gcel', 'gcel')
+	..setInt("igol", 0)
+	..setString("utip", "|cffffdeadGloves of Haste|r |cff6c7b8bLv1|r")
+	..setString("utub", "+3% attack rate")
+	..setString("ides", "Increases attack rate.")
+	..setString("icla", "Artifact")
+	..setInt("ipri", 50)
+	..setString("unam", "|cffffdeadGloves of Haste|r  |cff6c7b8b(Lv1)|r")
+	..setInt("ilvo", 1)
+	..setInt("ilev", 1)
+
+
+@compiletime function create_w3t_rhth()
+	createObjectDefinition("w3t", 'rhth', 'rhth')
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp")
+	..setInt("igol", 0)
+	..setString("ides", "Increases hit points.")
+	..setString("uhot", "")
+	..setString("unam", "|cffffdeadHealth Stone|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadHealth Stone|r |cff6c7b8bLv1|r")
+	..setString("utub", "+500 HP")
+	..setString("icla", "Artifact")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+
+
+@compiletime function create_w3t_rde3()
+	createObjectDefinition("w3t", 'rde3', 'rde3')
+	..setString("ides", "Increases armor.")
+	..setInt("igol", 0)
+	..setString("uhot", "")
+	..setString("unam", "|cffffdeadRing of Protection|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadRing of Protection|r |cff6c7b8bLv1|r")
+	..setString("utub", "+1 armor")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRingPurple.blp")
+	..setString("icla", "Artifact")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("iabi", "AId1")
+
+
+@compiletime function create_w3t_rwiz()
+	createObjectDefinition("w3t", 'rwiz', 'rwiz')
+	..setString("uhot", "")
+	..setString("utip", "|cffffdeadSobi Mask|r |cff6c7b8bLv1|r")
+	..setString("ides", "Increases mana regeneration.")
+	..setString("utub", "+5% MP/s")
+	..setInt("igol", 0)
+	..setString("iabi", "A0CI")
+	..setString("icla", "Artifact")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("unam", "|cffffdeadSobi Mask|r  |cff6c7b8b(Lv1)|r")
+	..setString("icid", "A0CI")
+
+
+@compiletime function create_w3t_rlif()
+	createObjectDefinition("w3t", 'rlif', 'rlif')
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGoldRing.blp")
+	..setInt("igol", 0)
+	..setString("ides", "Increases life regeneration.")
+	..setString("uhot", "")
+	..setString("utip", "|cffffdeadRing of Regeneration|r |cff6c7b8bLv1|r")
+	..setString("utub", "+1 HP/s")
+	..setString("icla", "Artifact")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("unam", "|cffffdeadRing of Regeneration|r  |cff6c7b8b(Lv1)|r")
+
+
+@compiletime function create_w3t_ratf()
+	createObjectDefinition("w3t", 'ratf', 'ratf')
+	..setString("icla", "Purchasable")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGauntletsOfOgrePower.blp")
+	..setString("utip", "|cffffff00Fighter's Gauntlets|r |cff6c7b8bLv2|r")
+	..setString("unam", "|cffffff00Fighter's Gauntlets|r  |cff6c7b8b(Lv2)|r")
+	..setString("ides", "")
+	..setInt("igol", 0)
+	..setString("icid", "AItf")
+	..setString("iabi", "AItf,AIs2")
+	..setString("utub", "+5% attack rate |n+15 damage")
+	..setInt("ilvo", 2)
+	..setInt("ilev", 2)
+
+
+@compiletime function create_w3t_ckng()
+	createObjectDefinition("w3t", 'ckng', 'ckng')
+	..setString("icla", "PowerUp")
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ffffBanner of the Horde|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffBanner of the Horde|r |cff6c7b8bLv4|r")
+	..setInt("igol", 0)
+	..setString("utub", "+10% |cffffff00Endurance Aura|r |n+5 Intelligence |n+5 Strength |n+5 Agility |n+20% MP/s |n+2 HP/s")
+	..setString("iabi", "A0QN,AIx2,A0CF,Arll")
+	..setString("icid", "AOae")
+	..setInt("ilev", 4)
+	..setInt("ilvo", 4)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrcBattleStandard.blp")
+
+
+@compiletime function create_w3t_desc()
+	createObjectDefinition("w3t", 'desc', 'desc')
+	..setString("icla", "Permanent")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("igol", 0)
+	..setInt("iprn", 0)
+	..setInt("iusa", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("unam", "|cffffff00Ancient Scrolls|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Ancient Scrolls|r  |cff6c7b8b(Lv2)|r")
+	..setString("utub", "+25% damage to |cffffcc00Furion|r and |cffffcc00Tyrande|r |n|cff6C7B8B(900 range)|r")
+	..setString("iabi", "A0RE")
+	..setString("icid", "A0RE")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScrollOfRegenerationGreen.blp")
+
+
+@compiletime function create_w3t_rde4()
+	createObjectDefinition("w3t", 'rde4', 'rde4')
+	..setString("icla", "Purchasable")
+	..setInt("igol", 0)
+	..setString("iabi", "AId2,AIrn")
+	..setString("unam", "|cffffff00Ring of Basilius|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Ring of Basilius|r |cff6c7b8bLv2|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRingVioletSpider.blp")
+	..setString("utub", "+10% MP/s |n+2 armor")
+	..setInt("ilev", 2)
+	..setInt("ilvo", 2)
+
+
+@compiletime function create_w3t_tkno()
+	createObjectDefinition("w3t", 'tkno', 'tkno')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_modt()
+	createObjectDefinition("w3t", 'modt', 'modt')
+	..setInt("igol", 0)
+	..setString("iabi", "A0NV")
+	..setString("icid", "A036")
+	..setString("utip", "|cffffdeadNecronomicon|r |cff6c7b8bLv1|r")
+	..setString("utub", "-1 |cffff00ffCorruption Aura|r")
+	..setString("ides", "Grants Corruption Aura.")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("unam", "|cffffdeadNecronomicon|r  |cff6c7b8b(Lv1)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNNecromancerAdept.blp")
+
+
+@compiletime function create_w3t_pclr()
+	createObjectDefinition("w3t", 'pclr', 'pclr')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_moon()
+	createObjectDefinition("w3t", 'moon', 'moon')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_pinv()
+	createObjectDefinition("w3t", 'pinv', 'pinv')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_skul()
+	createObjectDefinition("w3t", 'skul', 'skul')
+	..setString("icla", "Permanent")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("ureq", "")
+	..setInt("iper", 0)
+	..setInt("iuse", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setString("utip", "|cff00ff00Rod of Necromancy|r  |cff6c7b8b(Lv3)|r")
+	..setString("unam", "|cff00ff00Rod of Necromancy|r  |cff6c7b8b(Lv3)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRodOfNecromancy.blp")
+	..setString("iabi", "A0TW,A0TV")
+	..setString("icid", "A0TW")
+	..setString("utub", "+100% damage to all |cffffcc00Skeletons|r |n+8 armor to all |cffffcc00Skeletons|r |n|cff6C7B8B(900 range)|r")
+
+
+@compiletime function create_w3t_pman()
+	createObjectDefinition("w3t", 'pman', 'pman')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_rnec()
+	createObjectDefinition("w3t", 'rnec', 'rnec')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_shea()
+	createObjectDefinition("w3t", 'shea', 'shea')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_phea()
+	createObjectDefinition("w3t", 'phea', 'phea')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_shas()
+	createObjectDefinition("w3t", 'shas', 'shas')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_stwp()
+	createObjectDefinition("w3t", 'stwp', 'stwp')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_spro()
+	createObjectDefinition("w3t", 'spro', 'spro')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_pnvl()
+	createObjectDefinition("w3t", 'pnvl', 'pnvl')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sman()
+	createObjectDefinition("w3t", 'sman', 'sman')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_mcri()
+	createObjectDefinition("w3t", 'mcri', 'mcri')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_plcl()
+	createObjectDefinition("w3t", 'plcl', 'plcl')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_tsct()
+	createObjectDefinition("w3t", 'tsct', 'tsct')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_silk()
+	createObjectDefinition("w3t", 'silk', 'silk')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_vamp()
+	createObjectDefinition("w3t", 'vamp', 'vamp')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_wneg()
+	createObjectDefinition("w3t", 'wneg', 'wneg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_wneu()
+	createObjectDefinition("w3t", 'wneu', 'wneu')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_tret()
+	createObjectDefinition("w3t", 'tret', 'tret')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_tgrh()
+	createObjectDefinition("w3t", 'tgrh', 'tgrh')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_tcas()
+	createObjectDefinition("w3t", 'tcas', 'tcas')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_ssan()
+	createObjectDefinition("w3t", 'ssan', 'ssan')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sneg()
+	createObjectDefinition("w3t", 'sneg', 'sneg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sreg()
+	createObjectDefinition("w3t", 'sreg', 'sreg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_hslv()
+	createObjectDefinition("w3t", 'hslv', 'hslv')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_clfm()
+	createObjectDefinition("w3t", 'clfm', 'clfm')
+	..setString("icla", "Campaign")
+	..setString("unam", "|cff00ff00Book of the Dead|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Book of the Dead|r |cff6c7b8bLv3|r")
+	..setString("ides", "")
+	..setInt("igol", 0)
+	..setString("icid", "A036")
+	..setString("iabi", "A0NX,AId3,AIrm,AItx")
+	..setString("utub", "-2 |cffff00ffCorruption Aura|r |n+20 damage |n+15% MP/s |n+3 armor")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
+
+
+@compiletime function create_w3t_bfhr()
+	createObjectDefinition("w3t", 'bfhr', 'bfhr')
+	..setString("icla", "Purchasable")
+	..setString("iabi", "AIlf,AIs2")
+	..setString("icid", "AIas")
+	..setInt("igol", 0)
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("unam", "|cffffff00Warrior's Gauntlets|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Warrior's Gauntlets|r |cff6c7b8bLv2|r")
+	..setString("utub", "+5% attack rate |n+750 HP")
+	..setInt("iprn", 1)
+	..setInt("ilev", 2)
+	..setInt("ilvo", 2)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNAdvancedUnholyStrength.blp")
+
+
+@compiletime function create_w3t_lmbr()
+	createObjectDefinition("w3t", 'lmbr', 'lmbr')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_gomn()
+	createObjectDefinition("w3t", 'gomn', 'gomn')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rhe3()
+	createObjectDefinition("w3t", 'rhe3', 'rhe3')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_manh()
+	createObjectDefinition("w3t", 'manh', 'manh')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rdis()
+	createObjectDefinition("w3t", 'rdis', 'rdis')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rre1()
+	createObjectDefinition("w3t", 'rre1', 'rre1')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rre2()
+	createObjectDefinition("w3t", 'rre2', 'rre2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_guvi()
+	createObjectDefinition("w3t", 'guvi', 'guvi')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rma2()
+	createObjectDefinition("w3t", 'rma2', 'rma2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rman()
+	createObjectDefinition("w3t", 'rman', 'rman')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_gold()
+	createObjectDefinition("w3t", 'gold', 'gold')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_gfor()
+	createObjectDefinition("w3t", 'gfor', 'gfor')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tdex()
+	createObjectDefinition("w3t", 'tdex', 'tdex')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rspd()
+	createObjectDefinition("w3t", 'rspd', 'rspd')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rhe2()
+	createObjectDefinition("w3t", 'rhe2', 'rhe2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rres()
+	createObjectDefinition("w3t", 'rres', 'rres')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rwat()
+	createObjectDefinition("w3t", 'rwat', 'rwat')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tdx2()
+	createObjectDefinition("w3t", 'tdx2', 'tdx2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tin2()
+	createObjectDefinition("w3t", 'tin2', 'tin2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rsps()
+	createObjectDefinition("w3t", 'rsps', 'rsps')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rspl()
+	createObjectDefinition("w3t", 'rspl', 'rspl')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rreb()
+	createObjectDefinition("w3t", 'rreb', 'rreb')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_rhe1()
+	createObjectDefinition("w3t", 'rhe1', 'rhe1')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_texp()
+	createObjectDefinition("w3t", 'texp', 'texp')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tint()
+	createObjectDefinition("w3t", 'tint', 'tint')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tpow()
+	createObjectDefinition("w3t", 'tpow', 'tpow')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tstr()
+	createObjectDefinition("w3t", 'tstr', 'tstr')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_tst2()
+	createObjectDefinition("w3t", 'tst2', 'tst2')
+	..setString("icla", "Charged")
+
+
+@compiletime function create_w3t_lnrn()
+	createObjectDefinition("w3t", 'lnrn', 'lnrn')
+	..setString("icla", "Purchasable")
+	..setString("iabi", "Arel,AIrn")
+	..setString("icid", "Arel")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("utub", "+10% MP/s |n+1 HP/s")
+	..setString("unam", "|cffffff00Soul Ring|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Soul Ring|r |cff6c7b8bLv2|r")
+	..setInt("ilev", 2)
+	..setInt("ilvo", 2)
+	..setInt("iprn", 1)
+
+
+@compiletime function create_w3t_prvt()
+	createObjectDefinition("w3t", 'prvt', 'prvt')
+	..setString("icla", "Campaign")
+	..setString("iabi", "AIlz,A0CD,AId3,AIrm")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Shaman's Claws|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Shaman's Claws|r |cff6c7b8bLv3|r")
+	..setString("utub", "+7% attack rate |n+15% MP/s |n+1000 HP |n+3 armor")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNShamanAdept.blp")
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_ajen()
+	createObjectDefinition("w3t", 'ajen', 'ajen')
+	..setString("icla", "Artifact")
+	..setInt("igol", 0)
+	..setString("ides", "Grants Endurance Aura.")
+	..setString("unam", "|cffffdeadBattle Drums|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadBattle Drums|r |cff6c7b8bLv1|r")
+	..setString("utub", "+5% |cffffff00Endurance Aura|r")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNDrum.blp")
+
+
+@compiletime function create_w3t_lhst()
+	createObjectDefinition("w3t", 'lhst', 'lhst')
+	..setInt("igol", 0)
+	..setString("icla", "Artifact")
+	..setString("ides", "Grants Devotion Aura.")
+	..setString("utub", "+1 |cffffff00Devotion Aura|r")
+	..setString("unam", "|cffffdeadThe Lion Horn|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadThe Lion Horn|r |cff6c7b8bLv1|r")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+
+
+@compiletime function create_w3t_ward()
+	createObjectDefinition("w3t", 'ward', 'ward')
+	..setString("icla", "Artifact")
+	..setString("utub", "+5% |cffffff00Inspiration Aura|r")
+	..setInt("igol", 0)
+	..setString("icid", "A0ID")
+	..setString("uhot", "")
+	..setString("unam", "|cffffdeadAlleria's Flute|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadAlleria's Flute|r |cff6c7b8bLv1|r")
+	..setString("ides", "Grants Inspiration Aura.")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNAlleriaFlute.blp")
+
+
+@compiletime function create_w3t_afac()
+	createObjectDefinition("w3t", 'afac', 'afac')
+	..setString("icla", "Artifact")
+	..setInt("igol", 0)
+	..setString("ides", "Grants Fear Aura.")
+	..setString("unam", "|cffffdeadLegion Doom-Horn|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadLegion Doom-Horn|r |cff6c7b8bLv1|r")
+	..setString("utub", "-5% |cffff00ffFear Aura|r")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHornOfDoom.blp")
+	..setString("iabi", "A0CA")
+
+
+@compiletime function create_w3t_ofro()
+	createObjectDefinition("w3t", 'ofro', 'ofro')
+	..setString("iabi", "A0C1")
+	..setString("icid", "A038")
+	..setInt("igol", 0)
+	..setString("ides", "Grants Frost Aura.")
+	..setString("uhot", "")
+	..setString("utub", "-5% |cffff00ffFrost Aura|r")
+	..setString("unam", "|cffffdeadFrost Shard|r  |cff6c7b8b(Lv1)|r")
+	..setString("utip", "|cffffdeadFrost Shard|r |cff6c7b8bLv1|r")
+	..setInt("ilev", 1)
+	..setInt("ilvo", 1)
+	..setInt("ipri", 50)
+
+
+@compiletime function create_w3t_clsd()
+	createObjectDefinition("w3t", 'clsd', 'clsd')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0NW,A0CD,AItx,AIlz")
+	..setString("icid", "A080")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Helm of the Demon Lord|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Helm of the Demon Lord|r |cff6c7b8bLv3|r")
+	..setString("utub", "-8% |cffff00ffFear Aura|r |n+7% attack rate |n+20 damage |n+1000 HP")
+	..setInt("ilvo", 3)
+	..setInt("ilev", 3)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNUnholyAura.blp")
+
+
+@compiletime function create_w3t_hcun()
+	createObjectDefinition("w3t", 'hcun', 'hcun')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0C7,A0CD,AItx,AIlz")
+	..setInt("igol", 0)
+	..setString("icid", "A0ID")
+	..setString("ides", "")
+	..setString("unam", "|cff00ff00Horn of the Druids|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Horn of the Druids|r |cff6c7b8bLv3|r")
+	..setString("utub", "+8% |cffffff00Inspiration Aura|r |n+7% attack rate |n+20 damage |n+1000 HP")
+	..setInt("ilvo", 3)
+	..setInt("ilev", 3)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHornOfCenarius.blp")
+
+
+@compiletime function create_w3t_pmna()
+	createObjectDefinition("w3t", 'pmna', 'pmna')
+	..setString("icla", "PowerUp")
+	..setString("iabi", "A0QM,AIi1,AItx,AId4")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("utub", "-3 |cffff00ffCorruption Aura|r |n+10 Intelligence |n+20 damage |n+4 armor")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNNecromancerMaster.blp")
+	..setString("unam", "|cff00ffffCornerstone Grimoire|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffCornerstone Grimoire|r |cff6c7b8bLv4|r")
+	..setInt("ilev", 4)
+	..setInt("ilvo", 4)
+	..setString("icid", "A036")
+
+
+@compiletime function create_w3t_ciri()
+	createObjectDefinition("w3t", 'ciri', 'ciri')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0C8,AId3,AIrm,AItx")
+	..setInt("igol", 0)
+	..setString("icid", "A038")
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utub", "-8% |cffff00ffFrost Aura|r |n+20 damage |n+15% MP/s |n+3 armor")
+	..setString("unam", "|cff00ff00Frostguard|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Frostguard|r |cff6c7b8bLv3|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNIceShard.blp")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_rde0()
+	createObjectDefinition("w3t", 'rde0', 'rde0')
+	..setString("icla", "Purchasable")
+	..setString("iabi", "Arel,AIlf")
+	..setInt("igol", 0)
+	..setString("icid", "AIml")
+	..setInt("iprn", 1)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cffffff00Ring of Power|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Ring of Power|r |cff6c7b8bLv2|r")
+	..setString("utub", "+750 HP |n+1 HP/s")
+	..setInt("ilev", 2)
+	..setInt("ilvo", 2)
+
+
+@compiletime function create_w3t_lgdh()
+	createObjectDefinition("w3t", 'lgdh', 'lgdh')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0CB,AIlz,Arll,AIrm")
+	..setString("icid", "AHad")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("utip", "|cff00ff00Lordaeron Horn|r |cff6c7b8bLv3|r")
+	..setString("utub", "+2 |cffffff00Devotion Aura|r |n+1000 HP |n+15% MP/s |n+2 HP/s")
+	..setString("unam", "|cff00ff00Lordaeron Horn|r  |cff6c7b8b(Lv3)|r")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHornOfFog.blp")
+
+
+@compiletime function create_w3t_rat9()
+	createObjectDefinition("w3t", 'rat9', 'rat9')
+	..setString("icla", "Purchasable")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("unam", "|cffffff00Spider Knuckles|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Spider Knuckles|r |cff6c7b8bLv2|r")
+	..setInt("igol", 0)
+	..setString("iabi", "AItf,AId2")
+	..setString("icid", "AItf")
+	..setString("utub", "+15 damage |n+2 armor")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSpiderSilkBroach.blp")
+	..setInt("ilev", 2)
+	..setInt("ilvo", 2)
+
+
+@compiletime function create_w3t_rat6()
+	createObjectDefinition("w3t", 'rat6', 'rat6')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0CC,AIlz,Arll,AIrm")
+	..setString("icid", "AOae")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("utub", "+8% |cffffff00Endurance Aura|r |n+1000 HP |n+15% MP/s |n+2 HP/s")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNJanggo.blp")
+	..setString("unam", "|cff00ff00Janggo of the Horde|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Janggo of the Horde|r |cff6c7b8bLv3|r")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_hval()
+	createObjectDefinition("w3t", 'hval', 'hval')
+	..setString("icla", "PowerUp")
+	..setInt("igol", 0)
+	..setString("icid", "A080")
+	..setString("iabi", "A0QJ,AIaz,AIth,A0CE")
+	..setString("ides", "")
+	..setString("utub", "-10% |cffff00ffFear Aura|r |n+30 damage |n+10 Agility |n+3 HP/s")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNMaskOfDeath.blp")
+	..setString("unam", "|cff00ffffMask of Death|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffMask of Death|r |cff6c7b8bLv4|r")
+	..setInt("ilev", 4)
+	..setInt("ilvo", 4)
+
+
+@compiletime function create_w3t_rat3()
+	createObjectDefinition("w3t", 'rat3', 'rat3')
+	..setString("icla", "Campaign")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("igol", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRingJadeFalcon.blp")
+	..setString("iabi", "A0CF,AId3,Arll")
+	..setString("icid", "A0CF")
+	..setInt("iprn", 1)
+	..setString("unam", "|cff00ff00Archmage's Ring|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Archmage's Ring|r |cff6c7b8bLv3|r")
+	..setString("utub", "+20% MP/s |n+3 armor |n+2 HP/s")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_rde1()
+	createObjectDefinition("w3t", 'rde1', 'rde1')
+	..setString("icla", "Campaign")
+	..setString("iabi", "A0CG,AItx,AIlz")
+	..setString("icid", "AIas")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utub", "+10% attack rate |n+20 damage |n+1000 HP")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSpellSteal.blp")
+	..setString("unam", "|cff00ff00Assassin's Gauntlets|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Assassin's Gauntlets|r |cff6c7b8bLv3|r")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_rde2()
+	createObjectDefinition("w3t", 'rde2', 'rde2')
+	..setString("icla", "Campaign")
+	..setString("iabi", "AIl1,A0CD,Arll")
+	..setString("icid", "AIml")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Paladin's Gauntlets|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Paladin's Gauntlets|r |cff6c7b8bLv3|r")
+	..setString("utub", "+7% attack rate |n+1500 HP |n+2 HP/s")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNDevotion.blp")
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_cnob()
+	createObjectDefinition("w3t", 'cnob', 'cnob')
+	..setString("icla", "PowerUp")
+	..setInt("igol", 0)
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("iabi", "A0QL,AIs1,A0QI")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNUrnOfKelThuzad.blp")
+	..setString("unam", "|cff00ffffAshes of King Terenas|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffAshes of King Terenas|r |cff6c7b8bLv4|r")
+	..setString("utub", "+3 |cffffff00Devotion Aura|r |n+10 Strength |n+25% MP/s")
+	..setInt("ilev", 4)
+	..setString("icid", "AHad")
+
+
+@compiletime function create_w3t_bgst()
+	createObjectDefinition("w3t", 'bgst', 'bgst')
+	..setString("icla", "Campaign")
+	..setInt("igol", 0)
+	..setString("icid", "AIml")
+	..setString("iabi", "AIlz,Arll,AIrm")
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utub", "+1000 HP |n+15% MP/s |n+2 HP/s")
+	..setString("unam", "|cff00ff00Berserker's Bracers|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Berserker's Bracers|r |cff6c7b8bLv3|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRunedBracers.blp")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+
+
+@compiletime function create_w3t_belv()
+	createObjectDefinition("w3t", 'belv', 'belv')
+	..setString("icla", "Campaign")
+	..setString("iabi", "AId4,AIrm,AItx")
+	..setString("icid", "AIde")
+	..setInt("igol", 0)
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("utub", "+20 damage |n+15% MP/s |n+4 armor")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNAmuletOftheWild.blp")
+	..setString("unam", "|cff00ff00Warlock's Grip|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Warlock's Grip|r |cff6c7b8bLv3|r")
+	..setInt("ilvo", 3)
+	..setInt("ilev", 3)
+
+
+@compiletime function create_w3t_mcou()
+	createObjectDefinition("w3t", 'mcou', 'mcou')
+	..setString("icla", "Campaign")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp")
+	..setString("iabi", "AIth,A0CD,AId3")
+	..setString("icid", "AIth")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("unam", "|cff00ff00Demonic Gauntlets|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Demonic Gauntlets|r |cff6c7b8bLv3|r")
+	..setString("utub", "+7% attack rate |n+30 damage |n+3 armor")
+	..setInt("ilvo", 3)
+	..setInt("ilev", 3)
+
+
+@compiletime function create_w3t_brag()
+	createObjectDefinition("w3t", 'brag', 'brag')
+	..setString("icla", "PowerUp")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNStaffOfTeleportation.blp")
+	..setInt("igol", 0)
+	..setString("unam", "|cff00ffffNeptulon Spear Shard|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffNeptulon Spear Shard|r |cff6c7b8bLv4|r")
+	..setString("ides", "")
+	..setString("iabi", "A0QH,AId4,AIa1,A0QI")
+	..setString("icid", "A038")
+	..setString("utub", "-10% |cffff00ffFrost Aura|r |n+5 Intelligence |n+5 Strength |n+25% MP/s |n+4 armor")
+	..setInt("ilev", 4)
+	..setInt("ilvo", 4)
+
+
+@compiletime function create_w3t_frhg()
+	createObjectDefinition("w3t", 'frhg', 'frhg')
+	..setString("icla", "Campaign")
+	..setInt("igol", 0)
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("iabi", "AItx,AId3,Arll,AIrm")
+	..setString("icid", "AItx")
+	..setString("utub", "+20 damage |n+15% MP/s |n+3 armor |n+2 HP/s")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp")
+	..setString("unam", "|cff00ff00Battlemage's Bracers|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Battlemage's Bracers|r |cff6c7b8bLv3|r")
+	..setInt("ilvo", 3)
+	..setInt("ilev", 3)
+	..setInt("iprn", 1)
+
+
+@compiletime function create_w3t_mlst()
+	createObjectDefinition("w3t", 'mlst', 'mlst')
+	..setString("icla", "Campaign")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("iabi", "AItx,A0CD,AIlz,Arll")
+	..setString("icid", "AItx")
+	..setString("utub", "+7% attack rate |n+20 damage |n+1000 HP |n+2 HP/s")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNDOCAdeptTraining.blp")
+	..setString("unam", "|cff00ff00Druid's Paws|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Druid's Paws|r |cff6c7b8bLv3|r")
+	..setInt("ilev", 3)
+	..setInt("ilvo", 3)
+	..setInt("iprn", 1)
+
+
+@compiletime function create_w3t_kybl()
+	createObjectDefinition("w3t", 'kybl', 'kybl')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_ches()
+	createObjectDefinition("w3t", 'ches', 'ches')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_dthb()
+	createObjectDefinition("w3t", 'dthb', 'dthb')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_ktrm()
+	createObjectDefinition("w3t", 'ktrm', 'ktrm')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_bzbe()
+	createObjectDefinition("w3t", 'bzbe', 'bzbe')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_engs()
+	createObjectDefinition("w3t", 'engs', 'engs')
+	..setString("icla", "Permanent")
+	..setInt("isel", 1)
+	..setInt("ipaw", 1)
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbofSlowness.blp")
+	..setString("unam", "|cff00ffffOrb of Earth|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffOrb of Earth|r  |cff6c7b8b(Lv4)|r")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("utub", "-30% unit speed |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|cff6C7B8B(400 range)|r")
+	..setString("iabi", "A0S9")
+	..setString("icid", "A0S9")
+
+
+@compiletime function create_w3t_bzbf()
+	createObjectDefinition("w3t", 'bzbf', 'bzbf')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_gmfr()
+	createObjectDefinition("w3t", 'gmfr', 'gmfr')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_ledg()
+	createObjectDefinition("w3t", 'ledg', 'ledg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_kygh()
+	createObjectDefinition("w3t", 'kygh', 'kygh')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_gopr()
+	createObjectDefinition("w3t", 'gopr', 'gopr')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_cnhn()
+	createObjectDefinition("w3t", 'cnhn', 'cnhn')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_azhr()
+	createObjectDefinition("w3t", 'azhr', 'azhr')
+	..setString("icla", "PowerUp")
+	..setString("utip", "|cff00ffffHeart of Aszune|r |cff6c7b8bLv4|r")
+	..setString("unam", "|cff00ffffHeart of Aszune|r  |cff6c7b8b(Lv4)|r")
+	..setString("ides", "")
+	..setInt("ilev", 4)
+	..setInt("ilvo", 4)
+	..setInt("igol", 0)
+	..setInt("isel", 1)
+	..setInt("ipaw", 1)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNMoonStone.blp")
+	..setString("iabi", "A0QK,A0QO,A0QP")
+	..setString("icid", "A0ID")
+	..setString("utub", "+10% |cffffff00Inspiration Aura|r |n+12% attack rate |n+1750 HP")
+
+
+@compiletime function create_w3t_dkfw()
+	createObjectDefinition("w3t", 'dkfw', 'dkfw')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_k3m3()
+	createObjectDefinition("w3t", 'k3m3', 'k3m3')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_mgtk()
+	createObjectDefinition("w3t", 'mgtk', 'mgtk')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_mort()
+	createObjectDefinition("w3t", 'mort', 'mort')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_kymn()
+	createObjectDefinition("w3t", 'kymn', 'kymn')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_k3m1()
+	createObjectDefinition("w3t", 'k3m1', 'k3m1')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_jpnt()
+	createObjectDefinition("w3t", 'jpnt', 'jpnt')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_k3m2()
+	createObjectDefinition("w3t", 'k3m2', 'k3m2')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_phlt()
+	createObjectDefinition("w3t", 'phlt', 'phlt')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sclp()
+	createObjectDefinition("w3t", 'sclp', 'sclp')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sorf()
+	createObjectDefinition("w3t", 'sorf', 'sorf')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_shwd()
+	createObjectDefinition("w3t", 'shwd', 'shwd')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_skrt()
+	createObjectDefinition("w3t", 'skrt', 'skrt')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_glsk()
+	createObjectDefinition("w3t", 'glsk', 'glsk')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_kysn()
+	createObjectDefinition("w3t", 'kysn', 'kysn')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_sehr()
+	createObjectDefinition("w3t", 'sehr', 'sehr')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_thle()
+	createObjectDefinition("w3t", 'thle', 'thle')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_dphe()
+	createObjectDefinition("w3t", 'dphe', 'dphe')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_wtlg()
+	createObjectDefinition("w3t", 'wtlg', 'wtlg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_wolg()
+	createObjectDefinition("w3t", 'wolg', 'wolg')
+	..setString("icla", "Miscellaneous")
+
+
+@compiletime function create_w3t_penr()
+	createObjectDefinition("w3t", 'penr', 'penr')
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp")
+	..setString("unam", "|cffffff00Lordaeron Banner|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Lordaeron Banner|r  |cff6c7b8b(Lv2)|r")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("utub", "+25% damage to |cffffcc00Uther|r and |cffffcc00Daelin|r |n|cff6C7B8B(900 range)|r")
+	..setString("iabi", "A0QE")
+	..setString("icid", "A0QE")
+	..setString("ides", "")
+	..setInt("iprn", 0)
+
+
+@compiletime function create_w3t_rag1()
+	createObjectDefinition("w3t", 'rag1', 'rag1')
+	..setString("unam", "|cffa020f0Staff of Antonidas|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Staff of Antonidas|r  |cff6c7b8b(Unique)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBrilliance.blp")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setString("utub", "+10 armor to all |cffffcc00Water Elementals|r |n|cff6C7B8B(900 range)|r")
+	..setString("iabi", "A0QF")
+	..setString("icid", "A0QF")
+	..setInt("iprn", 0)
+	..setInt("ilev", 5)
+
+
+@compiletime function create_w3t_evtl()
+	createObjectDefinition("w3t", 'evtl', 'evtl')
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNFlare.blp")
+	..setString("unam", "|cff00ff00Flare Gun|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Flare Gun|r  |cff6c7b8b(Lv3)|r")
+	..setString("ides", "")
+	..setString("utub", "+25% damage to |cffffcc00Ballista|r |n|cff6C7B8B(1200 range)|r")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("iabi", "A0QG")
+	..setString("icid", "A0QG")
+	..setInt("iprn", 0)
+
+
+@compiletime function create_w3t_stel()
+	createObjectDefinition("w3t", 'stel', 'stel')
+	..setString("unam", "|cffa020f0Book of Medivh|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Book of Medivh|r  |cff6c7b8b(Unique)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setString("utub", "+10 Intelligence |n+10 Strength |n+10 Agility")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNTomeRed.blp")
+	..setString("iabi", "AIs6")
+	..setString("icid", "AIs6")
+
+
+@compiletime function create_w3t_brac()
+	createObjectDefinition("w3t", 'brac', 'brac')
+	..setString("iabi", "A0QX")
+	..setString("icid", "A0QX")
+	..setInt("igol", 0)
+	..setInt("iprn", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utip", "|cffffff00Scourge Bone Chimes|r  |cff6c7b8b(Lv2)|r")
+	..setString("utub", "+25% damage to |cffffcc00Heroes|r |n|cff6C7B8B(900 range)|r")
+	..setString("unam", "|cffffff00Scourge Bone Chimes|r  |cff6c7b8b(Lv2)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBoneChimes.blp")
+
+
+@compiletime function create_w3t_odef()
+	createObjectDefinition("w3t", 'odef', 'odef')
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+	..setString("iabi", "A0QY")
+	..setString("icid", "A0QY")
+	..setInt("igol", 0)
+	..setInt("iprn", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Infusion Stone|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Infusion Stone|r  |cff6c7b8b(Lv3)|r")
+	..setString("utub", "+10 armor to |cffffcc00Infernals|r |n|cff6C7B8B(900 range)|r")
+
+
+@compiletime function create_w3t_ssil()
+	createObjectDefinition("w3t", 'ssil', 'ssil')
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cffa020f0Scepter of Sargeras|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Scepter of Sargeras|r  |cff6c7b8b(Unique)|r")
+	..setInt("iprn", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWandOfShadowSight.blp")
+	..setString("icid", "AIa3")
+	..setString("iabi", "AIa3")
+	..setString("utub", "+10 Intelligence |n+10 Strength |n+10 Agility")
+
+
+@compiletime function create_w3t_sbch()
+	createObjectDefinition("w3t", 'sbch', 'sbch')
+	..setString("utip", "|cff00ffffVial of Titan's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setString("unam", "|cff00ffffVial of Titan's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iprn", 0)
+	..setString("ides", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPotionOfVampirism.blp")
+	..setString("utub", "-30% unit damage |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|cff6C7B8B(400 range)|r")
+	..setString("iabi", "A0QZ")
+	..setString("icid", "A0QZ")
+
+
+@compiletime function create_w3t_rin1()
+	createObjectDefinition("w3t", 'rin1', 'rin1')
+	..setString("unam", "|cffa020f0Axe of Cenarius|r  |cff6c7b8b(Unique)|r")
+	..setString("uhot", "")
+	..setString("utip", "|cffa020f0Axe of Cenarius|r  |cff6c7b8b(Unique)|r")
+	..setString("ides", "")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iprn", 0)
+	..setInt("igol", 0)
+	..setString("iabi", "AIcb")
+	..setString("icid", "AIcb")
+	..setString("utub", "-9 armor to target |n|cff6c7b8b(does not affect Special unit)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNMithrilAxe.blp")
+
+
+@compiletime function create_w3t_kpin()
+	createObjectDefinition("w3t", 'kpin', 'kpin')
+	..setString("unam", "|cff00ffffPrimal Seed|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffPrimal Seed|r  |cff6c7b8b(Lv4)|r")
+	..setString("ides", "")
+	..setInt("ilvo", 5)
+	..setInt("iprn", 0)
+	..setInt("igol", 0)
+	..setString("utub", "+25% damage to all |cffffcc00Ancients|r |n+5 HP/s to all |cffffcc00Ancients|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSeed.blp")
+	..setString("iabi", "A0RC,A0RD,A0UE,A0UF")
+	..setString("icid", "A0RC")
+
+
+@compiletime function create_w3t_rst1()
+	createObjectDefinition("w3t", 'rst1', 'rst1')
+	..setString("unam", "|cff00ff00Gaia Figurine|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Gaia Figurine|r  |cff6c7b8b(Lv3)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("ilvo", 5)
+	..setInt("ilev", 5)
+	..setInt("igol", 0)
+	..setInt("iprn", 0)
+	..setString("utub", "+5 HP/s to units |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(900 range)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNClayFigurine.blp")
+	..setString("iabi", "A0RF")
+	..setString("icid", "A0RF")
+
+
+@compiletime function create_w3t_dsum()
+	createObjectDefinition("w3t", 'dsum', 'dsum')
+	..setString("unam", "|cffa020f0Prismatic Blades|r  |cff6c7b8b(Unique)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("utip", "|cffa020f0Prismatic Blades|r  |cff6c7b8b(Unique)|r")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iper", 0)
+	..setInt("iusa", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNDaggerOfEscape.blp")
+	..setString("iabi", "A0RG")
+	..setString("icid", "A0RG")
+	..setString("utub", "Burns 50 mana per hit")
+
+
+@compiletime function create_w3t_crys()
+	createObjectDefinition("w3t", 'crys', 'crys')
+	..setString("unam", "|cffa020f0Shadow Orb|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Shadow Orb|r  |cff6c7b8b(Unique)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setInt("iprn", 0)
+	..setInt("iper", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbOfDarkness.blp")
+	..setString("iabi", "AIav")
+	..setString("icid", "AIav")
+	..setString("utub", "Grants 20% lifesteal")
+
+
+@compiletime function create_w3t_bspd()
+	createObjectDefinition("w3t", 'bspd', 'bspd')
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iprn", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPotionGreenSmall.blp")
+	..setString("uhot", "")
+	..setInt("igol", 0)
+	..setString("iabi", "AIpb,Apo2")
+	..setString("icid", "AIpb")
+	..setString("ides", "")
+	..setString("unam", "|cff00ff00Flask of Venom|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Flask of Venom|r  |cff6c7b8b(Lv3)|r")
+	..setString("utub", "30 damage/sec to target")
+
+
+@compiletime function create_w3t_spsh()
+	createObjectDefinition("w3t", 'spsh', 'spsh')
+	..setInt("ilev", 5)
+	..setInt("iprn", 0)
+	..setInt("igol", 0)
+	..setString("utub", "+25% damage to |cffffcc00Heroes|r |n|cff6C7B8B(900 range)|r")
+	..setString("icid", "A0RQ")
+	..setString("iabi", "A0RQ")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWitchDoctorMaster.blp")
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cffffff00Funny Voodoo Skulls|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Funny Voodoo Skulls|r  |cff6c7b8b(Lv2)|r")
+
+
+@compiletime function create_w3t_axas()
+	createObjectDefinition("w3t", 'axas', 'axas')
+	..setString("icla", "Permanent")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNEntrapmentWard.blp")
+	..setString("unam", "|cff00ff00Scary Voodoo Skulls|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Scary Voodoo Skulls|r  |cff6c7b8b(Lv3)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iusa", 0)
+	..setString("icid", "A0RR")
+	..setString("iabi", "A0RR")
+	..setString("utub", "-20% unit damage |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|cff6C7B8B(400 range)|r")
+
+
+@compiletime function create_w3t_rump()
+	createObjectDefinition("w3t", 'rump', 'rump')
+	..setString("iabi", "AIbx")
+	..setString("icla", "Permanent")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGolemThunderclap.blp")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cffffff00Stone Fists|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Stone Fists|r  |cff6c7b8b(Lv2)|r")
+	..setString("utub", "20% to stun for 3 seconds")
+
+
+@compiletime function create_w3t_shhn()
+	createObjectDefinition("w3t", 'shhn', 'shhn')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ffffVibrating Core|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffVibrating Core|r  |cff6c7b8b(Lv4)|r")
+	..setString("utub", "20 dmg/s to structures |n|cff6C7B8B(600 range)|r")
+	..setString("iabi", "AIcf")
+	..setString("icid", "AIcf")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNThunderLizardEgg.blp")
+
+
+@compiletime function create_w3t_ankh()
+	createObjectDefinition("w3t", 'ankh', 'ankh')
+	..setInt("ilev", 6)
+
+
+@compiletime function create_w3t_whwd()
+	createObjectDefinition("w3t", 'whwd', 'whwd')
+	..setInt("ilev", 6)
+
+
+@compiletime function create_w3t_pres()
+	createObjectDefinition("w3t", 'pres', 'pres')
+	..setInt("ilev", 6)
+
+
+@compiletime function create_w3t_pdiv()
+	createObjectDefinition("w3t", 'pdiv', 'pdiv')
+	..setInt("ilev", 0)
+
+
+@compiletime function create_w3t_sres()
+	createObjectDefinition("w3t", 'sres', 'sres')
+	..setInt("ilev", 7)
+
+
+@compiletime function create_w3t_rej5()
+	createObjectDefinition("w3t", 'rej5', 'rej5')
+	..setInt("ilev", 0)
+
+
+@compiletime function create_w3t_pnvu()
+	createObjectDefinition("w3t", 'pnvu', 'pnvu')
+	..setString("icla", "Permanent")
+	..setInt("iusa", 0)
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iprn", 0)
+	..setString("uhot", "")
+	..setInt("iuse", 0)
+	..setInt("iper", 0)
+	..setString("ides", "")
+	..setString("unam", "|cff00ffffMannoroth's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffMannoroth's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setString("utub", "+20% Orc attack rate |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|cff6C7B8B(400 range)|r")
+	..setString("iabi", "A0SH")
+	..setString("icid", "A0SH")
+
+
+@compiletime function create_w3t_hlst()
+	createObjectDefinition("w3t", 'hlst', 'hlst')
+	..setString("icla", "Permanent")
+	..setInt("iusa", 0)
+	..setInt("iprn", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iuse", 0)
+	..setInt("iper", 0)
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("unam", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+	..setString("iabi", "A0SG")
+	..setString("icid", "A0SG")
+	..setString("utip", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+	..setString("utub", "15 dmg/s to units |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(600 range)|r")
+
+
+@compiletime function create_w3t_olig()
+	createObjectDefinition("w3t", 'olig', 'olig')
+	..setString("icla", "Permanent")
+	..setString("unam", "|cffffff00Orb of Water|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Orb of Water|r  |cff6c7b8b(Lv2)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("ureq", "")
+	..setInt("ilvo", 5)
+	..setInt("ilev", 5)
+	..setInt("igol", 0)
+	..setString("utub", "20% to stun for 3 seconds")
+	..setString("icid", "AHbh")
+	..setInt("ubpx", 0)
+	..setInt("ubpy", 0)
+	..setString("iabi", "A0SW")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWaterOrb.blp")
+
+
+@compiletime function create_w3t_shrs()
+	createObjectDefinition("w3t", 'shrs', 'shrs')
+	..setString("icla", "Permanent")
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Monster Lure|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Monster Lure|r  |cff6c7b8b(Lv3)|r")
+	..setString("utub", "+35% damage to |cffffcc00Sea Turtle|r |n|cff6C7B8B(1200 range)|r")
+	..setInt("iper", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iuse", 0)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setString("iabi", "A0SX")
+	..setString("icid", "A0SX")
+
+
+@compiletime function create_w3t_blba()
+	createObjectDefinition("w3t", 'blba', 'blba')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cff00ff00Electric Octopus|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Electric Octopus|r  |cff6c7b8b(Lv3)|r")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSpinyCrab.blp")
+	..setString("utub", "3 x 75 damage every 2 sec")
+	..setString("iabi", "A0SY,A0SY,A0SY")
+	..setString("icid", "A0SY")
+
+
+@compiletime function create_w3t_asbl()
+	createObjectDefinition("w3t", 'asbl', 'asbl')
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("icla", "Permanent")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("igol", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGlaiveIllidan.blp")
+	..setString("unam", "|cffa020f0Glaves of Azzinoth|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Glaves of Azzinoth|r  |cff6c7b8b(Unique)|r")
+	..setString("utub", "-6 armor to target")
+	..setString("iabi", "A0SZ")
+	..setString("icid", "A0SZ")
+
+
+@compiletime function create_w3t_tmmt()
+	createObjectDefinition("w3t", 'tmmt', 'tmmt')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setString("unam", "|cffa020f0Eye of Sargeras|r  |cff6c7b8b(Unique)|r")
+	..setString("utip", "|cffa020f0Eye of Sargeras|r  |cff6c7b8b(Unique)|r")
+	..setString("ides", "")
+	..setString("utub", "+10 Intelligence |n+10 Strength |n+10 Agility")
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("iabi", "AIs6")
+	..setString("icid", "AIs6")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbOfDeath.blp")
+
+
+@compiletime function create_w3t_iwbr()
+	createObjectDefinition("w3t", 'iwbr', 'iwbr')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("unam", "|cff00ff00Mana Stone|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Mana Stone|r  |cff6c7b8b(Lv3)|r")
+	..setString("utub", "-3 MP/s to enemy units |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(does not affect Special unit)|r |n|cff6C7B8B(600 range)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNManaStone.blp")
+	..setString("iabi", "AIba")
+	..setString("icid", "AIba")
+
+
+@compiletime function create_w3t_mnsf()
+	createObjectDefinition("w3t", 'mnsf', 'mnsf')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utub", "+25% damage to |cffffcc00Vashj|r and |cffffcc00Athissa|r |n|cff6C7B8B(900 range)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBansheeAdept.blp")
+	..setString("unam", "|cffffff00Blood Pact|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Blood Pact|r  |cff6c7b8b(Lv2)|r")
+	..setString("iabi", "A0T0")
+	..setString("icid", "A0T0")
+
+
+@compiletime function create_w3t_arsh()
+	createObjectDefinition("w3t", 'arsh', 'arsh')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("unam", "|cffffff00Venom Glands|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Venom Glands|r  |cff6c7b8b(Lv2)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPoisonSting.blp")
+	..setString("utub", "-30% speed to target |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(does not affect Special unit)|r")
+	..setString("iabi", "A0KV,A092")
+	..setString("icid", "A0KV")
+
+
+@compiletime function create_w3t_drph()
+	createObjectDefinition("w3t", 'drph', 'drph')
+	..setString("icla", "Permanent")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNThornShield.blp")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("ipri", 0)
+	..setString("ides", "")
+	..setString("unam", "|cff00ff00Spiked Carapace|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Spiked Carapace|r  |cff6c7b8b(Lv3)|r")
+	..setString("iabi", "A0BQ")
+	..setString("icid", "A0BQ")
+	..setString("utub", "60 damage to melee attacker")
+
+
+@compiletime function create_w3t_shen()
+	createObjectDefinition("w3t", 'shen', 'shen')
+	..setString("icla", "Permanent")
+	..setString("unam", "|cff00ff00Adrenaline Glands|r  |cff6c7b8b(Lv3)|r")
+	..setString("utip", "|cff00ff00Adrenaline Glands|r  |cff6c7b8b(Lv3)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("utub", "+10% attack rate")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNStone.blp")
+	..setString("iabi", "A0FV")
+	..setString("icid", "A0FV")
+
+
+@compiletime function create_w3t_esaz()
+	createObjectDefinition("w3t", 'esaz', 'esaz')
+	..setString("icla", "Permanent")
+	..setString("unam", "|cff00ffffSecond Heart|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffSecond Heart|r  |cff6c7b8b(Lv4)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setInt("ilvo", 5)
+	..setInt("ilev", 5)
+	..setInt("igol", 0)
+	..setInt("iusa", 0)
+	..setInt("ipri", 0)
+	..setString("utub", "+20 HP/s regeneration")
+	..setString("iabi", "A0KR")
+	..setString("icid", "A0KR")
+
+
+@compiletime function create_w3t_frgd()
+	createObjectDefinition("w3t", 'frgd', 'frgd')
+	..setString("icla", "Permanent")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("iabi", "A057")
+	..setString("icid", "A057")
+	..setString("utip", "|cffa020f0Frostmourne|r  |cff6c7b8b(Unique)|r")
+	..setString("unam", "|cffa020f0Frostmourne|r  |cff6c7b8b(Unique)|r")
+	..setString("utub", "20% Vampiric Aura |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(900 range)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNFrostMourne.blp")
+
+
+@compiletime function create_w3t_klmm()
+	createObjectDefinition("w3t", 'klmm', 'klmm')
+	..setString("icla", "Permanent")
+	..setString("iabi", "AIi3")
+	..setString("icid", "AIi3")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("ides", "")
+	..setString("uhot", "")
+	..setString("utub", "+10 Intelligence |n+10 Strength |n+10 Agility")
+	..setString("utip", "|cffa020f0Full Armor Set|r  |cff6c7b8b(Unique)|r")
+	..setString("unam", "|cffa020f0Full Armor Set|r  |cff6c7b8b(Unique)|r")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNLichKing.blp")
+
+
+@compiletime function create_w3t_sprn()
+	createObjectDefinition("w3t", 'sprn', 'sprn')
+	..setString("icla", "Permanent")
+	..setString("unam", "|cffffff00Scourge Bone Chimes|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Scourge Bone Chimes|r  |cff6c7b8b(Lv2)|r")
+	..setString("ides", "")
+	..setString("utub", "+25% damage to |cffffcc00Sylvanas|r and |cffffcc00Kel'Thuzad|r |n|cff6C7B8B(900 range)|r")
+	..setString("iabi", "A0QX")
+	..setString("icid", "A0QX")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("ipri", 0)
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBoneChimes.blp")
+
+
+@compiletime function create_w3t_stwa()
+	createObjectDefinition("w3t", 'stwa', 'stwa')
+	..setString("icla", "Permanent")
+	..setString("unam", "|cffffff00Reinforced Fangs|r  |cff6c7b8b(Lv2)|r")
+	..setString("utip", "|cffffff00Reinforced Fangs|r  |cff6c7b8b(Lv2)|r")
+	..setString("uhot", "")
+	..setString("ides", "")
+	..setString("utub", "20% to do 2x damage")
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setString("iabi", "AIcs")
+	..setString("icid", "AIcs")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGhoulFrenzy.blp")
+
+
