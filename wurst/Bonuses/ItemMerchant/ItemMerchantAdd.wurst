@@ -36,11 +36,6 @@ function addForLevel()
   if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO) and u.getLevel() mod 4 == 0
     addRandomItem(u)
 
-function addForRevive()
-  let u = GetTriggerUnit()
-  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO)
-    addRandomItem(u)
-
 function addForKill()
   let du = GetDyingUnit()
   if du.isType(UNIT_TYPE_HERO)
@@ -60,4 +55,4 @@ function addForKill()
 init
   registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel)
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
-  registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)
+ // registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)
