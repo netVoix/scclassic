@@ -38,7 +38,7 @@ import ObjEditingNatives
 	..setLvlDataString("abuf", 3, 0, "B00R")
 	..setLvlDataString("abuf", 4, 0, "B00R")
 	..setLvlDataString("abuf", 5, 0, "B00R")
-	..setLvlDataString("atar", 1, 0, "air,friend,ground,nonancient,hero,organic")
+	..setLvlDataString("atar", 1, 0, "air,friend,ground,nonancient,hero,organic,nonhero")
 	..setLvlDataString("atar", 2, 0, "air,enemies,ground,nonancient")
 	..setLvlDataString("atar", 3, 0, "air,enemies,ground,nonancient")
 	..setLvlDataString("atar", 4, 0, "air,enemies,ground,nonancient")
