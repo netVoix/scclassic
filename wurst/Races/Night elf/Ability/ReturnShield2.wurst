@@ -1,0 +1,24 @@
+package ReturnShield2
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0AZ()
+	createObjectDefinition("w3a", 'A0AZ', 'ANcl')
+	..setLvlDataString("anam", 0, 0, "Thorns Aura")
+	..setLvlDataInt("alev", 0, 0, 1)
+	..setLvlDataInt("aher", 0, 0, 0)
+	..setLvlDataString("ahky", 0, 0, "")
+	..setLvlDataString("acat", 0, 0, "")
+	..setLvlDataString("acap", 0, 0, "")
+	..setLvlDataString("aeat", 0, 0, "")
+	..setLvlDataString("atat", 0, 0, "")
+	..setLvlDataString("ata0", 0, 0, "")
+	..setLvlDataUnreal("Ncl1", 1, 1, 0.98)
+	..setLvlDataInt("Ncl3", 1, 3, 17)
+	..setLvlDataUnreal("acdn", 1, 0, 1.0)
+	..setLvlDataInt("Ncl5", 1, 5, 0)
+	..setLvlDataString("aub1", 1, 0, "35 damage return shield |n|cff6C7B8B(units and buildings)|r |n|cff6C7B8B(1500 range)|r |n|n|cff00ff00Base Defence Aura|r")
+	..setLvlDataString("atp1", 1, 0, "Thorns Aura")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNThorns.blp")
+	..setLvlDataString("Ncl6", 1, 6, "blackarrowoff")

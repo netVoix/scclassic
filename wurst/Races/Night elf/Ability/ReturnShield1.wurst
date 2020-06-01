@@ -1,0 +1,14 @@
+package ReturnShield1
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A047()
+	createObjectDefinition("w3a", 'A047', 'ACah')
+	..setLvlDataUnreal("Eah1", 1, 1, 35.0)
+	..setLvlDataString("aub1", 1, 0, "35 damage return shield. |n|cff6C7B8B(units and buildings)|r |n|cff6C7B8B(1500 range)|r")
+	..setLvlDataUnreal("aare", 1, 0, 1500.0)
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataInt("Eah2", 1, 2, 0)
+	..setLvlDataInt("abpy", 0, 0, 0)
+	..setLvlDataString("atar", 1, 0, "air,friend,ground,invulnerable,self,structure,vulnerable")
