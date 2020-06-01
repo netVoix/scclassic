@@ -25440,16 +25440,16 @@ function D8H takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Ubal')
 endfunction
 function D9H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'brac')==false)
+return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'brac')==false) 
 endfunction
 function FVH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'odef')==false)
+return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'odef')==false) 
 endfunction
 function FEH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'pnvu')==false)
+return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'MANB')==false) 
 endfunction
 function FXH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'hlst')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'FELS')==false) 
 endfunction
 function FOH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Nman')
@@ -25485,16 +25485,16 @@ call SelectHeroSkill(GetTriggerUnit(),'A09B')
 call SelectHeroSkill(GetTriggerUnit(),'A0DY')
 call SelectHeroSkill(GetTriggerUnit(),'ANr3')
 if(D9H())then
-call UnitAddItemByIdSwapped('brac',GetTriggerUnit())
+call UnitAddItemByIdSwapped('brac',GetTriggerUnit()) 
 endif
 if(FVH())then
-call UnitAddItemByIdSwapped('odef',GetTriggerUnit())
+call UnitAddItemByIdSwapped('odef',GetTriggerUnit())  
 endif
 if(FEH())then
-call UnitAddItemByIdSwapped('pnvu',GetTriggerUnit())
+call UnitAddItemByIdSwapped('MANB',GetTriggerUnit()) 
 endif
 if(FXH())then
-call UnitAddItemByIdSwapped('hlst',GetTriggerUnit())
+call UnitAddItemByIdSwapped('FELS',GetTriggerUnit()) 
 endif
 endif
 endfunction
