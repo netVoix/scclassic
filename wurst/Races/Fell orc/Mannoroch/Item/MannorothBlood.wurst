@@ -2,9 +2,11 @@ package MannorothBlood
 
 import ObjEditingNatives
 
+public let MANNOROTH_BLOOD_ID = 'MANB'
+
 
 @compiletime function create_w3t_MANB()
-	createObjectDefinition("w3t", 'MANB', 'pnvu')
+	createObjectDefinition("w3t", MANNOROTH_BLOOD_ID, 'pnvu')
 	..setString("icla", "Permanent")
 	..setInt("iusa", 0)
 	..setInt("igol", 0)

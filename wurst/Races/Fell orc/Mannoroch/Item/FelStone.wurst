@@ -1,10 +1,11 @@
-package FellStone
+package FelStone
 
 import ObjEditingNatives
 
+public let FEL_STONE_ID = 'FELS'
 
 @compiletime function create_w3t_FelS()
-    createObjectDefinition("w3t", 'FelS', 'hlst')
+    createObjectDefinition("w3t", FEL_STONE_ID, 'hlst')
     ..setString("icla", "Permanent")
     ..setInt("iusa", 0)
     ..setInt("iprn", 0)
