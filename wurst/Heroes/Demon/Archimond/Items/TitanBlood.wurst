@@ -1,0 +1,18 @@
+package TitanBlood
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3t_TiBl()
+    createObjectDefinition("w3t", 'TiBl', 'sbch')
+    ..setString("utip", "|cff00ffffVial of Titan's Blood|r  |cff6c7b8b(Lv4)|r")
+    ..setString("unam", "|cff00ffffVial of Titan's Blood|r  |cff6c7b8b(Lv4)|r")
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iprn", 0)
+    ..setString("ides", "")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPotionOfVampirism.blp")
+    ..setString("utub", "-20% unit damage |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(does not affect Special unit)|r |n|cff6C7B8B(600 range)|r")
+    ..setString("iabi", "A0QZ")
+    ..setString("icid", "A0QZ")

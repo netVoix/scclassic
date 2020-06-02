@@ -28,15 +28,15 @@ buildMapData:
     - id: 7
       name: Player 6
       race: HUMAN
-      controller: USER
+      controller: COMPUTER
     - id: 9
       name: Player 8
       race: HUMAN
-      controller: USER
+      controller: COMPUTER
     - id: 10
       name: Player 9
       race: HUMAN
-      controller: USER
+      controller: COMPUTER
   forces:
     - name: Yellow
       playerIds:

@@ -67,4 +67,4 @@ import ObjEditingNatives
     ..setLvlDataString("aub1", 7, 0, "Calls down multiple Infernals from the sky.")
     ..setLvlDataInt("amcs", 6, 0, 85)
     ..setLvlDataInt("amcs", 7, 0, 90)
-    ..setLvlDataInt("Nrc2", 2, 2, 2)
+    ..setLvlDataInt("Nrc2", 2, 2, 3)
