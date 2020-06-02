@@ -1,0 +1,14 @@
+package VenomGkandsAb
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A092()
+	createObjectDefinition("w3a", 'A092', 'Apo2')
+	..setLvlDataString("abuf", 1, 0, "B05A,B05B")
+	..setLvlDataInt("Poi4", 1, 4, 8)
+	..setLvlDataUnreal("Poi1", 1, 1, 0.0)
+	..setLvlDataUnreal("adur", 1, 0, 20.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 20.0)
+	..setLvlDataUnreal("Poi2", 1, 2, 0.15)
+	..setLvlDataUnreal("Poi3", 1, 3, 0.15)

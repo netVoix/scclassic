@@ -25309,7 +25309,7 @@ function DMH takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'frgd')==false)
 endfunction
 function DPH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'klmm')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'cnob')==false)
 endfunction
 function DQH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Harf')
@@ -25330,16 +25330,16 @@ function DYH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Uanb')
 endfunction
 function DZH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'arsh')==false)
+return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'VeGl')==false)
 endfunction
 function D_H takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'drph')==false)
 endfunction
 function D0H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'shen')==false)
+return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'esaz')==false)
 endfunction
 function D1H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'esaz')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'hval')==false)
 endfunction
 function D2H takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Udth')
@@ -25384,7 +25384,7 @@ if(DMH())then
 call UnitAddItemByIdSwapped('frgd',GetTriggerUnit())
 endif
 if(DPH())then
-call UnitAddItemByIdSwapped('klmm',GetTriggerUnit())
+call UnitAddItemByIdSwapped('cnob',GetTriggerUnit())
 endif
 endif
 if(DYH())then
@@ -25411,16 +25411,16 @@ call SelectHeroSkill(GetTriggerUnit(),'A05B')
 call SelectHeroSkill(GetTriggerUnit(),'A0GH')
 call SelectHeroSkill(GetTriggerUnit(),'A0JL')
 if(DZH())then
-call UnitAddItemByIdSwapped('arsh',GetTriggerUnit())
+call UnitAddItemByIdSwapped('VeGl',GetTriggerUnit())
 endif
 if(D_H())then
 call UnitAddItemByIdSwapped('drph',GetTriggerUnit())
 endif
 if(D0H())then
-call UnitAddItemByIdSwapped('shen',GetTriggerUnit())
+call UnitAddItemByIdSwapped('esaz',GetTriggerUnit())
 endif
 if(D1H())then
-call UnitAddItemByIdSwapped('esaz',GetTriggerUnit())
+call UnitAddItemByIdSwapped('hval',GetTriggerUnit())
 endif
 endif
 endfunction

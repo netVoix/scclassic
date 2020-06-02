@@ -51,7 +51,7 @@ import ObjEditingNatives
 	..setString("upro", "Arthas Menethil")
 	..setString("udaa", "")
 	..setUnreal("ucbs", 1.0)
-	..setUnreal("ua2c", 2.5)
+	..setUnreal("ua2c", 1.65)
 	..setInt("ua2b", 214)
 	..setInt("ua2s", 21)
 	..setInt("ua2d", 1)
