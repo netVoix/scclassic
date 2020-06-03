@@ -21464,23 +21464,6 @@ import ObjEditingNatives
 	..setLvlDataString("anam", 0, 0, "Void Shift")
 
 
-@compiletime function create_w3a_A0H0()
-	createObjectDefinition("w3a", 'A0H0', 'ACev')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadHysteria|r |n|n|cffffcc00Nether Drake|r replaces |cffffcc00Destroyer|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff00ffMana Burn|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(burns 200 mana)|r |n|cff00ffffVoid Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(avoids damage for 2s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadDemonic Strength|r |n|cffffdeadDemonic Armor|r |n|cffffdeadHysteria|r |n|cffffdeadDevour Magic|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Hero|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "Void Creatures")
-	..setLvlDataString("atp1", 1, 0, "Void Creatures")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNNetherDragon.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
-
-
 @compiletime function create_w3a_A0H2()
 	createObjectDefinition("w3a", 'A0H2', 'AUin')
 	..setLvlDataInt("alsk", 0, 0, 4)
@@ -49398,19 +49381,6 @@ import ObjEditingNatives
 	..setLvlDataUnreal("Hbh1", 1, 1, 15.0)
 	..setLvlDataString("atar", 1, 0, "ground,nonhero,organic")
 	..setLvlDataString("aub1", 1, 0, "Gives a 15% chance that an attack will stun an opponent for 1 second.")
-
-
-@compiletime function create_w3a_Ambb()
-	createObjectDefinition("w3a", 'Ambb', 'Ambb')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataString("ahky", 0, 0, "")
-	..setLvlDataInt("amcs", 1, 0, 0)
-	..setLvlDataInt("abpx", 0, 0, 2)
-	..setLvlDataUnreal("Emb1", 1, 1, 200.0)
-	..setLvlDataUnreal("aran", 1, 0, 800.0)
-	..setLvlDataUnreal("acdn", 1, 0, 15.0)
-	..setLvlDataString("atp1", 1, 0, "Mana Burn")
-	..setLvlDataString("aub1", 1, 0, "Sends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned.")
 
 
 @compiletime function create_w3a_ACtc()

@@ -1,0 +1,17 @@
+package ManaBurn
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_Ambb()
+    createObjectDefinition("w3a", 'Ambb', 'Ambb')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataString("ahky", 0, 0, "")
+    ..setLvlDataInt("amcs", 1, 0, 0)
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataUnreal("Emb1", 1, 1, 100.0)
+    ..setLvlDataUnreal("aran", 1, 0, 800.0)
+    ..setLvlDataUnreal("acdn", 1, 0, 15.0)
+    ..setLvlDataString("atp1", 1, 0, "Mana Burn")
+    ..setLvlDataString("atar", 4, 0, "air,ground,enemy,neutral,nonancient,organic,mechanical")
+    ..setLvlDataString("aub1", 1, 0, "Sends a bolt of negative energy that burns 100 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned.")
