@@ -1,0 +1,23 @@
+package WaterBounce
+import ObjEditingNatives
+
+@compiletime function create_w3a_WaBo()
+	createObjectDefinition("w3a", 'WaBo', 'ACev')
+	..setLvlDataString("arac", 0, 0, "nightelf")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 0)
+	..setLvlDataString("aub1", 1, 0, "Projectyles can bounce 1 time.")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Powerful flow")
+	..setLvlDataString("atp1", 1, 0, "Powerful flow (|cffff0000Lv1|r)")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNPersMis.blp")
+	..setLvlDataString("areq", 0, 0, "R002")
+	..setLvlDataInt("alev", 0, 0, 4)
+	..setLvlDataString("atp1", 2, 0, "Powerful flow (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Powerful flow (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Projectyles can bounce 2 times.")
+	..setLvlDataString("aub1", 3, 0, "Projectyles can bounce 3 times.")
+	..setLvlDataString("arqa", 0, 0, "1")
+	..setLvlDataString("atp1", 4, 0, "Powerful flow (|cff00ffffLv4|r)")
+	..setLvlDataString("aub1", 4, 0, "Projectyles can bounce 4 times.")
+	..setLvlDataInt("abpx", 0, 0, 0)

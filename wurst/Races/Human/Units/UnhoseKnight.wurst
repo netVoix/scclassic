@@ -7,7 +7,7 @@ import ObjEditingNatives
 	createObjectDefinition("w3u", 'njks', 'njks')
 	..setInt("ucam", 0)
 	..setInt("uspe", 1)
-	..setString("uabi", "A002,A00J,A0QC,Agyv")
+	..setString("uabi", "A002,A00J,A0QC,Agyv,Demo")
 	..setUnreal("ucpt", 0.3)
 	..setReal("urun", 210.0)
 	..setReal("uwal", 210.0)

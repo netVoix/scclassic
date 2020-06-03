@@ -131,7 +131,7 @@ import ObjEditingNatives
 	..setLvlDataString("gnam", 5, 0, "Advanced Ballistics")
 	..setLvlDataString("gtp1", 5, 0, "Advanced Ballistics (Max Level)")
 	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r bonus damage and attack rate |n|cffffcc00Affects:|r |cffffdeadMarksman|r and |cffffdeadBallista|r |n|n|cff6c7b8bLv1: +4 and +12 damage, +5% attack rate |nLv2: +8 and +24 damage, +10% attack rate |nLv3: +12 and +36 damage, +15% attack rate|r |n|cff00ffffLv4:|r |cffffcc00+16|r and |cffffcc00+48|r damage, |cffffcc00+20%|r attack rate")
-
+	
 
 @compiletime function create_w3q_R003()
 	createObjectDefinition("w3q", 'R003', 'Rhan')

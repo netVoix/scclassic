@@ -3,8 +3,8 @@ package Demolisher
 import ObjEditingNatives
 
 
-@compiletime function create_w3a_A07Y()
-    createObjectDefinition("w3a", 'A07Y', 'ANde')
+@compiletime function create_w3a_Demo()
+    createObjectDefinition("w3a", 'Demo', 'ANde')
     ..setLvlDataString("arac", 0, 0, "other")
     ..setLvlDataInt("aher", 0, 0, 0)
     ..setLvlDataInt("abpy", 0, 0, 0)
