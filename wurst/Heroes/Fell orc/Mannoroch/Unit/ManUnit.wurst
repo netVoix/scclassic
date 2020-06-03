@@ -38,7 +38,7 @@ import ObjEditingNatives
 	..setUnreal("ustp", 1.0)
 	..setString("utyp", "ancient,undead")
 	..setString("uhot", "")
-	..setString("utub", "|cffffcc00Special Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Ground Slam|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage, 3-9s stun|r |n  |cff6c7b8b(300-600 area of effect)|r |n|n|cff00ffffCleaving Attack|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead10-16% area damage|r |n|n|cffff00ffCorruption Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead4-10 armor reduction|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffa020f0Rain of Chaos|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons 2 Infernals for 60-90s|r")
+	..setString("utub", "|cffffcc00Special Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Ground Slam|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage, 3-9s stun|r |n  |cff6c7b8b(300-600 area of effect)|r |n|n|cff00ffffCleaving Attack|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead10-16% area damage|r |n|n|cffff00ffCorruption Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead4-10 armor reduction|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffa020f0Rain of Chaos|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons 3 Infernals for 60-90s|r")
 	..setInt("uagi", 8)
 	..setInt("uint", 8)
 	..setInt("ustr", 14)
