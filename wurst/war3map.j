@@ -25741,7 +25741,7 @@ call SelectHeroSkill(GetTriggerUnit(),'A0ID')
 call SelectHeroSkill(GetTriggerUnit(),'A069')
 endif
 if(GRH())then
-call SelectHeroSkill(GetTriggerUnit(),'A0TP')
+call SelectHeroSkill(GetTriggerUnit(),'BlGl')
 call SelectHeroSkill(GetTriggerUnit(),'A0NP')
 call SelectHeroSkill(GetTriggerUnit(),'A0NO')
 call SelectHeroSkill(GetTriggerUnit(),'AHds')

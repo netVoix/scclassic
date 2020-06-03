@@ -1,0 +1,20 @@
+package BloodElfPickAb
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0EY()
+	createObjectDefinition("w3a", 'A0EY', 'ACev')
+	..setLvlDataString("arac", 0, 0, "nightelf")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPersistent Missiles|r |n|n|cffffcc00Blood Priest|r replaces |cffffcc00Sorceress|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff00ff00Healing Hand|r |cff6c7b8b(Healing Spell)|r |n |cffffdead(30/40/50/60/70 HP to 3 units)|r |n|cffff0000Ignite|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(300/350/400/450/500 dmg)|r |n |cff6c7b8b(to a single Air unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBlood Magic|r |cff6c7b8b(Upgrades Abilities)|r  |n|cffffdeadSilverite Armor|r |n|cffffdeadPersistent Missiles|r |n|n|cffffcc00Type:|r |cffff00ffStrong Anti Air|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Blood Priest")
+	..setLvlDataString("atp1", 1, 0, "Blood Priest")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBloodElfPeasant.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
