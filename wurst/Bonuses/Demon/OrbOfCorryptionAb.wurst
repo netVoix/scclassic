@@ -1,0 +1,20 @@
+package OrbOfCorryptionAb
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0H6()
+	createObjectDefinition("w3a", 'A0H6', 'ACev')
+	..setLvlDataString("arac", 0, 0, "undead")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadVorpal Daggers|r |n|nIncreases |cffffcc00Felguard|r, |cffffcc00Diabolist|r and |cffffcc00Fel Stalker|r attack rate by 7% and allows them to reduce their target's armor by 2/4/6/8 for 45 seconds. In addition, |cffffcc00Felguard|r and |cffffcc00Fel Stalker|r can attack air targets. |n|cff6c7b8b(can be upgraded inside this building)|r |n|cff6c7b8b(does not affect Special unit)|r |n|n|cffffcc00Type:|r |cffff00ffMinor Anti Air|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Orb of Corruption")
+	..setLvlDataString("atp1", 1, 0, "Orb of Corruption")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNOrbOfVenom.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)

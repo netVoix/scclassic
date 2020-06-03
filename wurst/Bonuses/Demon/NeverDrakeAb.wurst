@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "undead")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadHysteria|r |n|n|cffffcc00Nether Drake|r replaces |cffffcc00Destroyer|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff00ffMana Burn|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(burns 100 mana)|r |n|cff00ffffVoid Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(avoids damage for 2s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadDemonic Strength|r |n|cffffdeadDemonic Armor|r |n|cffffdeadHysteria|r |n|cffffdeadDevour Magic|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Hero|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadHysteria|r |n|n|cffffcc00Nether Drake|r replaces |cffffcc00Destroyer|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff00ffMana Burn|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(burns 100 mana)|r |n|cff6c7b8b(does not affect Special unit)|r |n|cff00ffffVoid Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(avoids damage for 2s)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadDemonic Strength|r |n|cffffdeadDemonic Armor|r |n|cffffdeadHysteria|r |n|cffffdeadDevour Magic|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Hero|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Void Creatures")
 	..setLvlDataString("atp1", 1, 0, "Void Creatures")
