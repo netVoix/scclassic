@@ -1,0 +1,20 @@
+package WaterElementalPickAb
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0IT()
+	createObjectDefinition("w3a", 'A0IT', 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Water Elemental|r replaces |cffffcc00Ballista|r |n|cffffcc00Siege Unit (Ranged)|r |n+55% attack rate |n+800 HP |n|cffffcc00Abilities:|r |n|cff00ffffSplit|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(spawns 2 elementals on death)|r |n|cff00ffffLiquid Form|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(20% evasion)|r |n|cff00ffffPowerful flow|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(attacks bounce on 2 enemies but 50% damage loss per bounce)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadWhite Magic|r |n|cffffdeadSteel Armor|r |n|cffffdeadAdvanced Ballistics|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Water Elemental")
+	..setLvlDataString("atp1", 1, 0, "Water Elemental")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNSummonWaterElemental.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
