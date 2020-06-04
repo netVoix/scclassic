@@ -1,0 +1,15 @@
+package SpelReductionMur
+
+import ObjEditingNatives
+
+@compiletime function create_w3a_SrMu()
+	createObjectDefinition("w3a", 'SrMu', 'AIsr')
+	..setLvlDataInt("aite", 0, 0, 0)
+	..setLvlDataString("arac", 0, 0, "orc")
+	..setLvlDataString("anam", 0, 0, "Impenetrable Hide")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEnchantedBears.blp")
+	..setLvlDataInt("abpx", 0, 0, 2)
+	..setLvlDataInt("abpy", 0, 0, 2)
+	..setLvlDataUnreal("isr2", 1, 2, 0.40)
+	..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 20%.")

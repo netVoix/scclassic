@@ -1,4 +1,4 @@
-package Cleave
+package CleaveGr
 
 import ObjEditingNatives
 
@@ -32,8 +32,8 @@ import ObjEditingNatives
 	..setLvlDataString("gnam", 3, 0, "Cleaving Attack")
 	..setLvlDataString("gtp1", 2, 0, "Research Cleaving Attack (|cffffff00Lv2|r) [|cffffcc00A|r]")
 	..setLvlDataString("gtp1", 3, 0, "Research Cleaving Attack (|cff00ff00Lv3|r) [|cffffcc00A|r]")
-	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cffff0000Lv1:|r |cffffcc0012%|r area damage |n|cff6c7b8bLv2: 24% area damage |nLv3: 36% area damage |nLv4: 48% area damage")
-	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 12% area damage|r |n|cffffff00Lv2:|r |cffffcc0024%|r area damage |n|cff6c7b8bLv3: 36% area damage |nLv4: 48% area damage")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cffff0000Lv1:|r |cffffcc009%|r area damage |n|cff6c7b8bLv2: 18% area damage |nLv3: 27% area damage |nLv4: 36% area damage")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 9% area damage|r |n|cffffff00Lv2:|r |cffffcc0018%|r area damage |n|cff6c7b8bLv3: 27% area damage |nLv4: 36% area damage")
 	..setLvlDataString("grac", 0, 0, "nightelf")
 	..setLvlDataInt("gtib", 0, 0, 90)
 	..setLvlDataInt("glvl", 0, 0, 5)
@@ -41,11 +41,11 @@ import ObjEditingNatives
 	..setLvlDataString("greq", 4, 0, "eate")
 	..setLvlDataString("gtp1", 4, 0, "Research Cleaving Attack (|cff00ffffLv4|r) [|cffffcc00A|r]")
 	..setLvlDataString("gnam", 4, 0, "Cleaving Attack")
-	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 12% area damage |nLv2: 24% area damage|r |n|cff00ff00Lv3:|r |cffffcc0036%|r area damage |n|cff6c7b8bLv4: 48% area damage")
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 9% area damage |nLv2: 18% area damage|r |n|cff00ff00Lv3:|r |cffffcc0027%|r area damage |n|cff6c7b8bLv4: 36% area damage")
 	..setLvlDataString("ghk1", 4, 0, "A")
 	..setLvlDataString("gar1", 5, 0, "ReplaceableTextures\\CommandButtons\\BTNNagaCleaving.blp")
 	..setLvlDataString("ghk1", 5, 0, "A")
 	..setLvlDataString("gnam", 5, 0, "Cleaving Attack")
 	..setLvlDataString("gtp1", 5, 0, "Cleaving Attack (Max Level)")
 	..setLvlDataString("greq", 5, 0, "Rnsb")
-	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 12% area damage |nLv2: 24% area damage |nLv3: 36% area damage |n|cff00ffffLv4:|r |cffffcc0048%|r area damage")
+	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r splash damage in 125 AoE |n|cffffcc00Affects:|r |cffffdeadSiren|r and |cffffdeadMyrmidon|r |n|n|cff6c7b8bLv1: 9% area damage |nLv2: 18% area damage |nLv3: 27% area damage |n|cff00ffffLv4:|r |cffffcc0036%|r area damage")
