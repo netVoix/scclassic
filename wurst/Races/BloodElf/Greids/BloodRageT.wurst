@@ -11,7 +11,7 @@ import ObjEditingNatives
 	..setLvlDataInt("gtib", 0, 0, 90)
 	..setLvlDataString("greq", 1, 0, "o00X")
 	..setLvlDataString("gtp1", 1, 0, "Research Blood Rage (|cffff0000Lv1|r) [|cffffcc00A|r]")
-	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r faster attack for self damage |n|cffffcc00Affects:|r |cffffdeadBladedancer|r, |cffffdeadArcher|r and |cffffdeadStrider|r |n|n|cff6c7b8bLv1: +40% attack rate, loses 15 HP/s |nLv2: +80% attack rate, loses 30 HP/s |nLv3: +120% attack rate, loses 45 HP/s |nLv4: +160% attack rate, loses 60 HP/s")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r faster attack for self damage |n|cffffcc00Affects:|r |cffffdeadBladedancer|r, |cffffdeadArcher|r and |cffffdeadStrider|r |n|n|cff6c7b8bLv1: +40% attack rate, loses 10 HP/s |nLv2: +80% attack rate, loses 20 HP/s |nLv3: +120% attack rate, loses 30 HP/s |nLv4: +160% attack rate, loses 40 HP/s")
 	..setLvlDataUnreal("gba1", 0, 0, 0.0)
 	..setLvlDataString("grac", 0, 0, "nightelf")
 	..setLvlDataInt("glvl", 0, 0, 5)
