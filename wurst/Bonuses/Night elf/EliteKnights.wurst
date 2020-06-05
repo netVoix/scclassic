@@ -1,0 +1,20 @@
+package EliteKnights
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0BD()
+	createObjectDefinition("w3a", 'A0BD', 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDevotion Aura|r |n|nGives 40/60/80% chance that |cffffcc00Knight|r will dismount when his horse is killed. Unmounted |cffffcc00Knight|r has the same damage and health but reduced evasion. It can use |cffffdeadCritical Strike|r and |cffffdeadDevotion Aura|r upgrades. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffdeadIdea by:|r |cff00ff00Björn Katschkowski|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Elite Knights")
+	..setLvlDataString("atp1", 1, 0, "Elite Knights")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
