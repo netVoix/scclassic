@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setInt("ubpy", 2)
 	..setUnreal("uacq", 700.0)
 	..setString("uarm", "Metal")
-	..setUnreal("ua1c", 1.5)
+	..setUnreal("ua1c", 1.8)
 	..setInt("ua1d", 1)
 	..setInt("ua1s", 21)
 	..setString("ucs1", "MetalMediumSlice")
