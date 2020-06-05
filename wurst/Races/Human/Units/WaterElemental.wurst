@@ -57,7 +57,7 @@ import ObjEditingNatives
     ..setString("uarm", "Ethereal")
     ..setString("udty", "none")
     ..setInt("usid", 1000)
-    ..setInt("ua1f", 400)
+    ..setInt("ua1f", 200)
     ..setUnreal("udl1", 0.5)
     ..setInt("utc1", 3)
 
@@ -109,7 +109,7 @@ import ObjEditingNatives
     ..setUnreal("ua1c", 2.0)
     ..setString("udty", "none")
     ..setInt("usid", 1000)
-    ..setInt("ua1f", 400)
+    ..setInt("ua1f", 200)
     ..setUnreal("udl1", 0.5)
     ..setInt("utc1", 3)
     ..setString("ua1w", "mbounce")
