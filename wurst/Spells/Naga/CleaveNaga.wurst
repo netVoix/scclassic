@@ -1,14 +1,16 @@
-package Cleave
+package CleaveNaga
+
 import ObjEditingNatives
 
-@compiletime function create_w3a_A01E()
-	createObjectDefinition("w3a", 'A01E', 'ACce')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataInt("abpx", 0, 0, 0)
+
+@compiletime function create_w3a_A01M()
+	createObjectDefinition("w3a", 'A01M', 'ACce')
+	..setLvlDataString("arac", 0, 0, "nightelf")
+	..setLvlDataInt("abpx", 0, 0, 2)
 	..setLvlDataString("aub1", 1, 0, "Unit strikes with such force that 9% of it's damage strikes through to enemies near the primary attacked unit.")
 	..setLvlDataUnreal("nca1", 1, 1, 0.9)
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNFelweap.blp")
-	..setLvlDataString("areq", 0, 0, "Rucr")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNNagaCleaving.blp")
+	..setLvlDataString("areq", 0, 0, "R01F")
 	..setLvlDataInt("alev", 0, 0, 4)
 	..setLvlDataString("arqa", 0, 0, "1")
 	..setLvlDataUnreal("nca1", 2, 1, 0.18)
