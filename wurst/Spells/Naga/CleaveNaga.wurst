@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "nightelf")
 	..setLvlDataInt("abpx", 0, 0, 2)
 	..setLvlDataString("aub1", 1, 0, "Unit strikes with such force that 9% of it's damage strikes through to enemies near the primary attacked unit.")
-	..setLvlDataUnreal("nca1", 1, 1, 0.9)
+	..setLvlDataUnreal("nca1", 1, 1, 0.09)
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNNagaCleaving.blp")
 	..setLvlDataString("areq", 0, 0, "R01F")
 	..setLvlDataInt("alev", 0, 0, 4)
