@@ -1,0 +1,23 @@
+package SpelCast
+
+import Orders
+
+
+function SpelCast()
+    let u = GetAttacker()
+    let aid = GetAttackedUnitBJ()
+    let GP = aid.getTypeId()
+    if GP == 'Hgam'
+        if u.isType(UNIT_TYPE_MELEE_ATTACKER)
+            // print("Stun!!!")
+            aid.issueImmediateOrderById(OrderIds.stomp)
+        if u.isType(UNIT_TYPE_RANGED_ATTACKER)
+            // print("Wave!!!")
+            aid.issueTargetOrderById(OrderIds.carrionswarm, u)
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function SpelCast))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
+        
