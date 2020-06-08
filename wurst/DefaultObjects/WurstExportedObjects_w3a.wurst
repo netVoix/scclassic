@@ -15079,25 +15079,6 @@ import ObjEditingNatives
 	..setLvlDataString("ahky", 0, 0, "E")
 
 
-@compiletime function create_w3a_A0AI()
-	createObjectDefinition("w3a", 'A0AI', 'Aspb')
-	..setLvlDataInt("spb4", 1, 4, 11)
-	..setLvlDataInt("spb3", 1, 3, 11)
-	..setLvlDataString("spb1", 1, 1, "A0AP,A09T,A0AT")
-	..setLvlDataInt("aite", 0, 0, 0)
-	..setLvlDataInt("abpx", 0, 0, 2)
-	..setLvlDataString("anam", 0, 0, "Pick Aura")
-	..setLvlDataString("atp1", 1, 0, "Pick Aura [|cffffcc00E|r]")
-	..setLvlDataString("aub1", 1, 0, "Lets you to choose Aura.")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNSkillz.blp")
-	..setLvlDataString("spb5", 1, 5, "absorb")
-	..setLvlDataInt("spb2", 1, 2, 0)
-	..setLvlDataString("arac", 0, 0, "creeps")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("areq", 0, 0, "o00C")
-	..setLvlDataString("ahky", 0, 0, "E")
-
-
 @compiletime function create_w3a_A0AJ()
 	createObjectDefinition("w3a", 'A0AJ', 'Aspb')
 	..setLvlDataInt("spb4", 1, 4, 11)

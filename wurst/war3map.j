@@ -21419,7 +21419,7 @@ function P9G takes nothing returns boolean
 return(GetTriggerUnit()==X)
 endfunction
 function QVG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0AT')
+return(GetSpellAbilityId()=='InAu')
 endfunction
 function QEG takes nothing returns nothing
 if(P0G())then
@@ -21465,7 +21465,7 @@ endif
 if(QVG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0AI')
-call UnitAddAbility(GetTriggerUnit(),'S001')
+call UnitAddAbility(GetTriggerUnit(),'INAU')
 if(P9G())then
 set IR[1]='S001'
 else
