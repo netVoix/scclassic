@@ -1,0 +1,33 @@
+package SpelcastArthas
+
+import Orders
+
+
+function FrostArmor()
+    let aid = GetAttackedUnitBJ()
+    let GP = aid.getTypeId()
+    if GP == 'Harf'
+         // print("FrostArmor!!!")
+        aid.issueTargetOrderById(OrderIds.frostarmor, aid)
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function FrostArmor))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
+
+function Sapphiron()
+    let u = GetAttacker()
+    let aid = GetAttackedUnitBJ()
+    let GP = u.getTypeId()
+    if GP == 'Harf'
+        // print("BreathOfFrost!!!")
+        u.issueTargetOrderById(OrderIds.breathoffrost, aid)
+        // print("Sapphiron!!!")
+        u.issueImmediateOrderById(OrderIds.waterelemental)
+    
+    
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function Sapphiron))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)

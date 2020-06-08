@@ -1,4 +1,4 @@
-package SpelCast
+package SpelCastGush
 
 import Orders
 
@@ -8,10 +8,10 @@ function SpelCast()
     let aid = GetAttackedUnitBJ()
     let GP = aid.getTypeId()
     if GP == 'Hgam'
-        if u.isType(UNIT_TYPE_MELEE_ATTACKER)
+        if u.isType(UNIT_TYPE_MELEE_ATTACKER) and u.isType(UNIT_TYPE_STRUCTURE)
             // print("Stun!!!")
             aid.issueImmediateOrderById(OrderIds.stomp)
-        if u.isType(UNIT_TYPE_RANGED_ATTACKER)
+        if u.isType(UNIT_TYPE_RANGED_ATTACKER) and u.isType(UNIT_TYPE_STRUCTURE)
             // print("Wave!!!")
             aid.issueTargetOrderById(OrderIds.carrionswarm, u)
 
