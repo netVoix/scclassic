@@ -52,7 +52,7 @@ import ObjEditingNatives
 	..setUnreal("ubs1", 0.84000003)
 	..setUnreal("udp1", 0.3)
 	..setInt("ua1b", 214)
-	..setString("utub", "|cffffcc00Hero Unit (Melee)|r |nStrong Vs Heroes |nWeak Vs All Units, Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cff00ffffCritical Strike|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead27-45% to do 4x damage|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cff00ffffBerserk|r |cff6c7b8b(Self Spell)|r |n  |cffffdead10-70% attack rate bonus|r |n|n|cff00ffffEvasion|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead8-20% to evade an attack|r |n|n|cff00ffffMirror Image|r |cff6c7b8b(Self Spell)|r |n  |cffffdead2 illusions for 18-30s|r |n  |cff6c7b8b(illusions deal no damage)|r")
+	..setString("utub", "|cffffcc00Hero Unit (Melee)|r |nStrong Vs Heroes |nWeak Vs All Units, Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cff00ffffCritical Strike|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead27-45% to do 4x damage|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cff00ffffBerserk|r |cff6c7b8b(Self Spell)|r |n  |cffffdead10-70% attack rate bonus|r |n|n|cff00ffffEvasion|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead8-20% to evade an attack|r |n|n|cff00ffffMirror Image|r |cff6c7b8b(Self Spell)|r |n  |cffffdead2 illusions for 18-30s|r |n  |cff6c7b8b(illusions deal 25% damage)|r")
 	..setString("utip", "Train Blademaster")
 	..setString("upro", "Samuro")
 	..setReal("urun", 240.0)
