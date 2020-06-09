@@ -1,0 +1,37 @@
+package Airship
+
+import ObjEditingNatives
+
+public let AIRSHIP_ID = 'halt'
+
+
+@compiletime function create_w3u_halt()
+	createObjectDefinition("w3u", AIRSHIP_ID, 'halt')
+	..setString("uabi", "Avul,A0BX")
+	..setString("uubs", "OMED")
+	..setInt("ubpx", 0)
+	..setString("umdl", "buildings\\other\\AmmoDump\\AmmoDump.mdl")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNUndeadAirBarge.blp")
+	..setString("ushb", "BuildingShadowLarge")
+	..setInt("udef", 2)
+	..setUnreal("ucol", 100.0)
+	..setUnreal("uabr", 0.0)
+	..setString("uabt", "")
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setInt("ubld", 1)
+	..setString("usnd", "AmmoDump")
+	..setInt("ugol", 0)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("ulum", 0)
+	..setInt("upri", 2)
+	..setString("utyp", "ancient,mechanical")
+	..setString("utra", "")
+	..setString("upgr", "")
+	..setString("unam", "Goblin Laboratory")
+	..setString("utip", "Air Fortress [|cffffcc00A|r]")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadBOOM Rounds|r |n|n|cffffcc00Airship|r replaces |cffffcc00Zeppelin|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff0000AA Heatseekers|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(400 damage to Air unit)|r |n|cff00ffffRepair Bots|r |cff6c7b8b(Self Spell)|r |n |cffffdead(10 HP/s if not under attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBOOMpowder|r |n|cffffdeadLeather Armor|r |n|cffffdeadBOOM Rounds|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Air|r")
+	..setReal("usca", 0.95)
+	..setInt("urev", 0)
+	..setInt("usid", 600)

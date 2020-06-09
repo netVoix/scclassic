@@ -1,0 +1,22 @@
+package StymRollerAb
+
+import ObjEditingNatives
+
+public let STYM_ROLLER_AB_ID = 'A0BZ'
+
+
+@compiletime function create_w3a_A0BZ()
+	createObjectDefinition("w3a", STYM_ROLLER_AB_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpere Parts|r |n|n|cffffcc00Stym Roller|r replaces |cffffcc00Rocket Buggy|r |n|cffffcc00Siege Unit (Ranged)|r |n+55% attack rate |n+800 HP |n|cffffcc00Abilities:|r |n|cffff0000Flame Tongue|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffRepair Bots|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 HP/s if not under attack)|r|n|cffffcc00Upgrades used:|r |n|cffffdeadBOOMpowder|r |n|cffffdeadLeather Armor|r |n|cffffdeadBOOM Rounds|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Devil's Tongue")
+	..setLvlDataString("atp1", 1, 0, "Devil's Tongue")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNSteamroller.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)

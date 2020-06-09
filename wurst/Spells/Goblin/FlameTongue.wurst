@@ -1,0 +1,19 @@
+package FlameTongue
+
+import ObjEditingNatives
+
+public let FLAME_TONGUE_ID = 'ACbc'
+
+
+@compiletime function create_w3a_ACbc()
+	createObjectDefinition("w3a", FLAME_TONGUE_ID, 'ACbc')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataString("aani", 0, 0, "attack,slam")
+	..setLvlDataUnreal("Ucs1", 1, 1, 100.0)
+	..setLvlDataInt("amcs", 1, 0, 0)
+	..setLvlDataUnreal("Nbf5", 1, 5, 10.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 3.0)
+	..setLvlDataUnreal("adur", 1, 0, 3.0)
+	..setLvlDataString("ahky", 0, 0, "")
+	..setLvlDataString("anam", 0, 0, "Flame Tongue")
+	..setLvlDataString("atp1", 1, 0, "Flame Tongue")
