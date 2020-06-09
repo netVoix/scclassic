@@ -3,7 +3,7 @@ package SpelCastGush
 import Orders
 
 
-function SpelCast()
+function spelCast()
     let u = GetAttacker()
     let aid = GetAttackedUnitBJ()
     let GP = aid.getTypeId()
@@ -18,6 +18,6 @@ function SpelCast()
 
 init
     let t = CreateTrigger()
-    t.addCondition(Condition(function SpelCast))
+    t.addCondition(Condition(function spelCast))
     t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
         

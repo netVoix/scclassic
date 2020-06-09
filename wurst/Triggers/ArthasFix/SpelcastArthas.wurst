@@ -3,7 +3,7 @@ package SpelcastArthas
 import Orders
 
 
-function FrostArmor()
+function frostArmor()
     let aid = GetAttackedUnitBJ()
     let GP = aid.getTypeId()
     if GP == 'Harf'
@@ -13,10 +13,10 @@ function FrostArmor()
 
 init
     let t = CreateTrigger()
-    t.addCondition(Condition(function FrostArmor))
+    t.addCondition(Condition(function frostArmor))
     t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
 
-function Sapphiron()
+function sapphiron()
     let u = GetAttacker()
     let aid = GetAttackedUnitBJ()
     let GP = u.getTypeId()
@@ -29,5 +29,5 @@ function Sapphiron()
     
 init
     let t = CreateTrigger()
-    t.addCondition(Condition(function Sapphiron))
+    t.addCondition(Condition(function sapphiron))
     t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
