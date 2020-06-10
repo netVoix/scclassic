@@ -25420,28 +25420,6 @@ import ObjEditingNatives
 	..setLvlDataInt("abpx", 0, 0, 0)
 
 
-@compiletime function create_w3a_A0KQ()
-	createObjectDefinition("w3a", 'A0KQ', 'ACsw')
-	..setLvlDataString("atp1", 1, 0, "Gatling Gun")
-	..setLvlDataString("aub1", 1, 0, "Increases attack rate by 100%.")
-	..setLvlDataInt("amcs", 1, 0, 0)
-	..setLvlDataString("atar", 1, 0, "self")
-	..setLvlDataUnreal("acdn", 1, 0, 0.0)
-	..setLvlDataUnreal("Slo1", 1, 1, 0.0)
-	..setLvlDataUnreal("ahdu", 1, 0, 1.0)
-	..setLvlDataUnreal("adur", 1, 0, 30.0)
-	..setLvlDataString("arac", 0, 0, "human")
-	..setLvlDataString("anam", 0, 0, "Gatling Gun")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNFlakCannons.blp")
-	..setLvlDataString("auar", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNFlakCannons.blp")
-	..setLvlDataString("acat", 0, 0, "")
-	..setLvlDataUnreal("Slo2", 1, 2, -1.0)
-	..setLvlDataString("aut1", 1, 0, "|cffc3dbffRight-click to turn on auto-casting.|r")
-	..setLvlDataString("auu1", 1, 0, "|cffc3dbffRight-click to turn off auto-casting.|r")
-	..setLvlDataString("abuf", 1, 0, "B03C")
-	..setLvlDataUnreal("aran", 1, 0, 100.0)
-
-
 @compiletime function create_w3a_A0KT()
 	createObjectDefinition("w3a", 'A0KT', 'ACev')
 	..setLvlDataString("arac", 0, 0, "human")
