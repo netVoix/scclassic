@@ -8,10 +8,10 @@ function spelCast()
     let aid = GetAttackedUnitBJ()
     let GP = aid.getTypeId()
     if GP == 'Hgam'
-        if u.isType(UNIT_TYPE_MELEE_ATTACKER) and u.isType(UNIT_TYPE_STRUCTURE)
+        if u.isType(UNIT_TYPE_MELEE_ATTACKER)
             // print("Stun!!!")
             aid.issueImmediateOrderById(OrderIds.stomp)
-        if u.isType(UNIT_TYPE_RANGED_ATTACKER) and u.isType(UNIT_TYPE_STRUCTURE)
+        if u.isType(UNIT_TYPE_RANGED_ATTACKER)
             // print("Wave!!!")
             aid.issueTargetOrderById(OrderIds.carrionswarm, u)
 
