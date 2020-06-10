@@ -37901,7 +37901,7 @@ function WKK takes nothing returns boolean
 return(GetUnitTypeId(GetDyingUnit())=='hkni')
 endfunction
 function WLK takes nothing returns boolean
-return(GetRandomInt(1,'d') <= ((20*GetPlayerTechCountSimple('R04M' ,GetOwningPlayer(GetDyingUnit())) + 1)))
+return(GetRandomInt(1,'d') <= ((20*GetPlayerTechCountSimple('R04M' ,GetOwningPlayer(GetDyingUnit())) + 20)))
 endfunction
 function WMK takes nothing returns nothing
 if(WLK())then
