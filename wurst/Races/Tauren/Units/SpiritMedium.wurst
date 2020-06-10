@@ -11,7 +11,7 @@ public let SPIRIT_MEDIUM_ID = 'ospw'
 	..setUnreal("uhpr", 3.0)
 	..setInt("upri", 5)
 	..setInt("umvs", 240)
-	..setString("uabi", "A002,ACmp,A05S,A07P,A0JO," + SPIRIT_PROTECTION_SPELL_ID.toRawCode())
+	..setString("uabi", "A002,ACmp,A05S,A0JO," + SPIRIT_PROTECTION_SPELL_ID.toRawCode())
 	..setString("uhot", "")
 	..setString("ucut", "")
 	..setString("ucun", "")

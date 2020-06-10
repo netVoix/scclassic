@@ -7,7 +7,7 @@ public let SPIRIT_WALKER_ID = 'ospm'
 
 @compiletime function create_w3u_ospm()
 	createObjectDefinition("w3u", SPIRIT_WALKER_ID, 'ospm')
-	..setString("uabi", "A0AS,ACmp,A05S,A07P,A0JO,ACde," + SPIRIT_PROTECTION_SPELL_ID.toRawCode())
+	..setString("uabi", "A0AS,ACmp,A05S,A0JO,ACde," + SPIRIT_PROTECTION_SPELL_ID.toRawCode())
 	..setInt("ubpx", 2)
 	..setInt("ubpy", 1)
 	..setString("udaa", "A07P")
