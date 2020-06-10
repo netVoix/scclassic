@@ -21465,7 +21465,7 @@ endif
 if(QVG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0AI')
-call UnitAddAbility(GetTriggerUnit(),'INAU')
+call UnitAddAbility(GetTriggerUnit(),'InAO')
 if(P9G())then
 set IR[1]='S001'
 else
