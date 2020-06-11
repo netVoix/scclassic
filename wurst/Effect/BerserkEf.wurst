@@ -1,0 +1,15 @@
+package BerserkEf
+
+import ObjEditingNatives
+
+public let BERSERK_EF_ID = 'B01B'
+
+
+@compiletime function create_w3h_B01B()
+	createObjectDefinition("w3h", BERSERK_EF_ID, 'Bbsk')
+	..setString("fube", "This unit is Berserk; it will attack faster.")
+	..setString("frac", "other")
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNBloodLust.blp")
+	..setString("fta0", "hand,right")
+	..setString("fta1", "head")
+	..setString("ftat", "Abilities\\Spells\\Orc\\TrollBerserk\\HeadhunterWEAPONSRight.mdl,Abilities\\Spells\\Orc\\Bloodlust\\BloodlustTarget.mdl")
