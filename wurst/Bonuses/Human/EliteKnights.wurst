@@ -29,7 +29,7 @@ import ObjEditingNatives
 	..setString("uhot", "D")
 	..setString("unam", "Elite Barracks")
 	..setString("utip", "Elite Knights [|cffffcc00D|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDevotion Aura|r |n|nGives 40/50/70% chance that |cffffcc00Knight|r will dismount when his horse is killed. Unmounted |cffffcc00Knight|r has the same damage and health but reduced evasion. It can use |cffffdeadCritical Strike|r and |cffffdeadDevotion Aura|r upgrades. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffdeadIdea by:|r |cff00ff00Björn Katschkowski|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDevotion Aura|r |n|nGives 30/50/70% chance that |cffffcc00Knight|r will dismount when his horse is killed. Unmounted |cffffcc00Knight|r has the same damage and health but reduced evasion. It can use |cffffdeadCritical Strike|r and |cffffdeadDevotion Aura|r upgrades. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffdeadIdea by:|r |cff00ff00Björn Katschkowski|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
 	..setInt("upri", 2)
 	..setInt("ubpy", 1)
 	..setInt("ubpx", 2)
