@@ -24964,7 +24964,7 @@ if(B7H())then
 call SelectHeroSkill(GetTriggerUnit(),'A0LV')
 call SelectHeroSkill(GetTriggerUnit(),'A0LX')
 call SelectHeroSkill(GetTriggerUnit(),'A0LY')
-call SelectHeroSkill(GetTriggerUnit(),'A06B')
+call SelectHeroSkill(GetTriggerUnit(),'Tran')
 endif
 if(B8H())then
 call SelectHeroSkill(GetTriggerUnit(),'ANcs')

@@ -1,4 +1,4 @@
-package ScarpBot
+package ScarpBotPick
 
 import ObjEditingNatives
 
@@ -34,5 +34,5 @@ public let SCRAP_BOT_ID = 'ndh1'
 	..setString("unam", "Goblin Laboratory")
 	..setString("utip", "Master Blaster [|cffffcc00R|r]")
 	..setString("uhot", "R")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInspiration Aura|r |n+1 level of |cffffdeadScrap Salvage|r |n|n|cffffcc00Scrap Bot|r replaces |cffffcc00Blaster|r |n|cffffcc00Siege Unit|r |n+3 armor |n+150 HP |n|cffffcc00Abilities:|r |n|cff00ffffRepair Bots|r |cff6c7b8b(Self Spell)|r |n |cffffdead(5 HP/s if not under attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadMylee Wypons|r |n|cffffdeadLeather Armor|r |n|cffffdeadInspiration Aura|r |n|cffffdeadScrap Salvage|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInspiration Aura|r |n+1 level of |cffffdeadScrap Salvage|r |n|n|cffffcc00Scrap Bot|r replaces |cffffcc00Blaster|r |n|cffffcc00Siege Unit|r |n+3 armor |n+150 HP |n+5 HP/sec regeneration |n|cffffcc00Upgrades used:|r |n|cffffdeadMylee Wypons|r |n|cffffdeadLeather Armor|r |n|cffffdeadInspiration Aura|r |n|cffffdeadScrap Salvage|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
 	..setString("ushb", "BuildingShadowLarge")
