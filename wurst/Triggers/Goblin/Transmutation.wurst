@@ -1,12 +1,7 @@
 package Transmutation
 
-import Orders
-
-import ClosureForGroups
-
-public unit zel
-public unit cast
-public player gp
+import RegisterEvents
+import Transmute
 
 
 function isEnemyUnit() returns bool
@@ -20,39 +15,15 @@ function transmut()
     let u = GetSpellAbilityUnit()
     let aid = GetSpellAbilityId()
     let z =  GetOwningPlayer(u)
-    let w = GetHandleId(zel)
-    let e = GetHandleId(gp)
-    let gold = 5000 + 25 * GetUnitAbilityLevel(cast, 'Tran')
-    if aid == 'Tran'
-        print(w)
-        print(e)
-        print(gold)
-        zel.remove()
-        gp.addGold(gold)
-        AdjustPlayerStateBJ(5000, gp, PLAYER_STATE_RESOURCE_GOLD)
-        KillUnit(zel)
+    let gold = 50 + 25 * GetUnitAbilityLevel(u, TRANSMUTE_ID)
+    if aid == TRANSMUTE_ID
+        t.kill()
+        t.remove()
+        for i = 0 to 12 
+            if players[i].isAllyOf(z) and players[i] != z
+                players[i].addGold(gold)
 
 
-function transmutationuse()
-    let u = GetAttacker()
-    let GP = u.getTypeId()
-    if GP == 'Nalc'
-        forNearestUnit(u.getPos(), 600, Filter(function isEnemyUnit)) (unit aid) ->
-            //print("Transmutation!!!")
-            u.issueTargetOrderById(OrderIds.charm, aid)
-            zel = aid
-            cast = u
-            gp = GetOwningPlayer(u)
-
-    
-    
 init
-    let t = CreateTrigger()
-    t.addCondition(Condition(function transmutationuse))
-    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
-
-    
-init
-    let t = CreateTrigger()
-    t.addCondition(Condition(function transmut))
-    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST)
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        transmut()

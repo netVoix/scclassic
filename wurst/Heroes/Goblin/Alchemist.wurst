@@ -1,13 +1,15 @@
 package Alchemist
 
 import ObjEditingNatives
+import ObjectIds
+import Transmute
 
 public let ALCHEMIST_ID = 'Nalm'
 
 @compiletime function create_w3u_Nalm()
     createObjectDefinition("w3u", ALCHEMIST_ID, 'Nalm')
     ..setString("urac", "human")
-    ..setString("uhab", "A0LV,A0LX,A0LY,Tran")
+    ..setString("uhab", "A0LV,A0LX,A0LY," + commaList(TRANSMUTE_ID))
     ..setString("uabi", "AInv,A016,A0ES")
     ..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
     ..setReal("usca", 0.95)
@@ -70,7 +72,7 @@ public let ALCHEMIST_ID = 'Nalm'
 @compiletime function create_w3u_Nalc()
     createObjectDefinition("w3u", 'Nalc', 'Nalc')
     ..setString("urac", "human")
-    ..setString("uhab", "A0LV,A0LX,A0LY,Tran")
+    ..setString("uhab", "A0LV,A0LX,A0LY," + commaList(TRANSMUTE_ID))
     ..setString("uabi", "AInv,A016,A0ES")
     ..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
     ..setUnreal("uacq", 700.0)

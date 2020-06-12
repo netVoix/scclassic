@@ -1,96 +1,18 @@
 package Transmute
 
-import ObjEditingNatives 
+import AbilityObjEditing
 
 public let TRANSMUTE_ID = 'Tran'
 
-@compiletime function create_w3a_A0DS()
-    createObjectDefinition("w3a", 'Tran', 'ANch')
-    ..setLvlDataInt("alev", 0, 0, 7)
-    ..setLvlDataInt("alsk", 0, 0, 4)
-    ..setLvlDataInt("arlv", 0, 0, 1)
-    ..setLvlDataString("arac", 0, 0, "human")
-    ..setLvlDataString("aret", 0, 0, "Learn Transmutation - [|cffffcc00Level %d|r]")
-    ..setLvlDataInt("Nch1", 1, 1, 10)
-    ..setLvlDataInt("Nch1", 2, 1, 10)
-    ..setLvlDataInt("Nch1", 3, 1, 10)
-    ..setLvlDataInt("Nch1", 4, 1, 10)
-    ..setLvlDataInt("Nch1", 5, 1, 10)
-    ..setLvlDataUnreal("acdn", 1, 0, 1.0)
-    ..setLvlDataInt("amcs", 1, 0, 80)
-    ..setLvlDataInt("amcs", 2, 0, 80)
-    ..setLvlDataInt("amcs", 3, 0, 80)
-    ..setLvlDataInt("amcs", 4, 0, 80)
-    ..setLvlDataInt("amcs", 5, 0, 80)
-    ..setLvlDataString("atp1", 1, 0, "Transmutation - [|cffffcc00Level 1|r]")
-    ..setLvlDataString("atp1", 2, 0, "Transmutation - [|cffffcc00Level 2|r]")
-    ..setLvlDataString("atp1", 3, 0, "Transmutation - [|cffffcc00Level 3|r]")
-    ..setLvlDataString("atp1", 4, 0, "Transmutation - [|cffffcc00Level 4|r]")
-    ..setLvlDataString("atp1", 5, 0, "Transmutation - [|cffffcc00Level 5|r]")
-    ..setLvlDataString("aub1", 2, 0, "Turns the indicated combat unit into 100 gold.")
-    ..setLvlDataString("aub1", 3, 0, "Turns the indicated combat unit into 125 gold.")
-    ..setLvlDataString("aub1", 4, 0, "Turns the indicated combat unit into 150 gold.")
-    ..setLvlDataString("aub1", 5, 0, "Turns the indicated combat unit into 175 gold.")
-    ..setLvlDataUnreal("acdn", 5, 0, 80.0)
-    ..setLvlDataUnreal("acdn", 2, 0, 80.0)
-    ..setLvlDataString("amat", 0, 0, "Abilities\\Spells\\Other\\Transmute\\GoldBottleMissile.mdx")
-    ..setLvlDataString("ata0", 0, 0, "origin")
-    ..setLvlDataUnreal("acdn", 4, 0, 80.0)
-    ..setLvlDataString("anam", 0, 0, "Transmutation")
-    ..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,nonancient,nonhero")
-    ..setLvlDataString("atar", 2, 0, "air,enemies,ground,neutral,nonancient,nonhero")
-    ..setLvlDataString("atar", 3, 0, "air,enemies,ground,neutral,nonancient,nonhero")
-    ..setLvlDataString("atar", 4, 0, "air,enemies,ground,neutral,nonancient,nonhero")
-    ..setLvlDataString("atar", 5, 0, "air,enemies,ground,neutral,nonancient,nonhero")
-    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNTransmute.blp")
-    ..setLvlDataString("arar", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNTransmute.blp")
-    ..setLvlDataString("arhk", 0, 0, "")
-    ..setLvlDataString("ahky", 0, 0, "")
-    ..setLvlDataInt("Nch1", 6, 1, 10)
-    ..setLvlDataInt("Nch1", 7, 1, 10)
-    ..setLvlDataString("arut", 0, 0, "Turns the indicated combat unit into gold. |n|n|cffffcc00Level 1|r - 75 gold. |n|cffffcc00Level 2|r - 100 gold. |n|cffffcc00Level 3|r - 125 gold. |n|cffffcc00Level 4|r - 150 gold. |n|cffffcc00Level 5|r - 175 gold. |n|cffffcc00Level 6|r - 200 gold. |n|cffffcc00Level 7|r - 225 gold.")
-    ..setLvlDataInt("amcs", 6, 0, 80)
-    ..setLvlDataInt("amcs", 7, 0, 80)
-    ..setLvlDataString("atar", 6, 0, "air,enemies,ground,neutral,nonancient,nonhero,organic")
-    ..setLvlDataString("atar", 7, 0, "air,enemies,ground,neutral,nonancient,nonhero,organic")
-    ..setLvlDataString("atp1", 6, 0, "Transmutation - [|cffffcc00Level 6|r]")
-    ..setLvlDataString("atp1", 7, 0, "Transmutation - [|cffffcc00Level 7|r]")
-    ..setLvlDataUnreal("acdn", 6, 0, 80.0)
-    ..setLvlDataUnreal("acdn", 3, 0, 80.0)
-    ..setLvlDataString("aub1", 1, 0, "Turns the indicated combat unit into 75 gold.")
-    ..setLvlDataString("aub1", 6, 0, "Turns the indicated combat unit into 200 gold.")
-    ..setLvlDataString("aub1", 7, 0, "Turns the indicated combat unit into 225 gold.")
-    ..setLvlDataUnreal("acdn", 7, 0, 80.0)
-    ..setLvlDataString("aani", 0, 0, "spell,attack,two")
-    ..setLvlDataString("abuf", 1, 0, "TrMu")
-    ..setLvlDataString("abuf", 2, 0, "TrMu")
-    ..setLvlDataString("abuf", 3, 0, "TrMu")
-    ..setLvlDataString("abuf", 4, 0, "TrMu")
-    ..setLvlDataString("abuf", 5, 0, "TrMu")
-    ..setLvlDataString("abuf", 6, 0, "TrMu")
-    ..setLvlDataString("abuf", 7, 0, "TrMu")
 
-    
-
-
-@compiletime function create_w3h_TrMu()
-    createObjectDefinition("w3h", 'TrMu', 'BNab')
-    ..setString("fart", "Abilities\\Spells\\Other\\Transmute\\PileofGold.mdx")
-    ..setString("ftip", "Nransmutation")
-    ..setString("fube", "GOLD!")
-    ..setString("ftat", "Abilities\\Spells\\Other\\Transmute\\PileofGold.mdx")
-    ..setString("fta0", "origin")
-    ..setString("fta1", "sprite,first")
-    ..setString("fta2", "sprite,second")
-    ..setInt("ftac", 3)
-
-
-
-
-
-
-
-
-
-
-
+@compiletime function transmutation()
+    new AbilityDefinitionAlchemistTransmute(TRANSMUTE_ID)
+    ..presetAllowBounty(lvl -> true)
+    ..setHeroAbility(true)
+    ..setRequirements("")
+    ..setRequiredLevel(1)
+    ..setLevels(7)
+    ..presetManaCost(lvl -> 80)       
+    ..presetCooldown(lvl -> 80) 
+    ..presetTargetsAllowed(lvl -> "air,ground,enemy,neutral,nonhero,organic,mechanical") 
+            
