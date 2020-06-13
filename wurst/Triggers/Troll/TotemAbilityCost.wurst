@@ -1,0 +1,18 @@
+package TotemAbilityCost
+
+import RegisterEvents
+
+
+function adilityCost()
+    let u = GetSpellAbilityUnit()
+    let aid = GetSpellAbilityId()
+    let p = GetOwningPlayer(u)
+    if aid == 'A5CX'
+        p.addGold(-100)
+    if aid == 'A6CX'
+        p.addGold(-50)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        adilityCost()

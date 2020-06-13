@@ -42123,27 +42123,6 @@ function HTL takes nothing returns boolean
 return(GetOwningPlayer(GetAttacker())==Player($C))
 endfunction
 function HUL takes nothing returns nothing
-if(HTL())then
-call IssueImmediateOrderById(GetAttacker(),$D009F)
-call IssueImmediateOrderById(GetAttacker(),$D0084)
-call IssueTargetOrderById(GetTriggerUnit(),$D000F,GetAttacker())
-else
-if(HSL())then
-call DisableTrigger(GetTriggeringTrigger())
-call SetUnitOwner(GetAttacker(),Player($C),true)
-call UnitAddAbility(GetAttacker(),'A0IX')
-call UnitAddAbility(GetAttacker(),'A0IW')
-call IssueImmediateOrderById(GetAttacker(),$D009F)
-set XO[79]=GetUnitLoc(GetAttacker())
-call CreateTextTagLocBJ("Rampage!",XO[79],0,$A,100.,.0,.0,0)
-call SetTextTagVelocityBJ(bj_lastCreatedTextTag,50.,90)
-call SetTextTagPermanentBJ(bj_lastCreatedTextTag,false)
-call SetTextTagLifespanBJ(bj_lastCreatedTextTag,7.)
-call SetTextTagFadepointBJ(bj_lastCreatedTextTag,4.)
-call RemoveLocation(XO[79])
-call EnableTrigger(GetTriggeringTrigger())
-endif
-endif
 endfunction
 function HWL takes nothing returns boolean
 return(GetResearched()=='R03U')

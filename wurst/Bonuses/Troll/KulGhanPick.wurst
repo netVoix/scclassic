@@ -45,6 +45,8 @@ public let KUL_GHAN_PICK_ID = 'npgf'
     ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp")
     ..setString("ushb", "ShadowOrcBarracks")
     ..setString("umdl", "buildings\\orc\\OrcBarracks\\OrcBarracks.mdl")
+    ..setInt("ubpx", 0)
+    ..setInt("ubpy", 0)
     
 
 @compiletime function create_w3u_o01Q()
@@ -58,7 +60,7 @@ public let KUL_GHAN_PICK_ID = 'npgf'
     ..setInt("ufma", 0)
     ..setString("unam", "Foundation")
     ..setString("uhot", "")
-    ..setString("uupt", "net1,oshy,ndrb,ocbw,ovln,ncbb,nwc1,otrb,nef0,nwc2,nef7," + commaList(KUL_GHAN_PICK_ID))
+    ..setString("uupt", "net1,oshy,ndrb,otrb,ocbw,ovln,ncbb,nwc1,nef0,nwc2,nef7," + commaList(KUL_GHAN_PICK_ID))
     ..setString("urac", "other")
     ..setInt("ugol", 0)
     ..setInt("ulum", 0)

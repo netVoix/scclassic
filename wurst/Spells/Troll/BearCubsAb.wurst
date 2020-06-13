@@ -1,0 +1,20 @@
+package BearCubsAb
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0F9()
+	createObjectDefinition("w3a", 'A0F9', 'ACev')
+	..setLvlDataString("arac", 0, 0, "orc")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadFeral Roar|r |n|nYour chosen barracks will permanently spawn two |cffffcc00Bear Cubs|r with each spawn wave. |n|cffffcc00Bear Cub|r is a melee unit. It has |cffff00ffFear Aura|r which reduces nearby enemy unit's damage by 20%. It can use |cffffdeadMighty Blow|r and |cffffdeadFeral Roar|r upgrades. |n|cff6c7b8b(can capture neutral buildings)|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffa020f0Revenge on Friend|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Trained Bear Cubs")
+	..setLvlDataString("atp1", 1, 0, "Trained Bear Cubs")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNTeddyBear.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)

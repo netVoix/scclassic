@@ -1,0 +1,11 @@
+package CleaveAPB
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_ACce()
+	createObjectDefinition("w3a", 'ACce', 'ACce')
+	..setLvlDataUnreal("nca1", 1, 1, 0.2)
+	..setLvlDataUnreal("aare", 1, 0, 175.0)
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNWhirlwind.blp")
+	..setLvlDataString("aub1", 1, 0, "The creature strikes with such force that 20% of their damage strikes through to enemies near the primary attacked unit.")
