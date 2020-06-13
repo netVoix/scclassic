@@ -1,9 +1,9 @@
 ---
 projectName: scclassic
 buildMapData:
-  name: Survival ChaOZ 2.99
+  name: Survival ChaOZ 1.13
   fileName: MyMapFile
-  author: voix
+  author: ArhiMEN
   players:
     - id: 0
       name: Player 1

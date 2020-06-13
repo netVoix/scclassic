@@ -68,3 +68,4 @@ import ObjEditingNatives
     ..setLvlDataInt("amcs", 6, 0, 85)
     ..setLvlDataInt("amcs", 7, 0, 90)
     ..setLvlDataInt("Nrc2", 2, 2, 3)
+    ..setLvlDataInt("Nrc2", 1, 2, 3)
