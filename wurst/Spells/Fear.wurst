@@ -1,0 +1,26 @@
+package Fear
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0NL()
+	createObjectDefinition("w3a", 'A0NL', 'ANdh')
+	..setLvlDataString("arac", 0, 0, "orc")
+	..setLvlDataInt("aher", 0, 0, 0)
+	..setLvlDataInt("alev", 0, 0, 1)
+	..setLvlDataUnreal("Nsi2", 1, 2, 0.0)
+	..setLvlDataUnreal("Nsi3", 1, 3, 0.7)
+	..setLvlDataString("anam", 0, 0, "Fear")
+	..setLvlDataString("abuf", 1, 0, "B03J")
+	..setLvlDataUnreal("aare", 1, 0, 0.1)
+	..setLvlDataUnreal("acdn", 1, 0, 0.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 1.0)
+	..setLvlDataUnreal("adur", 1, 0, 2.5)
+	..setLvlDataUnreal("amac", 0, 0, 0.0)
+	..setLvlDataString("amat", 0, 0, "")
+	..setLvlDataInt("amsp", 0, 0, 10000)
+	..setLvlDataInt("amho", 0, 0, 1)
+	..setLvlDataInt("Nsi1", 1, 1, 15)
+	..setLvlDataInt("amcs", 1, 0, 0)
+	..setLvlDataString("atar", 1, 0, "enemies,ground,nonancient,organic")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNAuraOfDarkness.blp")
