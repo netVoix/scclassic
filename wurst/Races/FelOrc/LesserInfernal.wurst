@@ -1,10 +1,13 @@
 package LesserInfernal
 
 import ObjEditingNatives
+import ObjectIdGenerator
+
+public let LESSER_INFERNAL_ID = compiletime(UNIT_ID_GEN.next())
 
 
-@compiletime function create_w3u_ngst()
-	createObjectDefinition("w3u", 'ngst', 'ngst')
+@compiletime function infernal()
+	createObjectDefinition("w3u", LESSER_INFERNAL_ID, 'ngst')
 	..setString("urac", "undead")
 	..setString("unam", "Lesser Infernal")
 	..setString("utip", "Train Lesser Infernal")
