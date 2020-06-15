@@ -1,25 +1,25 @@
 package AntiHeroGoldAdd
 
 import RegisterEvents
+import AnyiHeroPick
 
-public int array antiHero
 
 
 function addForKill()
     let du = GetDyingUnit()
+    let k = GetKillingUnit()
+    let p = GetOwningPlayer(k)
     if du.isType(UNIT_TYPE_ANCIENT)
-        unit ku = GetKillingUnit()
-        let kuOwner = ku.getOwner()
         for i = 0 to 12
-            if antiHero[i] == 1 and players[i].isAllyOf(kuOwner) and players[i] != kuOwner
-                print("300")
+            //print(antiHero[i])
+            if antiHero[i] == 1 and players[i].isAllyOf(p)
+                //players[i].print("300")
                 players[i].addGold(300)
     if du.isType(UNIT_TYPE_HERO)
-        unit ku = GetKillingUnit()
-        let kuOwner = ku.getOwner()
         for i = 0 to 12
-            if antiHero[i] == 1 and players[i].isAllyOf(kuOwner) and players[i] != kuOwner
-                print("120")
+            //print(antiHero[i])
+            if antiHero[i] == 1 and players[i].isAllyOf(p)
+                //players[i].print("120")
                 players[i].addGold(120)   
 
 
