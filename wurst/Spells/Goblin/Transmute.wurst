@@ -12,8 +12,9 @@ public let TRANSMUTE_ID = 'Tran'
     ..setRequirements("")
     ..setRequiredLevel(1)
     ..setLevels(7)
-    ..presetManaCost(lvl -> 80)       
+    ..presetManaCost(lvl -> 60)       
     ..presetCooldown(lvl -> 80) 
     ..presetTargetsAllowed(lvl -> "air,ground,enemy,neutral,nonhero,organic,mechanical") 
+    ..setName("Transmute")
     
             
