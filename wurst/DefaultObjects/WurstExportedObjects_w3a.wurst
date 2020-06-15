@@ -18019,23 +18019,6 @@ import ObjEditingNatives
 	..setLvlDataInt("abpx", 0, 0, 0)
 
 
-@compiletime function create_w3a_A0DW()
-	createObjectDefinition("w3a", 'A0DW', 'ACev')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPillage|r |n|n|cffffcc00Infernal|r replaces |cffffcc00Contraption|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Immolation|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(15 dmg/s in 200 AoE)|r |n|cff00ffffSpell Resistance|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(immune to some spells)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadNether Portal|r |n|cffffdeadChaos Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "Chaos Minions")
-	..setLvlDataString("atp1", 1, 0, "Chaos Minions")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNInfernal.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
-
-
 @compiletime function create_w3a_A0DX()
 	createObjectDefinition("w3a", 'A0DX', 'ACev')
 	..setLvlDataString("arac", 0, 0, "undead")
@@ -19989,23 +19972,6 @@ import ObjEditingNatives
 	..setLvlDataString("atp1", 3, 0, "Life Steal (Lv3)")
 	..setLvlDataString("aub1", 2, 0, "Steals life equal to 15% of damage dealt.")
 	..setLvlDataString("aub1", 3, 0, "Steals life equal to 20% of damage dealt.")
-
-
-@compiletime function create_w3a_A0GL()
-	createObjectDefinition("w3a", 'A0GL', 'ACev')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLight Weight|r |n|n|cffffcc00Frost Wyrm|r replaces |cffffcc00Gargoyle|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff1c86eeFrost Breath|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(20% slow in 200 AoE)|r |n |cff6c7b8b(affects organic units only)|r  |n|cffff00ffDevour Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 150 AoE)|r |n |cff6c7b8b(restores 50 HP per buff)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|cffffdeadLight Weight|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Buff|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "The Dragonblight")
-	..setLvlDataString("atp1", 1, 0, "The Dragonblight")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
 
 
 @compiletime function create_w3a_A0GM()
