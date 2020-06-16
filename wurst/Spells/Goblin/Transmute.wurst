@@ -16,5 +16,5 @@ public let TRANSMUTE_ID = 'Tran'
     ..presetCooldown(lvl -> 80) 
     ..presetTargetsAllowed(lvl -> "air,ground,enemy,neutral,nonhero,organic,mechanical") 
     ..setName("Transmute")
-    
-            
+    ..presetCastRange(lvl -> 600.0) 
+                   

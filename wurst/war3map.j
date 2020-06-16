@@ -21467,16 +21467,16 @@ call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0AI')
 call UnitAddAbility(GetTriggerUnit(),'InAO')
 if(P9G())then
-set IR[1]='S001'
+set IR[1]='InAO'
 else
 if(P8G())then
-set IR[2]='S001'
+set IR[2]='InAO'
 else
 if(P7G())then
-set IR[3]='S001'
+set IR[3]='InAO'
 else
 if(P6G())then
-set IR[4]='S001'
+set IR[4]='InAO'
 endif
 endif
 endif
