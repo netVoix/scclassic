@@ -4,6 +4,11 @@ buildMapData:
   name: Survival ChaOZ 1.13
   fileName: MyMapFile
   author: ArhiMEN
+  scenarioData:
+    loadingScreen:
+      title: Survival Chaos v1.13
+      subTitle: Edition by OZGame 
+      text: "|c00FF0000 This version is prepared for OZGame and is an unofficial branch of the Survival Chaos.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/dA4E8Y |n|n|cffffcc00Author:|r ArhiMEN |n|cffffcc00Offered ideas:|r JoeVega"
   players:
     - id: 0
       name: Player 1

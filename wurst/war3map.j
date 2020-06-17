@@ -18638,22 +18638,22 @@ function ZPF takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function ZQF takes nothing returns nothing
-set EA[4]=GetRectCenter(OJ)
-if(ZPF())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[4])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(OJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[4])
+// set EA[4]=GetRectCenter(OJ)
+// if(ZPF())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[4])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(OJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[4])
 endfunction
 function ZSF takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==Z)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
