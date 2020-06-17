@@ -9,6 +9,39 @@ buildMapData:
       title: Survival Chaos v1.13
       subTitle: Edition by OZGame 
       text: "|c00FF0000 This version is prepared for OZGame and is an unofficial branch of the Survival Chaos.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/dA4E8Y |n|n|cffffcc00Author:|r ArhiMEN/ArhiMENchik/Arhi |n|cffffcc00Offered ideas:|r JoeVega"
+  players:
+    - id: 0
+      name: Player 1
+      race: HUMAN
+      controller: COMPUTER
+    - id: 1
+      name: Player 2
+      race: HUMAN
+      controller: COMPUTER
+    - id: 4
+      name: Player 3
+      race: HUMAN
+      controller: COMPUTER
+    - id: 6
+      name: Player 5
+      race: HUMAN
+      controller: COMPUTER
+    - id: 5
+      name: Player 4
+      race: HUMAN
+      controller: USER
+    - id: 7
+      name: Player 6
+      race: HUMAN
+      controller: COMPUTER
+    - id: 9
+      name: Player 8
+      race: HUMAN
+      controller: COMPUTER
+    - id: 10
+      name: Player 9
+      race: HUMAN
+      controller: COMPUTER
   forces:
     - name: Yellow
       playerIds:
