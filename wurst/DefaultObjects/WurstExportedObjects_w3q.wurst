@@ -626,7 +626,7 @@ import ObjEditingNatives
 	..setLvlDataInt("glmb", 0, 0, 0)
 	..setLvlDataString("greq", 1, 0, "o008")
 	..setLvlDataString("ghk1", 1, 0, "C")
-	..setLvlDataString("gtp1", 1, 0, "Research (|cffff0000Lv1|r) [|cffffcc00C|r]")
+	..setLvlDataString("gtp1", 1, 0, "Scrap Salvage (|cffff0000Lv1|r) [|cffffcc00C|r]")
 	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r bonus gold for a kill |n|cffffcc00Affects:|r |cffffdeadBlaster|r |n|n|cff6c7b8bLv1: 6 gold per kill |nLv2: 12 gold per kill |nLv3: 18 gold per kill |nLv4: 24 gold per kill")
 	..setLvlDataUnreal("gba1", 0, 0, 25.0)
 	..setLvlDataInt("glvl", 0, 0, 5)

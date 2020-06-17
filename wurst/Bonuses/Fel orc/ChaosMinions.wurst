@@ -34,7 +34,7 @@ import ObjEditingNatives
 	..setString("uhot", "D")
 	..setString("unam", "Dimensional Gate")
 	..setString("utip", "Chaos Minions [|cffffcc00D|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPillage|r |n|n|cffffcc00Infernal|r replaces |cffffcc00Contraption|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Immolation|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(15 dmg/s in 200 AoE)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(immune to some spells)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadNether Portal|r |n|cffffdeadChaos Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPillage|r |n|n|cffffcc00Infernal|r replaces |cffffcc00Contraption|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Immolation|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(15 dmg/s in 200 AoE)|r |n|cff00ffffDemonic Obsidian|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(immune to some spells)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadNether Portal|r |n|cffffdeadChaos Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setInt("ubpy", 1)
 	..setInt("uhos", 0)
 	..setString("uarm", "Stone")
