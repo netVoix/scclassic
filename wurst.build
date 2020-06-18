@@ -8,7 +8,7 @@ buildMapData:
     loadingScreen:
       title: Survival Chaos v1.13
       subTitle: Edition by OZGame 
-      text: "|c00FF0000This version is prepared for OZGame and is an unofficial branch of the Survival Chaos.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/dA4E8Y |n|n|cffffcc00Author:|r ArhiMEN/ArhiMENchik/Arhi |n|cffffcc00Offered ideas:|r JoeVega"
+      text: "|c00FF0000This version is prepared for OZGame and is an unofficial branch of the Survival Chaos.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/APzyvxB |n|n|cffffcc00Author:|r ArhiMEN/ArhiMENchik/Arhi |n|cffffcc00Offered ideas:|r JoeVega"
   players:
     - id: 0
       name: Player 1
