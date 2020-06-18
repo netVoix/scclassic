@@ -18662,22 +18662,22 @@ function ZTF takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function ZUF takes nothing returns nothing
-set EA[5]=GetRectCenter(DJ)
-if(ZTF())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[5])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(DJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[5])
+// set EA[5]=GetRectCenter(DJ)
+// if(ZTF())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[5])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(DJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[5])
 endfunction
 function ZWF takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==Z)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18686,22 +18686,22 @@ function ZYF takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function ZZF takes nothing returns nothing
-set EA[6]=GetRectCenter(HJ)
-if(ZYF())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[6])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[6])
+// set EA[6]=GetRectCenter(HJ)
+// if(ZYF())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[6])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[6])
 endfunction
 function Z_F takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==Y)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18710,22 +18710,22 @@ function Z0F takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function Z1F takes nothing returns nothing
-set EA[7]=GetRectCenter(QJ)
-if(Z0F())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[7])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(QJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[7])
+// set EA[7]=GetRectCenter(QJ)
+// if(Z0F())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[7])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(QJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[7])
 endfunction
 function Z2F takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==Y)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18734,22 +18734,22 @@ function Z3F takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function Z4F takes nothing returns nothing
-set EA[8]=GetRectCenter(VJ)
-if(Z3F())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[8])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(VJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[8])
+// set EA[8]=GetRectCenter(VJ)
+// if(Z3F())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[8])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(VJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[8])
 endfunction
 function Z5F takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==Y)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18758,22 +18758,22 @@ function Z6F takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function Z7F takes nothing returns nothing
-set EA[9]=GetRectCenter(UH)
-if(Z6F())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[9])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(UH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[9])
+// set EA[9]=GetRectCenter(UH)
+// if(Z6F())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[9])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(UH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[9])
 endfunction
 function Z8F takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==U)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18782,22 +18782,22 @@ function Z9F takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VVG takes nothing returns nothing
-set EA[$A]=GetRectCenter(LH)
-if(Z9F())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$A])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(LH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$A])
+// set EA[$A]=GetRectCenter(LH)
+// if(Z9F())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$A])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(LH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$A])
 endfunction
 function VEG takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==U)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18806,22 +18806,22 @@ function VXG takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VOG takes nothing returns nothing
-set EA[$B]=GetRectCenter(HH)
-if(VXG())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$B])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$B])
+// set EA[$B]=GetRectCenter(HH)
+// if(VXG())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$B])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$B])
 endfunction
 function VRG takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==U)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18830,22 +18830,22 @@ function VIG takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VAG takes nothing returns nothing
-set EA[$C]=GetRectCenter(AH)
-if(VIG())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$C])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(AH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$C])
+// set EA[$C]=GetRectCenter(AH)
+// if(VIG())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$C])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(AH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$C])
 endfunction
 function VNG takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==W)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18854,22 +18854,22 @@ function VBG takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VCG takes nothing returns nothing
-set EA[$D]=GetRectCenter(GH)
-if(VBG())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$D])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(GH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$D])
+// set EA[$D]=GetRectCenter(GH)
+// if(VBG())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$D])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(GH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$D])
 endfunction
 function VDG takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==W)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18878,22 +18878,22 @@ function VFG takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VGG takes nothing returns nothing
-set EA[$E]=GetRectCenter(WH)
-if(VFG())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$E])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(WH)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$E])
+// set EA[$E]=GetRectCenter(WH)
+// if(VFG())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$E])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(WH)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$E])
 endfunction
 function VHG takes nothing returns boolean
 return(GetOwningPlayer(GetEnteringUnit())==W)and(GetUnitTypeId(GetTriggerUnit())!='u001')and(GetUnitTypeId(GetTriggerUnit())!='u003')and(GetUnitTypeId(GetTriggerUnit())!='u000')and(GetUnitTypeId(GetTriggerUnit())!='u002')and(GetUnitTypeId(GetTriggerUnit())!='u004')and(GetUnitTypeId(GetTriggerUnit())!='u005')and(GetUnitTypeId(GetTriggerUnit())!='u006')and(GetUnitTypeId(GetTriggerUnit())!='u007')
@@ -18902,22 +18902,22 @@ function VJG takes nothing returns boolean
 return(GetUnitTypeId(GetEnteringUnit())!='Ecen')
 endfunction
 function VKG takes nothing returns nothing
-set EA[$F]=GetRectCenter(CJ)
-if(VJG())then
-call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$F])
-else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(CJ)
-call TriggerExecute(H5)
-endif
-call RemoveLocation(EA[$F])
+// set EA[$F]=GetRectCenter(CJ)
+// if(VJG())then
+// call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$F])
+// else
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(CJ)
+// call TriggerExecute(H5)
+// endif
+// call RemoveLocation(EA[$F])
 endfunction
 function VLG takes nothing returns nothing
 call TriggerSleepAction(.2)
