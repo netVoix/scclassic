@@ -36,7 +36,7 @@ import ObjEditingNatives
 	..setString("utyp", "ancient,mechanical")
 	..setString("unam", "Boneyard")
 	..setString("utip", "The Dragonblight [|cffffcc00D|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLight Weight|r |n|n|cffffcc00Frost Wyrm|r replaces |cffffcc00Gargoyle|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff1c86eeFrost Breath|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(20% slow in 200 AoE)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(affects non-Hero units only)|r  |n|cffff00ffDevour Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 150 AoE)|r |n |cff6c7b8b(restores 50 HP per buff)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|cffffdeadLight Weight|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Buff|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLight Weight|r |n|n|cffffcc00Frost Wyrm|r replaces |cffffcc00Gargoyle|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff1c86eeFrost Breath|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(10% slow in 200 AoE)|r |n |cff6c7b8b(affects organic units only)|r  |n|cffff00ffDevour Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 150 AoE)|r |n |cff6c7b8b(restores 50 HP per buff)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|cffffdeadLight Weight|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Buff|r")
 	..setReal("usca", 0.95)
 	..setString("uhot", "D")
 	..setInt("usid", 600)

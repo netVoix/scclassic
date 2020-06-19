@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "undead")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLight Weight|r |n|n|cffffcc00Frost Wyrm|r replaces |cffffcc00Gargoyle|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff1c86eeFrost Breath|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(20% slow in 200 AoE)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(affects non-Hero units only)|r  |n|cffff00ffDevour Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 150 AoE)|r |n |cff6c7b8b(restores 50 HP per buff)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|cffffdeadLight Weight|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Buff|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLight Weight|r |n|n|cffffcc00Frost Wyrm|r replaces |cffffcc00Gargoyle|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff1c86eeFrost Breath|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(10% slow in 200 AoE)|r |n |cff6c7b8b(affects organic units only)|r  |n|cffff00ffDevour Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 150 AoE)|r |n |cff6c7b8b(restores 50 HP per buff)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|cffffdeadLight Weight|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Buff|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "The Dragonblight")
 	..setLvlDataString("atp1", 1, 0, "The Dragonblight")

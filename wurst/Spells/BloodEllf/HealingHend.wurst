@@ -1,4 +1,4 @@
-package HeakHend
+package HealingHend
 
 import ObjEditingNatives
 
@@ -11,8 +11,8 @@ import ObjEditingNatives
 	..setLvlDataString("atp1", 1, 0, "Healing Hand (lv1)")
 	..setLvlDataUnreal("acdn", 1, 0, 40.0)
 	..setLvlDataUnreal("Ocl3", 1, 3, 0.0)
-	..setLvlDataUnreal("Ocl1", 1, 1, 30.0)
-	..setLvlDataString("aub1", 1, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 30 hit points to friendly units.")
+	..setLvlDataUnreal("Ocl1", 1, 1, 25.0)
+	..setLvlDataString("aub1", 1, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 25 hit points to friendly units.")
 	..setLvlDataString("areq", 0, 0, "Redc")
 	..setLvlDataInt("Ocl2", 1, 2, 3)
 	..setLvlDataInt("abpy", 0, 0, 1)
@@ -20,9 +20,9 @@ import ObjEditingNatives
 	..setLvlDataString("aani", 0, 0, "spell")
 	..setLvlDataInt("alev", 0, 0, 5)
 	..setLvlDataUnreal("Ocl1", 2, 1, 40.0)
-	..setLvlDataUnreal("Ocl1", 3, 1, 50.0)
-	..setLvlDataUnreal("Ocl1", 4, 1, 60.0)
-	..setLvlDataUnreal("Ocl1", 5, 1, 70.0)
+	..setLvlDataUnreal("Ocl1", 3, 1, 55.0)
+	..setLvlDataUnreal("Ocl1", 4, 1, 70.0)
+	..setLvlDataUnreal("Ocl1", 5, 1, 85.0)
 	..setLvlDataInt("Ocl2", 2, 2, 3)
 	..setLvlDataInt("Ocl2", 3, 2, 3)
 	..setLvlDataInt("Ocl2", 4, 2, 3)
@@ -52,9 +52,9 @@ import ObjEditingNatives
 	..setLvlDataString("atp1", 4, 0, "Healing Hand (lv4)")
 	..setLvlDataString("atp1", 5, 0, "Healing Hand (lv5)")
 	..setLvlDataString("aub1", 2, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 40 hit points to friendly units.")
-	..setLvlDataString("aub1", 3, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 50 hit points to friendly units.")
-	..setLvlDataString("aub1", 4, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 60 hit points to friendly units.")
-	..setLvlDataString("aub1", 5, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 70 hit points to friendly units.")
+	..setLvlDataString("aub1", 3, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 55 hit points to friendly units.")
+	..setLvlDataString("aub1", 4, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 70 hit points to friendly units.")
+	..setLvlDataString("aub1", 5, 0, "Calls forth a wave of healing energy that bounces up to 3 times, healing 85 hit points to friendly units.")
 	..setLvlDataString("atat", 0, 0, "Abilities\\Spells\\Orc\\HealingWave\\HealingWaveTarget.mdl")
 	..setLvlDataString("ata0", 0, 0, "origin")
 	..setLvlDataString("alig", 0, 0, "")
