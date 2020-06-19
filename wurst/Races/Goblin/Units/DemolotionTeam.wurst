@@ -25,7 +25,7 @@ public let DEMOLITION_TEAM_ID = 'ngsp'
 	..setString("uhot", "")
 	..setString("udaa", "")
 	..setString("upgr", "Rhla,Rhst,R00B")
-	..setString("uabi", "A0FZ,Agyv,A0U0,Adda")
+	..setString("uabi", "A0FZ,Agyv,A0U0,Adda,A0U9")
 	..setInt("usid", 1000)
 	..setUnreal("ua1c", 2.0)
 	..setInt("ua1b", 35)

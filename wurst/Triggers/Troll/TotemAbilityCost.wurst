@@ -7,12 +7,22 @@ function adilityCost()
     let u = GetSpellAbilityUnit()
     let aid = GetSpellAbilityId()
     let p = GetOwningPlayer(u)
+    let pg= GetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD)
     if aid == 'A5CX'
-        p.addGold(-100)
+        if pg >= 100
+            p.addGold(-100)
+        if pg <= 100
+            u.removeAbility(aid)
+            u.addAbility(aid)
+            print("|c00FF0303not enough gold|r")
     if aid == 'A6CX'
-        p.addGold(-50)
-
+        if pg >= 50
+            p.addGold(-50)
+        if pg <= 50
+            u.removeAbility(aid)
+            u.addAbility(aid)
+            print("|c00FF0303not enough gold|r")
 
 init
-    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
         adilityCost()

@@ -1,4 +1,4 @@
-package GeathSquad
+package DeathSquad
 
 import ObjEditingNatives
 
@@ -35,7 +35,7 @@ import ObjEditingNatives
 	..setString("utyp", "ancient,mechanical")
 	..setString("unam", "Goblin Laboratory")
 	..setString("utip", "Death Squad [|cffffcc00W|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadGot Wrencz|r |n|nYour chosen barracks will permanently spawn two |cffffcc00Demolition Teams|r with each spawn wave. |n|cffffcc00Demolition Team|r is a short range unit. It explodes on death, dealing 80 damage in 300 AoE. |nIt can use |cffffdeadGot Wrencz|r upgrade. |n|cff6c7b8b(can capture neutral buildings)|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffa020f0Revenge on Friend|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadGot Wrencz|r |n|nYour chosen barracks will permanently spawn two |cffffcc00Demolition Teams|r with each spawn wave. |n|cffffcc00Demolition Team|r is a short range unit. It explodes on death, dealing 80 damage in 300 AoE and it has |cffff00ffScrap Mine|r ability which stuns for 2 seconds. |nIt can use |cffffdeadGot Wrencz|r upgrade. |n|cff6c7b8b(can capture neutral buildings)|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffa020f0Revenge on Friend|r")
 	..setString("uspa", "Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl")
 	..setString("uhot", "W")
 	..setInt("usid", 600)

@@ -27,7 +27,7 @@ import ObjEditingNatives
 	..setUnreal("ubs1", 0.3)
 	..setUnreal("udp1", 0.3)
 	..setString("uarm", "Stone")
-	..setUnreal("ua1c", 1.7)
+	..setUnreal("ua1c", 1.6)
 	..setInt("ua1b", 399)
 	..setInt("ua1d", 1)
 	..setInt("ua1s", 91)
