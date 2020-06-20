@@ -16,7 +16,7 @@ import ObjEditingNatives
 	..setLvlDataString("gtp1", 1, 0, "Research Advanced Guns (|cffff0000Lv1|r) [|cffffcc00X|r]")
 	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNDwarvenLongRifle.blp")
 	..setLvlDataString("gef1", 0, 0, "ratr")
-	..setLvlDataUnreal("gba1", 0, 0, 25.0)
+	..setLvlDataUnreal("gba1", 0, 0, 50.0)
 	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r bonus range and attack rate |n|cffffcc00Affects:|r |cffffdeadRifleman|r and |cffffdeadGyrocopter|r |n|n|cff6c7b8bLv1: +25 range, +5% attack rate |nLv2: +50 range, +10% attack rate |nLv3: +75 range, +15% attack rate |nLv4: +100 range, +20% attack rate")
 	..setLvlDataInt("glvl", 0, 0, 5)
 	..setLvlDataInt("gtim", 0, 0, 60)
