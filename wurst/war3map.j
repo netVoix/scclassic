@@ -18642,16 +18642,16 @@ set EA[4]=GetRectCenter(OJ)
 if(ZPF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[4])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(OJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(OJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[4])
 endfunction
@@ -18666,16 +18666,16 @@ set EA[5]=GetRectCenter(DJ)
 if(ZTF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[5])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(DJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(DJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[5])
 endfunction
@@ -18690,16 +18690,16 @@ set EA[6]=GetRectCenter(HJ)
 if(ZYF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[6])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[6])
 endfunction
@@ -18714,16 +18714,16 @@ set EA[7]=GetRectCenter(QJ)
 if(Z0F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[7])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(QJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(QJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[7])
 endfunction
@@ -18738,16 +18738,16 @@ set EA[8]=GetRectCenter(VJ)
 if(Z3F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[8])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(VJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(VJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[8])
 endfunction
@@ -18762,16 +18762,16 @@ set EA[9]=GetRectCenter(UH)
 if(Z6F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[9])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(UH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(UH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[9])
 endfunction
@@ -18786,16 +18786,16 @@ set EA[$A]=GetRectCenter(LH)
 if(Z9F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$A])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(LH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(LH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$A])
 endfunction
@@ -18810,16 +18810,16 @@ set EA[$B]=GetRectCenter(HH)
 if(VXG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$B])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$B])
 endfunction
@@ -18834,16 +18834,16 @@ set EA[$C]=GetRectCenter(AH)
 if(VIG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$C])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(AH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(AH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$C])
 endfunction
@@ -18858,16 +18858,16 @@ set EA[$D]=GetRectCenter(GH)
 if(VBG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$D])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(GH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(GH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$D])
 endfunction
@@ -18882,16 +18882,16 @@ set EA[$E]=GetRectCenter(WH)
 if(VFG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$E])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(WH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(WH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$E])
 endfunction
@@ -18906,16 +18906,16 @@ set EA[$F]=GetRectCenter(CJ)
 if(VJG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$F])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(CJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(CJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$F])
 endfunction
