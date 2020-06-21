@@ -29,7 +29,7 @@ import ObjEditingNatives
 	..setReal("ushw", 200.0)
 	..setUnreal("ubs1", 0.77000004)
 	..setUnreal("udp1", 0.4)
-	..setUnreal("ua1c", 1.4)
+	..setUnreal("ua1c", 1.6)
 	..setInt("ua1b", 399)
 	..setInt("ua1d", 1)
 	..setInt("ua1s", 91)

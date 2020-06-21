@@ -186,6 +186,7 @@ texttag array LI
 integer array MI
 string array PI
 button QI=null
+button ThreeRace=null
 boolean SI=false
 integer array TI
 player array UI
@@ -7202,6 +7203,8 @@ call DialogAddButtonBJ(FO,"|cff00ff00Random|r")
 set HO=bj_lastCreatedButton
 call DialogAddButtonBJ(FO,"|cffffff00All Pick|r")
 set GO=bj_lastCreatedButton
+call DialogAddButtonBJ(FO,"|cff177296Three Race Pick|r")
+set ThreeRace=bj_lastCreatedButton 
 call DialogAddButtonBJ(FO,"|cffF88017No Neutrals|r")
 set SO=bj_lastCreatedButton
 call DialogAddButtonBJ(FO,"|cffa020f0No Selectables|r")
@@ -7269,7 +7272,7 @@ call SetPlayerTechResearchedSwap('Rguv',1,U)
 call SetPlayerTechResearchedSwap('Rguv',1,W)
 if(CND())then
 set RR=false
-set AR="|cff00ff00Standard Random"
+set AR="|cff8ab48aStandard Random"
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cff00ff00Random|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
 call StartTimerBJ(VE,false,1.)
 call CreateTimerDialogBJ(VE,"Game starts in")
