@@ -9,14 +9,14 @@ function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
         int threerace 
-        let color1 = "|cffce2278"
-        let color2 = "|cff22ce86"
-        let color3 = "|cffce3c22"
-        let color4 = "|cff2d22ce"
-        let name1 = GetPlayerName(Q)
-        let name2 = GetPlayerName(T)
-        let name3 = GetPlayerName(S)
-        let name4 = GetPlayerName(P)
+        // let color1 = "|cffce2278"
+        // let color2 = "|cff22ce86"
+        // let color3 = "|cffce3c22"
+        // let color4 = "|cff2d22ce"
+        // let name1 = GetPlayerName(Q)
+        // let name2 = GetPlayerName(T)
+        // let name3 = GetPlayerName(S)
+        // let name4 = GetPlayerName(P)
 
         mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W')
         DisableTrigger(ZU)
@@ -45,39 +45,39 @@ function threeRacePick()
                 SetPlayerUnitAvailableBJ(cid, false, players[i])
         mainList.shuffle()
 
-        printTimed(" ",20)
-        printTimed("Plauer " + color1 + name1 + "|r" + " got a race:", 20)
+        // printTimed(" ",20)
+        // printTimed("Plauer " + color1 + name1 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, Q) 
-            printTimed(GetObjectName(threerace), 20)
+            // printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle()
 
-        printTimed(" ",20)
-        printTimed("Plauer " + color2 + name2 + "|r" + " got a race:", 20)
+        // printTimed(" ",20)
+        // printTimed("Plauer " + color2 + name2 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, T) 
-            printTimed(GetObjectName(threerace), 20)
+            // printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle() 
 
-        printTimed(" ",20)
-        printTimed("Plauer " + color3 + name3 + "|r" + " got a race:", 20)
+        // printTimed(" ",20)
+        // printTimed("Plauer " + color3 + name3 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, S) 
-            printTimed(GetObjectName(threerace), 20)
+            // printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle() 
 
-        printTimed(" ",20)
-        printTimed("Plauer " + color4 + name4 + "|r" + " got a race:", 20) 
+        // printTimed(" ",20)
+        // printTimed("Plauer " + color4 + name4 + "|r" + " got a race:", 20) 
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, P) 
-            printTimed(GetObjectName(threerace), 20)
+            // printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle() 
 
