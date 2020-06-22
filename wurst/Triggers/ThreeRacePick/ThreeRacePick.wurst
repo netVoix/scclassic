@@ -9,10 +9,10 @@ function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
         int threerace 
-        string color1 = "|cffce2278"
-        string color2 = "|cff22ce86"
-        string color3 = "|cffce3c22"
-        string color4 = "|cff2d22ce"
+        let color1 = "|cffce2278"
+        let color2 = "|cff22ce86"
+        let color3 = "|cffce3c22"
+        let color4 = "|cff2d22ce"
         let name1 = GetPlayerName(Q)
         let name2 = GetPlayerName(T)
         let name3 = GetPlayerName(S)
@@ -84,7 +84,7 @@ function threeRacePick()
 
 function destroytimer()
     DestroyTimerDialog(timdia)
-    
+
 
 init
     let t = CreateTrigger()
