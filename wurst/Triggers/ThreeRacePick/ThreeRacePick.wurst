@@ -1,4 +1,5 @@
 package ThreeRacePick
+
 import LinkedList
 
 public integer PROV
@@ -7,6 +8,7 @@ public integer PROV
 function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
+        int threerace 
         mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W')
         DisableTrigger(ZU)
         RR=true
@@ -31,28 +33,37 @@ function threeRacePick()
             for i = 0 to 12
                 SetPlayerUnitAvailableBJ(cid, false, players[i])
         mainList.shuffle()
-        for sid from mainList.staticItr()
-            for i = 0 to 12
-                if players[i] == Q
-                    SetPlayerUnitAvailableBJ(sid, true, players[i])
-                    mainList.remove(sid)
-                    mainList.shuffle()
-                if players[i] == T
-                    SetPlayerUnitAvailableBJ(sid, true, players[i])
-                    mainList.remove(sid)
-                    mainList.shuffle() 
-                if players[i] == S
-                    SetPlayerUnitAvailableBJ(sid, true, players[i])
-                    mainList.remove(sid)
-                    mainList.shuffle()
-                if players[i] == P
-                    SetPlayerUnitAvailableBJ(sid, true, players[i])
-                    mainList.remove(sid)
-                    mainList.shuffle()
+        for i = 1 to 3
+            threerace = mainList.getFirst()
+            SetPlayerUnitAvailableBJ(threerace, true, Q) 
+            mainList.remove(threerace)
+            mainList.shuffle()
+        for i = 01 to 3
+            threerace = mainList.getFirst()
+            SetPlayerUnitAvailableBJ(threerace, true, T) 
+            mainList.remove(threerace)
+            mainList.shuffle() 
+        for i = 0 to 3
+            threerace = mainList.getFirst()
+            SetPlayerUnitAvailableBJ(threerace, true, S) 
+            mainList.remove(threerace)
+            mainList.shuffle()   
+        for i = 0 to 3
+            threerace = mainList.getFirst()
+            SetPlayerUnitAvailableBJ(threerace, true, P) 
+            mainList.remove(threerace)
+            mainList.shuffle() 
 
-                    
+
+function destroytimer()
+    DestroyTimerDialog(EE)
+    
 init
     let t = CreateTrigger()
     t.addCondition(Condition(function threeRacePick))
-    t.registerDialogEvent(FO)
+    t.registerDialogEvent(FO)  
+    let s = CreateTrigger()
+    t.addCondition(Condition(function destroytimer))
+    t.registerTimerExpireEvent(VE)
     
+   

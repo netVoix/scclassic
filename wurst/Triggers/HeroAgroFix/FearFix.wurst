@@ -1,0 +1,21 @@
+package FearFix
+
+import RegisterEvents
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+
+function fearfix()
+    let aid = GetSpellAbilityId()
+    if aid == 'A0NL'
+        // let spike = 'Orex'
+        // let snapjaw = 'Eilm'
+        
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+    fearfix()
