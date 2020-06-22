@@ -2,8 +2,6 @@ package ThreeRacePick
 
 import LinkedList
 
-public integer PROV
-
 public timerdialog timdia
 
 
@@ -11,14 +9,19 @@ function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
         int threerace 
-        // let name1 = GetPlayerName(Q)
-        // let name2 = GetPlayerName(T)
-        // let name3 = GetPlayerName(S)
-        // let name4 = GetPlayerName(P)
+        string color1 = "|cffce2278"
+        string color2 = "|cff22ce86"
+        string color3 = "|cffce3c22"
+        string color4 = "|cff2d22ce"
+        let name1 = GetPlayerName(Q)
+        let name2 = GetPlayerName(T)
+        let name3 = GetPlayerName(S)
+        let name4 = GetPlayerName(P)
+
         mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W')
         DisableTrigger(ZU)
         RR=true
-        PROV = 1
+
         printTimed("|cff1464afThree Race Pick", 10) 
         printTimed("Mode: |cff1464afThree Race Pick|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r", 10)
         StartTimerBJ(VE,false,30.)
@@ -36,33 +39,45 @@ function threeRacePick()
         PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
         SelectUnitForPlayerSingle(X,P)
         SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+
         for cid from mainList.staticItr()
             for i = 0 to 12
                 SetPlayerUnitAvailableBJ(cid, false, players[i])
         mainList.shuffle()
-        // printTimed("Plauer " + name1 + " got a race:", 20)
+
+        printTimed(" ",20)
+        printTimed("Plauer " + color1 + name1 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, Q) 
-            // printTimed("", 20)
+            printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle()
-        // printTimed("Plauer " + name2 + " got a race:", 20)
+
+        printTimed(" ",20)
+        printTimed("Plauer " + color2 + name2 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, T) 
+            printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle() 
-        // printTimed("Plauer " + name3 + " got a race:", 20)
+
+        printTimed(" ",20)
+        printTimed("Plauer " + color3 + name3 + "|r" + " got a race:", 20)
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, S) 
+            printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
-            mainList.shuffle()  
-        // printTimed("Plauer " + name4 + " got a race:", 20) 
+            mainList.shuffle() 
+
+        printTimed(" ",20)
+        printTimed("Plauer " + color4 + name4 + "|r" + " got a race:", 20) 
         for i = 1 to 3
             threerace = mainList.getFirst()
             SetPlayerUnitAvailableBJ(threerace, true, P) 
+            printTimed(GetObjectName(threerace), 20)
             mainList.remove(threerace)
             mainList.shuffle() 
 
@@ -70,6 +85,7 @@ function threeRacePick()
 function destroytimer()
     DestroyTimerDialog(timdia)
     
+
 init
     let t = CreateTrigger()
     t.addCondition(Condition(function threeRacePick))
@@ -78,4 +94,3 @@ init
     s.addCondition(Condition(function destroytimer))
     s.registerTimerExpireEvent(VE)
     
-   
