@@ -5199,7 +5199,7 @@ set GR[1]='nsts'
 set TR[1]=$C
 set KR[1]='usap'
 set KR[2]='ugrv'
-set KR[3]='usep'
+set KR[3]='bshi'
 set KR[4]='uaod'
 set KR[5]='uzig'
 set KR[6]='nef0'
@@ -5264,7 +5264,7 @@ set GR[2]='nsts'
 set TR[2]=$C
 set LR[1]='usap'
 set LR[2]='ugrv'
-set LR[3]='usep'
+set LR[3]='bshi'
 set LR[4]='uaod'
 set LR[5]='uzig'
 set LR[6]='nef0'
@@ -5329,7 +5329,7 @@ set GR[3]='nsts'
 set TR[3]=$C
 set MR[1]='usap'
 set MR[2]='ugrv'
-set MR[3]='usep'
+set MR[3]='bshi'
 set MR[4]='uaod'
 set MR[5]='uzig'
 set MR[6]='nef0'
@@ -5394,7 +5394,7 @@ set GR[4]='nsts'
 set TR[4]=$C
 set PR[1]='usap'
 set PR[2]='ugrv'
-set PR[3]='usep'
+set PR[3]='bshi'
 set PR[4]='uaod'
 set PR[5]='uzig'
 set PR[6]='nef0'
@@ -43165,7 +43165,7 @@ endif
 endif
 endfunction
 function MUL takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='usap')or(GetUnitTypeId(GetTriggerUnit())=='ugrv')or(GetUnitTypeId(GetTriggerUnit())=='nmrf')or(GetUnitTypeId(GetTriggerUnit())=='uzig')or(GetUnitTypeId(GetTriggerUnit())=='nmra')or(GetUnitTypeId(GetTriggerUnit())=='nmrb')or(GetUnitTypeId(GetTriggerUnit())=='ncnt')or(GetUnitTypeId(GetTriggerUnit())=='nmrc')or(GetUnitTypeId(GetTriggerUnit())=='uaod')or(GetUnitTypeId(GetTriggerUnit())=='usep')
+return(GetUnitTypeId(GetTriggerUnit())=='usap')or(GetUnitTypeId(GetTriggerUnit())=='ugrv')or(GetUnitTypeId(GetTriggerUnit())=='nmrf')or(GetUnitTypeId(GetTriggerUnit())=='uzig')or(GetUnitTypeId(GetTriggerUnit())=='nmra')or(GetUnitTypeId(GetTriggerUnit())=='nmrb')or(GetUnitTypeId(GetTriggerUnit())=='ncnt')or(GetUnitTypeId(GetTriggerUnit())=='nmrc')or(GetUnitTypeId(GetTriggerUnit())=='uaod')or(GetUnitTypeId(GetTriggerUnit())=='bshi')
 endfunction
 function MWL takes nothing returns boolean
 return(MUL())
@@ -43195,7 +43195,7 @@ function M4L takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
 function M5L takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='usep')
+return(GetUnitTypeId(GetTriggerUnit())=='bshi')
 endfunction
 function M6L takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)

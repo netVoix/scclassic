@@ -6382,7 +6382,7 @@ import ObjEditingNatives
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "usap,ugrv,nmrf,nmra,nmrb,ncnt,nmrc,uaod,uzig,nef0,usep,nef7")
+	..setString("uupt", "usap,ugrv,nmrf,nmra,nmrb,ncnt,nmrc,uaod,uzig,nef0,bshi,nef7")
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
@@ -15729,7 +15729,7 @@ import ObjEditingNatives
 
 
 @compiletime function create_w3u_usep()
-	createObjectDefinition("w3u", 'usep', 'usep')
+	createObjectDefinition("w3u", 'bshi', 'usep')
 	..setString("uabi", "Abgl,Avul,A0BJ,A0HW")
 	// ..setString("uabi", "Abgl,Avul,A0BJ,A0HW,ACba")
 	..setInt("ubpx", 2)

@@ -1,0 +1,25 @@
+package StructureAgroFix
+
+import ClosureTimers
+import Orders
+import ClosureForGroups
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+function structureAgro()
+    let u = GetAttacker()
+    let aid = GetAttackedUnitBJ()
+    if u.isType(UNIT_TYPE_HERO) and aid.isType(UNIT_TYPE_STRUCTURE)
+        doAfter(1) ->
+            forNearestUnit(u.getPos(), 400, Filter(function isEnemyUnit)) (unit x) ->
+                u.issueTargetOrderById(OrderIds.attack, x)
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function structureAgro))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_ATTACKED)
