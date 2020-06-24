@@ -1,0 +1,15 @@
+package TitanBloodAb
+
+import ObjEditingNatives
+
+@compiletime function create_w3a_A0QZ()
+	createObjectDefinition("w3a", 'A0QZ', 'AIar')
+	..setLvlDataString("anam", 0, 0, "Titan's Blood")
+	..setLvlDataUnreal("Ear1", 1, 1, -0.2)
+	..setLvlDataString("abuf", 1, 0, "B041")
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,nonhero,organic, hero, nonancient")
+	..setLvlDataInt("Ear2", 1, 2, 1)
+	..setLvlDataString("atat", 0, 0, "")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionOfVampirism.blp")
+	..setLvlDataUnreal("aare", 1, 0, 600.0)
+	..setLvlDataString("ata0", 0, 0, "")

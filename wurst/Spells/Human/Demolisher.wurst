@@ -1,0 +1,20 @@
+package Demolisher
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_Demo()
+    createObjectDefinition("w3a", 'Demo', 'ANde')
+    ..setLvlDataString("arac", 0, 0, "other")
+    ..setLvlDataInt("aher", 0, 0, 0)
+    ..setLvlDataInt("abpy", 0, 0, 0)
+    ..setLvlDataUnreal("Nde2", 1, 2, 2.0)
+    ..setLvlDataString("atar", 1, 0, "structure,enemy,neutral")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNNoHero.blp")
+    ..setLvlDataString("anam", 0, 0, "Demolisher")
+    ..setLvlDataString("atp1", 1, 0, "Demolisher (|cffff0000Lv1|r)")
+    ..setLvlDataString("aub1", 1, 0, "Attacks do 2x damage to buildings.")
+    ..setLvlDataInt("alev", 0, 0, 1)
+    ..setLvlDataUnreal("Nde1", 1, 1, 100.0)
+    ..setLvlDataString("areq", 0, 0, "R04M")
+    ..setLvlDataString("arqa", 0, 0, "2")

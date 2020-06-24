@@ -186,6 +186,7 @@ texttag array LI
 integer array MI
 string array PI
 button QI=null
+button ThreeRace=null
 boolean SI=false
 integer array TI
 player array UI
@@ -5198,7 +5199,7 @@ set GR[1]='nsts'
 set TR[1]=$C
 set KR[1]='usap'
 set KR[2]='ugrv'
-set KR[3]='usep'
+set KR[3]='bshi'
 set KR[4]='uaod'
 set KR[5]='uzig'
 set KR[6]='nef0'
@@ -5263,7 +5264,7 @@ set GR[2]='nsts'
 set TR[2]=$C
 set LR[1]='usap'
 set LR[2]='ugrv'
-set LR[3]='usep'
+set LR[3]='bshi'
 set LR[4]='uaod'
 set LR[5]='uzig'
 set LR[6]='nef0'
@@ -5328,7 +5329,7 @@ set GR[3]='nsts'
 set TR[3]=$C
 set MR[1]='usap'
 set MR[2]='ugrv'
-set MR[3]='usep'
+set MR[3]='bshi'
 set MR[4]='uaod'
 set MR[5]='uzig'
 set MR[6]='nef0'
@@ -5393,7 +5394,7 @@ set GR[4]='nsts'
 set TR[4]=$C
 set PR[1]='usap'
 set PR[2]='ugrv'
-set PR[3]='usep'
+set PR[3]='bshi'
 set PR[4]='uaod'
 set PR[5]='uzig'
 set PR[6]='nef0'
@@ -7202,6 +7203,8 @@ call DialogAddButtonBJ(FO,"|cff00ff00Random|r")
 set HO=bj_lastCreatedButton
 call DialogAddButtonBJ(FO,"|cffffff00All Pick|r")
 set GO=bj_lastCreatedButton
+call DialogAddButtonBJ(FO,"|cff177296Three Race Pick|r")
+set ThreeRace=bj_lastCreatedButton 
 call DialogAddButtonBJ(FO,"|cffF88017No Neutrals|r")
 set SO=bj_lastCreatedButton
 call DialogAddButtonBJ(FO,"|cffa020f0No Selectables|r")
@@ -7269,7 +7272,7 @@ call SetPlayerTechResearchedSwap('Rguv',1,U)
 call SetPlayerTechResearchedSwap('Rguv',1,W)
 if(CND())then
 set RR=false
-set AR="|cff00ff00Standard Random"
+set AR="|cff8ab48aStandard Random"
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cff00ff00Random|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
 call StartTimerBJ(VE,false,1.)
 call CreateTimerDialogBJ(VE,"Game starts in")
@@ -18642,16 +18645,16 @@ set EA[4]=GetRectCenter(OJ)
 if(ZPF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[4])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(OJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(OJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[4])
 endfunction
@@ -18666,16 +18669,16 @@ set EA[5]=GetRectCenter(DJ)
 if(ZTF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[5])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(DJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(DJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[5])
 endfunction
@@ -18690,16 +18693,16 @@ set EA[6]=GetRectCenter(HJ)
 if(ZYF())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[6])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[6])
 endfunction
@@ -18714,16 +18717,16 @@ set EA[7]=GetRectCenter(QJ)
 if(Z0F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[7])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(QJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(QJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[7])
 endfunction
@@ -18738,16 +18741,16 @@ set EA[8]=GetRectCenter(VJ)
 if(Z3F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[8])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(VJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(VJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[8])
 endfunction
@@ -18762,16 +18765,16 @@ set EA[9]=GetRectCenter(UH)
 if(Z6F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[9])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(UH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(UH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[9])
 endfunction
@@ -18786,16 +18789,16 @@ set EA[$A]=GetRectCenter(LH)
 if(Z9F())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$A])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(LH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(LH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$A])
 endfunction
@@ -18810,16 +18813,16 @@ set EA[$B]=GetRectCenter(HH)
 if(VXG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$B])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(HH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(HH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$B])
 endfunction
@@ -18834,16 +18837,16 @@ set EA[$C]=GetRectCenter(AH)
 if(VIG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$C])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(AH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(AH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$C])
 endfunction
@@ -18858,16 +18861,16 @@ set EA[$D]=GetRectCenter(GH)
 if(VBG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$D])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(GH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(GH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$D])
 endfunction
@@ -18882,16 +18885,16 @@ set EA[$E]=GetRectCenter(WH)
 if(VFG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$E])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(WH)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(WH)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$E])
 endfunction
@@ -18906,16 +18909,16 @@ set EA[$F]=GetRectCenter(CJ)
 if(VJG())then
 call IssuePointOrderByIdLoc(GetEnteringUnit(),$D000F,EA[$F])
 else
-set DB=GetEnteringUnit()
-set XO['t']=GetUnitLoc(DB)
-call UnitAddAbility(DB,'Agra')
-call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
-set CB=bj_lastCreatedDestructable
-call IssueTargetOrderById(DB,$D021F,CB)
-call SetUnitAnimation(DB,"stand")
-call RemoveLocation(XO['t'])
-set EA[19]=GetRectCenter(CJ)
-call TriggerExecute(H5)
+// set DB=GetEnteringUnit()
+// set XO['t']=GetUnitLoc(DB)
+// call UnitAddAbility(DB,'Agra')
+// call CreateDestructableLoc('ATtc',XO['t'],GetRandomReal(0,360),.1,0)
+// set CB=bj_lastCreatedDestructable
+// call IssueTargetOrderById(DB,$D021F,CB)
+// call SetUnitAnimation(DB,"stand")
+// call RemoveLocation(XO['t'])
+// set EA[19]=GetRectCenter(CJ)
+// call TriggerExecute(H5)
 endif
 call RemoveLocation(EA[$F])
 endfunction
@@ -21419,7 +21422,7 @@ function P9G takes nothing returns boolean
 return(GetTriggerUnit()==X)
 endfunction
 function QVG takes nothing returns boolean
-return(GetSpellAbilityId()=='A0AT')
+return(GetSpellAbilityId()=='InAu')
 endfunction
 function QEG takes nothing returns nothing
 if(P0G())then
@@ -21465,18 +21468,18 @@ endif
 if(QVG())then
 call DisableTrigger(GetTriggeringTrigger())
 call UnitRemoveAbility(GetTriggerUnit(),'A0AI')
-call UnitAddAbility(GetTriggerUnit(),'S001')
+call UnitAddAbility(GetTriggerUnit(),'InAO')
 if(P9G())then
-set IR[1]='S001'
+set IR[1]='InAO'
 else
 if(P8G())then
-set IR[2]='S001'
+set IR[2]='InAO'
 else
 if(P7G())then
-set IR[3]='S001'
+set IR[3]='InAO'
 else
 if(P6G())then
-set IR[4]='S001'
+set IR[4]='InAO'
 endif
 endif
 endif
@@ -24964,7 +24967,7 @@ if(B7H())then
 call SelectHeroSkill(GetTriggerUnit(),'A0LV')
 call SelectHeroSkill(GetTriggerUnit(),'A0LX')
 call SelectHeroSkill(GetTriggerUnit(),'A0LY')
-call SelectHeroSkill(GetTriggerUnit(),'A06B')
+call SelectHeroSkill(GetTriggerUnit(),'Tran')
 endif
 if(B8H())then
 call SelectHeroSkill(GetTriggerUnit(),'ANcs')
@@ -25232,7 +25235,7 @@ function DIH takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'odef')==false)
 endfunction
 function DAH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'sbch')==false)
+return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'TiBl')==false)
 endfunction
 function DNH takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'ssil')==false)
@@ -25277,7 +25280,7 @@ if(DIH())then
 call UnitAddItemByIdSwapped('odef',GetTriggerUnit())
 endif
 if(DAH())then
-call UnitAddItemByIdSwapped('sbch',GetTriggerUnit())
+call UnitAddItemByIdSwapped('TiBl',GetTriggerUnit())
 endif
 if(DNH())then
 call UnitAddItemByIdSwapped('ssil',GetTriggerUnit())
@@ -25309,7 +25312,7 @@ function DMH takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'frgd')==false)
 endfunction
 function DPH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'klmm')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'cnob')==false)
 endfunction
 function DQH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Harf')
@@ -25330,16 +25333,16 @@ function DYH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Uanb')
 endfunction
 function DZH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'arsh')==false)
+return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'VeGl')==false)
 endfunction
 function D_H takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'drph')==false)
 endfunction
 function D0H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'shen')==false)
+return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'esaz')==false)
 endfunction
 function D1H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'esaz')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'hval')==false)
 endfunction
 function D2H takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Udth')
@@ -25384,7 +25387,7 @@ if(DMH())then
 call UnitAddItemByIdSwapped('frgd',GetTriggerUnit())
 endif
 if(DPH())then
-call UnitAddItemByIdSwapped('klmm',GetTriggerUnit())
+call UnitAddItemByIdSwapped('cnob',GetTriggerUnit())
 endif
 endif
 if(DYH())then
@@ -25411,16 +25414,16 @@ call SelectHeroSkill(GetTriggerUnit(),'A05B')
 call SelectHeroSkill(GetTriggerUnit(),'A0GH')
 call SelectHeroSkill(GetTriggerUnit(),'A0JL')
 if(DZH())then
-call UnitAddItemByIdSwapped('arsh',GetTriggerUnit())
+call UnitAddItemByIdSwapped('VeGl',GetTriggerUnit())
 endif
 if(D_H())then
 call UnitAddItemByIdSwapped('drph',GetTriggerUnit())
 endif
 if(D0H())then
-call UnitAddItemByIdSwapped('shen',GetTriggerUnit())
+call UnitAddItemByIdSwapped('esaz',GetTriggerUnit())
 endif
 if(D1H())then
-call UnitAddItemByIdSwapped('esaz',GetTriggerUnit())
+call UnitAddItemByIdSwapped('hval',GetTriggerUnit())
 endif
 endif
 endfunction
@@ -25440,16 +25443,16 @@ function D8H takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Ubal')
 endfunction
 function D9H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'brac')==false)
+return(GetHeroLevel(GetTriggerUnit())>=4)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'brac')==false) 
 endfunction
 function FVH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'odef')==false)
+return(GetHeroLevel(GetTriggerUnit())>=8)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'odef')==false) 
 endfunction
 function FEH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'pnvu')==false)
+return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'MANB')==false) 
 endfunction
 function FXH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'hlst')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'FELS')==false) 
 endfunction
 function FOH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Nman')
@@ -25485,16 +25488,16 @@ call SelectHeroSkill(GetTriggerUnit(),'A09B')
 call SelectHeroSkill(GetTriggerUnit(),'A0DY')
 call SelectHeroSkill(GetTriggerUnit(),'ANr3')
 if(D9H())then
-call UnitAddItemByIdSwapped('brac',GetTriggerUnit())
+call UnitAddItemByIdSwapped('brac',GetTriggerUnit()) 
 endif
 if(FVH())then
-call UnitAddItemByIdSwapped('odef',GetTriggerUnit())
+call UnitAddItemByIdSwapped('odef',GetTriggerUnit())  
 endif
 if(FEH())then
-call UnitAddItemByIdSwapped('pnvu',GetTriggerUnit())
+call UnitAddItemByIdSwapped('MANB',GetTriggerUnit()) 
 endif
 if(FXH())then
-call UnitAddItemByIdSwapped('hlst',GetTriggerUnit())
+call UnitAddItemByIdSwapped('FELS',GetTriggerUnit()) 
 endif
 endif
 endfunction
@@ -25741,7 +25744,7 @@ call SelectHeroSkill(GetTriggerUnit(),'A0ID')
 call SelectHeroSkill(GetTriggerUnit(),'A069')
 endif
 if(GRH())then
-call SelectHeroSkill(GetTriggerUnit(),'A0TP')
+call SelectHeroSkill(GetTriggerUnit(),'BlGl')
 call SelectHeroSkill(GetTriggerUnit(),'A0NP')
 call SelectHeroSkill(GetTriggerUnit(),'A0NO')
 call SelectHeroSkill(GetTriggerUnit(),'AHds')
@@ -37901,7 +37904,7 @@ function WKK takes nothing returns boolean
 return(GetUnitTypeId(GetDyingUnit())=='hkni')
 endfunction
 function WLK takes nothing returns boolean
-return(GetRandomInt(1,'d') <= ((20*GetPlayerTechCountSimple('R04M',GetOwningPlayer(GetDyingUnit())))))
+return(GetRandomInt(1,'d') <= ((20*GetPlayerTechCountSimple('R04M' ,GetOwningPlayer(GetDyingUnit())) + 10)))
 endfunction
 function WMK takes nothing returns nothing
 if(WLK())then
@@ -42123,27 +42126,6 @@ function HTL takes nothing returns boolean
 return(GetOwningPlayer(GetAttacker())==Player($C))
 endfunction
 function HUL takes nothing returns nothing
-if(HTL())then
-call IssueImmediateOrderById(GetAttacker(),$D009F)
-call IssueImmediateOrderById(GetAttacker(),$D0084)
-call IssueTargetOrderById(GetTriggerUnit(),$D000F,GetAttacker())
-else
-if(HSL())then
-call DisableTrigger(GetTriggeringTrigger())
-call SetUnitOwner(GetAttacker(),Player($C),true)
-call UnitAddAbility(GetAttacker(),'A0IX')
-call UnitAddAbility(GetAttacker(),'A0IW')
-call IssueImmediateOrderById(GetAttacker(),$D009F)
-set XO[79]=GetUnitLoc(GetAttacker())
-call CreateTextTagLocBJ("Rampage!",XO[79],0,$A,100.,.0,.0,0)
-call SetTextTagVelocityBJ(bj_lastCreatedTextTag,50.,90)
-call SetTextTagPermanentBJ(bj_lastCreatedTextTag,false)
-call SetTextTagLifespanBJ(bj_lastCreatedTextTag,7.)
-call SetTextTagFadepointBJ(bj_lastCreatedTextTag,4.)
-call RemoveLocation(XO[79])
-call EnableTrigger(GetTriggeringTrigger())
-endif
-endif
 endfunction
 function HWL takes nothing returns boolean
 return(GetResearched()=='R03U')
@@ -43183,7 +43165,7 @@ endif
 endif
 endfunction
 function MUL takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='usap')or(GetUnitTypeId(GetTriggerUnit())=='ugrv')or(GetUnitTypeId(GetTriggerUnit())=='nmrf')or(GetUnitTypeId(GetTriggerUnit())=='uzig')or(GetUnitTypeId(GetTriggerUnit())=='nmra')or(GetUnitTypeId(GetTriggerUnit())=='nmrb')or(GetUnitTypeId(GetTriggerUnit())=='ncnt')or(GetUnitTypeId(GetTriggerUnit())=='nmrc')or(GetUnitTypeId(GetTriggerUnit())=='uaod')or(GetUnitTypeId(GetTriggerUnit())=='usep')
+return(GetUnitTypeId(GetTriggerUnit())=='usap')or(GetUnitTypeId(GetTriggerUnit())=='ugrv')or(GetUnitTypeId(GetTriggerUnit())=='nmrf')or(GetUnitTypeId(GetTriggerUnit())=='uzig')or(GetUnitTypeId(GetTriggerUnit())=='nmra')or(GetUnitTypeId(GetTriggerUnit())=='nmrb')or(GetUnitTypeId(GetTriggerUnit())=='ncnt')or(GetUnitTypeId(GetTriggerUnit())=='nmrc')or(GetUnitTypeId(GetTriggerUnit())=='uaod')or(GetUnitTypeId(GetTriggerUnit())=='bshi')
 endfunction
 function MWL takes nothing returns boolean
 return(MUL())
@@ -43213,7 +43195,7 @@ function M4L takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
 function M5L takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='usep')
+return(GetUnitTypeId(GetTriggerUnit())=='bshi')
 endfunction
 function M6L takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==T)

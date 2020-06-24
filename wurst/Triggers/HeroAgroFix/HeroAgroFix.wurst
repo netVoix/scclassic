@@ -4,9 +4,9 @@ import ClosureTimers
 function heroAgro()
     let u = GetEnteringUnit()
     if u.isType(UNIT_TYPE_HERO)
-        SetUnitAcquireRange(u, 1000)
+        SetUnitAcquireRange(u, 900)
         doAfter(6) ->
-            SetUnitAcquireRange(u, 700)
+            SetUnitAcquireRange(u, 600)
 
 init
     let t = CreateTrigger()

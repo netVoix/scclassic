@@ -57,7 +57,7 @@ import ObjEditingNatives
     ..setString("uhot", "")
     ..setInt("upru", 1)
     ..setString("utip", "Train Tinker")
-    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cffFE8A0EDemolisher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Cluster Missiles|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead225-375 damage in an area|r |n  |cff6c7b8b(125-275 area of effect)|r |n|n|cffa020f0Sentry Gun|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons 1 immobile unit|r |n|n|cffff00ffDemolition Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead1-7 building armor reduction|r |n|n|cffff00ffBribe|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeadcontrols unit every 75-45s|r |n  |cff6c7b8b(affects organic units only)|r |n  |cff6c7b8b(affects non-Hero units only)|r")
+    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cffFE8A0EDemolisher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Cluster Missiles|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead225-375 damage in an area|r |n  |cff6c7b8b(125-275 area of effect)|r |n|n|cffa020f0Sentry Gun|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons 1 immobile unit|r |n|n|cffff00ffDemolition Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead1-7 building armor reduction|r |n|cffff0000Goblin Mine|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-550 damage in an area 5s stun|r |n  |cff6c7b8b(300-600 area of effect)|r |n  |cff6c7b8b(does not affect Special unit)|r")
     ..setString("upro", "Riket Rattletrap")
     ..setString("uhab", "ANcs,A0LQ,A090,A0DS")
     ..setUnreal("ua1c", 2.3)

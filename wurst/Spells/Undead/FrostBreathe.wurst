@@ -1,0 +1,11 @@
+package FrostBreathe
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let FROST_BREATHE_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_Afrb()
+	createObjectDefinition("w3a", FROST_BREATHE_ID, 'Afrb')
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,organic")

@@ -1,0 +1,20 @@
+package VenomGlands
+
+import ObjEditingNatives
+
+//public let VENOM_GLANDS_ID = 'VeGl'
+
+@compiletime function create_w3t_VeGl()
+    createObjectDefinition("w3t",'VeGl', 'arsh')
+    ..setString("icla", "Permanent")
+    ..setInt("igol", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffffff00Venom Glands|r  |cff6c7b8b(Lv2)|r")
+    ..setString("utip", "|cffffff00Venom Glands|r  |cff6c7b8b(Lv2)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPoisonSting.blp")
+    ..setString("utub", "-15% speed to target |n|cff6c7b8b(affects organic units only)|r")
+    ..setString("iabi", "A0KV,A092")
+    ..setString("icid", "A0KV")

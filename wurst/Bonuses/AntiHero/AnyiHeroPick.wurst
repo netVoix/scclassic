@@ -1,0 +1,18 @@
+package AnyiHeroPick
+
+import RegisterEvents
+import AntiHeroBonus
+
+public int array antiHero
+
+
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+    let u = GetTriggerUnit()
+    let z =  GetOwningPlayer(u)
+    if u.getTypeId() == ANTI_HERO_ID
+      for i = 0 to 12
+        if players[i].isAllyOf(z) 
+          antiHero[i] = 1
+          // z.print("Antihero")
+          

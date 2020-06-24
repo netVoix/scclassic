@@ -20,7 +20,7 @@ public let GLAIVE_THROWER_ID = 'ebal'
 	..setUnreal("udl1", 0.5)
 	..setInt("ua1s", 11)
 	..setUnreal("usr1", 0.0)
-	..setInt("ua1r", 700)
+	..setInt("ua1r", 650)
 	..setString("ua1w", "mbounce")
 	..setString("ua1g", "debris,ground,item,structure,ward")
 	..setInt("udef", 7)

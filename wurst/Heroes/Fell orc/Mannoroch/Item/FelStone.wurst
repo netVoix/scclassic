@@ -1,0 +1,23 @@
+package FelStone
+
+import ObjEditingNatives
+
+public let FEL_STONE_ID = 'FELS'
+
+@compiletime function create_w3t_FelS()
+    createObjectDefinition("w3t", FEL_STONE_ID, 'hlst')
+    ..setString("icla", "Permanent")
+    ..setInt("iusa", 0)
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("iuse", 0)
+    ..setInt("iper", 0)
+    ..setInt("igol", 0)
+    ..setString("ides", "")
+    ..setString("unam", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+    ..setString("iabi", "A0SG")
+    ..setString("icid", "A0SG")
+    ..setString("utip", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+    ..setString("utub", "20 dmg/s to units |n|cff6C7B8B(600 range)|r")

@@ -1,0 +1,19 @@
+package InfoNight
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A0O7()
+	createObjectDefinition("w3a", 'A0O7', 'ACev')
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 0)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Units:|r |n+1.5 HP/sec regeneration |n|n|cffffcc00Buildings:|r |n+1 HP/sec regeneration |n|n|cffffcc00Upgrades:|r |n+3Lv Building Damage |n|cffff0000-10% research speed|r |n|n|cffffcc00Traits:|r |cffffdeadDedicated and specialized units, trained to fulfil their role to the max. Balanced and strong race without apparent weaknesses. Its full potential is impresive but it rises slowly and can be hard to reach.|r |n|n|cffffcc00Difficulty:|r |cff00ff00Skilled|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Night Elf")
+	..setLvlDataString("atp1", 1, 0, "The Ancients - |cff00ff00Night Elf|r")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNPickNE.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)

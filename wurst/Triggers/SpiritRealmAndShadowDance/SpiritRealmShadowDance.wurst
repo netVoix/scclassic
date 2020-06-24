@@ -1,0 +1,54 @@
+package SpiritRealmShadowDance
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+function addManaSpiritRealmSM()
+    let aid = GetKillingUnit()
+    let GP = aid.getTypeId()
+    if GP == 'ospw'
+        let lt = GetPlayerTechCountSimple('R01V' ,GetOwningPlayer(aid))
+        aid.addMana(10.00 * lt)
+
+
+function addManaSpiritRealmSW()
+    let aid = GetKillingUnit()
+    let GP = aid.getTypeId()
+    if GP == 'ospm'
+        let lt = GetPlayerTechCountSimple('R01V' ,GetOwningPlayer(aid))
+        aid.addMana(10.00 * lt) 
+        
+        
+function addManaShadowDanceMD()
+    let aid = GetKillingUnit()
+    let GP = aid.getTypeId()
+    if GP == 'nerd'
+        let lt = GetPlayerTechCountSimple('R00Y' ,GetOwningPlayer(aid))
+        aid.addMana(10.00 * lt) 
+
+
+function addManaShadowDanceEW()
+    let aid = GetKillingUnit()
+    let GP = aid.getTypeId()
+    if GP == 'ners'
+        let lt = GetPlayerTechCountSimple('R00Y' ,GetOwningPlayer(aid))
+        aid.addMana(10.00 * lt) 
+
+
+function addManaShadowDanceEWi()
+    let aid = GetKillingUnit()
+    let GP = aid.getTypeId()
+    if GP == 'nerw'
+        let lt = GetPlayerTechCountSimple('R00Y' ,GetOwningPlayer(aid))
+        aid.addMana(10.00 * lt) 
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function addManaSpiritRealmSM))
+    t.addCondition(Condition(function addManaSpiritRealmSW))
+    t.addCondition(Condition(function addManaShadowDanceMD))
+    t.addCondition(Condition(function addManaShadowDanceEW))
+    t.addCondition(Condition(function addManaShadowDanceEWi))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_DEATH)

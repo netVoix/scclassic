@@ -1,0 +1,30 @@
+package FearAura
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A01L()
+	createObjectDefinition("w3a", 'A01L', 'AEar')
+	..setLvlDataString("arac", 0, 0, "undead")
+	..setLvlDataInt("aher", 0, 0, 0)
+	..setLvlDataUnreal("Ear1", 1, 1, -0.15)
+	..setLvlDataUnreal("Ear1", 3, 1, -0.25)
+	..setLvlDataUnreal("Ear1", 2, 1, -0.2)
+	..setLvlDataInt("Ear2", 2, 2, 1)
+	..setLvlDataInt("Ear2", 1, 2, 1)
+	..setLvlDataInt("Ear2", 3, 2, 1)
+	..setLvlDataString("abuf", 1, 0, "B00B")
+	..setLvlDataString("abuf", 2, 0, "B00B")
+	..setLvlDataString("abuf", 3, 0, "B00B")
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,invulnerable,nonhero,vulnerable")
+	..setLvlDataString("atar", 2, 0, "air,enemies,ground,invulnerable,nonancient,vulnerable")
+	..setLvlDataString("atar", 3, 0, "air,enemies,ground,invulnerable,nonancient,vulnerable")
+	..setLvlDataString("aub1", 1, 0, "Reduces damage of nearby enemy units by 15%.")
+	..setLvlDataString("aub1", 2, 0, "Reduces damage of nearby enemy units by 20%.")
+	..setLvlDataString("aub1", 3, 0, "Reduces damage of nearby enemy units by 25%.")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNHowlOfTerror.blp")
+	..setLvlDataString("anam", 0, 0, "Fear Aura")
+	..setLvlDataString("atat", 0, 0, "swiftnessaura.mdx")
+	..setLvlDataInt("alev", 0, 0, 1)
+	..setLvlDataUnreal("aare", 1, 0, 500.0)
+	..setLvlDataString("atp1", 1, 0, "Fear Aura")

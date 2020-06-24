@@ -1,0 +1,29 @@
+package Transmutation
+
+import RegisterEvents
+import Transmute
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+
+function transmut()
+    let t = GetSpellTargetUnit()
+    let u = GetSpellAbilityUnit()
+    let aid = GetSpellAbilityId()
+    let z =  GetOwningPlayer(u)
+    let gold = 50 + 25 * GetUnitAbilityLevel(u, TRANSMUTE_ID)
+    if aid == TRANSMUTE_ID
+        t.kill()
+        t.remove()
+        for i = 0 to 12 
+            if players[i].isAllyOf(z) and players[i] != z
+                players[i].addGold(gold)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        transmut()

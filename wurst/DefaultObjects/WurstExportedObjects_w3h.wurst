@@ -314,16 +314,6 @@ import ObjEditingNatives
 	..setInt("ftac", 3)
 
 
-@compiletime function create_w3h_B01B()
-	createObjectDefinition("w3h", 'B01B', 'Bbsk')
-	..setString("fube", "This unit is Berserk; it will attack faster but also take more damage from attacks.")
-	..setString("frac", "other")
-	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNBloodLust.blp")
-	..setString("fta0", "hand,right")
-	..setString("fta1", "head")
-	..setString("ftat", "Abilities\\Spells\\Orc\\TrollBerserk\\HeadhunterWEAPONSRight.mdl,Abilities\\Spells\\Orc\\Bloodlust\\BloodlustTarget.mdl")
-
-
 @compiletime function create_w3h_B002()
 	createObjectDefinition("w3h", 'B002', 'BIrl')
 	..setString("fube", "This unit is being Healed; its hit points will regenerate over time.")
