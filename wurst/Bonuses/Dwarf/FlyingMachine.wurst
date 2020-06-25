@@ -32,8 +32,8 @@ import ObjEditingNatives
 	..setString("ushb", "ShadowArmory")
 	..setString("usnd", "Workshop")
 	..setInt("ubpx", 2)
-    ..setInt("usid", 600)
-    
+	..setInt("usid", 600)
+	
 
 @compiletime function create_w3a_A0BR()
 	createObjectDefinition("w3a", 'A0BR', 'ACev')
