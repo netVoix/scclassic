@@ -9,7 +9,7 @@ group SG_STUN_USERS = CreateGroup()
 
 function stunAbilityBoolean() returns boolean
 	let aid = GetSpellAbilityId()
-	return aid == 'A0W6' or aid == 'A0Jl' or aid == 'A04J' or aid == 'A03F' or aid == 'A0JL' or aid == 'AOw2'
+	return aid == 'A0W6' or aid == 'A0Jl' or aid == 'A04J' or aid == 'A03F' or aid == 'A0JL' or aid == 'AOw2' or aid == 'A0NL'
 
 function isEnemyUnit() returns bool
 	let fu = GetFilterUnit()

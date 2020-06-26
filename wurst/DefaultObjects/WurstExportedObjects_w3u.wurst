@@ -6436,7 +6436,7 @@ import ObjEditingNatives
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "nbsm,uzg1,utom,ubon,ngni,utod,uslh,nfrm,ndmg,nef0,unpl,nef7")
+	..setString("uupt", "nbsm,uzg1,utom,ubon,ngni,hoba,hoff,nfrm,ndmg,nef0,unpl,nef7")
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
@@ -16034,7 +16034,7 @@ import ObjEditingNatives
 
 
 @compiletime function create_w3u_utod()
-	createObjectDefinition("w3u", 'utod', 'utod')
+	createObjectDefinition("w3u", 'hoba', 'utod')
 	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCrippling Frost|r |n+1 level of |cffffdeadDead Animation|r |n|n|cffffcc00Banshee|r replaces |cffffcc00Necromancer|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cffff00ffPossession|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(controls killing unit on death)|r |n |cff6c7b8b(has 13/26/39/52% chance)|r |n|cff00ffffEthereal|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(+5/10/15/20% evasion)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadNecromancy|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadUnholy Armor|r |n|cffffdeadCrippling Frost|r |n|cffffdeadDead Animation|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
 	..setString("utip", "Howling Banshees [|cffffcc00S|r]")
 	..setString("uhot", "S")
@@ -16231,7 +16231,7 @@ import ObjEditingNatives
 
 
 @compiletime function create_w3u_uslh()
-	createObjectDefinition("w3u", 'uslh', 'uslh')
+	createObjectDefinition("w3u", 'hoff', 'uslh')
 	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCorruption Aura|r |n+1 level of |cffffdeadImpenetrable Flesh|r |n|n|cffffcc00Flesh Giant|r replaces |cffffcc00Meat Wagon|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+800 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffImpenetrable Hide|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadUnholy Strength|r |n|cffffdeadUnholy Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setString("utip", "Heap of Flesh [|cffffcc00F|r]")
 	..setString("uhot", "F")

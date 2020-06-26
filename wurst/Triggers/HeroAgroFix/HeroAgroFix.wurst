@@ -1,14 +1,33 @@
 package HeroAgroFix
 import ClosureTimers
 
+public unit attackBot
+
 function heroAgro()
     let u = GetEnteringUnit()
     if u.isType(UNIT_TYPE_HERO)
-        SetUnitAcquireRange(u, 900)
+        if u.getTypeId() == 'Hdgo'
+            attackBot = u
+            // print(attackBot.getName())
+        TolchokGeroev(u)
+        SetUnitAcquireRange(u, 950)
         doAfter(6) ->
-            SetUnitAcquireRange(u, 600)
+            SetUnitAcquireRange(u, 700)
+
+function heroAgroRevive()
+    let u = GetRevivingUnit()
+    if u.isType(UNIT_TYPE_HERO)
+        doAfter(0.1) -> 
+            TolchokGeroev(u)
+            SetUnitAcquireRange(u, 950)
+        doAfter(6) ->
+            SetUnitAcquireRange(u, 700)
 
 init
     let t = CreateTrigger()
     TriggerRegisterEnterRectSimple(t, bj_mapInitialPlayableArea)
     t.addCondition(Condition(function heroAgro))
+
+    let t2 = CreateTrigger()
+    t2.registerAnyUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH)
+    t2.addCondition(Condition(function heroAgroRevive))

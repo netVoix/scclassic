@@ -5528,10 +5528,10 @@ set GR[1]='nzom'
 set TR[1]=$C
 set KR[1]='uzg1'
 set KR[2]='utom'
-set KR[3]='utod'
+set KR[3]='hoba'
 set KR[4]='unpl'
 set KR[5]='ubon'
-set KR[6]='uslh'
+set KR[6]='hoff'
 set KR[7]='nbsm'
 set KR[8]='nfrm'
 set KR[9]='ngni'
@@ -5593,10 +5593,10 @@ set GR[2]='nzom'
 set TR[2]=$C
 set LR[1]='uzg1'
 set LR[2]='utom'
-set LR[3]='utod'
+set LR[3]='hoba'
 set LR[4]='unpl'
 set LR[5]='ubon'
-set LR[6]='uslh'
+set LR[6]='hoff'
 set LR[7]='nbsm'
 set LR[8]='nfrm'
 set LR[9]='ngni'
@@ -5658,10 +5658,10 @@ set GR[3]='nzom'
 set TR[3]=$C
 set MR[1]='uzg1'
 set MR[2]='utom'
-set MR[3]='utod'
+set MR[3]='hoba'
 set MR[4]='unpl'
 set MR[5]='ubon'
-set MR[6]='uslh'
+set MR[6]='hoff'
 set MR[7]='nbsm'
 set MR[8]='nfrm'
 set MR[9]='ngni'
@@ -5723,10 +5723,10 @@ set GR[4]='nzom'
 set TR[4]=$C
 set PR[1]='uzg1'
 set PR[2]='utom'
-set PR[3]='utod'
+set PR[3]='hoba'
 set PR[4]='unpl'
 set PR[5]='ubon'
-set PR[6]='uslh'
+set PR[6]='hoff'
 set PR[7]='nbsm'
 set PR[8]='nfrm'
 set PR[9]='ngni'
@@ -18282,6 +18282,150 @@ call RemoveLocation(EA[4])
 else
 set EA[4]=GetRectCenter(KH)
 call IssuePointOrderByIdLoc(GetEnumUnit(),$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endfunction
+function TolchokGeroev takes unit unn returns nothing
+call IssueImmediateOrderById(unn,$D0058)
+if(WKF())then
+if(U5F())then
+set EA[4]=GetRectCenter(NG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(U4F())then
+set EA[4]=GetRectCenter(AG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(U3F())then
+set EA[4]=GetRectCenter(RG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IG)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+endif
+endif
+else
+if(RectContainsUnit(SJ,unn))then
+if(U6F())then
+set EA[4]=GetRectCenter(NJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(NK,unn))then
+if(U7F())then
+set EA[4]=GetRectCenter(KJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(MJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(OF,unn))then
+if(U8F())then
+set EA[4]=GetRectCenter(SH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(PH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(RectContainsUnit(XF,unn))then
+if(WDF())then
+set EA[4]=GetRectCenter(BH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(DH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==1)then
+if(U9F())then
+set EA[4]=GetRectCenter(NJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(IJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==2)then
+if(WVF())then
+set EA[4]=GetRectCenter(KJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(MJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==3)then
+if(WEF())then
+set EA[4]=GetRectCenter(SH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(PH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(GetUnitUserData(unn)==4)then
+if(WXF())then
+set EA[4]=GetRectCenter(BH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(DH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+endif
+else
+if(WIF())then
+set EA[4]=GetRectCenter(ZH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(WRF())then
+set EA[4]=GetRectCenter(GJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+if(WOF())then
+set EA[4]=GetRectCenter(XJ)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
+call RemoveLocation(EA[4])
+else
+set EA[4]=GetRectCenter(KH)
+call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
 call RemoveLocation(EA[4])
 endif
 endif
@@ -44373,7 +44517,7 @@ endif
 endif
 endfunction
 function T_L takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='nbsm')or(GetUnitTypeId(GetTriggerUnit())=='uzg1')or(GetUnitTypeId(GetTriggerUnit())=='utom')or(GetUnitTypeId(GetTriggerUnit())=='ubon')or(GetUnitTypeId(GetTriggerUnit())=='ngni')or(GetUnitTypeId(GetTriggerUnit())=='utod')or(GetUnitTypeId(GetTriggerUnit())=='nfrm')or(GetUnitTypeId(GetTriggerUnit())=='uslh')or(GetUnitTypeId(GetTriggerUnit())=='ndmg')or(GetUnitTypeId(GetTriggerUnit())=='unpl')
+return(GetUnitTypeId(GetTriggerUnit())=='nbsm')or(GetUnitTypeId(GetTriggerUnit())=='uzg1')or(GetUnitTypeId(GetTriggerUnit())=='utom')or(GetUnitTypeId(GetTriggerUnit())=='ubon')or(GetUnitTypeId(GetTriggerUnit())=='ngni')or(GetUnitTypeId(GetTriggerUnit())=='hoba')or(GetUnitTypeId(GetTriggerUnit())=='nfrm')or(GetUnitTypeId(GetTriggerUnit())=='hoff')or(GetUnitTypeId(GetTriggerUnit())=='ndmg')or(GetUnitTypeId(GetTriggerUnit())=='unpl')
 endfunction
 function T0L takes nothing returns boolean
 return(T_L())
@@ -44545,13 +44689,13 @@ function WBL takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='ndmg')
 endfunction
 function WCL takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='uslh')
+return(GetUnitTypeId(GetTriggerUnit())=='hoff')
 endfunction
 function WDL takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='nfrm')
 endfunction
 function WFL takes nothing returns boolean
-return(GetUnitTypeId(GetTriggerUnit())=='utod')
+return(GetUnitTypeId(GetTriggerUnit())=='hoba')
 endfunction
 function WGL takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='ngni')
