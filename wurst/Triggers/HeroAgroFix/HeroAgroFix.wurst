@@ -10,18 +10,18 @@ function heroAgro()
             attackBot = u
             // print(attackBot.getName())
         TolchokGeroev(u)
-        SetUnitAcquireRange(u, 950)
+        SetUnitAcquireRange(u, 850)
         doAfter(6) ->
-            SetUnitAcquireRange(u, 700)
+            SetUnitAcquireRange(u, 600)
 
 function heroAgroRevive()
     let u = GetRevivingUnit()
     if u.isType(UNIT_TYPE_HERO)
         doAfter(0.1) -> 
             TolchokGeroev(u)
-            SetUnitAcquireRange(u, 950)
+            SetUnitAcquireRange(u, 850)
         doAfter(6) ->
-            SetUnitAcquireRange(u, 700)
+            SetUnitAcquireRange(u, 600)
 
 init
     let t = CreateTrigger()
