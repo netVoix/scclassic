@@ -1,12 +1,12 @@
 ---
 projectName: scclassic
 buildMapData:
-  name: Survival ChaOZ 1.13
+  name: Survival ChaOZ 1.13b
   fileName: MyMapFile
   author: OZGame
   scenarioData:
     loadingScreen:
-      title: Survival Chaos v1.13
+      title: Survival Chaos v1.13b
       subTitle: Edition by OZGame
       text: "|c00FF0000OZGame edition.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/APzyvxB |n|n|cffffcc00Original author:|r Sur5al"
   players:
