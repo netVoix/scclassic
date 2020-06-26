@@ -48800,14 +48800,15 @@ import ObjEditingNatives
 	..setLvlDataUnreal("Dda1", 2, 1, 200.0)
 	..setLvlDataUnreal("Dda1", 3, 1, 200.0)
 	..setLvlDataUnreal("Dda1", 4, 1, 200.0)
-	..setLvlDataUnreal("Dda4", 1, 4, 1.0)
-	..setLvlDataUnreal("Dda4", 2, 4, 1.0)
-	..setLvlDataUnreal("Dda4", 3, 4, 1.0)
-	..setLvlDataUnreal("Dda4", 4, 4, 1.0)
+	..setLvlDataUnreal("Dda4", 1, 4, 100.0)
+	..setLvlDataUnreal("Dda4", 2, 4, 200.0)
+	..setLvlDataUnreal("Dda4", 3, 4, 300.0)
+	..setLvlDataUnreal("Dda4", 4, 4, 400.0)
 	..setLvlDataUnreal("Dda3", 1, 3, 200.0)
 	..setLvlDataUnreal("Dda3", 2, 3, 200.0)
 	..setLvlDataUnreal("Dda3", 3, 3, 200.0)
 	..setLvlDataUnreal("Dda3", 4, 3, 200.0)
+	..setLvlDataString("atar", 1, 0, "ground,structure,debris,enemy")
 	..setLvlDataString("atar", 2, 0, "ground,structure,debris,enemy")
 	..setLvlDataString("atar", 3, 0, "ground,structure,debris,enemy")
 	..setLvlDataString("atar", 4, 0, "ground,structure,debris,enemy")
@@ -48822,7 +48823,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3a_Amin()
 	createObjectDefinition("w3a", 'Amin', 'Amin')
-	..setLvlDataUnreal("aran", 1, 0, 150.0)
+	..setLvlDataUnreal("aran", 1, 0, 200.0)
 
 
 @compiletime function create_w3a_Adda()
