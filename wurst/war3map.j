@@ -10495,6 +10495,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"Passive |cffffcc00Gold|r 
 set BC[6]='A0UG'
 endfunction
 function Q_D takes nothing returns nothing
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Gold per mid")
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,(I2S(R2I(YA[1]))+(" "+(E[1]+(GetPlayerName(P)+"|r")))))
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,(I2S(R2I(YA[2]))+(" "+(E[2]+(GetPlayerName(S)+"|r")))))
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,(I2S(R2I(YA[3]))+(" "+(E[3]+(GetPlayerName(Q)+"|r")))))
