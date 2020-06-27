@@ -18307,23 +18307,6 @@ import ObjEditingNatives
 	..setLvlDataInt("abpy", 0, 0, 1)
 
 
-@compiletime function create_w3a_A0ED()
-	createObjectDefinition("w3a", 'A0ED', 'ACev')
-	..setLvlDataString("arac", 0, 0, "nightelf")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadRicochet|r |n|nGives 20/40/60% chance that |cffffcc00Huntress|r will dismount when her mount is killed. Unmounted |cffffcc00Huntress|r has increased attack rate but reduced evasion. It can use |cffffdeadCritical Hit|r upgrade. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "Elite Huntress")
-	..setLvlDataString("atp1", 1, 0, "Elite Huntress")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNHuntress.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
-
-
 @compiletime function create_w3a_A0EG()
 	createObjectDefinition("w3a", 'A0EG', 'ACev')
 	..setLvlDataString("arac", 0, 0, "nightelf")

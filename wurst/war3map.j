@@ -47424,7 +47424,7 @@ function AOM takes nothing returns boolean
 return(GetUnitTypeId(GetDyingUnit())=='esen')
 endfunction
 function ARM takes nothing returns boolean
-return(GetRandomInt(1,'d')<=((20*GetPlayerTechCountSimple('R04O',GetOwningPlayer(GetDyingUnit())))+20))
+return(GetRandomInt(1,'d')<=((20*GetPlayerTechCountSimple('R04O',GetOwningPlayer(GetDyingUnit())))+10))
 endfunction
 function AIM takes nothing returns nothing
 if(ARM())then
