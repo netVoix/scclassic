@@ -3,23 +3,33 @@ package InfoTools
 function infact()
     let command = GetEventPlayerChatString()
     if command == "-tg"
+        print("Total Gold", 5)
         for i = 1 to 4
             printTimed(UA[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
     if command == "-gm"
+        print("Gold From Mid", 5)
         for i = 1 to 4
             print(NB[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
     if command == "-gn"
+        print("Gold From Neutrals", 5)
         for i = 1 to 4
             print(UN[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
     if command == "-gf"
+        print("Gold From Fortress", 5)
         for i = 1 to 4
             print(YN[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
     if command == "-re"
+        print("Researches", 5)
         for i = 1 to 4
             print(ON[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
     if command == "-hk"
+        print("Heroes Killed", 5)
         for i = 1 to 4
             print(VN[i + 4].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
+    if command == "-gh"
+        print("Gold From Killed Heroes", 5)
+        for i = 1 to 4
+            print(WN[i].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
 
 init
     let t = CreateTrigger()
@@ -31,4 +41,5 @@ init
         t.registerPlayerChatEvent(Player(i2), "-gf", true)
         t.registerPlayerChatEvent(Player(i2), "-re", true)
         t.registerPlayerChatEvent(Player(i2), "-hk", true)
+        t.registerPlayerChatEvent(Player(i2), "-gh", true)
     t.addCondition(Condition(function infact))
