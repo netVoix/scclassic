@@ -13129,7 +13129,7 @@ import ObjEditingNatives
 	..setInt("udu1", 8)
 	..setString("ua1m", "Abilities\\Spells\\Other\\TinkerRocket\\TinkerRocketMissile.mdl")
 	..setInt("ua1z", 1000)
-	..setInt("ua1r", 650)
+	..setInt("ua1r", 600)
 	..setUnreal("urb1", 250.0)
 	..setInt("umh1", 1)
 	..setString("ua1g", "air,debris,ground,item,structure,ward")
