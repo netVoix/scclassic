@@ -12,4 +12,4 @@ import ObjEditingNatives
 	..setLvlDataInt("abpy", 0, 0, 2)
 	..setLvlDataUnreal("isr2", 1, 2, 0.40)
 	..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
-	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 20%.")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 40%.")
