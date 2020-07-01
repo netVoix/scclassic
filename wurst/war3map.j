@@ -7214,30 +7214,30 @@ set QI=bj_lastCreatedButton
 call DialogSetMessage(FO,"Game Mode")
 if(CED())then
 call DialogDisplayBJ(true,FO,Player(5))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 7 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cffffff00"+(GetPlayerName(Player(5))+"|r"))+" has 14 seconds to select game mode..."))
 else
 if(CVD())then
 call DialogDisplayBJ(true,FO,Player(7))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 7 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cffff0000"+(GetPlayerName(Player(7))+"|r"))+" has 14 seconds to select game mode..."))
 else
 if(B9D())then
 call DialogDisplayBJ(true,FO,Player(9))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 7 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[$A],7.,(("|cff0000ff"+(GetPlayerName(Player(9))+"|r"))+" has 14 seconds to select game mode..."))
 else
 call DialogDisplayBJ(true,FO,Player($A))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 7 seconds to select game mode..."))
-call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 7 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[5],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[7],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 14 seconds to select game mode..."))
+call DisplayTimedTextToForce(bj_FORCE_PLAYER[9],7.,(("|cff00ff00"+(GetPlayerName(Player($A))+"|r"))+" has 14 seconds to select game mode..."))
 endif
 endif
 endif
-call StartTimerBJ(JO,false,7.)
+call StartTimerBJ(JO,false,14.)
 endfunction
 function COD takes nothing returns boolean
 return(GetClickedButton()==QI)
