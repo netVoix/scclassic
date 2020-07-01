@@ -12,7 +12,7 @@ import ObjEditingNatives
 	..setUnreal("udp1", 0.1)
 	..setUnreal("ubs1", 0.1)
 	..setString("ua1t", "pierce")
-	..setUnreal("ua1c", 1.53)
+	..setUnreal("ua1c", 1.8)
 	..setInt("ua1b", 26)
 	..setInt("ua1s", 5)
 	..setInt("udu1", 4)
