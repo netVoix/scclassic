@@ -4,7 +4,6 @@ import RegisterEvents
 import AnyiHeroPick
 
 
-
 function addForKill()
     let du = GetDyingUnit()
     let k = GetKillingUnit()
@@ -15,14 +14,15 @@ function addForKill()
             if antiHero[i] == 1 and players[i].isAllyOf(p)
                 //players[i].print("300")
                 players[i].addGold(300)
+                // WN[i + 4] = WN[1] + 300
     if du.isType(UNIT_TYPE_HERO)
         for i = 0 to 12
             //print(antiHero[i])
             if antiHero[i] == 1 and players[i].isAllyOf(p)
                 //players[i].print("120")
-                players[i].addGold(120)   
+                players[i].addGold(120)
+                // WN[i + 4] = WN[1] + 300   
 
 
 init
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
-

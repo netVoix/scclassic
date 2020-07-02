@@ -31,6 +31,7 @@ function infact()
         for i = 1 to 4
             print(WN[i + 4].toString() +" "+E[i]+playerss[i].getName()+"|r", 5)
 
+
 init
     let t = CreateTrigger()
     for i = 5 to 11 step 2
