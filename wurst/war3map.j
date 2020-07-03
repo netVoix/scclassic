@@ -25245,7 +25245,7 @@ if(CPH())then
 call SelectHeroSkill(GetTriggerUnit(),'A09E')
 call SelectHeroSkill(GetTriggerUnit(),'A05W')
 call SelectHeroSkill(GetTriggerUnit(),'A0M8')
-call SelectHeroSkill(GetTriggerUnit(),'A03E')
+call SelectHeroSkill(GetTriggerUnit(),'BeSt')
 if(CGH())then
 call UnitAddAbility(GetTriggerUnit(),'A03A')
 endif
@@ -31264,7 +31264,7 @@ if(Q0J())then
 call UnitAddAbility(GetEnteringUnit(),'A07B')
 else
 if(Q_J())then
-call UnitAddAbility(GetEnteringUnit(),'A0J1')
+call UnitAddAbility(GetEnteringUnit(),'PoSr')
 endif
 endif
 endif
