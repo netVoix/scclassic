@@ -29,7 +29,7 @@ import ObjEditingNatives
 	..setInt("ubdi", 0)
 	..setInt("ubsi", 0)
 	..setInt("ugol", 105)
-	..setInt("uhpm", 2050)
+	..setInt("uhpm", 2450)
 	..setInt("ulev", 9)
 	..setInt("ulum", 0)
 	..setInt("umpi", 0)
