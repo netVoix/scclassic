@@ -4,6 +4,7 @@ string array E
 string MWV=""
 integer MYV=0
 gamecache M3V=null
+trigger HCLModeResolve = CreateTrigger()
 player PSV=null
 player PUV=null
 unit X=null
@@ -2606,33 +2607,8 @@ call CreateNUnitsAtLoc(1,GetUnitTypeId(KO[7]),Player($F),GetRectCenter(SF),bj_UN
 set KO[7]=bj_lastCreatedUnit
 call CreateNUnitsAtLoc(1,GetUnitTypeId(KO[8]),Player($F),GetRectCenter(TF),bj_UNIT_FACING)
 set KO[8]=bj_lastCreatedUnit
-if MWV=="r" then
-call DisableTrigger(QU)
-call SetPlayerTechResearchedSwap('Rguv',1,P)
-call SetPlayerTechResearchedSwap('Rguv',1,S)
-call SetPlayerTechResearchedSwap('Rguv',1,Q)
-call SetPlayerTechResearchedSwap('Rguv',1,T)
-call SetPlayerTechResearchedSwap('Rguv',1,Z)
-call SetPlayerTechResearchedSwap('Rguv',1,Y)
-call SetPlayerTechResearchedSwap('Rguv',1,U)
-call SetPlayerTechResearchedSwap('Rguv',1,W)
-set RR=false
-set AR="|cff00ff00Standard Random"
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cff00ff00Random|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
-call StartTimerBJ(VE,false,1.)
-call CreateTimerDialogBJ(VE,"Game starts in")
-set EE=bj_lastCreatedTimerDialog
-call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
-call SetCameraFieldForPlayer(Q,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(T,GetUnitLoc(I),0)
-call SetCameraFieldForPlayer(T,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(S,GetUnitLoc(O),0)
-call SetCameraFieldForPlayer(S,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
-call SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-else
-call TriggerExecute(PU)
-endif
+
+call TriggerEvaluate(HCLModeResolve)
 endfunction
 function PDB takes nothing returns boolean
 return(RR==false)
@@ -18151,150 +18127,6 @@ return(RectContainsUnit(SJ,GetEnumUnit()))
 endfunction
 function WKF takes nothing returns boolean
 return(GetOwningPlayer(GetEnumUnit())==Player($B))
-endfunction
-function TolchokGeroev takes unit unn returns nothing
-call IssueImmediateOrderById(unn,$D0058)
-if(WKF())then
-if(U5F())then
-set EA[4]=GetRectCenter(NG)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-if(U4F())then
-set EA[4]=GetRectCenter(AG)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-if(U3F())then
-set EA[4]=GetRectCenter(RG)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(IG)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-endif
-endif
-else
-if(RectContainsUnit(SJ,unn))then
-if(U6F())then
-set EA[4]=GetRectCenter(NJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(IJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(RectContainsUnit(NK,unn))then
-if(U7F())then
-set EA[4]=GetRectCenter(KJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(MJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(RectContainsUnit(OF,unn))then
-if(U8F())then
-set EA[4]=GetRectCenter(SH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(PH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(RectContainsUnit(XF,unn))then
-if(WDF())then
-set EA[4]=GetRectCenter(BH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(DH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(GetUnitUserData(unn)==1)then
-if(U9F())then
-set EA[4]=GetRectCenter(NJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(IJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(GetUnitUserData(unn)==2)then
-if(WVF())then
-set EA[4]=GetRectCenter(KJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(MJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(GetUnitUserData(unn)==3)then
-if(WEF())then
-set EA[4]=GetRectCenter(SH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(PH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(GetUnitUserData(unn)==4)then
-if(WXF())then
-set EA[4]=GetRectCenter(BH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(DH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-else
-if(WIF())then
-set EA[4]=GetRectCenter(ZH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-if(WRF())then
-set EA[4]=GetRectCenter(GJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-if(WOF())then
-set EA[4]=GetRectCenter(XJ)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-else
-set EA[4]=GetRectCenter(KH)
-call IssuePointOrderByIdLoc(unn,$D000F,EA[4])
-call RemoveLocation(EA[4])
-endif
-endif
-endif
-endif
-endif
-endif
-endif
-endif
-endif
-endif
-endif
-endif
 endfunction
 function WLF takes nothing returns nothing
 // call UnitAddAbility(GetEnumUnit(), 'Apiv')

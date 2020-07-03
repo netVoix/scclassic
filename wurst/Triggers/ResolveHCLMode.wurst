@@ -1,0 +1,44 @@
+package ResolveHCLMode
+import ThreeRacePick
+
+function resolveHCLMode()
+    if MWV=="r"
+        DisableTrigger(QU)
+        SetPlayerTechResearchedSwap('Rguv',1,P)
+        SetPlayerTechResearchedSwap('Rguv',1,S)
+        SetPlayerTechResearchedSwap('Rguv',1,Q)
+        SetPlayerTechResearchedSwap('Rguv',1,T)
+        SetPlayerTechResearchedSwap('Rguv',1,Z)
+        SetPlayerTechResearchedSwap('Rguv',1,Y)
+        SetPlayerTechResearchedSwap('Rguv',1,U)
+        SetPlayerTechResearchedSwap('Rguv',1,W)
+        RR = false
+        AR = "|cff00ff00Standard Random"
+        DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cff00ff00Random|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
+        StartTimerBJ(VE,false,1.)
+        CreateTimerDialogBJ(VE,"Game starts in")
+        EE=bj_lastCreatedTimerDialog
+        PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
+        SetCameraFieldForPlayer(Q,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(T,GetUnitLoc(I),0)
+        SetCameraFieldForPlayer(T,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(S,GetUnitLoc(O),0)
+        SetCameraFieldForPlayer(S,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
+        SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+    else if MWV == "tp"
+        SetPlayerTechResearchedSwap('Rguv',1,P)
+        SetPlayerTechResearchedSwap('Rguv',1,S)
+        SetPlayerTechResearchedSwap('Rguv',1,Q)
+        SetPlayerTechResearchedSwap('Rguv',1,T)
+        SetPlayerTechResearchedSwap('Rguv',1,Z)
+        SetPlayerTechResearchedSwap('Rguv',1,Y)
+        SetPlayerTechResearchedSwap('Rguv',1,U)
+        SetPlayerTechResearchedSwap('Rguv',1,W)
+        threeRacePick()
+    else
+        TriggerExecute(PU)
+        
+
+init
+    HCLModeResolve.addCondition(Condition(function resolveHCLMode))

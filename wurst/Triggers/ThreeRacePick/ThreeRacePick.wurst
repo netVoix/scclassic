@@ -5,7 +5,7 @@ import LinkedList
 public timerdialog timdia
 
 
-function threeRacePick()
+public function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
         int threerace 
@@ -93,4 +93,6 @@ init
     let s = CreateTrigger()
     s.addCondition(Condition(function destroytimer))
     s.registerTimerExpireEvent(VE)
+
+
     
