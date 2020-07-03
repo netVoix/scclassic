@@ -1,11 +1,20 @@
 // package TestUnitTaker
 // 
 // import RegisterEvents
+// import Orders
+// import ClosureTimers
 // 
 // init
-// 	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
-//         GetTriggerUnit().setOwner(GetTriggerPlayer(), true)
-//         GetTriggerUnit().setLevel(25, true)
-//         A.remove()
-//         N.remove()
-//         L.remove()
+//     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELECTED) ->
+//         //GetTriggerUnit().addAbility('A6CX')
+//         //GetTriggerUnit().addAbility('A5CX')
+//         GetTriggerUnit().issueImmediateOrderById(OrderIds.stop)
+//         if GetOwningPlayer(GetTriggerUnit()) != GetTriggerPlayer()
+//             GetTriggerUnit().setLevel(26, true)
+//             GetTriggerUnit().setOwner(GetTriggerPlayer(), false)
+//         // if GetTriggerUnit().isType(UNIT_TYPE_HERO)
+//         //     let u = GetTriggerUnit()
+//         //     doAfter(10) ->
+//         //         u.kill()
+//     // registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ISSUED_ORDER) ->
+//     //     print(GetIssuedOrderId().toString())

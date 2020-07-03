@@ -43,5 +43,4 @@ init
         t.registerPlayerChatEvent(Player(i2), "-re", true)
         t.registerPlayerChatEvent(Player(i2), "-hk", true)
         t.registerPlayerChatEvent(Player(i2), "-gh", true)
-
     t.addCondition(Condition(function infact))
