@@ -8,8 +8,8 @@ function addForKill()
     let du = GetDyingUnit()
     let k = GetKillingUnit()
     let p = GetOwningPlayer(k)
-    let trup = GetUnitName(du)
-    let ubiyza = GetUnitName(k)
+    // let trup = GetUnitName(du)
+    // let ubiyza = GetUnitName(k)
     if du.isType(UNIT_TYPE_ANCIENT) and du.isType(UNIT_TYPE_HERO)
         for i = 0 to 12
             //print(antiHero[i])
@@ -17,7 +17,7 @@ function addForKill()
                 // players[i].print(ubiyza + " killed " + trup + " and brought his allies for this extra 300 gold")
                 players[i].addGold(300)
                 // WN[i + 4] = WN[1] + 300
-    if du.isType(UNIT_TYPE_HERO) 
+    if du.isType(UNIT_TYPE_HERO) and du.isType(UNIT_TYPE_ANCIENT) == false
         for i = 0 to 12
             //print(antiHero[i])
             if antiHero[i] == 1 and players[i].isAllyOf(p) and players[i] != p
