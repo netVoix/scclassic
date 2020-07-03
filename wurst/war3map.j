@@ -31982,7 +31982,7 @@ if(WMJ())then
 call UnitAddAbility(GetEnteringUnit(),'A07B')
 else
 if(WLJ())then
-call UnitAddAbility(GetEnteringUnit(),'A0J1')
+call UnitAddAbility(GetEnteringUnit(),'PoSr')
 endif
 endif
 endif
