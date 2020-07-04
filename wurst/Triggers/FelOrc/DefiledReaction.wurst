@@ -1,0 +1,23 @@
+package DefiledReaction
+
+import ClosureTimers
+import MirrorImageFelOrc
+
+
+
+function defiledReaction()
+    let aid = GetSpellAbilityId()
+    if aid == 'A0MP'
+        let u = GetSpellAbilityUnit()
+        let lvl = GetUnitAbilityLevel(u, aid)
+        u.removeAbility('A016')
+        u.addAbility(DEFILED_REACTION_ID)
+        doAfter(3 + lvl.toReal()) ->
+            u.removeAbility(DEFILED_REACTION_ID)
+            u.addAbility('A016')
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function defiledReaction))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST)
