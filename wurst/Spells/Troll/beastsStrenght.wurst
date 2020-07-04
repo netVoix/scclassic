@@ -4,7 +4,7 @@ import ObjEditingNatives
 
 
 @compiletime function create_w3a_A03E()
-	createObjectDefinition("w3a", 'BeSt', 'Assk')
+	createObjectDefinition("w3a", 'BStr', 'Assk')
 	..setLvlDataString("arac", 0, 0, "orc")
 	..setLvlDataString("ahky", 0, 0, "")
 	..setLvlDataInt("abpx", 0, 0, 3)

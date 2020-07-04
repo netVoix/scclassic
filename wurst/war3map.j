@@ -25222,7 +25222,7 @@ if(CPH())then
 call SelectHeroSkill(GetTriggerUnit(),'A09E')
 call SelectHeroSkill(GetTriggerUnit(),'A05W')
 call SelectHeroSkill(GetTriggerUnit(),'A0M8')
-call SelectHeroSkill(GetTriggerUnit(),'BeSt')
+call SelectHeroSkill(GetTriggerUnit(),'BStr')
 if(CGH())then
 call UnitAddAbility(GetTriggerUnit(),'A03A')
 endif

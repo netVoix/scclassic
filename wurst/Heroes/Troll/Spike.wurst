@@ -6,7 +6,7 @@ import ObjEditingNatives
 @compiletime function create_w3u_Orex()
 	createObjectDefinition("w3u", 'Orex', 'Orex')
 	..setInt("ucam", 0)
-	..setString("uhab", "A09E,A05W,A0M8,BeSt")
+	..setString("uhab", "A09E,A05W,A0M8,BStr")
 	..setReal("urun", 240.0)
 	..setReal("uwal", 100.0)
 	..setInt("ubpx", 3)
