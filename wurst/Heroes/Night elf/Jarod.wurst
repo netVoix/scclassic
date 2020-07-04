@@ -62,7 +62,7 @@ import ObjEditingNatives
 	..setString("unam", "Shadow Dancer")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNLarodar.blp")
 	..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNLarodar.blp")
-	..setString("utub", "|cffffcc00Hero Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cff1c86eeFighter|r |n|n|cffffcc00Can learn:|r |n|cff00ffffWhirlwind|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead10% to retaliate 80-140 damage|r |n|n|cffff00ffSmoke Bomb|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead-30% MS, 18-30% miss chance|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cff00ffffEvasion|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead8-20% to evade an attack|r |n|n|cff00ffffShadow Dance|r |cff6c7b8b(Self Spell)|r |n  |cffffdead3 illusions for 10-22s|r |n  |cff6c7b8b(illusions deal 25% damage)|r")
+	..setString("utub", "|cffffcc00Hero Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cff1c86eeFighter|r |n|n|cffffcc00Can learn:|r |n|cff00ffffWhirlwind|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead10% to retaliate 80-140 damage|r |n|n|cffff00ffSmoke Bomb|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead-30% MS, 18-30% miss chance|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cff00ffffEvasion|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead8-20% to evade an attack|r |n|n|cff00ffffShadow Dance|r |cff6c7b8b(Self Spell)|r |n  |cffffdead3 illusions for 10-22s|r |n  |cff6c7b8b(illusions deal 1% damage)|r")
 	..setString("utip", "Train Shadow Dancer")
 	..setString("uabi", "AInv,A0ES")
 	..setString("ua1g", "air,debris,ground,item,structure,ward")
