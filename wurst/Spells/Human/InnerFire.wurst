@@ -1,0 +1,34 @@
+package InnerFire
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+
+public let INNER_FIRE_ID = compiletime(ABIL_ID_GEN.next())
+public let INNER_FIRE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function innerfire()
+    new AbilityDefinitionInnerFireCreep(INNER_FIRE_ID)
+    ..setHeroAbility(false)
+    ..setLevels(4)
+    ..setRequirements("R01Q") 
+    ..setRequiredLevel(1)
+    ..presetCastRange(lvl -> 600) 
+    ..presetCooldown(lvl -> 25) 
+    ..presetDamageIncrease(lvl -> 0.05) 
+    ..presetDefenseIncrease(lvl -> 1) 
+    ..presetDurationNormal(lvl -> 25) 
+    ..presetManaCost(lvl -> 25 + lvl * 1) 
+    ..presetTargetsAllowed(lvl -> "friend,ground,neutral,nonhero,organic,self")
+    ..presetBuffs(lvl -> commaList(INNER_FIRE_BUFF_ID)) 
+
+
+@compiletime function create_w3h_Binf()
+    createObjectDefinition("w3h", INNER_FIRE_BUFF_ID, 'Binf')
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNInnerFire.blp")
+    ..setString("ftip", "Inner Fire")
+    ..setString("fube", "This warrior is reinforced by Inner Fire; its damage and armor are increased.")
+    ..setInt("fspd", 2)
+    ..setString("ftat", "Abilities\\Spells\\Human\\InnerFire\\InnerFireTarget.mdx")
+    ..setString("fta0", "")

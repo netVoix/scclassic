@@ -1,0 +1,20 @@
+package CritikalStrikeMarksman
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let CSM = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0B6()
+	createObjectDefinition("w3a", CSM, 'ACct')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataInt("abpx", 0, 0, 0)
+	..setLvlDataString("aub1", 1, 0, "Gives a 15% chance to do 2.5 times normal damage on an attack.")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataInt("alev", 0, 0, 4)
+	..setLvlDataString("arqa", 0, 0, "1")
+	..setLvlDataString("atp1", 1, 0, "Critical Strike")
+	..setLvlDataUnreal("Ocr2", 1, 2, 2.5)
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNCritical.blp")
+	..setLvlDataUnreal("Ocr1", 1, 1, 15.0)

@@ -12,8 +12,11 @@ function defiledReaction()
         let lvl = GetUnitAbilityLevel(u, aid)
         u.removeAbility('A016')
         u.addAbility(DEFILED_REACTION_ID)
+        u.addAbility('PoSr')
+        u.setAbilityLevel('PoSr', 2)
         doAfter(3 + lvl.toReal()) ->
             u.removeAbility(DEFILED_REACTION_ID)
+            u.removeAbility('PoSr')
             u.addAbility('A016')
 
 
