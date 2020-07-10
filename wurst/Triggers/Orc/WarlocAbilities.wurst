@@ -51,8 +51,6 @@ function essenceDrawing(unit u)
     // text.setColor(7, 25, 67, 0)
     // text.setVelocity(90, 0)
 
-function test(unit u)
-
 
 init
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->

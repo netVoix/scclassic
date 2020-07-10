@@ -1,19 +1,24 @@
 package SpelCastGush
 
 import Orders
+import ClosureForGroups
 
 
 function spelCast()
     let u = GetAttacker()
     let aid = GetAttackedUnitBJ()
     let GP = aid.getTypeId()
+    let GA = u.getTypeId()
     if GP == 'Hgam'
         if u.isType(UNIT_TYPE_MELEE_ATTACKER)
-            // print("Stun!!!")
+        //     // print("Stun!!!")
             aid.issueImmediateOrderById(OrderIds.stomp)
         if u.isType(UNIT_TYPE_RANGED_ATTACKER)
             // print("Wave!!!")
             aid.issueTargetOrderById(OrderIds.carrionswarm, u)
+    if GA == 'Hgam'
+        forUnitsInRange(u.getPos(), 400) (unit x) ->
+
 
 
 init
