@@ -1,0 +1,31 @@
+package FireBoltWarloc
+
+import AbilityObjEditing
+import ObjectIdGenerator
+
+public let FIRE_BOLT_WARLOC_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function fireBolt()
+    new AbilityDefinitionFireBoltwarlock(FIRE_BOLT_WARLOC_ID)
+    ..setHeroAbility(false)
+    ..setRequirements("")
+    ..setLevels(4)
+    ..presetCastRange(lvl -> 600) 
+    ..presetCooldown(lvl -> 30) 
+    ..presetManaCost(lvl -> 51 + lvl - 1) 
+    ..presetDamage(lvl -> 50 * lvl.toReal()) 
+    ..presetDurationNormal(lvl -> 0.01)
+    ..presetDurationHero(lvl -> 0.01)
+    ..presetTooltipNormal(lvl -> "Fire Bolt " + lvl.toString()) 
+    ..presetTooltipNormalExtended(lvl -> "Deals " + (50 * lvl).toString() + " damage") 
+        
+        
+        
+        
+            
+        
+    
+        
+
+

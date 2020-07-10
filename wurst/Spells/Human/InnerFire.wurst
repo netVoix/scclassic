@@ -26,6 +26,8 @@ public let INNER_FIRE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setManaCost(5, 24)
     ..presetTargetsAllowed(lvl -> "friend,ground,neutral,nonhero,organic,self")
     ..presetBuffs(lvl -> commaList(INNER_FIRE_BUFF_ID)) 
+    ..presetTooltipNormal(lvl -> "Inner Fire " + (lvl - 1).toString()) 
+    ..presetTooltipNormalExtended(lvl -> "Increases unit damage by " + (5 * (lvl - 1)).toString() + "% and armor by " + (lvl - 1).toString()) 
 
 
 @compiletime function create_w3h_Binf()

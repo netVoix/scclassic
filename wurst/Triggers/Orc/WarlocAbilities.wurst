@@ -1,0 +1,62 @@
+package WarlocAbilities
+
+import RegisterEvents
+import FireBoltWarloc
+import Orders
+import ClosureForGroups
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+function fireBoltCast(unit u)
+    forNearestUnit(u.getPos(), 600,  Filter(function isEnemyUnit)) x ->
+        u.issueTargetOrderById(OrderIds.firebolt, x)
+
+
+function fireBoltRefresh(unit u)
+    let aid = GetSpellAbilityId()
+    if aid == FIRE_BOLT_WARLOC_ID
+        let random = GetRandomInt(1, 100)
+        for i = 1 to 10 * GetUnitAbilityLevel(u, FIRE_BOLT_WARLOC_ID)
+            if i == random
+                let lvl = GetUnitAbilityLevel(u, FIRE_BOLT_WARLOC_ID)
+                u.removeAbility(FIRE_BOLT_WARLOC_ID)
+                u.addAbility(FIRE_BOLT_WARLOC_ID)
+                u.setAbilityLevel(FIRE_BOLT_WARLOC_ID, lvl)
+                CreateTextTag()
+                let text = GetLastCreatedTextTag()
+                text.setText("Fire!", 8)
+                text.setPos(GetUnitX(u), GetUnitY(u), 128)
+                text.setPermanent(false)
+                text.setLifespan(4)
+                text.setAge(3)
+                text.setColor(100, 0, 0, 0)
+                text.setVelocity(90, 0)
+
+
+function essenceDrawing(unit u)
+    let lvl = GetPlayerTechCountSimple('Rost', GetOwningPlayer(u))
+    u.addMana(10 * lvl.toReal())
+    CreateTextTag()
+    let text = GetLastCreatedTextTag()
+    text.setText((10 * lvl.toReal()).toString(), 8)
+    text.setPos(GetUnitX(u), GetUnitY(u), 128)
+    text.setPermanent(false)
+    text.setLifespan(4)
+    text.setAge(3)
+    text.setColor(7, 25, 67, 0)
+    text.setVelocity(90, 0)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        fireBoltRefresh(GetSpellAbilityUnit())
+
+    
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        essenceDrawing(GetKillingUnit())
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        fireBoltCast(GetAttacker())
