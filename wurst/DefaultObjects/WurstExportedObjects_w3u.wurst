@@ -8244,7 +8244,7 @@ import ObjEditingNatives
 	..setInt("ucam", 0)
 	..setString("unam", "Zealot")
 	..setString("uhot", "")
-	..setString("upgr", "Rhrt,Rhpm,Rhss,R02G")
+	..setString("upgr", "Rhrt,Rhpm,Rhss,R02G,R01R")
 	..setInt("usrg", 180)
 	..setInt("upri", 3)
 	..setInt("uhpm", 525)

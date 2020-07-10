@@ -30269,8 +30269,8 @@ function KLJ takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='hhes')and(GetIssuedOrderId()==$D0057)
 endfunction
 function KMJ takes nothing returns nothing
-call UnitAddAbility(GetTriggerUnit(),'A00L')
-call SetUnitAbilityLevelSwapped('A00L',GetTriggerUnit(),GetUnitAbilityLevelSwapped('A00O',GetTriggerUnit()))
+call UnitAddAbility(GetTriggerUnit(),'DeDw')
+call SetUnitAbilityLevelSwapped('DeDw',GetTriggerUnit(),GetUnitAbilityLevelSwapped('A00O',GetTriggerUnit()))
 endfunction
 function KPJ takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='hhes')and(GetIssuedOrderId()==$D0058)
