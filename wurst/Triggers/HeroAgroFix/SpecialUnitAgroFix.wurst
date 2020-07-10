@@ -1,0 +1,25 @@
+package SpecialUnitAgroFix
+
+import RegisterEvents
+import ClosureForGroups
+import Orders
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetAttacker().getOwner())  and fu.isType(UNIT_TYPE_HERO) and fu.isType(UNIT_TYPE_ANCIENT)  and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+
+function handleUnit(unit u)
+    if u.isType(UNIT_TYPE_HERO) and u.getLevel() >= 4 and u.isType(UNIT_TYPE_ANCIENT)
+        forNearestUnit(u.getPos(), 1000,  Filter(function isEnemyUnit)) x ->
+            u.issueTargetOrderById(OrderIds.attack, x)
+
+            
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        if not GetTriggerUnit().isType(UNIT_TYPE_HERO) and not GetTriggerUnit().isType(UNIT_TYPE_STRUCTURE) and not GetTriggerUnit().isType(UNIT_TYPE_STUNNED)
+            handleUnit(GetAttacker())   
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        handleUnit(GetSpellAbilityUnit())

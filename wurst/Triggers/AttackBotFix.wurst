@@ -1,7 +1,9 @@
 package AttackBotFix
+
 import Orders
 import HeroAgroFix
 import ClosureForGroups
+
 
 function isEnemyUnit() returns bool
     let fu = GetFilterUnit()
@@ -15,6 +17,7 @@ function attackBotAct()
             forNearestUnit(attackBot.getPos(), 1000,  Filter(function isEnemyUnit)) x ->
                 attackBot.issueTargetOrderById(OrderIds.attack, x)
                 // print(x.getName())
+
 
 init
     let t = CreateTrigger()
