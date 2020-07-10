@@ -1,0 +1,20 @@
+package AddLevelInnerFire
+
+import RegisterEvents
+import HumanMages
+import InnerFire
+
+
+function addInnerFire(unit u)
+    let lvl = GetPlayerTechCountSimple('R01Q', GetOwningPlayer(u))
+    let lvlAb = GetUnitAbilityLevel(u, INNER_FIRE_ID)
+    if u.isHumanMage() and not lvl + 1 < lvlAb
+        u.setAbilityLevel(INNER_FIRE_ID, 1 + lvl)        
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        addInnerFire(GetSpellAbilityUnit())
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        addInnerFire(GetAttacker())

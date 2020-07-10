@@ -3,6 +3,9 @@ package HumanMages
 import ObjEditingNatives
 import ObjectIds
 import InnerFire
+import LinkedList
+
+let data = asList('nemi', 'nhym')
 
 
 @compiletime function create_w3u_nemi()
@@ -100,3 +103,7 @@ import InnerFire
     ..setInt("usid", 1000)
     ..setString("udaa", "")
     ..setInt("uclb", 255)
+
+
+public function unit.isHumanMage() returns bool
+    return data.has(this.getTypeId())
