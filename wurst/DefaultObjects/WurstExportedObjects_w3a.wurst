@@ -15801,24 +15801,6 @@ import ObjEditingNatives
 	..setLvlDataInt("abpx", 0, 0, 0)
 
 
-@compiletime function create_w3a_A0BT()
-	createObjectDefinition("w3a", 'A0BT', 'Apxf')
-	..setLvlDataString("amat", 0, 0, "DO_RocketMissile.mdx")
-	..setLvlDataInt("amsp", 0, 0, 1200)
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNClusterRockets.blp")
-	..setLvlDataUnreal("pxf1", 1, 1, 400.0)
-	..setLvlDataUnreal("pxf2", 1, 2, 0.0)
-	..setLvlDataUnreal("ahdu", 1, 0, 0.1)
-	..setLvlDataUnreal("adur", 1, 0, 0.1)
-	..setLvlDataString("anam", 0, 0, "AA Missiles")
-	..setLvlDataString("atp1", 1, 0, "AA Missiles")
-	..setLvlDataString("abuf", 1, 0, "Bpxf")
-	..setLvlDataInt("abpx", 0, 0, 3)
-	..setLvlDataString("atar", 1, 0, "air,enemies,neutral")
-	..setLvlDataUnreal("aare", 1, 0, 1200.0)
-	..setLvlDataUnreal("acdn", 1, 0, 7.0)
-
-
 @compiletime function create_w3a_A0BU()
 	createObjectDefinition("w3a", 'A0BU', 'Apxf')
 	..setLvlDataString("amat", 0, 0, "Abilities\\Weapons\\GyroCopter\\GyroCopterMissile.mdl")
