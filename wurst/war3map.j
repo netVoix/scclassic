@@ -30803,7 +30803,7 @@ endif
 endif
 endfunction
 function PMJ takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='orai')or(GetUnitTypeId(GetAttacker())=='osw1')
+return(GetUnitTypeId(GetAttacker())=='orai')or(GetUnitTypeId(GetAttacker())=='osw1')or(GetUnitTypeId(GetAttacker())=='nsko')
 endfunction
 function PPJ takes nothing returns boolean
 return(((IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE))or(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)))!=false)!=false
@@ -32081,7 +32081,7 @@ call UnitApplyTimedLifeBJ(23.,'BTLF',bj_lastCreatedUnit)
 call RemoveLocation(XO[36])
 endfunction
 function Y8J takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='nchr')or(GetUnitTypeId(GetAttacker())=='nslr')
+return(GetUnitTypeId(GetAttacker())=='nchr')or(GetUnitTypeId(GetAttacker())=='nslr')or(GetUnitTypeId(GetAttacker())=='owar')
 endfunction
 function Y9J takes nothing returns boolean
 return(((IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE))or(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)))!=false)!=false
