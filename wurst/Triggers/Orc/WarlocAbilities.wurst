@@ -39,17 +39,19 @@ function fireBoltRefresh(unit u)
 
 
 function essenceDrawing(unit u)
-    let lvl = GetPlayerTechCountSimple('Rost', GetOwningPlayer(u))
-    u.addMana(10 * lvl.toReal())
-    // CreateTextTag()
-    // let text = GetLastCreatedTextTag()
-    // text.setText((10 * lvl.toReal()).toString(), 8)
-    // text.setPos(GetUnitX(u), GetUnitY(u), 128)
-    // text.setPermanent(false)
-    // text.setLifespan(4)
-    // text.setAge(3)
-    // text.setColor(7, 25, 67, 0)
-    // text.setVelocity(90, 0)
+    let war = u.getTypeId()
+    if war == 'nw2w'
+        let lvl = GetPlayerTechCountSimple('Rost', GetOwningPlayer(u))
+        u.addMana(10 * lvl.toReal())
+        // CreateTextTag()
+        // let text = GetLastCreatedTextTag()
+        // text.setText((10 * lvl.toReal()).toString(), 8)
+        // text.setPos(GetUnitX(u), GetUnitY(u), 128)
+        // text.setPermanent(false)
+        // text.setLifespan(4)
+        // text.setAge(3)
+        // text.setColor(7, 25, 67, 0)
+        // text.setVelocity(90, 0)
 
 
 init

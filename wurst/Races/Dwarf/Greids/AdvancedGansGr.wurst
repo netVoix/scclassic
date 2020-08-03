@@ -33,7 +33,7 @@ import ObjEditingNatives
 	..setLvlDataUnreal("gmo2", 0, 0, 0.05)
 	..setLvlDataUnreal("gba2", 0, 0, 0.05)
 	..setLvlDataString("ghk1", 2, 0, "X")
-	..setLvlDataString("greq", 4, 0, "hgra")
+	..setLvlDataString("greq", 4, 0, "htow")
 	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNDwarvenLongRifle.blp")
 	..setLvlDataString("ghk1", 3, 0, "X")
 	..setLvlDataString("ghk1", 4, 0, "X")
