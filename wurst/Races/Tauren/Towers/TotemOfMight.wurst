@@ -45,4 +45,4 @@ import ObjEditingNatives
 	..setLvlDataString("greq", 5, 0, "Rnsb")
 	..setLvlDataString("gar1", 5, 0, "ReplaceableTextures\\CommandButtons\\BTNReincarnation.blp")
 	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r bonus damage in 1500 AoE |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|n|cff6c7b8bLv1: +20% damage for 60 seconds |nLv2: +40% damage for 100 seconds |nLv3: +60% damage for 140 seconds|r |n|cff00ffffLv4:|r |cffffcc00+80%|r damage for |cffffcc00180|r seconds")
-	..setLvlDataString("greq", 4, 0, "ncbc")
+	..setLvlDataString("greq", 4, 0, "ogre")
