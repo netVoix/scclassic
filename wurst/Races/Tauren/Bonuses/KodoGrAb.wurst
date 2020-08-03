@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "orc")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Kodo Beast|r replaces |cffffcc00Slingshot|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+600 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cff00ffffDecapitation|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(20% to kill unit instantly)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(affects non-Hero units only)|r |n|cffff00ffFear Aura|r |cff6c7b8b(Disable Aura)|r |n |cffffdead(20% damage reduction)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadMelee Weapons|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadProof of Strength|r |cffffcc00Kodo Beast|r replaces |cffffcc00Slingshot|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+600 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cff00ffffDecapitation|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(20% to kill unit instantly)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(affects non-Hero units only)|r |n|cffff00ffFear Aura|r |cff6c7b8b(Disable Aura)|r |n |cffffdead(20% damage reduction)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadMelee Weapons|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Kodo Beast")
 	..setLvlDataString("atp1", 1, 0, "Kodo Beast")
