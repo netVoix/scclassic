@@ -1,0 +1,33 @@
+package FelStone
+
+import ObjEditingNatives
+
+public let FEL_STONE_ID = 'FELS'
+public let FEL_STONE_DECAY_AURA_ID = 'A0SG'
+
+@compiletime function create_w3t_FelS()
+    createObjectDefinition("w3t", FEL_STONE_ID, 'hlst')
+    ..setString("icla", "Permanent")
+    ..setInt("iusa", 0)
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("iuse", 0)
+    ..setInt("iper", 0)
+    ..setInt("igol", 0)
+    ..setString("ides", "")
+    ..setString("unam", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+    ..setString("iabi", FEL_STONE_DECAY_AURA_ID.toRawCode())
+    ..setString("icid", FEL_STONE_DECAY_AURA_ID.toRawCode())
+    ..setString("utip", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
+    ..setString("utub", "20 dmg/s to units |n|cff6C7B8B(600 range)|r")
+
+@compiletime function create_w3a_A0SG()
+    createObjectDefinition("w3a", FEL_STONE_DECAY_AURA_ID, 'AIcf')
+    ..setLvlDataInt("Icfd", 1, 1, 20)
+    ..setLvlDataUnreal("aare", 1, 0, 600.0)
+    ..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,organic,hero,mechanical,nonhero")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+    ..setLvlDataString("anam", 0, 0, "Decay Aura")
+    ..setLvlDataString("abuf", 1, 0, "B04X")

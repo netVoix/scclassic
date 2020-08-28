@@ -1,10 +1,31 @@
-package MannorochsBlood
+package MannorothBlood
+
 import ObjEditingNatives
 
+public let MANNOROTH_BLOOD_ID = 'MANB'
+public let MANNOROTH_BLOOD_AURA_ID = 'A0SH'
 
+
+@compiletime function create_w3t_MANB()
+	createObjectDefinition("w3t", MANNOROTH_BLOOD_ID, 'pnvu')
+	..setString("icla", "Permanent")
+	..setInt("iusa", 0)
+	..setInt("igol", 0)
+	..setInt("ilev", 5)
+	..setInt("ilvo", 5)
+	..setInt("iprn", 0)
+	..setString("uhot", "")
+	..setInt("iuse", 0)
+	..setInt("iper", 0)
+	..setString("ides", "")
+	..setString("unam", "|cff00ffffMannoroth's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setString("utip", "|cff00ffffMannoroth's Blood|r  |cff6c7b8b(Lv4)|r")
+	..setString("utub", "+20% units attack rate |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(600 range)|r")
+	..setString("iabi", MANNOROTH_BLOOD_AURA_ID.toRawCode())
+	..setString("icid", MANNOROTH_BLOOD_AURA_ID.toRawCode())
 
 @compiletime function create_w3a_A0SH()
-	createObjectDefinition("w3a", 'A0SH', 'AOae')
+	createObjectDefinition("w3a", MANNOROTH_BLOOD_AURA_ID, 'AOae')
 	..setLvlDataString("arhk", 0, 0, "")
 	..setLvlDataInt("alev", 0, 0, 1)
 	..setLvlDataString("aret", 0, 0, "Learn Frost Aura - [|cffffcc00Level %d|r]")
