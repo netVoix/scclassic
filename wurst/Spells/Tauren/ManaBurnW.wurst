@@ -14,6 +14,7 @@ import ObjEditingNatives
 	..setLvlDataUnreal("fbk3", 2, 3, 20.0)
 	..setLvlDataUnreal("fbk1", 1, 1, 50.0)
 	..setLvlDataUnreal("fbk1", 2, 1, 20.0)
+	..setLvlDataString("atar", 1, 0, "air,ground,enemy,neutral,nonancient")
 	..setLvlDataString("atar", 2, 0, "air,ground,enemy,neutral,nonancient")
 	..setLvlDataString("atp1", 1, 0, "Vorpal Missiles")
 	..setLvlDataString("atp1", 2, 0, "Vorpal Missile (Lv2)")
