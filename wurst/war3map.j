@@ -25477,10 +25477,10 @@ call SelectHeroSkill(GetTriggerUnit(),'AUav')
 call SelectHeroSkill(GetTriggerUnit(),'AUan')
 endif
 if(DGH())then
-call SelectHeroSkill(GetTriggerUnit(),'ANsi')
-call SelectHeroSkill(GetTriggerUnit(),'A04R')
-call SelectHeroSkill(GetTriggerUnit(),'A0N5')
-call SelectHeroSkill(GetTriggerUnit(),'ANch')
+// call SelectHeroSkill(GetTriggerUnit(),'ANsi')
+// call SelectHeroSkill(GetTriggerUnit(),'AIdf')
+// call SelectHeroSkill(GetTriggerUnit(),'A0N5')
+// call SelectHeroSkill(GetTriggerUnit(),'ANch')
 endif
 if(DHH())then
 call SelectHeroSkill(GetTriggerUnit(),'AUfn')

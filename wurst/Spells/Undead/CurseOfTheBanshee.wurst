@@ -1,0 +1,23 @@
+package CurseOfTheBanshee
+
+
+import RegisterEvents
+import ObjectIdGenerator
+
+
+public let CURSE_OF_THE_BANSHEE_ID = compiletime(ABIL_ID_GEN.next())
+
+
+
+function addLevvelSylv(unit u)
+	let sulv = u.getTypeId()
+	if sulv == 'Nbrn'
+		u.selectSkill('ANsi')
+		u.selectSkill('A04R')
+		u.selectSkill('A0N5')
+		u.selectSkill('ANch')
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL) ->
+		addLevvelSylv(GetTriggerUnit())
