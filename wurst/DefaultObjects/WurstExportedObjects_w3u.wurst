@@ -112,7 +112,7 @@ import ObjEditingNatives
 	..setString("uhrt", "always")
 	..setString("upgr", "Rhac,Rhlh,R02F,R03S,R03T")
 	..setInt("ufma", 0)
-	..setString("unam", "Castle (Lv1)")
+	..setString("unam", "Castle (Lv1)") 
 	..setString("uhot", "")
 	..setString("urac", "human")
 	..setInt("ugol", 0)
@@ -2570,7 +2570,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00D")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -2625,7 +2625,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00J")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -2686,7 +2686,7 @@ import ObjEditingNatives
 	..setUnreal("udtm", 0.2)
 	..setString("uupt", "h00F")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uaap", "large")
@@ -2744,7 +2744,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00E")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 
 
@@ -2798,7 +2798,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00I")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 	..setInt("umh1", 1)
 
@@ -2857,7 +2857,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00Q")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 
 
@@ -2915,7 +2915,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00P")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 
 
@@ -2972,7 +2972,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00T")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 	..setString("uaap", "")
 
@@ -3030,7 +3030,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00W")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setInt("udef", 1)
@@ -3099,7 +3099,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00V")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("usid", 1800)
 
 
@@ -3155,7 +3155,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00Z")
 	..setInt("upri", 20)
-	..setInt("upoi", 800)
+	..setInt("upoi", 160)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -3904,7 +3904,7 @@ import ObjEditingNatives
 	..setInt("udu1", 15)
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -3961,7 +3961,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00C")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -4020,7 +4020,7 @@ import ObjEditingNatives
 	..setUnreal("udtm", 0.2)
 	..setString("uupt", "h00G")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uaap", "large")
@@ -4077,7 +4077,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setUnreal("udtm", 0.2)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uupt", "h011")
@@ -4133,7 +4133,7 @@ import ObjEditingNatives
 	..setInt("ubpy", 0)
 	..setString("uupt", "h00K")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -4190,7 +4190,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ubpy", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -4253,7 +4253,7 @@ import ObjEditingNatives
 	..setInt("ubpx", 3)
 	..setString("uupt", "h00H")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 
 
@@ -4309,7 +4309,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ubpx", 3)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h013")
 
@@ -4366,7 +4366,7 @@ import ObjEditingNatives
 	..setInt("ubpy", 0)
 	..setString("uupt", "h00L")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 	..setInt("umh1", 1)
 
@@ -4422,7 +4422,7 @@ import ObjEditingNatives
 	..setInt("ubpx", 3)
 	..setInt("ubpy", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h014")
 	..setInt("umh1", 1)
@@ -4479,7 +4479,7 @@ import ObjEditingNatives
 	..setInt("ubpx", 3)
 	..setString("uupt", "h00N")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setString("ua1t", "pierce")
 	..setInt("usid", 1800)
 	..setString("ua2m", "ShadowSpear.mdl")
@@ -4552,7 +4552,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ubpx", 3)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setString("ua1t", "pierce")
 	..setInt("usid", 1800)
 	..setString("uupt", "h015")
@@ -4629,7 +4629,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ua1s", 11)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h016")
 
@@ -4688,7 +4688,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00O")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 
 
@@ -4746,7 +4746,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00R")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 
 
@@ -4803,7 +4803,7 @@ import ObjEditingNatives
 	..setInt("udu1", 15)
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h017")
 
@@ -4861,7 +4861,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ubpy", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h018")
 	..setString("uaap", "")
@@ -4921,7 +4921,7 @@ import ObjEditingNatives
 	..setInt("ubpy", 0)
 	..setString("uupt", "h00S")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 	..setString("uaap", "")
 
@@ -4985,7 +4985,7 @@ import ObjEditingNatives
 	..setInt("udu1", 15)
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("usid", 1800)
 	..setString("uupt", "h019")
 
@@ -5050,7 +5050,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00U")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("usid", 1800)
 
 
@@ -5107,7 +5107,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setString("uupt", "h00X")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setInt("udef", 3)
@@ -5168,7 +5168,7 @@ import ObjEditingNatives
 	..setInt("udu1", 45)
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uupt", "h01A")
@@ -5229,7 +5229,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("ubpy", 0)
 	..setInt("upri", 20)
-	..setInt("upoi", 300)
+	..setInt("upoi", 640)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -5289,7 +5289,7 @@ import ObjEditingNatives
 	..setInt("ubpy", 0)
 	..setString("uupt", "h00Y")
 	..setInt("upri", 20)
-	..setInt("upoi", 600)
+	..setInt("upoi", 400)
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
@@ -5499,6 +5499,7 @@ import ObjEditingNatives
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
 	..setInt("udef", 7)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h011()
@@ -5555,6 +5556,7 @@ import ObjEditingNatives
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uaap", "large")
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h012()
@@ -5611,6 +5613,7 @@ import ObjEditingNatives
 	..setInt("umh1", 1)
 	..setString("ua1t", "siege")
 	..setUnreal("uma1", 0.05)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h013()
@@ -5666,6 +5669,7 @@ import ObjEditingNatives
 	..setInt("ubpx", 3)
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h014()
@@ -5721,6 +5725,7 @@ import ObjEditingNatives
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
 	..setInt("umh1", 1)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h015()
@@ -5793,6 +5798,7 @@ import ObjEditingNatives
 	..setInt("ua2h", 75)
 	..setString("ua2p", "ground,structure,debris,air,item,ward")
 	..setUnreal("uhd2", 0.5)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h016()
@@ -5849,6 +5855,7 @@ import ObjEditingNatives
 	..setInt("ua1s", 11)
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h017()
@@ -5905,6 +5912,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h018()
@@ -5962,6 +5970,7 @@ import ObjEditingNatives
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
 	..setString("uaap", "")
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h019()
@@ -6024,6 +6033,7 @@ import ObjEditingNatives
 	..setInt("uscb", 0)
 	..setInt("upri", 20)
 	..setInt("usid", 1800)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h01A()
@@ -6084,6 +6094,7 @@ import ObjEditingNatives
 	..setInt("ua1f", 200)
 	..setString("ua1p", "ground,structure,debris,air,item,ward")
 	..setUnreal("udl1", 0.35)
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_h01B()
@@ -6141,6 +6152,7 @@ import ObjEditingNatives
 	..setInt("udup", 2)
 	..setInt("usid", 1800)
 	..setString("uubs", "OMED")
+	..setInt("upoi", 880)
 
 
 @compiletime function create_w3u_u003()
