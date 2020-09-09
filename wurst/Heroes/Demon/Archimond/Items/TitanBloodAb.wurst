@@ -7,7 +7,7 @@ import ObjEditingNatives
 	..setLvlDataString("anam", 0, 0, "Titan's Blood")
 	..setLvlDataUnreal("Ear1", 1, 1, -0.2)
 	..setLvlDataString("abuf", 1, 0, "B041")
-	..setLvlDataString("atar", 1, 0, "air,enemies,ground,nonhero,organic, hero, nonancient")
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,nonhero,organic, hero")
 	..setLvlDataInt("Ear2", 1, 2, 1)
 	..setLvlDataString("atat", 0, 0, "")
 	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionOfVampirism.blp")

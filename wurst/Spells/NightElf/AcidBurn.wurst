@@ -1,0 +1,20 @@
+package AcidBurn
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_A015()
+	createObjectDefinition("w3a", 'A015', 'ACbh')
+	..setLvlDataUnreal("Hbh3", 1, 3, 400.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 0.0)
+	..setLvlDataUnreal("adur", 1, 0, 0.0)
+	..setLvlDataString("aub1", 1, 0, "Gives a 50% chance to deal masive damage to air units.")
+	..setLvlDataString("atar", 1, 0, "air,mechanical,nonancient,organic")
+	..setLvlDataUnreal("Hbh1", 1, 1, 50.0)
+	..setLvlDataString("arac", 0, 0, "nightelf")
+	..setLvlDataString("atp1", 1, 0, "Acid Burn")
+	..setLvlDataString("anam", 0, 0, "Acid Burn")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp")
+	..setLvlDataInt("amho", 0, 0, 1)
+	..setLvlDataString("amat", 0, 0, "Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl")
+	..setLvlDataInt("amsp", 0, 0, 1400)

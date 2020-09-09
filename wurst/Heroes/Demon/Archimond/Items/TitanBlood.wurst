@@ -13,6 +13,6 @@ import ObjEditingNatives
     ..setInt("iprn", 0)
     ..setString("ides", "")
     ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPotionOfVampirism.blp")
-    ..setString("utub", "-20% unit damage |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(does not affect Special unit)|r |n|cff6C7B8B(600 range)|r")
+    ..setString("utub", "-20% unit damage |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(600 range)|r")
     ..setString("iabi", "A0QZ")
     ..setString("icid", "A0QZ")
