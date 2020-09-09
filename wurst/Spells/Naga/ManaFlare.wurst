@@ -1,0 +1,15 @@
+package ManaFlare
+
+import ObjEditingNatives
+
+
+@compiletime function create_w3a_Amfl()
+	createObjectDefinition("w3a", 'Amfl', 'Amfl')
+	..setLvlDataUnreal("mfl2", 1, 2, 1.0)
+	..setLvlDataUnreal("mfl4", 1, 4, 99999.0)
+	..setLvlDataUnreal("mfl3", 1, 3, 99999.0)
+	..setLvlDataUnreal("aare", 1, 0, 600.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 60.0)
+	..setLvlDataUnreal("adur", 1, 0, 60.0)
+	..setLvlDataInt("amcs", 1, 0, 0) 
+	..setLvlDataUnreal("mfl1", 1, 1, 1.0)
