@@ -1,0 +1,17 @@
+package SelectSkill
+
+import CurseOfTheBanshee
+import RegisterEvents
+
+function selectSkill(unit u)
+	let hero = u.getTypeId()
+	if hero == 'Nbrn' //Сильвана
+		u.selectSkill('ANsi')
+		u.selectSkill(CURSE_OF_THE_BANSHEE_ID)
+		u.selectSkill('A0N5')
+		u.selectSkill('ANch')
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL) ->
+		selectSkill(GetTriggerUnit())

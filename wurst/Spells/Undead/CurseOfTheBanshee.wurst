@@ -1,7 +1,6 @@
 package CurseOfTheBanshee
 
 
-import RegisterEvents
 import ObjectIdGenerator
 import ObjEditingNatives
 import ObjectIds
@@ -89,15 +88,3 @@ public let SPAWN_COTB = compiletime(ABIL_ID_GEN.next())
 	..setLvlDataString("anam", 0, 0, "Curse of the Bunshee")
 
 
-function addLevvelSylv(unit u)
-	let sulv = u.getTypeId()
-	if sulv == 'Nbrn'
-		u.selectSkill('ANsi')
-		u.selectSkill(CURSE_OF_THE_BANSHEE_ID)
-		u.selectSkill('A0N5')
-		u.selectSkill('ANch')
-
-
-init
-	registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL) ->
-		addLevvelSylv(GetTriggerUnit())
