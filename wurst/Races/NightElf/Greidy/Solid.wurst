@@ -39,7 +39,7 @@ import ObjEditingNatives
 	..setLvlDataString("gnam", 4, 0, "Solid Boulders")
 	..setLvlDataString("gtp1", 4, 0, "Research Solid Boulders (|cff00ffffLv4|r) [|cffffcc00R|r]")
 	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r chance to stun on each attack |n|cffffcc00Affects:|r |cffffdeadAncient Defender|r and |cffffdeadAncient Protector|r |n|cff6c7b8b(does not affect Special unit)|r |n|n|cff6c7b8bLv1: 15% chance for 2.2 sec stun |nLv2: 25% chance for 2.4 sec stun|r |n|cff00ff00Lv3:|r |cffffcc0035%|r chance for |cffffcc002.6|r sec stun |n|cff6c7b8bLv4: 45% chance for 2.8 sec stun")
-	..setLvlDataString("greq", 4, 0, "ncbe")
+	..setLvlDataString("greq", 4, 0, "etol")
 	..setLvlDataString("gar1", 5, 0, "ReplaceableTextures\\CommandButtons\\BTNGolemStormBolt.blp")
 	..setLvlDataString("ghk1", 5, 0, "R")
 	..setLvlDataString("gnam", 5, 0, "Solid Boulders")

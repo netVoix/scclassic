@@ -46781,9 +46781,9 @@ endif
 endif
 else
 if(X3M())then
-call SetUnitScalePercent(GetTriggerUnit(),120.,120.,120.)
-call SetPlayerTechResearchedSwap('R04B',1,GetOwningPlayer(GetTriggerUnit()))
-call PlaySoundBJ(GK)
+// call SetUnitScalePercent(GetTriggerUnit(),120.,120.,120.)
+// call SetPlayerTechResearchedSwap('R04B',1,GetOwningPlayer(GetTriggerUnit()))
+// call PlaySoundBJ(GK)
 if(X2M())then
 set AA[1]=A
 set AA[2]=N

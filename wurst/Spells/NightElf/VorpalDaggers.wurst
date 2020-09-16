@@ -1,0 +1,44 @@
+package VorpalDaggers
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+
+public let VORPAL_DAGGERS_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A09R()
+	createObjectDefinition("w3a", VORPAL_DAGGERS_ID, 'Afbk')
+	..setLvlDataString("arac", 0, 0, "undead")
+	..setLvlDataInt("abpx", 0, 0, 0)
+	..setLvlDataInt("alev", 0, 0, 4)
+	..setLvlDataString("areq", 0, 0, "")
+	..setLvlDataString("arqa", 0, 0, "1")
+	..setLvlDataString("anam", 0, 0, "Vorpal Daggers")
+	..setLvlDataUnreal("fbk4", 2, 4, 1.0)
+	..setLvlDataUnreal("fbk2", 2, 2, 1.0)
+	..setLvlDataUnreal("fbk3", 1, 3, 6.0)
+	..setLvlDataUnreal("fbk3", 2, 3, 12.0)
+	..setLvlDataUnreal("fbk1", 1, 1, 6.0)
+	..setLvlDataUnreal("fbk1", 2, 1, 12.0)
+	..setLvlDataString("atar", 2, 0, "air,enemies,ground,neutral,nonancient")
+	..setLvlDataString("atp1", 1, 0, "Vorpal Daggers (Lv1)")
+	..setLvlDataString("atp1", 2, 0, "Vorpal Daggers (Lv2)")
+	..setLvlDataString("aub1", 1, 0, "Attacks destroy 6 mana per hit.")
+	..setLvlDataString("aub1", 2, 0, "Attacks destroy 12 mana per hit.")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNDaggerOfEscape.blp")
+	..setLvlDataString("atp1", 3, 0, "Vorpal Daggers (Lv3)")
+	..setLvlDataString("aub1", 3, 0, "Attacks destroy 18 mana per hit.")
+	..setLvlDataString("atar", 3, 0, "air,enemies,ground,neutral,nonancient")
+	..setLvlDataUnreal("fbk1", 3, 1, 18.0)
+	..setLvlDataUnreal("fbk3", 3, 3, 18.0)
+	..setLvlDataUnreal("fbk4", 3, 4, 1.0)
+	..setLvlDataUnreal("fbk2", 3, 2, 1.0)
+	..setLvlDataUnreal("fbk4", 4, 4, 1.0)
+	..setLvlDataUnreal("fbk2", 4, 2, 1.0)
+	..setLvlDataUnreal("fbk3", 4, 3, 24.0)
+	..setLvlDataUnreal("fbk1", 4, 1, 24.0)
+	..setLvlDataString("atar", 4, 0, "air,enemies,ground,neutral,nonancient")
+	..setLvlDataString("atp1", 4, 0, "Vorpal Daggers (Lv4)")
+	..setLvlDataString("aub1", 4, 0, "Attacks destroy 24 mana per hit.")
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,nonancient")

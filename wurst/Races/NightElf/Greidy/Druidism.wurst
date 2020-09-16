@@ -1,0 +1,39 @@
+package Druidism
+
+import ObjEditingNatives
+import ObjectIds
+import VorpalDaggers
+
+
+@compiletime function create_w3q_Redt()
+    createObjectDefinition("w3q", 'Redt', 'Redt')
+    ..setLvlDataString("gef1", 0, 0, "ratt")
+    ..setLvlDataString("ghk1", 2, 0, "W")
+    ..setLvlDataString("ghk1", 1, 0, "W")
+    ..setLvlDataString("greq", 2, 0, "e002")
+    ..setLvlDataInt("glvl", 0, 0, 3)
+    ..setLvlDataUnreal("gba2", 0, 0, 0.5)
+    ..setLvlDataUnreal("gmo2", 0, 0, 0.5)
+    ..setLvlDataString("gef3", 0, 0, "")
+    ..setLvlDataString("gef4", 0, 0, "")
+    ..setLvlDataString("gcls", 0, 0, "ranged")
+    ..setLvlDataInt("gbpy", 0, 0, 0)
+    ..setLvlDataInt("gglb", 0, 0, 500)
+    ..setLvlDataInt("gglm", 0, 0, 250)
+    ..setLvlDataInt("glmb", 0, 0, 0)
+    ..setLvlDataInt("glmm", 0, 0, 0)
+    ..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNDOTMasterTraining.blp")
+    ..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |nDruid can cast |cff00ff00Rejuvenation|r |n|cffffdeadHeals 125 HP over 5s|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n+12 Druid damage |n+0.5 MP/sec Druid mana reg")
+    ..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |nDruid can cast |cffff00ffEntangling Roots|r |n|cffffdeadDeals 25 dmg/sec for 4s|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n+12 Druid damage |n+0.5 MP/sec Druid mana reg")
+    ..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r |nDruid can cast |cffff0000Lesser Starfall|r |n|cffffdeadDeals 150 damage in an area|r |n+12 Druid damage |n+0.5 MP/sec Druid mana reg")
+    ..setLvlDataString("gnam", 1, 0, "Druidism")
+    ..setLvlDataString("gnam", 2, 0, "Druidism")
+    ..setLvlDataString("gnam", 3, 0, "Druidism")
+    ..setLvlDataString("gtp1", 1, 0, "Basic Druidism [|cffffcc00W|r]")
+    ..setLvlDataString("gtp1", 2, 0, "Improved Druidism [|cffffcc00W|r]")
+    ..setLvlDataString("gtp1", 3, 0, "Advanced Druidism [|cffffcc00W|r]")
+    ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNDOTMasterTraining.blp")
+    ..setLvlDataString("greq", 3, 0, "e000")
+    ..setLvlDataString("gco2", 0, 0, "" + commaList(VORPAL_DAGGERS_ID))
+    ..setLvlDataString("ghk1", 3, 0, "W")
+    ..setLvlDataInt("gtim", 0, 0, 17)
