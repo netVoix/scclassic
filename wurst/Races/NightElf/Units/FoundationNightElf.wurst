@@ -1,0 +1,39 @@
+package FoundationNightElf
+
+import ObjEditingNatives
+import ObjectIds
+import ServantOfTheNight
+
+
+@compiletime function create_w3u_o01V()
+	createObjectDefinition("w3u", 'o01V', 'ogre')
+	..setString("ures", "")
+	..setString("utra", "")
+	..setString("uabi", "Avul")
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setString("upgr", "")
+	..setInt("ufma", 0)
+	..setString("unam", "Foundation")
+	..setString("uhot", "")
+	..setString("uupt", "nmr6,eaow,eaom,edob,eaoe,etrp,edos,etol,nef0,eden,nef7," + commaList(SERVANTS_OF_THE_NIGHT_ID))
+	..setString("urac", "other")
+	..setInt("ugol", 0)
+	..setInt("ulum", 0)
+	..setInt("ubld", 1)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNStoneArchitecture.blp")
+	..setString("umdl", "BirthMesh.mdl")
+	..setInt("udef", 2)
+	..setString("ushb", "ShadowHouse")
+	..setReal("ussc", 4.0)
+	..setUnreal("uabr", 0.0)
+	..setString("uabt", "")
+	..setString("utyp", "mechanical")
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setUnreal("ucol", 100.0)
+	..setString("uubs", "OMED")
+	..setString("utip", "Foundation")
+	..setString("utub", "Upgrades into other structures.")
+	..setString("ureq", "e001")
+	..setReal("usca", 0.9)
+	..setInt("ubpx", 3)

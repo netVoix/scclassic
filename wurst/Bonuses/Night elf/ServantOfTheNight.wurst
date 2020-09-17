@@ -1,8 +1,9 @@
 package ServantOfTheNight
 import ObjEditingNatives
+import ObjectIdGenerator
 
 
-public let SERVANTS_OF_THE_NIGHT_ID  = 'ncbe' //compiletime(UNIT_ID_GEN.next())
+public let SERVANTS_OF_THE_NIGHT_ID  = compiletime(UNIT_ID_GEN.next())
 // 'ncbe'
 
 

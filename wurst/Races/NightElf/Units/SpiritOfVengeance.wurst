@@ -15,7 +15,7 @@ import ObjEditingNatives
 	..setString("ua1t", "chaos")
 	..setUnreal("uacq", 700.0)
 	..setUnreal("ua1c", 1.7)
-	..setInt("ua1b", 35)
+	..setInt("ua1b", 35) 
 	..setInt("ua1s", 9)
 	..setInt("udu1", 3)
 	..setUnreal("uma1", 0.0)
