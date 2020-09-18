@@ -11,7 +11,7 @@ import ObjEditingNatives
 	..setReal("ushw", 150.0)
 	..setReal("usca", 1.1)
 	..setReal("ussc", 1.2)
-	..setString("uabi", "A002,A021,Agyv")
+	..setString("uabi", "A002,A021,Agyv,PoSr")
 	..setString("ua1t", "chaos")
 	..setUnreal("uacq", 700.0)
 	..setUnreal("ua1c", 1.7)

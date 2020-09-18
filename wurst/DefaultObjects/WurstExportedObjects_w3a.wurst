@@ -18867,23 +18867,6 @@ import ObjEditingNatives
 	..setLvlDataInt("abpx", 0, 0, 0)
 
 
-@compiletime function create_w3a_A0G4()
-	createObjectDefinition("w3a", 'A0G4', 'ACev')
-	..setLvlDataString("arac", 0, 0, "undead")
-	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
-	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDemon Blood|r |n+1 level of |cffffdeadRapidshot|r |n|nOpen the Void portal and good things will happen. Great things will happen. Just open the portal. |n|n|cffffcc00Type:|r |cffa020f0Trolling|r")
-	..setLvlDataInt("achd", 0, 0, 1)
-	..setLvlDataString("anam", 0, 0, "True CHAOS")
-	..setLvlDataString("atp1", 1, 0, "True CHAOS")
-	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
-	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
-	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
-	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
-	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
-	..setLvlDataInt("abpx", 0, 0, 0)
-
-
 @compiletime function create_w3a_A0G6()
 	createObjectDefinition("w3a", 'A0G6', 'ACev')
 	..setLvlDataString("arac", 0, 0, "nightelf")

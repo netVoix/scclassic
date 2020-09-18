@@ -1,6 +1,8 @@
 package ForceOfNature
 
 import ObjEditingNatives
+import ServantOfTheNight
+import ObjectIds
 
 
 @compiletime function create_w3q_R01Z()
@@ -36,7 +38,7 @@ import ObjEditingNatives
 	..setLvlDataInt("gtim", 0, 0, 65)
 	..setLvlDataInt("glvl", 0, 0, 5)
 	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNEnt.blp")
-	..setLvlDataString("greq", 4, 0, "ncbe")
+	..setLvlDataString("greq", 4, 0, "" + commaList(SERVANTS_OF_THE_NIGHT_ID))
 	..setLvlDataString("ghk1", 4, 0, "F")
 	..setLvlDataString("gnam", 4, 0, "Force of Nature")
 	..setLvlDataString("gtp1", 4, 0, "Research Force of Nature (|cff00ffffLv4|r) [|cffffcc00F|r]")
