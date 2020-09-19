@@ -1,0 +1,50 @@
+package DesecratedSouls
+
+import RegisterEvents
+import Desecration
+import FelVoid
+import TrueCHAOS
+
+public int array desecratedSouls
+
+
+function chooseBonus(unit u)
+    let DS = u.getTypeId()
+    if DS == 'ushp'
+        let z = GetOwningPlayer(u)
+        for i = 0 to 12
+            if players[i].isAllyOf(z) 
+                desecratedSouls[i] = 1
+                // SetPlayerTechResearchedSwap(DESECRATION_ID, 1, players[i])
+                // SetPlayerTechResearchedSwap(DESECRATION_ID, 1, z)
+
+
+function voidspawn(unit u)
+    let DS = u.getTypeId()
+    let pl = GetOwningPlayer(GetDyingUnit())
+    for w = 0 to 12
+        if players[w].isAllyOf(pl) and players[w] != pl
+            let greid = GetPlayerTechCountSimple(DESECRATION_ID, players[w])
+            for i = 0 to 12
+                if players[i] == pl and desecratedSouls[i] == 1
+                    let r = GetRandomInt(1, 100)
+                    for q = 1 to 5 * greid
+                        if q == r
+                            if u.isStartVoid() and greid >= 1
+                                CreateNUnitsAtLoc(1, VOIDWRAITH_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                            if DS == 'nchw' and greid >= 2
+                                CreateNUnitsAtLoc(1, VOIDWALKER_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                            if DS == 'nrdr' and greid >= 3
+                                CreateNUnitsAtLoc(1, NETHER_DRAGON_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                            if u.isType(UNIT_TYPE_HERO) and greid >= 4
+                                CreateNUnitsAtLoc(1, VOID_MONSTROSITY_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        chooseBonus(GetTriggerUnit())
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        voidspawn(GetTriggerUnit())
+
+    
