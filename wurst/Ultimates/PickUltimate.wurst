@@ -56,3 +56,12 @@ init
             let u = selectedUlt[p.getId()]
             if castles[i].getOwner() == p and u != 0
                 castles[i].addAbility(u)
+            
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        let u = GetTriggerUnit()
+        let id = u.getTypeId()
+        if id == 'hctw' or id == 'ndmg'
+            SetPlayerTechResearchedSwap('R027', 1, u.getOwner())
+            CreateFogModifierRectBJ(true, u.getOwner(), FOG_OF_WAR_VISIBLE, bj_mapInitialPlayableArea)
+            u.addAbility(PICK_ULTIMATE_SPELLBOOK_ID)
+            selectedUlt[u.getOwner().getId()] = PICK_ULTIMATE_SPELLBOOK_ID

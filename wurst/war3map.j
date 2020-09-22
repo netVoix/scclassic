@@ -38476,63 +38476,63 @@ endif
 endif
 else
 if(YJK())then
-call PlaySoundBJ(XL)
-call SetUnitScalePercent(GetTriggerUnit(),160.,160.,160.)
-call EnableTrigger(CEO)
-set HB[31]=GetTriggerUnit()
-call SetPlayerTechResearchedSwap('R04E',1,GetOwningPlayer(HB[31]))
-set MI[$E]=5
-call CreateTextTagUnitBJ(I2S(MI[$E]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
-call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
-set LI[$E]=bj_lastCreatedTextTag
-call StartTimerBJ(FI[22],false,5.)
-set CA[1]=GetUnitLoc(NQA)
-set CA[2]=GetUnitLoc(N_A)
-set CA[3]=GetUnitLoc(CXA)
-set CA[4]=GetUnitLoc(NLA)
-if(YRK())then
-set XA[1]='R04E'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
-set PA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
-set QA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
-set SA[1]=bj_lastCreatedFogModifier
-else
-if(YOK())then
-set XA[2]='R04E'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
-set MA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
-set QA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
-set SA[1]=bj_lastCreatedFogModifier
-else
-if(YXK())then
-set XA[3]='R04E'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
-set PA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
-set MA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
-set SA[1]=bj_lastCreatedFogModifier
-else
-if(YEK())then
-set XA[4]='R04E'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
-set PA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
-set QA[1]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
-set MA[1]=bj_lastCreatedFogModifier
-endif
-endif
-endif
-endif
-call RemoveLocation(CA[1])
-call RemoveLocation(CA[2])
-call RemoveLocation(CA[3])
-call RemoveLocation(CA[4])
+// call PlaySoundBJ(XL)
+// call SetUnitScalePercent(GetTriggerUnit(),160.,160.,160.)
+// call EnableTrigger(CEO)
+// set HB[31]=GetTriggerUnit()
+// call SetPlayerTechResearchedSwap('R04E',1,GetOwningPlayer(HB[31]))
+// set MI[$E]=5
+// call CreateTextTagUnitBJ(I2S(MI[$E]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
+// call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+// set LI[$E]=bj_lastCreatedTextTag
+// call StartTimerBJ(FI[22],false,5.)
+// set CA[1]=GetUnitLoc(NQA)
+// set CA[2]=GetUnitLoc(N_A)
+// set CA[3]=GetUnitLoc(CXA)
+// set CA[4]=GetUnitLoc(NLA)
+// if(YRK())then
+// set XA[1]='R04E'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
+// set PA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
+// set QA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
+// set SA[1]=bj_lastCreatedFogModifier
+// else
+// if(YOK())then
+// set XA[2]='R04E'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
+// set MA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
+// set QA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
+// set SA[1]=bj_lastCreatedFogModifier
+// else
+// if(YXK())then
+// set XA[3]='R04E'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
+// set PA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
+// set MA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[4],1200.)
+// set SA[1]=bj_lastCreatedFogModifier
+// else
+// if(YEK())then
+// set XA[4]='R04E'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[2],1200.)
+// set PA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[3],1200.)
+// set QA[1]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[1],1200.)
+// set MA[1]=bj_lastCreatedFogModifier
+// endif
+// endif
+// endif
+// endif
+// call RemoveLocation(CA[1])
+// call RemoveLocation(CA[2])
+// call RemoveLocation(CA[3])
+// call RemoveLocation(CA[4])
 else
 if(YHK())then
 call SetUnitScalePercent(GetTriggerUnit(),110.,110.,110.)
@@ -39380,63 +39380,63 @@ endif
 endif
 else
 if(XZL())then
-call PlaySoundBJ(PK)
-call SetUnitScalePercent(GetTriggerUnit(),95.,95.,95.)
-call EnableTrigger(DVO)
-set HB[34]=GetTriggerUnit()
-call SetPlayerTechResearchedSwap('R04G',1,GetOwningPlayer(HB[34]))
-set MI[17]=5
-call CreateTextTagUnitBJ(I2S(MI[17]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
-call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
-set LI[17]=bj_lastCreatedTextTag
-call StartTimerBJ(FI[23],false,5.)
-set CA[9]=GetUnitLoc(NQA)
-set CA[$A]=GetUnitLoc(N_A)
-set CA[$B]=GetUnitLoc(CXA)
-set CA[$C]=GetUnitLoc(NLA)
-if(XDL())then
-set XA[1]='R04G'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
-set PA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
-set QA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
-set SA[3]=bj_lastCreatedFogModifier
-else
-if(XCL())then
-set XA[2]='R04G'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
-set MA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
-set QA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
-set SA[3]=bj_lastCreatedFogModifier
-else
-if(XBL())then
-set XA[3]='R04G'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
-set PA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
-set MA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
-set SA[3]=bj_lastCreatedFogModifier
-else
-if(XNL())then
-set XA[4]='R04G'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
-set PA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
-set QA[3]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
-set MA[3]=bj_lastCreatedFogModifier
-endif
-endif
-endif
-endif
-call RemoveLocation(CA[9])
-call RemoveLocation(CA[$A])
-call RemoveLocation(CA[$B])
-call RemoveLocation(CA[$C])
+// call PlaySoundBJ(PK)
+// call SetUnitScalePercent(GetTriggerUnit(),95.,95.,95.)
+// call EnableTrigger(DVO)
+// set HB[34]=GetTriggerUnit()
+// call SetPlayerTechResearchedSwap('R04G',1,GetOwningPlayer(HB[34]))
+// set MI[17]=5
+// call CreateTextTagUnitBJ(I2S(MI[17]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
+// call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+// set LI[17]=bj_lastCreatedTextTag
+// call StartTimerBJ(FI[23],false,5.)
+// set CA[9]=GetUnitLoc(NQA)
+// set CA[$A]=GetUnitLoc(N_A)
+// set CA[$B]=GetUnitLoc(CXA)
+// set CA[$C]=GetUnitLoc(NLA)
+// if(XDL())then
+// set XA[1]='R04G'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
+// set PA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
+// set QA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
+// set SA[3]=bj_lastCreatedFogModifier
+// else
+// if(XCL())then
+// set XA[2]='R04G'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
+// set MA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
+// set QA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
+// set SA[3]=bj_lastCreatedFogModifier
+// else
+// if(XBL())then
+// set XA[3]='R04G'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
+// set PA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
+// set MA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$C],1200.)
+// set SA[3]=bj_lastCreatedFogModifier
+// else
+// if(XNL())then
+// set XA[4]='R04G'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$A],1200.)
+// set PA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[$B],1200.)
+// set QA[3]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[9],1200.)
+// set MA[3]=bj_lastCreatedFogModifier
+// endif
+// endif
+// endif
+// endif
+// call RemoveLocation(CA[9])
+// call RemoveLocation(CA[$A])
+// call RemoveLocation(CA[$B])
+// call RemoveLocation(CA[$C])
 else
 if(XYL())then
 call PlaySoundBJ(QK)
@@ -44834,63 +44834,63 @@ endif
 endif
 else
 if(WBL())then
-call PlaySoundBJ(EL)
-call SetUnitScalePercent(GetTriggerUnit(),130.,130.,130.)
-call EnableTrigger(J7O)
-set HB[30]=GetTriggerUnit()
-call SetPlayerTechResearchedSwap('R02O',1,GetOwningPlayer(HB[30]))
-set MI[$F]=5
-call CreateTextTagUnitBJ(I2S(MI[$F]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
-call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
-set LI[$F]=bj_lastCreatedTextTag
-call StartTimerBJ(FI[21],false,5.)
-set CA[5]=GetUnitLoc(NQA)
-set CA[6]=GetUnitLoc(N_A)
-set CA[7]=GetUnitLoc(CXA)
-set CA[8]=GetUnitLoc(NLA)
-if(WNL())then
-set XA[1]='R02O'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
-set PA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
-set QA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
-set SA[2]=bj_lastCreatedFogModifier
-else
-if(WAL())then
-set XA[2]='R02O'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
-set MA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
-set QA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
-set SA[2]=bj_lastCreatedFogModifier
-else
-if(WIL())then
-set XA[3]='R02O'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
-set PA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
-set MA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
-set SA[2]=bj_lastCreatedFogModifier
-else
-if(WRL())then
-set XA[4]='R02O'
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
-set PA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
-set QA[2]=bj_lastCreatedFogModifier
-call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
-set MA[2]=bj_lastCreatedFogModifier
-endif
-endif
-endif
-endif
-call RemoveLocation(CA[5])
-call RemoveLocation(CA[6])
-call RemoveLocation(CA[7])
-call RemoveLocation(CA[8])
+// call PlaySoundBJ(EL)
+// call SetUnitScalePercent(GetTriggerUnit(),130.,130.,130.)
+// call EnableTrigger(J7O)
+// set HB[30]=GetTriggerUnit()
+// call SetPlayerTechResearchedSwap('R02O',1,GetOwningPlayer(HB[30]))
+// set MI[$F]=5
+// call CreateTextTagUnitBJ(I2S(MI[$F]),GetTriggerUnit(),100.,13.,100.,.0,.0,0)
+// call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
+// set LI[$F]=bj_lastCreatedTextTag
+// call StartTimerBJ(FI[21],false,5.)
+// set CA[5]=GetUnitLoc(NQA)
+// set CA[6]=GetUnitLoc(N_A)
+// set CA[7]=GetUnitLoc(CXA)
+// set CA[8]=GetUnitLoc(NLA)
+// if(WNL())then
+// set XA[1]='R02O'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
+// set PA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
+// set QA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
+// set SA[2]=bj_lastCreatedFogModifier
+// else
+// if(WAL())then
+// set XA[2]='R02O'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
+// set MA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
+// set QA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
+// set SA[2]=bj_lastCreatedFogModifier
+// else
+// if(WIL())then
+// set XA[3]='R02O'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
+// set PA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
+// set MA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[8],1200.)
+// set SA[2]=bj_lastCreatedFogModifier
+// else
+// if(WRL())then
+// set XA[4]='R02O'
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[6],1200.)
+// set PA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[7],1200.)
+// set QA[2]=bj_lastCreatedFogModifier
+// call CreateFogModifierRadiusLocBJ(true,GetOwningPlayer(GetTriggerUnit()),FOG_OF_WAR_VISIBLE,CA[5],1200.)
+// set MA[2]=bj_lastCreatedFogModifier
+// endif
+// endif
+// endif
+// // endif
+// call RemoveLocation(CA[5])
+// call RemoveLocation(CA[6])
+// call RemoveLocation(CA[7])
+// call RemoveLocation(CA[8])
 else
 if(WOL())then
 call SetUnitScalePercent(GetTriggerUnit(),80.,80.,80.)
