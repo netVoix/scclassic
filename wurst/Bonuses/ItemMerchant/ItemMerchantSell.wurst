@@ -5,40 +5,108 @@ import ItemMerchantPick
 import HeroIconsClass
 import InventoryStore
 import SaveHero
+import ItemsTierFourIcons
+import LinkedList
+import ItemSet
+import HashMap
 
-function sellItem(player p, int iid)
-  let h = heroes.get(heroIcons[p.getTeam()].getActiveHero().heroId)
-  let slotNum = inventories[p.getTeam()].removeById(iid)
-  if slotNum != -1
-    let sold = h.removeItemFromSlot(slotNum)
-    let sum = 75 * sold.getLevel()
-    let f = M_N(p)
-    DisplayTimedTextToForce(f, 7, "You sold an {0} for {1} gold.".format(sold.getName(), sum.toString()))
-    f.destr()
-    p.addGold(sum)
-    sold.remove()     
-    saveHero(h) 
-    inventories[p.getTeam()].renderUnitInventory(h)
-  else
-    let f = M_N(p)
-    DisplayTimedTextToForce(f, 7, "Item not found.")
-    f.destr()
+let itemiconlvl4 = new LinkedList<int>()
+public int setitem
+public let PICK_SET = new IterableMap<int, int>
+
+// function sellItem(player p, int iid)
+//   let h = heroes.get(heroIcons[p.getTeam()].getActiveHero().heroId)
+//   let slotNum = inventories[p.getTeam()].removeById(iid)
+//   if slotNum != -1
+//     let sold = h.removeItemFromSlot(slotNum)
+//     let sum = 75 * sold.getLevel()
+//     let f = M_N(p)
+//     DisplayTimedTextToForce(f, 7, "You sold an {0} for {1} gold.".format(sold.getName(), sum.toString()))
+//     f.destr()
+//     p.addGold(sum)
+//     sold.remove()     
+//     saveHero(h) 
+//     inventories[p.getTeam()].renderUnitInventory(h)
+//   else
+//     let f = M_N(p)
+//     DisplayTimedTextToForce(f, 7, "Item not found.")
+//     f.destr()
   
+function pickitemtoheroes(player p, int sid)
+  let h = heroes.get(heroIcons[p.getTeam()].getActiveHero().heroId)
+  let hid = h.getTypeId()
+  if h != null
+    if sid == BANNER_OF_THE_HORDE_ICON_ID
+      SET_ITEM_MAP.put(hid,1)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffBanner of the Horde|r", 20)
+    if sid == CORNERSTONE_GRIMOIRE_ICON_ID
+      SET_ITEM_MAP.put(hid,2)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffCornerstone Grimoire|r", 20)
+    if sid == MASK_OF_DEATH_ICON_ID
+      SET_ITEM_MAP.put(hid,3)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffMask of Death|r", 20)
+    if sid == ASHES_OF_KING_TERENAS_ICON_ID
+      SET_ITEM_MAP.put(hid,4)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffAshes of King Terenas|r", 20)
+    if sid == NEPTULON_SPEAR_SHARD_ICON_ID
+      SET_ITEM_MAP.put(hid,5)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffNeptulon Spear Shard|r", 20)
+    if sid == HEART_OF_ASZUNE_ICON_ID
+      SET_ITEM_MAP.put(hid,6)
+      NAMBER_ITEM_MAP.put(hid,1)
+      printTimed("|cff09ff00" + GetObjectName(hid) + "|r pick item |cff00ffffHeart of Aszun|r", 20)
+    
 init
+
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+    let itemunit = GetTriggerUnit()
+    let tid = GetTriggerPlayer().getTeam()
+    let aid = GetSpellAbilityId()
+    if inventories[tid] != null and heroIcons[tid].check(aid) and PICK_SET.get(aid) != 1
+      inventories[tid].clearInventory()
+      if heroIcons[tid].click(aid)    
+        let h = heroes.get(heroIcons[tid].getActiveHero().heroId)
+        if h != null
+          itemiconlvl4.add(BANNER_OF_THE_HORDE_ICON_ID, CORNERSTONE_GRIMOIRE_ICON_ID, MASK_OF_DEATH_ICON_ID, ASHES_OF_KING_TERENAS_ICON_ID, NEPTULON_SPEAR_SHARD_ICON_ID,HEART_OF_ASZUNE_ICON_ID)
+          inventories[tid].clearInventory()
+          for cid from itemiconlvl4.staticItr()
+            itemunit.removeAbility(cid)
+          for cid from itemiconlvl4.staticItr()
+            itemunit.addAbility(cid)
+          PICK_SET.put(aid, 1)
+        else 
+          printTimed("|cffff0000The hero must kill one unit!|r", 20)
+
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->  
+    let itemunit = GetTriggerUnit()   
+    let p = GetTriggerPlayer()
+    let sid = GetSpellAbilityId()
+    if inventories[p.getTeam()] != null and p.isIngame()
+      for ic from INVENTORY_MAP.iterator()
+        if INVENTORY_MAP.get(ic) == sid
+          for cid from itemiconlvl4.staticItr()
+            itemunit.removeAbility(cid)   
+          pickitemtoheroes(p, sid) 
+
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
     let tid = GetTriggerPlayer().getTeam()
     let aid = GetSpellAbilityId()
-    if inventories[tid] != null and heroIcons[tid].check(aid)
+    if inventories[tid] != null and heroIcons[tid].check(aid) and PICK_SET.get(aid) == 1
       inventories[tid].clearInventory()
       if heroIcons[tid].click(aid)      
         let h = heroes.get(heroIcons[tid].getActiveHero().heroId)
         if h != null
           inventories[tid].renderUnitInventory(h)
 
-  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) -> 
-    let p = GetTriggerPlayer()
-    let sid = GetSpellAbilityId()
-    if inventories[p.getTeam()] != null and p.isIngame()
-      for ic from INVENTORY_MAP.iterator()
-        if INVENTORY_MAP.get(ic) == sid
-          sellItem(p, INVENTORY_MAP.get(ic))         
+  // registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) -> 
+  //   let p = GetTriggerPlayer()
+  //   let sid = GetSpellAbilityId()
+  //   if inventories[p.getTeam()] != null and p.isIngame()
+  //     for ic from INVENTORY_MAP.iterator()
+  //       if INVENTORY_MAP.get(ic) == sid
+  //         sellItem(p, INVENTORY_MAP.get(ic))         

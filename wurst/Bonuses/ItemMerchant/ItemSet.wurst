@@ -1,0 +1,20 @@
+package ItemSet
+
+import LinkedList
+import HashMap
+import ItemsTierThree
+
+public let tier3items = new LinkedList<int>()
+public let NAMBER_ITEM_MAP = new IterableMap<int, int>
+
+public function itemsset1(unit u)
+    int additem
+    for iid from tier3items.staticItr()
+        additem = tier3items.getFirst()
+        tier3items.remove(additem)
+    tier3items.add(DRUIDS_PAWS_ID,DEMONIC_GAUNTLETS_ID,WARLOCKS_GRIP_ID,BATTLEMAGES_BRACERS_ID,BERSERKERS_BRACERS_ID,PALADINS_GAUNTLETS_ID,ASSASSINS_GAUNTLETS_ID,ARCHMAGES_RING_ID,JANGO_OF_THE_HORDE_ID,LORDAERON_HORN_ID,FROSTGUARD_ID,HORN_OF_THE_DRUIDS_ID,HELM_OF_THE_DEMON_LORD_ID,SHAMANS_CLAW_ID,BOOK_OF_THE_DEAD_ID)
+    tier3items.shuffle()
+    u.addItemById(tier3items.getFirst())
+    printTimed("|cff09ff00" + u.getName() + "|r get item |cffff7300" + GetObjectName(tier3items.getFirst()) + "|r", 20)
+
+    

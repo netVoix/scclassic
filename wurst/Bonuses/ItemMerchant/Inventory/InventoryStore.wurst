@@ -5,6 +5,7 @@ import HashMap
 import ClosureTimers
 
 public let INVENTORY_MAP = new IterableMap<int, int>
+public let SET_ITEM_MAP = new IterableMap<int, int>
 
 init
   doAfter(1) ->

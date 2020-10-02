@@ -5,19 +5,25 @@ import ItemMerchantPick
 import HeroItems
 import HeroIconsClass
 import SaveHero
+import InventoryStore
+import ItemSet
+import HashMap
+
+public let FIRST_ITEM = new IterableMap<int, int>
 
 public function unit.addRandomItem()
   if this.itemCount() < 6
     let iid = GetRandomInt(0, 4) < 4 ? TIER_ONE_SIMPLE[GetRandomInt(0, 5)] : TIER_ONE_AURAS[GetRandomInt(0, 5)]
     let newitem = this.addItemById(iid) 
+    newitem.remove()
     if newitem != null
       let f = M_N(this.getOwner())
-      DisplayTimedTextToForce(f, 7, "{0} get item {1}".format(this.getProperName(), newitem.getName()))
+      // DisplayTimedTextToForce(f, 7, "{0} get item {1}".format(this.getProperName(), newitem.getName()))
       f.destr()
     saveHero(this)
   else
     let f = M_N(this.getOwner())
-    DisplayTimedTextToForce(f, 7, "{0} has full inventory. Item wasn't added.".format(this.getProperName()))
+    // DisplayTimedTextToForce(f, 7, "{0} has full inventory. Item wasn't added.".format(this.getProperName()))
     f.destr()
 function isHero() returns bool
   return GetFilterUnit().isType(UNIT_TYPE_HERO)
@@ -31,35 +37,87 @@ function addRandomItem(unit u)
   if heroIcons[tid].getActiveHero().heroId == u.getTypeId()
     inventories[tid].renderUnitInventory(u)
 
-function addForLevel()
-  let u = GetTriggerUnit()
-  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO) and u.getLevel() mod 4 == 0
-    addRandomItem(u)
+// function addForLevel()
+//   let u = GetTriggerUnit()
+//   if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO) and u.getLevel() mod 4 == 0
+//     addRandomItem(u)
 
-function addForRevive()
-  let u = GetTriggerUnit()
-  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO)
-    addRandomItem(u)
+// function addForRevive()
+//   let u = GetTriggerUnit()
+//   if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO)
+//     addRandomItem(u)
 
-function addForKill()
+// function addForKill()
+//   let du = GetDyingUnit()
+//   if du.isType(UNIT_TYPE_HERO)
+//     unit ku = GetKillingUnit()
+//     let kuOwner = ku.getOwner()
+//     if hasItemMerchantBonus(kuOwner.getTeam())
+//       let deathPos = du.getPos()
+//       if not ku.isType(UNIT_TYPE_HERO)
+//         let g = GetUnitsInRectMatching(deathPos.withRadiusRect(900), Filter(function isHero))
+//         for fu in g
+//           if not fu.getOwner().isAllyOf(kuOwner)
+//             g.removeUnit(fu)
+//         ku = g.getRandomUnit()
+//       if ku != null
+//         addRandomItem(ku)
+
+function isEnemyUnit() returns bool
+  let fu = GetFilterUnit()
+  let uid = fu.getTypeId()
+  return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+function additem(unit heroes)
+  let hid = heroes.getTypeId()
+  if GetHeroLevel(heroes) >= 12 and NAMBER_ITEM_MAP.get(hid) == 1
+    itemsset1(heroes)
+    NAMBER_ITEM_MAP.put(hid,2)
+  if SET_ITEM_MAP.get(hid) == 1 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(BANNER_OF_THE_HORDE_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+  if SET_ITEM_MAP.get(hid) == 2 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(CORNERSTONE_GRIMOIRE_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+  if SET_ITEM_MAP.get(hid) == 3 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(MASK_OF_DEATH_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+  if SET_ITEM_MAP.get(hid) == 4 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(ASHES_OF_KING_TERENAS_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+  if SET_ITEM_MAP.get(hid) == 5 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(NEPTULON_SPEAR_SHARD_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+  if SET_ITEM_MAP.get(hid) == 6 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+    heroes.addItemById(HEART_OF_ASZUNE_ID)
+    NAMBER_ITEM_MAP.put(hid,3)
+
+function addForLevel3()
+  let u = GetTriggerUnit()
+  if hasItemMerchantBonus(u.getOwner().getTeam()) and u.isType(UNIT_TYPE_HERO) and u.getLevel() mod 1 == 0
+    additem(u)
+
+function startItem()
   let du = GetDyingUnit()
-  if du.isType(UNIT_TYPE_HERO)
-    unit ku = GetKillingUnit()
-    let kuOwner = ku.getOwner()
-    if hasItemMerchantBonus(kuOwner.getTeam())
-      let deathPos = du.getPos()
-      if not ku.isType(UNIT_TYPE_HERO)
-        let g = GetUnitsInRectMatching(deathPos.withRadiusRect(900), Filter(function isHero))
-        for fu in g
-          if not fu.getOwner().isAllyOf(kuOwner)
-            g.removeUnit(fu)
-        ku = g.getRandomUnit()
-      if ku != null
-        addRandomItem(ku)
-        
+  unit ku = GetKillingUnit()
+  let kuOwner = ku.getOwner()
+  if hasItemMerchantBonus(kuOwner.getTeam()) and FIRST_ITEM.get(ku.getTypeId()) != 1 and ku.isType(UNIT_TYPE_HERO)
+    let deathPos = du.getPos()
+    if not ku.isType(UNIT_TYPE_HERO)
+      let g = GetUnitsInRectMatching(deathPos.withRadiusRect(900), Filter(function isEnemyUnit))
+      for fu in g
+        if not fu.getOwner().isAllyOf(kuOwner)
+          g.removeUnit(fu)
+      ku = g.getRandomUnit()
+    if ku != null
+      addRandomItem(ku)
+      FIRST_ITEM.put(ku.getTypeId(), 1)
+      
 init
-  registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel)
-  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
-  registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)
+  registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel3)
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function startItem)
+  // registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL, function addForLevel)
+  // registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH, function addForKill)
+  // registerPlayerUnitEvent(EVENT_PLAYER_HERO_REVIVE_FINISH, function addForRevive)
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DROP_ITEM) ->
     GetManipulatedItem().remove()
