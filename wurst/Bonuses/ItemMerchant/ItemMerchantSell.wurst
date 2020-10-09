@@ -64,6 +64,7 @@ function pickitemtoheroes(player p, int sid)
 init
 
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+    let p = GetOwningPlayer(GetTriggerUnit())
     let itemunit = GetTriggerUnit()
     let tid = GetTriggerPlayer().getTeam()
     let aid = GetSpellAbilityId()
@@ -80,7 +81,7 @@ init
             itemunit.addAbility(cid)
           PICK_SET.put(aid, 1)
         else 
-          printTimed("|cffff0000The hero must kill one unit!|r", 20)
+        p.print("|cffff0000The hero must kill one unit!|r", 20)
 
   registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->  
     let itemunit = GetTriggerUnit()   

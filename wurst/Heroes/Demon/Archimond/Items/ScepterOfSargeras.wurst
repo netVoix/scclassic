@@ -1,0 +1,20 @@
+package ScepterOfSargeras
+import ObjEditingNatives
+import ItemHeroesStats
+import ObjectIds
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", 'SofS', 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Scepter of Sargeras|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Scepter of Sargeras|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWandOfShadowSight.blp")
+    ..setString("icid", "A0RG," + commaList(ARHIMOND_T4_ITEM_STATS))
+    ..setString("iabi", "A0RG," + commaList(ARHIMOND_T4_ITEM_STATS))
+    ..setString("utub", "Burns 50 mana per hit |n+10 Strength |n+10 Agility")

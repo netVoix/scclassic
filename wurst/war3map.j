@@ -25360,7 +25360,7 @@ function DAH takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'TiBl')==false)
 endfunction
 function DNH takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'ssil')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'SofS')==false)
 endfunction
 function DBH takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Uwar')
@@ -25405,7 +25405,7 @@ if(DAH())then
 call UnitAddItemByIdSwapped('TiBl',GetTriggerUnit())
 endif
 if(DNH())then
-call UnitAddItemByIdSwapped('ssil',GetTriggerUnit())
+call UnitAddItemByIdSwapped('SofS',GetTriggerUnit())
 endif
 endif
 endfunction

@@ -1,0 +1,13 @@
+package ItemHeroesStats
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let ARHIMOND_T4_ITEM_STATS = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3a_AIa3()
+	createObjectDefinition("w3a", ARHIMOND_T4_ITEM_STATS, 'AIa3')
+	..setLvlDataInt("Iagi", 1, 1, 10)
+	..setLvlDataInt("Istr", 1, 3, 10)
+	..setLvlDataString("ata0", 0, 0, "hand,right")
+	..setLvlDataString("atat", 0, 0, "DreamWeaver.mdx")

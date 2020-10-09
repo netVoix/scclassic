@@ -45,6 +45,6 @@ import ObjEditingNatives
 	..setString("utip", "Train Dryad")
 	..setString("utub", "|cffffcc00Ranged Unit|r |nStrong Vs Spellcaster |nWeak Vs Melee Unit")
 	..setInt("ua1b", 26)
-	..setString("utyp", "ancient")
+	..setString("utyp", "")
 	..setUnreal("uacq", 700.0)
 	..setInt("usid", 1000)
