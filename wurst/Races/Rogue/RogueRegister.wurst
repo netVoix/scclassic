@@ -1,0 +1,17 @@
+package RogueRegister
+
+import RegisterRace
+import Fort
+import MercenaryCamp
+import MortarTower
+import RogueFoundation
+import AxeThrower
+import Javelineer
+import RogueWizard
+
+init
+    registerRace(
+        raceBuildings(FORT_ONE_ID, MERCENARY_CAMP_ID, MORTAR_TOWER_ID, ROGUE_FOUNDATION_ID),
+        raceUnits(AXE_THROWER_ID, JAVELINEER_ID, ROGUE_WIZARD_ID)
+    )
+    
