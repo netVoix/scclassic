@@ -2,6 +2,9 @@ package FelVoid
 
 import ObjEditingNatives
 import ObjectIdGenerator
+import ObjectIds
+import VoidAbility
+import Desecration
 
 public let VOID_MONSTROSITY_ID = compiletime(UNIT_ID_GEN.next())
 public let VOIDWRAITH_ID = compiletime(UNIT_ID_GEN.next())
@@ -108,7 +111,7 @@ public let NETHER_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     ..setInt("ulev", 11)
     ..setInt("upoi", 12)
     ..setString("unam", "Voidwraith")
-    ..setString("upgr", "Rura,Rusm")
+    ..setString("upgr", "Rura,Rusm," + commaList(DESECRATION_ID))
     ..setInt("usle", 0)
     ..setInt("uclg", 50)
     ..setInt("uclb", 50)
@@ -123,7 +126,7 @@ public let NETHER_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     createObjectDefinition("w3u", VOIDWALKER_ID, 'nscb')
     ..setString("urac", "undead")
     ..setInt("uspe", 1)
-    ..setString("uabi", "ACes,A0SP,Agyv,S000")
+    ..setString("uabi", "ACes,Agyv," + commaList(TENTACLE_ID,INTIMIDATION_AURA_ID))
     ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNVoidWalk.blp")
     ..setString("umdl", "VoidWalker.mdl")
     ..setReal("usca", 1.2)
@@ -166,7 +169,7 @@ public let NETHER_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     ..setUnreal("uhpr", 3.0)
     ..setInt("ulev", 11)
     ..setInt("usle", 0)
-    ..setString("upgr", "Rura,Rusm")
+    ..setString("upgr", "Rura,Rusm," + commaList(DESECRATION_ID))
     ..setString("unam", "Voidwalker")
     ..setInt("upoi", 18)
     ..setString("uhot", "")

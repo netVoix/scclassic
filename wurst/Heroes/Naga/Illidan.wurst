@@ -128,7 +128,7 @@ import ObjEditingNatives
 	..setString("unam", "Demon Lord")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
 	..setUnreal("umpr", 1.0)
-	..setString("ua1w", "msplash")
+	..setString("ua1w", "")
 	..setInt("ua1h", 0)
 	..setInt("usid", 1000)
 	..setString("utyp", "ancient")

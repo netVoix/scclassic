@@ -1,0 +1,47 @@
+package VoidAbility
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import Desecration
+
+public let TENTACLE_ID = compiletime(ABIL_ID_GEN.next())
+public let INTIMIDATION_AURA_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0SP()
+    createObjectDefinition("w3a", TENTACLE_ID, 'ANba')
+    ..setLvlDataInt("aher", 0, 0, 0)
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataInt("alev", 0, 0, 1)
+    ..setLvlDataString("amat", 0, 0, "")
+    ..setLvlDataUnreal("Nba1", 1, 1, 0.0)
+    ..setLvlDataUnreal("Nba3", 1, 3, 30.0)
+    ..setLvlDataString("Nbau", 1, 0, "nfgt")
+    ..setLvlDataInt("amcs", 1, 0, 0)
+    ..setLvlDataString("atar", 1, 0, "enemies,ground,neutral,organic")
+    ..setLvlDataString("atp1", 1, 0, "Tentacle")
+    ..setLvlDataString("anam", 0, 0, "Tentacle")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
+    ..setLvlDataString("auar", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
+    ..setLvlDataString("arqa", 0, 0, "3")
+    ..setLvlDataString("areq", 0, 0, "" + commaList(DESECRATION_ID))
+
+@compiletime function create_w3a_S000()
+    createObjectDefinition("w3a", INTIMIDATION_AURA_ID, 'SCae')
+    ..setLvlDataString("atp1", 1, 0, "Intimidation Aura")
+    ..setLvlDataString("atar", 1, 0, "air,enemies,ground,invulnerable,nonancient,vulnerable")
+    ..setLvlDataUnreal("Oae2", 1, 2, -0.2)
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNAuraOfDarkness.blp")
+    ..setLvlDataString("atat", 0, 0, "Abilities\\Spells\\Undead\\RegenerationAura\\ObsidianRegenAura.mdl")
+    ..setLvlDataString("aub1", 1, 0, "Reduces nearby enemy unit's attack rate by 20%.")
+    ..setLvlDataString("abuf", 1, 0, "B02L")
+    ..setLvlDataUnreal("aare", 1, 0, 600.0)
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataInt("abpx", 0, 0, 1)
+    ..setLvlDataUnreal("Oae1", 1, 1, 0.0)
+    ..setLvlDataString("anam", 0, 0, "Intimidation Aura")
+    ..setLvlDataString("arqa", 0, 0, "4")
+    ..setLvlDataString("areq", 0, 0, "" + commaList(DESECRATION_ID))

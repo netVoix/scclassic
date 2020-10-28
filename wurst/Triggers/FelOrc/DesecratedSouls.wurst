@@ -19,25 +19,37 @@ function chooseBonus(unit u)
                 // SetPlayerTechResearchedSwap(DESECRATION_ID, 1, z)
 
 
+function addlvl(int res)
+    if res == DESECRATION_ID
+        let u = GetTriggerUnit()
+        let z = GetOwningPlayer(u)
+        let l = GetPlayerTechCountSimple(DESECRATION_ID, z)
+        for i = 0 to 12
+            if players[i].isAllyOf(z) and players[i] != z
+                SetPlayerTechResearchedSwap(DESECRATION_ID, l, players[i])
+
+
 function voidspawn(unit u)
     let DS = u.getTypeId()
     let pl = GetOwningPlayer(GetDyingUnit())
     for w = 0 to 12
         if players[w].isAllyOf(pl) and players[w] != pl
             let greid = GetPlayerTechCountSimple(DESECRATION_ID, players[w])
-            for i = 0 to 12
-                if players[i] == pl and desecratedSouls[i] == 1
-                    let r = GetRandomInt(1, 100)
-                    for q = 1 to 5 * greid
-                        if q == r
-                            if u.isStartVoid() and greid >= 1
-                                CreateNUnitsAtLoc(1, VOIDWRAITH_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
-                            if DS == 'nchw' and greid >= 2
-                                CreateNUnitsAtLoc(1, VOIDWALKER_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
-                            if DS == 'nrdr' and greid >= 3
-                                CreateNUnitsAtLoc(1, NETHER_DRAGON_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
-                            if u.isType(UNIT_TYPE_HERO) and greid >= 4
-                                CreateNUnitsAtLoc(1, VOID_MONSTROSITY_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+            if greid == 4
+                let ic = 1
+                for i = 0 to 12
+                    if players[i] == pl and desecratedSouls[i] == 1
+                        let r = GetRandomInt(1, 100)
+                        for q = 1 to 5 * (greid + ic)
+                            if q == r
+                                if u.isStartVoid() and greid >= 1
+                                    CreateNUnitsAtLoc(1, VOIDWRAITH_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                                if DS == 'nchw' and greid >= 2
+                                    CreateNUnitsAtLoc(1, VOIDWALKER_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                                // if DS == 'nrdr' and greid >= 3
+                                //     CreateNUnitsAtLoc(1, NETHER_DRAGON_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                                // if u.isType(UNIT_TYPE_HERO) and greid >= 4
+                                //     CreateNUnitsAtLoc(1, VOID_MONSTROSITY_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
 
 
 init
@@ -46,5 +58,8 @@ init
 
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
         voidspawn(GetTriggerUnit())
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+        addlvl(GetResearched())
 
     
