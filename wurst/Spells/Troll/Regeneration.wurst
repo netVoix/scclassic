@@ -7,6 +7,7 @@ public let REGENERATION_ID = 'A0H8'
 
 @compiletime function create_w3a_A0H8()
 	createObjectDefinition("w3a", REGENERATION_ID, 'Arej')
+	..setLvlDataInt("alsk", 0, 0, 4)
 	..setLvlDataUnreal("Rej1", 1, 1, 400.0)
 	..setLvlDataUnreal("acdn", 1, 0, 45.0)
 	..setLvlDataUnreal("ahdu", 1, 0, 10.0)
@@ -24,6 +25,7 @@ public let REGENERATION_ID = 'A0H8'
 	..setLvlDataInt("alev", 0, 0, 7)
 	..setLvlDataInt("Rej3", 2, 3, 3)
 	..setLvlDataInt("Rej3", 3, 3, 3)
+	..setLvlDataInt("arlv", 0, 0, 1)
 	..setLvlDataUnreal("Rej1", 2, 1, 500.0)
 	..setLvlDataUnreal("Rej1", 3, 1, 600.0)
 	..setLvlDataUnreal("Rej1", 4, 1, 700.0)

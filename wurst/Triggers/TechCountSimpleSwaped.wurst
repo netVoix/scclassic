@@ -1,0 +1,15 @@
+package TechCountSimpleSwaped
+
+import RegisterEvents
+
+
+function addlvl(player p, int res)
+    let lvl = GetPlayerTechCountSimple(res, p)
+    for i = 0 to 12
+        if players[i].isAllyOf(p) and players[i] != p
+            SetPlayerTechResearchedSwap(res, lvl, players[i])
+
+            
+init 
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+        addlvl(GetOwningPlayer(GetTriggerUnit()), GetResearched())

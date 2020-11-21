@@ -37,7 +37,7 @@ import RegisterEvents
     ..setLvlDataUnreal("adur", 4, 0, 15.0)
     ..setLvlDataString("atp1", 2, 0, "Repair (|cffffff00Lv2|r) [|cffffcc00Q|r]")
     ..setLvlDataString("atp1", 3, 0, "Repair (|cff00ff00Lv3|r) [|cffffcc00Q|r]")
-    ..setLvlDataString("atp1", 4, 0, "Repair (|c5ccc00ffLv4|r) [|cffffcc00Q|r]")
+    ..setLvlDataString("atp1", 4, 0, "Repair (|cff00ffffLv4|r) [|cffffcc00Q|r]")
     ..setLvlDataString("aub1", 2, 0, "Restores 200 HP over 15 seconds. |n|cffc3dbffCooldown:|r 300 seconds.")
     ..setLvlDataString("aub1", 3, 0, "Restores 300 HP over 15 seconds. |n|cffc3dbffCooldown:|r 300 seconds.")
     ..setLvlDataString("aub1", 4, 0, "Restores 400 HP over 15 seconds. |n|cffc3dbffCooldown:|r 300 seconds.")

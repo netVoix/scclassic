@@ -1,0 +1,24 @@
+package DeathPact
+
+import ObjectIdGenerator
+import AbilityObjEditing
+
+public let DEATH_PACT_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function deathpuct()
+    new AbilityDefinitionDeathKnightDeathPact(DEATH_PACT_ID)
+    ..setHeroAbility(true)
+    ..presetButtonPosNormal(2, 2)
+    ..setRequiredLevel(1)
+    ..setLevels(7)
+    ..setLevelSkipRequirement(4)
+    ..presetCastRange(lvl -> 400)
+    ..presetCooldown(lvl -> 20) 
+    ..presetManaCost(lvl -> 25) 
+    ..presetLifeConversionAsPercent(lvl -> false) 
+    ..presetLeaveTargetAlive(lvl -> false)
+    ..presetLifeConvertedtoLife(lvl -> 0.8 + 0.1 * lvl) 
+    ..presetTargetsAllowed(lvl -> "air,friend,ground,neutral,nonhero,organic,self")
+    ..presetTooltipNormal(lvl -> "Death Pact " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> "Kills a target friendly unit, giving a " + (80 + 10 * lvl).toString() + " percentage of its hit points to the Xavius")

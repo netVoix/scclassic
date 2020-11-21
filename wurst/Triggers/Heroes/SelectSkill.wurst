@@ -2,6 +2,23 @@ package SelectSkill
 
 import CurseOfTheBanshee
 import RegisterEvents
+import Eleret
+import TheCurseOfChaos
+import CursedRoots
+import AuraOfThist
+import FingerOfDeath
+import Xavius
+import DemonicFortitude
+import DeathPact
+import Kepereter
+import DarKSpirits
+import DesecrationOfTheSoul
+import DarkRitual
+import ArmyOfTheDead
+import IlGinot
+import Bloodlust
+import CorrosiveSplitIlGinot
+
 
 function selectSkill(unit u)
 	let hero = u.getTypeId()
@@ -10,8 +27,32 @@ function selectSkill(unit u)
 		u.selectSkill(CURSE_OF_THE_BANSHEE_ID)
 		u.selectSkill('A0N5')
 		u.selectSkill('ANch')
+	if hero == ELERET_ID
+		u.selectSkill(CURSE_OF_CHAOS_ID)
+		u.selectSkill(CURSED_ROOTS_ID)
+		u.selectSkill(AURA_OF_THIST_ID)
+		u.selectSkill(FINGER_OF_DEATH_ID)
+	if hero == XAVIUS_ID
+		u.selectSkill('A01T')
+		u.selectSkill('A04F')
+		u.selectSkill(DEATH_PACT_ID)
+		u.selectSkill(DEMONIC_FORTITUDE_ID)
+	if hero == KEPERETER_ID
+		u.selectSkill(DARK_SPIRITS_ID)
+		u.selectSkill(DESECRATION_OF_THE_SOUL_ID)
+		u.selectSkill(DARK_RITUAL_ID)
+		u.selectSkill(ARMY_OF_THE_DEAD_ID)
+	if hero == ILGINOT_ID
+		u.selectSkill(BLOODLUST_ID)
+		u.selectSkill('A09B')
+		u.selectSkill('AEev')
+		u.selectSkill(CORROSIVE_SPLIT_ID)
+		// let tp = GetOwningPlayer(u)
+		// for i = 0 to 12 
+		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2
+		// 		u.setOwner(players[i], true)
 
-
+		   
 init
 	registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL) ->
 		selectSkill(GetTriggerUnit())

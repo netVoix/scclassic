@@ -1,0 +1,689 @@
+package PickSatyr
+
+import CorruptedTreeOfLife
+import CorruptedAncientOfWar
+import CorruptedAncientProtector
+import FoundationSatyr
+import SatyrSoulStealer
+import SatyrTrickster
+import Defiler
+import KnightOfNightmares
+import NightmareDragon
+import CorruptedAncientDefender
+import ClosureTimers
+import Eleret
+import Xavius
+import Kepereter
+import IlGinot
+
+function caow()
+    IssueImmediateOrderById(GetEnumUnit(),CORRUPTED_ANCIENT_OF_WAR_LV1)
+
+function cap()
+    IssueImmediateOrderById(GetEnumUnit(),CORRUPTED_ANCIENT_PROTECTOR)
+    
+function fs()
+    IssueImmediateOrderById(GetEnumUnit(),FOUNDATION_SATYR)
+    
+
+function pickSatyr()
+    let CTOL = GetTriggerUnit()
+    let id = CTOL.getTypeId()
+    if id == CORRUPTED_TREE_OF_LIFE_LV1
+        EnableTrigger(HSX)
+        EnableTrigger(HJO)
+        DisableTrigger(ZU)
+        SetUnitScalePercent(GetTriggerUnit(),150.,150.,150.)
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o00Y')
+        ForGroupBJ(XC[13],function caow)
+        DestroyGroup(XC[13])
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01C')
+        ForGroupBJ(XC[13],function cap)
+        DestroyGroup(XC[13])
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01L')
+        ForGroupBJ(XC[13],function fs)
+        DestroyGroup(XC[13])
+        if GetOwningPlayer(GetTriggerUnit())==P
+            IR[1] = 'A0AL'
+            TB[1] = 'A0P8'
+            GX[1] = XAVIUS_ID
+            HX[1] = KEPERETER_ID
+            JX[1] = ELERET_ID
+            PX[1] = ILGINOT_ID
+            NX[1] = CORRUPTED_TREE_OF_LIFE_LV2
+            BX[1] = CORRUPTED_TREE_OF_LIFE_LV3
+            CX[1] = CORRUPTED_ANCIENT_OF_WAR_LV2
+            DX[1] = CORRUPTED_ANCIENT_OF_WAR_LV3
+            ZO[1] = CORRUPTED_ANCIENT_OF_WAR_LV4
+            FX[1] = CORRUPTED_ANCIENT_PROTECTOR
+            OE[1] = SOUL_STEALER
+            RE[1] = SATYR_TRICKSTER
+            IE[1] = SATYR_DEFILER
+            AE[1] = KNIGHT_OF_NIGHTMARES_ID
+            UO[1] = NIGTMARE_DRAGON_ID
+            YO[1] = CORRAPTED_ANCIENT_DEFENDER_ID
+            SE[1] = SATYR_MELEE_WEAPON_ID
+            UE[1] = SATYR_RANGE_WEAPON_ID
+            WE[1] = CURSED_MAGIC_ID
+            TE[1] = SATYR_ARMOR_ID
+            YE[1] = BUILDING_ARMOR_ID
+            ZE[1] = 'Rucr'
+            VX[1] = 'R00W'
+            EX[1] = 'R00X'
+            XX[1] = 'R00Y'
+            OX[1] = 'R00Z'
+            RX[1] = 'R010'
+            IX[1] = 'R011'
+            UX[1] = 'R01W'
+            AB[1] = 'R04J'
+            GR[1] = 'nsts'
+            TR[1] = $C
+            KR[1] = 'usap'
+            KR[2] = 'ugrv'
+            KR[3] = 'bshi'
+            KR[4] = 'uaod'
+            KR[5] = 'uzig'
+            KR[6] = 'nef0'
+            KR[7] = 'nmra'
+            KR[8] = 'nmrb'
+            KR[9] = 'nmrc'
+            KR[$A] = 'nef7'
+            KR[$B] = 'nmrf'
+            KR[$C] = 'ncnt'
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff8c00ffSatyr|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
+                SelectUnitForPlayerSingle(LHA,P)
+            else
+                RemoveUnit(BR)
+            if GetPlayerController(P)==MAP_CONTROL_COMPUTER
+                SetPlayerName(P,"The owners of Nightmare")
+                SetPlayerName(Z,"The owners of Nightmare")
+                UnitRemoveAbility(GetTriggerUnit(),IR[1])
+                IR[1]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[1])
+                TB[1]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,P)
+        if GetOwningPlayer(GetTriggerUnit())==S
+            IR[2] = 'A0AL'
+            TB[2] = 'A0P8'
+            GX[2] = XAVIUS_ID
+            HX[2] = KEPERETER_ID
+            JX[2] = ELERET_ID
+            PX[2] = ILGINOT_ID
+            NX[2] = CORRUPTED_TREE_OF_LIFE_LV2
+            BX[2] = CORRUPTED_TREE_OF_LIFE_LV3
+            CX[2] = CORRUPTED_ANCIENT_OF_WAR_LV2
+            DX[2] = CORRUPTED_ANCIENT_OF_WAR_LV3
+            ZO[2] = CORRUPTED_ANCIENT_OF_WAR_LV4
+            FX[2] = CORRUPTED_ANCIENT_PROTECTOR
+            OE[2] = SOUL_STEALER
+            RE[2] = SATYR_TRICKSTER
+            IE[2] = SATYR_DEFILER
+            AE[2] = KNIGHT_OF_NIGHTMARES_ID
+            UO[2] = NIGTMARE_DRAGON_ID
+            YO[2] = CORRAPTED_ANCIENT_DEFENDER_ID
+            SE[2] = SATYR_MELEE_WEAPON_ID
+            UE[2] = SATYR_RANGE_WEAPON_ID
+            WE[2] = CURSED_MAGIC_ID
+            TE[2] = SATYR_ARMOR_ID
+            YE[2] = BUILDING_ARMOR_ID
+            ZE[2] = 'Rucr'
+            VX[2] = 'R00W'
+            EX[2] = 'R00X'
+            XX[2] = 'R00Y'
+            OX[2] = 'R00Z'
+            RX[2] = 'R010'
+            IX[2] = 'R011'
+            UX[2] = 'R01W'
+            AB[2] = 'R04J'
+            GR[2] = 'nsts'
+            TR[2] = $C
+            LR[1] = 'usap'
+            LR[2] = 'ugrv'
+            LR[3] = 'bshi'
+            LR[4] = 'uaod'
+            LR[5] = 'uzig'
+            LR[6] = 'nef0'
+            LR[7] = 'nmra'
+            LR[8] = 'nmrb'
+            LR[9] = 'nmrc'
+            LR[$A] = 'nef7'
+            LR[$B] = 'nmrf'
+            LR[$C] = 'ncnt'
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff8c00ffSatyr|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
+                SelectUnitForPlayerSingle(LTA,S)
+            else
+            RemoveUnit(FR)
+            if GetPlayerController(S) == MAP_CONTROL_COMPUTER
+                SetPlayerName(S,"The owners of Nightmare")
+                SetPlayerName(Y,"The owners of Nightmare")
+                UnitRemoveAbility(GetTriggerUnit(),IR[2])
+                IR[2]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[2])
+                TB[2]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,S)
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A0AL'
+            TB[3] = 'A0P8'
+            GX[3] = XAVIUS_ID
+            HX[3] = KEPERETER_ID
+            JX[3] = ELERET_ID
+            PX[3] = ILGINOT_ID
+            NX[3] = CORRUPTED_TREE_OF_LIFE_LV2
+            BX[3] = CORRUPTED_TREE_OF_LIFE_LV3
+            CX[3] = CORRUPTED_ANCIENT_OF_WAR_LV2
+            DX[3] = CORRUPTED_ANCIENT_OF_WAR_LV3
+            ZO[3] = CORRUPTED_ANCIENT_OF_WAR_LV4
+            FX[3] = CORRUPTED_ANCIENT_PROTECTOR
+            OE[3] = SOUL_STEALER
+            RE[3] = SATYR_TRICKSTER
+            IE[3] = SATYR_DEFILER
+            AE[3] = KNIGHT_OF_NIGHTMARES_ID
+            UO[3] = NIGTMARE_DRAGON_ID
+            YO[3] = CORRAPTED_ANCIENT_DEFENDER_ID
+            SE[3] = SATYR_MELEE_WEAPON_ID
+            UE[3] = SATYR_RANGE_WEAPON_ID
+            WE[3] = CURSED_MAGIC_ID
+            TE[3] = SATYR_ARMOR_ID
+            YE[3] = BUILDING_ARMOR_ID
+            ZE[3] = 'Rucr'
+            VX[3] = 'R00W'
+            EX[3] = 'R00X'
+            XX[3] = 'R00Y'
+            OX[3] = 'R00Z'
+            RX[3] = 'R010'
+            IX[3] = 'R011'
+            UX[3] = 'R01W'
+            AB[3] = 'R04J'
+            GR[3] = 'nsts'
+            TR[3] = $C
+            MR[1] = 'usap'
+            MR[2] = 'ugrv'
+            MR[3] = 'bshi'
+            MR[4] = 'uaod'
+            MR[5] = 'uzig'
+            MR[6] = 'nef0'
+            MR[7] = 'nmra'
+            MR[8] = 'nmrb'
+            MR[9] = 'nmrc'
+            MR[$A] = 'nef7'
+            MR[$B] = 'nmrf'
+            MR[$C] = 'ncnt'
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff8c00ffSatyr|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
+                SelectUnitForPlayerSingle(KRA,Q)
+            else 
+                RemoveUnit(CR)
+            if GetPlayerController(Q) == MAP_CONTROL_COMPUTER
+                SetPlayerName(Q,"The owners of Nightmare")
+                SetPlayerName(U,"The owners of Nightmare")
+                UnitRemoveAbility(GetTriggerUnit(),IR[3])
+                IR[3]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[3])
+                TB[3]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,Q)
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A0AL'
+            TB[4] = 'A0P8'
+            GX[4] = XAVIUS_ID
+            HX[4] = KEPERETER_ID
+            JX[4] = ELERET_ID
+            PX[4] = ILGINOT_ID
+            NX[4] = CORRUPTED_TREE_OF_LIFE_LV2
+            BX[4] = CORRUPTED_TREE_OF_LIFE_LV3
+            CX[4] = CORRUPTED_ANCIENT_OF_WAR_LV2
+            DX[4] = CORRUPTED_ANCIENT_OF_WAR_LV3
+            ZO[4] = CORRUPTED_ANCIENT_OF_WAR_LV4
+            FX[4] = CORRUPTED_ANCIENT_PROTECTOR
+            OE[4] = SOUL_STEALER
+            RE[4] = SATYR_TRICKSTER
+            IE[4] = SATYR_DEFILER
+            AE[4] = KNIGHT_OF_NIGHTMARES_ID
+            UO[4] = NIGTMARE_DRAGON_ID
+            YO[4] = CORRAPTED_ANCIENT_DEFENDER_ID
+            SE[4] = SATYR_MELEE_WEAPON_ID
+            UE[4] = SATYR_RANGE_WEAPON_ID
+            WE[4] = CURSED_MAGIC_ID
+            TE[4] = SATYR_ARMOR_ID
+            YE[4] = BUILDING_ARMOR_ID
+            ZE[4] = 'Rucr'
+            VX[4] = 'R00W'
+            EX[4] = 'R00X'
+            XX[4] = 'R00Y'
+            OX[4] = 'R00Z'
+            RX[4] = 'R010'
+            IX[4] = 'R011'
+            UX[4] = 'R01W'
+            AB[4] = 'R04J'
+            GR[4] = 'nsts'
+            TR[4] = $C
+            PR[1] = 'usap'
+            PR[2] = 'ugrv'
+            PR[3] = 'bshi'
+            PR[4] = 'uaod'
+            PR[5] = 'uzig'
+            PR[6] = 'nef0'
+            PR[7] = 'nmra'
+            PR[8] = 'nmrb'
+            PR[9] = 'nmrc'
+            PR[$A] = 'nef7'
+            PR[$B] = 'nmrf'
+            PR[$C] = 'ncnt'
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff8c00ffSatyr|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
+                SelectUnitForPlayerSingle(LIA,T)
+            else
+                RemoveUnit(DR)
+            if GetPlayerController(T) == MAP_CONTROL_COMPUTER
+                SetPlayerName(T,"The owners of Nightmare")
+                SetPlayerName(W,"The owners of Nightmare")
+                UnitRemoveAbility(GetTriggerUnit(),IR[4])
+                IR[4]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[4])
+                TB[4]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,T)
+
+    if id == CORRUPTED_ANCIENT_OF_WAR_LV1
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(OE[1],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[1],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[1],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(OE[2],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[2],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[2],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(OE[3],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[3],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[3],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(OE[4],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[4],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[4],GetTriggerUnit(),1,3)
+        
+    if id == CORRUPTED_ANCIENT_OF_WAR_LV2  
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(AE[1],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == A
+                NE = 2
+                VV = (VV*.93)
+                KX[1] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],A,1,1)
+                    AddUnitToStockBJ(HX[1],A,1,1)
+                    AddUnitToStockBJ(JX[1],A,1,1)
+            if GetTriggerUnit() == N
+                BE = 2
+                JV = (JV*.93)
+                KX[2] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],N,1,1)
+                    AddUnitToStockBJ(HX[1],N,1,1)
+                    AddUnitToStockBJ(JX[1],N,1,1)
+            if GetTriggerUnit() == L
+                CE = 2
+                KV = (KV*.93)
+                KX[3] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],L,1,1)
+                    AddUnitToStockBJ(HX[1],L,1,1)
+                    AddUnitToStockBJ(JX[1],L,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(AE[2],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == K
+                DE = 2
+                NV = (NV*.93)
+                KX[4] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],K,1,1)
+                    AddUnitToStockBJ(HX[2],K,1,1)
+                    AddUnitToStockBJ(JX[2],K,1,1)
+            if GetTriggerUnit() == J
+                FE = 2
+                GV = (GV*.93)
+                KX[5] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],J,1,1)
+                    AddUnitToStockBJ(HX[2],J,1,1)
+                    AddUnitToStockBJ(JX[2],J,1,1)
+            if GetTriggerUnit() == H
+                GE = 2
+                HV = (HV*.93)
+                KX[6] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],H,1,1)
+                    AddUnitToStockBJ(HX[2],H,1,1)
+                    AddUnitToStockBJ(JX[2],H,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(AE[3],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == G
+                KE = 2
+                CV = (CV*.93)
+                KX[7] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],G,1,1)
+                    AddUnitToStockBJ(HX[3],G,1,1)
+                    AddUnitToStockBJ(JX[3],G,1,1)
+            if GetTriggerUnit() == F
+                JE = 2
+                BV = (BV*.93)
+                KX[8] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],F,1,1)
+                    AddUnitToStockBJ(HX[3],F,1,1)
+                    AddUnitToStockBJ(JX[3],F,1,1)
+            if GetTriggerUnit() == D
+                HE = 2
+                IV = (IV*.93)
+                KX[9] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],D,1,1)
+                    AddUnitToStockBJ(HX[3],D,1,1)
+                    AddUnitToStockBJ(JX[3],D,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(AE[4],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == C
+                PE = 2
+                FV = (FV*.93)
+                KX[$A] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],C,1,1)
+                    AddUnitToStockBJ(HX[4],C,1,1)
+                    AddUnitToStockBJ(JX[4],C,1,1)
+            if GetTriggerUnit() == B
+                ME = 2
+                DV = (DV*.93)
+                KX[$B] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],B,1,1)
+                    AddUnitToStockBJ(HX[4],B,1,1)
+                    AddUnitToStockBJ(JX[4],B,1,1)
+            if GetTriggerUnit() == M
+                LE = 2
+                AV = (AV*.93)
+                KX[$C] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],C,1,1)
+                    AddUnitToStockBJ(HX[4],C,1,1)
+                    AddUnitToStockBJ(JX[4],C,1,1)
+
+    if id == CORRUPTED_ANCIENT_OF_WAR_LV3  
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(UO[1],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == A
+                NE = 3
+                VV = (VV*.94)
+                LX[1] = 2
+                SX[1] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],A,1,1)
+            if GetTriggerUnit() == N
+                BE = 3
+                JV = (JV*.94)
+                LX[2] = 2
+                SX[2] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],N,1,1)
+            if GetTriggerUnit() == L
+                CE = 3
+                KV = (KV*.94)
+                LX[3] = 2
+                SX[3] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],L,1,1)
+                
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(UO[2],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == K
+                DE = 3
+                NV = (NV*.94)
+                LX[4] = 2
+                SX[4] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],K,1,1)
+            if GetTriggerUnit() == J
+                FE = 3
+                GV = (GV*.94)
+                LX[5] = 2
+                SX[5] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],J,1,1)
+            if GetTriggerUnit() == H
+                GE = 3
+                HV = (HV*.94)
+                LX[6] = 2
+                SX[6] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],H,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(UO[3],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == G
+                KE = 3
+                CV = (CV*.94)
+                LX[7] = 2
+                SX[7] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],G,1,1)
+            if GetTriggerUnit() == F
+                JE = 3
+                BV = (BV*.94)
+                LX[8] = 2
+                SX[8] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],F,1,1)
+            if GetTriggerUnit() == D
+                HE = 3
+                IV = (IV*.94)
+                LX[9] = 2
+                SX[9] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],D,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(UO[4],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == C
+                PE = 3
+                FV = (FV*.94)
+                LX[$A] = 2
+                SX[$A] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],C,1,1)
+            if GetTriggerUnit() == B
+                ME = 3
+                DV = (DV*.94)
+                LX[$B] = 2
+                SX[$B] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],B,1,1)
+            if GetTriggerUnit() == M
+                LE = 3
+                AV = (AV*.94)
+                LX[$C] = 2
+                SX[$C] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],M,1,1)
+
+    if id == CORRUPTED_ANCIENT_OF_WAR_LV4
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(YO[1],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == A
+                NE = 4
+                VV = (VV*.95)
+                KX[1] = 4
+                MX[1] = 3
+            if GetTriggerUnit() == N
+                BE = 4
+                JV = (JV*.95)
+                KX[2] = 4
+                MX[2] = 3
+            if GetTriggerUnit() == L
+                CE = 4
+                KV = (KV*.95)
+                KX[3] = 4
+                MX[3] = 3
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(YO[2],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == K
+                DE = 4
+                NV = (NV*.95)
+                KX[4] = 4
+                MX[4] = 3
+            if GetTriggerUnit() == J
+                FE = 4
+                GV = (GV*.95)
+                KX[5] = 4
+                MX[5] = 3
+            if GetTriggerUnit() == H
+                GE = 4
+                HV = (HV*.95)
+                KX[6] = 4
+                MX[6] = 3
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(YO[3],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == G
+                KE = 4
+                CV = (CV*.95)
+                KX[7] = 4
+                MX[7] = 3
+            if GetTriggerUnit() == F
+                JE = 4
+                BV = (BV*.95)
+                KX[8] = 4
+                MX[8] = 3
+            if GetTriggerUnit() == D
+                HE = 4
+                IV = (IV*.95)
+                KX[9] = 4
+                MX[9] = 3
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(YO[4],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == C
+                PE = 4
+                FV = (FV*.95)
+                KX[$A] = 4
+                MX[$A] = 3
+            if GetTriggerUnit() == B
+                ME = 4
+                DV = (DV*.95)
+                KX[$B] = 4
+                MX[$B] = 3
+            if GetTriggerUnit() == M
+                LE = 4
+                AV = (AV*.95)
+                KX[$C] = 4
+                MX[$C] = 3
+
+    if id ==  CORRUPTED_TREE_OF_LIFE_LV2 
+        if GetOwningPlayer(GetTriggerUnit()) == P       
+            YX[1]=2
+            if NE >= 2
+                AddUnitToStockBJ(GX[1],A,1,1)
+                AddUnitToStockBJ(HX[1],A,1,1)
+                AddUnitToStockBJ(JX[1],A,1,1)
+            if BE >= 2
+                AddUnitToStockBJ(GX[1],N,1,1)
+                AddUnitToStockBJ(HX[1],N,1,1)
+                AddUnitToStockBJ(JX[1],N,1,1)
+            if CE >= 2
+                AddUnitToStockBJ(GX[1],L,1,1)
+                AddUnitToStockBJ(HX[1],L,1,1)
+                AddUnitToStockBJ(JX[1],L,1,1) 
+        if GetOwningPlayer(GetTriggerUnit()) == S       
+            YX[2]=2
+            if DE >= 2
+                AddUnitToStockBJ(GX[2],K,1,1)
+                AddUnitToStockBJ(HX[2],K,1,1)
+                AddUnitToStockBJ(JX[2],K,1,1)
+            if FE >= 2
+                AddUnitToStockBJ(GX[2],J,1,1)
+                AddUnitToStockBJ(HX[2],J,1,1)
+                AddUnitToStockBJ(JX[2],J,1,1)
+            if GE >= 2
+                AddUnitToStockBJ(GX[2],H,1,1)
+                AddUnitToStockBJ(HX[2],H,1,1)
+                AddUnitToStockBJ(JX[2],H,1,1) 
+        if GetOwningPlayer(GetTriggerUnit()) == Q       
+            YX[3]=2
+            if KE >= 2
+                AddUnitToStockBJ(GX[3],G,1,1)
+                AddUnitToStockBJ(HX[3],G,1,1)
+                AddUnitToStockBJ(JX[3],G,1,1)
+            if JE >= 2
+                AddUnitToStockBJ(GX[3],F,1,1)
+                AddUnitToStockBJ(HX[3],F,1,1)
+                AddUnitToStockBJ(JX[3],F,1,1)
+            if HE >= 2
+                AddUnitToStockBJ(GX[3],D,1,1)
+                AddUnitToStockBJ(HX[3],D,1,1)
+                AddUnitToStockBJ(JX[3],D,1,1)   
+        if GetOwningPlayer(GetTriggerUnit()) == T       
+            YX[4]=2
+            if PE >= 2
+                AddUnitToStockBJ(GX[4],C,1,1)
+                AddUnitToStockBJ(HX[4],C,1,1)
+                AddUnitToStockBJ(JX[4],C,1,1)
+            if ME >= 2
+                AddUnitToStockBJ(GX[4],B,1,1)
+                AddUnitToStockBJ(HX[4],B,1,1)
+                AddUnitToStockBJ(JX[4],B,1,1)
+            if LE >= 2
+                AddUnitToStockBJ(GX[4],M,1,1)
+                AddUnitToStockBJ(HX[4],M,1,1)
+                AddUnitToStockBJ(JX[4],M,1,1)
+    if id ==  CORRUPTED_TREE_OF_LIFE_LV3
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            YX[1]=3
+            if NE >= 3
+                AddUnitToStockBJ(PX[1],A,1,1)
+            if BE >= 3
+                AddUnitToStockBJ(PX[1],N,1,1)
+            if CE >= 3
+                AddUnitToStockBJ(PX[1],L,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            YX[2]=3
+            if DE >= 3
+                AddUnitToStockBJ(PX[2],K,1,1)
+            if FE >= 3
+                AddUnitToStockBJ(PX[2],J,1,1)
+            if GE >= 3
+                AddUnitToStockBJ(PX[2],H,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            YX[3]=3
+            if KE >= 3
+                AddUnitToStockBJ(PX[3],G,1,1)
+            if JE >= 3
+                AddUnitToStockBJ(PX[3],F,1,1)
+            if HE >= 3
+                AddUnitToStockBJ(PX[3],D,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            YX[4]=3
+            if PE >= 3
+                AddUnitToStockBJ(PX[4],C,1,1)
+            if ME >= 3
+                AddUnitToStockBJ(PX[4],B,1,1)
+            if LE >= 3
+                AddUnitToStockBJ(PX[4],M,1,1)
+
+        
+init 
+    let t = CreateTrigger()
+    t.addCondition(Condition(function pickSatyr))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH)

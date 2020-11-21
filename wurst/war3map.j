@@ -7263,25 +7263,25 @@ call PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
 call SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
 else
 if(CAD())then
-call DisableTrigger(ZU)
-set RR=true
-set AR="|cffffff00Standard All Pick"
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cffffff00All Pick|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
-call StartTimerBJ(VE,false,30.)
-call CreateTimerDialogBJ(VE,"Game starts in")
-set EE=bj_lastCreatedTimerDialog
-call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
-call SelectUnitForPlayerSingle(R,Q)
-call SetCameraFieldForPlayer(Q,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(T,GetUnitLoc(I),0)
-call SelectUnitForPlayerSingle(I,T)
-call SetCameraFieldForPlayer(T,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(S,GetUnitLoc(O),0)
-call SelectUnitForPlayerSingle(O,S)
-call SetCameraFieldForPlayer(S,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
-call PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
-call SelectUnitForPlayerSingle(X,P)
-call SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+// call DisableTrigger(ZU)
+// set RR=true
+// set AR="|cffffff00Standard All Pick"
+// call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cffffff00All Pick|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
+// call StartTimerBJ(VE,false,30.)
+// call CreateTimerDialogBJ(VE,"Game starts in")
+// set EE=bj_lastCreatedTimerDialog
+// call PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
+// call SelectUnitForPlayerSingle(R,Q)
+// call SetCameraFieldForPlayer(Q,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+// call PanCameraToTimedLocForPlayer(T,GetUnitLoc(I),0)
+// call SelectUnitForPlayerSingle(I,T)
+// call SetCameraFieldForPlayer(T,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+// call PanCameraToTimedLocForPlayer(S,GetUnitLoc(O),0)
+// call SelectUnitForPlayerSingle(O,S)
+// call SetCameraFieldForPlayer(S,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+// call PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
+// call SelectUnitForPlayerSingle(X,P)
+// call SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
 else
 if(CID())then
 set RR=false

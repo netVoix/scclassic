@@ -1,0 +1,26 @@
+package CursedRoots
+import ObjectIdGenerator
+import AbilityObjEditing
+
+public let CURSED_ROOTS_ID = compiletime(ABIL_ID_GEN.next())
+public let CURSED_ROOTS_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function cursedroots() 
+    new AbilityDefinitionKeeperoftheGroveEntanglingRoots(CURSED_ROOTS_ID)
+    ..setHeroAbility(true)
+    ..presetButtonPosNormal(1, 2)
+    ..setRequiredLevel(1)
+    ..setLevels(7)
+    ..setLevelSkipRequirement(4)
+    ..presetCastRange(lvl -> 800)
+    ..presetCooldown(lvl -> 40) 
+    ..presetManaCost(lvl -> 70 + 10 * lvl) 
+    ..presetDurationHero(lvl -> 3.0 + 1.0 * lvl)
+    ..presetDamageperSecond(lvl -> 100.0)
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
+    ..presetTooltipNormal(lvl -> "Cursed Roots " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "Shackles the enemy hero in the roots for  " + (3 + 1  * lvl).toString() + " second and deals 100 damage/sec.") 
+        
+        
+        

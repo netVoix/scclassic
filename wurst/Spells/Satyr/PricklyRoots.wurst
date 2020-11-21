@@ -1,0 +1,85 @@
+package PricklyRoots
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import RegisterEvents
+
+public let PRICKLY_ROOTS_ID = compiletime(ABIL_ID_GEN.next())
+public let PRICKLY_ROOTS_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A03U()
+    createObjectDefinition("w3a", PRICKLY_ROOTS_ID, 'ANcs')
+    ..setLvlDataInt("aher", 0, 0, 0)
+    ..setLvlDataInt("alev", 0, 0, 2)
+    ..setLvlDataString("ahky", 0, 0, "Z")
+    ..setLvlDataString("anam", 0, 0, "Prickly Roots")
+    ..setLvlDataString("atp1", 1, 0, "Prickly Roots [|cffffcc00Z|r]")
+    ..setLvlDataInt("amcs", 1, 0, 50)
+    ..setLvlDataUnreal("acdn", 1, 0, 50.0)
+    ..setLvlDataUnreal("Ncs1", 1, 1, 1.0)
+    ..setLvlDataUnreal("Ncs4", 1, 4, 99999.0)
+    ..setLvlDataString("amat", 0, 0, "")
+    ..setLvlDataUnreal("amac", 0, 0, 0.0)
+    ..setLvlDataString("aub1", 1, 0, "Deals 300 damage in 170 AoF. |nStuns for 8 seconds. |n|cffc3dbffCooldown:|r 50 seconds.")
+    ..setLvlDataString("arac", 0, 0, "naga")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEntanglingRoots.blp")
+    ..setLvlDataUnreal("aran", 1, 0, 1500.0)
+    ..setLvlDataInt("amho", 0, 0, 0)
+    ..setLvlDataInt("Ncs3", 1, 3, 1)
+    ..setLvlDataUnreal("aare", 1, 0, 170.0)
+    ..setLvlDataInt("abpx", 0, 0, 0)
+    ..setLvlDataUnreal("Ncs1", 2, 1, 1.0)
+    ..setLvlDataUnreal("Ncs4", 2, 4, 99999.0)
+    ..setLvlDataInt("Ncs3", 2, 3, 1)
+    ..setLvlDataUnreal("aare", 2, 0, 170.0)
+    ..setLvlDataUnreal("aran", 2, 0, 1500.0)
+    ..setLvlDataUnreal("acdn", 2, 0, 35.0)
+    ..setLvlDataInt("amcs", 2, 0, 50)
+    ..setLvlDataString("atp1", 2, 0, "Prickly Roots [|cffffcc00Z|r]")
+    ..setLvlDataString("aub1", 2, 0, "Deals 300 damage in 170 AoF. |nStuns for 8 seconds. |n|cffc3dbffCooldown:|r 35 seconds.")
+    ..setLvlDataString("aeff", 1, 0, "")
+    ..setLvlDataString("aeff", 2, 0, "")
+    ..setLvlDataUnreal("Ncs6", 1, 6, 0.26)
+    ..setLvlDataUnreal("Ncs6", 2, 6, 0.26)
+    ..setLvlDataUnreal("ahdu", 1, 0, 0.26)
+    ..setLvlDataUnreal("ahdu", 2, 0, 0.26)
+    ..setLvlDataUnreal("adur", 1, 0, 0.26)
+    ..setLvlDataUnreal("adur", 2, 0, 0.26)
+
+
+@compiletime function create_w3a_A03Y()
+    createObjectDefinition("w3a", PRICKLY_ROOTS_DUMMY_ID, 'Awrs')
+    ..setLvlDataString("arac", 0, 0, "naga")
+    ..setLvlDataString("acat", 0, 0, "")
+    ..setLvlDataString("ahky", 0, 0, "")
+    ..setLvlDataString("anam", 0, 0, "Prickly Roots")
+    ..setLvlDataString("atp1", 1, 0, "Prickly Roots")
+    ..setLvlDataInt("amcs", 1, 0, 0)
+    ..setLvlDataUnreal("adur", 1, 0, 8.0)
+    ..setLvlDataUnreal("ahdu", 1, 0, 6.0)
+    ..setLvlDataUnreal("acdn", 1, 0, 0.0)
+    ..setLvlDataString("abuf", 1, 0, "B011")
+    ..setLvlDataUnreal("aare", 1, 0, 170.0)
+    ..setLvlDataUnreal("Wrs2", 1, 2, 0.0)
+    ..setLvlDataUnreal("Wrs1", 1, 1, 300.0)
+    ..setLvlDataInt("Wrs3", 1, 3, 0)
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEntanglingRoots.blp")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("atar", 1, 0, "ground,nonancient,ward")
+    
+
+function pricklyrootsuse(int abil)
+    if abil == PRICKLY_ROOTS_ID
+        XO[8]=GetSpellTargetLoc()
+        CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),XO[8],bj_UNIT_FACING)
+        UnitAddAbility(bj_lastCreatedUnit, PRICKLY_ROOTS_DUMMY_ID)
+        IssueImmediateOrderById(bj_lastCreatedUnit,$D009F)
+        UnitApplyTimedLifeBJ(3.,'BTLF',bj_lastCreatedUnit)
+        RemoveLocation(XO[8])
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        pricklyrootsuse(GetSpellAbilityId())

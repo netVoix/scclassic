@@ -1,0 +1,113 @@
+package IlGinot
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import Bloodlust
+import RegisterEvents
+import Orders
+import CorrosiveSplitIlGinot
+import ClosureTimers
+
+public let ILGINOT_ID = compiletime(HERO_ID_GEN.next())
+
+
+@compiletime function create_w3u_Ucrl()
+	createObjectDefinition("w3u", ILGINOT_ID, 'Ucrl')
+	..setInt("urqc", 0)
+	..setString("urq2", "")
+	..setString("urq1", "")
+	..setString("uhot", "")
+	..setString("uhab", "A09B,AEev," + commaList(BLOODLUST_ID,CORROSIVE_SPLIT_ID))
+	..setUnreal("ucbs", 0.51)
+	..setUnreal("ucpt", 0.5)
+	..setReal("urun", 210.0)
+	..setReal("uwal", 210.0)
+	..setInt("ubpx", 3)
+	..setInt("ubpy", 2)
+	..setReal("uerd", 50.0)
+	..setReal("umxp", 10.0)
+	..setReal("umxr", 10.0)
+	..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNDalaranReject.blp")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNDalaranReject.blp")
+	..setUnreal("ulpz", 60.0)
+	..setInt("uori", 1)
+	..setReal("usca", 2.5)
+	..setReal("ussc", 3.0)
+	..setReal("ushx", 90.0)
+	..setReal("ushy", 90.0)
+	..setReal("ushh", 180.0)
+	..setReal("ushw", 180.0)
+	..setUnreal("uacq", 700.0)
+	..setUnreal("ubs1", 0.70000005)
+	..setUnreal("udp1", 0.5)
+	..setUnreal("ua1c", 1.25)
+	..setInt("ua1b", 449)
+	..setInt("ua1d", 1)
+	..setInt("ua1s", 91)
+	..setString("ucs1", "MetalHeavySlice")
+	..setInt("udef", 31)
+	..setInt("umvs", 240)
+	..setUnreal("umvr", 3.0)
+	..setUnreal("ucol", 40.0)
+	..setString("usnd", "")
+	..setUnreal("uagp", 1.0)
+	..setInt("ubba", 0)
+	..setInt("ubdi", 0)
+	..setInt("ubsi", 0)
+	..setInt("ugol", 2750)
+	..setInt("uhpm", 23000)
+	..setUnreal("uhpr", 5.0)
+	..setString("uhrt", "always")
+	..setUnreal("uinp", 1.0)
+	..setInt("ulum", 0)
+	..setInt("umpi", 2000)
+	..setInt("umpm", 250)
+	..setInt("upoi", 900)
+	..setInt("upri", 3)
+	..setInt("uagi", 8)
+	..setInt("uint", 10)
+	..setInt("ustr", 12)
+	..setInt("usma", 1)
+	..setInt("usrg", 600)
+	..setUnreal("ustp", 1.0)
+	..setString("utyp", "ancient,undead")
+	..setString("unam", "Heart of Corruption")
+	..setInt("upru", 1)
+	..setString("upro", "Il'Ginot")
+	..setString("utub", "|cffffcc00Special Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cff00ffffBloodlust|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead8-14% to chance to increase attack speed by 100% on kill|r |n  |cff6c7b8b(100% chance on Hero kills)|r |n|n|cff00ffffCleaving Attack|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead10-16% area damage|r |n|n|cff00ffffLiquid Form|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead12-30% to evade an attack|r |n|n|cffff0000Corrosive Split|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage|r |n  |cff6c7b8b(750-900 area of effect)|r")
+	..setString("utip", "Train Heart of Corruption")
+	..setInt("ufoo", 0)
+	..setString("ua1t", "chaos")
+	..setString("udty", "divine")
+	..setInt("ua1r", 175)
+	..setString("ua1g", "air,debris,ground,item,structure,ward")
+	..setString("umdl", "units\\other\\DalaranReject\\DalaranReject.mdl")
+	..setString("uabi", "AInv,A0ES")
+	..setUnreal("umpr", 0.9)
+	..setInt("usid", 1000)
+
+
+function bloodlust(unit ud)
+	let id = ud.getTypeId()
+	let du = GetDyingUnit()
+	if id == ILGINOT_ID
+		let lvl = GetUnitAbilityLevel(ud, BLOODLUST_ID)
+		let random = GetRandomInt(1, 100)
+		if du.isType(UNIT_TYPE_HERO) and lvl != 0
+			ud.addAbility(BLOODLUST_DUMMY_ID)
+			ud.issueImmediateOrderById(OrderIds.frenzy)
+			doAfter(10) ->
+				ud.removeAbility(BLOODLUST_DUMMY_ID)
+		else
+			for i = 1 to (7 + lvl)
+				if random == i and lvl != 0 
+					ud.addAbility(BLOODLUST_DUMMY_ID)
+					ud.issueImmediateOrderById(OrderIds.frenzy)
+					doAfter(10) ->
+						ud.removeAbility(BLOODLUST_DUMMY_ID)
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+		bloodlust(GetKillingUnit())

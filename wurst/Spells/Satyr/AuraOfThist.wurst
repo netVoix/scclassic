@@ -1,0 +1,36 @@
+package AuraOfThist
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+
+public let AURA_OF_THIST_ID = compiletime(ABIL_ID_GEN.next())
+public let AURA_OF_THIST_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0SU()
+    new AbilityDefinitionArchMageBrillianceAura(AURA_OF_THIST_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(2, 2)
+    ..presetAreaofEffect(lvl -> 800)
+    ..presetBuffs(lvl -> commaList(AURA_OF_THIST_BUFF_ID))
+    ..presetManaRegenerationIncrease(lvl -> -1.0 * lvl) 
+    ..presetTargetsAllowed(lvl -> "enemies,nonancient,hero")
+    ..presetTooltipNormal(lvl -> "Aura of Thist " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "-" + (lvl).toString() + " MP/sec to enemy heros.")
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNManaStone.blp")
+
+
+@compiletime function create_w3h_B04Y()
+    createObjectDefinition("w3h", AURA_OF_THIST_BUFF_ID, 'BUau')
+    ..setString("frac", "other")
+    ..setString("ftip", "|cffff0000Aura of Thist|r")
+    ..setString("fube", "This hero is under the effects of Aura of Thist; it has reduced mana regeneration.")
+    ..setString("ftat", "")
+    ..setString("fta0", "")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNManaStone.blp")
+           
+        

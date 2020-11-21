@@ -1,0 +1,25 @@
+package FingerOfDeath
+
+import ObjectIdGenerator
+import AbilityObjEditing
+
+public let FINGER_OF_DEATH_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function shadowWordFIRE()
+    new AbilityDefinitionFarseerChainLightning(FINGER_OF_DEATH_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(3, 2)
+    ..presetCastRange(lvl -> 800)
+    ..presetCooldown(lvl -> 90) 
+    ..presetManaCost(lvl -> 80 + 20 * lvl)
+    ..presetDamageperTarget(lvl -> 1000.0 * lvl) 
+    ..setLightningEffects("AFOD")
+    ..presetNumberofTargetsHit(lvl -> 1)
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
+    ..presetTooltipNormal(lvl -> "Finger of Death " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "Deals " + (1000 * lvl).toString() + " damage to enemy hero.")
+        

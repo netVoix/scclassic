@@ -1,0 +1,40 @@
+package DemonicFire
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+import CorruptedTreeOfLife
+import BuffObjEditing
+
+public let DEMONIC_FIRE_ID = compiletime(ABIL_ID_GEN.next())
+public let DEMONIC_FIRE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function shadowWordFIRE()
+    new AbilityDefinitionLightningShield(DEMONIC_FIRE_ID)
+    ..setHeroAbility(false)
+    ..presetBuffs(lvl -> commaList(DEMONIC_FIRE_BUFF_ID))
+    ..setRequirements("" + commaList(CURSED_MAGIC_ID))
+    ..setRequirementsLevels("2")
+    ..setLevels(3)
+    ..presetCastRange(lvl -> 600)
+    ..presetCooldown(lvl -> 45) 
+    ..presetManaCost(lvl -> 50) 
+    ..presetDamageperSecond(lvl -> 20.0 + 10.0 * lvl) 
+    ..presetDurationNormal(lvl -> 5) 
+    ..presetTargetsAllowed(lvl -> "enemies,ground,mechanical,neutral,organic,nonhero") 
+    ..presetAreaofEffect(lvl -> 200)
+    ..presetButtonPosNormal(1, 2)
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
+    ..presetTooltipNormal(lvl -> "Demonic Fire " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "Deals " + (20 + 10 * lvl).toString() + " gamage/sec enemy unit for 5s in an 200 area")
+        
+
+@compiletime function demonicfirebuff()
+    new BuffDefinition(DEMONIC_FIRE_BUFF_ID, 'Blsh')
+    ..setArtTarget(1, "Abilities\\Spells\\NightElf\\Immolation\\ImmolationTarget.mdl")
+    ..setArtSpecial(1, "Abilities\\Spells\\NightElf\\Immolation\\ImmolationDamage.mdl")
+    ..setIcon("ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
+    ..setTooltipNormal(1, "Demonic Fire 1")
+    ..setTooltipNormalExtended(1, "This unit has a Demonic Fire; nearby friendly units will take damage if they are next to this unit.")
+    ..setSpecialAttachmentPoint(1, "origin")

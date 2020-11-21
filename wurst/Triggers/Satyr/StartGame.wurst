@@ -1,0 +1,11 @@
+package StartGame
+import CorruptedTreeOfLife
+
+function gameStart()
+    XE[13] = CORRUPTED_TREE_OF_LIFE_LV1
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function gameStart))
+    t.registerTimerEvent(0.1, false)

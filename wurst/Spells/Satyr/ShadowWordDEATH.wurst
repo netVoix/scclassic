@@ -1,0 +1,64 @@
+package ShadowWordDEATH
+import ObjectIdGenerator
+import AbilityObjEditing
+import CorruptedTreeOfLife
+import ObjectIds
+
+public let SHADOW_WORD_DEATH_ID = compiletime(ABIL_ID_GEN.next())
+public let SHADOW_WORD_DEATH_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function shadowworddeath()
+    new AbilityDefinitionLichFrostNova(SHADOW_WORD_DEATH_ID)
+    ..setHeroAbility(false)
+    ..setLevels(3)
+    ..presetButtonPosNormal(2, 2)
+    ..setRequirements("" + commaList(CURSED_MAGIC_ID))
+    ..setRequirementsLevels("3") 
+    ..presetCastRange(lvl -> 700) 
+    ..presetCooldown(lvl -> (70.0 - 10.0 * lvl)) 
+    ..presetManaCost(lvl -> 100)
+    ..presetAreaofEffect(lvl -> 0.0)
+    ..presetAreaofEffectDamage(lvl -> 0.0) 
+    ..presetSpecificTargetDamage(lvl -> 99999) 
+    ..presetDurationNormal(lvl -> 0.1) 
+    ..presetTargetsAllowed(lvl -> "enemies,ground,mechanical,neutral,organic,nonhero")
+    ..presetEffects(lvl -> "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
+    ..setArtTarget("Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNDeathCoil.blp")
+    ..presetBuffs(lvl -> commaList(SHADOW_WORD_DEATH_BUFF_ID))
+    ..presetTooltipNormal(lvl -> "Shadow Word DEATH " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> "Kill enemy unit. Cooldown: " + (70 - 10 *lvl).toString() + ".")
+
+
+// @compiletime function create_w3a_ACfn()
+//     createObjectDefinition("w3a", 'ACfn', 'ACfn')
+//     ..setLvlDataString("arac", 0, 0, "undead")
+//     ..setLvlDataInt("abpx", 0, 0, 2)
+//     ..setLvlDataString("aani", 0, 0, "")
+//     ..setLvlDataString("ahky", 0, 0, "")
+//     ..setLvlDataInt("amcs", 1, 0, 100)
+//     ..setLvlDataString("atp1", 1, 0, "Frost Nova")
+//     ..setLvlDataUnreal("acdn", 1, 0, 45.0)
+//     ..setLvlDataUnreal("ahdu", 1, 0, 2.0)
+//     ..setLvlDataUnreal("adur", 1, 0, 5.0)
+//     ..setLvlDataUnreal("aran", 1, 0, 700.0)
+//     ..setLvlDataString("areq", 0, 0, "Rune")
+//     ..setLvlDataString("arqa", 0, 0, "3")
+//     ..setLvlDataInt("achd", 0, 0, 1)
+//     ..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,organic")
+//     ..setLvlDataUnreal("Ufn1", 2, 1, 90.0)
+//     ..setLvlDataUnreal("Ufn2", 2, 2, 1.0)
+//     ..setLvlDataString("aub1", 2, 0, "Blasts enemy units with a wave of frost that deals 90 damage and slows them for 5 seconds.")
+//     ..setLvlDataUnreal("Ufn1", 1, 1, 90.0)
+//     ..setLvlDataUnreal("Ufn2", 1, 2, 1.0)
+//     ..setLvlDataString("aub1", 1, 0, "Blasts enemy units with a wave of frost that deals 90 damage and slows them for 5 seconds.")
+
+
+@compiletime function create_w3h_BHfs()
+    createObjectDefinition("w3h", SHADOW_WORD_DEATH_BUFF_ID, 'BHfs')
+    ..setString("ftip", "DEATH")
+    ..setString("fube", "This unit is about to die.")
+        
+        
+        

@@ -1,0 +1,95 @@
+package AllPickRace
+import LinkedList
+import CorruptedTreeOfLife
+
+
+public button alliance 
+public button horde 
+public button chaos 
+public button ancients 
+public let allrace = new LinkedList<int>()
+public let allianceL = new LinkedList<int>()
+public let hordeL = new LinkedList<int>()
+public let chaosL = new LinkedList<int>()
+public let ancientsL = new LinkedList<int>()
+
+function allPickRace()
+    if GetClickedButton() == GO
+        // FO = DialogCreate()
+        DialogClear(FO)
+        allrace.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W',CORRUPTED_TREE_OF_LIFE_LV1)
+        allianceL.add('o002','o005','o007')
+        hordeL.add('o00B','o00A','o00E')
+        chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1)
+        ancientsL.add('e001','o00T','o00W')
+        // for cid from allrace.staticItr()
+        //     for i = 0 to 12
+        //         SetPlayerUnitAvailableBJ(cid, false, players[i])
+        DialogAddButtonBJ(FO, "|cff0099ffAlliance|r")
+        alliance = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cffff9900Horde|r")
+        horde = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cff9900ffChaos|r")
+        chaos = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cff2bff00Ancients|r")
+        ancients = GetLastCreatedButtonBJ()
+        DialogDisplayBJ(true,FO,Q)
+        DialogDisplayBJ(true,FO,T)
+        DialogDisplayBJ(true,FO,S)
+        DialogDisplayBJ(true,FO,P)
+        DisableTrigger(ZU)
+        RR=true
+        AR="|cffffff00Standard All Pick"
+        DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Mode: |cffffff00All Pick|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r")
+        StartTimerBJ(VE,false,30.)
+        CreateTimerDialogBJ(VE,"Game starts in")
+        EE=bj_lastCreatedTimerDialog
+        PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
+        SelectUnitForPlayerSingle(R,Q)
+        SetCameraFieldForPlayer(Q,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(T,GetUnitLoc(I),0)
+        SelectUnitForPlayerSingle(I,T)
+        SetCameraFieldForPlayer(T,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(S,GetUnitLoc(O),0)
+        SelectUnitForPlayerSingle(O,S)
+        SetCameraFieldForPlayer(S,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+        PanCameraToTimedLocForPlayer(P,GetUnitLoc(X),0)
+        SelectUnitForPlayerSingle(X,P)
+        SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
+
+
+function pick()
+    int pick
+    let pltr = GetTriggerPlayer()
+    for cid from allrace.staticItr()
+        for i = 0 to 12
+            SetPlayerUnitAvailableBJ(cid, false, pltr)
+    if GetClickedButton() == alliance
+        for i = 1 to 3
+            pick = allianceL.getFirst()
+            SetPlayerUnitAvailableBJ(pick, true, pltr) 
+            allianceL.remove(pick)
+    if GetClickedButton() == horde
+        for i = 1 to 3
+            pick = hordeL.getFirst()
+            SetPlayerUnitAvailableBJ(pick, true, pltr) 
+            hordeL.remove(pick)    
+    if GetClickedButton() == chaos
+        for i = 1 to 4
+            pick = chaosL.getFirst()
+            SetPlayerUnitAvailableBJ(pick, true, pltr) 
+            chaosL.remove(pick)  
+    if GetClickedButton() == ancients
+        for i = 1 to 3
+            pick = ancientsL.getFirst()
+            SetPlayerUnitAvailableBJ(pick, true, pltr) 
+            ancientsL.remove(pick)  
+
+
+init
+    let t = CreateTrigger()
+    t.addCondition(Condition(function allPickRace))
+    t.registerDialogEvent(FO)  
+    let tt = CreateTrigger()
+    tt.addCondition(Condition(function pick))
+    tt.registerDialogEvent(FO) 

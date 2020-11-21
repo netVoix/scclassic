@@ -1,0 +1,56 @@
+package DecayAuraSatyr
+import ObjEditingNatives
+import ObjectIdGenerator
+import RegisterEvents
+import CorruptedTreeOfLife
+
+public let DECAY_AURA_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+
+
+// @compiletime function create_w3a_A0KX()
+//     createObjectDefinition("w3a", DECAY_AURA_DUMMY_ID, 'ANpi')
+//     ..setLvlDataUnreal("Eim1", 1, 1, 100.0)
+//     ..setLvlDataString("aub1", 1, 0, "Burns nearby enemy units for 100 points of damage per second.")
+//     ..setLvlDataString("atar", 1, 0, "air,enemies,ground,mechanical,neutral,organic")
+//     ..setLvlDataUnreal("aare", 1, 0, 1500.0)
+//     ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\PASBTNRegenerationAura.blp")
+//     ..setLvlDataString("atat", 0, 0, "Decay.mdx")
+
+
+@compiletime function create_w3a_A004()
+    createObjectDefinition("w3a", DECAY_AURA_DUMMY_ID, 'Atdg')
+    ..setLvlDataString("arac", 0, 0, "other")
+    ..setLvlDataUnreal("Tdg1", 1, 1, 100.0)
+    ..setLvlDataUnreal("Tdg3", 1, 3, 100.0)
+    ..setLvlDataUnreal("Tdg2", 1, 2, 1500.0)
+    ..setLvlDataUnreal("aare", 1, 0, 1500.0)
+    ..setLvlDataInt("alev", 0, 0, 6)
+    ..setLvlDataUnreal("Tdg1", 2, 1, 100.0)
+    ..setLvlDataUnreal("Tdg1", 3, 1, 100.0)
+    ..setLvlDataString("anam", 0, 0, "Green Glow")
+    ..setLvlDataUnreal("aare", 2, 0, 1500.0)
+    ..setLvlDataUnreal("aare", 3, 0, 1500.0)
+    ..setLvlDataString("atar", 2, 0, "air,enemies,ground,mechanical,neutral,organic")
+    ..setLvlDataString("atar", 3, 0, "air,enemies,ground,mechanical,neutral,organic")
+    ..setLvlDataUnreal("Tdg3", 2, 3, 100.0)
+    ..setLvlDataUnreal("Tdg3", 3, 3, 100.0)
+    ..setLvlDataUnreal("Tdg2", 2, 2, 1500.0)
+    ..setLvlDataUnreal("Tdg2", 3, 2, 1500.0)
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\PassiveButtons\\PASBTNImmolation.blp")
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataString("abuf", 1, 0, "")
+    ..setLvlDataString("atat", 0, 0, "Decay.mdx")
+    ..setLvlDataString("atar", 1, 0, "air,enemies,ground,mechanical,neutral,organic")
+
+
+function decayaurause(int abil, unit u)
+    if abil == DECAY_AURA_ID
+        CreateNUnitsAtLoc(1,'u000',GetOwningPlayer(GetTriggerUnit()),GetUnitLoc(u),bj_UNIT_FACING)
+        let dummy = GetLastCreatedUnit()
+        dummy.addAbility(DECAY_AURA_DUMMY_ID)
+        dummy.setTimedLife(18)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        decayaurause(GetSpellAbilityId(), GetTriggerUnit())

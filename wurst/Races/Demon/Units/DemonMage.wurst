@@ -86,7 +86,7 @@ public let EREDAR_WITCH_ID = 'nerw'
     
 
 @compiletime function create_w3u_ners()
-    createObjectDefinition("w3u", 'ners', 'ners')
+    createObjectDefinition("w3u", EREDAR_WARLOCK_ID, 'ners')
     ..setString("urac", "undead")
     ..setString("udaa", "")
     ..setString("uabi", "A002,ACdc,ACrg,ACad,A0BO")

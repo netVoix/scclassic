@@ -1,0 +1,66 @@
+package CursedPower
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+import CorruptedTreeOfLife
+import RegisterEvents
+import ClosureTimers
+
+public let CURSED_POWER_ID = compiletime(ABIL_ID_GEN.next())
+public let CRITICAL_STRIKE_SATYR_ID = compiletime(ABIL_ID_GEN.next())
+public let CURSED_POWER_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function innerfire()
+    new AbilityDefinitionInnerFire(CURSED_POWER_ID)
+    ..setHeroAbility(false)
+    ..presetBuffs(lvl -> commaList(CURSED_POWER_BUFF_ID)) 
+    ..setRequirements("" + commaList(CURSED_MAGIC_ID))  
+    ..setRequirementsLevels("1")
+    ..setLevels(3) 
+    ..presetCastRange(lvl -> 600) 
+    ..presetCooldown(lvl -> 45) 
+    ..presetDamageIncrease(lvl -> 0.0) 
+    ..presetDefenseIncrease(lvl -> 0) 
+    ..presetDurationNormal(lvl -> 45) 
+    ..presetManaCost(lvl -> 30) 
+    ..presetTargetsAllowed(lvl -> "mechanical,friend,ground,neutral,nonhero,organic,self")
+    ..presetTooltipNormal(lvl -> "Cursed Power " + (lvl).toString() + "lvl") 
+    ..presetTooltipNormalExtended(lvl -> "25% to do " + (1.0 + (0.5 * lvl)).toString() + "damage for unit.") 
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp")
+    ..presetButtonPosNormal(0, 2)
+
+
+@compiletime function create_w3h_Binf()
+    createObjectDefinition("w3h", CURSED_POWER_BUFF_ID, 'Binf')
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp")
+    ..setString("ftip", "Cursed Power 1")
+    ..setString("fube", "This warrior is reinforced by Cursed Power; its has a chance to deal additional damage.")
+    ..setInt("fspd", 2)
+    ..setString("ftat", "Abilities\\Spells\\Undead\\UnholyFrenzy\\UnholyFrenzyTarget.mdl")
+    ..setString("fta0", "overhead")
+
+
+@compiletime function criticalStrike()
+    new AbilityDefinitionCriticalStrikecreep(CRITICAL_STRIKE_SATYR_ID)
+    ..setHeroAbility(false)
+    ..setLevels(3)
+    ..presetButtonPosNormal(1, 1)
+    ..presetChancetoCriticalStrike(lvl -> 25.0)
+    ..presetDamageMultiplier(lvl -> 1.0 + 0.5 * lvl) 
+    ..presetTooltipNormal(lvl -> "Critical Strike " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "25% to do " + (1.0 + (0.5 * lvl)).toString() + "damage for unit.")
+  
+    
+function criticalstrikeAdd(int abil, unit u, unit tr)
+    if abil == CURSED_POWER_ID
+        let lvl = GetUnitAbilityLevel(tr, CURSED_POWER_ID)
+        u.addAbility(CRITICAL_STRIKE_SATYR_ID)
+        u.setAbilityLevel(CRITICAL_STRIKE_SATYR_ID, lvl)
+        doAfter(45) -> 
+            u.removeAbility(CRITICAL_STRIKE_SATYR_ID)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        criticalstrikeAdd(GetSpellAbilityId(), GetSpellTargetUnit(), GetTriggerUnit())

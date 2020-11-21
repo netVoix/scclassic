@@ -1,0 +1,39 @@
+package DemonicFortitude
+import ObjectIdGenerator
+import AbilityObjEditing
+import ObjectIds
+
+public let DEMONIC_FORTITUDE_ID = compiletime(ABIL_ID_GEN.next())
+public let DEMONIC_FORTITUDE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function demonicfortitude()
+    new AbilityDefinitionBeserk(DEMONIC_FORTITUDE_ID) 
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(3, 2)
+    ..presetMovementSpeedIncrease(lvl -> 0.01)
+    ..presetAttackSpeedIncrease(lvl -> 0.01)
+    ..presetDurationHero(lvl -> 8.0 + 3.0 * lvl)
+    ..presetDurationNormal(lvl -> 8.0 + 3.0 * lvl)
+    ..presetTargetsAllowed(lvl -> "hero")
+    ..presetManaCost(lvl -> 50)
+    ..presetCooldown(lvl -> 38.0 + 2.0 * lvl) 
+    ..presetDamageTakenIncrease(lvl -> -0.8)
+    ..presetBuffs(lvl -> commaList(DEMONIC_FORTITUDE_BUFF_ID))
+    ..presetTooltipNormal(lvl -> "Demonic Fortitude " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "Takes 80% less damage for " + (8 + 3 * lvl).toString() + " second.")
+    
+
+@compiletime function create_w3h_B01B()
+    createObjectDefinition("w3h", DEMONIC_FORTITUDE_BUFF_ID, 'Bbsk')
+    ..setString("fube", "This unit under the influence of Demonic Fortitude; it takes less damage.")
+    ..setString("frac", "other")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNDarkSummoning.blp")
+    ..setString("fta0", "hand,right")
+    ..setString("fta1", "head")
+    ..setString("ftip", "|cff2bff00Demonic Fortitude|r")
+    ..setString("ftat", "Abilities\\Spells\\Orc\\TrollBerserk\\HeadhunterWEAPONSRight.mdl,Abilities\\Spells\\Undead\\DarkSummoning\\DarkSummonMissile.mdl")
+        

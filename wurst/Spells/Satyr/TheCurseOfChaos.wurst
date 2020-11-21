@@ -1,0 +1,75 @@
+package TheCurseOfChaos
+import ObjectIdGenerator
+import AbilityObjEditing
+import ObjectIds
+import RegisterEvents
+import ClosureTimers
+
+public let CURSE_OF_CHAOS_ID = compiletime(ABIL_ID_GEN.next())
+public let CURSE_OF_CHAOS_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+public let CURSE_OF_CHAOS_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function shadowWordFIRE()
+    new AbilityDefinitionCripple(CURSE_OF_CHAOS_ID)
+    ..setHeroAbility(true)
+    ..presetBuffs(lvl -> commaList(CURSE_OF_CHAOS_BUFF_ID))
+    ..setRequirements("")  
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..setLevels(7)
+    ..presetDamageReduction(lvl -> 0.0) 
+    ..presetMovementSpeedReduction(lvl -> 0.5)
+    ..presetAttackSpeedReduction(lvl -> 0.01)
+    ..presetCastRange(lvl -> 800)
+    ..presetCooldown(lvl -> 40) 
+    ..presetManaCost(lvl -> 40 + 10 * lvl) 
+    ..presetDurationNormal(lvl -> 30) 
+    ..presetDurationHero(lvl -> 30) 
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
+    ..presetAreaofEffect(lvl -> 0)
+    ..presetButtonPosNormal(0, 2)
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNCripple.blp")
+    ..presetTooltipNormal(lvl -> "Curse of Chaos " + lvl.toString() + " lvl") 
+    ..presetTooltipNormalExtended(lvl -> "Reduces spell resist by " + (10 * lvl).toString() + "%.")
+
+
+@compiletime function create_w3h_Bcri()
+    createObjectDefinition("w3h", CURSE_OF_CHAOS_BUFF_ID, 'Bcri')
+    ..setString("fube", "This unit has a Curse of Chaos; its spel resis is reduced.")
+    ..setInt("fspd", 1)
+    ..setString("ftip", "|cffff0000Curse of Chaos|r")
+
+
+@compiletime function create_w3a_A0J1()
+    createObjectDefinition("w3a", CURSE_OF_CHAOS_DUMMY_ID, 'AIsr')
+    ..setLvlDataInt("aite", 0, 0, 0)
+    ..setLvlDataString("arac", 0, 0, "orc")
+    ..setLvlDataString("anam", 0, 0, "Impenetrable Hide")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEnchantedBears.blp")
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataInt("abpy", 0, 0, 2)
+    ..setLvlDataUnreal("isr2", 1, 2, -0.1)
+    ..setLvlDataUnreal("isr2", 2, 2, -0.2)
+    ..setLvlDataUnreal("isr2", 3, 2, -0.3)
+    ..setLvlDataUnreal("isr2", 4, 2, -0.4)
+    ..setLvlDataUnreal("isr2", 5, 2, -0.5)
+    ..setLvlDataUnreal("isr2", 6, 2, -0.6)
+    ..setLvlDataUnreal("isr2", 7, 2, -0.7)
+    ..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
+    ..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 15%.")
+
+
+function criticalstrikeAdd(int abil, unit u, unit tr)
+    if abil == CURSE_OF_CHAOS_ID
+        let lvl = GetUnitAbilityLevel(tr, CURSE_OF_CHAOS_ID)
+        u.addAbility(CURSE_OF_CHAOS_DUMMY_ID)
+        u.setAbilityLevel(CURSE_OF_CHAOS_DUMMY_ID, lvl)
+        doAfter(30) -> 
+            u.removeAbility(CURSE_OF_CHAOS_DUMMY_ID)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        criticalstrikeAdd(GetSpellAbilityId(), GetSpellTargetUnit(), GetTriggerUnit())
+    
