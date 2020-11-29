@@ -12,6 +12,7 @@ import public HeroesOrc
 import public HeroesTauren
 import public HeroesTroll
 import public HeroesUndead
+import public HeroesSatyr
 
 import public HeroesIconsBloodEld
 import public HeroesIconsDemon
@@ -25,3 +26,4 @@ import public HeroesIconsOrc
 import public HeroesIconsTauren
 import public HeroesIconsTroll
 import public HeroesIconsUndead
+import public HeroesIconsSatyr

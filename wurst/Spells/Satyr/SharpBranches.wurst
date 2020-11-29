@@ -1,0 +1,38 @@
+package SharpBranches
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import ObjectIds
+
+public let SHARP_BRANCHES_ID = compiletime(ABIL_ID_GEN.next())
+public let SHARP_BRANCHES_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0HK()
+	createObjectDefinition("w3a", SHARP_BRANCHES_ID, 'ACah')
+	..setLvlDataString("arac", 0, 0, "nightelf")
+	..setLvlDataString("aub1", 1, 0, "Spikes deal 60 damage to an enemy melee attacker.")
+	..setLvlDataString("atp1", 1, 0, "Sharp Branches")
+	..setLvlDataString("anam", 0, 0, "Sharp Branches")
+	..setLvlDataString("atar", 1, 0, "self")
+	..setLvlDataUnreal("aare", 1, 0, 1.0)
+	..setLvlDataUnreal("Eah1", 1, 1, 60.0)
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNThornShield.blp")
+	..setLvlDataString("abuf", 1, 0, "" + commaList(SHARP_BRANCHES_BUFF_ID))
+	..setLvlDataUnreal("aare", 2, 0, 1.0)
+	..setLvlDataUnreal("aare", 3, 0, 1.0)
+	..setLvlDataInt("Eah2", 1, 2, 0)
+	..setLvlDataString("ata0", 0, 0, "chest")
+	..setLvlDataString("atat", 0, 0, "Abilities\\Spells\\Undead\\ThornyShield\\ThornyShieldTargetChestLeft.mdl,Abilities\\Spells\\Undead\\ThornyShield\\ThornyShieldTargetChestRight.mdl")
+	..setLvlDataString("ata1", 0, 0, "chest")
+	..setLvlDataInt("atac", 0, 0, 2)
+
+
+@compiletime function create_w3h_B00O()
+	createObjectDefinition("w3h", SHARP_BRANCHES_BUFF_ID, 'BEah')
+	..setString("ftip", "Sharp Branches")
+	..setString("fube", "This unit is under the effects of Sharp Branches; it has increased armor and melee units that attack it will take damage.")
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNThornShield.blp")
+	..setString("frac", "other")
+	..setString("ftat", "")
+	..setString("fta0", "")

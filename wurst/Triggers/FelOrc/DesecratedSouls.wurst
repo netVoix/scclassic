@@ -43,9 +43,9 @@ function voidspawn(unit u)
                         for q = 1 to 5 * (greid + ic)
                             if q == r
                                 if u.isStartVoid() and greid >= 1
-                                    CreateNUnitsAtLoc(1, VOIDWRAITH_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                                    CreateNUnitsAtLoc(1, VOIDWRAITH_ID, u.getOwner(), GetUnitLoc(u), bj_UNIT_FACING)
                                 if DS == 'nchw' and greid >= 2
-                                    CreateNUnitsAtLoc(1, VOIDWALKER_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                                    CreateNUnitsAtLoc(1, VOIDWALKER_ID, u.getOwner(), GetUnitLoc(u), bj_UNIT_FACING)
                                 // if DS == 'nrdr' and greid >= 3
                                 //     CreateNUnitsAtLoc(1, NETHER_DRAGON_ID, u.getOwner(), u.getLoc(), bj_UNIT_FACING)
                                 // if u.isType(UNIT_TYPE_HERO) and greid >= 4

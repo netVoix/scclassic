@@ -15,16 +15,29 @@ import Eleret
 import Xavius
 import Kepereter
 import IlGinot
+import BatlleRage
+import RootSistem
+import EmeraldNightmare
+import NaturalsVaprizim
+import LastForPower
+import Madness
+import DenialOfmagic
+import InstillingFear
+import ItemsBonus
 
-function caow()
+
+function barack()
     IssueImmediateOrderById(GetEnumUnit(),CORRUPTED_ANCIENT_OF_WAR_LV1)
 
-function cap()
+function tower()
     IssueImmediateOrderById(GetEnumUnit(),CORRUPTED_ANCIENT_PROTECTOR)
     
-function fs()
+function found()
     IssueImmediateOrderById(GetEnumUnit(),FOUNDATION_SATYR)
-    
+    if GetEnumUnit().getOwner() == S
+        GetEnumUnit().kill()  
+        GetEnumUnit().remove()
+        CreateNUnitsAtLoc(1, FOUNDATION_SATYR, GetEnumUnit().getOwner(), GetUnitLoc(GetEnumUnit()), bj_UNIT_FACING)
 
 function pickSatyr()
     let CTOL = GetTriggerUnit()
@@ -33,18 +46,20 @@ function pickSatyr()
         EnableTrigger(HSX)
         EnableTrigger(HJO)
         DisableTrigger(ZU)
+        for i = 0 to 12
+            SetPlayerUnitAvailableBJ(CORRUPTED_TREE_OF_LIFE_LV1, false, players[i])
         SetUnitScalePercent(GetTriggerUnit(),150.,150.,150.)
         XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o00Y')
-        ForGroupBJ(XC[13],function caow)
+        ForGroupBJ(XC[13],function barack)
         DestroyGroup(XC[13])
         XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01C')
-        ForGroupBJ(XC[13],function cap)
+        ForGroupBJ(XC[13],function tower)
         DestroyGroup(XC[13])
         XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01L')
-        ForGroupBJ(XC[13],function fs)
+        ForGroupBJ(XC[13],function found)
         DestroyGroup(XC[13])
-        if GetOwningPlayer(GetTriggerUnit())==P
-            IR[1] = 'A0AL'
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = PICK_AURA_SATYR_ID
             TB[1] = 'A0P8'
             GX[1] = XAVIUS_ID
             HX[1] = KEPERETER_ID
@@ -67,14 +82,14 @@ function pickSatyr()
             WE[1] = CURSED_MAGIC_ID
             TE[1] = SATYR_ARMOR_ID
             YE[1] = BUILDING_ARMOR_ID
-            ZE[1] = 'Rucr'
-            VX[1] = 'R00W'
-            EX[1] = 'R00X'
-            XX[1] = 'R00Y'
-            OX[1] = 'R00Z'
-            RX[1] = 'R010'
-            IX[1] = 'R011'
-            UX[1] = 'R01W'
+            ZE[1] = BATLLE_RAGE_ID
+            VX[1] = ROOT_SISTEM_ID
+            EX[1] = EMERALD_NIGHTMARE_ID
+            XX[1] = NATURAL_VAMPIRIZM_ID
+            OX[1] = LUST_FORPOWER_ID
+            RX[1] = MADNESS_ID
+            IX[1] = DENIAL_OF_MAGIC_ID
+            UX[1] = INSTILLING_FEAR_ID
             AB[1] = 'R04J'
             GR[1] = 'nsts'
             TR[1] = $C
@@ -83,7 +98,7 @@ function pickSatyr()
             KR[3] = 'bshi'
             KR[4] = 'uaod'
             KR[5] = 'uzig'
-            KR[6] = 'nef0'
+            KR[6] = ITEM_MERCHANT_BONUS_ID
             KR[7] = 'nmra'
             KR[8] = 'nmrb'
             KR[9] = 'nmrc'
@@ -94,6 +109,7 @@ function pickSatyr()
             if AI == false
                 PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
                 SelectUnitForPlayerSingle(LHA,P)
+                // print("P")
             else
                 RemoveUnit(BR)
             if GetPlayerController(P)==MAP_CONTROL_COMPUTER
@@ -106,7 +122,7 @@ function pickSatyr()
             doAfter(2) ->
                 SetPlayerTechResearchedSwap('Rnsi',1,P)
         if GetOwningPlayer(GetTriggerUnit())==S
-            IR[2] = 'A0AL'
+            IR[2] = PICK_AURA_SATYR_ID
             TB[2] = 'A0P8'
             GX[2] = XAVIUS_ID
             HX[2] = KEPERETER_ID
@@ -129,14 +145,14 @@ function pickSatyr()
             WE[2] = CURSED_MAGIC_ID
             TE[2] = SATYR_ARMOR_ID
             YE[2] = BUILDING_ARMOR_ID
-            ZE[2] = 'Rucr'
-            VX[2] = 'R00W'
-            EX[2] = 'R00X'
-            XX[2] = 'R00Y'
-            OX[2] = 'R00Z'
-            RX[2] = 'R010'
-            IX[2] = 'R011'
-            UX[2] = 'R01W'
+            ZE[2] = BATLLE_RAGE_ID
+            VX[2] = ROOT_SISTEM_ID
+            EX[2] = EMERALD_NIGHTMARE_ID
+            XX[2] = NATURAL_VAMPIRIZM_ID
+            OX[2] = LUST_FORPOWER_ID
+            RX[2] = MADNESS_ID
+            IX[2] = DENIAL_OF_MAGIC_ID
+            UX[2] = INSTILLING_FEAR_ID
             AB[2] = 'R04J'
             GR[2] = 'nsts'
             TR[2] = $C
@@ -145,7 +161,7 @@ function pickSatyr()
             LR[3] = 'bshi'
             LR[4] = 'uaod'
             LR[5] = 'uzig'
-            LR[6] = 'nef0'
+            LR[6] = ITEM_MERCHANT_BONUS_ID
             LR[7] = 'nmra'
             LR[8] = 'nmrb'
             LR[9] = 'nmrc'
@@ -156,6 +172,7 @@ function pickSatyr()
             if AI == false
                 PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
                 SelectUnitForPlayerSingle(LTA,S)
+                // print("S")
             else
             RemoveUnit(FR)
             if GetPlayerController(S) == MAP_CONTROL_COMPUTER
@@ -168,7 +185,7 @@ function pickSatyr()
             doAfter(2) ->
                 SetPlayerTechResearchedSwap('Rnsi',1,S)
         if GetOwningPlayer(GetTriggerUnit()) == Q
-            IR[3] = 'A0AL'
+            IR[3] = PICK_AURA_SATYR_ID
             TB[3] = 'A0P8'
             GX[3] = XAVIUS_ID
             HX[3] = KEPERETER_ID
@@ -191,14 +208,14 @@ function pickSatyr()
             WE[3] = CURSED_MAGIC_ID
             TE[3] = SATYR_ARMOR_ID
             YE[3] = BUILDING_ARMOR_ID
-            ZE[3] = 'Rucr'
-            VX[3] = 'R00W'
-            EX[3] = 'R00X'
-            XX[3] = 'R00Y'
-            OX[3] = 'R00Z'
-            RX[3] = 'R010'
-            IX[3] = 'R011'
-            UX[3] = 'R01W'
+            ZE[3] = BATLLE_RAGE_ID
+            VX[3] = ROOT_SISTEM_ID
+            EX[3] = EMERALD_NIGHTMARE_ID
+            XX[3] = NATURAL_VAMPIRIZM_ID
+            OX[3] = LUST_FORPOWER_ID
+            RX[3] = MADNESS_ID
+            IX[3] = DENIAL_OF_MAGIC_ID
+            UX[3] = INSTILLING_FEAR_ID
             AB[3] = 'R04J'
             GR[3] = 'nsts'
             TR[3] = $C
@@ -207,7 +224,7 @@ function pickSatyr()
             MR[3] = 'bshi'
             MR[4] = 'uaod'
             MR[5] = 'uzig'
-            MR[6] = 'nef0'
+            MR[6] = ITEM_MERCHANT_BONUS_ID
             MR[7] = 'nmra'
             MR[8] = 'nmrb'
             MR[9] = 'nmrc'
@@ -218,6 +235,7 @@ function pickSatyr()
             if AI == false
                 PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
                 SelectUnitForPlayerSingle(KRA,Q)
+                // print("Q")
             else 
                 RemoveUnit(CR)
             if GetPlayerController(Q) == MAP_CONTROL_COMPUTER
@@ -230,7 +248,7 @@ function pickSatyr()
             doAfter(2) ->
                 SetPlayerTechResearchedSwap('Rnsi',1,Q)
         if GetOwningPlayer(GetTriggerUnit()) == T
-            IR[4] = 'A0AL'
+            IR[4] = PICK_AURA_SATYR_ID
             TB[4] = 'A0P8'
             GX[4] = XAVIUS_ID
             HX[4] = KEPERETER_ID
@@ -253,14 +271,14 @@ function pickSatyr()
             WE[4] = CURSED_MAGIC_ID
             TE[4] = SATYR_ARMOR_ID
             YE[4] = BUILDING_ARMOR_ID
-            ZE[4] = 'Rucr'
-            VX[4] = 'R00W'
-            EX[4] = 'R00X'
-            XX[4] = 'R00Y'
-            OX[4] = 'R00Z'
-            RX[4] = 'R010'
-            IX[4] = 'R011'
-            UX[4] = 'R01W'
+            ZE[4] = BATLLE_RAGE_ID
+            VX[4] = ROOT_SISTEM_ID
+            EX[4] = EMERALD_NIGHTMARE_ID
+            XX[4] = NATURAL_VAMPIRIZM_ID
+            OX[4] = LUST_FORPOWER_ID
+            RX[4] = MADNESS_ID
+            IX[4] = DENIAL_OF_MAGIC_ID
+            UX[4] = INSTILLING_FEAR_ID
             AB[4] = 'R04J'
             GR[4] = 'nsts'
             TR[4] = $C
@@ -269,7 +287,7 @@ function pickSatyr()
             PR[3] = 'bshi'
             PR[4] = 'uaod'
             PR[5] = 'uzig'
-            PR[6] = 'nef0'
+            PR[6] = ITEM_MERCHANT_BONUS_ID
             PR[7] = 'nmra'
             PR[8] = 'nmrb'
             PR[9] = 'nmrc'
@@ -280,6 +298,7 @@ function pickSatyr()
             if AI == false
                 PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
                 SelectUnitForPlayerSingle(LIA,T)
+                // print("T")
             else
                 RemoveUnit(DR)
             if GetPlayerController(T) == MAP_CONTROL_COMPUTER

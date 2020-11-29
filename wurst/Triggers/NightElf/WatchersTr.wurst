@@ -1,4 +1,5 @@
 package WatchersTr
+
 import RegisterEvents
 import ServantOfTheNight
 import Watchers
@@ -51,7 +52,7 @@ function spiritofvengeance(unit u)
         let lvl = GetPlayerTechCountSimple('Redt', GetOwningPlayer(u))
         for i = 1 to 15 * (lvl + 1)
             if i == random
-                CreateNUnitsAtLoc(1, 'even', u.getOwner(), u.getLoc(), bj_UNIT_FACING)
+                CreateNUnitsAtLoc(1, 'even', u.getOwner(), GetUnitLoc(u), bj_UNIT_FACING)
 
 
 function addVorpalDaggers(unit u)

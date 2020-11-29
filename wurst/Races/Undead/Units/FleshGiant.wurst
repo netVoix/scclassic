@@ -6,7 +6,7 @@ import ObjEditingNatives
 @compiletime function create_w3u_nfgl()
 	createObjectDefinition("w3u", 'nfgl', 'nfgl')
 	..setString("urac", "undead")
-	..setString("uabi", "A002,A0JA,PoSr,Agyv,ACca,A01Q")
+	..setString("uabi", "A002,PoSr,Agyv,ACca,A01Q")
 	..setInt("ubpx", 3)
 	..setReal("usca", 1.0)
 	..setReal("ussc", 2.3)

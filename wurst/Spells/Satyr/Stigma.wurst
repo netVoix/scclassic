@@ -1,0 +1,67 @@
+package Stigma
+
+import AbilityObjEditing
+import ObjectIds
+import ObjectIdGenerator
+import BuffObjEditing
+import RegisterEvents
+import ClosureTimers
+
+public let STIGMA_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let STIGMA_ABIL_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+public let STIGMA_ABIL_DUMMY_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function slowability()
+    new AbilityDefinitionSlow(STIGMA_ABIL_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(0, 2)
+    ..setRequirements(commaList(""))
+    ..presetAttackSpeedFactor(lvl -> 0.01)
+    ..presetMovementSpeedFactor(lvl -> 0.01)
+    ..presetManaCost(lvl -> 50)
+    ..presetCastRange(lvl -> 500)
+    ..presetDurationNormal(lvl -> 20.0)
+    ..presetDurationHero(lvl -> 20.0)
+    ..presetCastingTime(lvl -> 0.01)
+    ..presetCooldown(lvl -> 50)
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNPeriapt1.blp")
+    ..presetBuffs(lvl -> commaList(STIGMA_ABIL_DUMMY_BUFF_ID))
+    ..presetTooltipNormal(lvl -> "Stigma " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> (10 * lvl).toString() + "% more damage")
+
+
+@compiletime function spiritProtection()
+    new AbilityDefinitionThornyShieldCreep(STIGMA_ABIL_DUMMY_ID)
+    ..setHeroAbility(false)
+    ..setLevels(7)
+    ..presetDefenseBonus(lvl -> 0)
+    ..presetReceivedDamageFactor(lvl -> 1.0 + 0.1 * lvl)
+    ..presetReturnedDamageFactor(lvl -> 0.0)
+    ..presetTargetsAllowed(lvl -> "self")
+
+
+@compiletime function spiritProtectionBuff()
+    new BuffDefinition(STIGMA_ABIL_DUMMY_BUFF_ID, 'BUts')
+    ..setTooltipNormal(1, "This unit is stigmed; he takes more damage")
+    ..setArtTarget(1, "Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl")
+    ..setArtSpecial(1, "Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl")
+    ..setIcon("ReplaceableTextures\\CommandButtons\\BTNPeriapt1.blp")
+
+
+function criticalstrikeAdd(int abil, unit u, unit tr)
+    if abil == STIGMA_ABIL_ID
+        let lvl = GetUnitAbilityLevel(tr, STIGMA_ABIL_ID)
+        u.addAbility(STIGMA_ABIL_DUMMY_ID)
+        u.setAbilityLevel(STIGMA_ABIL_DUMMY_ID, lvl)
+        doAfter(20) -> 
+            u.removeAbility(STIGMA_ABIL_DUMMY_ID)	
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        criticalstrikeAdd(GetSpellAbilityId(), GetSpellTargetUnit(), GetTriggerUnit())

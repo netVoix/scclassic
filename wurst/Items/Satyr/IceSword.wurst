@@ -1,0 +1,39 @@
+package IceSword
+
+import ObjectIdGenerator
+import ObjectIds
+import AbilityObjEditing
+
+public let ICE_SWORD_ID = compiletime(ITEM_ID_GEN.next())
+public let ICE_SWORD_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let ICE_SWORDR_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", ICE_SWORD_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Ice Sword|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Ice Sword|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp")
+    ..setString("icid", "" + commaList(ICE_SWORD_ABIL_ID))
+    ..setString("iabi", "" + commaList(ICE_SWORD_ABIL_ID))
+    ..setString("utub", "-30% heroes speed for 5 second |n  |cff6c7b8b(doesn't affect Special unit)|r")
+
+
+@compiletime function slow()
+    new AbilityDefinitionSlowPoison(ICE_SWORD_ABIL_ID)
+    ..setItemAbility(true)
+    ..presetAttackSpeedFactor(lvl -> 0.3)
+    ..presetMovementSpeedFactor(lvl -> 0.3)
+    ..presetStackingTypes(lvl -> 6) 
+    ..presetDamagePerSecond(lvl -> 0.0)
+    ..presetDurationHero(lvl -> 5.0)
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
+    ..presetBuffs(lvl -> "B02N,B02O")
+        

@@ -1,11 +1,10 @@
 package AssassinsHelpers
 import LinkedList
-// import FlintShadowmore
 import ClosureForGroups
 import Orders
+import Iglarion
 
-let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg')
-// let data = asList('Hapm', 'Ogrh', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', FLINT_SHADOWMORE_ID)
+let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', IGLARION_ID)
 
 unit affectedUnit
 

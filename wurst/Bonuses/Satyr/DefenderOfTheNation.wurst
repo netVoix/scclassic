@@ -1,0 +1,92 @@
+package DefenderOfTheNation
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import Iglarion
+
+public let DEFENDER_OF_THE_NATION_ID = compiletime(UNIT_ID_GEN.next())
+public let DEFENDER_OF_THE_NATION_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3u_eaow()
+    createObjectDefinition("w3u", DEFENDER_OF_THE_NATION_ID, 'eaow')
+    ..setString("uabi", "Abgl,Avul," + commaList(DEFENDER_OF_THE_NATION_ABIL_ID))
+    ..setInt("ubpy", 0)
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNAstroSatyr.blp")
+    ..setString("uubs", "EMDB")
+    ..setString("umdl", "buildings\\other\\BarrowDens\\BarrowDens.mdl")
+    ..setString("ushu", "")
+    ..setReal("ushx", 0.0)
+    ..setReal("ushy", 0.0)
+    ..setReal("ushh", 0.0)
+    ..setReal("ushw", 0.0)
+    ..setString("ushb", "ShadowHuntersHall")
+    ..setString("uarm", "Wood")
+    ..setUnreal("uacq", 0.0)
+    ..setString("ua1w", "")
+    ..setString("ucs1", "")
+    ..setInt("uaen", 0)
+    ..setString("ua2w", "")
+    ..setString("ucs2", "")
+    ..setInt("udup", 1)
+    ..setInt("umvs", 0)
+    ..setUnreal("umvr", 0.0)
+    ..setString("umvt", "")
+    ..setUnreal("uabr", 0.0)
+    ..setString("uabt", "_")
+    ..setUnreal("ucol", 100.0)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setInt("ubld", 1)
+    ..setString("usnd", "HuntersHall")
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setInt("upri", 2)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("ureq", "")
+    ..setString("ures", "")
+    ..setString("utra", "")
+    ..setString("upgr", "")
+    ..setString("unam", "Hunter's Hall")
+    ..setString("utip", "Defender Of The Nation [|cffffcc00W|r]")
+    ..setString("utub", "|cffffcc00Iglarion|r replaces |cffffcc00Eleret|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cff00ffffAssassin|r |n|cffffcc00Can learn:|r |n|cffff00ffStigma|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeadreduces resist to damage by 10-70% for 20s|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cff00ffffBerserk|r |cff6c7b8b(Self Spell)|r |n  |cffffdead10-70% attack rate bonus|r |n|n|cff00ffffHigh Status|r |cff6c7b8b(Passive Skill)|r |n  |cffffdeadtakes 95-65% damage from units|r |n|n|cff00ffffCrucial Hit|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead18-36% for 3x damage, 2s stun|r |n  |cff6c7b8b(affects organic units only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setString("uspa", "Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl")
+    ..setInt("ubpx", 1)
+    ..setInt("usid", 600)
+    
+
+@compiletime function create_w3a_A0DW()
+    createObjectDefinition("w3a", DEFENDER_OF_THE_NATION_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Iglarion|r replaces |cffffcc00Eleret|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Defender Of The Nation")
+    ..setLvlDataString("atp1", 1, 0, "Defender Of The Nation")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNAstroSatyr.blp")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == DEFENDER_OF_THE_NATION_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            JX[1] = IGLARION_ID
+        if OP == S
+            JX[2] = IGLARION_ID
+        if OP == Q
+            JX[3] = IGLARION_ID
+        if OP == T 
+            JX[4] = IGLARION_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

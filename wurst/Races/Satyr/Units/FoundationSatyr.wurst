@@ -2,11 +2,18 @@ package FoundationSatyr
 
 import ObjEditingNatives
 import ObjectIds
-import ServantOfTheNight
 import ObjectIdGenerator
 import CorruptedTreeOfLife
+import AntiHeroBonus
+import ItemsBonus
+import GuardiansOfTheCursedForest
+import SourceOfMagicSatyr
+import PredatoryForest
+import DefenderOfTheNation
+import KeeperOfTheEmeraldDream
 
 public let FOUNDATION_SATYR = compiletime(UNIT_ID_GEN.next())
+
 
 @compiletime function create_w3u_o01V()
 	createObjectDefinition("w3u", FOUNDATION_SATYR, 'ogre')
@@ -19,7 +26,7 @@ public let FOUNDATION_SATYR = compiletime(UNIT_ID_GEN.next())
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "nmr6,eaow,eaom,edob,eaoe,etrp,edos,etol,nef0,eden,nef7," + commaList(SERVANTS_OF_THE_NIGHT_ID))
+	..setString("uupt", "" + commaList(ANTI_HERO_ID,ITEM_MERCHANT_BONUS_ID,GUARDIANS_OF_THE_CURSED_FOREST_BUILDING_ID,SOURCE_OF_MAGIC_SATYR_ID,PREDATORY_FOREST_ID,DEFENDER_OF_THE_NATION_ID,KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)

@@ -1,0 +1,144 @@
+package SourceOfMagicSatyr
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import RegisterEvents
+import ObjectIds
+import CorruptedTreeOfLife
+import CursedPower
+import DemonicFire
+import ShadowWordDEATH
+
+public let SOURCE_OF_MAGIC_SATYR_ID = compiletime(UNIT_ID_GEN.next())
+public let SOURCE_OF_MAGIC_SATYR_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let EMPOWERMENT_SATUR_ID = compiletime(UPGD_ID_GEN.next())
+
+
+@compiletime function create_w3u_uaod()
+    createObjectDefinition("w3u", SOURCE_OF_MAGIC_SATYR_ID, 'uaod')
+    ..setString("uabi", "Abgl,Avul," + commaList(SOURCE_OF_MAGIC_SATYR_ABIL_ID))
+    ..setString("uubs", "")
+    ..setString("umdl", "doodads\\cinematic\\ShimmeringPortal\\ShimmeringPortal.mdl")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
+    ..setReal("usca", 0.7)
+    ..setReal("ussc", 4.0)
+    ..setString("ushb", "")
+    ..setUnreal("uacq", 0.0)
+    ..setInt("utc1", 0)
+    ..setInt("udef", 2)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setString("upar", "")
+    ..setUnreal("ucol", 100.0)
+    ..setString("uabt", "")
+    ..setUnreal("uabr", 0.0)
+    ..setString("usnd", "DemonGate")
+    ..setInt("ubld", 1)
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setInt("upri", 2)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("utra", "")
+    ..setString("upgr", "")
+    ..setString("uhot", "Z")
+    ..setString("unam", "Dimensional Portal")
+    ..setString("utip", "Source of Magic [|cffffcc00Z|r]")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadMadness|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
+    ..setInt("urev", 0)
+    ..setString("ures", "" + commaList(STORAGE_STONE_SATUR_ID,EMPOWERMENT_SATUR_ID,MAGIC_TORRENT_SATUR_ID))
+    ..setInt("ubpx", 0)
+    ..setInt("ubpy", 2)
+    ..setInt("usid", 600)
+    
+
+@compiletime function create_w3a_A0DE()
+    createObjectDefinition("w3a", SOURCE_OF_MAGIC_SATYR_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadMadness|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Source of Magic")
+    ..setLvlDataString("atp1", 1, 0, "Source of Magic")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
+    ..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+    ..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+    ..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+    ..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+@compiletime function create_w3q_R038()
+    createObjectDefinition("w3q", EMPOWERMENT_SATUR_ID, 'Rhan')
+    ..setLvlDataInt("gbpx", 0, 0, 1)
+    ..setLvlDataInt("gbpy", 0, 0, 0)
+    ..setLvlDataUnreal("gba1", 0, 0, 0.2)
+    ..setLvlDataInt("gglb", 0, 0, 750)
+    ..setLvlDataInt("glmb", 0, 0, 0)
+    ..setLvlDataString("greq", 1, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
+    ..setLvlDataString("ghk1", 1, 0, "W")
+    ..setLvlDataString("gnam", 1, 0, "Empowerment")
+    ..setLvlDataString("gtp1", 1, 0, "Basic Empowerment [|cffffcc00W|r]")
+    ..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n+12 Defiler damage |n-10% Defiler spell cooldown |n|cffffff00Cursed power|r +0.5x |n|cffff0000Demonic Fire|r +10 damage/sec |n|cffff00ffShadow Word DEATH|r -25 mana cost")
+    ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNDevourMagic.blp")
+    ..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNDevourMagic.blp")
+    ..setLvlDataString("gnam", 2, 0, "Empowerment")
+    ..setLvlDataString("gtp1", 2, 0, "Improved Empowerment [|cffffcc00W|r]")
+    ..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n+12 Defiler damage |n-10% Defiler spell cooldown |n|cffffff00Cursed power|r +0.5x |n|cffff0000Demonic Fire|r +10 damage/sec |n|cffff00ffShadow Word DEATH|r -25 mana cost")
+    ..setLvlDataString("gco1", 0, 0, "A00K")
+    ..setLvlDataUnreal("gmo1", 0, 0, 0.2)
+    ..setLvlDataString("gef1", 0, 0, "ratt")
+    ..setLvlDataInt("gtib", 0, 0, 30)
+    ..setLvlDataString("grac", 0, 0, "other")
+    ..setLvlDataString("gef2", 0, 0, "rlev")
+    ..setLvlDataString("gef3", 0, 0, "rlev")
+    ..setLvlDataString("gef4", 0, 0, "rlev")
+    ..setLvlDataUnreal("gba2", 0, 0, 1.0)
+    ..setLvlDataUnreal("gba3", 0, 0, 1.0)
+    ..setLvlDataUnreal("gba4", 0, 0, 1.0)
+    ..setLvlDataString("gco2", 0, 0, "" + commaList(CURSED_POWER_ID))
+    ..setLvlDataString("gco3", 0, 0, "" + commaList(DEMONIC_FIRE_ID))
+    ..setLvlDataString("gco4", 0, 0, "" + commaList(SHADOW_WORD_DEATH_ID))
+    ..setLvlDataInt("glvl", 0, 0, 2)
+    ..setLvlDataUnreal("gmo3", 0, 0, 1.0)
+    ..setLvlDataUnreal("gmo2", 0, 0, 1.0)
+    ..setLvlDataUnreal("gmo4", 0, 0, 1.0)
+    ..setLvlDataInt("gglm", 0, 0, 250)
+    ..setLvlDataInt("gtim", 0, 0, 5)
+    ..setLvlDataString("greq", 2, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setLvlDataString("ghk1", 2, 0, "W")
+
+
+function sourceofmagic(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == SOURCE_OF_MAGIC_SATYR_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        SetPlayerTechResearchedSwap('R02N',1,GetOwningPlayer(GetTriggerUnit()))
+        if OP == P
+            SetPlayerTechResearchedSwap('R02N',1,Z)
+            XA[1] = EMPOWERMENT_SATUR_ID
+            OA[1] = STORAGE_STONE_SATUR_ID
+            RA[1] = MAGIC_TORRENT_SATUR_ID
+        if OP == S
+            SetPlayerTechResearchedSwap('R02N',1,Y)
+            XA[2] = EMPOWERMENT_SATUR_ID
+            OA[2] = STORAGE_STONE_SATUR_ID
+            RA[2] = MAGIC_TORRENT_SATUR_ID
+        if OP == Q
+            SetPlayerTechResearchedSwap('R02N',1,U)
+            XA[3] = EMPOWERMENT_SATUR_ID
+            OA[3] = STORAGE_STONE_SATUR_ID
+            RA[3] = MAGIC_TORRENT_SATUR_ID
+        if OP == T 
+            SetPlayerTechResearchedSwap('R02N',1,W)
+            XA[4] = EMPOWERMENT_SATUR_ID
+            OA[4] = STORAGE_STONE_SATUR_ID
+            RA[4] = MAGIC_TORRENT_SATUR_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        sourceofmagic(GetTriggerUnit())

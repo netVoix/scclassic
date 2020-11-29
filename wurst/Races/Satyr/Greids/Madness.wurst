@@ -1,0 +1,102 @@
+package Madness
+
+import ObjectIdGenerator
+import CorruptedTreeOfLife
+import ObjectIds
+import RegisterEvents
+import AbilityObjEditing
+import ClosureTimers
+import SourceOfMagicSatyr
+
+
+public let MADNESS_ID = compiletime(UPGD_ID_GEN.next())
+public let MADNESS_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let MADNESS_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3q_R01T()
+    createObjectDefinition("w3q", MADNESS_ID, 'Rovs')
+    ..setLvlDataString("ghk1", 1, 0, "F")
+    ..setLvlDataString("gtp1", 1, 0, "Research Madness (|cffff0000Lv1|r) [|cffffcc00F|r]")
+    ..setLvlDataString("gnam", 1, 0, "Madness")
+    ..setLvlDataInt("glmb", 0, 0, 0)
+    ..setLvlDataString("greq", 1, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
+    ..setLvlDataInt("gbpx", 0, 0, 3)
+    ..setLvlDataInt("gbpy", 0, 0, 1)
+    ..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r the enemy unit attacks everyone |n|cffffcc00Affects:|r |cffffdeadDefiler|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: madnes for 4 second |nLv2: madnes for 8 second |nLv3: madnes for 12 second |nLv4: madnes for 16 second")
+    ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setLvlDataUnreal("gba1", 0, 0, 1.0)
+    ..setLvlDataInt("gglb", 0, 0, 500)
+    ..setLvlDataInt("glvl", 0, 0, 5)
+    ..setLvlDataUnreal("gmo1", 0, 0, 1.0)
+    ..setLvlDataInt("gglm", 0, 0, 250)
+    ..setLvlDataInt("gtim", 0, 0, 60)
+    ..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setLvlDataString("gnam", 2, 0, "Madness")
+    ..setLvlDataString("gnam", 3, 0, "Madness")
+    ..setLvlDataString("gtp1", 2, 0, "Research Madness (|cffffff00Lv2|r) [|cffffcc00F|r]")
+    ..setLvlDataString("gtp1", 3, 0, "Research Madness (|cff00ff00Lv3|r) [|cffffcc00F|r]")
+    ..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r the enemy unit attacks everyone |n|cffffcc00Affects:|r |cffffdeadDefiler|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cffff0000Lv1:|r madnes for |cffffcc004|r second |n|cff6c7b8bLv2: madnes for 8 second |nLv3: madnes for 12 second |nLv4: madnes for 16 second")
+    ..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r the enemy unit attacks everyone |n|cffffcc00Affects:|r |cffffdeadDefiler|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: madnes for 4 second|r |n|cffffff00Lv2:|r madnes for |cffffcc008|r second |n|cff6c7b8bLv3: madnes for 12 second |nLv4: madnes for 16 second")
+    ..setLvlDataString("gef2", 0, 0, "rlev")
+    ..setLvlDataString("gco2", 0, 0, "" + commaList(MADNESS_ABIL_ID))
+    ..setLvlDataUnreal("gmo2", 0, 0, 1.0)
+    ..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setLvlDataString("gnam", 4, 0, "Madness")
+    ..setLvlDataString("gtp1", 4, 0, "Research Madness (|cff00ffffLv4|r) [|cffffcc00F|r]")
+    ..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r the enemy unit attacks everyone |n|cffffcc00Affects:|r |cffffdeadDefiler|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: madnes for 4 second |nLv2: madnes for 8 second|r |n|cff00ff00Lv3:|r madnes for |cffffcc0012|r second |n|cff6c7b8bLv4: +madnes for 16 second")
+    ..setLvlDataInt("gtib", 0, 0, 90)
+    ..setLvlDataString("greq", 4, 0, "" + commaList(SOURCE_OF_MAGIC_SATYR_ID))
+    ..setLvlDataString("ghk1", 2, 0, "F")
+    ..setLvlDataString("ghk1", 3, 0, "F")
+    ..setLvlDataString("ghk1", 4, 0, "F")
+    ..setLvlDataString("gar1", 5, 0, "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setLvlDataString("ghk1", 5, 0, "F")
+    ..setLvlDataString("gnam", 5, 0, "Madness")
+    ..setLvlDataString("gtp1", 5, 0, "Madness (Max Level)")
+    ..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r the enemy unit attacks everyone |n|cffffcc00Affects:|r |cffffdeadDefiler|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: madnes for 4 second |nLv2: madnes for 8 second |nLv3: madnes for 12 second|r |n|cff00ffffLv4:|r madnes for |cffffcc0016|r second")
+    ..setLvlDataString("greq", 5, 0, "Rnsb")
+
+
+@compiletime function slowability()
+    new AbilityDefinitionSlow(MADNESS_ABIL_ID)
+    ..setLevels(4)
+    ..setRequirements(commaList(MADNESS_ID))
+    ..presetAttackSpeedFactor(lvl -> 0.01)
+    ..presetMovementSpeedFactor(lvl -> 0.01)
+    ..presetManaCost(lvl -> 50)
+    ..presetCastRange(lvl -> 700)
+    ..presetDurationNormal(lvl -> 4.0 * lvl)
+    ..presetCastingTime(lvl -> 0.01)
+    ..presetCooldown(lvl -> 40)
+    ..presetBuffs(lvl -> commaList(MADNESS_ABIL_BUFF_ID))
+    ..presetTargetsAllowed(lvl -> "air,enemies,ground,nonhero,organic")
+    ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+
+
+@compiletime function create_w3h_Bslo()
+    createObjectDefinition("w3h", MADNESS_ABIL_BUFF_ID, 'Bslo')
+    ..setString("ftat", "Abilities\\Spells\\Orc\\TrollBerserk\\HeadhunterWEAPONSLeft.mdl,Abilities\\Spells\\Orc\\TrollBerserk\\HeadhunterWEAPONSRight.mdl")
+    ..setString("fta0", "origin")
+    ..setString("fta1", "hand,left")
+    ..setString("fta2", "hand,right")
+    ..setInt("ftac", 3)
+    ..setInt("fspd", 2)
+    ..setString("ftip", "Madness")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNChemicalRage.blp")
+    ..setString("fube", "This unit madnessed; he attacks everyone.")
+
+
+function cyrseofchaos(int abil, unit zel, unit caster)
+    if abil == MADNESS_ABIL_ID
+        let oz = GetOwningPlayer(zel)
+        let lvl = GetPlayerTechCountSimple(MADNESS_ID, GetOwningPlayer(caster))
+        zel.setOwner(Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
+        doAfter(4.0 * lvl) -> 
+            zel.setOwner(oz, true)
+
+            
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        cyrseofchaos(GetSpellAbilityId(),GetSpellTargetUnit(),GetTriggerUnit())

@@ -1,0 +1,118 @@
+package BatlleRage
+
+import ObjectIdGenerator
+import UpgradeObjEditing
+import CorruptedTreeOfLife
+import ObjectIds
+import RegisterEvents
+import ClosureTimers
+import ObjEditingNatives
+
+
+public let BATLLE_RAGE_ID = compiletime(UPGD_ID_GEN.next())
+public let BATLLE_RAGE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let BATLLE_RAGE_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function meleeweapon()
+    new UpgradeDefinition(BATLLE_RAGE_ID)
+    ..addEffectApplyAttackUpgradeBonus()
+    ..setLevels(5)
+    ..setGoldCostBase(500)
+    ..setGoldCostIncrement(250)
+    ..setTimeBase(90)
+    ..setTimeIncrement(60)
+    ..presetHotkey(lvl -> "E")
+    ..setButtonPositionX(2)
+    ..setButtonPositionY(0)
+    ..presetName(lvl -> "Batlle Rage")
+    ..setTooltip(1, "Research Batlle Rage (|cffff0000Lv1|r) [|cffffcc00E|r]")
+    ..setTooltip(2, "Research Batlle Rage (|cffffff00Lv2|r) [|cffffcc00E|r]")
+    ..setTooltip(3, "Research Batlle Rage (|cff00ff00Lv3|r) [|cffffcc00E|r]")
+    ..setTooltip(4, "Research Batlle Rage (|cff00ffffLv4|r) [|cffffcc00E|r]")
+    ..setTooltip(5, "Batlle Rage (Max Level)")
+    ..presetIcon(lvl -> "ReplaceableTextures\\CommandButtons\\BTNBerserk.blp")
+    ..setTooltipExtended(1, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds |nLv3: +90% damage for 180 seconds |nLv4: +120% damage for 240 seconds")
+    ..setTooltipExtended(2, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cffff0000Lv1:|r |cffffcc00+30%|r damage for |cffffcc0060|r seconds |n|cff6c7b8bLv2: +60% damage for 120 seconds |nLv3: +90% damage for 180 seconds |nLv4: +120% damage for 240 seconds")
+    ..setTooltipExtended(3, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds|r |n|cffffff00Lv2:|r |cffffcc00+60%|r damage for |cffffcc00120|r seconds |n|cff6c7b8bLv3: +90% damage for 180 seconds |nLv4: +120% damage for 240 seconds")
+    ..setTooltipExtended(4, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds|r |n|cff00ff00Lv3:|r |cffffcc00+90%|r damage for |cffffcc00180|r seconds |n|cff6c7b8bLv4: +120% damage for 240 seconds")
+    ..setTooltipExtended(5, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds |nLv3: +90% damage for 180 seconds|r |n|cff00ffffLv4:|r |cffffcc00+120%|r damage for |cffffcc00240|r seconds")
+    ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
+    ..setRequirements(4, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setRequirements(5, "Rnsb")
+
+
+@compiletime function create_w3a_Aroa()
+    createObjectDefinition("w3a", BATLLE_RAGE_ABIL_ID, 'Aroa')
+    ..setLvlDataString("anam", 0, 0, "Batlle Rage")
+    ..setLvlDataString("atp1", 1, 0, "Batlle Rage")
+    ..setLvlDataInt("alev", 0, 0, 4)
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNSpell_Shadow_LifeDrain.blp")
+    ..setLvlDataUnreal("Roa1", 2, 1, 0.6)
+    ..setLvlDataUnreal("Roa1", 3, 1, 0.9)
+    ..setLvlDataUnreal("Roa1", 4, 1, 1.2)
+    ..setLvlDataUnreal("aare", 1, 0, 99999.0)
+    ..setLvlDataUnreal("aare", 2, 0, 99999.0)
+    ..setLvlDataUnreal("aare", 3, 0, 99999.0)
+    ..setLvlDataUnreal("aare", 4, 0, 99999.0)
+    ..setLvlDataString("acat", 0, 0, "")
+    ..setLvlDataUnreal("ahdu", 1, 0, 60.0)
+    ..setLvlDataUnreal("ahdu", 3, 0, 180.0)
+    ..setLvlDataUnreal("ahdu", 2, 0, 120.0)
+    ..setLvlDataUnreal("ahdu", 4, 0, 240.0)
+    ..setLvlDataUnreal("adur", 1, 0, 60.0)
+    ..setLvlDataUnreal("adur", 2, 0, 120.0)
+    ..setLvlDataUnreal("adur", 3, 0, 180.0)
+    ..setLvlDataUnreal("adur", 4, 0, 240.0)
+    ..setLvlDataInt("amcs", 1, 0, 0)
+    ..setLvlDataString("atar", 1, 0, "air,friend,ground,nonhero,organic")
+    ..setLvlDataString("atar", 2, 0, "air,friend,ground,nonhero,organic")
+    ..setLvlDataString("atar", 3, 0, "air,friend,ground,nonhero,organic")
+    ..setLvlDataString("atar", 4, 0, "air,friend,ground,nonhero,organic")
+    ..setLvlDataString("atp1", 2, 0, "Batlle Rage")
+    ..setLvlDataString("atp1", 3, 0, "Batlle Rage")
+    ..setLvlDataString("atp1", 4, 0, "Batlle Rage")
+    ..setLvlDataString("aub1", 1, 0, "Gives friendly units a 30% bonus to damage.")
+    ..setLvlDataString("aub1", 2, 0, "Gives friendly units a 60% bonus to damage.")
+    ..setLvlDataString("aub1", 3, 0, "Gives friendly units a 90% bonus to damage.")
+    ..setLvlDataString("aub1", 4, 0, "Gives friendly units a 120% bonus to damage.")
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(BATLLE_RAGE_ABIL_BUFF_ID))
+    ..setLvlDataString("abuf", 2, 0, "" + commaList(BATLLE_RAGE_ABIL_BUFF_ID))
+    ..setLvlDataString("abuf", 3, 0, "" + commaList(BATLLE_RAGE_ABIL_BUFF_ID))
+    ..setLvlDataString("abuf", 4, 0, "" + commaList(BATLLE_RAGE_ABIL_BUFF_ID))
+    ..setLvlDataUnreal("Roa1", 1, 1, 0.3)
+
+
+@compiletime function create_w3h_B03S()
+    createObjectDefinition("w3h", BATLLE_RAGE_ABIL_BUFF_ID, 'Broa')
+    ..setString("ftip", "Batlle Rage")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNBerserk.blp")
+    ..setString("fube", "This unit has Batlle Rage; its attack damage has been increased.")
+    ..setString("ftat", "Blood Presence.mdx")
+    ..setString("frac", "other")
+
+
+function batllerage(unit killer)
+    let lvl = GetPlayerTechCountSimple(BATLLE_RAGE_ID, GetOwningPlayer(killer))
+    if lvl > 0 and GetDyingUnit().isType(UNIT_TYPE_HERO)
+        let kl = GetUnitLoc(killer)
+        AddSpecialEffectLocBJ(kl, "Abilities\\Spells\\NightElf\\BattleRoar\\RoarCaster.mdl")
+        let ef = bj_lastCreatedEffect
+        CreateTextTagLocBJ("Batlle Rage", kl, 0, $A, 100., .0, .0, 0)
+        SetTextTagVelocityBJ(bj_lastCreatedTextTag, 40., 90)
+        SetTextTagPermanentBJ(bj_lastCreatedTextTag, false)
+        SetTextTagLifespanBJ(bj_lastCreatedTextTag, 7.)
+        SetTextTagFadepointBJ(bj_lastCreatedTextTag, 4.)
+        CreateNUnitsAtLoc(1, 'u000', GetOwningPlayer(killer), kl, bj_UNIT_FACING)
+        UnitAddAbility(bj_lastCreatedUnit, 'Aroa')
+        SetUnitAbilityLevelSwapped('Aroa', bj_lastCreatedUnit, lvl)
+        IssueImmediateOrderById(bj_lastCreatedUnit,$D00C4)
+        UnitApplyTimedLifeBJ(5., 'BTLF', bj_lastCreatedUnit)
+        RemoveLocation(kl)
+        doAfter(1) ->
+            DestroyEffect(ef)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        batllerage(GetKillingUnit())

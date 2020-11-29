@@ -4,13 +4,23 @@ import ObjEditingNatives
 import ObjectIdGenerator
 import ObjectIds
 import CorruptedTreeOfLife
+import BatlleRage
+import RootSistem
+import NaturalsVaprizim
+import EmeraldNightmare
+import LastForPower
+import Madness
+import DenialOfmagic
+import InstillingFear
+import CriticalStrikeSatyr
+import PredatoryForest
 
 public let CORRUPTED_ANCIENT_PROTECTOR = compiletime(UNIT_ID_GEN.next())
 
 
 @compiletime function create_w3u_o019()
     createObjectDefinition("w3u", CORRUPTED_ANCIENT_PROTECTOR, 'owtw')
-    ..setString("uabi", "A07Y," + commaList(BUILDING_SPELL_RESIST_SATYR))
+    ..setString("uabi", "Abgl,A07Y," + commaList(BUILDING_SPELL_RESIST_SATYR,CRITICAL_STRIKE_ABIL_ID))
     ..setUnreal("ua1c", 3.3)
     ..setInt("ua1s", 11)
     ..setInt("ua1b", 119)
@@ -21,7 +31,7 @@ public let CORRUPTED_ANCIENT_PROTECTOR = compiletime(UNIT_ID_GEN.next())
     ..setString("uhrt", "always")
     ..setInt("ulum", 0)
     ..setInt("udu1", 15)
-    ..setString("upgr", "R04B,Rnsi," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID))
+    ..setString("upgr", "R04B,Rnsi," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,CRITICAL_STRIKE_ID,PREDATORY_FOREST_UPGD_ID))
     ..setString("udty", "fort")
     ..setInt("uwu1", 0)
     ..setInt("ucam", 1)
@@ -55,7 +65,7 @@ public let CORRUPTED_ANCIENT_PROTECTOR = compiletime(UNIT_ID_GEN.next())
     ..setString("ubsl", "NightElfGrowingLoop")
     ..setString("usnd", "AncientProtector")
     ..setInt("uscb", 0)
-    ..setString("ures", "")
+    ..setString("ures", "" + commaList(BATLLE_RAGE_ID,ROOT_SISTEM_ID,EMERALD_NIGHTMARE_ID,NATURAL_VAMPIRIZM_ID,LUST_FORPOWER_ID,MADNESS_ID,DENIAL_OF_MAGIC_ID,INSTILLING_FEAR_ID,CRITICAL_STRIKE_ID))
     ..setInt("usid", 1800)
     ..setInt("ua1r", 1150)
     ..setUnreal("uacq", 1000.0)

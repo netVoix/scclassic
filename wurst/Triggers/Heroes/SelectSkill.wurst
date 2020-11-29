@@ -18,6 +18,9 @@ import ArmyOfTheDead
 import IlGinot
 import Bloodlust
 import CorrosiveSplitIlGinot
+import Iglarion
+import HighStatus
+import Stigma
 
 
 function selectSkill(unit u)
@@ -45,8 +48,13 @@ function selectSkill(unit u)
 	if hero == ILGINOT_ID
 		u.selectSkill(BLOODLUST_ID)
 		u.selectSkill('A09B')
-		u.selectSkill('AEev')
+		u.selectSkill('AOw2')
 		u.selectSkill(CORROSIVE_SPLIT_ID)
+	if hero == IGLARION_ID
+		u.selectSkill(STIGMA_ABIL_ID)
+		u.selectSkill('A02R')
+		u.selectSkill(HIGH_STATUS_ABIL_ID)
+		u.selectSkill('A030')
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

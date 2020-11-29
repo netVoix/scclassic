@@ -8,7 +8,6 @@ import CursedRoots
 import AuraOfThist
 import FingerOfDeath
 import RegisterEvents
-import ClosureForGroups
 import Orders
 import ClosureTimers
 
@@ -61,7 +60,7 @@ public let ELERET_ID = compiletime(HERO_ID_GEN.next())
     ..setInt("urqc", 0)
     ..setString("uhot", "")
     ..setInt("ua1b", 214)
-    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cffff00ffCurse Of Chaos|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead10-70% spell resist reduction for 30s|r |n |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Cursed Roots|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead100 damage/sec and stun for 4-10s|r |n |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffAura Of Thist|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead1-7 MP/sec reduction|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Finger Of Death|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead4000-10000 damage|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r")
+    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cffff00ffThe Curse Of Chaos|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeadslow unit for 50% and reduces spell resist by 10-70%|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Cursed Roots|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead100 damage/sec and stun for 4-10s|r |n |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffAura Of Thist|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead1-7 MP/sec reduction|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Finger Of Death|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead4000-10000 damage|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r")
     ..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNSatyr_Fem_Hero.blp")
     ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNSatyr_Fem_Hero.blp")
     ..setString("utip", "Train Defiled Druid")
@@ -76,19 +75,13 @@ public let ELERET_ID = compiletime(HERO_ID_GEN.next())
     ..setString("unam", "Defiled Druid")
 
 
-function isHero() returns bool
-    let fu = GetFilterUnit()
-    let uid = fu.getTypeId()
-    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum') and fu.isType(UNIT_TYPE_HERO)
+function cyrseofchaos(int abil, unit zel, unit caster)
+    if abil == CURSE_OF_CHAOS_ID
+        caster.issueTargetOrderById(OrderIds.entanglingroots, zel)
+        doAfter(2) -> 
+            caster.issueTargetOrderById(OrderIds.chainlightning, zel)
 
 
-function cyrseofchaos(unit ah)
-    let id = ah.getTypeId()
-    if id == ELERET_ID
-        // forNearestUnit(ah.getPos(), 800,  Filter(function isHero)) x ->
-        //     ah.issueTargetOrderById(OrderIds.cripple, x)
-
-   
 init
-    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
-        cyrseofchaos(GetAttacker())
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        cyrseofchaos(GetSpellAbilityId(),GetSpellTargetUnit(),GetTriggerUnit())

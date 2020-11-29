@@ -1,0 +1,49 @@
+package CertificateOfHonor
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let CERTIFICATE_OF_HONOR_ID = compiletime(ITEM_ID_GEN.next())
+public let CERTIFICATE_OF_HONOR_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let CERTIFICATE_OF_HONOR_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", CERTIFICATE_OF_HONOR_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Certificate Of Honor|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Certificate Of Honor|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+    ..setString("icid", "" + commaList(CERTIFICATE_OF_HONOR_ABIL_ID))
+    ..setString("iabi", "" + commaList(CERTIFICATE_OF_HONOR_ABIL_ID))
+    ..setString("utub", "+25% damage to units |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|cff6C7B8B(400 range)|r")
+
+
+@compiletime function create_w3a_A0RE()
+    createObjectDefinition("w3a", CERTIFICATE_OF_HONOR_ABIL_ID, 'AIcd')
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("anam", 0, 0, "Certificate Of Honor")
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(CERTIFICATE_OF_HONOR_ABIL_BUFF_ID))
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+    ..setLvlDataUnreal("Cac1", 1, 1, 0.25)
+    ..setLvlDataString("atar", 1, 0, "air,friend,ground,neutral,nonhero,organic")
+    ..setLvlDataUnreal("aare", 1, 0, 400.0)
+    ..setLvlDataString("ata0", 0, 0, "")
+    ..setLvlDataInt("Ear2", 1, 2, 0)
+
+
+@compiletime function create_w3h_B049()
+    createObjectDefinition("w3h", CERTIFICATE_OF_HONOR_ABIL_BUFF_ID, 'BOac')
+    ..setString("frac", "human")
+    ..setString("ftip", "Certificate Of Honor")
+    ..setString("fube", "This unit is under the effects of Certificate Of Honor; it has increased attack damage.")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+    ..setString("ftat", "")
+    ..setString("fta0", "")

@@ -1,0 +1,27 @@
+package AddItem
+
+import RegisterEvents
+import Iglarion
+import BracersOfAntiMagic
+import CertificateOfHonor
+import IceSword
+import VampireFangs
+
+
+function additem(unit u)
+    let hero = u.getTypeId()
+    let lvl = GetHeroLevel(u)
+    if hero == IGLARION_ID
+        if lvl >= 1 and UnitHasItemOfTypeBJ(u, BRACERS_OF_ANTI_MAGIC_ID) == false
+            u.addItemById(BRACERS_OF_ANTI_MAGIC_ID)
+        if lvl >= 2 and UnitHasItemOfTypeBJ(u, CERTIFICATE_OF_HONOR_ID) == false
+            u.addItemById(CERTIFICATE_OF_HONOR_ID)
+        if lvl >= 3 and UnitHasItemOfTypeBJ(u, ICE_SWORD_ID) == false
+            u.addItemById(ICE_SWORD_ID)
+        if lvl >= 4 and UnitHasItemOfTypeBJ(u, VAMPIRE_FANGS_ID) == false
+            u.addItemById(VAMPIRE_FANGS_ID)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_HERO_LEVEL) ->
+        additem(GetTriggerUnit())

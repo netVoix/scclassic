@@ -1,0 +1,33 @@
+package HighStatus
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+import BuffObjEditing
+
+public let HIGH_STATUS_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let HIGH_STATUS_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function spiritProtection()
+    new AbilityDefinitionThornyShieldCreep(HIGH_STATUS_ABIL_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(2, 2)
+    ..presetDefenseBonus(lvl -> 0)
+    ..presetReceivedDamageFactor(lvl -> 1.0 - 0.05 * lvl)
+    ..presetReturnedDamageFactor(lvl -> 0.0)
+    ..presetTargetsAllowed(lvl -> "hero,structure")
+    ..presetBuffs(lvl -> commaList(HIGH_STATUS_ABIL_BUFF_ID))
+    ..presetTooltipNormal(lvl -> "High Status " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> (1.0 - 0.05 * lvl).toString() + "% damage from unit")
+        
+
+@compiletime function spiritProtectionBuff()
+    new BuffDefinition(HIGH_STATUS_ABIL_BUFF_ID, 'BUts')
+    ..setTooltipNormal(1, "This hero takes less damage from units.")
+    ..setArtTarget(1, "Abilities\\Spells\\Orc\\Voodoo\\VoodooAuraTarget.mdl")
+    ..setArtSpecial(1, "Abilities\\Spells\\Orc\\Voodoo\\VoodooAuraTarget.mdl")
+    ..setIcon("ReplaceableTextures\\CommandButtons\\BTNMove.blp")

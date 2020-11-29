@@ -1,0 +1,92 @@
+package KeeperOfTheEmeraldDream
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import Izera
+
+public let KEEPER_OF_THE_EMERALD_DREAM_ID = compiletime(UNIT_ID_GEN.next())
+public let KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3u_eaow()
+    createObjectDefinition("w3u", KEEPER_OF_THE_EMERALD_DREAM_ID, 'eaow')
+    ..setString("uabi", "Abgl,Avul," + commaList(KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID))
+    ..setInt("ubpy", 0)
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNAchievement_Character_Nightelf_Female.blp")
+    ..setString("uubs", "EMDB")
+    ..setString("umdl", "buildings\\other\\BarrowDens\\BarrowDens.mdl")
+    ..setString("ushu", "")
+    ..setReal("ushx", 0.0)
+    ..setReal("ushy", 0.0)
+    ..setReal("ushh", 0.0)
+    ..setReal("ushw", 0.0)
+    ..setString("ushb", "ShadowHuntersHall")
+    ..setString("uarm", "Wood")
+    ..setUnreal("uacq", 0.0)
+    ..setString("ua1w", "")
+    ..setString("ucs1", "")
+    ..setInt("uaen", 0)
+    ..setString("ua2w", "")
+    ..setString("ucs2", "")
+    ..setInt("udup", 1)
+    ..setInt("umvs", 0)
+    ..setUnreal("umvr", 0.0)
+    ..setString("umvt", "")
+    ..setUnreal("uabr", 0.0)
+    ..setString("uabt", "_")
+    ..setUnreal("ucol", 100.0)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setInt("ubld", 1)
+    ..setString("usnd", "HuntersHall")
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setInt("upri", 2)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("ureq", "")
+    ..setString("ures", "")
+    ..setString("utra", "")
+    ..setString("upgr", "")
+    ..setString("unam", "Barrow Den")
+    ..setString("utip", "Keeper Of The Emerald Dream [|cffffcc00W|r]")
+    ..setString("utub", "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|cffffcc00Can learn:|r |n|cffff00ffSleep|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeaddisables for 8-20s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n|n|cff00ffffBerserk|r |cff6c7b8b(Self Spell)|r |n  |cffffdead10-70% attack rate bonus|r |n|n|cff00ffffHigh Status|r |cff6c7b8b(Passive Skill)|r |n  |cffffdeadtakes 95-65% damage from units|r |n|n|cff00ffffCrucial Hit|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead18-36% for 3x damage, 2s stun|r |n  |cff6c7b8b(affects organic units only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setString("uspa", "Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl")
+    ..setInt("ubpx", 1)
+    ..setInt("usid", 600)
+    
+
+@compiletime function create_w3a_A0DW()
+    createObjectDefinition("w3a", KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Keeper Of The Emerald Dream")
+    ..setLvlDataString("atp1", 1, 0, "Keeper Of The Emerald Dream")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNAchievement_Character_Nightelf_Female.blp")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == KEEPER_OF_THE_EMERALD_DREAM_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            HX[1] = YSERA_ID
+        if OP == S
+            HX[2] = YSERA_ID
+        if OP == Q
+            HX[3] = YSERA_ID
+        if OP == T 
+            HX[4] = YSERA_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

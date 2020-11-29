@@ -1,0 +1,38 @@
+package BracersOfAntiMagic
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let BRACERS_OF_ANTI_MAGIC_ID = compiletime(ITEM_ID_GEN.next())
+public let BRACERS_OF_ANTI_MAGIC_SPELL_RESIST_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", BRACERS_OF_ANTI_MAGIC_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Bracers of anti-magic|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Bracers of anti-magic|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRunedBracers.blp")
+    ..setString("icid", "" + commaList(BRACERS_OF_ANTI_MAGIC_SPELL_RESIST_ID))
+    ..setString("iabi", "" + commaList(BRACERS_OF_ANTI_MAGIC_SPELL_RESIST_ID))
+    ..setString("utub", "Reduces spell damage by 30%")
+
+
+@compiletime function create_w3a_A0J1()
+    createObjectDefinition("w3a", BRACERS_OF_ANTI_MAGIC_SPELL_RESIST_ID, 'AIsr')
+    ..setLvlDataInt("aite", 0, 0, 1)
+    ..setLvlDataString("arac", 0, 0, "orc")
+    ..setLvlDataString("anam", 0, 0, "Impenetrable Hide")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEnchantedBears.blp")
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataInt("abpy", 0, 0, 2)
+    ..setLvlDataUnreal("isr2", 1, 2, 0.30)
+    ..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
+    ..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 15%.")

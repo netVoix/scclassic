@@ -5,6 +5,7 @@ import ObjectIds
 import SpellResistSatyr
 import ObjectIdGenerator
 import CorruptedTreeOfLife
+import EmeraldNightmare
 
 public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
 
@@ -13,7 +14,7 @@ public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     createObjectDefinition("w3u", NIGTMARE_DRAGON_ID, 'ubsp')
     ..setInt("uspe", 0)
     ..setString("udaa", "")
-    ..setString("uabi", "A0IH,A09Q,Advm," + commaList(SPELL_RESIST_SATYR))
+    ..setString("uabi", "A0IH," + commaList(SPELL_RESIST_SATYR,EMERALD_NIGHTMARE_ABIL_ID))
     ..setReal("uslz", 220.0)
     ..setUnreal("uacq", 700.0)
     ..setString("ua1t", "pierce")
@@ -50,7 +51,7 @@ public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     ..setString("utub", "|cffffcc00Air Unit|r |nStrong Vs Spellcaster |nWeak Vs Heroes")
     ..setString("uhot", "")
     ..setString("utip", "Train Nightmare Dragon")
-    ..setString("upgr", "R011,R01W," + commaList(SATYR_ARMOR_ID,CURSED_MAGIC_ID))
+    ..setString("upgr", "" + commaList(SATYR_ARMOR_ID,CURSED_MAGIC_ID,EMERALD_NIGHTMARE_ID))
     ..setInt("ubpx", 2)
     ..setInt("usid", 1000)
     ..setReal("usca", 0.9)

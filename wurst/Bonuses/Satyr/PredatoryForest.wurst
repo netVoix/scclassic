@@ -1,0 +1,112 @@
+package PredatoryForest
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import RegisterEvents
+import ClosureForGroups
+import ObjectIds
+
+public let PREDATORY_FOREST_ID = compiletime(UNIT_ID_GEN.next())
+public let PREDATORY_FOREST_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let PREDATORY_FOREST_UPGD_ID = compiletime(UPGD_ID_GEN.next())
+public int array predatoryForest
+
+
+@compiletime function create_w3u_hlum()
+	createObjectDefinition("w3u", PREDATORY_FOREST_ID, 'hlum')
+	..setString("uabi", "Abgl,Avul," + commaList(PREDATORY_FOREST_ABIL_ID))
+	..setString("uubs", "OMED")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNDeathAndDecay.blp")
+	..setReal("ussc", 4.0)
+	..setReal("usca", 1.5)
+	..setUnreal("uimz", 120.0)
+	..setInt("udef", 2)
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setInt("ubld", 1)
+	..setInt("ugol", 0)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setString("utyp", "ancient,mechanical")
+	..setString("ures", "")
+	..setString("upgr", "")
+	..setString("uhot", "C")
+	..setString("utip", "Predatory Forest [|cffffcc00C|r]")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadNatural Vampirizm|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if they kill a building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+	..setInt("ubpy", 2)
+	..setInt("usid", 600)
+	..setString("umdl", "buildings\\demon\\CorruptedTreeofLife\\CorruptedTreeofLife.mdl")
+	..setString("ushb", "BuildingShadowLarge")
+	..setString("usnd", "TreeOfLife")
+	..setString("unam", "Corrupted Tree Of Eternity")
+
+
+@compiletime function create_w3a_A04L()
+	createObjectDefinition("w3a", PREDATORY_FOREST_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadNatural Vampirizm|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if they kill a building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Predatory Forest")
+	..setLvlDataString("atp1", 1, 0, "Predatory Forest")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNDeathAndDecay.blp")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+
+@compiletime function create_w3q_R02H()
+    createObjectDefinition("w3q", PREDATORY_FOREST_UPGD_ID, 'Rhan')
+    ..setLvlDataInt("gbpx", 0, 0, 0)
+    ..setLvlDataInt("gbpy", 0, 0, 0)
+    ..setLvlDataUnreal("gba1", 0, 0, 2000.0)
+    ..setLvlDataInt("gglb", 0, 0, 0)
+    ..setLvlDataInt("glmb", 0, 0, 0)
+    ..setLvlDataString("greq", 1, 0, "")
+    ..setLvlDataString("ghk1", 1, 0, "")
+    ..setLvlDataString("gnam", 1, 0, "Spiked Fortifications")
+    ..setLvlDataString("gtp1", 1, 0, "Spiked Fortifications")
+    ..setLvlDataString("gub1", 1, 0, "")
+    ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNImprovedSpikedBarricades.blp")
+    ..setLvlDataString("gco1", 0, 0, "A00K")
+    ..setLvlDataInt("gtib", 0, 0, 0)
+    ..setLvlDataString("grac", 0, 0, "other")
+    ..setLvlDataString("gef2", 0, 0, "rspi")
+    ..setLvlDataString("gco3", 0, 0, "A0ME")
+    ..setLvlDataUnreal("gba3", 0, 0, 1.0)
+    
+
+function pfp(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == PREDATORY_FOREST_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        for i = 0 to 12 
+            if players[i].isAllyOf(OP) 
+                predatoryForest[i] = 1
+
+
+function addHP(unit u)
+    for i = 0 to 12 
+       if predatoryForest[i] == 1
+            let ownerkiller = GetOwningPlayer(u)
+            if not u.isType(UNIT_TYPE_STRUCTURE)
+                for q = 0 to 12
+                    if players[q].isAllyOf(ownerkiller)
+                        forUnitsOfPlayer(players[q]) x ->
+                            if x.isType(UNIT_TYPE_STRUCTURE)
+                                x.addHP(200)
+            if u.isType(UNIT_TYPE_STRUCTURE)
+                for w = 0 to 12
+                    if players[w].isAllyOf(ownerkiller)
+                        forUnitsOfPlayer(players[w]) x ->
+                            if x.isType(UNIT_TYPE_STRUCTURE)
+                                x.addHP(400)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        pfp(GetTriggerUnit())
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        addHP(GetKillingUnit())

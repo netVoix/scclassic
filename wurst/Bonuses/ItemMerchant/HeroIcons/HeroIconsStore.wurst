@@ -41,10 +41,10 @@ public let HEROES_ORC = [heroMap(REXXAR_ID, REXXAR_ICON_ACTIVE_ID, REXXAR_ICON_D
                          heroMap(SAMURO_ID, SAMURO_ICON_ACTIVE_ID, SAMURO_ICON_DISABLED_ID),
                          heroMap(THRALL_ID, THRALL_ICON_ACTIVE_ID, THRALL_ICON_DISABLED_ID),
                          heroMap(KORGALL_ID, KORGALL_ICON_ACTIVE_ID, KORGALL_ICON_DISABLED_ID)]
-// public let HEROES_ROGUE = [heroMap(GARITHOS_ID, GARITHOS_ICON_ACTIVE_ID, GARITHOS_ICON_DISABLED_ID),
-//                            heroMap(FLINT_SHADOWMORE_ID, FLINT_ICON_ACTIVE_ID, FLINT_ICON_DISABLED_ID),
-//                            heroMap(SALLY_ID, SALLY_ICON_ACTIVE_ID, SALLY_ICON_DISABLED_ID),
-//                            heroMap(FLOOR_ELEVATOR_ID, SIEGE_TOWER_ICON_ACTIVE_ID, SIEGE_TOWER_ICON_DISABLED_ID)]
+public let HEROES_SATYR = [heroMap(XAVIUS_ID, XAVIUS_ICON_ACTIVE_ID, XAVIUS_ICON_DISABLED_ID),
+                           heroMap(KEPERETER_ID, KEPERETER_ICON_ACTIVE_ID, KEPERETER_ICON_DISABLED_ID),
+                           heroMap(ELERET_ID, ELERET_ICON_ACTIVE_ID, ELERET_ICON_DISABLED_ID),
+                           heroMap(ILGINOT_ID, ILGINOT_ICON_ACTIVE_ID, ILGINOT_ICON_DISABLED_ID)]
 public let HEROES_TAUREN = [heroMap(CAIRNE_ID, CAIRNE_ICON_ACTIVE_ID, CAIRNE_ICON_DISABLED_ID),
                             heroMap(BAINE_ID, BAINE_ICON_ACTIVE_ID, BAINE_ICON_DISABLED_ID),
                             heroMap(BOVAN_ID, BOVAN_ICON_ACTIVE_ID, BOVAN_ICON_DISABLED_ID),
@@ -78,8 +78,8 @@ public function getHero(int rid, int index) returns heroMap
       return HEROES_NIGHT_ELF[index]
     case MAIN_CASTLE_ORC_ID
       return HEROES_ORC[index]
-    // case MAIN_CASTLE_ROGUE_ID
-    //   return HEROES_ROGUE[index]
+    case CORRUPTED_TREE_OF_LIFE_LV1
+      return HEROES_SATYR[index]
     case MAIN_CASTLE_TAUREN_ID
       return HEROES_TAUREN[index]
     case MAIN_CASTLE_TROLL_ID

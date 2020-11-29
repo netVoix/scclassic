@@ -1,0 +1,63 @@
+package LastForPower
+
+import ObjectIdGenerator
+import UpgradeObjEditing
+import CorruptedTreeOfLife
+import ObjectIds
+import RegisterEvents
+
+
+public let LUST_FORPOWER_ID = compiletime(UPGD_ID_GEN.next())
+
+
+@compiletime function meleeweapon()
+    new UpgradeDefinition(LUST_FORPOWER_ID)
+    ..addEffectApplyAttackUpgradeBonus()
+    ..setLevels(5)
+    ..setGoldCostBase(750)
+    ..setGoldCostIncrement(500)
+    ..setTimeBase(90)
+    ..setTimeIncrement(60)
+    ..presetHotkey(lvl -> "D")
+    ..setButtonPositionX(2)
+    ..setButtonPositionY(1)
+    ..presetName(lvl -> "Lust for Power")
+    ..setTooltip(1, "Research Lust for Power (|cffff0000Lv1|r) [|cffffcc00D|r]")
+    ..setTooltip(2, "Research Lust for Power (|cffffff00Lv2|r) [|cffffcc00D|r]")
+    ..setTooltip(3, "Research Lust for Power (|cff00ff00Lv3|r) [|cffffcc00D|r]")
+    ..setTooltip(4, "Research Lust for Power (|cff00ffffLv4|r) [|cffffcc00D|r]")
+    ..setTooltip(5, "Lust for Power (Max Level)")
+    ..presetIcon(lvl -> "ReplaceableTextures\\CommandButtons\\BTNDeathPact.blp")
+    ..setTooltipExtended(1, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate |nLv2: +4% spawning rate |nLv3: +6% spawning rate |nLv4: +8% spawning rate")
+    ..setTooltipExtended(2, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cffff0000Lv1:|r |cffffcc00+2%|r spawning rate |n|cff6c7b8bLv2: +4% spawning rate |nLv3: +6% spawning rate |nLv4: +8% spawning rate")
+    ..setTooltipExtended(3, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate|r |n|cffffff00Lv2:|r |cffffcc00+4%|r spawning rate |n|cff6c7b8bLv3: +6% spawning rate |nLv4: +8% spawning rate")
+    ..setTooltipExtended(4, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate |nLv2: +4% spawning rate|r |n|cff00ff00Lv3:|r |cffffcc00+6%|r spawning rate |n|cff6c7b8bLv4: +8% spawning rate")
+    ..setTooltipExtended(5, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate |nLv2: +4% spawning rate |nLv3: +6% spawning rate|r |n|cff00ffffLv4:|r |cffffcc00+8%|r spawning rate")
+    ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
+    ..setRequirements(4, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setRequirements(5, "Rnsb")
+
+
+function spawningRate(player p, int r)
+    if r == LUST_FORPOWER_ID
+        let lvl = GetPlayerTechCountSimple(LUST_FORPOWER_ID, p)
+        if p == P
+            VV = (VV * (1 - lvl * 0.02))
+            JV = (JV * (1 - lvl * 0.02))
+            KV = (KV * (1 - lvl * 0.02))
+        if p == S
+            NV = (NV * (1 - lvl * 0.02))
+            GV = (GV * (1 - lvl * 0.02))
+            HV = (HV * (1 - lvl * 0.02))
+        if p == Q
+            CV = (CV * (1 - lvl * 0.02))
+            BV = (BV * (1 - lvl * 0.02))
+            IV = (IV * (1 - lvl * 0.02))
+        if p == T
+            FV = (FV * (1 - lvl * 0.02))
+            DV = (DV * (1 - lvl * 0.02))
+            AV = (AV * (1 - lvl * 0.02))
+
+init 
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+        spawningRate(GetOwningPlayer(GetTriggerUnit()), GetResearched())
