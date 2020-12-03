@@ -23,11 +23,11 @@ public let DEMONIC_FIRE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..presetDamageperSecond(lvl -> 20.0 + 10.0 * lvl) 
     ..presetDurationNormal(lvl -> 5) 
     ..presetTargetsAllowed(lvl -> "enemies,ground,mechanical,neutral,organic,nonhero") 
-    ..presetAreaofEffect(lvl -> 200)
+    ..presetAreaofEffect(lvl -> 300)
     ..presetButtonPosNormal(1, 2)
     ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
     ..presetTooltipNormal(lvl -> "Demonic Fire " + lvl.toString() + " lvl") 
-    ..presetTooltipNormalExtended(lvl -> "Deals " + (20 + 10 * lvl).toString() + " gamage/sec enemy unit for 5s in an 200 area")
+    ..presetTooltipNormalExtended(lvl -> "Deals " + (20 + 10 * lvl).toString() + " gamage/sec enemy unit for 5s in an 300 area")
         
 
 @compiletime function demonicfirebuff()

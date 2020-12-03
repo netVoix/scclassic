@@ -1,30 +1,30 @@
-package KnightOfNightmares
+package SatyrLeader
 
 import ObjEditingNatives
 import ObjectIdGenerator
 import ObjectIds
 import SpellResistSatyr
 import CorruptedTreeOfLife
-import RenunciationOfFilth
+import CleavingAttackSatyr
 
-public let KNIGHT_OF_NIGHTMARES_ID = compiletime(UNIT_ID_GEN.next())
+public let SATYR_LEADER_ID = compiletime(UNIT_ID_GEN.next())
 
 
 @compiletime function create_w3u_nfel()
-    createObjectDefinition("w3u", KNIGHT_OF_NIGHTMARES_ID, 'nfel')
+    createObjectDefinition("w3u", SATYR_LEADER_ID, 'nfel')
     ..setString("urac", "undead")
     ..setString("utub", "|cffffcc00Siege Unit|r |nStrong Vs Buildings |nWeak Vs Spellcaster")
-    ..setString("utip", "Train Knight Of Nightmares")
-    ..setString("unam", "Knight Of Nightmares")
+    ..setString("utip", "Train Satyr Leader")
+    ..setString("unam", "Satyr Leader")
     ..setInt("usst", 0)
     ..setInt("usrg", 180)
-    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID,RENUNCIATION_OF_FILTH_ID))
+    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID))
     ..setInt("umpm", 0)
     ..setUnreal("umpr", 0.0)
     ..setInt("umpi", 0)
     ..setInt("ulum", 0)
     ..setUnreal("uhpr", 3.0)
-    ..setInt("uhpm", 585)
+    ..setInt("uhpm", 735)
     ..setInt("ugol", 100)
     ..setInt("ubsi", 0)
     ..setInt("ubdi", 0)
@@ -38,7 +38,7 @@ public let KNIGHT_OF_NIGHTMARES_ID = compiletime(UNIT_ID_GEN.next())
     ..setInt("ua1b", 40)
     ..setUnreal("ua1c", 1.8)
     ..setString("ua1t", "siege")
-    ..setString("uabi", "A0HY,Agyv," + commaList(SPELL_RESIST_SATYR))
+    ..setString("uabi", "A0HY,Agyv," + commaList(SPELL_RESIST_SATYR,CLEAVING_ATTACK_SATYR_ID))
     ..setReal("usca", 1.2)
     ..setReal("ussc", 2.0)
     ..setInt("ubpx", 3)
@@ -51,7 +51,7 @@ public let KNIGHT_OF_NIGHTMARES_ID = compiletime(UNIT_ID_GEN.next())
     ..setString("utyp", "undead")
     ..setInt("ulev", 7)
     ..setInt("usma", 2)
-    ..setInt("udef", 5)
+    ..setInt("udef", 8)
     ..setInt("upoi", 18)
     ..setInt("uhos", 0)
     ..setUnreal("ubs2", 0.3)
@@ -70,5 +70,5 @@ public let KNIGHT_OF_NIGHTMARES_ID = compiletime(UNIT_ID_GEN.next())
     ..setString("ua2g", "air")
     ..setString("ua2w", "missile")
     ..setInt("usid", 1000)
-    ..setString("umdl", "Reaper.mdl")
-    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
+    ..setString("umdl", "SatyrHeadhunter.mdl")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNDranaiAkama.blp")

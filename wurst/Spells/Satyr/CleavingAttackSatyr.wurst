@@ -1,0 +1,20 @@
+package CleavingAttackSatyr
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let CLEAVING_ATTACK_SATYR_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A01E()
+	createObjectDefinition("w3a", CLEAVING_ATTACK_SATYR_ID, 'ACce')
+	..setLvlDataString("arac", 0, 0, "undead")
+	..setLvlDataInt("abpx", 0, 0, 0)
+	..setLvlDataString("aub1", 1, 0, "Unit strikes with such force that 15% of it's damage strikes through to enemies near the primary attacked unit.")
+	..setLvlDataUnreal("nca1", 1, 1, 0.15)
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNFelweap.blp")
+	..setLvlDataString("areq", 0, 0, "")
+	..setLvlDataInt("alev", 0, 0, 4)
+	..setLvlDataString("arqa", 0, 0, "1")
+	..setLvlDataString("atp1", 1, 0, "Cleaving Attack")
+	..setLvlDataUnreal("aare", 1, 0, 150.0)

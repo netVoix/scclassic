@@ -1,0 +1,14 @@
+package AssasinsDexterity
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let ASSASINS_DEXTERITY_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A002()
+	createObjectDefinition("w3a", ASSASINS_DEXTERITY_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "other")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.15)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "Gives a 15% chance to avoid an attack.")

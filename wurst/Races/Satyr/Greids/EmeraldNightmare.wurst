@@ -4,6 +4,7 @@ import ObjEditingNatives
 import ObjectIdGenerator
 import ObjectIds
 import CorruptedTreeOfLife
+import ThePortalToTheNightmare
 
 public let EMERALD_NIGHTMARE_ID = compiletime(UPGD_ID_GEN.next())
 public let EMERALD_NIGHTMARE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
@@ -21,10 +22,10 @@ public let EMERALD_NIGHTMARE_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r chance to stun and damage on each attack |n|cffffcc00Affects:|r |cffffdeadNightmare Dragons|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 20% chance for 1 seconds and deal 10 damage |nLv2: 20% chance for 2 seconds and deal 20 damage |nLv3: 20% chance for 3 seconds and deal 30 damage |nLv4: 20% chance for 4 seconds and deal 40 damage")
     ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNSleep.blp")
     ..setLvlDataUnreal("gba1", 0, 0, 1.0)
-    ..setLvlDataInt("gglb", 0, 0, 325)
+    ..setLvlDataInt("gglb", 0, 0, 500)
     ..setLvlDataInt("glvl", 0, 0, 5)
     ..setLvlDataUnreal("gmo1", 0, 0, 1.0)
-    ..setLvlDataInt("gglm", 0, 0, 175)
+    ..setLvlDataInt("gglm", 0, 0, 15)
     ..setLvlDataInt("gtim", 0, 0, 60)
     ..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNSleep.blp")
     ..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNSleep.blp")
@@ -42,7 +43,7 @@ public let EMERALD_NIGHTMARE_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setLvlDataString("gtp1", 4, 0, "Research Emerald Nightmare (|cff00ffffLv4|r) [|cffffcc00A|r]")
     ..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r chance to stun and damage on each attack |n|cffffcc00Affects:|r |cffffdeadNightmare Dragons|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 20% chance for 1 seconds and deal 10 damage |nLv2: 20% chance for 2 seconds and deal 20 damage|r |n|cff00ff00Lv3:|r 20% chance for |cffffcc003|r seconds and deal |cffffcc0030|r damage |n|cff6c7b8bLv4: 20% chance for 4 seconds and deal 40 damage")
     ..setLvlDataInt("gtib", 0, 0, 90)
-    ..setLvlDataString("greq", 4, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setLvlDataString("greq", 4, 0, "" + commaList(THE_PORTAL_TO_THE_NIGHTMARE_ID))
     ..setLvlDataString("ghk1", 2, 0, "A")
     ..setLvlDataString("ghk1", 3, 0, "A")
     ..setLvlDataString("ghk1", 4, 0, "A")

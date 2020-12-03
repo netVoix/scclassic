@@ -42,6 +42,7 @@ public let GUARDIANS_OF_THE_CURSED_FOREST_ABIL_ID = compiletime(ABIL_ID_GEN.next
     ..setString("unam", "Corrupted Tree Of Eternity")
     ..setString("utip", "Guardians Of The Forest [|cffffcc00D|r]")
     ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadRoot System|r |n|n|cffffcc00PLague Treant|r replaces |cffffcc00Corrupted Ancient Defender|r |n|cffffcc00Siege Unit (Melee)|r |n+60% attack rate |n+1200 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cff00ffffSharp Branches|r |cff6c7b8b(Self Spell)|r |n |cffffdead(60 damage to melee attacker)|r |n|cff00ffffStrong Bark|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(60% spell damage reduction)|r |n |cffffdead(immune to some spells)|r |n |cffffdead(24% to block an attack)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadCorrupted Branches|r |n|cffffdeadCorrupted Armor|r |n|cffffdeadRoot Sistem|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+    ..setInt("ubpx", 2)
     ..setInt("ubpy", 1)
     ..setInt("uhos", 0)
     ..setString("uarm", "Stone")

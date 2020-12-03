@@ -1,0 +1,24 @@
+package HeartOfDecay
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let HEART_OF_DECAY_ID = compiletime(ITEM_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", HEART_OF_DECAY_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cfff0d120Heart Of Decay|r  |cff6c7b8b(Legendary)|r")
+    ..setString("utip", "|cfff0d120Heart Of Decay|r  |cff6c7b8b(Legendary)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+    ..setString("icid", "")
+    ..setString("iabi", "")
+    ..setString("utub", "Deals 30 damage per second for 4 seconds, when affects a hero.")
+    

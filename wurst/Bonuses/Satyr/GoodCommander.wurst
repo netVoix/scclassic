@@ -1,0 +1,86 @@
+package GoodCommander
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import SatyrLeader
+
+public let GOOD_COMMANDER_BUILDING_ID = compiletime(UNIT_ID_GEN.next())
+public let GOOD_COMMANDER_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3u_ugol()
+    createObjectDefinition("w3u", GOOD_COMMANDER_BUILDING_ID, 'ugol')
+    ..setString("uabi", "Abgl,Avul," + commaList(GOOD_COMMANDER_ABIL_ID))
+    ..setString("uubs", "USMA")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNDranaiAkama.blp")
+    ..setString("umdl", "buildings\\demon\\CorruptedAncientofWar\\CorruptedAncientofWar.mdl")
+    ..setString("uaap", "medium")
+    ..setReal("usca", 1.5)
+    ..setReal("ussc", 4.0)
+    ..setString("ushb", "ShadowArcaneVault")
+    ..setUnreal("uacq", 0.0)
+    ..setInt("udef", 2)
+    ..setInt("udup", 1)
+    ..setUnreal("uabr", 0.0)
+    ..setString("uabt", "")
+    ..setUnreal("ucol", 100.0)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setInt("ubld", 1)
+    ..setString("usnd", "TreeOfLife")
+    ..setInt("uibo", 0)
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setInt("upri", 2)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("upgr", "")
+    ..setString("uhot", "D")
+    ..setString("unam", "Good Commander")
+    ..setString("utip", "Good Commander [|cffffcc00F|r]")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInstilling Fear|r |n|n|cffffcc00Satyr Leader|r replaces |cffffcc00Knight Of Nightmares|r |n|cffffcc00Siege Unit|r |n+3 armor |n+150 HP |n|cffffcc00Abilities:|r |n|cff00ffffCleaving Attack|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(15% area damage)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadClaws|r |n|cffffdeadCorrupted Armor|r |n|cffffdeadInstilling Fear|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+    ..setInt("ubpx", 3)
+    ..setInt("ubpy", 1)
+    ..setInt("uhos", 0)
+    ..setString("uarm", "Stone")
+    ..setInt("usid", 600)
+    
+
+@compiletime function create_w3a_A0DW()
+    createObjectDefinition("w3a", GOOD_COMMANDER_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInstilling Fear|r |n|n|cffffcc00Satyr Leader|r replaces |cffffcc00Knight Of Nightmares|r |n|cffffcc00Siege Unit|r |n+3 armor |n+150 HP |n|cffffcc00Abilities:|r |n|cff00ffffCleaving Attack|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(15% area damage)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadClaws|r |n|cffffdeadCorrupted Armor|r |n|cffffdeadInstilling Fear|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Good Commander")
+    ..setLvlDataString("atp1", 1, 0, "Good Commander")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNDranaiAkama.blp")
+    ..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+    ..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+    ..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+    ..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == GOOD_COMMANDER_BUILDING_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            AE[1] = SATYR_LEADER_ID
+        if OP == S
+            AE[2] = SATYR_LEADER_ID
+        if OP == Q
+            AE[3] = SATYR_LEADER_ID
+        if OP == T 
+            AE[4] = SATYR_LEADER_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

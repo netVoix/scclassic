@@ -7,6 +7,7 @@ import ObjectIds
 import RegisterEvents
 import ClosureTimers
 import ObjEditingNatives
+import DeathInTheShadow
 
 
 public let BATLLE_RAGE_ID = compiletime(UPGD_ID_GEN.next())
@@ -38,7 +39,7 @@ public let BATLLE_RAGE_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setTooltipExtended(4, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds|r |n|cff00ff00Lv3:|r |cffffcc00+90%|r damage for |cffffcc00180|r seconds |n|cff6c7b8bLv4: +120% damage for 240 seconds")
     ..setTooltipExtended(5, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadKilled enemy Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds |nLv3: +90% damage for 180 seconds|r |n|cff00ffffLv4:|r |cffffcc00+120%|r damage for |cffffcc00240|r seconds")
     ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
-    ..setRequirements(4, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setRequirements(4, "" + commaList(DEATH_IN_THE_SHADOW_ID))
     ..setRequirements(5, "Rnsb")
 
 
@@ -104,8 +105,8 @@ function batllerage(unit killer)
         SetTextTagLifespanBJ(bj_lastCreatedTextTag, 7.)
         SetTextTagFadepointBJ(bj_lastCreatedTextTag, 4.)
         CreateNUnitsAtLoc(1, 'u000', GetOwningPlayer(killer), kl, bj_UNIT_FACING)
-        UnitAddAbility(bj_lastCreatedUnit, 'Aroa')
-        SetUnitAbilityLevelSwapped('Aroa', bj_lastCreatedUnit, lvl)
+        UnitAddAbility(bj_lastCreatedUnit, BATLLE_RAGE_ABIL_ID)
+        SetUnitAbilityLevelSwapped(BATLLE_RAGE_ABIL_ID, bj_lastCreatedUnit, lvl)
         IssueImmediateOrderById(bj_lastCreatedUnit,$D00C4)
         UnitApplyTimedLifeBJ(5., 'BTLF', bj_lastCreatedUnit)
         RemoveLocation(kl)

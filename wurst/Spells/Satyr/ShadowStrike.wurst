@@ -1,0 +1,72 @@
+package ShadowStrike
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import ObjectIds
+
+public let SHADOW_STRIKE_ID = compiletime(ABIL_ID_GEN.next())
+public let SHADOW_STRIKE_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
+public let SHADOW_STRIKE_DUMMY_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+public let SHADOW_STRIKE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function shadowWordFIRE()
+    new AbilityDefinitionWardenShadowStrike(SHADOW_STRIKE_ID)
+    ..setHeroAbility(false)
+    ..presetManaCost(lvl -> 0)
+    ..presetAttackSpeedFactor(lvl -> 0.15) 
+    ..presetMovementSpeedFactor(lvl -> 0.15)
+    ..presetDurationNormal(lvl -> 5.0)
+    ..presetTargetsAllowed(lvl -> "air,enemies,ground,nonhero,organic")
+    ..presetInitialDamage(lvl -> 50.0)
+    ..presetDecayPower(lvl -> 0.01)
+    ..presetDecayingDamage(lvl -> 0.01)
+    ..presetTooltipNormal(lvl -> "Shadow Strike")
+    ..presetTooltipNormalExtended(lvl -> "Deal 50 damage and slow 15% for 5 second.")
+    ..presetCooldown(lvl -> 20.0)
+    ..presetBuffs(lvl -> commaList(SHADOW_STRIKE_BUFF_ID))
+
+
+@compiletime function shadowstrike()
+    new AbilityDefinitionWardenShadowStrike(SHADOW_STRIKE_DUMMY_ID)
+    ..setHeroAbility(false)
+    ..presetManaCost(lvl -> 0)
+    ..presetAttackSpeedFactor(lvl -> 0.01) 
+    ..presetMovementSpeedFactor(lvl -> 0.01)
+    ..presetDurationNormal(lvl -> 3.10)
+    ..presetDurationHero(lvl -> 3.10)
+    ..presetTargetsAllowed(lvl -> "air,enemies,ground,mechanical,neutral,organic")
+    ..presetInitialDamage(lvl -> 0.0)
+    ..presetDecayPower(lvl -> 3.0)
+    ..presetCastingTime(lvl -> 1.0)
+    ..presetDecayingDamage(lvl -> 30.0)
+    ..presetTooltipNormal(lvl -> "Shadow Strike")
+    ..presetCastRange(lvl -> 900)
+    ..setMissileArt("")
+    ..presetTooltipNormalExtended(lvl -> "Deal 30 damage for 3 second.")
+    ..presetCooldown(lvl -> 20.0)
+    ..presetBuffs(lvl -> commaList(SHADOW_STRIKE_DUMMY_BUFF_ID))
+
+    
+@compiletime function create_w3h_BEsh()
+    createObjectDefinition("w3h", SHADOW_STRIKE_DUMMY_BUFF_ID, 'BEsh')
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNSpiritOfVengeance.blp")
+    ..setString("ftip", "Decay")
+    ..setString("fube", "This unit was hit by Decay; it will take damage over time.")
+    ..setString("ftat", "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmDamage.mdl")
+    ..setString("fta0", "chest")
+    ..setString("fta1", "head")
+    ..setString("fta2", "hand,left")
+    ..setString("fta3", "hand,right")
+    ..setInt("ftac", 4)
+    ..setInt("fspd", 1)
+
+
+@compiletime function create_w3h()
+    createObjectDefinition("w3h", SHADOW_STRIKE_BUFF_ID, 'BEsh')
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNShadowStrike.blp")
+    ..setString("ftip", "Shadow Strike")
+    ..setString("fube", "This unit was hit by Shadow Strike; it will take damage over time and move more slowly.")
+    ..setString("ftat", "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl")
+    ..setString("fta0", "overhead")
+    ..setInt("fspd", 2)

@@ -1,4 +1,4 @@
-package NightmareDragon
+package ObscureDragon
 
 import ObjEditingNatives
 import ObjectIds
@@ -7,15 +7,18 @@ import ObjectIdGenerator
 import CorruptedTreeOfLife
 import EmeraldNightmare
 import RenunciationOfFilth
+import OrbOfAnnihilation
+import ThePortalToTheNightmare
+import RegisterEvents
 
-public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
+public let OBSCURE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
 
 
 @compiletime function create_w3u_ubsp()
-    createObjectDefinition("w3u", NIGTMARE_DRAGON_ID, 'ubsp')
+    createObjectDefinition("w3u", OBSCURE_DRAGON_ID, 'ubsp')
     ..setInt("uspe", 0)
     ..setString("udaa", "")
-    ..setString("uabi", "A0IH," + commaList(SPELL_RESIST_SATYR,EMERALD_NIGHTMARE_ABIL_ID))
+    ..setString("uabi", "A0GV,A0IH," + commaList(SPELL_RESIST_SATYR,EMERALD_NIGHTMARE_ABIL_ID,ORB_OF_ANNIHILATION_ID))
     ..setReal("uslz", 220.0)
     ..setUnreal("uacq", 700.0)
     ..setString("ua1t", "pierce")
@@ -39,7 +42,7 @@ public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     ..setInt("ubsi", 0)
     ..setInt("ugol", 125)
     ..setInt("upoi", 24)
-    ..setInt("uhpm", 765)
+    ..setInt("uhpm", 965)
     ..setUnreal("uhpr", 3.0)
     ..setString("uhrt", "always")
     ..setInt("ulev", 9)
@@ -51,15 +54,35 @@ public let NIGTMARE_DRAGON_ID = compiletime(UNIT_ID_GEN.next())
     ..setInt("usrg", 240)
     ..setString("utub", "|cffffcc00Air Unit|r |nStrong Vs Spellcaster |nWeak Vs Heroes")
     ..setString("uhot", "")
-    ..setString("utip", "Train Nightmare Dragon")
+    ..setString("utip", "Train Obscure Dragon")
     ..setString("upgr", "" + commaList(SATYR_ARMOR_ID,CURSED_MAGIC_ID,EMERALD_NIGHTMARE_ID,RENUNCIATION_OF_FILTH_ID))
     ..setInt("ubpx", 2)
     ..setInt("usid", 1000)
     ..setReal("usca", 0.9)
     ..setInt("usin", 800)
-    ..setString("unam", "Nightmare Dragon")
-    ..setString("umdl", "units\\creeps\\GreenDragon\\GreenDragon.mdl")
-    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNGreenDragon.blp")
-    ..setString("ua1m", "Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl")
+    ..setString("unam", "Obscure Dragon")
+    ..setString("umdl", "ObscureDragon.mdl")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNFacelessOne.blp")
+    ..setString("ua1m", "Abilities\\Weapons\\MakuraMissile\\MakuraMissile.mdl")
     ..setString("urac", "undead")
     ..setString("utyp", "undead")
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == THE_PORTAL_TO_THE_NIGHTMARE_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            UO[1] = OBSCURE_DRAGON_ID
+        if OP == S
+            UO[2] = OBSCURE_DRAGON_ID
+        if OP == Q
+            UO[3] = OBSCURE_DRAGON_ID
+        if OP == T 
+            UO[4] = OBSCURE_DRAGON_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

@@ -1,0 +1,41 @@
+package OrbOfAnnihilation
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import BuffObjEditing
+import ObjectIds
+
+public let ORB_OF_ANNIHILATION_ID = compiletime(ABIL_ID_GEN.next())
+public let ORB_OF_ANNIHILATION_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0SU()
+    createObjectDefinition("w3a", ORB_OF_ANNIHILATION_ID, 'ANic')
+    ..setLvlDataInt("aher", 0, 0, 0)
+    ..setLvlDataString("arac", 0, 0, "nightelf")
+    ..setLvlDataString("amat", 0, 0, "Abilities\\Spells\\Undead\\OrbOfDeath\\AnnihilationMissile.mdl")
+    ..setLvlDataInt("alev", 0, 0, 1)
+    ..setLvlDataUnreal("amac", 0, 0, 0.1)
+    ..setLvlDataInt("amsp", 0, 0, 1200)
+    ..setLvlDataString("anam", 0, 0, "Living Bomb")
+    ..setLvlDataString("aret", 0, 0, "Learn Living Bomb - [|cffffcc00Level %d|r]")
+    ..setLvlDataString("atp1", 1, 0, "Living Bomb - [|cffffcc00Level 1|r]")
+    ..setLvlDataUnreal("Nic1", 1, 1, 0.0)
+    ..setLvlDataUnreal("Nic3", 1, 3, 200.0)
+    ..setLvlDataUnreal("Nic5", 1, 5, 0.0)
+    ..setLvlDataUnreal("Nic4", 1, 4, 0.0)
+    ..setLvlDataUnreal("Nic2", 1, 2, 50.0)
+    ..setLvlDataString("arut", 0, 0, "Killed unit is incinerated, causing significant damage to all nearby hostile units. |n|n|cffffcc00Level 1|r - 30 incineration damage. |n|cffffcc00Level 2|r - 40 incineration damage. |n|cffffcc00Level 3|r - 50 incineration damage. |n|cffffcc00Level 4|r - 60 incineration damage. |n|cffffcc00Level 5|r - 70 incineration damage. |n|cffffcc00Level 6|r - 80 incineration damage. |n|cffffcc00Level 7|r - 90 incineration damage.")
+    ..setLvlDataString("aub1", 1, 0, "Killed unit is incinerated, causing up to 50 damage to all nearby hostile units.")
+    ..setLvlDataInt("arpx", 0, 0, 1)
+    ..setLvlDataInt("abpx", 0, 0, 1)
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(ORB_OF_ANNIHILATION_BUFF_ID))
+
+
+@compiletime function spiritProtectionBuff()
+    new BuffDefinition(ORB_OF_ANNIHILATION_BUFF_ID, 'BUts')
+    ..setTooltipNormal(1, "This unit deal damage on death..")
+    ..setArtTarget(1, "Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl")
+    ..setArtSpecial(1, "Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl")
+    ..setIcon("ReplaceableTextures\\CommandButtons\\BTNOrbOfDeath.blp")
+        

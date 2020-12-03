@@ -6,7 +6,6 @@ import AbilityObjEditing
 
 public let ICE_SWORD_ID = compiletime(ITEM_ID_GEN.next())
 public let ICE_SWORD_ABIL_ID = compiletime(ABIL_ID_GEN.next())
-public let ICE_SWORDR_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
 
 
 @compiletime function create_w3t_SofS()

@@ -5,6 +5,7 @@ import ObjectIdGenerator
 import ObjectIds
 import SpellResistSatyr
 import CorruptedTreeOfLife
+import RenunciationOfFilth
 
 public let CORRAPTED_ANCIENT_DEFENDER_ID = compiletime(UNIT_ID_GEN.next())
 
@@ -15,7 +16,7 @@ public let CORRAPTED_ANCIENT_DEFENDER_ID = compiletime(UNIT_ID_GEN.next())
 	..setString("utub", "|cffffcc00Artillery Unit|r |nStrong Vs Buildings |nWeak Vs All Units")
 	..setString("utip", "Train Corrupted Ancient Defender")
 	..setString("uhot", "")
-	..setString("upgr", "" + commaList(SATYR_ARMOR_ID,SATYR_RANGE_WEAPON_ID))
+	..setString("upgr", "" + commaList(SATYR_ARMOR_ID,SATYR_RANGE_WEAPON_ID,RENUNCIATION_OF_FILTH_ID))
 	..setString("ubui", "")
 	..setString("utyp", "ancient")
 	..setInt("ucar", 2)
@@ -39,7 +40,7 @@ public let CORRAPTED_ANCIENT_DEFENDER_ID = compiletime(UNIT_ID_GEN.next())
 	..setString("umvt", "foot")
 	..setInt("umvs", 240)
 	..setInt("ucam", 0)
-	..setInt("udef", 5)
+	..setInt("udef", 7)
 	..setInt("udea", 0)
 	..setInt("uaen", 1)
 	..setString("ua1w", "msplash")

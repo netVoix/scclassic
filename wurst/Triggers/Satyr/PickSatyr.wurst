@@ -24,6 +24,8 @@ import Madness
 import DenialOfmagic
 import InstillingFear
 import ItemsBonus
+import RegisterEvents
+import Orders
 
 
 function barack()
@@ -669,6 +671,9 @@ function pickSatyr()
                 AddUnitToStockBJ(JX[4],M,1,1)
     if id ==  CORRUPTED_TREE_OF_LIFE_LV3
         if GetOwningPlayer(GetTriggerUnit()) == P
+            CTOL.addAbility(IR[1])
+            if IR[1] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)
             YX[1]=3
             if NE >= 3
                 AddUnitToStockBJ(PX[1],A,1,1)
@@ -677,6 +682,9 @@ function pickSatyr()
             if CE >= 3
                 AddUnitToStockBJ(PX[1],L,1,1)
         if GetOwningPlayer(GetTriggerUnit()) == S
+            CTOL.addAbility(IR[2])
+            if IR[2] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)
             YX[2]=3
             if DE >= 3
                 AddUnitToStockBJ(PX[2],K,1,1)
@@ -685,6 +693,9 @@ function pickSatyr()
             if GE >= 3
                 AddUnitToStockBJ(PX[2],H,1,1)
         if GetOwningPlayer(GetTriggerUnit()) == Q
+            CTOL.addAbility(IR[3])
+            if IR[3] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)
             YX[3]=3
             if KE >= 3
                 AddUnitToStockBJ(PX[3],G,1,1)
@@ -693,6 +704,9 @@ function pickSatyr()
             if HE >= 3
                 AddUnitToStockBJ(PX[3],D,1,1)
         if GetOwningPlayer(GetTriggerUnit()) == T
+            CTOL.addAbility(IR[4])
+            if IR[4] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)
             YX[4]=3
             if PE >= 3
                 AddUnitToStockBJ(PX[4],C,1,1)
@@ -706,3 +720,45 @@ init
     let t = CreateTrigger()
     t.addCondition(Condition(function pickSatyr))
     t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH)
+
+
+ function pickaura(int abil, unit caster)
+    if abil == 'A04A' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        caster.removeAbility(PICK_AURA_SATYR_ID)
+        caster.addAbility('A068')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A068'
+    if abil == 'A09T' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        caster.removeAbility(PICK_AURA_SATYR_ID)
+        caster.addAbility('A042')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A042'
+    if abil == 'InAu' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        caster.removeAbility(PICK_AURA_SATYR_ID)
+        caster.addAbility('InAO')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'InAO'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'InAO'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'InAO'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'InAO'
+    caster.issueImmediateOrderById(OrderIds.stop)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        pickaura(GetSpellAbilityId(),GetTriggerUnit())

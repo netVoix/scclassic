@@ -4,6 +4,7 @@ import ObjectIdGenerator
 import AbilityObjEditing
 import Iglarion
 import RegisterEvents
+import ClosureTimers
 
 public let VAMPIRE_FANGS_ID = compiletime(ITEM_ID_GEN.next())
 
@@ -27,8 +28,14 @@ public let VAMPIRE_FANGS_ID = compiletime(ITEM_ID_GEN.next())
 
 function bloodlust(unit ud, unit du)
     let id = ud.getTypeId()
-    if id == IGLARION_ID and GetHeroLevel(ud) >= 20 and du.isType(UNIT_TYPE_HERO)
+    if id == IGLARION_ID and UnitHasItemOfTypeBJ(ud, VAMPIRE_FANGS_ID) == true and du.isType(UNIT_TYPE_HERO)
+        let kl = GetUnitLoc(ud)
+        AddSpecialEffectLocBJ(kl, "Abilities\\Spells\\Undead\\VampiricAura\\VampiricAuraTarget.mdl")
+        let ef = bj_lastCreatedEffect
+        RemoveLocation(kl)
         SetUnitLifePercentBJ(ud, GetUnitLifePercent(ud) + 30.0)
+        doAfter(1) ->
+            DestroyEffect(ef)
 
 
 init

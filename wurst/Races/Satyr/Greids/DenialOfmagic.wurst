@@ -4,6 +4,7 @@ import ObjectIdGenerator
 import CorruptedTreeOfLife
 import ObjectIds
 import AbilityObjEditing
+import SourceOfMagicSatyr
 
 public let DENIAL_OF_MAGIC_ID = compiletime(UPGD_ID_GEN.next())
 public let DENIAL_OF_MAGIC_ABIL_ID = compiletime(ABIL_ID_GEN.next())
@@ -42,7 +43,7 @@ public let DENIAL_OF_MAGIC_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setLvlDataString("gtp1", 4, 0, "Research Denial Of Magic (|cff00ffffLv4|r) [|cffffcc00Z|r]")
     ..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r increases base spell resist |n|cffffcc00Affects:|r |cffffdeadDefiler|r and |cffffdeadTrickster|r |n|n|cff6c7b8bLv1: +5% spell resist |nLv2: +10% spell resist|r |n|cff00ff00Lv3:|r |cffffcc00+15%|r spell resist |n|cff6c7b8bLv4: +20% spell resist")
     ..setLvlDataInt("gtib", 0, 0, 90)
-    ..setLvlDataString("greq", 4, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setLvlDataString("greq", 4, 0, "" + commaList(SOURCE_OF_MAGIC_SATYR_ID))
     ..setLvlDataString("ghk1", 2, 0, "Z")
     ..setLvlDataString("ghk1", 3, 0, "Z")
     ..setLvlDataString("ghk1", 4, 0, "Z")

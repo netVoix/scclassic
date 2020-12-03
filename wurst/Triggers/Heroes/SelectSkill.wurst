@@ -21,6 +21,10 @@ import CorrosiveSplitIlGinot
 import Iglarion
 import HighStatus
 import Stigma
+import Izera
+import Nightmare
+import EmeraldDream
+import SleepAura
 
 
 function selectSkill(unit u)
@@ -55,6 +59,11 @@ function selectSkill(unit u)
 		u.selectSkill('A02R')
 		u.selectSkill(HIGH_STATUS_ABIL_ID)
 		u.selectSkill('A030')
+	if hero == YSERA_ID
+		u.selectSkill('A0N5')
+		u.selectSkill(NIGHTMARE_ID)
+		u.selectSkill(SLEEP_AURA_ID)
+		u.selectSkill(EMERALD_DREAM_ID)
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

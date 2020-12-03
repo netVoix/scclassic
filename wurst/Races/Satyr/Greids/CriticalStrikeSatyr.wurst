@@ -4,6 +4,7 @@ import ObjEditingNatives
 import ObjectIdGenerator
 import ObjectIds
 import CorruptedTreeOfLife
+import PredatoryForest
 
 public let CRITICAL_STRIKE_ID = compiletime(UPGD_ID_GEN.next())
 public let CRITICAL_STRIKE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
@@ -50,7 +51,7 @@ public let CRITICAL_STRIKE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setLvlDataString("gnam", 5, 0, "Critical Strike")
     ..setLvlDataString("gtp1", 5, 0, "Critical Strike (Max Level)")
     ..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r bonus damage on each attack |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Protector|r |n|n|cff6c7b8bLv1: 10% to do 2.5x damage |nLv2: 20% to do 2.5x damage |nLv3: 30% to do 2.5x damage|r |n|cff00ffffLv4:|r |cffffcc0040%|r to do |cffffcc002.5x|r damage")
-    ..setLvlDataString("greq", 4, 0, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setLvlDataString("greq", 4, 0, "" + commaList(PREDATORY_FOREST_ID))
 
 
 @compiletime function create_w3a_A00J()

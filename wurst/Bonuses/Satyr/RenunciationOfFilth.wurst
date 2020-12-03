@@ -1,0 +1,96 @@
+package RenunciationOfFilth
+
+import ObjEditingNatives
+import ObjectIds
+import ObjectIdGenerator
+import SpellResistSatyr
+import RegisterEvents
+
+public let RENUNCIATION_OF_FILTH_BUILD_ID = compiletime(UNIT_ID_GEN.next())
+public let RENUNCIATION_OF_FILTH_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let RENUNCIATION_OF_FILTH_ID = compiletime(UPGD_ID_GEN.next())
+
+
+@compiletime function create_w3u_hlum()
+    createObjectDefinition("w3u", RENUNCIATION_OF_FILTH_BUILD_ID, 'hlum')
+    ..setString("uabi", "Abgl,Avul," + commaList(RENUNCIATION_OF_FILTH_ABIL_ID))
+    ..setString("uubs", "OMED")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNWispSplode.blp")
+    ..setReal("ussc", 4.0)
+    ..setReal("usca", 1.5)
+    ..setUnreal("uimz", 120.0)
+    ..setInt("udef", 2)
+    ..setUnreal("ucol", 100.0)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setInt("ubld", 1)
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("upri", 2)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("ures", "")
+    ..setString("upgr", "")
+    ..setString("uhot", "R")
+    ..setString("utip", "Renunciation Of Filth [|cffffcc00R|r]")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLust for Power|r |n|n|cffffcc00Soul Stealer|r, |cffffcc00Knight Of Nightmares|r, |cffffcc00Nightmare Dragon|r and |cffffcc00Corrupted Ancient Defender|r lose 15% spell resist, but increase their HP by 20%. |n|n|cffffcc00Type:|r |cffa020f0Unit Power|r")
+    ..setInt("ubpx", 3)
+    ..setInt("ubpy", 0)
+    ..setInt("usid", 600)
+    ..setString("umdl", "buildings\\demon\\CorruptedTreeofLife\\CorruptedTreeofLife.mdl")
+    ..setString("ushb", "BuildingShadowLarge")
+    ..setString("usnd", "TreeOfLife")
+    ..setString("unam", "Corrupted Tree Of Eternity")
+
+
+@compiletime function create_w3a_A04L()
+    createObjectDefinition("w3a", RENUNCIATION_OF_FILTH_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "human")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadLust for Power|r |n|n|cffffcc00Soul Stealer|r, |cffffcc00Knight Of Nightmares|r, |cffffcc00Nightmare Dragon|r and |cffffcc00Corrupted Ancient Defender|r lose 15% spell resist, but increase their HP by 20%. |n|n|cffffcc00Type:|r |cffa020f0Unit Power|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Renunciation Of Filth")
+    ..setLvlDataString("atp1", 1, 0, "Renunciation Of Filth")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNWispSplode.blp")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+@compiletime function create_w3q_R01T()
+    createObjectDefinition("w3q", RENUNCIATION_OF_FILTH_ID, 'Rovs')
+    ..setLvlDataString("ghk1", 1, 0, "A")
+    ..setLvlDataString("gtp1", 1, 0, "Research Emerald Nightmare (|cffff0000Lv1|r) [|cffffcc00A|r]")
+    ..setLvlDataString("gnam", 1, 0, "Emerald Nightmare")
+    ..setLvlDataInt("glmb", 0, 0, 0)
+    ..setLvlDataString("greq", 1, 0, "")
+    ..setLvlDataInt("gbpx", 0, 0, 0)
+    ..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r chance to stun and damage on each attack |n|cffffcc00Affects:|r |cffffdeadNightmare Dragons|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 20% chance for 1 seconds and deal 10 damage |nLv2: 20% chance for 2 seconds and deal 20 damage |nLv3: 20% chance for 3 seconds and deal 30 damage |nLv4: 20% chance for 4 seconds and deal 40 damage")
+    ..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNSleep.blp")
+    ..setLvlDataUnreal("gba1", 0, 0, 1.0)
+    ..setLvlDataInt("gglb", 0, 0, 325)
+    ..setLvlDataInt("glvl", 0, 0, 5)
+    ..setLvlDataUnreal("gmo1", 0, 0, 1.0)
+    ..setLvlDataInt("gglm", 0, 0, 175)
+    ..setLvlDataInt("gtim", 0, 0, 60)
+    ..setLvlDataString("gef2", 0, 0, "rlev")
+    ..setLvlDataString("gco2", 0, 0, "" + commaList(SPELL_RESIST_SATYR))
+    ..setLvlDataUnreal("gmo2", 0, 0, 1.0)
+    ..setLvlDataString("gef3", 0, 0, "rhpo")
+    ..setLvlDataUnreal("gba3", 0, 0, 0.2)
+    ..setLvlDataUnreal("gmo3", 0, 0, 0.0)
+    ..setLvlDataInt("gtib", 0, 0, 90)
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == RENUNCIATION_OF_FILTH_BUILD_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        for i = 0 to 12
+            if players[i].isAllyOf(OP) 
+            SetPlayerTechResearchedSwap(RENUNCIATION_OF_FILTH_ID, 1, players[i])
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

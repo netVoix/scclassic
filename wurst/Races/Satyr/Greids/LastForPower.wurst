@@ -5,6 +5,7 @@ import UpgradeObjEditing
 import CorruptedTreeOfLife
 import ObjectIds
 import RegisterEvents
+import RenunciationOfFilth
 
 
 public let LUST_FORPOWER_ID = compiletime(UPGD_ID_GEN.next())
@@ -14,8 +15,8 @@ public let LUST_FORPOWER_ID = compiletime(UPGD_ID_GEN.next())
     new UpgradeDefinition(LUST_FORPOWER_ID)
     ..addEffectApplyAttackUpgradeBonus()
     ..setLevels(5)
-    ..setGoldCostBase(750)
-    ..setGoldCostIncrement(500)
+    ..setGoldCostBase(400)
+    ..setGoldCostIncrement(200)
     ..setTimeBase(90)
     ..setTimeIncrement(60)
     ..presetHotkey(lvl -> "D")
@@ -34,7 +35,7 @@ public let LUST_FORPOWER_ID = compiletime(UPGD_ID_GEN.next())
     ..setTooltipExtended(4, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate |nLv2: +4% spawning rate|r |n|cff00ff00Lv3:|r |cffffcc00+6%|r spawning rate |n|cff6c7b8bLv4: +8% spawning rate")
     ..setTooltipExtended(5, "|cffffcc00Gives:|r unit spawning rate |n|cffffcc00Affects:|r |cffffdeadCorrupted Ancient Of War|r |n|n|cff6c7b8bLv1: +2% spawning rate |nLv2: +4% spawning rate |nLv3: +6% spawning rate|r |n|cff00ffffLv4:|r |cffffcc00+8%|r spawning rate")
     ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
-    ..setRequirements(4, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV3))
+    ..setRequirements(4, "" + commaList(RENUNCIATION_OF_FILTH_BUILD_ID))
     ..setRequirements(5, "Rnsb")
 
 

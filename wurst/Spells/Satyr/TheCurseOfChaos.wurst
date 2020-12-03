@@ -21,13 +21,16 @@ public let CURSE_OF_CHAOS_BUFF_ID = compiletime(BUFF_ID_GEN.next())
 	..setRequirements(commaList(""))
 	..presetAttackSpeedFactor(lvl -> 0.01)
 	..presetMovementSpeedFactor(lvl -> 0.5)
-	..presetManaCost(lvl -> 50)
-	..presetCastRange(lvl -> 500)
+	..presetManaCost(lvl -> 25)
+	..presetCastRange(lvl -> 800)
+	..presetDurationHero(lvl -> 15.0)
 	..presetDurationNormal(lvl -> 2.0 + lvl)
 	..presetCastingTime(lvl -> 0.01)
-	..presetCooldown(lvl -> 50)
+	..presetCooldown(lvl -> 20)
 	..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
 	..presetIcon("ReplaceableTextures\\CommandButtons\\BTNCripple.blp")
+	..presetTooltipNormal(lvl -> "Curese of chaos " + lvl.toString() + " lvl")
+	..presetTooltipNormalExtended(lvl -> "Reduces spell resist by " + (lvl * 10).toString() + "%")
 	..presetBuffs(lvl -> commaList(CURSE_OF_CHAOS_BUFF_ID))
 	
 
@@ -63,7 +66,7 @@ function criticalstrikeAdd(int abil, unit u, unit tr)
 		let lvl = GetUnitAbilityLevel(tr, CURSE_OF_CHAOS_ID)
 		u.addAbility(CURSE_OF_CHAOS_DUMMY_ID)
 		u.setAbilityLevel(CURSE_OF_CHAOS_DUMMY_ID, lvl)
-		doAfter(2.0 + lvl) -> 
+		doAfter(15.0) -> 
 			u.removeAbility(CURSE_OF_CHAOS_DUMMY_ID)	
 
 

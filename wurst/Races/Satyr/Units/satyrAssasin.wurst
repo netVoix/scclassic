@@ -1,22 +1,23 @@
-package SatyrSoulStealer
+package satyrAssasin
 
 import ObjEditingNatives
 import SpellResistSatyr
 import ObjectIds
 import ObjectIdGenerator
 import CorruptedTreeOfLife
-import RenunciationOfFilth
+import AssasinsDexterity
+import ShadowStrike
 
-public let SOUL_STEALER = compiletime(UNIT_ID_GEN.next())
+public let SATYR_ASSASIN_ID = compiletime(UNIT_ID_GEN.next())
 
 
 @compiletime function create_w3u_nfgb()
-    createObjectDefinition("w3u", SOUL_STEALER, 'nfgb')
-    ..setInt("uhpm", 540)
+    createObjectDefinition("w3u", SATYR_ASSASIN_ID, 'nfgb')
+    ..setInt("uhpm", 665)
     ..setString("urac", "undead")
-    ..setUnreal("ua1c", 1.8)
+    ..setUnreal("ua1c", 1.6)
     ..setString("ua1t", "normal")
-    ..setString("uabi", "A002,Agyv," + commaList(SPELL_RESIST_SATYR))
+    ..setString("uabi", "Agyv," + commaList(SPELL_RESIST_SATYR,ASSASINS_DEXTERITY_ID,SHADOW_STRIKE_ID))
     ..setInt("ua1s", 5)
     ..setReal("usca", 1)
     ..setReal("ussc", 1.3)
@@ -24,10 +25,10 @@ public let SOUL_STEALER = compiletime(UNIT_ID_GEN.next())
     ..setInt("ufoo", 0)
     ..setUnreal("uhpr", 3.0)
     ..setInt("ubpy", 1)
-    ..setString("utip", "Train Soul Stealer")
+    ..setString("utip", "Train Satyr-assasin")
     ..setInt("usrg", 180)
     ..setInt("udu1", 4)
-    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID,RENUNCIATION_OF_FILTH_ID))
+    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID))
     ..setInt("ugol", 50)
     ..setString("util", "*")
     ..setInt("umvs", 240)
@@ -38,7 +39,7 @@ public let SOUL_STEALER = compiletime(UNIT_ID_GEN.next())
     ..setUnreal("uacq", 700.0)
     ..setUnreal("umvr", 3.0)
     ..setString("uarm", "Flesh")
-    ..setString("unam", "Soul Stealer")
+    ..setString("unam", "Satyr-assasin")
     ..setString("utyp", "undead")
     ..setInt("udef", 2)
     ..setInt("upoi", 12)
@@ -56,8 +57,8 @@ public let SOUL_STEALER = compiletime(UNIT_ID_GEN.next())
     ..setInt("udu2", 4)
     ..setInt("ua2r", 400)
     ..setString("ua2m", "Abilities\\Weapons\\IllidanMissile\\IllidanMissile.mdl")
-    ..setString("umdl", "units\\creeps\\Satyr\\Satyr")
-    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNSatyr.blp")
+    ..setString("umdl", "Phantomblade3.mdl")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNShadowDance.blp")
     ..setInt("ua2z", 1600)
     ..setInt("umh2", 1)
     ..setUnreal("urb2", 250.0)

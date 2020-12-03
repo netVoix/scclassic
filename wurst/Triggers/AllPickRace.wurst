@@ -1,30 +1,32 @@
 package AllPickRace
 import LinkedList
 import CorruptedTreeOfLife
+import RegisterEvents
+import ChannelAbilityPreset
+// import ClosureForGroups
 
 
 public button alliance 
 public button horde 
 public button chaos 
 public button ancients 
+public let removerace = new LinkedList<int>()
 public let allrace = new LinkedList<int>()
 public let allianceL = new LinkedList<int>()
 public let hordeL = new LinkedList<int>()
 public let chaosL = new LinkedList<int>()
 public let ancientsL = new LinkedList<int>()
+public let CHOOSE_FACTION_ID = compiletime(ABIL_ID_GEN.next())
+
 
 function allPickRace()
     if GetClickedButton() == GO
-        // FO = DialogCreate()
         DialogClear(FO)
         allrace.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W',CORRUPTED_TREE_OF_LIFE_LV1)
         allianceL.add('o002','o005','o007')
         hordeL.add('o00B','o00A','o00E')
         chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1)
         ancientsL.add('e001','o00T','o00W')
-        // for cid from allrace.staticItr()
-        //     for i = 0 to 12
-        //         SetPlayerUnitAvailableBJ(cid, false, players[i])
         DialogAddButtonBJ(FO, "|cff0099ffAlliance|r")
         alliance = GetLastCreatedButtonBJ()
         DialogAddButtonBJ(FO, "|cffff9900Horde|r")
@@ -62,28 +64,78 @@ function pick()
     int pick
     let pltr = GetTriggerPlayer()
     for cid from allrace.staticItr()
-        for i = 0 to 12
-            SetPlayerUnitAvailableBJ(cid, false, pltr)
+        SetPlayerUnitAvailableBJ(cid, false, pltr)
+    // forUnitsOfPlayer(pltr) x ->
+        // if x.getTypeId() == 'o001'
+            // x.addAbility(CHOOSE_FACTION_ID)
     if GetClickedButton() == alliance
+        allianceL.add('e001','o00T','o00W')
+        for i from removerace.staticItr()
+            allianceL.remove(i)
         for i = 1 to 3
             pick = allianceL.getFirst()
             SetPlayerUnitAvailableBJ(pick, true, pltr) 
             allianceL.remove(pick)
+        allianceL.add('o002','o005','o007')
     if GetClickedButton() == horde
+        hordeL.add('e001','o00T','o00W')
+        for i from removerace.staticItr()
+            hordeL.remove(i)
         for i = 1 to 3
             pick = hordeL.getFirst()
             SetPlayerUnitAvailableBJ(pick, true, pltr) 
-            hordeL.remove(pick)    
+            hordeL.remove(pick)  
+        hordeL.add('o00B','o00A','o00E')  
     if GetClickedButton() == chaos
+        chaosL.add('e001','o00T','o00W')
+        for i from removerace.staticItr()
+            chaosL.remove(i)
         for i = 1 to 4
             pick = chaosL.getFirst()
             SetPlayerUnitAvailableBJ(pick, true, pltr) 
             chaosL.remove(pick)  
+        chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1)
     if GetClickedButton() == ancients
+        ancientsL.add('e001','o00T','o00W')
+        for i from removerace.staticItr()
+            ancientsL.remove(i)
         for i = 1 to 3
             pick = ancientsL.getFirst()
             SetPlayerUnitAvailableBJ(pick, true, pltr) 
             ancientsL.remove(pick)  
+        
+
+function removerace(unit u)
+    if u.isRace()
+        let pickrace = u.getTypeId()
+        removerace.add(pickrace)
+
+
+public function unit.isRace() returns bool
+    return allrace.has(this.getTypeId())
+
+
+@compiletime function sobiMaskIcon()
+    new ChannelAbilityPreset(CHOOSE_FACTION_ID, 1, true)
+    ..setIconNormal("ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
+    ..setTooltipNormal(1, "To Choose A Faction")
+    ..setTooltipNormalExtended(1, "")
+    ..setButtonPositionNormalX(0)
+    ..setButtonPositionNormalY(0)
+
+
+function choosefancion(player p, int abil)
+    if abil == CHOOSE_FACTION_ID
+        DialogClear(FO)
+        DialogAddButtonBJ(FO, "|cff0099ffAlliance|r")
+        alliance = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cffff9900Horde|r")
+        horde = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cff9900ffChaos|r")
+        chaos = GetLastCreatedButtonBJ()
+        DialogAddButtonBJ(FO, "|cff2bff00Ancients|r")
+        ancients = GetLastCreatedButtonBJ()
+        DialogDisplayBJ(true, FO, p)
 
 
 init
@@ -92,4 +144,8 @@ init
     t.registerDialogEvent(FO)  
     let tt = CreateTrigger()
     tt.addCondition(Condition(function pick))
-    tt.registerDialogEvent(FO) 
+    tt.registerDialogEvent(FO)
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        removerace(GetTriggerUnit()) 
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        choosefancion(GetOwningPlayer(GetTriggerUnit()), GetSpellAbilityId())

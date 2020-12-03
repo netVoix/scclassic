@@ -2,11 +2,14 @@ package Izera
 
 import ObjEditingNatives
 import ObjectIdGenerator
-import TheCurseOfChaos
 import ObjectIds
-import CursedRoots
-import AuraOfThist
-import FingerOfDeath
+import Nightmare
+import EmeraldDream
+import RegisterEvents
+import Orders
+import SleepAura
+import ShadowStrike
+import HeartOfDecay
 
 public let YSERA_ID = compiletime(HERO_ID_GEN.next())
 
@@ -14,16 +17,16 @@ public let YSERA_ID = compiletime(HERO_ID_GEN.next())
 @compiletime function create_w3u_Nfir()
     createObjectDefinition("w3u", YSERA_ID, 'Nfir')
     ..setString("urac", "undead")
-    ..setString("uhab", "" + commaList(CURSE_OF_CHAOS_ID,CURSED_ROOTS_ID,AURA_OF_THIST_ID,FINGER_OF_DEATH_ID))
+    ..setString("uhab", "A0N5," + commaList(NIGHTMARE_ID,SLEEP_AURA_ID,EMERALD_DREAM_ID))
     ..setString("uabi", "AInv,A016,A0ES")
-    ..setInt("ubpx", 2)
+    ..setInt("ubpx", 1)
     ..setInt("ubpy", 2)
-    ..setReal("usca", 1.2)
+    ..setReal("usca", 1.5)
     ..setUnreal("uacq", 700.0)
     ..setString("uarm", "Ethereal")
     ..setInt("ua1d", 1)
     ..setInt("ua1s", 21)
-    ..setString("ua1m", "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl")
+    ..setString("ua1m", "Abilities\\Weapons\\DruidoftheTalonMissile\\DruidoftheTalonMissile.mdl")
     ..setInt("ua1r", 400)
     ..setUnreal("uma1", 0.1)
     ..setInt("umvs", 240)
@@ -57,9 +60,9 @@ public let YSERA_ID = compiletime(HERO_ID_GEN.next())
     ..setInt("urqc", 0)
     ..setString("uhot", "")
     ..setInt("ua1b", 214)
-    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cffff00ffThe Curse Of Chaos|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeadslow unit for 50% and reduces spell resist by 10-70%|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Cursed Roots|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead100 damage/sec and stun for 4-10s|r |n |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffAura Of Thist|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead1-7 MP/sec reduction|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff0000Finger Of Death|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead4000-10000 damage|r |n  |cff6c7b8b(affects Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r")
+    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cffff00ffDisabler|r |n|cffffcc00Can learn:|r |n|cffff00ffSleep|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeaddisables for 8-20s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n|n|cffff0000Nightmare|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage|r |n  |cff6c7b8b(900 area of effect)|r |n|n|cffff00ffSleep Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead6-14% attack, move slow|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffEmerald Dream|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead8-20s stun|r |n  |cff6c7b8b(900 area of effect)|r")
     ..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNAchievement_Character_Nightelf_Female.blp")
-    ..setString("uico", "ReplaceableTextures\\CommandButtons\\DISBTNAchievement_Character_Nightelf_Female.blp")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNAchievement_Character_Nightelf_Female.blp")
     ..setString("utip", "Train Defiled Aspect")
     ..setInt("upru", 1)
     ..setString("upro", "Ysera")
@@ -70,3 +73,42 @@ public let YSERA_ID = compiletime(HERO_ID_GEN.next())
     ..setInt("usid", 1000)
     ..setString("umdl", "ysera!!!.mdl")
     ..setString("unam", "Defiled Aspect")
+
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetTriggerUnit().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+
+function decayuse1(unit caster,int abil)
+    if caster.getTypeId() == YSERA_ID
+        if abil == NIGHTMARE_ID or abil == EMERALD_DREAM_ID
+            if UnitHasItemOfTypeBJ(caster, HEART_OF_DECAY_ID) == true
+                let g = GetUnitsInRangeOfLocMatching(900, GetUnitLoc(GetTriggerUnit()), Filter(function isEnemyUnit))
+                for u from g
+                    let kl = GetUnitLoc(caster)
+                    CreateNUnitsAtLoc(1, 'u000', GetOwningPlayer(caster), kl, bj_UNIT_FACING)
+                    let dummy = GetLastCreatedUnit()
+                    UnitAddAbility(dummy, SHADOW_STRIKE_DUMMY_ID)
+                    UnitApplyTimedLifeBJ(3., 'BTLF', bj_lastCreatedUnit)
+                    dummy.issueTargetOrderById(OrderIds.shadowstrike, u)
+
+
+function pricklyrootsuse(unit attaker)
+    if attaker.getTypeId() == YSERA_ID
+        attaker.issueImmediateOrderById(OrderIds.stomp)
+        if UnitHasItemOfTypeBJ(attaker, HEART_OF_DECAY_ID) == true
+            let kl = GetUnitLoc(attaker)
+            CreateNUnitsAtLoc(1, 'u000', GetOwningPlayer(attaker), kl, bj_UNIT_FACING)
+            let dummy = GetLastCreatedUnit()
+            UnitAddAbility(dummy, SHADOW_STRIKE_DUMMY_ID)
+            UnitApplyTimedLifeBJ(3., 'BTLF', bj_lastCreatedUnit)
+            dummy.issueTargetOrderById(OrderIds.shadowstrike, GetAttackedUnitBJ())
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        pricklyrootsuse(GetAttacker())
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_FINISH) ->
+        decayuse1(GetTriggerUnit(),GetSpellAbilityId())

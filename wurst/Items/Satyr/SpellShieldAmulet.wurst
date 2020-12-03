@@ -1,0 +1,31 @@
+package SpellShieldAmulet
+
+import ObjectIdGenerator
+import ObjectIds
+import AbilityObjEditing
+
+public let SPELL_SHIELD_AMULET_ID = compiletime(ITEM_ID_GEN.next())
+public let SPELL_SHIELD_AMULET_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", SPELL_SHIELD_AMULET_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Spell Shield Amulet|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Spell Shield Amulet|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSpellShieldAmulet.blp")
+    ..setString("icid", "" + commaList(SPELL_SHIELD_AMULET_ABIL_ID))
+    ..setString("iabi", "" + commaList(SPELL_SHIELD_AMULET_ABIL_ID))
+    ..setString("utub", "Neutralization of negative spells aimed at the hero. |cff6c7b8b(45s cooldown)|r")
+
+
+@compiletime function slow()
+    new AbilityDefinitionSpellShieldAOE(SPELL_SHIELD_AMULET_ABIL_ID)
+    ..setItemAbility(true)
+    ..presetCooldown(lvl -> 45.0)
