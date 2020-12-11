@@ -70,25 +70,25 @@ function isEnemyUnit() returns bool
 
 function additem(unit heroes)
   let hid = heroes.getTypeId()
-  if GetHeroLevel(heroes) >= 12 and NAMBER_ITEM_MAP.get(hid) == 1
+  if GetHeroLevel(heroes) >= 10 and NAMBER_ITEM_MAP.get(hid) == 1
     itemsset1(heroes)
     NAMBER_ITEM_MAP.put(hid,2)
-  if SET_ITEM_MAP.get(hid) == 1 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 1 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(BANNER_OF_THE_HORDE_ID)
     NAMBER_ITEM_MAP.put(hid,3)
-  if SET_ITEM_MAP.get(hid) == 2 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 2 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(CORNERSTONE_GRIMOIRE_ID)
     NAMBER_ITEM_MAP.put(hid,3)
-  if SET_ITEM_MAP.get(hid) == 3 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 3 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(MASK_OF_DEATH_ID)
     NAMBER_ITEM_MAP.put(hid,3)
-  if SET_ITEM_MAP.get(hid) == 4 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 4 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(ASHES_OF_KING_TERENAS_ID)
     NAMBER_ITEM_MAP.put(hid,3)
-  if SET_ITEM_MAP.get(hid) == 5 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 5 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(NEPTULON_SPEAR_SHARD_ID)
     NAMBER_ITEM_MAP.put(hid,3)
-  if SET_ITEM_MAP.get(hid) == 6 and GetHeroLevel(heroes) >= 24 and NAMBER_ITEM_MAP.get(hid) == 2
+  if SET_ITEM_MAP.get(hid) == 6 and GetHeroLevel(heroes) >= 20 and NAMBER_ITEM_MAP.get(hid) == 2
     heroes.addItemById(HEART_OF_ASZUNE_ID)
     NAMBER_ITEM_MAP.put(hid,3)
 

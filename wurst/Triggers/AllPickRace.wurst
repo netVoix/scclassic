@@ -3,14 +3,13 @@ import LinkedList
 import CorruptedTreeOfLife
 import RegisterEvents
 import ChannelAbilityPreset
-// import ClosureForGroups
+import ClosureForGroups
 
 
 public button alliance 
 public button horde 
 public button chaos 
 public button ancients 
-public let removerace = new LinkedList<int>()
 public let allrace = new LinkedList<int>()
 public let allianceL = new LinkedList<int>()
 public let hordeL = new LinkedList<int>()
@@ -61,54 +60,37 @@ function allPickRace()
 
 
 function pick()
-    int pick
     let pltr = GetTriggerPlayer()
     for cid from allrace.staticItr()
         SetPlayerUnitAvailableBJ(cid, false, pltr)
-    // forUnitsOfPlayer(pltr) x ->
-        // if x.getTypeId() == 'o001'
-            // x.addAbility(CHOOSE_FACTION_ID)
+    forUnitsOfPlayer(pltr) x ->
+        if x.getTypeId() == 'o001'
+            x.addAbility(CHOOSE_FACTION_ID)
     if GetClickedButton() == alliance
-        allianceL.add('e001','o00T','o00W')
-        for i from removerace.staticItr()
-            allianceL.remove(i)
-        for i = 1 to 3
-            pick = allianceL.getFirst()
-            SetPlayerUnitAvailableBJ(pick, true, pltr) 
-            allianceL.remove(pick)
-        allianceL.add('o002','o005','o007')
+        for i from allianceL.staticItr()
+            SetPlayerUnitAvailableBJ(i, true, pltr) 
     if GetClickedButton() == horde
-        hordeL.add('e001','o00T','o00W')
-        for i from removerace.staticItr()
-            hordeL.remove(i)
-        for i = 1 to 3
-            pick = hordeL.getFirst()
-            SetPlayerUnitAvailableBJ(pick, true, pltr) 
-            hordeL.remove(pick)  
-        hordeL.add('o00B','o00A','o00E')  
+        for i from hordeL.staticItr()
+            SetPlayerUnitAvailableBJ(i, true, pltr) 
     if GetClickedButton() == chaos
-        chaosL.add('e001','o00T','o00W')
-        for i from removerace.staticItr()
-            chaosL.remove(i)
-        for i = 1 to 4
-            pick = chaosL.getFirst()
-            SetPlayerUnitAvailableBJ(pick, true, pltr) 
-            chaosL.remove(pick)  
-        chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1)
+        for i from chaosL.staticItr()
+            SetPlayerUnitAvailableBJ(i, true, pltr) 
     if GetClickedButton() == ancients
-        ancientsL.add('e001','o00T','o00W')
-        for i from removerace.staticItr()
-            ancientsL.remove(i)
-        for i = 1 to 3
-            pick = ancientsL.getFirst()
-            SetPlayerUnitAvailableBJ(pick, true, pltr) 
-            ancientsL.remove(pick)  
+        for i from ancientsL.staticItr()
+            SetPlayerUnitAvailableBJ(i, true, pltr) 
         
 
 function removerace(unit u)
     if u.isRace()
         let pickrace = u.getTypeId()
-        removerace.add(pickrace)
+        if u.isAlliance()
+            allianceL.remove(pickrace)
+        if u.isHorde()
+            hordeL.remove(pickrace)  
+        if u.isChaos()
+            chaosL.remove(pickrace)  
+        if u.isAncients()
+            ancientsL.remove(pickrace) 
 
 
 public function unit.isRace() returns bool
@@ -136,6 +118,19 @@ function choosefancion(player p, int abil)
         DialogAddButtonBJ(FO, "|cff2bff00Ancients|r")
         ancients = GetLastCreatedButtonBJ()
         DialogDisplayBJ(true, FO, p)
+
+
+public function unit.isAlliance() returns bool
+    return allianceL.has(this.getTypeId())
+
+public function unit.isHorde() returns bool
+    return hordeL.has(this.getTypeId())
+
+public function unit.isChaos() returns bool
+    return chaosL.has(this.getTypeId())
+
+public function unit.isAncients() returns bool
+    return ancientsL.has(this.getTypeId())
 
 
 init

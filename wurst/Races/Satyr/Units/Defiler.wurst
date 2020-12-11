@@ -7,7 +7,6 @@ import CorruptedTreeOfLife
 import DemonicFire
 import CursedPower
 import ShadowWordDEATH
-import Madness
 import DenialOfmagic
 import SourceOfMagicSatyr
 
@@ -17,7 +16,7 @@ public let SATYR_DEFILER = compiletime(UNIT_ID_GEN.next())
 @compiletime function create_w3u_nerd()
     createObjectDefinition("w3u", SATYR_DEFILER, 'nerd')
     ..setString("urac", "undead")
-    ..setString("uabi", "A002," + commaList(DENIAL_OF_MAGIC_ABIL_ID,DEMONIC_FIRE_ID,CURSED_POWER_ID,SHADOW_WORD_DEATH_ID,MADNESS_ABIL_ID))
+    ..setString("uabi", "A002," + commaList(DENIAL_OF_MAGIC_ABIL_ID,DEMONIC_FIRE_ID,CURSED_POWER_ID,SHADOW_WORD_DEATH_ID))
     ..setString("udaa", "")
     ..setReal("usca", 1)
     ..setReal("ussc", 1.4)
@@ -48,7 +47,7 @@ public let SATYR_DEFILER = compiletime(UNIT_ID_GEN.next())
     ..setInt("usma", 3)
     ..setInt("usrg", 180)
     ..setInt("usst", 0)
-    ..setString("upgr", "" + commaList(SATYR_ARMOR_ID,CURSED_MAGIC_ID,MADNESS_ID,DENIAL_OF_MAGIC_ID,EMPOWERMENT_SATUR_ID,SOURCE_OF_MAGIC_UPG_SATUR_ID))
+    ..setString("upgr", "" + commaList(SATYR_ARMOR_ID,CURSED_MAGIC_ID,DENIAL_OF_MAGIC_ID,EMPOWERMENT_SATUR_ID,SOURCE_OF_MAGIC_UPG_SATUR_ID))
     ..setString("utub", "|cffffcc00Spellcaster|r |nStrong Vs Melee Unit |nWeak Vs Ranged Unit")
     ..setString("unam", "Defiler")
     ..setString("utip", "Train Defiler")

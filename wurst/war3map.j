@@ -25219,10 +25219,10 @@ call SelectHeroSkill(GetTriggerUnit(),'A093')
 call SelectHeroSkill(GetTriggerUnit(),'A04I')
 endif
 if(CPH())then
-call SelectHeroSkill(GetTriggerUnit(),'A09E')
-call SelectHeroSkill(GetTriggerUnit(),'A05W')
-call SelectHeroSkill(GetTriggerUnit(),'A0M8')
-call SelectHeroSkill(GetTriggerUnit(),'BStr')
+// call SelectHeroSkill(GetTriggerUnit(),'A09E')
+// call SelectHeroSkill(GetTriggerUnit(),'A05W')
+// call SelectHeroSkill(GetTriggerUnit(),'A0M8')
+// call SelectHeroSkill(GetTriggerUnit(),'BStr')
 if(CGH())then
 call UnitAddAbility(GetTriggerUnit(),'A03A')
 endif
@@ -25599,10 +25599,10 @@ call SelectHeroSkill(GetTriggerUnit(),'AOsh')
 call SelectHeroSkill(GetTriggerUnit(),'A06E')
 endif
 if(D8H())then
-call SelectHeroSkill(GetTriggerUnit(),'A04P')
-call SelectHeroSkill(GetTriggerUnit(),'A0N3')
-call SelectHeroSkill(GetTriggerUnit(),'A04W')
-call SelectHeroSkill(GetTriggerUnit(),'A035')
+// call SelectHeroSkill(GetTriggerUnit(),'A04P')
+// call SelectHeroSkill(GetTriggerUnit(),'A0N3')
+// call SelectHeroSkill(GetTriggerUnit(),'A04W')
+// call SelectHeroSkill(GetTriggerUnit(),'A035')
 endif
 if(FOH())then
 call SelectHeroSkill(GetTriggerUnit(),'A04J')

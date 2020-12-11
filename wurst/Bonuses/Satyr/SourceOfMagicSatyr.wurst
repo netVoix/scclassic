@@ -45,7 +45,7 @@ public let EMPOWERMENT_SATUR_ID = compiletime(UPGD_ID_GEN.next())
     ..setString("uhot", "Z")
     ..setString("unam", "Dimensional Portal")
     ..setString("utip", "Source of Magic [|cffffcc00Z|r]")
-    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadMadness|r |n+1 level of |cffffdeadDenial of Magic|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadImproved Shaft|r |n+1 level of |cffffdeadDenial of Magic|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
     ..setInt("urev", 0)
     ..setString("ures", "" + commaList(STORAGE_STONE_SATUR_ID,EMPOWERMENT_SATUR_ID,MAGIC_TORRENT_SATUR_ID))
     ..setInt("ubpx", 0)
@@ -58,7 +58,7 @@ public let EMPOWERMENT_SATUR_ID = compiletime(UPGD_ID_GEN.next())
     ..setLvlDataString("arac", 0, 0, "undead")
     ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
     ..setLvlDataInt("abpy", 0, 0, 1)
-    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadMadness|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadImproved Shaft|r |n+1 level of |cffffdeadDenial of Magic|r |n|nIcreases |cffffcc00Corrupted Tree Of Life|r and |cffffcc00Defiler|r mana by 10%. Unlocks upgrades for them inside this building. Reduces cooldowns of defensive |cffffcc00Corrupted Tree Of Life|r spells by 30%. |n|n|cffffcc00Type:|r |cff00ffffMagic Power|r / |cff00ff00Base Defence|r")
     ..setLvlDataInt("achd", 0, 0, 1)
     ..setLvlDataString("anam", 0, 0, "Source of Magic")
     ..setLvlDataString("atp1", 1, 0, "Source of Magic")
@@ -116,24 +116,24 @@ function sourceofmagic(unit u)
     let SOTN = u.getTypeId()
     if SOTN == SOURCE_OF_MAGIC_SATYR_ID
         SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
-        SetPlayerTechResearchedSwap('R02N',1,GetOwningPlayer(GetTriggerUnit()))
+        SetPlayerTechResearchedSwap(SOURCE_OF_MAGIC_UPG_SATUR_ID,1,GetOwningPlayer(GetTriggerUnit()))
         if OP == P
-            SetPlayerTechResearchedSwap('R02N',1,Z)
+            SetPlayerTechResearchedSwap(SOURCE_OF_MAGIC_UPG_SATUR_ID,1,Z)
             XA[1] = EMPOWERMENT_SATUR_ID
             OA[1] = STORAGE_STONE_SATUR_ID
             RA[1] = MAGIC_TORRENT_SATUR_ID
         if OP == S
-            SetPlayerTechResearchedSwap('R02N',1,Y)
+            SetPlayerTechResearchedSwap(SOURCE_OF_MAGIC_UPG_SATUR_ID,1,Y)
             XA[2] = EMPOWERMENT_SATUR_ID
             OA[2] = STORAGE_STONE_SATUR_ID
             RA[2] = MAGIC_TORRENT_SATUR_ID
         if OP == Q
-            SetPlayerTechResearchedSwap('R02N',1,U)
+            SetPlayerTechResearchedSwap(SOURCE_OF_MAGIC_UPG_SATUR_ID,1,U)
             XA[3] = EMPOWERMENT_SATUR_ID
             OA[3] = STORAGE_STONE_SATUR_ID
             RA[3] = MAGIC_TORRENT_SATUR_ID
         if OP == T 
-            SetPlayerTechResearchedSwap('R02N',1,W)
+            SetPlayerTechResearchedSwap(SOURCE_OF_MAGIC_UPG_SATUR_ID,1,W)
             XA[4] = EMPOWERMENT_SATUR_ID
             OA[4] = STORAGE_STONE_SATUR_ID
             RA[4] = MAGIC_TORRENT_SATUR_ID

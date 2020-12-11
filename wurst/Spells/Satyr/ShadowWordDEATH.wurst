@@ -36,5 +36,3 @@ public let SHADOW_WORD_DEATH_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setString("ftip", "DEATH")
     ..setString("fube", "This unit is about to die.")
         
-        
-        

@@ -25,6 +25,8 @@ import Izera
 import Nightmare
 import EmeraldDream
 import SleepAura
+import beastsStrenght
+import FlamesTotemSU
 
 
 function selectSkill(unit u)
@@ -64,6 +66,16 @@ function selectSkill(unit u)
 		u.selectSkill(NIGHTMARE_ID)
 		u.selectSkill(SLEEP_AURA_ID)
 		u.selectSkill(EMERALD_DREAM_ID)
+	if hero == 'Orex' //Спайк
+		u.selectSkill('A09E')
+		u.selectSkill('A05W')
+		u.selectSkill('A0M8')
+		u.selectSkill(BEASTS_STRENGTH_ID)
+	if hero == 'Ubal' //Ксерокс
+		u.selectSkill('A04P')
+		u.selectSkill('A0N3')
+		u.selectSkill(FLAMES_TOTEM_SU_ID)
+		u.selectSkill('A035')
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

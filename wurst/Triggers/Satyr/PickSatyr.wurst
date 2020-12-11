@@ -20,12 +20,11 @@ import RootSistem
 import EmeraldNightmare
 import NaturalsVaprizim
 import LastForPower
-import Madness
 import DenialOfmagic
 import InstillingFear
 import ItemsBonus
 import RegisterEvents
-import Orders
+import ImprovedShaft
 
 
 function barack()
@@ -89,7 +88,7 @@ function pickSatyr()
             EX[1] = EMERALD_NIGHTMARE_ID
             XX[1] = NATURAL_VAMPIRIZM_ID
             OX[1] = LUST_FORPOWER_ID
-            RX[1] = MADNESS_ID
+            RX[1] = IMPROVED_SHAFT_ID
             IX[1] = DENIAL_OF_MAGIC_ID
             UX[1] = INSTILLING_FEAR_ID
             AB[1] = 'R04J'
@@ -152,7 +151,7 @@ function pickSatyr()
             EX[2] = EMERALD_NIGHTMARE_ID
             XX[2] = NATURAL_VAMPIRIZM_ID
             OX[2] = LUST_FORPOWER_ID
-            RX[2] = MADNESS_ID
+            RX[2] = IMPROVED_SHAFT_ID
             IX[2] = DENIAL_OF_MAGIC_ID
             UX[2] = INSTILLING_FEAR_ID
             AB[2] = 'R04J'
@@ -215,7 +214,7 @@ function pickSatyr()
             EX[3] = EMERALD_NIGHTMARE_ID
             XX[3] = NATURAL_VAMPIRIZM_ID
             OX[3] = LUST_FORPOWER_ID
-            RX[3] = MADNESS_ID
+            RX[3] = IMPROVED_SHAFT_ID
             IX[3] = DENIAL_OF_MAGIC_ID
             UX[3] = INSTILLING_FEAR_ID
             AB[3] = 'R04J'
@@ -278,7 +277,7 @@ function pickSatyr()
             EX[4] = EMERALD_NIGHTMARE_ID
             XX[4] = NATURAL_VAMPIRIZM_ID
             OX[4] = LUST_FORPOWER_ID
-            RX[4] = MADNESS_ID
+            RX[4] = IMPROVED_SHAFT_ID
             IX[4] = DENIAL_OF_MAGIC_ID
             UX[4] = INSTILLING_FEAR_ID
             AB[4] = 'R04J'
@@ -756,9 +755,8 @@ init
             IR[3] = 'InAO'
         if GetOwningPlayer(GetTriggerUnit()) == T
             IR[4] = 'InAO'
-    caster.issueImmediateOrderById(OrderIds.stop)
 
 
 init
-    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
         pickaura(GetSpellAbilityId(),GetTriggerUnit())

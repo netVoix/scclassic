@@ -5,6 +5,7 @@ import ObjectIdGenerator
 import ObjectIds
 import CorruptedTreeOfLife
 import DenialOfmagic
+import ImprovedShaft
 
 public let SATYR_TRICKSTER = compiletime(UNIT_ID_GEN.next())
 
@@ -16,7 +17,7 @@ public let SATYR_TRICKSTER = compiletime(UNIT_ID_GEN.next())
     ..setString("utip", "Train Trickster")
     ..setString("unam", "Trickster")
     ..setInt("usrg", 180)
-    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID,DENIAL_OF_MAGIC_ID))
+    ..setString("upgr", "" + commaList(SATYR_MELEE_WEAPON_ID,SATYR_ARMOR_ID,DENIAL_OF_MAGIC_ID,IMPROVED_SHAFT_ID))
     ..setInt("ulum", 0)
     ..setUnreal("uhpr", 3.0)
     ..setInt("ugol", 50)
