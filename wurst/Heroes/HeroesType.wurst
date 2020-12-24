@@ -1,0 +1,25 @@
+package HeroesType
+
+import LinkedList
+import Iglarion
+import Eleret
+import IlGinot
+import Kepereter
+import Xavius
+import Alchemist
+
+let caster = asList(ELERET_ID,KEPERETER_ID,'Nbrn','Nngs','Hgam',ALCHEMIST_ID,'Hpal','Hamg','Hblm','Othr','Hkal','Ofar','Efur','Ogld','Oshd','Ulic','Hant','Odrt','Nfir','Emoo','Emfr','Ntin','Hhkl')
+let damager = asList('Hapm','Ogrh','Osam','Nbbc','Uanb','Ewrd','Ekgg',IGLARION_ID,ILGINOT_ID,'Nsjs','Hmgd','Ubal','Ucrl','Ewar','Osam','Nrob','Hdgo','Ecen','Etyr','Ocb2')
+let tank = asList(XAVIUS_ID,'Orex','Udea','H01D','Eill','Nplh','Obla','Otch','Udre','Nbst','Opgh','Edem','Uktl','Eilm')
+
+
+public function unit.isCaster() returns bool
+    return caster.has(this.getTypeId())
+
+
+public function unit.isDamager() returns bool
+    return damager.has(this.getTypeId())
+
+
+public function unit.isTank() returns bool
+    return tank.has(this.getTypeId())

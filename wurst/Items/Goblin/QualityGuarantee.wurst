@@ -1,0 +1,46 @@
+package QualityGuarantee
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let QUALITY_GUARANTEE_ID = compiletime(ITEM_ID_GEN.next())
+public let QUALITY_GUARANTEE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let QUALITY_GUARANTEE_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function qualityguarantee()
+    createObjectDefinition("w3t", QUALITY_GUARANTEE_ID, 'brac')
+    ..setString("iabi", "" + commaList(QUALITY_GUARANTEE_ABIL_ID))
+    ..setString("icid", "" + commaList(QUALITY_GUARANTEE_ABIL_ID))
+    ..setInt("igol", 0)
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("utip", "|cffffff00Guality Guarantee|r  |cff6c7b8b(Lv2)|r")
+    ..setString("utub", "+35% damage to |cffffcc00Heroes|r |n|cff6C7B8B(900 range)|r")
+    ..setString("unam", "|cffffff00Guality Guarantee|r  |cff6c7b8b(Lv2)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+
+
+@compiletime function create_w3a_A0QX()
+    createObjectDefinition("w3a", QUALITY_GUARANTEE_ABIL_ID, 'AIcd')
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("anam", 0, 0, "Guality Guarantee")
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(QUALITY_GUARANTEE_BUFF_ID))
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+    ..setLvlDataUnreal("Cac1", 1, 1, 0.35)
+    ..setLvlDataString("atar", 1, 0, "friend,hero,nonancient")
+    ..setLvlDataString("ata0", 0, 0, "")
+
+
+@compiletime function create_w3h_B03Z()
+    createObjectDefinition("w3h", QUALITY_GUARANTEE_BUFF_ID, 'BOac')
+    ..setString("frac", "human")
+    ..setString("ftip", "Guality Guarantee")
+    ..setString("fube", "This unit is under the effects of Guality Guarantee; it has increased attack damage.")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNLesserRejuvScroll.blp")
+    ..setString("ftat", "")
+    ..setString("fta0", "")

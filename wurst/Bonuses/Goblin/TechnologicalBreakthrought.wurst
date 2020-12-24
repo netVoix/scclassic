@@ -1,0 +1,83 @@
+package TechnologicalBreakthrought
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import XZ
+
+public let TECHNOLOGICAL_BREAKTHROUGHT_ID = compiletime(UNIT_ID_GEN.next())
+public let TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3u_hkee()
+    createObjectDefinition("w3u", TECHNOLOGICAL_BREAKTHROUGHT_ID, 'hkee')
+    ..setString("uabi", "Avul," + commaList(TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID))
+    ..setInt("ubpy", 1)
+    ..setString("uubs", "OMED")
+    ..setUnreal("uimz", 120.0)
+    ..setString("uani", "")
+    ..setReal("ussc", 4.0)
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+    ..setString("ushb", "BuildingShadowLarge")
+    ..setInt("udef", 2)
+    ..setInt("utss", 0)
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setString("uabt", "")
+    ..setUnreal("uabr", 0.0)
+    ..setUnreal("ucol", 100.0)
+    ..setString("usnd", "AmmoDump")
+    ..setInt("ubld", 1)
+    ..setInt("ufma", 0)
+    ..setInt("ugol", 0)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setString("utyp", "ancient,mechanical")
+    ..setInt("upri", 2)
+    ..setString("ures", "")
+    ..setString("utra", "")
+    ..setString("uupt", "")
+    ..setString("upgr", "")
+    ..setString("uhot", "F")
+    ..setString("unam", "Goblin Laboratory")
+    ..setString("utip", "Technological Breakthrought [|cffffcc00F|r]")
+    ..setString("utub", "|cffffcc00X0-Z9|r replaces |cffffcc00Attack Bot 2000|r |n|n|cffffcc00Special Unit (Melee/Mechanical)|r |n-20% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Flamethrower|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in an area|r |n  |cff6c7b8b(200-350 area of effect)|r |n|n|cffa020f0Pocket Factory|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons factory for 20-60|r |n|n|cff00ffffHeavy Bash|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead18-30% to stun for 1.4-2s|r |n|n|cff00ffffKABOOM|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead500-3500 damage after death|r |n  |cff6c7b8b(900 area of effect)|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r")
+    ..setString("umdl", "buildings\\other\\AmmoDump\\AmmoDump.mdl")
+    ..setReal("usca", 0.95)
+    ..setString("uspa", "")
+    ..setInt("usid", 600)
+    ..setInt("ubpx", 3) 
+    
+
+@compiletime function create_w3a_A0DW()
+    createObjectDefinition("w3a", TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "undead")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00X0-Z9|r replaces |cffffcc00Attack Bot 2000|r |n|n|cffffcc00Special Unit (Melee/Mechanical)|r |n-20% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Technological Breakthrought")
+    ..setLvlDataString("atp1", 1, 0, "Technological Breakthrought")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+    ..setLvlDataInt("abpx", 0, 0, 0)
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == TECHNOLOGICAL_BREAKTHROUGHT_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            PX[1] = XZ_ID
+        if OP == S
+            PX[2] = XZ_ID
+        if OP == Q
+            PX[3] = XZ_ID
+        if OP == T 
+            PX[4] = XZ_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

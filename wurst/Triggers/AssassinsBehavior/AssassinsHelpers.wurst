@@ -3,8 +3,9 @@ import LinkedList
 import ClosureForGroups
 import Orders
 import Iglarion
+import Valira
 
-let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', IGLARION_ID)
+let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', IGLARION_ID, VALEERA_ID)
 
 unit affectedUnit
 

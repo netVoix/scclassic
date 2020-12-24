@@ -11,6 +11,11 @@ import ItemsTierThree
 import HeartOfDecay
 import SpellShieldAmulet
 import ItemsTierFour
+import XZ
+import QualityGuarantee
+import RepairKit
+import RocketLauncher
+import SpareReactor
 
 
 function additem(unit u)
@@ -30,10 +35,19 @@ function additem(unit u)
             u.addItemById(SPELL_SHIELD_AMULET_ID)
         if lvl >= 8 and UnitHasItemOfTypeBJ(u, ARCHMAGES_RING_ID) == false
             u.addItemById(ARCHMAGES_RING_ID)
-        if lvl >= 14 and UnitHasItemOfTypeBJ(u, HEART_OF_DECAY_ID) == false
-            u.addItemById(HEART_OF_DECAY_ID)
-        if lvl >= 20 and UnitHasItemOfTypeBJ(u, CORNERSTONE_GRIMOIRE_ID) == false
+        if lvl >= 14 and UnitHasItemOfTypeBJ(u, CORNERSTONE_GRIMOIRE_ID) == false
             u.addItemById(CORNERSTONE_GRIMOIRE_ID)
+        if lvl >= 20 and UnitHasItemOfTypeBJ(u, HEART_OF_DECAY_ID) == false
+            u.addItemById(HEART_OF_DECAY_ID)
+    if hero == XZ_ID
+        if lvl >= 4 and UnitHasItemOfTypeBJ(u, QUALITY_GUARANTEE_ID) == false
+            u.addItemById(QUALITY_GUARANTEE_ID)
+        if lvl >= 8 and UnitHasItemOfTypeBJ(u, REPAIR_KIT_ID) == false
+            u.addItemById(REPAIR_KIT_ID)
+        if lvl >= 14 and UnitHasItemOfTypeBJ(u, ROCKET_LAUNCHER_ID) == false
+            u.addItemById(ROCKET_LAUNCHER_ID)
+        if lvl >= 20 and UnitHasItemOfTypeBJ(u, SPARE_REACTOR_ID) == false
+            u.addItemById(SPARE_REACTOR_ID)
 
 
 init

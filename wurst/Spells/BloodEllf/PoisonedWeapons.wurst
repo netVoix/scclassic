@@ -1,0 +1,42 @@
+package PoisonedWeapons
+
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+
+
+public let POISONED_WEAPONS_ID = compiletime(ABIL_ID_GEN.next())
+public let POISONED_WEAPONS_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function shadowWordFIRE()
+    new AbilityDefinitionWardenShadowStrike(POISONED_WEAPONS_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(3, 2)
+    ..presetManaCost(lvl -> 30)
+    ..presetAttackSpeedFactor(lvl -> 0.1 * lvl)   
+    ..presetMovementSpeedFactor(lvl -> 0.1 * lvl)
+    ..presetDurationNormal(lvl -> 15.0)
+    ..presetDurationHero(lvl -> 15.0)
+    ..presetTargetsAllowed(lvl -> "enemies,hero,nonancient,organic")
+    ..presetInitialDamage(lvl -> 300.0 + 100 * lvl)
+    ..presetDecayPower(lvl -> 0.01)
+    ..presetDecayingDamage(lvl -> 0.01)
+    ..presetTooltipNormal(lvl -> "Poisoned Weapons " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> "Deal " + (300 + 100 * lvl).toString() + " damage and slow " + (10 * lvl).toString() + "% for 15 second.")
+    ..presetCooldown(lvl -> 15.0)
+    ..presetBuffs(lvl -> commaList(POISONED_WEAPONS_BUFF_ID))
+    ..presetCastRange(lvl -> 1000)
+
+
+@compiletime function create_w3h()
+    createObjectDefinition("w3h", POISONED_WEAPONS_BUFF_ID, 'BEsh')
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNShadowStrike.blp")
+    ..setString("ftip", "Poisoned Weapons")
+    ..setString("fube", "This unit was hit by Poisoned Weapons; it will take damage over time and move more slowly.")
+    ..setString("ftat", "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl")
+    ..setString("fta0", "overhead")
+    ..setInt("fspd", 2)

@@ -1,0 +1,47 @@
+package RepairKit
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let REPAIR_KIT_ID = compiletime(ITEM_ID_GEN.next())
+public let REPAIR_KIT_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let REPAIR_KIT_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function repairkit()
+    createObjectDefinition("w3t", REPAIR_KIT_ID, 'rst1')
+    ..setString("unam", "|cff00ff00Repair Kit|r  |cff6c7b8b(Lv3)|r")
+    ..setString("utip", "|cff00ff00Repair Kit|r  |cff6c7b8b(Lv3)|r")
+    ..setString("uhot", "")
+    ..setString("ides", "")
+    ..setInt("ilvo", 5)
+    ..setInt("ilev", 5)
+    ..setInt("igol", 0)
+    ..setInt("iprn", 0)
+    ..setString("utub", "+8 HP/s to units |n|cff6c7b8b(affects mechanical units only)|r |n|cff6C7B8B(900 range)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNEngineeringUpgrade.blp")
+    ..setString("iabi", "" + commaList(REPAIR_KIT_ABIL_ID))
+    ..setString("icid", "" + commaList(REPAIR_KIT_ABIL_ID))
+
+
+@compiletime function create_w3a_A0RF()
+    createObjectDefinition("w3a", REPAIR_KIT_ABIL_ID, 'AIau')
+    ..setLvlDataString("anam", 0, 0, "Repair Kit")
+    ..setLvlDataString("abuf", 1, 0, ""  + commaList(REPAIR_KIT_BUFF_ID))
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("ata0", 0, 0, "")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNEngineeringUpgrade.blp")
+    ..setLvlDataUnreal("Uau1", 1, 1, 0.0)
+    ..setLvlDataUnreal("Uau2", 1, 2, 5.0)
+    ..setLvlDataString("atar", 1, 0, "air,friend,ground,invulnerable,nonancient,mechanical,vulnerable")
+
+
+@compiletime function create_w3h_B04A()
+    createObjectDefinition("w3h", REPAIR_KIT_BUFF_ID, 'BOac')
+    ..setString("frac", "human")
+    ..setString("ftip", "Repair Kit")
+    ..setString("fube", "This unit is under the effects of Repair Kit; it has increased regeneration.")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNEngineeringUpgrade.blp")
+    ..setString("ftat", "Abilities\\Spells\\Orc\\WarDrums\\DrumsCasterHeal.mdl")
+    ..setString("fta0", "")

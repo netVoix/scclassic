@@ -1,0 +1,25 @@
+package Kaboom
+
+import ObjectIdGenerator
+import AbilityObjEditing
+
+public let KABOOM_ID = compiletime(ABIL_ID_GEN.next())
+public let KABOOM_UNIT_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function kaboom()
+    new AbilityDefinitionSelfDestruct(KABOOM_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(3, 2)
+    ..presetExplodesonDeath(lvl -> true)
+    ..presetManaCost(lvl -> 9999)
+    ..presetBuildingDamageFactor(lvl -> 0.0)
+    // ..presetFullDamageAmount(lvl -> 750.0 * lvl)
+    ..presetFullDamageAmount(lvl -> 0.01)
+    ..presetFullDamageRadius(lvl -> 900.0)
+    ..presetTargetsAllowed(lvl -> "air,enemies,ground,mechanical,neutral,organic")
+    ..presetTooltipNormal(lvl -> "Kaboom " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> "Deal " + (750 * lvl).toString() + " damage after death.")

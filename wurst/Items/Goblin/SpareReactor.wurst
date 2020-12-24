@@ -1,0 +1,31 @@
+package SpareReactor
+
+import ObjectIdGenerator
+import ObjEditingNatives
+import ObjectIds
+
+public let SPARE_REACTOR_ID = compiletime(ITEM_ID_GEN.next())
+public let SPARE_REACTOR_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function repairkit()
+    createObjectDefinition("w3t", SPARE_REACTOR_ID, 'rst1')
+    ..setString("icla", "Permanent")
+    ..setString("unam", "|cff00ffffSpare Core|r  |cff6c7b8b(Lv4)|r")
+    ..setString("utip", "|cff00ffffSpare Core|r  |cff6c7b8b(Lv4)|r")
+    ..setString("uhot", "")
+    ..setString("ides", "")
+    ..setInt("ilvo", 5)
+    ..setInt("ilev", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setInt("ipri", 0)
+    ..setString("utub", "+30 HP/s regeneration")
+    ..setString("iabi", "" + commaList(SPARE_REACTOR_ABIL_ID))
+    ..setString("icid", "" + commaList(SPARE_REACTOR_ABIL_ID))
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPhilosophersStone.blp")
+
+    
+@compiletime function create_w3a_A0KR()
+    createObjectDefinition("w3a", SPARE_REACTOR_ABIL_ID, 'Arll')
+    ..setLvlDataInt("Ihpr", 1, 1, 30)

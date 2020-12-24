@@ -29,7 +29,7 @@ public let CURSE_OF_CHAOS_BUFF_ID = compiletime(BUFF_ID_GEN.next())
 	..presetCooldown(lvl -> 20)
 	..presetTargetsAllowed(lvl -> "enemies,hero,nonancient")
 	..presetIcon("ReplaceableTextures\\CommandButtons\\BTNCripple.blp")
-	..presetTooltipNormal(lvl -> "Curese of chaos " + lvl.toString() + " lvl")
+	..presetTooltipNormal(lvl -> "Curse of chaos " + lvl.toString() + " lvl")
 	..presetTooltipNormalExtended(lvl -> "Reduces spell resist by " + (lvl * 10).toString() + "%")
 	..presetBuffs(lvl -> commaList(CURSE_OF_CHAOS_BUFF_ID))
 	

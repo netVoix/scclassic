@@ -1,0 +1,81 @@
+package ThistForMagic
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import Valira
+import RegisterEvents
+import ObjectIds
+
+public let THIST_FOR_MAGIC_ID = compiletime(UNIT_ID_GEN.next())
+public let THIST_FOR_MAGIC_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3u_hatw()
+    createObjectDefinition("w3u", THIST_FOR_MAGIC_ID, 'hatw')
+    ..setString("uabi", "Avul," + commaList(THIST_FOR_MAGIC_ABIL_ID))
+    ..setString("uubs", "OMED")
+    ..setReal("ussc", 4.0)
+    ..setString("umdl", "buildings\\other\\FountainOfLifeBlood\\FountainOfLifeBlood.mdl")
+    ..setString("uaap", "large")
+    ..setUnreal("ulpz", 60.0)
+    ..setReal("usca", 0.9)
+    ..setInt("udef", 2)
+    ..setString("udty", "fort")
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setUnreal("ucol", 100.0)
+    ..setString("uabt", "")
+    ..setUnreal("uabr", 0.0)
+    ..setInt("ubld", 1)
+    ..setInt("ugol", 0)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ulum", 0)
+    ..setInt("usin", 600)
+    ..setString("utyp", "ancient,mechanical")
+    ..setString("uhot", "Z")
+    ..setString("upgr", "")
+    ..setString("unam", "Fountain of Blood")
+    ..setString("utip", "The Great Gladiator [|cffffcc00Z|r]")
+    ..setString("utub", "|cffffcc00Valeera|r replaces |cffffcc00Lorhtemar|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cff00ffffAssassin|r |n|cffffcc00Can learn:|r |n|cffff0000Whirlwind|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage|r |n  |cff6c7b8b(300 area of effect)|r |n|n|cff00ffffValeera's Wrath|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead20-50% to do 4x damage|r |n |cff6c7b8b(does not affect Special unit)|r |n|n|cffff00ffSmoke Bomb|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead-50% MS, 22-34% miss chance|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffPoisoned Weapons|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead400-1000 damage and 10-70% slow for 15s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+    ..setString("urac", "nightelf")
+    ..setInt("ubpx", 0)
+    ..setInt("usid", 600)
+    ..setString("uani", "")
+    ..setString("ushb", "BuildingShadowLarge")
+    ..setInt("uaen", 0)
+    ..setString("usnd", "FountainOfLife")
+    
+
+@compiletime function create_w3a_A0TJ()
+    createObjectDefinition("w3a", THIST_FOR_MAGIC_ABIL_ID, 'ACev')
+    ..setLvlDataString("arac", 0, 0, "nightelf")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataInt("abpx", 0, 0, 0)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Valeera|r replaces |cffffcc00Lorhtemar|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Hero|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "The Great Gladiator")
+    ..setLvlDataString("atp1", 1, 0, "The Great Gladiator")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == THIST_FOR_MAGIC_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            HX[1] = VALEERA_ID
+        if OP == S
+            HX[2] = VALEERA_ID
+        if OP == Q
+            HX[3] = VALEERA_ID
+        if OP == T 
+            HX[4] = VALEERA_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())

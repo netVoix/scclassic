@@ -6,7 +6,6 @@ import ObjectIds
 import CorruptedTreeOfLife
 import BatlleRage
 import RootSistem
-import NaturalsVaprizim
 import EmeraldNightmare
 import LastForPower
 import DenialOfmagic
@@ -65,7 +64,7 @@ public let CORRUPTED_ANCIENT_PROTECTOR = compiletime(UNIT_ID_GEN.next())
     ..setString("ubsl", "NightElfGrowingLoop")
     ..setString("usnd", "AncientProtector")
     ..setInt("uscb", 0)
-    ..setString("ures", "" + commaList(BATLLE_RAGE_ID,ROOT_SISTEM_ID,EMERALD_NIGHTMARE_ID,NATURAL_VAMPIRIZM_ID,LUST_FORPOWER_ID,DENIAL_OF_MAGIC_ID,INSTILLING_FEAR_ID,CRITICAL_STRIKE_ID,IMPROVED_SHAFT_ID))
+    ..setString("ures", "" + commaList(BATLLE_RAGE_ID,ROOT_SISTEM_ID,EMERALD_NIGHTMARE_ID,LUST_FORPOWER_ID,DENIAL_OF_MAGIC_ID,INSTILLING_FEAR_ID,CRITICAL_STRIKE_ID,IMPROVED_SHAFT_ID))
     ..setInt("usid", 1800)
     ..setInt("ua1r", 1150)
     ..setUnreal("uacq", 1150.0)

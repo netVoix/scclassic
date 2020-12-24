@@ -236,3 +236,4 @@ public let DRUIDS_PAWS_ID = 'mlst'
 	..setInt("ilev", 3)
 	..setInt("ilvo", 3)
 	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
+

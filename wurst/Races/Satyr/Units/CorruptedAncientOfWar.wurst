@@ -15,6 +15,7 @@ import Xavius
 import NaturalsVaprizim
 import PlagueTreant
 import PredatoryForest
+import RegisterEvents
 
 public let CORRUPTED_ANCIENT_OF_WAR_LV1 = compiletime(UNIT_ID_GEN.next())
 public let CORRUPTED_ANCIENT_OF_WAR_LV2 = compiletime(UNIT_ID_GEN.next())
@@ -42,7 +43,7 @@ public let CORRUPTED_ANCIENT_OF_WAR_LV4 = compiletime(UNIT_ID_GEN.next())
     ..setString("ureq", "" + commaList(CORRUPTED_TREE_OF_LIFE_LV1))
     ..setString("ures", "")
     ..setString("utra", "")
-    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(BUILDING_ARMOR_ID,SATYR_RANGE_WEAPON_ID,NATURAL_VAMPIRIZM_ID,PREDATORY_FOREST_UPGD_ID))
+    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(BUILDING_ARMOR_ID,SATYR_RANGE_WEAPON_ID,PREDATORY_FOREST_UPGD_ID))
     ..setString("uhot", "")
     ..setString("unam", "Corrupted Ancient of War (Lv1)")
     ..setReal("ussc", 4.5)
@@ -106,7 +107,7 @@ public let CORRUPTED_ANCIENT_OF_WAR_LV4 = compiletime(UNIT_ID_GEN.next())
     ..setString("ureq", "")
     ..setString("ures", "")
     ..setString("utra", "")
-    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,NATURAL_VAMPIRIZM_ID,PREDATORY_FOREST_UPGD_ID))
+    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,PREDATORY_FOREST_UPGD_ID))
     ..setString("uhot", "R")
     ..setString("unam", "Ancient of War (Lv2)")
     ..setReal("ussc", 4.5)
@@ -170,7 +171,7 @@ public let CORRUPTED_ANCIENT_OF_WAR_LV4 = compiletime(UNIT_ID_GEN.next())
     ..setString("ureq", "")
     ..setString("ures", "")
     ..setString("utra", "")
-    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,NATURAL_VAMPIRIZM_ID,PREDATORY_FOREST_UPGD_ID))
+    ..setString("upgr", "Rnsi,Rnen,R046,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,PREDATORY_FOREST_UPGD_ID))
     ..setString("uhot", "R")
     ..setString("unam", "Corrupted Ancient of War (Lv3)")
     ..setReal("ussc", 4.5)
@@ -234,7 +235,7 @@ public let CORRUPTED_ANCIENT_OF_WAR_LV4 = compiletime(UNIT_ID_GEN.next())
     ..setString("ureq", "")
     ..setString("ures", "")
     ..setString("utra", "")
-    ..setString("upgr", "Rnsi,Rnen,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,NATURAL_VAMPIRIZM_ID,PREDATORY_FOREST_UPGD_ID))
+    ..setString("upgr", "Rnsi,Rnen,R04B," + commaList(SATYR_RANGE_WEAPON_ID,BUILDING_ARMOR_ID,PREDATORY_FOREST_UPGD_ID))
     ..setString("uhot", "R")
     ..setString("unam", "Corrupted Ancient of War (Lv4)")
     ..setReal("ussc", 4.5)
@@ -275,3 +276,17 @@ public let CORRUPTED_ANCIENT_OF_WAR_LV4 = compiletime(UNIT_ID_GEN.next())
     ..setInt("upri", 20)
     ..setInt("usid", 1800)
     ..setInt("upoi", 880)
+
+
+function addvamp(unit u)
+    if u.getTypeId() == CORRUPTED_ANCIENT_OF_WAR_LV2
+        u.setAbilityLevel(NATURAL_VAMPIRIZM_ABIL_ID, 2)
+    if u.getTypeId() == CORRUPTED_ANCIENT_OF_WAR_LV3
+        u.setAbilityLevel(NATURAL_VAMPIRIZM_ABIL_ID, 3)
+    if u.getTypeId() == CORRUPTED_ANCIENT_OF_WAR_LV4
+        u.setAbilityLevel(NATURAL_VAMPIRIZM_ABIL_ID, 4)
+ 
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addvamp(GetTriggerUnit())

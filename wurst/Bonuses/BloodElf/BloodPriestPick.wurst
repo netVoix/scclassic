@@ -33,7 +33,7 @@ import ObjEditingNatives
 	..setInt("upri", 2)
 	..setInt("usin", 600)
 	..setString("utyp", "ancient,mechanical")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPersistent Missiles|r |n|n|cffffcc00Blood Priest|r replaces |cffffcc00Sorceress|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff00ff00Healing Hand|r |cff6c7b8b(Healing Spell)|r |n |cffffdead(25/40/55/70/85 HP to 3 units)|r |n|cffff0000Ignite|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(300/350/400/450/500 dmg)|r |n |cff6c7b8b(to a single Air unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBlood Magic|r |cff6c7b8b(Upgrades Abilities)|r  |n|cffffdeadSilverite Armor|r |n|cffffdeadPersistent Missiles|r |n|n|cffffcc00Type:|r |cffff00ffStrong Anti Air|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadPersistent Missiles|r |n+1 level of |cffffdeadBlood Sacrifice|r |n|n|cffffcc00Blood Priest|r replaces |cffffcc00Sorceress|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff00ff00Healing Hand|r |cff6c7b8b(Healing Spell)|r |n |cffffdead(25/40/55/70/85 HP to 3 units)|r |n|cffff0000Ignite|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(300/350/400/450/500 dmg)|r |n |cff6c7b8b(to a single Air unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBlood Magic|r |cff6c7b8b(Upgrades Abilities)|r  |n|cffffdeadSilverite Armor|r |n|cffffdeadPersistent Missiles|r |n|n|cffffcc00Type:|r |cffff00ffStrong Anti Air|r / |cffffff00Unit Power|r")
 	..setString("utip", "Blood Priest [|cffffcc00A|r]")
 	..setInt("ubpy", 1)
 	..setString("uhot", "A")

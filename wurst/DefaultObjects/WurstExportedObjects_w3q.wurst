@@ -5512,7 +5512,7 @@ import ObjEditingNatives
 	..setLvlDataString("gnam", 1, 0, "Blood Sacrifice")
 	..setLvlDataInt("gbpy", 0, 0, 0)
 	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNSpell_Shadow_LifeDrain.blp")
-	..setLvlDataString("greq", 4, 0, "hatw")
+	..setLvlDataString("greq", 4, 0, "nfv4")
 	..setLvlDataString("gnam", 4, 0, "Blood Sacrifice")
 	..setLvlDataString("gtp1", 4, 0, "Research Blood Sacrifice (|cff00ffffLv4|r) [|cffffcc00E|r]")
 	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r boost to your standing forces |n|cffffcc00Affects:|r |cffffdeadYour dying Heroes|r |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: +30% damage for 60 seconds |nLv2: +60% damage for 120 seconds|r |n|cff00ff00Lv3:|r |cffffcc00+90%|r damage for |cffffcc00180|r seconds |n|cff6c7b8bLv4: +120% damage for 240 seconds")
@@ -5619,7 +5619,7 @@ import ObjEditingNatives
 	..setLvlDataString("gco1", 0, 0, "A0U4")
 	..setLvlDataString("gef2", 0, 0, "rlev")
 	..setLvlDataString("gco2", 0, 0, "Amnx")
-	..setLvlDataString("greq", 4, 0, "hkee")
+	..setLvlDataString("greq", 4, 0, "ngwr")
 
 
 @compiletime function create_w3q_R04L()

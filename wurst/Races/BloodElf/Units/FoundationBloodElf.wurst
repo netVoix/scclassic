@@ -1,0 +1,40 @@
+package FoundationBloodElf
+
+import ObjEditingNatives
+import ObjectIds
+import ThistForMagic
+
+
+@compiletime function create_w3u_o01X()
+	createObjectDefinition("w3u", 'o01X', 'ogre')
+	..setString("ures", "")
+	..setString("utra", "")
+	..setString("uabi", "Avul")
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setString("upgr", "")
+	..setInt("ufma", 0)
+	..setString("unam", "Foundation")
+	..setString("uhot", "")
+	..setString("uupt", "nfv2,nvr2,nfv1,ncb4,ncb7,nfv4,nvr0,ncb6,nef0,nvr1,nef7," + commaList(THIST_FOR_MAGIC_ID))
+	..setString("urac", "other")
+	..setInt("ugol", 0)
+	..setInt("ulum", 0)
+	..setInt("ubld", 1)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNStoneArchitecture.blp")
+	..setString("umdl", "BirthMesh.mdl")
+	..setInt("udef", 2)
+	..setString("ushb", "ShadowHouse")
+	..setReal("ussc", 4.0)
+	..setUnreal("uabr", 0.0)
+	..setString("uabt", "")
+	..setString("utyp", "mechanical")
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setUnreal("ucol", 100.0)
+	..setString("uubs", "OMED")
+	..setString("utip", "Foundation")
+	..setString("utub", "Upgrades into other structures.")
+	..setString("ureq", "o00W")
+	..setReal("usca", 0.9)
+	..setInt("ubpx", 3)
+	..setInt("ubpy", 2)

@@ -35,7 +35,7 @@ public let STYM_ROLLER_PICK_ID = 'ngwr'
 	..setInt("usin", 600)
 	..setString("unam", "Goblin Laboratory")
 	..setString("ides", "")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpere Parts|r |n|n|cffffcc00Stym Roller|r replaces |cffffcc00Rocket Buggy|r |n|cffffcc00Siege Unit (Ranged)|r |n+55% attack rate |n+800 HP |n|cffffcc00Abilities:|r |n|cffff0000Flame Tongue|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffRepair Bots|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 HP/s if not under attack)|r|n|cffffcc00Upgrades used:|r |n|cffffdeadBOOMpowder|r |n|cffffdeadLeather Armor|r |n|cffffdeadBOOM Rounds|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpere Parts|r |n+1 level of |cffffdeadDemolition Egspert|r |n|n|cffffcc00Stym Roller|r replaces |cffffcc00Rocket Buggy|r |n|cffffcc00Siege Unit (Ranged)|r |n+55% attack rate |n+800 HP |n|cffffcc00Abilities:|r |n|cffff0000Flame Tongue|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(100 damage in a line)|r |n|cff00ffffRepair Bots|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 HP/s if not under attack)|r|n|cffffcc00Upgrades used:|r |n|cffffdeadBOOMpowder|r |n|cffffdeadLeather Armor|r |n|cffffdeadBOOM Rounds|r |n|cffffdeadSpere Parts|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r / |cffffff00Unit Power|r")
 	..setString("utip", "Devil's Tongue [|cffffcc00S|r]")
 	..setInt("ubpy", 1)
 	..setInt("ubpx", 1)

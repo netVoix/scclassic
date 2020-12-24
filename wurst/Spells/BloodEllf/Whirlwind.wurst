@@ -1,0 +1,25 @@
+package Whirlwind
+
+import AbilityObjEditing
+import ObjectIdGenerator
+
+public let WHIRLWIND_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function create_w3a_A0SU()
+    new AbilityDefinitionBladeMasterBladestorm(WHIRLWIND_ID)
+    ..setHeroAbility(true)
+    ..setLevels(7)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetButtonPosNormal(0, 2)
+    ..presetAreaofEffect(lvl -> 300)
+    ..presetCooldown(lvl -> 13.0)
+    ..presetDamagePerSecond(lvl -> 225.0 + 25 * lvl)
+    ..presetDurationHero(lvl -> 1.0)
+    ..presetDurationNormal(lvl -> 1.0)
+    ..presetMagicDamageReduction(lvl -> 0)
+    ..presetManaCost(lvl -> 30)
+    ..presetTargetsAllowed(lvl -> "ground,enemy,neutral")
+    ..presetTooltipNormal(lvl -> "Whirlwind " + lvl.toString() + " lvl")
+    ..presetTooltipNormalExtended(lvl -> "Deal " + (200 + 50 * lvl).toString() + " damage to ground enemy units.") 

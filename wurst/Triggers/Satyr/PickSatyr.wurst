@@ -18,7 +18,6 @@ import IlGinot
 import BatlleRage
 import RootSistem
 import EmeraldNightmare
-import NaturalsVaprizim
 import LastForPower
 import DenialOfmagic
 import InstillingFear
@@ -86,7 +85,7 @@ function pickSatyr()
             ZE[1] = BATLLE_RAGE_ID
             VX[1] = ROOT_SISTEM_ID
             EX[1] = EMERALD_NIGHTMARE_ID
-            XX[1] = NATURAL_VAMPIRIZM_ID
+            XX[1] = 1
             OX[1] = LUST_FORPOWER_ID
             RX[1] = IMPROVED_SHAFT_ID
             IX[1] = DENIAL_OF_MAGIC_ID
@@ -149,7 +148,7 @@ function pickSatyr()
             ZE[2] = BATLLE_RAGE_ID
             VX[2] = ROOT_SISTEM_ID
             EX[2] = EMERALD_NIGHTMARE_ID
-            XX[2] = NATURAL_VAMPIRIZM_ID
+            XX[2] = 1
             OX[2] = LUST_FORPOWER_ID
             RX[2] = IMPROVED_SHAFT_ID
             IX[2] = DENIAL_OF_MAGIC_ID
@@ -212,7 +211,7 @@ function pickSatyr()
             ZE[3] = BATLLE_RAGE_ID
             VX[3] = ROOT_SISTEM_ID
             EX[3] = EMERALD_NIGHTMARE_ID
-            XX[3] = NATURAL_VAMPIRIZM_ID
+            XX[3] = 1
             OX[3] = LUST_FORPOWER_ID
             RX[3] = IMPROVED_SHAFT_ID
             IX[3] = DENIAL_OF_MAGIC_ID
@@ -275,7 +274,7 @@ function pickSatyr()
             ZE[4] = BATLLE_RAGE_ID
             VX[4] = ROOT_SISTEM_ID
             EX[4] = EMERALD_NIGHTMARE_ID
-            XX[4] = NATURAL_VAMPIRIZM_ID
+            XX[4] = 1
             OX[4] = LUST_FORPOWER_ID
             RX[4] = IMPROVED_SHAFT_ID
             IX[4] = DENIAL_OF_MAGIC_ID
@@ -723,6 +722,7 @@ init
 
  function pickaura(int abil, unit caster)
     if abil == 'A04A' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('A068')
         if GetOwningPlayer(GetTriggerUnit()) == P
@@ -734,6 +734,7 @@ init
         if GetOwningPlayer(GetTriggerUnit()) == T
             IR[4] = 'A068'
     if abil == 'A09T' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('A042')
         if GetOwningPlayer(GetTriggerUnit()) == P
@@ -745,6 +746,7 @@ init
         if GetOwningPlayer(GetTriggerUnit()) == T
             IR[4] = 'A042'
     if abil == 'InAu' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
+        DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('InAO')
         if GetOwningPlayer(GetTriggerUnit()) == P

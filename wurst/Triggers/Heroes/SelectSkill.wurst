@@ -27,6 +27,15 @@ import EmeraldDream
 import SleepAura
 import beastsStrenght
 import FlamesTotemSU
+import XZ
+import Flamethrower
+import PocketFactory
+import Kaboom
+import Valira
+import Whirlwind
+import ValeeraSWrath
+import PoisonedWeapons
+import SmokeBomb
 
 
 function selectSkill(unit u)
@@ -76,6 +85,16 @@ function selectSkill(unit u)
 		u.selectSkill('A0N3')
 		u.selectSkill(FLAMES_TOTEM_SU_ID)
 		u.selectSkill('A035')
+	if hero == XZ_ID
+		u.selectSkill(FLAMETHROWER_ID)
+		u.selectSkill(POCKET_FACTORY_ID)
+		u.selectSkill('AHbh')
+		u.selectSkill(KABOOM_ID)
+	if hero == VALEERA_ID
+		u.selectSkill(WHIRLWIND_ID)
+		u.selectSkill(VALEERAS_WRATH_ID)
+		u.selectSkill(SMOKE_BOMB_ID)
+		u.selectSkill(POISONED_WEAPONS_ID)
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

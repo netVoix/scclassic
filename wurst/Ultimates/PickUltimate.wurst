@@ -63,5 +63,5 @@ init
         if id == 'hctw' or id == 'ndmg'  or id == 'ndh0'
             SetPlayerTechResearchedSwap('R027', 1, u.getOwner())
             CreateFogModifierRectBJ(true, u.getOwner(), FOG_OF_WAR_VISIBLE, bj_mapInitialPlayableArea)
-            u.addAbility(PICK_ULTIMATE_SPELLBOOK_ID)
+            // u.addAbility(PICK_ULTIMATE_SPELLBOOK_ID)
             selectedUlt[u.getOwner().getId()] = PICK_ULTIMATE_SPELLBOOK_ID

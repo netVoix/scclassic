@@ -1,0 +1,103 @@
+package XZ
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import Flamethrower
+import ObjectIds
+import PocketFactory
+import Kaboom
+import RegisterEvents
+
+public let XZ_ID = compiletime(HERO_ID_GEN.next())
+
+
+@compiletime function create_w3u_Hdgo()
+	createObjectDefinition("w3u", XZ_ID, 'Hdgo')
+	..setInt("ucam", 0)
+	..setString("uhab", "AHbh," + commaList(FLAMETHROWER_ID,POCKET_FACTORY_ID,KABOOM_ID))
+	..setString("uabi", "AInv,A0ES")
+	..setUnreal("ucbs", 0.56)
+	..setUnreal("ucpt", 0.47000003)
+	..setInt("ubpx", 3)
+	..setInt("ubpy", 2)
+	..setUnreal("udtm", 3.0)
+	..setReal("uerd", 50.0)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+	..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+	..setUnreal("uimz", 100.0)
+	..setInt("uori", 1)
+	..setString("uaap", "large")
+	..setReal("ussc", 3.0)
+	..setReal("usca", 3.0)
+	..setReal("ushx", 90.0)
+	..setReal("ushy", 90.0)
+	..setReal("ushh", 200.0)
+	..setReal("ushw", 200.0)
+	..setUnreal("uacq", 700.0)
+	..setUnreal("ubs1", 0.3)
+	..setUnreal("udp1", 0.3)
+	..setUnreal("ua1c", 1.25)
+	..setInt("ua1b", 399)
+	..setInt("ua1d", 1)
+	..setInt("ua1s", 91)
+	..setInt("udef", 31)
+	..setInt("umvs", 240)
+	..setUnreal("umvr", 3.0)
+	..setUnreal("ucol", 40.0)
+	..setInt("ubba", 0)
+	..setInt("ubdi", 0)
+	..setInt("ubsi", 0)
+	..setInt("ugol", 2750)
+	..setInt("uhpm", 23000)
+	..setUnreal("uhpr", 5.0)
+	..setUnreal("uinp", 1.0)
+	..setInt("ulum", 0)
+	..setInt("umpi", 2000)
+	..setInt("umpm", 250)
+	..setInt("upoi", 900)
+	..setInt("uagi", 8)
+	..setInt("uint", 8)
+	..setInt("ustr", 14)
+	..setInt("usma", 1)
+	..setInt("usrg", 480)
+	..setUnreal("ustp", 1.0)
+	..setString("uhot", "")
+	..setString("unam", "Giant Clockwerk")
+	..setString("upro", "X0-Z9")
+	..setString("utyp", "ancient,mechanical")
+	..setString("utub", "|cffffcc00Special Unit (Melee/Mechanical)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Flamethrower|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in an area|r |n  |cff6c7b8b(200-350 area of effect)|r |n|n|cffa020f0Pocket Factory|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons factory for 20-60|r |n|n|cff00ffffHeavy Bash|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead15-27% to stun for 1.4-2s|r |n|n|cff00ffffKABOOM|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead750-5250 damage after death|r |n  |cff6c7b8b(900 area of effect)|r")
+	..setString("utip", "Train Giant Clockwerk")
+	..setString("ua1t", "chaos")
+	..setInt("upri", 3)
+	..setString("udty", "divine")
+	..setString("usnd", "")
+	..setInt("ua1r", 150)
+	..setString("ucs1", "MetalHeavySlice")
+	..setUnreal("ulpz", 200.0)
+	..setUnreal("ulpy", -20.0)
+	..setUnreal("ulpx", -20.0)
+	..setString("ua1g", "air,debris,ground,item,structure,ward")
+	..setUnreal("uagp", 1.0)
+	..setUnreal("umpr", 0.9)
+	..setInt("usid", 1000)
+	..setString("umdl", "Units\\Creeps\\HeroTinkerRobot\\HeroTinkerRobot.mdl")
+
+
+function isEnemyUnit() returns bool
+	let fu = GetFilterUnit()
+	let uid = fu.getTypeId()
+	return fu.isEnemyOf(GetTriggerUnit().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+
+
+function decayuse1(unit death)
+	if death.getTypeId() == XZ_ID
+		let lvl = GetUnitAbilityLevel(death, KABOOM_ID)
+		if lvl >= 1
+			let g = GetUnitsInRangeOfLocMatching(900, GetUnitLoc(death), Filter(function isEnemyUnit))
+			for u from g
+				u.addHP(-(750.0 * lvl))
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+		decayuse1(GetTriggerUnit())

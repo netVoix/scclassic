@@ -1,0 +1,100 @@
+package Valira
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import Whirlwind
+import ValeeraSWrath
+import PoisonedWeapons
+import SmokeBomb
+import RegisterEvents
+import Orders
+
+public let VALEERA_ID = compiletime(HERO_ID_GEN.next())
+
+
+@compiletime function create_w3u_Ogrh()
+    createObjectDefinition("w3u", VALEERA_ID, 'Ogrh')
+    ..setInt("ucam", 0)
+    ..setString("urac", "human")
+    ..setString("uhab", "" + commaList(WHIRLWIND_ID,VALEERAS_WRATH_ID,POISONED_WEAPONS_ID,SMOKE_BOMB_ID))
+    ..setInt("ubpy", 2)
+    ..setUnreal("uacq", 700.0)
+    ..setUnreal("ua1c", 1.3)
+    ..setInt("ua1d", 1)
+    ..setInt("ua1s", 21)
+    ..setInt("umvs", 240)
+    ..setUnreal("umvr", 3.0)
+    ..setUnreal("ucol", 30.0)
+    ..setString("usnd", "")
+    ..setInt("ubld", 1)
+    ..setInt("ubsi", 0)
+    ..setInt("ubba", 0)
+    ..setInt("ubdi", 0)
+    ..setInt("upoi", 360)
+    ..setInt("ugol", 1000)
+    ..setInt("uhpm", 3500)
+    ..setUnreal("uhpr", 4.0)
+    ..setUnreal("uinp", 1.0)
+    ..setInt("ulum", 0)
+    ..setInt("umpi", 2000)
+    ..setInt("umpm", 250)
+    ..setInt("upri", 3)
+    ..setInt("uagi", 14)
+    ..setInt("uint", 5)
+    ..setInt("ustr", 11)
+    ..setInt("usma", 1)
+    ..setInt("usrg", 540)
+    ..setUnreal("ustp", 1.0)
+    ..setString("uhot", "")
+    ..setReal("ussc", 1.3)
+    ..setReal("usca", 1.2)
+    ..setInt("ubpx", 1)
+    ..setString("umdl", "Valeera.mdl")
+    ..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+    ..setReal("uerd", 30.0)
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+    ..setUnreal("ulpx", 10.0)
+    ..setUnreal("ulpy", 40.0)
+    ..setReal("ushx", 60.0)
+    ..setReal("ushy", 60.0)
+    ..setReal("ushh", 160.0)
+    ..setReal("ushw", 160.0)
+    ..setUnreal("ubs1", 0.84000003)
+    ..setUnreal("udp1", 0.3)
+    ..setInt("ua1b", 214)
+    ..setString("utub", "|cffffcc00Hero Unit (Melee)|r |nStrong Vs Heroes |nWeak Vs All Units, Buildings |n|n|cffffcc00Role:|r |cff00ffffAssassin|r |n|n|cffffcc00Can learn:|r |n|cffff0000Whirlwind|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage|r |n  |cff6c7b8b(300 area of effect)|r |n|n|cff00ffffValeera's Wrath|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead20-50% to do 4x damage|r |n |cff6c7b8b(does not affect Special unit)|r |n|n|cffff00ffSmoke Bomb|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead-50% MS, 22-34% miss chance|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffPoisoned Weapons|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead400-1000 damage and 10-70% slow for 15s|r |n  |cff6c7b8b(affects organic Heroes only)|r")
+    ..setString("utip", "Train Gladiator")
+    ..setString("upro", "Valeera Sanguinar")
+    ..setReal("urun", 240.0)
+    ..setReal("uwal", 240.0)
+    ..setUnreal("ua2c", 1.3)
+    ..setInt("ua2b", 214)
+    ..setInt("ua2s", 21)
+    ..setInt("ua2d", 1)
+    ..setString("ua2g", "air")
+    ..setInt("uaen", 3)
+    ..setInt("ua2z", 2200)
+    ..setInt("umh2", 1)
+    ..setString("ua2m", "Abilities\\Weapons\\GargoyleMissile\\GargoyleMissile.mdl")
+    ..setUnreal("udp2", 0.3)
+    ..setUnreal("ubs2", 0.84000003)
+    ..setInt("ua2r", 400)
+    ..setInt("udef", 9)
+    ..setString("uabi", "AInv,A0ES,Apiv")
+    ..setUnreal("uagp", 1.0)
+    ..setUnreal("umpr", 1.0)
+    ..setInt("usid", 1000)
+    ..setString("unam", "Gladiator")
+
+
+function castult(unit atr, unit atd)
+    if atr.getTypeId() == VALEERA_ID and GetHeroLevel(atr) >= 4
+        atr.issueTargetOrderById(OrderIds.shadowstrike, atd)
+    else if atd.getTypeId() == VALEERA_ID and GetHeroLevel(atd) >= 4
+        atd.issueTargetOrderById(OrderIds.shadowstrike, atr)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        castult(GetAttacker(), GetAttackedUnitBJ())
