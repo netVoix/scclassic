@@ -1,0 +1,45 @@
+package EgwinsVision
+
+import ObjectIdGenerator
+import ObjEditingNatives
+import ObjectIds
+
+public let EGWINS_VISION_ID = compiletime(ITEM_ID_GEN.next())
+public let EGWINS_VISION_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let EGWINS_VISION_ABIL_SR_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function repairkit()
+    createObjectDefinition("w3t", EGWINS_VISION_ID, 'rst1')
+    ..setString("icla", "Permanent")
+    ..setString("unam", "|cff00ffffEgwin's Vision|r  |cff6c7b8b(Lv4)|r")
+    ..setString("utip", "|cff00ffffEgwin's Vision|r  |cff6c7b8b(Lv4)|r")
+    ..setString("uhot", "")
+    ..setString("ides", "")
+    ..setInt("ilvo", 5)
+    ..setInt("ilev", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setInt("ipri", 0)
+    ..setString("utub", "Reduces spell damage by 25%, +6 HP/s regeneration")
+    ..setString("iabi", "" + commaList(EGWINS_VISION_ABIL_ID,EGWINS_VISION_ABIL_SR_ID))
+    ..setString("icid", "" + commaList(EGWINS_VISION_ABIL_ID,EGWINS_VISION_ABIL_SR_ID))
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNCharm.blp")
+
+    
+@compiletime function create_w3a_A0KR()
+    createObjectDefinition("w3a", EGWINS_VISION_ABIL_ID, 'Arll')
+    ..setLvlDataInt("Ihpr", 1, 1, 6)
+
+
+@compiletime function create_w3a_A0J1()
+    createObjectDefinition("w3a", EGWINS_VISION_ABIL_SR_ID, 'AIsr')
+    ..setLvlDataInt("aite", 0, 0, 1)
+    ..setLvlDataString("arac", 0, 0, "orc")
+    ..setLvlDataString("anam", 0, 0, "Impenetrable Hide")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNCharm.blp")
+    ..setLvlDataInt("abpx", 0, 0, 2)
+    ..setLvlDataInt("abpy", 0, 0, 2)
+    ..setLvlDataUnreal("isr2", 1, 2, 0.25)
+    ..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
+    ..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 25%.")

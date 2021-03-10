@@ -14,8 +14,35 @@ import AbilityObjEditing
 import Icons
 
 let ULTIMATE_DAMAGE_SPELL_ID = compiletime(ABIL_ID_GEN.next())
+let ULTIMATE_DAMAGE_SPELL_PREC_ID = compiletime(ABIL_ID_GEN.next())
 
 @compiletime function create_w3a_A0OV()
+    new AbilityDefinitionFarseerChainLightning(ULTIMATE_DAMAGE_SPELL_PREC_ID)
+    ..setDummyAbility()
+    ..setLevels(3)
+    ..setHeroAbility(false)
+    ..setLevelSkipRequirement(4)
+    ..setHotkeyLearn("")
+    ..presetTooltipLearn(lvl -> "")
+    ..setTooltipLearnExtended("")
+    ..presetTooltipNormal(lvl -> "UW")
+    ..presetTooltipNormalExtended(lvl -> "Struck lightning to one building.")
+    ..setButtonPositionNormalX(2)
+    ..presetTargetsAllowed(lvl -> "structure")
+    ..setIconNormal(Icons.bTNChainLightning)
+    ..setMissileArt("")
+    ..setMissileSpeed(0)
+    ..setArtTarget("Lightnings Long.mdx")
+    ..setName("UW")
+    ..setLightningEffects("")
+    ..setAnimationNames("spell")
+    ..setRequirements("")
+    ..presetDamageReductionperTarget(lvl -> 0)
+    ..presetDamageperTarget(lvl -> 4000. + lvl * 1000)
+    ..presetNumberofTargetsHit(lvl -> 1)
+    ..setTargetAttachmentPoint("sprite,first")
+
+@compiletime function create_w3a_A0OV1()
     new AbilityDefinitionFarseerChainLightning(ULTIMATE_DAMAGE_SPELL_ID)
     ..setDummyAbility()
     ..setLevels(3)
@@ -49,7 +76,7 @@ init
             let t = GetSpellTargetUnit()
             QuestMessageBJ(bj_FORCE_ALL_PLAYERS, bj_QUESTMESSAGE_WARNING, owner.getNameColored() + " has fired Ultimate weapon!")
             doAfter(3) ->
-                InstantDummyCaster.castTarget(owner, ULTIMATE_DAMAGE_SPELL_ID, 3, OrderIds.chainlightning, t)
+                InstantDummyCaster.castTarget(owner, ULTIMATE_DAMAGE_SPELL_PREC_ID, 3, OrderIds.chainlightning, t)
                 
         if GetSpellAbilityId() == OVERCHARGED_UW_ID
             let owner = GetTriggerUnit().getOwner()

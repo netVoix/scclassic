@@ -29,8 +29,8 @@ public let FAKE_POISON_BUFF_ID = compiletime(ABIL_ID_GEN.next())
 @compiletime function makeFakePoisonBuff()
     new BuffDefinition(FAKE_POISON_BUFF_ID, 'Bpoi')
     ..setArtTarget(1, "")
-    ..setTooltipNormalExtended(1, "ArhiMEN")
-    ..setTooltipNormal(1, "Survival Chaos ArhiMEN Edition")
+    ..setTooltipNormalExtended(1, "OZGame and ArhiMEN")
+    ..setTooltipNormal(1, "Survival Chaos OZGame and ArhiMEN Edition")
     ..setIcon(Icons.bTNAnkh)
 
     

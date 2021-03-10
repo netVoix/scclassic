@@ -1,0 +1,22 @@
+package CrimsonBlades
+
+import ObjectIdGenerator
+import ObjEditingNatives
+
+public let CRIMSON_BLADES_ID = compiletime(ITEM_ID_GEN.next())
+
+
+@compiletime function crimsonblades()
+    createObjectDefinition("w3t", CRIMSON_BLADES_ID, 'bspd')
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("iprn", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNShadowStrike.blp")
+    ..setString("uhot", "")
+    ..setInt("igol", 0)
+    ..setString("iabi", "AIpb,Apo2")
+    ..setString("icid", "AIpb")
+    ..setString("ides", "")
+    ..setString("unam", "|cff00ff00Crimson Blades|r  |cff6c7b8b(Lv3)|r")
+    ..setString("utip", "|cff00ff00Crimson Blades|r  |cff6c7b8b(Lv3)|r")
+    ..setString("utub", "30 damage/sec to target")

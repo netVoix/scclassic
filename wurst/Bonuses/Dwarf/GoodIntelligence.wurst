@@ -5,7 +5,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_hctw()
 	createObjectDefinition("w3u", 'hctw', 'hctw')
-	..setString("uabi", "Avul,A0KW")
+	..setString("uabi", "Avul,A0KW,A0HW")
 	..setInt("ubpx", 0)
 	..setInt("uept", 0)
 	..setReal("uerd", 0.0)

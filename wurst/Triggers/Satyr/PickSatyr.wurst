@@ -34,10 +34,17 @@ function tower()
     
 function found()
     IssueImmediateOrderById(GetEnumUnit(),FOUNDATION_SATYR)
-    if GetEnumUnit().getOwner() == S
-        GetEnumUnit().kill()  
-        GetEnumUnit().remove()
-        CreateNUnitsAtLoc(1, FOUNDATION_SATYR, GetEnumUnit().getOwner(), GetUnitLoc(GetEnumUnit()), bj_UNIT_FACING)
+    // if GetEnumUnit().getOwner() == S
+    //     // print("zameil")
+    //     // doAfter(2) ->         
+    //     //     LTA = ReplaceUnitBJ(GetEnumUnit(), FOUNDATION_SATYR, 3)
+    //     //     FR = LTA
+    //     let pos = GetEnumUnit().getPos()
+    //     GetEnumUnit().remove()
+    //     //FR = CreateNUnitsAtLoc(1, FOUNDATION_SATYR, GetEnumUnit().getOwner(), GetUnitLoc(GetEnumUnit()), bj_UNIT_FACING)
+    //     // FR = createUnit(S, FOUNDATION_SATYR, pos, bj_UNIT_FACING.asAngleRadians())
+    //     FR = createUnit(S, FOUNDATION_SATYR, pos, bj_UNIT_FACING.asAngleRadians())
+    //     SelectUnitForPlayerSingle(FR, S)
 
 function pickSatyr()
     let CTOL = GetTriggerUnit()
@@ -174,7 +181,7 @@ function pickSatyr()
                 SelectUnitForPlayerSingle(LTA,S)
                 // print("S")
             else
-            RemoveUnit(FR)
+                RemoveUnit(FR)
             if GetPlayerController(S) == MAP_CONTROL_COMPUTER
                 SetPlayerName(S,"The owners of Nightmare")
                 SetPlayerName(Y,"The owners of Nightmare")
@@ -437,9 +444,9 @@ function pickSatyr()
                 AV = (AV*.93)
                 KX[$C] = 3
                 if YX[4] >= 2
-                    AddUnitToStockBJ(GX[4],C,1,1)
-                    AddUnitToStockBJ(HX[4],C,1,1)
-                    AddUnitToStockBJ(JX[4],C,1,1)
+                    AddUnitToStockBJ(GX[4],M,1,1)
+                    AddUnitToStockBJ(HX[4],M,1,1)
+                    AddUnitToStockBJ(JX[4],M,1,1)
 
     if id == CORRUPTED_ANCIENT_OF_WAR_LV3  
         if GetOwningPlayer(GetTriggerUnit()) == P
@@ -611,7 +618,10 @@ function pickSatyr()
                 MX[$C] = 3
 
     if id ==  CORRUPTED_TREE_OF_LIFE_LV2 
-        if GetOwningPlayer(GetTriggerUnit()) == P       
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            CTOL.addAbility(IR[1])
+            if IR[1] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)       
             YX[1]=2
             if NE >= 2
                 AddUnitToStockBJ(GX[1],A,1,1)
@@ -625,7 +635,10 @@ function pickSatyr()
                 AddUnitToStockBJ(GX[1],L,1,1)
                 AddUnitToStockBJ(HX[1],L,1,1)
                 AddUnitToStockBJ(JX[1],L,1,1) 
-        if GetOwningPlayer(GetTriggerUnit()) == S       
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            CTOL.addAbility(IR[2])
+            if IR[2] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)       
             YX[2]=2
             if DE >= 2
                 AddUnitToStockBJ(GX[2],K,1,1)
@@ -639,7 +652,10 @@ function pickSatyr()
                 AddUnitToStockBJ(GX[2],H,1,1)
                 AddUnitToStockBJ(HX[2],H,1,1)
                 AddUnitToStockBJ(JX[2],H,1,1) 
-        if GetOwningPlayer(GetTriggerUnit()) == Q       
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            CTOL.addAbility(IR[3])
+            if IR[3] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)       
             YX[3]=2
             if KE >= 2
                 AddUnitToStockBJ(GX[3],G,1,1)
@@ -653,7 +669,10 @@ function pickSatyr()
                 AddUnitToStockBJ(GX[3],D,1,1)
                 AddUnitToStockBJ(HX[3],D,1,1)
                 AddUnitToStockBJ(JX[3],D,1,1)   
-        if GetOwningPlayer(GetTriggerUnit()) == T       
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            CTOL.addAbility(IR[4])
+            if IR[4] != PICK_AURA_SATYR_ID
+                CTOL.removeAbility(PICK_AURA_SATYR_ID)       
             YX[4]=2
             if PE >= 2
                 AddUnitToStockBJ(GX[4],C,1,1)
@@ -721,8 +740,8 @@ init
 
 
  function pickaura(int abil, unit caster)
-    if abil == 'A04A' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
-        DisableTrigger(GetTriggeringTrigger())
+    if abil == 'A04A' and (caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3)
+        // DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('A068')
         if GetOwningPlayer(GetTriggerUnit()) == P
@@ -733,8 +752,8 @@ init
             IR[3] = 'A068'
         if GetOwningPlayer(GetTriggerUnit()) == T
             IR[4] = 'A068'
-    if abil == 'A09T' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
-        DisableTrigger(GetTriggeringTrigger())
+    if abil == 'A09T' and (caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3)
+        // DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('A042')
         if GetOwningPlayer(GetTriggerUnit()) == P
@@ -745,8 +764,8 @@ init
             IR[3] = 'A042'
         if GetOwningPlayer(GetTriggerUnit()) == T
             IR[4] = 'A042'
-    if abil == 'InAu' and caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3
-        DisableTrigger(GetTriggeringTrigger())
+    if abil == 'InAu' and (caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV2 or caster.getTypeId() == CORRUPTED_TREE_OF_LIFE_LV3)
+        // DisableTrigger(GetTriggeringTrigger())
         caster.removeAbility(PICK_AURA_SATYR_ID)
         caster.addAbility('InAO')
         if GetOwningPlayer(GetTriggerUnit()) == P

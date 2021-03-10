@@ -9,6 +9,8 @@ import CursedPower
 import ShadowWordDEATH
 import DenialOfmagic
 import SourceOfMagicSatyr
+import Orders
+import RegisterEvents
 
 public let SATYR_DEFILER = compiletime(UNIT_ID_GEN.next())
 
@@ -89,3 +91,15 @@ public let SATYR_DEFILER = compiletime(UNIT_ID_GEN.next())
     ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNSatyrFamUnits.blp")
     ..setInt("usid", 1000)
     ..setInt("udef", 0)
+
+
+function castult(unit atr, unit atd)
+    if atr.getTypeId() == SATYR_DEFILER
+        atr.issueTargetOrderById(OrderIds.frostnova, atd)
+    else if atd.getTypeId() == SATYR_DEFILER 
+        atd.issueTargetOrderById(OrderIds.frostnova, atr)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
+        castult(GetAttacker(), GetAttackedUnitBJ())

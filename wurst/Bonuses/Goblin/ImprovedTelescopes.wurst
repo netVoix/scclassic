@@ -43,7 +43,7 @@ import ObjEditingNatives
 	..setString("ushb", "BuildingShadowLarge")
 	..setReal("ussc", 4.0)
 	..setReal("usca", 0.95)
-	..setString("uabi", "Avul,A0GT")
+	..setString("uabi", "Avul,A0GT,A0HW")
 	..setInt("ubpy", 2)
 	..setString("umdl", "buildings\\other\\AmmoDump\\AmmoDump.mdl")
 	..setString("uubs", "OMED")

@@ -1,0 +1,87 @@
+package FertileGround
+
+import UpgradeObjEditing
+import ObjectIdGenerator
+import CorruptedTreeOfLife
+import ObjectIds
+import RegisterEvents
+import PredatoryForest
+import SpoiledTreant
+import PlagueTreant
+
+public let FERTILE_GROUND_ID = compiletime(UPGD_ID_GEN.next())
+public int array fertileGround
+public int array fertileGroundLVL
+
+
+@compiletime function meleeweapon()
+    new UpgradeDefinition(FERTILE_GROUND_ID)
+    ..addEffectApplyAttackUpgradeBonus()
+    ..setLevels(5)
+    ..setGoldCostBase(600)
+    ..setGoldCostIncrement(175)
+    ..setTimeBase(90)
+    ..setTimeIncrement(60)
+    ..presetHotkey(lvl -> "S")
+    ..setButtonPositionX(1)
+    ..setButtonPositionY(1)
+    ..presetName(lvl -> "Fertile Ground")
+    ..setTooltip(1, "Research Fertile Ground (|cffff0000Lv1|r) [|cffffcc00S|r]")
+    ..setTooltip(2, "Research Fertile Ground (|cffffff00Lv2|r) [|cffffcc00S|r]")
+    ..setTooltip(3, "Research Fertile Ground (|cff00ff00Lv3|r) [|cffffcc00S|r]")
+    ..setTooltip(4, "Research Fertile Ground (|cff00ffffLv4|r) [|cffffcc00S|r]")
+    ..setTooltip(5, "Fertile Ground (Max Level)")
+    ..presetIcon(lvl -> "ReplaceableTextures\\CommandButtons\\BTNCorruptedEnt.blp")
+    ..setTooltipExtended(1, "|cffffcc00Gives:|r chance to spawn a Spoiled Treant |n|cffffcc00Affects:|r |cffffdeadYour dying units|r |n|n|cff6c7b8bLv1: 10% chance, has Entangled Roots |n  deal 20/40/60/80 damage and stun for 2/4/6/8 second to unit |nLv2: 12% chance, has Cripple |n  reduces unit's damage by 20%/40%/60% |nLv3: 14% chance, has Spoilage |n  reduces unit's armor by 6/12 |nLv4: 16% chance, has Recovery |n  10% chanse to spawn a Plague Treant")
+    ..setTooltipExtended(2, "|cffffcc00Gives:|r chance to spawn a Spoiled Treant |n|cffffcc00Affects:|r |cffffdeadYour dying units|r |n|n|cffff0000Lv1:|r  |cffffcc0010%|r chance, has  |cffff00ffEntangling Roots|r |n  |cff6c7b8bdeal|r  |cffffdead20|r|cff6c7b8b/40/60/80 damage and stun for|r  |cffffdead2|r|cff6c7b8b/4/6/8 second to unit |nLv2: 12% chance, has Cripple |n  reduces unit's damage by 20%/40%/60% |nLv3: 14% chance, has Spoilage |n  reduces unit's armor by 6/12 |nLv4: 16% chance, has Recovery |n  10% chanse to spawn a Plague Treant")
+    ..setTooltipExtended(3, "|cffffcc00Gives:|r chance to spawn a Spoiled Treant |n|cffffcc00Affects:|r |cffffdeadYour dying units|r |n|n|cff6c7b8bLv1: 10% chance, has Entangled Roots |n  deal 20/|r|cffffdead40|r|cff6c7b8b/60/80 damage and stun for 2/|r|cffffdead4|r|cff6c7b8b/6/8 second to unit|r |n|cffffff00Lv2:|r |cffffcc0012%|r chance, has  |cffff00ffCripple|r |n  |cff6c7b8breduces unit's damage by|r |cffffdead20%|r|cff6c7b8b/40%/60% |nLv3: 14% chance, has Spoilage |n  reduces unit's armor by 6/12 |nLv4: 16% chance, has Recovery |n  10% chanse to spawn a Plague Treant")
+    ..setTooltipExtended(4, "|cffffcc00Gives:|r chance to spawn a Spoiled Treant |n|cffffcc00Affects:|r |cffffdeadYour dying units|r |n|n|cff6c7b8bLv1: 10% chance, has Entangled Roots |n  deal 20/40/r|cffffdead60|r|cff6c7b8b/80 damage and stun for 2/4|r/|cffffdead6|r|cff6c7b8b/8 second to unit |nLv2: 12% chance, has Cripple |n  reduces unit's damage by 20%/|r|cffffdead40%|r|cff6c7b8b/60% |n|cff00ff00Lv3:|r |cffffcc0014%|r chance, has  |cffff00ffSpoilage|r |n  |cff6c7b8breduces unit's armor by|r  |cffffdead6|r |cff6c7b8b/12 |nLv4: 16% chance, has Recovery |n  10% chanse to spawn a Plague Treant")
+    ..setTooltipExtended(5, "|cffffcc00Gives:|r chance to spawn a Spoiled Treant |n|cffffcc00Affects:|r |cffffdeadYour dying units|r |n|n|cff6c7b8bLv1: 10% chance, has Entangled Roots |n  deal 20/40/60/|cffffdead80|r |cff6c7b8bdamage and stun for 2/4/6/|r/|cffffdead8|r |cff6c7b8bsecond to unit |nLv2: 12% chance, has Cripple |n  reduces unit's damage by 20%/40%/|r |cffffdead60%|r |cff6c7b8b|nLv3: 14% chance, has Spoilage |n  reduces unit's armor by 6/|r|cffffdead12|r |n|cff00ffffLv4:|r |cffffcc0016%|r  |cff6c7b8bchance, has |cff00ffffRecovery|r |n   |cffffdead10%|r |cff6c7b8bchanse to spawn a |cffffdeadPlague Treant")
+    ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
+    ..setRequirements(4, "" + commaList(PREDATORY_FOREST_ID))
+    ..setRequirements(5, "Rnsb")
+
+
+init 
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        let u = GetDyingUnit()
+        let p = GetOwningPlayer(u)
+        let lvl = GetPlayerTechCountSimple(FERTILE_GROUND_ID, p)
+        if lvl > 0
+            let uid = u.getTypeId()
+            if p.getController() != MAP_CONTROL_USER and (uid == 'u000' or uid == 'xdum') == false
+                let random = GetRandomInt(1, 100)
+                for ii = 1 to (8 + 2 * lvl)
+                    if ii == random 
+                        CreateNUnitsAtLoc(1, SPOILED_TREANT_ID, p, GetUnitLoc(GetTriggerUnit()), bj_UNIT_FACING)
+                        let treant = GetLastCreatedUnit()
+                        if lvl == 1
+                            treant.addAbility(ENTANGLING_ROOTS_ST_ID)
+                        if lvl == 2
+                            treant.addAbility(ENTANGLING_ROOTS_ST_ID)
+                            treant.setAbilityLevel(ENTANGLING_ROOTS_ST_ID, 2)
+                            treant.addAbility(CRIPPLE_ST_ID)
+                        if lvl == 3
+                            treant.addAbility(ENTANGLING_ROOTS_ST_ID)
+                            treant.setAbilityLevel(ENTANGLING_ROOTS_ST_ID, 3)
+                            treant.addAbility(CRIPPLE_ST_ID)
+                            treant.setAbilityLevel(CRIPPLE_ST_ID, 2)
+                            treant.addAbility(SPOILAGE_ST_ID)
+                        if lvl == 4
+                            treant.addAbility(ENTANGLING_ROOTS_ST_ID)
+                            treant.setAbilityLevel(ENTANGLING_ROOTS_ST_ID, 4)
+                            treant.addAbility(CRIPPLE_ST_ID)
+                            treant.setAbilityLevel(CRIPPLE_ST_ID, 3)
+                            treant.addAbility(SPOILAGE_ST_ID)
+                            treant.setAbilityLevel(SPOILAGE_ST_ID, 2)
+
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+        let u = GetDyingUnit()
+        let p = GetOwningPlayer(u)
+        let lvl = GetPlayerTechCountSimple(FERTILE_GROUND_ID, p)
+        if u.getTypeId() == SPOILED_TREANT_ID and lvl == 4
+            let random = GetRandomInt(1, 100)
+            for i = 1 to 10
+                if i == random
+                    CreateNUnitsAtLoc(1, PLAGUE_TREANT_ID, p, GetUnitLoc(GetTriggerUnit()), bj_UNIT_FACING)

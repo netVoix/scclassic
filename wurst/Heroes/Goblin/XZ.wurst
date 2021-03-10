@@ -22,13 +22,13 @@ public let XZ_ID = compiletime(HERO_ID_GEN.next())
 	..setInt("ubpy", 2)
 	..setUnreal("udtm", 3.0)
 	..setReal("uerd", 50.0)
-	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
-	..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNInfernalReaverIcon.blp")
+	..setString("ussi", "ReplaceableTextures\\CommandButtons\\BTNInfernalReaverIcon.blp")
 	..setUnreal("uimz", 100.0)
 	..setInt("uori", 1)
 	..setString("uaap", "large")
 	..setReal("ussc", 3.0)
-	..setReal("usca", 3.0)
+	..setReal("usca", 1.7)
 	..setReal("ushx", 90.0)
 	..setReal("ushy", 90.0)
 	..setReal("ushh", 200.0)
@@ -62,11 +62,11 @@ public let XZ_ID = compiletime(HERO_ID_GEN.next())
 	..setInt("usrg", 480)
 	..setUnreal("ustp", 1.0)
 	..setString("uhot", "")
-	..setString("unam", "Giant Clockwerk")
+	..setString("unam", "Goblin Reaver")
 	..setString("upro", "X0-Z9")
 	..setString("utyp", "ancient,mechanical")
 	..setString("utub", "|cffffcc00Special Unit (Melee/Mechanical)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Flamethrower|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in an area|r |n  |cff6c7b8b(200-350 area of effect)|r |n|n|cffa020f0Pocket Factory|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons factory for 20-60|r |n|n|cff00ffffHeavy Bash|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead15-27% to stun for 1.4-2s|r |n|n|cff00ffffKABOOM|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead750-5250 damage after death|r |n  |cff6c7b8b(900 area of effect)|r")
-	..setString("utip", "Train Giant Clockwerk")
+	..setString("utip", "Train Goblin Reaver")
 	..setString("ua1t", "chaos")
 	..setInt("upri", 3)
 	..setString("udty", "divine")
@@ -80,7 +80,7 @@ public let XZ_ID = compiletime(HERO_ID_GEN.next())
 	..setUnreal("uagp", 1.0)
 	..setUnreal("umpr", 0.9)
 	..setInt("usid", 1000)
-	..setString("umdl", "Units\\Creeps\\HeroTinkerRobot\\HeroTinkerRobot.mdl")
+	..setString("umdl", "InferalReaver.mdl")
 
 
 function isEnemyUnit() returns bool
@@ -93,9 +93,23 @@ function decayuse1(unit death)
 	if death.getTypeId() == XZ_ID
 		let lvl = GetUnitAbilityLevel(death, KABOOM_ID)
 		if lvl >= 1
+			let eff = addEffect("Objects\\Spawnmodels\\Other\\NeutralBuildingExplosion\\NeutralBuildingExplosion.mdl", death.getPos())
+			eff.destr()
 			let g = GetUnitsInRangeOfLocMatching(900, GetUnitLoc(death), Filter(function isEnemyUnit))
 			for u from g
 				u.addHP(-(750.0 * lvl))
+				if u.isType(UNIT_TYPE_HERO) and u.isType(UNIT_TYPE_ANCIENT)
+					for i = 0 to 12 
+						if players[i].isAllyOf(GetOwningPlayer(death)) and players[i] != GetOwningPlayer(death) and GetUnitState(u, UNIT_STATE_LIFE) <= 0
+							players[i].addGold(360)
+				else if u.isType(UNIT_TYPE_HERO) and not u.isType(UNIT_TYPE_ANCIENT)
+					for i = 0 to 12 
+						if players[i].isAllyOf(GetOwningPlayer(death)) and players[i] != GetOwningPlayer(death) and GetUnitState(u, UNIT_STATE_LIFE) <= 0
+							players[i].addGold(240)
+				else 
+					for i = 0 to 12 
+						if players[i].isAllyOf(GetOwningPlayer(death)) and players[i] != GetOwningPlayer(death) and GetUnitState(u, UNIT_STATE_LIFE) <= 0
+							players[i].addGold(50)
 
 
 init

@@ -34,7 +34,7 @@ public int array predatoryForest
     ..setString("upgr", "")
     ..setString("uhot", "C")
     ..setString("utip", "Predatory Forest [|cffffcc00C|r]")
-    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadNatural Vampirizm|r |n+1 level of |cffffdeadCritical Strike|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if they kill a building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadFertile Ground|r |n+1 level of |cffffdeadCritical Strike|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if hero killed by building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
     ..setInt("ubpx", 2)
     ..setInt("ubpy", 2)
     ..setInt("usid", 600)
@@ -49,7 +49,7 @@ public int array predatoryForest
     ..setLvlDataString("arac", 0, 0, "human")
     ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
     ..setLvlDataInt("abpy", 0, 0, 1)
-    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadNatural Vampirizm|r |n+1 level of |cffffdeadCritical Strike|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if they kill a building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadFertile Ground|r |n+1 level of |cffffdeadCritical Strike|r |n|nIncreases hit points of all your buildings by 2000, when your troops kill an enemy hero, your buildings restore 200 HP, if hero killed by building, then the amount of health restored is doubled. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
     ..setLvlDataInt("achd", 0, 0, 1)
     ..setLvlDataString("anam", 0, 0, "Predatory Forest")
     ..setLvlDataString("atp1", 1, 0, "Predatory Forest")
@@ -91,19 +91,19 @@ function pfp(unit u)
 
 function addHP(unit u)
     for i = 0 to 12 
-        if predatoryForest[i] == 1
+        if predatoryForest[i] == 1 and players[i].isAllyOf(GetOwningPlayer(u)) and GetDyingUnit().isType(UNIT_TYPE_HERO)
             let ownerkiller = GetOwningPlayer(u)
             if not u.isType(UNIT_TYPE_STRUCTURE)
                 for q = 0 to 12
                     if players[q].isAllyOf(ownerkiller)
                         forUnitsOfPlayer(players[q]) x ->
-                            if x.isType(UNIT_TYPE_STRUCTURE)
+                            if x.isType(UNIT_TYPE_STRUCTURE) and GetUnitState(x, UNIT_STATE_LIFE) > 0
                                 x.addHP(200)
             if u.isType(UNIT_TYPE_STRUCTURE)
                 for w = 0 to 12
                     if players[w].isAllyOf(ownerkiller)
                         forUnitsOfPlayer(players[w]) x ->
-                            if x.isType(UNIT_TYPE_STRUCTURE)
+                            if x.isType(UNIT_TYPE_STRUCTURE) and GetUnitState(x, UNIT_STATE_LIFE) > 0
                                 x.addHP(400)
 
 

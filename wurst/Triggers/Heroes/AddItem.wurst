@@ -16,6 +16,12 @@ import QualityGuarantee
 import RepairKit
 import RocketLauncher
 import SpareReactor
+import Valira
+import CrimsonBlades
+import GladiatorRing
+import EgwinsVision
+import VvariansGift
+import BloodPact
 
 
 function additem(unit u)
@@ -48,6 +54,18 @@ function additem(unit u)
             u.addItemById(ROCKET_LAUNCHER_ID)
         if lvl >= 20 and UnitHasItemOfTypeBJ(u, SPARE_REACTOR_ID) == false
             u.addItemById(SPARE_REACTOR_ID)
+    if hero == VALEERA_ID
+        if lvl >= 4 and UnitHasItemOfTypeBJ(u, CRIMSON_BLADES_ID) == false
+            u.addItemById(CRIMSON_BLADES_ID)
+        if lvl >= 8 and UnitHasItemOfTypeBJ(u, GLADIATOR_RING_ID) == false
+            u.addItemById(GLADIATOR_RING_ID)
+        if lvl >= 14 and UnitHasItemOfTypeBJ(u, EGWINS_VISION_ID) == false
+            u.addItemById(EGWINS_VISION_ID)
+        if lvl >= 20 and UnitHasItemOfTypeBJ(u, VARIANS_GIFT_ID) == false
+            u.addItemById(VARIANS_GIFT_ID)
+    if hero == 'Eevi'
+        if lvl >= 4 and UnitHasItemOfTypeBJ(u, BLOOD_PACT_ID) == false
+            u.addItemById(BLOOD_PACT_ID)
 
 
 init

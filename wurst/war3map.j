@@ -1918,6 +1918,7 @@ set XE[9]='o00Q'
 set XE[$A]='e001'
 set XE[$B]='o00T'
 set XE[$C]='o00W'
+set XE[13]='u99T'
 set A=BAA
 set N=ICA
 set L=BOA
@@ -2637,34 +2638,65 @@ function P4B takes nothing returns boolean
 return(P1B())
 endfunction
 function QGB takes nothing returns nothing
-set OR[1]=GetRandomInt(1,$C)
-set OR[2]=GetRandomInt(1,$C)
+set bj_forLoopAIndex=1
+loop
+call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, P)
+set bj_forLoopAIndex=bj_forLoopAIndex+1
+exitwhen bj_forLoopAIndex == 13
+endloop
+set bj_forLoopAIndex=1
+loop
+call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, S)
+set bj_forLoopAIndex=bj_forLoopAIndex+1
+exitwhen bj_forLoopAIndex == 13
+endloop
+set bj_forLoopAIndex=1
+loop
+call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, Q)
+set bj_forLoopAIndex=bj_forLoopAIndex+1
+exitwhen bj_forLoopAIndex == 13
+endloop
+set bj_forLoopAIndex=1
+loop
+call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, T)
+set bj_forLoopAIndex=bj_forLoopAIndex+1
+exitwhen bj_forLoopAIndex == 13
+endloop
+set OR[1]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[1]], true, P)
+set OR[2]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[2]], true, S)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=50
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(PQB())then
-set OR[2]=GetRandomInt(1,$C)
+set OR[2]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[2]], true, S)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-set OR[3]=GetRandomInt(1,$C)
+set OR[3]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[3]], true, Q)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd='d'
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(PZB())then
-set OR[3]=GetRandomInt(1,$C)
+set OR[3]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[3]], true, Q)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-set OR[4]=GetRandomInt(1,$C)
+set OR[4]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[4]], true, T)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=$96
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(P4B())then
-set OR[4]=GetRandomInt(1,$C)
+set OR[4]=GetRandomInt(1,13)
+call SetPlayerUnitAvailableBJ(XE[OR[4]], true, T)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
@@ -25830,7 +25862,7 @@ call SelectHeroSkill(GetTriggerUnit(),'A04Q')
 call SelectHeroSkill(GetTriggerUnit(),'A0T1')
 call SelectHeroSkill(GetTriggerUnit(),'AEme')
 if(F5H())then
-call UnitAddItemByIdSwapped('mnsf',GetTriggerUnit())
+// call UnitAddItemByIdSwapped('mnsf',GetTriggerUnit())
 endif
 if(F6H())then
 call UnitAddItemByIdSwapped('iwbr',GetTriggerUnit())
@@ -25878,10 +25910,10 @@ call SelectHeroSkill(GetTriggerUnit(),'ANbf')
 call SelectHeroSkill(GetTriggerUnit(),'A0TR')
 endif
 if(GAH())then
-call SelectHeroSkill(GetTriggerUnit(),'A05M')
-call SelectHeroSkill(GetTriggerUnit(),'A02P')
-call SelectHeroSkill(GetTriggerUnit(),'A04W')
-call SelectHeroSkill(GetTriggerUnit(),'A0NU')
+// call SelectHeroSkill(GetTriggerUnit(),'A05M')
+// call SelectHeroSkill(GetTriggerUnit(),'A02P')
+// call SelectHeroSkill(GetTriggerUnit(),'A04W')
+// call SelectHeroSkill(GetTriggerUnit(),'A0NU')
 endif
 endfunction
 function GBH takes nothing returns boolean
@@ -30803,7 +30835,7 @@ endif
 endif
 endfunction
 function PMJ takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='orai')or(GetUnitTypeId(GetAttacker())=='osw1')or(GetUnitTypeId(GetAttacker())=='nsko')
+return(GetUnitTypeId(GetAttacker())=='orai')or(GetUnitTypeId(GetAttacker())=='osw1')
 endfunction
 function PPJ takes nothing returns boolean
 return(((IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE))or(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)))!=false)!=false
@@ -31035,7 +31067,7 @@ endif
 endif
 endfunction
 function QPJ takes nothing returns boolean
-return(((GetUnitTypeId(GetAttacker())=='odoc')and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_HERO)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)==false)and(IsUnitIllusion(GetTriggerUnit())==false)and(GetUnitLifePercent(GetTriggerUnit())>=60.)and(GetUnitTypeId(GetTriggerUnit())!='ewsp'))!=false)!=false
+return((((GetUnitTypeId(GetAttacker())=='odoc')or(GetUnitTypeId(GetAttacker())=='nith'))and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_HERO)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)==false)and(IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)==false)and(IsUnitIllusion(GetTriggerUnit())==false)and(GetUnitLifePercent(GetTriggerUnit())>=60.)and(GetUnitTypeId(GetTriggerUnit())!='ewsp'))!=false)!=false
 endfunction
 function QQJ takes nothing returns boolean
 return(GetRandomInt(1,50)<=JI)
@@ -32081,7 +32113,7 @@ call UnitApplyTimedLifeBJ(23.,'BTLF',bj_lastCreatedUnit)
 call RemoveLocation(XO[36])
 endfunction
 function Y8J takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='nchr')or(GetUnitTypeId(GetAttacker())=='nslr')or(GetUnitTypeId(GetAttacker())=='owar')
+return(GetUnitTypeId(GetAttacker())=='nchr')or(GetUnitTypeId(GetAttacker())=='nslr')
 endfunction
 function Y9J takes nothing returns boolean
 return(((IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE))or(IsUnitType(GetTriggerUnit(),UNIT_TYPE_MECHANICAL)))!=false)!=false
@@ -47798,19 +47830,19 @@ call PlaySoundBJ(SK)
 call EnableTrigger(PBO)
 call EnableTrigger(PGO)
 if(B9M())then
-set GX[1]='Eevi'
+set HX[1]='Eevi'
 set DO[1]='Edmm'
 else
 if(B8M())then
-set GX[2]='Eevi'
+set HX[2]='Eevi'
 set DO[2]='Edmm'
 else
 if(B7M())then
-set GX[3]='Eevi'
+set HX[3]='Eevi'
 set DO[3]='Edmm'
 else
 if(B6M())then
-set GX[4]='Eevi'
+set HX[4]='Eevi'
 set DO[4]='Edmm'
 endif
 endif

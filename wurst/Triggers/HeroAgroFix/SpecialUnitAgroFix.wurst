@@ -8,12 +8,12 @@ import Orders
 function isEnemyUnit() returns bool
     let fu = GetFilterUnit()
     let uid = fu.getTypeId()
-    return fu.isEnemyOf(GetAttacker().getOwner())  and fu.isType(UNIT_TYPE_HERO) and fu.isType(UNIT_TYPE_ANCIENT)  and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+    return fu.isEnemyOf(GetAttacker().getOwner())  and fu.isType(UNIT_TYPE_HERO) and fu.isType(UNIT_TYPE_ANCIENT)  and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum' or uid == 'Edmm')
 
 
 function handleUnit(unit u)
-    if u.isType(UNIT_TYPE_HERO) and u.getLevel() >= 4 and u.isType(UNIT_TYPE_ANCIENT)
-        forNearestUnit(u.getPos(), 1000,  Filter(function isEnemyUnit)) x ->
+    if u.isType(UNIT_TYPE_HERO) and u.getLevel() >= 4 and u.isType(UNIT_TYPE_ANCIENT) and u.getTypeId() != 'Edmm'
+        forNearestUnit(u.getPos(), 500,  Filter(function isEnemyUnit)) x ->
             u.issueTargetOrderById(OrderIds.attack, x)
 
             

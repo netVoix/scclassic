@@ -29,7 +29,8 @@ public let CURSED_POWER_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..presetTooltipNormalExtended(lvl -> "25% to do " + (1.0 + (0.5 * lvl)).toString() + "damage for unit.") 
     ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNCriticalStrike.blp")
     ..presetButtonPosNormal(0, 2)
-
+    ..setBuffs(2, commaList(CURSED_POWER_BUFF_ID))
+    ..setBuffs(3, commaList(CURSED_POWER_BUFF_ID))
 
 @compiletime function create_w3h_Binf()
     createObjectDefinition("w3h", CURSED_POWER_BUFF_ID, 'Binf')

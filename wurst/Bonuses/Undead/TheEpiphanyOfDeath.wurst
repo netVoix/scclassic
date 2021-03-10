@@ -4,7 +4,7 @@ import ObjEditingNatives
 @compiletime function create_w3u_ndmg()
 	createObjectDefinition("w3u", 'ndmg', 'ndmg')
 	..setInt("ucam", 0)
-	..setString("uabi", "Abgl,Avul,A0GS")
+	..setString("uabi", "Abgl,Avul,A0GS,A0HW")
 	..setInt("ubpy", 2)
 	..setString("uubs", "USMA")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNShadeTrueSight.blp")

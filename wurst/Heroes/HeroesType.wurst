@@ -9,7 +9,7 @@ import Xavius
 import Alchemist
 
 let caster = asList(ELERET_ID,KEPERETER_ID,'Nbrn','Nngs','Hgam',ALCHEMIST_ID,'Hpal','Hamg','Hblm','Othr','Hkal','Ofar','Efur','Ogld','Oshd','Ulic','Hant','Odrt','Nfir','Emoo','Emfr','Ntin','Hhkl')
-let damager = asList('Hapm','Ogrh','Osam','Nbbc','Uanb','Ewrd','Ekgg',IGLARION_ID,ILGINOT_ID,'Nsjs','Hmgd','Ubal','Ucrl','Ewar','Osam','Nrob','Hdgo','Ecen','Etyr','Ocb2')
+let damager = asList('Hapm','Ogrh','Osam','Nbbc','Uanb','Ewrd','Ekgg',IGLARION_ID,ILGINOT_ID,'Nsjs','Hmgd','Ubal','Ucrl','Ewar','Nrob','Hdgo','Ecen','Etyr','Ocb2')
 let tank = asList(XAVIUS_ID,'Orex','Udea','H01D','Eill','Nplh','Obla','Otch','Udre','Nbst','Opgh','Edem','Uktl','Eilm')
 
 

@@ -2,6 +2,7 @@ package FoundationGoblin
 import ObjEditingNatives
 import ObjectIds
 import TechnologicalBreakthrought
+import StymRollerPick
 
 @compiletime function create_w3u_o01O()
 	createObjectDefinition("w3u", 'o01O', 'ogre')
@@ -16,7 +17,7 @@ import TechnologicalBreakthrought
 	..setString("uhot", "")
 	// ..setString("uupt", "nmr4,hcas,nmr5,ndh1,halt,ngwr,ndh0,nef0,hlum,nef7")
 	// ..setString("uupt", "nmr4,nefm,hcas,nmr5,ndh1,halt,ngwr,ndh0,nef0,hlum,nef7")
-	..setString("uupt", "hkee,nmr4,nefm,hcas,nmr5,ndh1,halt,ndh0,nef0,hlum,nef7," + commaList(TECHNOLOGICAL_BREAKTHROUGHT_ID))
+	..setString("uupt", "nmr4,nefm,hcas,nmr5,ndh1,halt,ndh0,nef0,hlum,nef7," + commaList(TECHNOLOGICAL_BREAKTHROUGHT_ID, STYM_ROLLER_PICK_ID))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)

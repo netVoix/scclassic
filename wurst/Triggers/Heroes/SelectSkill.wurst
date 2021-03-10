@@ -95,6 +95,11 @@ function selectSkill(unit u)
 		u.selectSkill(VALEERAS_WRATH_ID)
 		u.selectSkill(SMOKE_BOMB_ID)
 		u.selectSkill(POISONED_WEAPONS_ID)
+	if hero == 'Etyr' //Петух
+		u.selectSkill('A05M')
+		u.selectSkill('A02P')
+		u.selectSkill(FLAMES_TOTEM_SU_ID)
+		u.selectSkill('A0NU')
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

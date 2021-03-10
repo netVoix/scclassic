@@ -12,6 +12,7 @@ import ManaSteal
 import OverchargedUW
 import PrecisionUW
 import SpellShield
+import CorruptedTreeOfLife
 
 int array selectedUlt = []
 
@@ -39,6 +40,7 @@ init
             CreateFogModifierRectBJ(true, p, FOG_OF_WAR_VISIBLE, bj_mapInitialPlayableArea)
             castle.addAbility(PICK_ULTIMATE_SPELLBOOK_ID)
             selectedUlt[p.getId()] = PICK_ULTIMATE_SPELLBOOK_ID
+            // print("3")
 
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
         let sid = GetSpellAbilityId()
@@ -49,6 +51,7 @@ init
             castle.removeAbility(PICK_ULTIMATE_SPELLBOOK_ID)
             castle.addAbility(s)
             selectedUlt[pid] = s
+            // print("1")
 
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         let p = GetTriggerPlayer()
@@ -56,6 +59,7 @@ init
             let u = selectedUlt[p.getId()]
             if castles[i].getOwner() == p and u != 0
                 castles[i].addAbility(u)
+                // print("2")
             
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         let u = GetTriggerUnit()

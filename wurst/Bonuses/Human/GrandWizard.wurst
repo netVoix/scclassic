@@ -43,7 +43,7 @@ import ObjEditingNatives
     ..setString("uhot", "S")
     ..setString("unam", "Arcane Academy")
     ..setString("utip", "Grand Wizard [|cffffcc00S|r]")
-    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInner Fire|r |n|n|cffffcc00Wizard|r replaces |cffffcc00Mage|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff1c86eeOrb of Fire|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(15/20/25/30% for 25 area dmg)|r |n |cff6c7b8b(slows units for 0.3s)|r |n|cffff00ffDispel Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 175 AoE)|r |n |cff6c7b8b(restores 10/20/30/40 mana)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadWhite Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadSteel Armor|r |n|cffffdeadInner Fire|r |n|n|cffffcc00Type:|r |cffff00ffAnti Buff|r")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInner Fire|r |n|n|cffffcc00Wizard|r replaces |cffffcc00Mage|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff1c86eeOrb of Fire|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(10/15/20/25% for 20 area dmg)|r |n |cff6c7b8b(slows units for 0.3s)|r |n|cffff00ffDispel Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 175 AoE)|r |n |cff6c7b8b(restores 10/20/30/40 mana)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadWhite Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadSteel Armor|r |n|cffffdeadInner Fire|r |n|n|cffffcc00Type:|r |cffff00ffAnti Buff|r")
     ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBanditMage.blp")
     
 
@@ -52,7 +52,7 @@ import ObjEditingNatives
     ..setLvlDataString("arac", 0, 0, "human")
     ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
     ..setLvlDataInt("abpy", 0, 0, 1)
-    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInner Fire|r |n|n|cffffcc00Wizard|r replaces |cffffcc00Mage|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff1c86eeOrb of Fire|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(15/20/25/30% for 25 area dmg)|r |n |cff6c7b8b(slows units for 0.3s)|r |n|cffff00ffDispel Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 175 AoE)|r |n |cff6c7b8b(restores 10/20/30/40 mana)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadWhite Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadSteel Armor|r |n|cffffdeadInner Fire|r |n|n|cffffcc00Type:|r |cffff00ffAnti Buff|r")
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInner Fire|r |n|n|cffffcc00Wizard|r replaces |cffffcc00Mage|r |n|cffffcc00Spellcaster|r |n+5% attack rate |n+50 HP |n+75 MP |n|cffffcc00Abilities:|r |n|cff1c86eeOrb of Fire|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(10/15/20/25% for 20 area dmg)|r |n |cff6c7b8b(slows units for 0.3s)|r |n|cffff00ffDispel Magic|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(dispels buffs in 175 AoE)|r |n |cff6c7b8b(restores 10/20/30/40 mana)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadWhite Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadSteel Armor|r |n|cffffdeadInner Fire|r |n|n|cffffcc00Type:|r |cffff00ffAnti Buff|r")
     ..setLvlDataInt("achd", 0, 0, 1)
     ..setLvlDataString("anam", 0, 0, "Grand Wizard")
     ..setLvlDataString("atp1", 1, 0, "Grand Wizard")

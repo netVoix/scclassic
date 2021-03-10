@@ -6,12 +6,14 @@ import ObjectIdGenerator
 import ObjectIds
 import RegisterEvents
 import ClosureTimers
+import ClosureForGroups
+import Orders
 
 public let NATURAL_VAMPIRIZM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
 public let NATURAL_VAMPIRIZM_ABIL_DUMMY_ID = compiletime(ABIL_ID_GEN.next())
 public let NATURAL_VAMPIRIZM_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
 
-
+player nOwner
 @compiletime function create_w3a_A00C()
     createObjectDefinition("w3a", NATURAL_VAMPIRIZM_ABIL_ID, 'AIp1')
     ..setLvlDataInt("aite", 0, 0, 0)
@@ -100,14 +102,27 @@ public let NATURAL_VAMPIRIZM_ABIL_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..setString("ftat", "Abilities\\Spells\\Items\\VampiricPotion\\VampPotionCaster.mdl")
     ..setString("ftip", "Natural Vampirizm")
 
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    return not fu.isType(UNIT_TYPE_HERO) and fu.isEnemyOf(nOwner) and not fu.isType(UNIT_TYPE_DEAD)
 
 function naturalvampirizm(int abil, unit u)
     if abil == NATURAL_VAMPIRIZM_ABIL_ID
+        nOwner = u.getOwner()
         let lvl = GetUnitAbilityLevel(u, NATURAL_VAMPIRIZM_ABIL_ID)
         u.addAbility(NATURAL_VAMPIRIZM_ABIL_DUMMY_ID)
         u.setAbilityLevel(NATURAL_VAMPIRIZM_ABIL_DUMMY_ID, lvl)
+        forNearestUnit(u.getPos(), 800, Filter(function isEnemyUnit)) (unit x) ->
+            doAfter(1.5) -> 
+                u.issueTargetOrderById(OrderIds.attack, x)
+                // print(u.getName())
+                // print(x.getName())
         doAfter(30) ->
             u.removeAbility(NATURAL_VAMPIRIZM_ABIL_DUMMY_ID)
+            forNearestUnit(u.getPos(), 800, Filter(function isEnemyUnit)) (unit x) ->
+                u.issueTargetOrderById(OrderIds.attack, x)
+                // print(u.getName())
+                // print(x.getName())
 
 
 init

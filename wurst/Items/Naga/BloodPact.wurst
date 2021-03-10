@@ -1,0 +1,48 @@
+package BloodPact
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let BLOOD_PACT_ID = compiletime(ITEM_ID_GEN.next())
+public let BLOOD_PACT_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let BLOOD_PACT_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function qualityguarantee()
+    createObjectDefinition("w3t", BLOOD_PACT_ID, 'brac')
+    ..setString("iabi", "" + commaList(BLOOD_PACT_ABIL_ID))
+    ..setString("icid", "" + commaList(BLOOD_PACT_ABIL_ID))
+    ..setInt("igol", 0)
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("utip", "|cffffff00Blood Pact|r  |cff6c7b8b(Lv2)|r")
+    ..setString("utub", "+25% damage to |cffffcc00Vashj'ir|r and |cffffcc00Athissa|r |n|cff6C7B8B(900 range)|r")
+    ..setString("unam", "|cffffff00Blood Pact|r  |cff6c7b8b(Lv2)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBansheeAdept.blp")
+
+
+@compiletime function create_w3a_A0QX()
+    createObjectDefinition("w3a", BLOOD_PACT_ABIL_ID, 'AIcd')
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("anam", 0, 0, "Blood Pact")
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(BLOOD_PACT_BUFF_ID))
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBansheeAdept.blp")
+    ..setLvlDataUnreal("Cac1", 1, 1, 0.25)
+    ..setLvlDataString("atar", 1, 0, "friend,hero,nonancient")
+    ..setLvlDataString("ata0", 0, 0, "")
+    ..setLvlDataInt("wurs", 0, 0, 42)
+    ..setLvlDataInt("Ear3", 1, 3, 0)
+
+
+@compiletime function create_w3h_B03Z()
+    createObjectDefinition("w3h", BLOOD_PACT_BUFF_ID, 'BOac')
+    ..setString("frac", "human")
+    ..setString("ftip", "Blood Pact")
+    ..setString("fube", "This unit is under the effects of Blood Pact; it has increased attack damage.")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNBansheeAdept.blp")
+    ..setString("ftat", "")
+    ..setString("fta0", "")

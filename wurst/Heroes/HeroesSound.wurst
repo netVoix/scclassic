@@ -1,0 +1,67 @@
+package HeroesSound
+import KeeperOfTheEmeraldDream
+import Izera
+import Xavius
+import Kepereter
+import Eleret
+import IlGinot
+import Iglarion
+import Valira
+import ThistForMagic
+import XZ
+import TechnologicalBreakthrought
+
+let XAVIUS_SOUND = CreateSound("Units\\Creeps\\Satyr\\SatyreReady1.wav",false,false,false,$A,$A,"DefaultEAXON")
+let KEPERETER_SOUND = CreateSound("Units\\Undead\\Necromancer\\NecromancerYesAttack3.wav",false,false,false,$A,$A,"DefaultEAXON")
+let ELERET_SOUND1 = CreateSound("Units\\NightElf\\Maiev\\MaievYesAttack1.wav",false,false,false,$A,$A,"DefaultEAXON")
+let ELERET_SOUND2 = CreateSound("Units\\NightElf\\Maiev\\MaievYesAttack3.wav",false,false,false,$A,$A,"DefaultEAXON")
+let ILGINOT_SOUND = CreateSound("Units\\Creeps\\SludgeMonster\\SludgeBeastDeath1.wav",false,false,false,$A,$A,"DefaultEAXON")
+
+
+function heroSound()
+    let u = GetTriggerUnit()
+    if u.isType(UNIT_TYPE_HERO) and u.isIllusion() == false
+        let id = u.getTypeId()
+        if id == YSERA_ID
+            PlaySoundBJ(YSERA_SOUND)
+        if id == XAVIUS_ID
+            PlaySoundBJ(XAVIUS_SOUND)
+        if id == KEPERETER_ID
+            PlaySoundBJ(KEPERETER_SOUND)
+        if id == ELERET_ID
+            if GetRandomInt(1, 2) == 1
+                PlaySoundBJ(ELERET_SOUND1)
+            else
+                PlaySoundBJ(ELERET_SOUND2)
+        if id == ILGINOT_ID
+            PlaySoundBJ(ILGINOT_SOUND)
+        if id == IGLARION_ID
+            PlaySoundBJ(IGLARION_SOUND)
+        if id == VALEERA_ID
+            PlaySoundBJ(VALEERA_SOUND2)
+        if id == XZ_ID
+            PlaySoundBJ(XZ_SOUND)
+
+
+        
+
+init
+    let t = CreateTrigger()
+    TriggerRegisterEnterRectSimple(t,bj_mapInitialPlayableArea)
+    t.addCondition(Condition(function heroSound))
+
+    SetSoundDuration(XAVIUS_SOUND,5374)
+    SetSoundChannel(XAVIUS_SOUND,0)
+    SetSoundPitch(XAVIUS_SOUND,1.)
+    SetSoundDuration(KEPERETER_SOUND,5374)
+    SetSoundChannel(KEPERETER_SOUND,0)
+    SetSoundPitch(KEPERETER_SOUND,1.)
+    SetSoundDuration(ELERET_SOUND1,5374)
+    SetSoundChannel(ELERET_SOUND1,0)
+    SetSoundPitch(ELERET_SOUND1,1.)
+    SetSoundDuration(ELERET_SOUND2,5374)
+    SetSoundChannel(ELERET_SOUND2,0)
+    SetSoundPitch(ELERET_SOUND2,1.)
+    SetSoundDuration(ILGINOT_SOUND,5374)
+    SetSoundChannel(ILGINOT_SOUND,0)
+    SetSoundPitch(ILGINOT_SOUND,1.)

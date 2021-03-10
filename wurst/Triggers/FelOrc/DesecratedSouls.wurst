@@ -39,6 +39,8 @@ function voidspawn(unit u)
             for i = 0 to 12
                 if players[i] == pl and desecratedSouls[i] == 1
                     let r = GetRandomInt(1, 100)
+                    // print(r)
+                    // print(greid.toString())
                     if greid  == 4
                         ic = 1
                     for q = 1 to 5 * (greid + ic)

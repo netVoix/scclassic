@@ -35,4 +35,4 @@ public let BRACERS_OF_ANTI_MAGIC_SPELL_RESIST_ID = compiletime(ABIL_ID_GEN.next(
     ..setLvlDataInt("abpy", 0, 0, 2)
     ..setLvlDataUnreal("isr2", 1, 2, 0.30)
     ..setLvlDataString("atp1", 1, 0, "Impenetrable Hide")
-    ..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 15%.")
+    ..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 30%.")

@@ -1,0 +1,48 @@
+package GladiatorRing
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+
+public let GLADIATOR_RING_ID = compiletime(ITEM_ID_GEN.next())
+public let GLADIATOR_RING_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let GLADIATOR_RING_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+
+@compiletime function qualityguarantee()
+    createObjectDefinition("w3t", GLADIATOR_RING_ID, 'brac')
+    ..setString("iabi", "" + commaList(GLADIATOR_RING_ABIL_ID))
+    ..setString("icid", "" + commaList(GLADIATOR_RING_ABIL_ID))
+    ..setInt("igol", 0)
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 1)
+    ..setInt("ilvo", 1)
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("utip", "|cffffff00Gladiator Ring|r  |cff6c7b8b(Lv2)|r")
+    ..setString("utub", "+25% damage to|cffffcc00Liadrin|r and |cffffcc00Kael'thas|r |n|cff6C7B8B(900 range)|r")
+    ..setString("unam", "|cffffff00Gladiator Ring|r  |cff6c7b8b(Lv2)|r")
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRingLionHead.blp")
+
+
+@compiletime function create_w3a_A0QX()
+    createObjectDefinition("w3a", GLADIATOR_RING_ABIL_ID, 'AIcd')
+    ..setLvlDataString("atat", 0, 0, "")
+    ..setLvlDataString("anam", 0, 0, "Gladiator Ring")
+    ..setLvlDataString("abuf", 1, 0, "" + commaList(GLADIATOR_RING_BUFF_ID))
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNRingLionHead.blp")
+    ..setLvlDataUnreal("Cac1", 1, 1, 0.25)
+    ..setLvlDataString("atar", 1, 0, "friend,hero,nonancient")
+    ..setLvlDataString("ata0", 0, 0, "")
+    ..setLvlDataInt("wurs", 0, 0, 42)
+    ..setLvlDataInt("Ear3", 1, 3, 0)
+
+
+@compiletime function create_w3h_B03Z()
+    createObjectDefinition("w3h", GLADIATOR_RING_BUFF_ID, 'BOac')
+    ..setString("frac", "human")
+    ..setString("ftip", "Gladiator Ring")
+    ..setString("fube", "This unit is under the effects of Gladiator Ring; it has increased attack damage.")
+    ..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNRingLionHead.blp")
+    ..setString("ftat", "")
+    ..setString("fta0", "")

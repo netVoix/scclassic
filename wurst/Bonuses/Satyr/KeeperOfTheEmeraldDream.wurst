@@ -8,6 +8,7 @@ import Izera
 
 public let KEEPER_OF_THE_EMERALD_DREAM_ID = compiletime(UNIT_ID_GEN.next())
 public let KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let YSERA_SOUND = CreateSound("Ysera.mp3",false,false,false,$7F,$7F,"DefaultEAXON")
 
 
 @compiletime function create_w3u_eaow()
@@ -53,7 +54,7 @@ public let KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setString("upgr", "")
     ..setString("unam", "Barrow Den")
     ..setString("utip", "Keeper Of The Emerald Dream [|cffffcc00W|r]")
-    ..setString("utub", "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|cffffcc00Can learn:|r |n|cffff00ffSleep|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeaddisables for 8-20s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n|n|cffff0000Nightmare|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage|r |n  |cff6c7b8b(900 area of effect)|r |n|n|cffff00ffSleep Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead6-14% attack, move slow|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffEmerald Dream|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead8-20s stun|r |n  |cff6c7b8b(900 area of effect)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Unit|r")
+    ..setString("utub", "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Ranged)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|cffffcc00Can learn:|r |n|cffff00ffSleep|r |cff6c7b8b(Disable Spell)|r |n  |cffffdeaddisables for 8-20s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n|n|cffff0000Nightmare|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage|r |n  |cff6c7b8b(900 area of effect)|r |n|n|cffff00ffSleep Aura|r |cff6c7b8b(Disable Aura)|r |n  |cffffdead6-14% attack, move slow|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffff00ffEmerald Dream|r |cff6c7b8b(Disable Spell)|r |n  |cffffdead8-20s stun|r |n  |cff6c7b8b(900 area of effect)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Unit|r")
     ..setString("uspa", "Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl")
     ..setInt("ubpx", 1)
     ..setInt("usid", 600)
@@ -64,7 +65,7 @@ public let KEEPER_OF_THE_EMERALD_DREAM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setLvlDataString("arac", 0, 0, "undead")
     ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
     ..setLvlDataInt("abpy", 0, 0, 1)
-    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Melee)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Unit|r")
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Ysera|r replaces |cffffcc00Kepereter|r |n|n|cffffcc00Hero Unit (Ranged)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff00ffDisabler|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r / |cffff00ffAnti Unit|r")
     ..setLvlDataInt("achd", 0, 0, 1)
     ..setLvlDataString("anam", 0, 0, "Keeper Of The Emerald Dream")
     ..setLvlDataString("atp1", 1, 0, "Keeper Of The Emerald Dream")
@@ -76,6 +77,7 @@ function addunit(unit u)
     let OP = u.getOwner()
     let SOTN = u.getTypeId()
     if SOTN == KEEPER_OF_THE_EMERALD_DREAM_ID
+        PlaySoundBJ(YSERA_SOUND)
         SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
         if OP == P
             HX[1] = YSERA_ID
@@ -88,5 +90,9 @@ function addunit(unit u)
 
 
 init
+    SetSoundDuration(YSERA_SOUND,5374)
+    SetSoundChannel(YSERA_SOUND,0)
+    SetSoundVolume(YSERA_SOUND,250)
+    SetSoundPitch(YSERA_SOUND,1.)
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         addunit(GetTriggerUnit())

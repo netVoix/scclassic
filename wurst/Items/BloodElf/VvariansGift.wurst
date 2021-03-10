@@ -1,0 +1,23 @@
+package VvariansGift
+
+import ObjEditingNatives
+import ObjectIdGenerator
+
+public let VARIANS_GIFT_ID = compiletime(ITEM_ID_GEN.next())
+
+
+@compiletime function create_w3t_SofS()
+    createObjectDefinition("w3t", VARIANS_GIFT_ID, 'ssil')
+    ..setString("ides", "")
+    ..setString("uhot", "")
+    ..setString("unam", "|cffa020f0Varian's Gift|r  |cff6c7b8b(Unique)|r")
+    ..setString("utip", "|cffa020f0Varian's Gift|r  |cff6c7b8b(Unique)|r")
+    ..setInt("iprn", 0)
+    ..setInt("ilev", 5)
+    ..setInt("ilvo", 5)
+    ..setInt("igol", 0)
+    ..setInt("iusa", 0)
+    ..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNDustOfAppearance.blp")
+    ..setString("icid", "AIa3")
+    ..setString("iabi", "AIa3")
+    ..setString("utub", "+10 Intelligence |n+10 Strength |n+10 Agility")

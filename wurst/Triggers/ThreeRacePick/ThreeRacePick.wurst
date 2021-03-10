@@ -2,13 +2,26 @@ package ThreeRacePick
 
 import LinkedList
 import CorruptedTreeOfLife
+import AllPickRace
 
 public timerdialog timdia
+timer emergencyRepairAfk = CreateTimer()
 
+function emergencyRepairAfkCond()
+    // print("3333")
+    for i = 1 to 13
+        X.issueImmediateOrderById(XE[i])
+    for i = 1 to 13
+        O.issueImmediateOrderById(XE[i])
+    for i = 1 to 13
+        R.issueImmediateOrderById(XE[i])
+    for i = 1 to 13
+        I.issueImmediateOrderById(XE[i])
 
 public function threeRacePick()
     if GetClickedButton()==ThreeRace
         let mainList = new LinkedList<int>()
+        // let minussatyr = new LinkedList<int>()
         int threerace 
         // let color1 = "|cffce2278"
         // let color2 = "|cff22ce86"
@@ -19,13 +32,15 @@ public function threeRacePick()
         // let name3 = GetPlayerName(S)
         // let name4 = GetPlayerName(P)
 
-        mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W',CORRUPTED_TREE_OF_LIFE_LV1)
+        mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W', CORRUPTED_TREE_OF_LIFE_LV1)
+        //minussatyr.add(CORRUPTED_TREE_OF_LIFE_LV1)
         DisableTrigger(ZU)
         RR=true
 
         printTimed("|cff1464afThree Race Pick", 10) 
         printTimed("Mode: |cff1464afThree Race Pick|r / Neutrals |cff00ff00ON|r / Selectables |cff00ff00ON|r", 10)
         StartTimerBJ(VE,false,30.)
+        TimerStart(emergencyRepairAfk, 31, false, null)
         CreateTimerDialogBJ(VE,"Game starts in")
         timdia = GetLastCreatedTimerDialogBJ()
         PanCameraToTimedLocForPlayer(Q,GetUnitLoc(R),0)
@@ -41,10 +56,18 @@ public function threeRacePick()
         SelectUnitForPlayerSingle(X,P)
         SetCameraFieldForPlayer(P,CAMERA_FIELD_TARGET_DISTANCE,2900.,1.)
 
+        
+
         for cid from mainList.staticItr()
             for i = 0 to 12
+                SetPlayerAbilityAvailable(players[i], CHOOSE_FACTION_ID, false)
                 SetPlayerUnitAvailableBJ(cid, false, players[i])
         mainList.shuffle()
+        
+        // for cid from minussatyr.staticItr()
+        //     for i = 0 to 12
+        //         SetPlayerUnitAvailableBJ(cid, false, players[i])
+        // minussatyr.shuffle()
 
         // printTimed(" ",20)
         // printTimed("Plauer " + color1 + name1 + "|r" + " got a race:", 20)
@@ -94,6 +117,10 @@ init
     let s = CreateTrigger()
     s.addCondition(Condition(function destroytimer))
     s.registerTimerExpireEvent(VE)
+    let t2 = CreateTrigger()
+    TriggerRegisterTimerExpireEvent(t2, emergencyRepairAfk)
+    t2.addCondition(Condition(function emergencyRepairAfkCond))
+    
 
 
     

@@ -8,6 +8,7 @@ import XZ
 
 public let TECHNOLOGICAL_BREAKTHROUGHT_ID = compiletime(UNIT_ID_GEN.next())
 public let TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let XZ_SOUND = CreateSound("Units\\Creeps\\HeroTinker\\TinkerMorph1.wav",false,false,false,$7F,$7F,"DefaultEAXON")
 
 
 @compiletime function create_w3u_hkee()
@@ -18,7 +19,7 @@ public let TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setUnreal("uimz", 120.0)
     ..setString("uani", "")
     ..setReal("ussc", 4.0)
-    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNInfernalReaverIcon.blp")
     ..setString("ushb", "BuildingShadowLarge")
     ..setInt("udef", 2)
     ..setInt("utss", 0)
@@ -59,7 +60,7 @@ public let TECHNOLOGICAL_BREAKTHROUGH_ABIL_ID = compiletime(ABIL_ID_GEN.next())
     ..setLvlDataInt("achd", 0, 0, 1)
     ..setLvlDataString("anam", 0, 0, "Technological Breakthrought")
     ..setLvlDataString("atp1", 1, 0, "Technological Breakthrought")
-    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNClockWerkGoblin.blp")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNInfernalReaverIcon.blp")
     ..setLvlDataInt("abpx", 0, 0, 0)
 
 
@@ -67,6 +68,7 @@ function addunit(unit u)
     let OP = u.getOwner()
     let SOTN = u.getTypeId()
     if SOTN == TECHNOLOGICAL_BREAKTHROUGHT_ID
+        PlaySoundBJ(XZ_SOUND)
         SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
         if OP == P
             PX[1] = XZ_ID
@@ -79,5 +81,7 @@ function addunit(unit u)
 
 
 init
+    SetSoundDuration(XZ_SOUND,5374)
+    SetSoundChannel(XZ_SOUND,0)
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         addunit(GetTriggerUnit())

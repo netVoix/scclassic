@@ -107,6 +107,8 @@ import ObjEditingNatives
 	..setInt("ulos", 1)
 	..setInt("uept", 0)
 	..setReal("uerd", 0.0)
+	..setInt("ubpx", 0)
+	..setInt("ubpy", 2)
 
 
 init

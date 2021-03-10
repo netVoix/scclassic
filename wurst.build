@@ -1,61 +1,28 @@
 ---
 projectName: scclassic
 buildMapData:
-  name: Survival ChaOZ 2.0
+  name: Survival ChaOZ v1.2
   fileName: MyMapFile
   author: OZGame
   scenarioData:
     loadingScreen:
-      title: Survival Chaos v2.0
-      subTitle: Edition by ArhiMEN
-      text: "|c00FF0000ArhiMEN edition.|r |n|n|cffffcc00Original author:|r Sur5al"
-  players:
-    - id: 0
-      name: Player 1
-      race: HUMAN
-      controller: COMPUTER
-    - id: 1
-      name: Player 2
-      race: HUMAN
-      controller: COMPUTER
-    - id: 4
-      name: Player 3
-      race: HUMAN
-      controller: COMPUTER
-    - id: 6
-      name: Player 5
-      race: HUMAN
-      controller: COMPUTER
-    - id: 5
-      name: Player 4
-      race: HUMAN
-      controller: USER
-    - id: 7
-      name: Player 6
-      race: HUMAN
-      controller: COMPUTER
-    - id: 9
-      name: Player 8
-      race: HUMAN
-      controller: COMPUTER
-    - id: 10
-      name: Player 9
-      race: HUMAN
-      controller: COMPUTER
+      title: Survival Chaos v1.2
+      subTitle: Edition by OZGame and ArhiMEN
+      text: "|c00FF0000OZGame and |cffff0000ArhiMEN|r edition.|r|n|n|c000000FFOfficial site:|r https://forum.onligamez.ru |n|c000000FFDiscord:|r https://discord.gg/APzyvxB |n|n|cffffcc00Original author:|r Sur5al"
   forces:
-    - name: Yellow
-      playerIds:
-        - 4
-        - 5
-    - name: Red
-      playerIds:
-        - 0
-        - 7
-    - name: Blue
-      playerIds:
-        - 1
-        - 9
-    - name: Green
-      playerIds:
-        - 6
-        - 10
+  - name: Yellow
+    playerIds:
+    - 4
+    - 5
+  - name: Red
+    playerIds:
+    - 0
+    - 7
+  - name: Blue
+    playerIds:
+    - 1
+    - 9
+  - name: Green
+    playerIds:
+    - 6
+    - 10

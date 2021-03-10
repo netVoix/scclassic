@@ -8,6 +8,8 @@ import ObjectIds
 
 public let THIST_FOR_MAGIC_ID = compiletime(UNIT_ID_GEN.next())
 public let THIST_FOR_MAGIC_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+public let VALEERA_SOUND1 = CreateSound("ValeeraPick.mp3",false,false,false,$7F,$7F,"DefaultEAXON")
+public let VALEERA_SOUND2 = CreateSound("ValeeraAttack.mp3",false,false,false,$7F,$7F,"DefaultEAXON")
 
 
 @compiletime function create_w3u_hatw()
@@ -65,6 +67,7 @@ function addunit(unit u)
     let OP = u.getOwner()
     let SOTN = u.getTypeId()
     if SOTN == THIST_FOR_MAGIC_ID
+        PlaySoundBJ(VALEERA_SOUND1)
         SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
         if OP == P
             HX[1] = VALEERA_ID
@@ -77,5 +80,13 @@ function addunit(unit u)
 
 
 init
+    SetSoundDuration(VALEERA_SOUND1,5374)
+    SetSoundChannel(VALEERA_SOUND1,0)
+    SetSoundVolume(VALEERA_SOUND1,250)
+    SetSoundPitch(VALEERA_SOUND1,1.)
+    SetSoundDuration(VALEERA_SOUND2,5374)
+    SetSoundChannel(VALEERA_SOUND2,0)
+    SetSoundVolume(VALEERA_SOUND2,250)
+    SetSoundPitch(VALEERA_SOUND2,1.)
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
         addunit(GetTriggerUnit())

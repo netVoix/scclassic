@@ -25,6 +25,7 @@ public let SHADOW_WORD_DEATH_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     ..presetTargetsAllowed(lvl -> "enemies,ground,mechanical,neutral,organic,nonhero,nonancient")
     ..presetEffects(lvl -> "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
     ..setArtTarget("Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
+    ..setArtEffect("Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
     ..presetIcon("ReplaceableTextures\\CommandButtons\\BTNDeathCoil.blp")
     ..presetBuffs(lvl -> commaList(SHADOW_WORD_DEATH_BUFF_ID))
     ..presetTooltipNormal(lvl -> "Shadow Word DEATH " + lvl.toString() + " lvl")
@@ -35,4 +36,4 @@ public let SHADOW_WORD_DEATH_BUFF_ID = compiletime(BUFF_ID_GEN.next())
     createObjectDefinition("w3h", SHADOW_WORD_DEATH_BUFF_ID, 'BHfs')
     ..setString("ftip", "DEATH")
     ..setString("fube", "This unit is about to die.")
-        
+      

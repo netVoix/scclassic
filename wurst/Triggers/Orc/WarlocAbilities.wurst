@@ -3,27 +3,30 @@ package WarlocAbilities
 import RegisterEvents
 import FireBoltWarloc
 import Orders
-import ClosureForGroups
+// import ClosureForGroups
 
 
-function isEnemyUnit() returns bool
-    let fu = GetFilterUnit()
-    let uid = fu.getTypeId()
-    return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
+// function isEnemyUnit() returns bool
+//     let fu = GetFilterUnit()
+//     let uid = fu.getTypeId()
+//     return fu.isEnemyOf(GetAttacker().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not (uid == 'u000' or uid == 'xdum')
 
 
 function fireBoltCast(unit u)
-    forNearestUnit(u.getPos(), 600,  Filter(function isEnemyUnit)) x ->
-        u.issueTargetOrderById(OrderIds.firebolt, x)
+    //forNearestUnit(u.getPos(), 600,  Filter(function isEnemyUnit)) x ->
+    if u.getTypeId() == 'nw2w'
+        // print("2")
+        u.issueTargetOrderById(OrderIds.firebolt, GetTriggerUnit())
 
 
 function fireBoltRefresh(unit u)
     let aid = GetSpellAbilityId()
     if aid == FIRE_BOLT_WARLOC_ID
         let random = GetRandomInt(1, 100)
-        for i = 1 to 10 * GetUnitAbilityLevel(u, FIRE_BOLT_WARLOC_ID)
+        let lvl = GetUnitAbilityLevel(u, FIRE_BOLT_WARLOC_ID)
+        for i = 1 to 15 * lvl
             if i == random
-                let lvl = GetUnitAbilityLevel(u, FIRE_BOLT_WARLOC_ID)
+                // print("ref"+""+lvl.toString())
                 u.removeAbility(FIRE_BOLT_WARLOC_ID)
                 u.addAbility(FIRE_BOLT_WARLOC_ID)
                 u.setAbilityLevel(FIRE_BOLT_WARLOC_ID, lvl)
@@ -42,7 +45,8 @@ function essenceDrawing(unit u)
     let war = u.getTypeId()
     if war == 'nw2w'
         let lvl = GetPlayerTechCountSimple('Rost', GetOwningPlayer(u))
-        u.addMana(10 * lvl.toReal())
+        u.addMana(15 * (lvl.toReal() + 1))
+        // print("add"+""+lvl.toString())
         // CreateTextTag()
         // let text = GetLastCreatedTextTag()
         // text.setText((10 * lvl.toReal()).toString(), 8)

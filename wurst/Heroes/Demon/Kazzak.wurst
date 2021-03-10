@@ -67,7 +67,7 @@ import RegisterEvents
 	..setString("unam", "Doom Lord")
 	..setInt("upru", 1)
 	..setString("upro", "Kazzak")
-	..setString("utub", "|cffffcc00Special Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Ground Slam|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage, 3-9s stun|r |n  |cff6c7b8b(300-600 area of effect)|r |n|n|cff1c86eeWarblade of Archimonde|r |cff6c7b8b(Orb Effect)|r |n  |cffffdead10-16% lifesteal and deals 0.5% damage from maximum health|r |n|n|cffff0000Rain of Fire|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in an area|r |n  |cff6c7b8b(200-350 area of effect)|r |n|n|cffff0000Soul Burn|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead10-40 damage per sec|r |n  |cff6c7b8b(affects organic Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r")
+	..setString("utub", "|cffffcc00Special Unit (Melee)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n|cffffcc00Can learn:|r |n|cffff0000Ground Slam|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage, 3-9s stun|r |n  |cff6c7b8b(300-600 area of effect)|r |n|n|cff1c86eeWarblade of Archimonde|r |cff6c7b8b(Orb Effect)|r |n  |cffffdead10-16% lifesteal and deals 0.1-0.4% damage from maximum health|r |n|n|cffff0000Rain of Fire|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in an area|r |n  |cff6c7b8b(200-350 area of effect)|r |n|n|cffff0000Soul Burn|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead10-40 damage per sec|r |n  |cff6c7b8b(affects organic Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r")
 	..setString("utip", "Train Doom Lord")
 	..setInt("ufoo", 0)
 	..setString("ua1t", "chaos")
@@ -82,8 +82,9 @@ import RegisterEvents
 
 function pricklyrootsuse(unit attaker, unit attaked)
 	let lvl = GetHeroLevel(attaker)
-	if attaker.getTypeId() == 'Ucrl' and not attaked.isType(UNIT_TYPE_STRUCTURE) and lvl >= 2
-		SetUnitLifePercentBJ(attaked, GetUnitLifePercent(attaked) - 0.5)
+	let lvla = GetUnitAbilityLevel(attaker, 'A0M9')
+	if attaker.getTypeId() == 'Ucrl' and not attaked.isType(UNIT_TYPE_STRUCTURE) and lvl >= 2 and GetUnitLifePercent(attaked) - 0.05 - 0.05 * lvla > 0
+		SetUnitLifePercentBJ(attaked, GetUnitLifePercent(attaked) - 0.05 - 0.05 * lvla)
 
 
 init

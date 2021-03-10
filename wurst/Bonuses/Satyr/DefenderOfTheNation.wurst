@@ -77,6 +77,7 @@ function addunit(unit u)
     let OP = u.getOwner()
     let SOTN = u.getTypeId()
     if SOTN == DEFENDER_OF_THE_NATION_ID
+        PlaySoundBJ(IGLARION_SOUND)
         SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
         if OP == P
             JX[1] = IGLARION_ID
