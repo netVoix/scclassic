@@ -1,0 +1,40 @@
+package CompositeArmor
+
+// import ObjectIdGenerator
+import AbilityObjEditing
+import Abilities
+import Icons
+import ObjectIdGenerator
+
+
+public let COMPOSITE_ARMOR_ID = compiletime(ABIL_ID_GEN.next())
+// public let COMPOSITE_ARMOR_ID = 'A05H'
+
+
+let NAME = "Composite Armor"
+let ICON = Icons.bTNAdvancedSpikedBarricades
+
+@compiletime function compositeArmor()
+	new AbilityDefinitionHardenedSkin(COMPOSITE_ARMOR_ID)
+		..setRace(Race.Human)
+		..presetHotkey("")
+		..presetChancetoReduceDamage(lvl -> 12.0 + lvl * 3)
+		..presetIgnoredDamage(lvl -> 99999.0)
+		..presetMinimumDamage(lvl -> 10.0)
+		..setName(NAME)
+		..presetTooltipNormal(lvl -> "")
+		..presetTooltipNormalExtended(lvl -> "")
+		..presetIcon(ICON)
+		..setArtCaster(Abilities.spellShieldCaster)
+		..setCheckDependencies(false)
+		..setRequirements("")
+		..setHeroAbility(true)
+		..setLevels(7)
+		..setRequiredLevel(1)
+		..setLevelSkipRequirement(4)
+		..presetButtonPosResearch(2, 2)
+		..presetTooltipLearn(lvl -> "")
+		..setTooltipLearnExtended("")
+		..presetTargetsAllowed(lvl -> "{0},{1},{2}".format(TargetsAllowed.allies, TargetsAllowed.enemies, TargetsAllowed.nonancient))
+		..presetIncludeRangedDamage(lvl -> true)
+		..presetIncludeMeleeDamage(lvl -> true)

@@ -2,6 +2,11 @@ package HeroIconsStore
 
 import Castles
 import Heroes
+import Garithos
+import HeroesIconsRogue
+import FloorElevator
+import Sally
+import FlintShadowmore
 
 public tuple heroMap(int heroId, int activeIconId, int disabledIconId)
 
@@ -57,6 +62,10 @@ public let HEROES_UNDEAD = [heroMap(ARTHAS_ID, ARTHAS_ICON_ACTIVE_ID, ARTHAS_ICO
                             heroMap(SYLVANA_ID, SYLVANA_ICON_ACTIVE_ID, SYLVANA_ICON_DISABLED_ID),
                             heroMap(KEL_THUZAD_ID, KEL_THUZAD_ICON_ACTIVE_ID, KEL_THUZAD_ICON_DISABLED_ID),
                             heroMap(GHOST_SHIP_ID, GHOST_SHIP_ICON_ACTIVE_ID, GHOST_SHIP_ICON_DISABLED_ID)]
+public let HEROES_ROGUE = [heroMap(GARITHOS_ID, GARITHOS_ICON_ACTIVE_ID, GARITHOS_ICON_DISABLED_ID),
+                           heroMap(FLINT_SHADOWMORE_ID, FLINT_ICON_ACTIVE_ID, FLINT_ICON_DISABLED_ID),
+                           heroMap(SALLY_ID, SALLY_ICON_ACTIVE_ID, SALLY_ICON_DISABLED_ID),
+                           heroMap(FLOOR_ELEVATOR_ID, SIEGE_TOWER_ICON_ACTIVE_ID, SIEGE_TOWER_ICON_DISABLED_ID)]
 
 public function getHero(int rid, int index) returns heroMap
   switch rid
@@ -86,5 +95,7 @@ public function getHero(int rid, int index) returns heroMap
       return HEROES_TROLL[index]
     case MAIN_CASTLE_UNDEAD_ID
       return HEROES_UNDEAD[index]
+    case MAIN_CASTLE_ROGUE_LVL1
+      return HEROES_ROGUE[index]     
     default
       return heroMap(0, 0, 0)

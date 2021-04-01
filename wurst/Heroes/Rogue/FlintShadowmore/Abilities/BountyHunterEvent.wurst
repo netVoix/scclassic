@@ -1,0 +1,21 @@
+package BountyHunterEvent
+
+import BountyHunter
+import RegisterEvents
+import StandardTextTags
+
+function findTeammate(player p) returns player
+  let tid = p.getId()
+  for i = 0 to bj_MAX_PLAYERS - 1
+    if players[i].isAllyOf(p) and i != tid
+      return players[i]
+  return p
+
+init
+  registerPlayerUnitEvent(EVENT_PLAYER_UNIT_DEATH) ->
+    let k = GetKillingUnit()
+    let d = GetDyingUnit()
+    if k.hasAbility(BOUNTY_HUNTER_ID) and d.isType(UNIT_TYPE_HERO) and not d.isIllusion()
+      let sum = 25 * k.getAbilityLevel(BOUNTY_HUNTER_ID)
+      findTeammate(k.getOwner()).addGold(sum)
+      createGoldBountyTextTag(k, sum)

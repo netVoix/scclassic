@@ -1,0 +1,84 @@
+package DishonoredKnights
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import BlackKnights
+
+public let DISHONORED_KNIGHTS_ID = compiletime(UNIT_ID_GEN.next())
+public let DISHONORED_KNIGHTS_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_nth1()
+	createObjectDefinition("w3u", DISHONORED_KNIGHTS_ID, 'nth1')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(DISHONORED_KNIGHTS_ABIL_ID))
+	..setInt("ubpy", 1)
+	..setInt("ubpx", 3)
+	..setString("uubs", "OMED")
+	..setString("umdl", "buildings\\other\\Mercenary\\Mercenary.mdl")
+	..setUnreal("uocc", 0.0)
+	..setReal("usca", 0.7)
+	..setReal("ussc", 4.0)
+	..setString("ushb", "ShadowMercenaryCamp")
+	..setUnreal("uacq", 0.0)
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setString("util", "*")
+	..setInt("udea", 2)
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "HumanBarracks")
+	..setInt("ubld", 1)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("ides", "")
+	..setString("uhot", "F")
+	..setString("unam", "Mercenary Camp")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBanditLord.blp")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInspiration Aura|r |n|n|cffffcc00Knight|r replaces |cffffcc00Marauder|r |n|cffffcc00Siege Unit|r |n+2 armor |n+100 HP |n|cffffcc00Abilities:|r |n|cffffff00Rallying Cry|r |cff6c7b8b(Support Spell)|r |n |cffffdead(+4 armor in 500 AoE)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSteel Blades|r |n|cffffdeadLeather Armor|r |n|cffffdeadCritical Strike|r |n|cffffdeadInspiration Aura|r |n|cffffdeadAnimal War Training|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+	..setString("utip", "Dishonored Knights [|cffffcc00F|r]")
+
+@compiletime function create_w3a_A0XI()
+	createObjectDefinition("w3a", DISHONORED_KNIGHTS_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadInspiration Aura|r |n|n|cffffcc00Knight|r replaces |cffffcc00Marauder|r |n|cffffcc00Siege Unit|r |n+2 armor |n+100 HP |n|cffffcc00Abilities:|r |n|cffffff00Rallying Cry|r |cff6c7b8b(Support Spell)|r |n |cffffdead(+4 armor in 500 AoE)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSteel Blades|r |n|cffffdeadLeather Armor|r |n|cffffdeadCritical Strike|r |n|cffffdeadInspiration Aura|r |n|cffffdeadAnimal War Training|r |n|n|cffffcc00Type:|r |cffFE8A0EMid Game Push|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Dishonored Knights")
+	..setLvlDataString("atp1", 1, 0, "Dishonored Knights")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBanditLord.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+function addunit(unit u)
+	let OP = u.getOwner()
+	let SOTN = u.getTypeId()
+	if SOTN == DISHONORED_KNIGHTS_ID
+		SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+		if OP == P
+			AE[1] = BLACK_KNIGHT
+		if OP == S
+			AE[2] = BLACK_KNIGHT
+		if OP == Q
+			AE[3] = BLACK_KNIGHT
+		if OP == T 
+			AE[4] = BLACK_KNIGHT
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		addunit(GetTriggerUnit())

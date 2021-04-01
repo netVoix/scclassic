@@ -1,0 +1,106 @@
+package FlintShadowmore
+
+import ObjectIds
+import UnitObjEditing
+import UnitIds
+import Abilities
+import public BountyHunter
+import public RareVenom
+import public StunGrenade
+import public FlintEvasion
+import ObjectIdGenerator
+
+public let FLINT_SHADOWMORE_ID = compiletime(HERO_ID_GEN.next())
+
+let NAME = "Bounty Hunter"
+let FULLNAME = "Flint Shadowmore"
+let ICON = "ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp"
+
+let MODEL = "models\\FlintShadowmore\\FlintShadowmore.mdl"
+let DESCRIPTION = "|cffffcc00Hero Unit (Melee)|r |nStrong Vs Heroes |nWeak Vs All Units, Buildings |n|n" +
+									"|cffffcc00Role:|r |cff00ffffAssassin|r |n|n" +
+									"|cffffcc00Can learn:|r |n" +
+										"|cff00ffffBounty Hunter|r |cff6c7b8b(Passive Skill)|r |n  " +
+											"|cffffdead25-175 extra gold for a kill|r |n  |cff6c7b8b(affects Heroes only)|r |n|n" +
+										"|cff1c86eeRare Venom|r |cff6c7b8b(Orb Effect)|r |n  " +
+											"|cffffdead20-50% to poison for 30s|r |n  |cff6c7b8b(affects organic Heroes only)|r |n  |cff6c7b8b(doesn't affect Special unit)|r |n|n" +
+										"|cffff0000Stun Grenade|r |cff6c7b8b(Damage Spell)|r |n  " + 
+											"|cffffdead75-225 damage, 4.5-6s stun|r |n  |cff6c7b8b(250-400 area of effect)|r |n|n" +
+										"|cff00ffffEvasion|r |cff6c7b8b(Passive Skill)|r |n  " + 
+											"|cffffdead13-25% to evade an attack|r"
+
+
+@compiletime function flintShadowmore()
+	new HeroDefinition(FLINT_SHADOWMORE_ID, UnitIds.arthas)
+		..setHeroAbilities(commaList(BOUNTY_HUNTER_ID, RARE_VENOM_ID, STUN_GRENADE_ID, FLINT_EVASION_ID))
+		..setNormalAbilities("AInv, A0ES")
+		..setAnimationRunSpeed(240.0)
+		..setAnimationWalkSpeed(240.0)
+		..setButtonPositionX(1)
+		..setButtonPositionY(2)
+		..setProjectileLaunchX(10.0)
+		..setProjectileLaunchY(40.0)
+		..setSelectionScale(1.3)
+		..setShadowImageCenterX(60.0)
+		..setShadowImageCenterY(60.0)
+		..setShadowImageHeight(140.0)
+		..setShadowImageWidth(140.0)
+		..setAcquisitionRange(700.0)
+		..setAttack1AnimationBackswingPoint(0.84000003)
+		..setAttack1AnimationDamagePoint(0.3)
+		..setAttack1CooldownTime(1.8)
+		..setAttack1DamageBase(214)
+		..setAttack1DamageNumberofDice(1)
+		..setAttack1DamageSidesperDie(21)
+		..setAttack2AnimationBackswingPoint(0.84000003)
+		..setAttack2AnimationDamagePoint(0.3)
+		..setAttack2CooldownTime(1.8)
+		..setAttack2DamageBase(214)
+		..setAttack2DamageNumberofDice(1)
+		..setAttack2DamageSidesperDie(21)
+		..setAttack1WeaponSound(WeaponSound.MetalHeavySlice)
+		..setAttack2ProjectileArt(Abilities.gargoyleMissile)
+		..setAttack2ProjectileSpeed(2200)
+		..setAttack2ProjectileHomingEnabled(true)
+		..setAttack2Range(400)
+		..setAttack2TargetsAllowed(TargetsAllowed.air)
+		..setAttacksEnabled(3)
+		..setDefenseBase(8)
+		..setSpeedBase(220)
+		..setTurnRate(3.0)
+		..setCollisionSize(30.0)
+		..setUnitSoundSet("")
+		..setAgilityPerLevel(1.0)
+		..setBuildTime(1)
+		..setGoldBountyAwardedBase(0)
+		..setGoldBountyAwardedNumberofDice(0)
+		..setGoldBountyAwardedSidesperDie(0)
+		..setGoldCost(1000)
+		..setHitPointsMaximumBase(5000)
+		..setHitPointsRegenerationRate(5.0)
+		..setIntelligencePerLevel(1.0)
+		..setLumberCost(0)
+		..setManaInitialAmount(2000)
+		..setManaMaximum(250)
+		..setManaRegeneration(1.0)
+		..setPointValue(360)
+		..setPrimaryAttribute("AGI")
+		..setPriority(3)
+		..setSightRadiusDay(1000)
+		..setStartingAgility(16)
+		..setStartingIntelligence(2)
+		..setStartingStrength(12)
+		..setStockMaximum(1)
+		..setStockReplenishInterval(600)
+		..setStrengthPerLevel(1.0)
+		..setHotkey("")
+		..setName(NAME)
+		..setTooltipBasic("Train " + NAME)
+		..setProperNames(FULLNAME)
+		..setCategorizationCampaign(false)
+		..setIconGameInterface(ICON)
+		..setIconScoreScreen(ICON)
+		..setModelFile(MODEL)
+		..setTooltipExtended(DESCRIPTION)
+		..setScalingValue(0.9)
+		..setAnimationCastBackswing(0.5)

@@ -22,6 +22,7 @@ import GladiatorRing
 import EgwinsVision
 import VvariansGift
 import BloodPact
+import Medivh
 
 
 function additem(unit u)
@@ -63,6 +64,15 @@ function additem(unit u)
             u.addItemById(EGWINS_VISION_ID)
         if lvl >= 20 and UnitHasItemOfTypeBJ(u, VARIANS_GIFT_ID) == false
             u.addItemById(VARIANS_GIFT_ID)
+    if hero == MEDIVH_ID
+        if lvl >= 4 and UnitHasItemOfTypeBJ(u, SPELL_SHIELD_AMULET_ID) == false
+            u.addItemById(SPELL_SHIELD_AMULET_ID)
+        if lvl >= 8 and UnitHasItemOfTypeBJ(u, PILE_OF_GOLD_ID) == false
+            u.addItemById(PILE_OF_GOLD_ID)
+        if lvl >= 14 and UnitHasItemOfTypeBJ(u, FEL_STONE_ID) == false
+            u.addItemById(FEL_STONE_ID)
+        if lvl >= 20 and UnitHasItemOfTypeBJ(u, ATIESH_ID) == false
+            u.addItemById(ATIESH_ID)
     if hero == 'Eevi'
         if lvl >= 4 and UnitHasItemOfTypeBJ(u, BLOOD_PACT_ID) == false
             u.addItemById(BLOOD_PACT_ID)

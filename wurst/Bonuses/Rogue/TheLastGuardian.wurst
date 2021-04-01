@@ -1,0 +1,77 @@
+package TheLastGuardian
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import Medivh
+import RegisterEvents
+
+public let THE_LAST_GUARDIAN_ID = compiletime(UNIT_ID_GEN.next())
+public let THE_LAST_GUARDIAN_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_nmh1()
+	createObjectDefinition("w3u", THE_LAST_GUARDIAN_ID, 'nmh1')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(THE_LAST_GUARDIAN_ABIL_ID))
+	..setReal("ussc", 4.0)
+	..setString("utyp", "ancient,mechanical")
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setInt("ubld", 1)
+	..setUnreal("uacq", 0.0)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNMedivh2.blp")
+	..setString("uubs", "")
+	..setString("umdl", "doodads\\cinematic\\ShimmeringPortal\\ShimmeringPortal.mdl")
+	..setUnreal("uocc", 0.0)
+	..setReal("usca", 0.7)
+	..setString("ushb", "")
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "UndeadBuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "DemonGate")
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setString("unam", "Dimensional Portal")
+	..setString("ides", "")
+	..setString("uhot", "Q")
+	..setString("utip", "The Last Guardian [|cffffcc00Q|r]")
+	..setString("utub", "|cffffcc00Medivh|r replaces |cffffcc00Sally|r |n|n|cffffcc00Hero Unit (Ranged)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff0000Nuker|r |n|cffffcc00Can learn:|r |n|cffff0000Void Wave|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead225-375 damage in a line|r |n  |cff6c7b8b(700-1000 wave distance)|r |n|cffff0000Void Leech|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead250-400 damage over 5s|r |n  |cff6c7b8b(250-400 area of effect)|r |n|cff00ffffStasis Field|r |cff6c7b8b(Self Spell)|r |n  |cffffdeadheals 8000-14000 HP over 5s|r |n|cffa020f0Void Golem|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadsummons Golem for 30-90s|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r")
+
+@compiletime function create_w3a_A0XT()
+	createObjectDefinition("w3a", THE_LAST_GUARDIAN_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Medivh|r replaces |cffffcc00Sally|r |n|n|cffffcc00Hero Unit (Ranged)|r |n-10% buy cooldown |nGets special items at Lv4/8/14/20 |n|cffffcc00Role:|r |cffff0000Nuker|r |n|n|cffffcc00Type:|r |cff00ffffHero Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "The Last Guardian")
+	..setLvlDataString("atp1", 1, 0, "The Last Guardian")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNMedivh2.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+function addunit(unit u)
+	let OP = u.getOwner()
+	let SOTN = u.getTypeId()
+	if SOTN == THE_LAST_GUARDIAN_ID
+		PlaySoundBJ(MEDIVH_SOUND)
+		SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+		if OP == P
+			JX[1] = MEDIVH_ID
+		if OP == S
+			JX[2] = MEDIVH_ID
+		if OP == Q
+			JX[3] = MEDIVH_ID
+		if OP == T 
+			JX[4] = MEDIVH_ID
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		addunit(GetTriggerUnit())

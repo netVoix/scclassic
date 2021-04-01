@@ -1,0 +1,105 @@
+package BanishedSorcerers
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import Sorcerer
+import RegisterEvents
+
+public let BANISHED_SORCERERS_ID = compiletime(UNIT_ID_GEN.next())
+public let BANISHED_SORCERERS_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_nhns()
+	createObjectDefinition("w3u", BANISHED_SORCERERS_ID, 'nhns')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(BANISHED_SORCERERS_ABIL_ID))
+	..setInt("ubpx", 2)
+	..setInt("ubpy", 1)
+	..setString("uubs", "OMED")
+	..setString("umdl", "buildings\\other\\Mercenary\\Mercenary.mdl")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBanditMage.blp")
+	..setReal("usca", 0.7)
+	..setReal("ussc", 4.0)
+	..setString("ushb", "ShadowMercenaryCamp")
+	..setUnreal("uacq", 0.0)
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setString("util", "*")
+	..setUnreal("ucol", 100.0)
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "HumanBarracks")
+	..setInt("ubld", 1)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("ides", "")
+	..setString("uhot", "D")
+	..setString("unam", "Mercenary Camp")
+	..setString("utip", "Banished Sorcerers [|cffffcc00D|r]")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadArcane Shield|r |n|n|cffffcc00Sorcerer|r replaces |cffffcc00Wizard|r |n|cffffcc00Spellcaster|r |n+4 damage |n+75 MP |n|cffffcc00Abilities:|r |n|cffff00ffMana Burn|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(burns 25/50/75/100 mana)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffff00ffSilence|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(silences for 5/6/7/8s)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBlack Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadLeather Armor|r |n|cffffdeadArcane Shield|r |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r \\ |cffff00ffAnti Hero|r")
+
+@compiletime function create_w3a_A0XG()
+	createObjectDefinition("w3a", BANISHED_SORCERERS_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadArcane Shield|r |n|n|cffffcc00Sorcerer|r replaces |cffffcc00Wizard|r |n|cffffcc00Spellcaster|r |n+4 damage |n+75 MP |n|cffffcc00Abilities:|r |n|cffff00ffMana Burn|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(burns 25/50/75/100 mana)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffff00ffSilence|r |cff6c7b8b(Disable Spell)|r |n |cffffdead(silences for 5/6/7/8s)|r |n |cff6c7b8b(affects organic units only)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadBlack Magic|r |cff6c7b8b(Upgrades Abilities)|r |n|cffffdeadLeather Armor|r |n|cffffdeadArcane Shield|r |n|n|cffffcc00Type:|r |cffff00ffAnti Magic|r \\ |cffff00ffAnti Hero|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Banished Sorcerers")
+	..setLvlDataString("atp1", 1, 0, "Banished Sorcerers")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBanditMage.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+	
+function addunit(unit u)
+	let OP = u.getOwner()
+	let SOTN = u.getTypeId()
+	if SOTN == BANISHED_SORCERERS_ID
+		if OP == P
+			SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+			RemoveUnitFromStock(A, IE[1])
+			RemoveUnitFromStock(N, IE[1])
+			RemoveUnitFromStock(L, IE[1])
+			IE[1] = SORCERER
+			AddUnitToStockBJ(IE[1],A,1,3)
+			AddUnitToStockBJ(IE[1],N,1,3)
+			AddUnitToStockBJ(IE[1],L,1,3)
+		if OP == S
+			RemoveUnitFromStock(H, IE[2])
+			RemoveUnitFromStock(J, IE[2])
+			RemoveUnitFromStock(K, IE[2])
+			IE[2] = SORCERER
+			AddUnitToStockBJ(IE[2],H,1,3)
+			AddUnitToStockBJ(IE[2],J,1,3)
+			AddUnitToStockBJ(IE[2],K,1,3)
+		if OP == Q
+			RemoveUnitFromStock(D, IE[3])
+			RemoveUnitFromStock(F, IE[3])
+			RemoveUnitFromStock(G, IE[3])
+			IE[3] = SORCERER
+			AddUnitToStockBJ(IE[3],D,1,3)
+			AddUnitToStockBJ(IE[3],F,1,3)
+			AddUnitToStockBJ(IE[3],G,1,3)
+		if OP == T 
+			RemoveUnitFromStock(C, IE[4])
+			RemoveUnitFromStock(B, IE[4])
+			RemoveUnitFromStock(M, IE[4])
+			IE[4] = SORCERER
+			AddUnitToStockBJ(IE[4],C,1,3)
+			AddUnitToStockBJ(IE[4],B,1,3)
+			AddUnitToStockBJ(IE[4],M,1,3)
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		addunit(GetTriggerUnit())

@@ -22605,9 +22605,9 @@ import ObjEditingNatives
 	..setLvlDataString("anam", 0, 0, "Spell Resist")
 	..setLvlDataInt("abpx", 0, 0, 2)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataUnreal("isr2", 1, 2, 0.2)
+	..setLvlDataUnreal("isr2", 1, 2, 0.25)
 	..setLvlDataString("atp1", 1, 0, "Spell Resist")
-	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 20%.")
+	..setLvlDataString("aub1", 1, 0, "Reduces spell damage by 25%.")
 
 
 @compiletime function create_w3a_A0JR()

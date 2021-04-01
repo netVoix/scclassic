@@ -1,0 +1,35 @@
+package FlintConnector
+
+import FlintShadowmore
+import SoundUtils
+
+
+let s1 = new SoundDefinition("Units\\Creeps\\Bandit\\BanditPissed2.wav", false)
+let s2 = new SoundDefinition("Units\\Creeps\\Bandit\\BanditWarcry1.wav", false)
+
+function addFakeSkill()
+  if GetEnteringUnit().getTypeId() == FLINT_SHADOWMORE_ID
+    GetTriggeringTrigger().disable()
+    GetEnteringUnit().addAbility('Apiv')
+
+function selectSkills()
+  let u = GetTriggerUnit()
+  if u.getTypeId() == FLINT_SHADOWMORE_ID
+    u.selectSkill(BOUNTY_HUNTER_ID)
+    u.selectSkill(RARE_VENOM_ID)
+    u.selectSkill(STUN_GRENADE_ID)
+    u.selectSkill(FLINT_EVASION_ID)
+
+function playSound()
+  if GetEnteringUnit().getTypeId() == FLINT_SHADOWMORE_ID
+    let sm = [s1, s2]
+    sm[GetRandomInt(0, 1)].play()
+    
+
+init
+  let t = CreateTrigger()
+  TriggerRegisterEnterRectSimple(t, bj_mapInitialPlayableArea)
+  t.addCondition(Condition(function playSound))
+
+  CreateTrigger()..registerAnyUnitEvent(EVENT_PLAYER_HERO_LEVEL)
+                  ..addCondition(Condition(function selectSkills))

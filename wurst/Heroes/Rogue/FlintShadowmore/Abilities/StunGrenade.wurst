@@ -1,0 +1,34 @@
+package StunGrenade
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import Icons
+
+public let STUN_GRENADE_ID = compiletime(ABIL_ID_GEN.next())
+
+let NAME = "Stun Grenade"
+let MODEL = "models\\FlintShadowmore\\StunGrenade.mdl"
+
+@compiletime function stunGrenade()
+  new AbilityDefinitionTaurenChieftainWarStomp(STUN_GRENADE_ID)
+    ..setName(NAME)
+    ..presetButtonPosNormal(2, 0)
+    ..presetButtonPosResearch(2, 2)
+    ..setLevels(7)
+    ..setLevelSkipRequirement(4)
+    ..presetHotkey("")
+    ..presetTooltipLearn(lvl -> "Learn Stun Grenade - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..setTooltipLearnExtended("Stuns and damages nearby enemy land units.")
+    ..presetDamage(lvl -> 50.0 + lvl * 25)
+    ..presetAreaofEffect(lvl -> 225.0 + lvl * 25)
+    ..setTooltipLearnExtended("")
+    ..presetCooldown(lvl -> 45.0)
+    ..presetDurationHero(lvl -> 2.13 + lvl * 0.12)
+    ..presetDurationNormal(lvl -> 4.25 + lvl * 0.25)
+    ..presetTooltipNormal(lvl -> "Stun Grenade - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..presetTooltipNormalExtended(lvl -> "")
+    ..presetTargetsAllowed(lvl -> "{0},{1},{2}".format(TargetsAllowed.enemies, TargetsAllowed.ground, TargetsAllowed.neutral))
+    ..presetManaCost(lvl -> 45 + lvl * 5)
+    ..setRace(Race.Human)
+    ..presetIcon(Icons.bTNPotionOfRestoration)
+    ..setArtCaster(MODEL)

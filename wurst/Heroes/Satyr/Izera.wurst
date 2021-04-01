@@ -93,6 +93,7 @@ function decayuse1(unit caster,int abil)
                     UnitAddAbility(dummy, SHADOW_STRIKE_DUMMY_ID)
                     UnitApplyTimedLifeBJ(3., 'BTLF', bj_lastCreatedUnit)
                     dummy.issueTargetOrderById(OrderIds.shadowstrike, u)
+                    RemoveLocation(kl)
 
 
 function pricklyrootsuse(unit attaker)

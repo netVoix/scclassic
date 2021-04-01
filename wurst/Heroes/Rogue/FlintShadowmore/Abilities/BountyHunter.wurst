@@ -1,0 +1,40 @@
+package BountyHunter
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import BuffObjEditing
+import Abilities
+import ObjectIds
+import Icons
+
+public let BOUNTY_HUNTER_ID = compiletime(ABIL_ID_GEN.next())
+public let BOUNTY_HUNTER_BUFF_ID = compiletime(BUFF_ID_GEN.next())
+
+let NAME = "Bounty Hunter"
+
+@compiletime function bountyHunter()
+	new AbilityDefinitionArchMageBrillianceAura(BOUNTY_HUNTER_ID)
+		..setName(NAME)
+		..setLevels(7)
+		..setLevelSkipRequirement(4)
+		..presetHotkey("")
+		..setTooltipLearnExtended("Gives extra gold")
+		..presetManaRegenerationIncrease(lvl -> 0.0)
+		..presetTooltipNormal(lvl -> NAME + " - [|cffffcc00Level " +  lvl.toString() + "|r]")
+		..presetTooltipNormalExtended(lvl -> "")
+		..presetTargetsAllowed(lvl -> TargetsAllowed.self)
+		..setArtTarget(Abilities.drumsCasterHeal)
+		..presetTooltipLearn(lvl -> "Learn " + NAME + " - [|cffffcc00Level " + lvl.toString() + "|r]")
+		..presetAreaofEffect(lvl -> 0.1)
+		..presetIcon(Icons.bTNMGExchange)
+		..presetBuffs(lvl -> BOUNTY_HUNTER_BUFF_ID.toRawCode())
+		..presetButtonPosNormal(0, 0)
+
+@compiletime function bountyHunterBuff()
+	new BuffDefinition(BOUNTY_HUNTER_BUFF_ID, 'BHab')
+		..setRace(1, Race.Other.toObjectString())
+		..setIcon(Icons.bTNMGExchange)
+		..setArtTarget(1, "")
+		..setTargetAttachmentPoint0(1, "")
+		..setTooltipNormal(1, NAME)
+		..setTooltipNormalExtended(1, "This unit gets extra gold for Hero kills.")

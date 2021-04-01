@@ -1,0 +1,233 @@
+package Poison
+
+import ObjEditingNatives
+import ObjectIdGenerator
+import Marauder
+import Enforcer
+import Javeliner
+import RegisterEvents
+import MainCastleRogue
+import ObjectIds
+
+public let POISON_ID = compiletime(UNIT_ID_GEN.next())
+
+trigger poisonAdd = CreateTrigger()
+trigger poisonRemove = CreateTrigger()
+
+@compiletime function createPoisonBuilding()
+	createObjectDefinition("w3u", POISON_ID, 'ngt2')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setInt("ubpx", 2)
+	..setString("uabi", "Avul,A0XD")
+	..setString("uubs", "OMED")
+	..setString("umdl", "buildings\\other\\Tavern\\Tavern.mdl")
+	..setUnreal("uocc", 0.0)
+	..setReal("usca", 0.9)
+	..setReal("ussc", 4.0)
+	..setUnreal("uacq", 0.0)
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setString("util", "*")
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "Cantina")
+	..setInt("ubld", 1)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("unam", "Brewery")
+	..setString("ides", "")
+	..setString("uhot", "E")
+	..setString("utip", "Poisoned Blades [|cffffcc00E|r]")
+	..setString("ures", "R05D")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNPoisonR.blp")
+	..setString("utub", "Increases |cffffcc00Enforcer|r, |cffffcc00Javelineer|r and |cffffcc00Marauder|r attack rate by 7% and allows them to poison their target dealing 5/10/15/20 damage per second. |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(can be upgraded in this building)|r |n|n|cffffcc00Type:|r |cff00ffffMagic Damage|r")
+
+@compiletime function createPoisonDescriptionAbillity()
+	createObjectDefinition("w3a", 'A0XD', 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "Increases |cffffcc00Enforcer|r, |cffffcc00Javelineer|r and |cffffcc00Marauder|r attack rate by 7% and allows them to poison their target dealing 5/10/15/20 damage per second. |n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(can be upgraded in this building)|r |n|n|cffffcc00Type:|r |cff00ffffMagic Damage|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Poisoned Blades")
+	..setLvlDataString("atp1", 1, 0, "Poisoned Blades")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPoisonR.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+@compiletime function createPoisonAbillity()
+	createObjectDefinition("w3a", 'A0XC', 'Aven')
+	..setLvlDataUnreal("Poi1", 1, 1, 5.0)
+	..setLvlDataUnreal("adur", 1, 0, 10.0)
+	..setLvlDataUnreal("ahdu", 1, 0, 5.0)
+	..setLvlDataString("anam", 0, 0, "Slow Poison")
+	..setLvlDataString("atp1", 1, 0, "Slow Poison (|cffff0000Lv1|r)")
+	..setLvlDataString("aub1", 1, 0, "Deals 5 damage/sec for 10 seconds. |n|n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(has half duration on Heroes)|r")
+	..setLvlDataInt("Poi4", 1, 4, 8)
+	..setLvlDataString("atar", 1, 0, "air,ground,organic")
+	..setLvlDataInt("alev", 0, 0, 4)
+	..setLvlDataString("arqa", 0, 0, "1")
+	..setLvlDataUnreal("Poi1", 2, 1, 10.0)
+	..setLvlDataUnreal("Poi1", 3, 1, 15.0)
+	..setLvlDataInt("Poi4", 2, 4, 8)
+	..setLvlDataInt("Poi4", 3, 4, 8)
+	..setLvlDataString("abuf", 2, 0, "Bpoi,Bpsd")
+	..setLvlDataString("abuf", 3, 0, "Bpoi,Bpsd")
+	..setLvlDataUnreal("ahdu", 2, 0, 6.0)
+	..setLvlDataUnreal("ahdu", 3, 0, 7.0)
+	..setLvlDataUnreal("adur", 2, 0, 12.0)
+	..setLvlDataUnreal("adur", 3, 0, 14.0)
+	..setLvlDataString("atar", 2, 0, "air,ground,organic")
+	..setLvlDataString("atar", 3, 0, "air,ground,organic")
+	..setLvlDataString("atp1", 2, 0, "Slow Poison (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Slow Poison (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Deals 10 damage/sec for 12 seconds. |n|n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(has half duration on Heroes)|r")
+	..setLvlDataString("aub1", 3, 0, "Deals 15 damage/sec for 14 seconds. |n|n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(has half duration on Heroes)|r")
+	..setLvlDataUnreal("Poi1", 4, 1, 20.0)
+	..setLvlDataInt("Poi4", 4, 4, 8)
+	..setLvlDataString("abuf", 4, 0, "Bpoi,Bpsd")
+	..setLvlDataUnreal("ahdu", 4, 0, 8.0)
+	..setLvlDataUnreal("adur", 4, 0, 16.0)
+	..setLvlDataString("atar", 4, 0, "air,ground,organic")
+	..setLvlDataString("atp1", 4, 0, "Slow Poison (|cff00ffffLv4|r)")
+	..setLvlDataString("aub1", 4, 0, "Deals 20 damage/sec for 16 seconds. |n|n|cff6c7b8b(affects organic units only)|r |n|cff6c7b8b(has half duration on Heroes)|r")
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataString("areq", 0, 0, "R05D")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNPoisonR.blp")
+
+@compiletime function createPoisonUpgrade()
+	createObjectDefinition("w3q", 'R05D', 'Rhan')
+	..setLvlDataInt("gbpx", 0, 0, 0)
+	..setLvlDataInt("gbpy", 0, 0, 0)
+	..setLvlDataUnreal("gba1", 0, 0, 3.0)
+	..setLvlDataInt("gglb", 0, 0, 300)
+	..setLvlDataInt("glmb", 0, 0, 0)
+	..setLvlDataString("greq", 1, 0, "")
+	..setLvlDataString("ghk1", 1, 0, "Q")
+	..setLvlDataString("gnam", 1, 0, "Potency")
+	..setLvlDataString("gtp1", 1, 0, "Potency [|cffffcc00Q|r]")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n5 damage per second")
+	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionGreen.blp")
+	..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionGreen.blp")
+	..setLvlDataString("gnam", 2, 0, "Potency")
+	..setLvlDataString("gnam", 3, 0, "Potency")
+	..setLvlDataString("gtp1", 2, 0, "Potency [|cffffcc00Q|r]")
+	..setLvlDataString("gtp1", 3, 0, "Potency [|cffffcc00Q|r]")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n10 damage per second")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r |n15 damage per second")
+	..setLvlDataString("gco1", 0, 0, "A00K")
+	..setLvlDataUnreal("gmo1", 0, 0, 1.0)
+	..setLvlDataString("gef1", 0, 0, "")
+	..setLvlDataInt("gtib", 0, 0, 30)
+	..setLvlDataString("grac", 0, 0, "other")
+	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionGreen.blp")
+	..setLvlDataString("gef2", 0, 0, "rats")
+	..setLvlDataUnreal("gba2", 0, 0, 0.07) // Апает на 7% скорость атаки. Убираем или нет, надо решить.
+	..setLvlDataInt("glvl", 0, 0, 4)
+	..setLvlDataString("gnam", 4, 0, "Potency")
+	..setLvlDataString("gtp1", 4, 0, "Potency [|cffffcc00Q|r]")
+	..setLvlDataString("gco3", 0, 0, "A0XC")
+	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNPotionGreen.blp")
+	..setLvlDataInt("gglm", 0, 0, 300)
+	..setLvlDataUnreal("gmo3", 0, 0, 1.0)
+	..setLvlDataInt("gtim", 0, 0, 5)
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r |n20 damage per second")
+	..setLvlDataString("greq", 4, 0, commaList(MAIN_CASTLE_ROGUE_LVL3))
+	..setLvlDataString("greq", 3, 0, commaList(MAIN_CASTLE_ROGUE_LVL2))
+	..setLvlDataString("ghk1", 2, 0, "Q")
+	..setLvlDataString("ghk1", 4, 0, "Q")
+	..setLvlDataString("ghk1", 3, 0, "Q")
+	..setLvlDataString("gef3", 0, 0, "rlev")
+
+
+@compiletime function create_w3a_A0XE()
+	createObjectDefinition("w3a", 'A0XE', 'AId1')
+	..setLvlDataInt("aite", 0, 0, 0)
+	..setLvlDataInt("Idef", 1, 1, 0)
+	..setLvlDataString("anam", 0, 0, "Visual Poison 1")
+	..setLvlDataString("ata0", 0, 0, "weapon")
+	..setLvlDataInt("atac", 0, 0, 1)
+	..setLvlDataString("atat", 0, 0, "Model148.mdx")
+
+
+@compiletime function create_w3a_A0XF()
+	createObjectDefinition("w3a", 'A0XF', 'AId1')
+	..setLvlDataInt("aite", 0, 0, 0)
+	..setLvlDataInt("Idef", 1, 1, 0)
+	..setLvlDataString("anam", 0, 0, "Visual Poison 2")
+	..setLvlDataString("ata0", 0, 0, "hand,left")
+	..setLvlDataInt("atac", 0, 0, 1)
+	..setLvlDataString("atat", 0, 0, "Model148.mdx")
+
+function addFakePoisonSkill()
+	let u = GetEnteringUnit()
+	let id = u.getTypeId()
+	if id == ENFORCER or id == MARAUDER 
+		u.addAbility('A0XE')
+	if id == JAVELINER
+		u.addAbility('A0XF')
+
+function removeFakePoisonSkill()
+	let u = GetDyingUnit()
+	let id = u.getTypeId()
+	if id == ENFORCER or id == MARAUDER 
+		u.addAbility('A0XE')
+	if id == JAVELINER
+		u.addAbility('A0XF')
+
+
+init 
+	TriggerRegisterEnterRectSimple(poisonAdd, bj_mapInitialPlayableArea)
+	poisonAdd.addCondition(Condition(function addFakePoisonSkill))
+	poisonAdd.disable()
+	
+	TriggerRegisterAnyUnitEventBJ(poisonRemove, EVENT_PLAYER_UNIT_DEATH)
+	poisonRemove.addCondition(Condition(function removeFakePoisonSkill))
+	poisonRemove.disable()
+
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		let u = GetTriggerUnit()
+		let id = u.getTypeId()
+		if id == POISON_ID
+			let p = GetTriggerPlayer()
+			poisonAdd.enable()
+			poisonRemove.enable()
+			SetPlayerTechResearchedSwap('R05D',1, p)
+			if p == P
+				SetPlayerTechResearchedSwap('R05D',1,Z)
+				XA[1] = 'R05D'
+			if p == S
+				SetPlayerTechResearchedSwap('R05D',1,Y)
+				XA[2] = 'R05D'
+			if p == Q
+				SetPlayerTechResearchedSwap('R05D',1,U)
+				XA[3] = 'R05D'
+			if p == T
+				SetPlayerTechResearchedSwap('R05D',1,W)
+				XA[4] = 'R05D'
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+		let r = GetResearched()
+		if r == 'R05D'
+			let p = GetTriggerPlayer()
+			if p == P
+				SetPlayerTechResearchedSwap('R05D',(GetPlayerTechCountSimple('R05D',Z)+1),Z)
+			if p == S
+				SetPlayerTechResearchedSwap('R05D',(GetPlayerTechCountSimple('R05D',Y)+1),Y)
+			if p == Q
+				SetPlayerTechResearchedSwap('R05D',(GetPlayerTechCountSimple('R05D',U)+1),U)
+			if p == T
+				SetPlayerTechResearchedSwap('R05D',(GetPlayerTechCountSimple('R05D',W)+1),W)
+

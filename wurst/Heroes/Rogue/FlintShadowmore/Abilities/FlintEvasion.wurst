@@ -1,0 +1,23 @@
+package FlintEvasion
+
+import ObjectIdGenerator
+import AbilityObjEditing
+
+public let FLINT_EVASION_ID = compiletime(ABIL_ID_GEN.next())
+
+let NAME = "Evasion"
+
+@compiletime function flintEvasion()
+  new AbilityDefinitionDemonHunterEvasion(FLINT_EVASION_ID)
+  ..setLevels(7)
+  ..setName(NAME)
+  ..setTooltipLearnExtended("Gives a percent chance to avoid attacks.")
+  ..presetTooltipLearn(lvl -> "Learn " + NAME + " - [|cffffcc00Level " + lvl.toString() + "|r]")
+  ..setLevelSkipRequirement(4)
+  ..presetHotkey("")
+  ..presetButtonPosNormal(3, 0)
+  ..presetButtonPosResearch(3, 2)
+  ..presetTooltipNormalExtended(lvl -> "")
+  ..presetTooltipNormal(lvl -> NAME + " - [|cffffcc00Level " + lvl.toString() + "|r]")
+  ..setRace(Race.Human)
+  ..presetChancetoEvade(lvl -> 0.11 + lvl * 0.02)

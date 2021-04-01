@@ -1,0 +1,80 @@
+package MortarTower
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import FieldUpgrade
+import HERounds
+import MainCastleRogue
+import AnimalWarTraining
+import ArcaneShield
+import CriticalHit
+import CriticalStrike
+import DirtyFighting
+import InspirationAura
+import ShieldTraining
+
+public let MORTAR_TOWER = compiletime(UNIT_ID_GEN.next())
+
+@compiletime function create_w3u_o02F()
+	createObjectDefinition("w3u", MORTAR_TOWER, 'owtw')
+	..setString("uabi", "A07Y,Aspi," + commaList(HE_ROUNDS_ABIL))
+	..setUnreal("ua1c", 3.5)
+	..setInt("ua1s", 11)
+	..setInt("ua1b", 99)
+	..setString("ua1m", "Abilities\\Weapons\\RocketMissile\\RocketMissile.mdl")
+	..setInt("ubld", 1)
+	..setInt("ugol", 0)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("ulum", 0)
+	..setInt("udu1", 15)
+	..setString("upgr", "R05A,Rnsi,R02H," + commaList(BUILDING_ARMOR_ID, ROGUE_RANGE_WEAPON_ID))
+	..setString("udty", "fort")
+	..setInt("uwu1", 0)
+	..setInt("ucam", 1)
+	..setInt("udef", 0)
+	..setInt("uhpm", 4000)
+	..setString("ureq", "o02C")
+	..setString("uhot", "")
+	..setInt("uspe", 1)
+	..setString("urac", "human")
+	..setInt("ubpx", 0)
+	..setInt("ubpy", 2)
+	..setString("utub", "")
+	..setString("usnd", "CannonTower")
+	..setString("uani", "upgrade,second")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNFlameTower.blp")
+	..setString("unam", "Mortar Tower")
+	..setString("utip", "Build Mortar Tower")
+	..setString("ua1t", "siege")
+	..setString("umdl", "buildings\\human\\HumanTower\\HumanTower.mdl")
+	..setUnreal("uma1", 0.3)
+	..setString("ua1g", "debris,ground,item,structure,ward")
+	..setString("uarm", "Stone")
+	..setUnreal("ulpz", 150.0)
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("uscb", 0)
+	..setInt("ua1r", 1000)
+	..setUnreal("uacq", 1100.0)
+	..setInt("udup", 2)
+	..setInt("usid", 800)
+	..setString("ua2g", "air")
+	..setInt("uaen", 3)
+	..setInt("ua2r", 1000)
+	..setUnreal("urb2", 250.0)
+	..setInt("uwu2", 0)
+	..setInt("ua2z", 1000)
+	..setInt("umh2", 1)
+	..setString("ua2m", "Abilities\\Spells\\Other\\TinkerRocket\\TinkerRocketMissile.mdl")
+	..setInt("udu2", 15)
+	..setInt("ua2s", 11)
+	..setInt("ua2d", 1)
+	..setInt("ua2b", 99)
+	..setUnreal("ua2c", 3.5)
+	..setString("ua2t", "siege")
+	..setUnreal("ubs2", 0.3)
+	..setUnreal("udp2", 0.3)
+	..setString("ua2w", "missile")
+	..setInt("upoi", 400)
+	..setString("ures", commaList(FIELD_UPGRADE, ANIMAL_WAR_TRAINING, ARCANE_SHIELD, CRITICAL_HIT, CRITICAL_STRIKE, DIRTY_FIGHTING, HE_ROUNDS, INSPIRATION_AURA, SHIELD_TRAINING))
+	// ..setString("ures", "R04W,R055,R056,R057,R058,R059,R05A,R05B,R05C")

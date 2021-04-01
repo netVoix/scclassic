@@ -1,0 +1,73 @@
+package RareVenom
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import ObjectIds
+import Icons
+
+public let RARE_VENOM_ID = compiletime(ABIL_ID_GEN.next())
+public let RARE_VENOM_EFFECT_ID = compiletime(ABIL_ID_GEN.next())
+
+let NAME = "Rare Venom"
+let ICON = "ReplaceableTextures\\CommandButtons\\BTNPoisonR.blp"
+
+let EFFECT_NAME = "Venom of Nerub"
+let EFFECT_ICON = Icons.pASBTNPoisonSting
+
+
+@compiletime function rareVenom()
+  new AbilityDefinitionOrbofSpells(RARE_VENOM_ID)
+    ..setLevels(7)
+    ..setName(NAME)
+    ..setItemAbility(false)
+    ..presetButtonPosNormal(1, 0)
+    ..presetButtonPosResearch(1, 2)
+    ..presetDamageBonus(lvl -> 0.0)
+    ..presetEnabledAttackIndex(lvl -> 0)
+    ..setRace(Race.Human)
+    ..setArtTarget("")
+    ..setTargetAttachmentPoint("")
+    ..presetChanceToHitHeros(lvl -> 15.0 + lvl * 5)
+    ..presetChanceToHitSummons(lvl -> 0.0)
+    ..presetTargetsAllowed(lvl -> "{0},{1},{2}".format(TargetsAllowed.hero, TargetsAllowed.nonancient, TargetsAllowed.organic))
+    ..setMissileArt("")
+    ..presetTooltipNormal(lvl -> "Rare Venom - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..presetTooltipNormalExtended(lvl -> "")
+    ..presetEffectAbility(lvl -> RARE_VENOM_EFFECT_ID.toRawCode())
+    ..setHeroAbility(true)
+    ..presetIcon(ICON)
+    ..setRequiredLevel(1)
+    ..setLevelSkipRequirement(4)
+    ..presetTooltipLearn(lvl -> "Learn Rare Venom - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..setTooltipLearnExtended("Gives a percent chance to poison units.")
+
+@compiletime function rareVenomEffect()
+  new AbilityDefinitionSlowPoison(RARE_VENOM_EFFECT_ID)
+    ..setLevels(7)
+    ..presetAttackSpeedFactor(lvl -> 0.3)
+    ..presetMovementSpeedFactor(lvl -> 0.3)
+    ..presetDamagePerSecond(lvl -> 25.0 + lvl * 5)
+    ..setStackingType(1, 8)
+    ..setStackingType(2, 8)
+    ..setStackingType(3, 8)
+    ..setStackingType(4, 8)
+    ..setStackingType(5, 8)
+    ..setStackingType(6, 8)
+    ..setStackingType(7, 8)
+    // ..presetStackingTypes(lvl -> "8")
+    ..presetDurationHero(lvl -> 60.0)
+    ..presetDurationNormal(lvl -> 60.0)
+    ..presetTooltipNormalExtended(lvl -> "Poisones targeted unit.")
+    ..presetIcon(EFFECT_ICON)
+    ..setName(EFFECT_NAME)
+    ..presetTooltipNormal(lvl -> EFFECT_NAME + " - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..setRace(Race.Undead)
+    ..setCheckDependencies(false)
+    ..presetTargetsAllowed(lvl -> "{0},{1},{2},{3}".format(TargetsAllowed.air, TargetsAllowed.ground, TargetsAllowed.organic, TargetsAllowed.nonancient))
+    ..setLevelSkipRequirement(4)
+    ..setRequiredLevel(1)
+    ..presetButtonPosNormal(1, 1)
+    ..presetButtonPosResearch(1, 1)
+    ..presetTooltipLearn(lvl -> "Learn Strong Venom - [|cffffcc00Level " + lvl.toString() + "|r]")
+    ..setTooltipLearnExtended("Deals damage over time and slows target for 60 seconds.")
+    ..presetBuffs(lvl -> "Bspo,Bssd")

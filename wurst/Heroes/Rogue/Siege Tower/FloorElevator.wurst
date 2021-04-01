@@ -1,0 +1,108 @@
+package FloorElevator
+
+import UnitObjEditing
+import ObjectIds
+import ObjectIdGenerator
+import UnitIds
+import Abilities
+
+import public CompositeArmor
+import public FlameTongue
+import public BurningOil
+
+
+public let FLOOR_ELEVATOR_ID = compiletime(HERO_ID_GEN.next())
+
+let NAME = "Siege Tower"
+let FULLNAME = "13th Floor Elevator"
+let ICON = "ReplaceableTextures\\CommandButtons\\BTNAllianceSiegeTower.blp"
+let MODEL = "models\\SiegeTower\\SiegeTower.mdl"
+let DESCRIPTION = "|cffffcc00Special Unit (Ranged/Mechanical)|r |nStrong Vs All Units |nWeak Vs Heroes |n|n" +
+									"|cffffcc00Role:|r |cffFE8A0EPusher|r |n|n" + 
+									"|cffffcc00Can learn:|r |n" + 
+									"|cffff0000Flame Tongue|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead325-475 damage in a line|r |n  |cff6c7b8b(750-900 wave distance)|r |n|n" +
+									"|cff00ffffSpear Garrison|r |cff6c7b8b(Passive Skill)|r |n   |cffffdeadlaunches 1-7 spears at units|r |n|n" +
+									"|cff00ffffComposite Armor|r |cff6c7b8b(Passive Skill)|r |n  |cffffdead12-30% to block an attack|r |n|n" + 
+									"|cff1c86eeBurning Oil|r |cff6c7b8b(Orb Effect)|r |n  |cffffdead20-50 damage/sec for 3s|r"
+
+@compiletime function floorElevator()
+	new HeroDefinition(FLOOR_ELEVATOR_ID, UnitIds.paladinboss2)
+		..setNormalAbilities("AInv,A0ES")
+		..setHeroAbilities(commaList(FLAME_TONGUE_ID, 'A05W', COMPOSITE_ARMOR_ID, BURNING_OIL_ID))
+		..setAnimationCastBackswing(0.5)
+		..setButtonPositionX(3)
+		..setButtonPositionY(2)
+		..setDeathTimeseconds(3.0)
+		..setElevationSampleRadius(50.0)
+		..setIconGameInterface(ICON)
+		..setIconScoreScreen(ICON)
+		..setMaximumPitchAngledegrees(45.0)
+		..setModelFile(MODEL)
+		..setOrientationInterpolation(1)
+		..setProjectileImpactZ(100.0)
+		..setProjectileLaunchY(30.0)
+		..setProjectileLaunchZ(420.0)
+		..setRequiredAnimationNamesAttachments("large")
+		..setShadowImageCenterX(160.0)
+		..setShadowImageCenterY(160.0)
+		..setShadowImageHeight(420.0)
+		..setShadowImageWidth(350.0)
+		..setArtSpecial("")
+		..setAcquisitionRange(700)
+		..setAttack1AnimationBackswingPoint(0.5)
+		..setArmorSoundType(ArmorSoundType.Wood)
+		..setAttack1AnimationDamagePoint(0.13)
+		..setAttack1AttackType(AttackType.Chaos)
+		..setAttack1DamageBase(499)
+		..setAttack1DamageNumberofDice(1)
+		..setAttack1DamageSidesperDie(91)
+		..setAttack1Range(400)
+		..setAttack1TargetsAllowed("{0},{1},{2},{3},{4},{5}".format(TargetsAllowed.ground, TargetsAllowed.structure, TargetsAllowed.debris,
+																																TargetsAllowed.air, TargetsAllowed.item_t, TargetsAllowed.ward))
+		..setAttack1WeaponSound(WeaponSound.Nothing)
+		..setDefenseBase(26)
+		..setArmorType(ArmorType.Divine)
+		..setSpeedBase(220)
+		..setTurnRate(3.0)
+		..setCollisionSize(40.0)
+		..setAgilityPerLevel(1.0)
+		..setGoldBountyAwardedBase(0)
+		..setGoldBountyAwardedNumberofDice(0)
+		..setGoldBountyAwardedSidesperDie(0)
+		..setGoldCost(2750)
+		..setHitPointsMaximumBase(20000)
+		..setHitPointsRegenerationRate(5.0)
+		..setManaInitialAmount(2000)
+		..setLumberCost(0)
+		..setIntelligencePerLevel(1)
+		..setManaMaximum(250)
+		..setManaRegeneration(0.9)
+		..setPointValue(900)
+		..setPriority(3)
+		..setSightRadiusDay(1000)
+		..setStartingAgility(8)
+		..setStartingIntelligence(6)
+		..setStartingStrength(16)
+		..setStockMaximum(1)
+		..setStockReplenishInterval(600)
+		..setStrengthPerLevel(1.0)
+		..setUnitClassification("ancient,mechanical")
+		..setTooltipExtended(DESCRIPTION)
+		..setHotkey("")
+		..setName(NAME)
+		..setProperNames(FULLNAME)
+		..setTooltipBasic("Train " + NAME)
+		..setCategorizationCampaign(false)
+		..setSelectionScale(3.7)
+		..setUnitSoundSet("")
+		..setAnimationCastPoint(0.1)
+		..setScalingValue(0.9)
+		..setAttack1ProjectileArt(Abilities.catapultMissile)
+		..setAttack1ProjectileSpeed(1200)
+		..setAttack1ProjectileArc(0.05)
+		..setAttack1WeaponType(WeaponType.Missile)
+		..setSoundLoopingFadeInRate(512)
+		..setSoundLoopingFadeOutRate(512)
+		..setMovementSound("HumanSteamTankMovement")
+		..setFormationRank(2)
+		..setAttack1CooldownTime(1.6)

@@ -1,0 +1,93 @@
+package SpikedFortification
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import MortarTower
+import MercenaryCamp
+import MainCastleRogue
+
+public let SPIKED_FORTIFICATION_ID = 'nttt'
+public let SPIKED_FORTIFICATION_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+boolean array fortVzat
+
+@compiletime function create_w3u_ntnt()
+	createObjectDefinition("w3u", SPIKED_FORTIFICATION_ID, 'ntnt')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(SPIKED_FORTIFICATION_ABIL_ID))
+	..setInt("ubpx", 2)
+	..setInt("ubpy", 2)
+	..setString("uubs", "OMED")
+	..setUnreal("uocc", 0.0)
+	..setReal("ussc", 4.0)
+	..setString("umdl", "buildings\\human\\HumanLumbermill\\HumanLumbermill.mdl")
+	..setString("ushb", "ShadowHumanLumberMill")
+	..setUnreal("uacq", 0.0)
+	..setInt("udef", 2)
+	..setString("util", "*")
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setInt("ubld", 1)
+	..setString("usnd", "Workshop")
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("uhot", "C")
+	..setString("ides", "")
+	..setString("utip", "Spiked Fortifications [|cffffcc00C|r]")
+	..setString("utub", "Increases hit points of all your buildings by 2000, deals 50 damage to melee attacker and reduces spell damage by 50%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+	..setString("unam", "Lumber Mill")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNImprovedSpikedBarricades.blp")
+
+@compiletime function create_w3a_A04L()
+	createObjectDefinition("w3a", SPIKED_FORTIFICATION_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "orc")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "Increases hit points of all your buildings by 2000, deals 50 damage to melee attacker and reduces spell damage by 50%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Spiked Fortifications")
+	..setLvlDataString("atp1", 1, 0, "Spiked Fortifications")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNImprovedSpikedBarricades.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+function rogueBuildingFiler() returns boolean
+	let fid = GetFilterUnit().getTypeId()
+	return fid == MORTAR_TOWER or fid == MERCENARY_CAMP_LV1 or fid == MAIN_CASTLE_ROGUE_LVL1
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		let u = GetTriggerUnit()
+		let id = u.getTypeId()
+		if id == SPIKED_FORTIFICATION_ID
+			let p = GetTriggerPlayer()
+			let g = CreateGroup()
+			let boo = Filter(function rogueBuildingFiler)
+			GroupEnumUnitsOfPlayer(g, p, boo)
+			SetPlayerTechResearchedSwap('R02H',1, p)
+			boo.destr()
+			for u2 in g
+				u2.addAbility('A0DB')
+			g.destr()
+			fortVzat[GetPlayerId(p)] = true
+
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		let p = GetTriggerPlayer()
+		if fortVzat[GetPlayerId(p)]
+			let u = GetTriggerUnit()
+			if u.isType(UNIT_TYPE_STRUCTURE)
+				u.addAbility('A0DB')

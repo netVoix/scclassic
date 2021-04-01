@@ -35,7 +35,7 @@ import ObjectIds
 	..setUnreal("uma1", 0.05)
 	..setString("ua1m", "OrbOfFire.mdl")
 	..setInt("ua1z", 1400)
-	..setInt("ua1r", 400)
+	..setInt("ua1r", 350)
 	..setString("udty", "divine")
 	..setInt("udef", 26)
 	..setInt("umvs", 240)

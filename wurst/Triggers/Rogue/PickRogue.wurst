@@ -1,0 +1,802 @@
+package PickRogue
+import MainCastleRogue
+import FoundationRogue
+import MortarTower
+import MercenaryCamp
+import ItemsBonus
+import Garithos
+import FlintShadowmore
+import Sally
+import FloorElevator
+import Enforcer
+import Javeliner
+import RogueWizard
+import Marauder
+import PegasusRider
+import Mortar
+import CriticalHit
+import CriticalStrike
+import FieldUpgrade
+import InspirationAura
+import AnimalWarTraining
+import HERounds
+import DirtyFighting
+import ShieldTraining
+import TheLastGuardian
+import AmbushTactics
+import Axemen
+import BanishedSorcerers
+import DishonoredKnights
+import Poison
+import AntiHeroBonus
+import SpikedFortification
+import MaximumOffence
+import VeteranScum
+import DeathFromAfar
+import ClosureTimers
+import RegisterEvents
+import Outlaw
+
+function barack()
+    IssueImmediateOrderById(GetEnumUnit(),MERCENARY_CAMP_LV1)
+
+function tower()
+    IssueImmediateOrderById(GetEnumUnit(),MORTAR_TOWER)
+    
+function found()
+    IssueImmediateOrderById(GetEnumUnit(),FOUNDATION_ROGUE)
+    // if GetEnumUnit().getOwner() == S
+    //     // print("zameil")
+    //     // doAfter(2) ->         
+    //     //     LTA = ReplaceUnitBJ(GetEnumUnit(), FOUNDATION_SATYR, 3)
+    //     //     FR = LTA
+    //     let pos = GetEnumUnit().getPos()
+    //     GetEnumUnit().remove()
+    //     //FR = CreateNUnitsAtLoc(1, FOUNDATION_SATYR, GetEnumUnit().getOwner(), GetUnitLoc(GetEnumUnit()), bj_UNIT_FACING)
+    //     // FR = createUnit(S, FOUNDATION_SATYR, pos, bj_UNIT_FACING.asAngleRadians())
+    //     FR = createUnit(S, FOUNDATION_SATYR, pos, bj_UNIT_FACING.asAngleRadians())
+    //     SelectUnitForPlayerSingle(FR, S)
+
+function pickSatyr()
+    let CTOL = GetTriggerUnit()
+    let id = CTOL.getTypeId()
+    if id == MAIN_CASTLE_ROGUE_LVL1
+        EnableTrigger(HSX)
+        EnableTrigger(HJO)
+        DisableTrigger(ZU)
+        for i = 0 to 12
+            SetPlayerUnitAvailableBJ(MAIN_CASTLE_ROGUE_LVL1, false, players[i])
+        SetUnitScalePercent(GetTriggerUnit(),150.,150.,150.)
+        EnableTrigger(K4O)
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o00Y')
+        ForGroupBJ(XC[13],function barack)
+        DestroyGroup(XC[13])
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01C')
+        ForGroupBJ(XC[13],function tower)
+        DestroyGroup(XC[13])
+        XC[13]=LHN(GetOwningPlayer(GetTriggerUnit()),'o01L')
+        ForGroupBJ(XC[13],function found)
+        DestroyGroup(XC[13])
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = PICK_AURA_ROUGE
+            TB[1] = 'A0P8'
+            GX[1] = GARITHOS_ID
+            HX[1] = FLINT_SHADOWMORE_ID
+            JX[1] = SALLY_ID
+            PX[1] = FLOOR_ELEVATOR_ID
+            NX[1] = MAIN_CASTLE_ROGUE_LVL2
+            BX[1] = MAIN_CASTLE_ROGUE_LVL3
+            CX[1] = MERCENARY_CAMP_LV2
+            DX[1] = MERCENARY_CAMP_LV3
+            ZO[1] = MERCENARY_CAMP_LV4
+            FX[1] = MORTAR_TOWER
+            OE[1] = ENFORCER
+            RE[1] = JAVELINER
+            IE[1] = ROGUE_WIZARD
+            AE[1] = MARAUDER
+            UO[1] = PEGASUS_RIDER
+            YO[1] = MORTAR
+            SE[1] = ROGUE_MELEE_WEAPON_ID
+            UE[1] = ROGUE_RANGE_WEAPON_ID
+            WE[1] = BLACK_MAGIC_ID
+            TE[1] = ROGUE_ARMOR_ID
+            YE[1] = BUILDING_ARMOR_ID
+            ZE[1] = CRITICAL_HIT
+            VX[1] = CRITICAL_STRIKE
+            EX[1] = FIELD_UPGRADE
+            XX[1] = 1
+            OX[1] = INSPIRATION_AURA
+            RX[1] = ANIMAL_WAR_TRAINING
+            IX[1] = HE_ROUNDS
+            UX[1] = DIRTY_FIGHTING
+            AB[1] = SHIELD_TRAINING
+            GR[1] = OUTLAW
+            TR[1] = 12
+            KR[1] = THE_LAST_GUARDIAN_ID
+            KR[2] = AMBUSH_TACTICS_ID
+            KR[3] = AXEMEN_ID
+            KR[4] = BANISHED_SORCERERS_ID
+            KR[5] = DISHONORED_KNIGHTS_ID
+            KR[6] = ITEM_MERCHANT_BONUS_ID
+            KR[7] = POISON_ID
+            KR[8] = ANTI_HERO_ID
+            KR[9] = SPIKED_FORTIFICATION_ID
+            KR[$A] = MAXIMUM_OFFENCE_ID
+            KR[$B] = VETERAN_SCUM_ID
+            KR[$C] = DEATH_FROM_AFAR_ID
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[1]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00b7ffRogue|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(P,GetUnitLoc(LHA),0)
+                SelectUnitForPlayerSingle(LHA,P)
+                // print("P")
+            else
+                RemoveUnit(BR)
+            if GetPlayerController(P)==MAP_CONTROL_COMPUTER
+                SetPlayerName(P,"Mercenaries")
+                SetPlayerName(Z,"Mercenaries")
+                UnitRemoveAbility(GetTriggerUnit(),IR[1])
+                IR[1]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[1])
+                TB[1]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,P)
+        if GetOwningPlayer(GetTriggerUnit())==S
+            IR[2] = PICK_AURA_ROUGE
+            TB[2] = 'A0P8'
+            GX[2] = GARITHOS_ID
+            HX[2] = FLINT_SHADOWMORE_ID
+            JX[2] = SALLY_ID
+            PX[2] = FLOOR_ELEVATOR_ID
+            NX[2] = MAIN_CASTLE_ROGUE_LVL2
+            BX[2] = MAIN_CASTLE_ROGUE_LVL3
+            CX[2] = MERCENARY_CAMP_LV2
+            DX[2] = MERCENARY_CAMP_LV3
+            ZO[2] = MERCENARY_CAMP_LV4
+            FX[2] = MORTAR_TOWER
+            OE[2] = ENFORCER
+            RE[2] = JAVELINER
+            IE[2] = ROGUE_WIZARD
+            AE[2] = MARAUDER
+            UO[2] = PEGASUS_RIDER
+            YO[2] = MORTAR
+            SE[2] = ROGUE_MELEE_WEAPON_ID
+            UE[2] = ROGUE_RANGE_WEAPON_ID
+            WE[2] = BLACK_MAGIC_ID
+            TE[2] = ROGUE_ARMOR_ID
+            YE[2] = BUILDING_ARMOR_ID
+            ZE[2] = CRITICAL_HIT
+            VX[2] = CRITICAL_STRIKE
+            EX[2] = FIELD_UPGRADE
+            XX[2] = 1
+            OX[2] = INSPIRATION_AURA
+            RX[2] = ANIMAL_WAR_TRAINING
+            IX[2] = HE_ROUNDS
+            UX[2] = DIRTY_FIGHTING
+            AB[2] = SHIELD_TRAINING
+            GR[2] = OUTLAW
+            XX[2] = 1
+            OX[2] = INSPIRATION_AURA
+            RX[2] = ANIMAL_WAR_TRAINING
+            IX[2] = HE_ROUNDS
+            UX[2] = DIRTY_FIGHTING
+            AB[2] = SHIELD_TRAINING
+            GR[2] = OUTLAW
+            TR[2] = 12
+            LR[1] = THE_LAST_GUARDIAN_ID
+            LR[2] = AMBUSH_TACTICS_ID
+            LR[3] = AXEMEN_ID
+            LR[4] = BANISHED_SORCERERS_ID
+            LR[5] = DISHONORED_KNIGHTS_ID
+            LR[6] = ITEM_MERCHANT_BONUS_ID
+            LR[7] = POISON_ID
+            LR[8] = ANTI_HERO_ID
+            LR[9] = SPIKED_FORTIFICATION_ID
+            LR[$A]  = MAXIMUM_OFFENCE_ID
+            LR[$B]  = VETERAN_SCUM_ID
+            LR[$C]  = DEATH_FROM_AFAR_ID
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[2]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00b7ffRogue|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(S,GetUnitLoc(LTA),0)
+                SelectUnitForPlayerSingle(LTA,S)
+                // print("S")
+            else
+                RemoveUnit(FR)
+            if GetPlayerController(S) == MAP_CONTROL_COMPUTER
+                SetPlayerName(S,"Mercenaries")
+                SetPlayerName(Y,"Mercenaries")
+                UnitRemoveAbility(GetTriggerUnit(),IR[2])
+                IR[2]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[2])
+                TB[2]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,S)
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = PICK_AURA_ROUGE
+            TB[3] = 'A0P8'
+            GX[3] = GARITHOS_ID
+            HX[3] = FLINT_SHADOWMORE_ID
+            JX[3] = SALLY_ID
+            PX[3] = FLOOR_ELEVATOR_ID
+            NX[3] = MAIN_CASTLE_ROGUE_LVL2
+            BX[3] = MAIN_CASTLE_ROGUE_LVL3
+            CX[3] = MERCENARY_CAMP_LV2
+            DX[3] = MERCENARY_CAMP_LV3
+            ZO[3] = MERCENARY_CAMP_LV4
+            FX[3] = MORTAR_TOWER
+            OE[3] = ENFORCER
+            RE[3] = JAVELINER
+            IE[3] = ROGUE_WIZARD
+            AE[3] = MARAUDER
+            UO[3] = PEGASUS_RIDER
+            YO[3] = MORTAR
+            SE[3] = ROGUE_MELEE_WEAPON_ID
+            UE[3] = ROGUE_RANGE_WEAPON_ID
+            WE[3] = BLACK_MAGIC_ID
+            TE[3] = ROGUE_ARMOR_ID
+            YE[3] = BUILDING_ARMOR_ID
+            ZE[3] = CRITICAL_HIT
+            VX[3] = CRITICAL_STRIKE
+            EX[3] = FIELD_UPGRADE
+            XX[3] = 1
+            OX[3] = INSPIRATION_AURA
+            RX[3] = ANIMAL_WAR_TRAINING
+            IX[3] = HE_ROUNDS
+            UX[3] = DIRTY_FIGHTING
+            AB[3] = SHIELD_TRAINING
+            GR[3] = OUTLAW
+            TR[3] = 12
+            MR[1] = THE_LAST_GUARDIAN_ID
+            MR[2] = AMBUSH_TACTICS_ID
+            MR[3] = AXEMEN_ID
+            MR[4] = BANISHED_SORCERERS_ID
+            MR[5] = DISHONORED_KNIGHTS_ID
+            MR[6] = ITEM_MERCHANT_BONUS_ID
+            MR[7] = POISON_ID
+            MR[8] = ANTI_HERO_ID
+            MR[9] = SPIKED_FORTIFICATION_ID
+            MR[$A] = MAXIMUM_OFFENCE_ID
+            MR[$B] = VETERAN_SCUM_ID
+            MR[$C] = DEATH_FROM_AFAR_ID
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[3]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00b7ffRogue|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(Q,GetUnitLoc(KRA),0)
+                SelectUnitForPlayerSingle(KRA,Q)
+                // print("Q")
+            else 
+                RemoveUnit(CR)
+            if GetPlayerController(Q) == MAP_CONTROL_COMPUTER
+                SetPlayerName(Q,"Mercenaries")
+                SetPlayerName(U,"Mercenaries")
+                UnitRemoveAbility(GetTriggerUnit(),IR[3])
+                IR[3]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[3])
+                TB[3]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,Q)
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = PICK_AURA_ROUGE
+            TB[4] = 'A0P8'
+            GX[4] = GARITHOS_ID
+            HX[4] = FLINT_SHADOWMORE_ID
+            JX[4] = SALLY_ID
+            PX[4] = FLOOR_ELEVATOR_ID
+            NX[4] = MAIN_CASTLE_ROGUE_LVL2
+            BX[4] = MAIN_CASTLE_ROGUE_LVL3
+            CX[4] = MERCENARY_CAMP_LV2
+            DX[4] = MERCENARY_CAMP_LV3
+            ZO[4] = MERCENARY_CAMP_LV4
+            FX[4] = MORTAR_TOWER
+            OE[4] = ENFORCER
+            RE[4] = JAVELINER
+            IE[4] = ROGUE_WIZARD
+            AE[4] = MARAUDER
+            UO[4] = PEGASUS_RIDER
+            YO[4] = MORTAR
+            SE[4] = ROGUE_MELEE_WEAPON_ID
+            UE[4] = ROGUE_RANGE_WEAPON_ID
+            WE[4] = BLACK_MAGIC_ID
+            TE[4] = ROGUE_ARMOR_ID
+            YE[4] = BUILDING_ARMOR_ID
+            ZE[4] = CRITICAL_HIT
+            VX[4] = CRITICAL_STRIKE
+            EX[4] = FIELD_UPGRADE
+            XX[4] = 1
+            OX[4] = INSPIRATION_AURA
+            RX[4] = ANIMAL_WAR_TRAINING
+            IX[4] = HE_ROUNDS
+            UX[4] = DIRTY_FIGHTING
+            AB[4] = SHIELD_TRAINING
+            GR[4] = OUTLAW
+            TR[4] = 12
+            PR[1] = THE_LAST_GUARDIAN_ID
+            PR[2] = AMBUSH_TACTICS_ID
+            PR[3] = AXEMEN_ID
+            PR[4] = BANISHED_SORCERERS_ID
+            PR[5] = DISHONORED_KNIGHTS_ID
+            PR[6] = ITEM_MERCHANT_BONUS_ID
+            PR[7] = POISON_ID
+            PR[8] = ANTI_HERO_ID
+            PR[9] = SPIKED_FORTIFICATION_ID
+            PR[$A] = MAXIMUM_OFFENCE_ID
+            PR[$B] = VETERAN_SCUM_ID
+            PR[$C] = DEATH_FROM_AFAR_ID
+            QuestMessageBJ(bj_FORCE_ALL_PLAYERS,1,((E[4]+(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r"))+" has chosen |cff00b7ffRogue|r!"))
+            if AI == false
+                PanCameraToTimedLocForPlayer(T,GetUnitLoc(LIA),0)
+                SelectUnitForPlayerSingle(LIA,T)
+                // print("T")
+            else
+                RemoveUnit(DR)
+            if GetPlayerController(T) == MAP_CONTROL_COMPUTER
+                SetPlayerName(T,"Mercenaries")
+                SetPlayerName(W,"Mercenaries")
+                UnitRemoveAbility(GetTriggerUnit(),IR[4])
+                IR[4]='A045'
+                UnitRemoveAbility(GetTriggerUnit(),TB[4])
+                TB[4]='A0PE'
+            doAfter(2) ->
+                SetPlayerTechResearchedSwap('Rnsi',1,T)
+
+    if id == MERCENARY_CAMP_LV1
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(OE[1],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[1],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[1],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(OE[2],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[2],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[2],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(OE[3],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[3],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[3],GetTriggerUnit(),1,3)
+        else
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(OE[4],GetTriggerUnit(),2,4)
+            AddUnitToStockBJ(RE[4],GetTriggerUnit(),1,3)
+            AddUnitToStockBJ(IE[4],GetTriggerUnit(),1,3)
+        
+    if id == MERCENARY_CAMP_LV2  
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(AE[1],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == A
+                NE = 2
+                VV = (VV*.93)
+                KX[1] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],A,1,1)
+                    AddUnitToStockBJ(HX[1],A,1,1)
+                    AddUnitToStockBJ(JX[1],A,1,1)
+            if GetTriggerUnit() == N
+                BE = 2
+                JV = (JV*.93)
+                KX[2] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],N,1,1)
+                    AddUnitToStockBJ(HX[1],N,1,1)
+                    AddUnitToStockBJ(JX[1],N,1,1)
+            if GetTriggerUnit() == L
+                CE = 2
+                KV = (KV*.93)
+                KX[3] = 3
+                if YX[1] >= 2
+                    AddUnitToStockBJ(GX[1],L,1,1)
+                    AddUnitToStockBJ(HX[1],L,1,1)
+                    AddUnitToStockBJ(JX[1],L,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(AE[2],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == K
+                DE = 2
+                NV = (NV*.93)
+                KX[4] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],K,1,1)
+                    AddUnitToStockBJ(HX[2],K,1,1)
+                    AddUnitToStockBJ(JX[2],K,1,1)
+            if GetTriggerUnit() == J
+                FE = 2
+                GV = (GV*.93)
+                KX[5] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],J,1,1)
+                    AddUnitToStockBJ(HX[2],J,1,1)
+                    AddUnitToStockBJ(JX[2],J,1,1)
+            if GetTriggerUnit() == H
+                GE = 2
+                HV = (HV*.93)
+                KX[6] = 3
+                if YX[2] >= 2
+                    AddUnitToStockBJ(GX[2],H,1,1)
+                    AddUnitToStockBJ(HX[2],H,1,1)
+                    AddUnitToStockBJ(JX[2],H,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(AE[3],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == G
+                KE = 2
+                CV = (CV*.93)
+                KX[7] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],G,1,1)
+                    AddUnitToStockBJ(HX[3],G,1,1)
+                    AddUnitToStockBJ(JX[3],G,1,1)
+            if GetTriggerUnit() == F
+                JE = 2
+                BV = (BV*.93)
+                KX[8] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],F,1,1)
+                    AddUnitToStockBJ(HX[3],F,1,1)
+                    AddUnitToStockBJ(JX[3],F,1,1)
+            if GetTriggerUnit() == D
+                HE = 2
+                IV = (IV*.93)
+                KX[9] = 3
+                if YX[3] >= 2
+                    AddUnitToStockBJ(GX[3],D,1,1)
+                    AddUnitToStockBJ(HX[3],D,1,1)
+                    AddUnitToStockBJ(JX[3],D,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(AE[4],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == C
+                PE = 2
+                FV = (FV*.93)
+                KX[$A] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],C,1,1)
+                    AddUnitToStockBJ(HX[4],C,1,1)
+                    AddUnitToStockBJ(JX[4],C,1,1)
+            if GetTriggerUnit() == B
+                ME = 2
+                DV = (DV*.93)
+                KX[$B] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],B,1,1)
+                    AddUnitToStockBJ(HX[4],B,1,1)
+                    AddUnitToStockBJ(JX[4],B,1,1)
+            if GetTriggerUnit() == M
+                LE = 2
+                AV = (AV*.93)
+                KX[$C] = 3
+                if YX[4] >= 2
+                    AddUnitToStockBJ(GX[4],M,1,1)
+                    AddUnitToStockBJ(HX[4],M,1,1)
+                    AddUnitToStockBJ(JX[4],M,1,1)
+
+    if id == MERCENARY_CAMP_LV3  
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(UO[1],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == A
+                NE = 3
+                VV = (VV*.94)
+                LX[1] = 2
+                SX[1] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],A,1,1)
+            if GetTriggerUnit() == N
+                BE = 3
+                JV = (JV*.94)
+                LX[2] = 2
+                SX[2] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],N,1,1)
+            if GetTriggerUnit() == L
+                CE = 3
+                KV = (KV*.94)
+                LX[3] = 2
+                SX[3] = 2
+                if YX[1] >= 3
+                    AddUnitToStockBJ(PX[1],L,1,1)
+                
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(UO[2],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == K
+                DE = 3
+                NV = (NV*.94)
+                LX[4] = 2
+                SX[4] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],K,1,1)
+            if GetTriggerUnit() == J
+                FE = 3
+                GV = (GV*.94)
+                LX[5] = 2
+                SX[5] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],J,1,1)
+            if GetTriggerUnit() == H
+                GE = 3
+                HV = (HV*.94)
+                LX[6] = 2
+                SX[6] = 2
+                if YX[2] >= 3
+                    AddUnitToStockBJ(PX[2],H,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(UO[3],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == G
+                KE = 3
+                CV = (CV*.94)
+                LX[7] = 2
+                SX[7] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],G,1,1)
+            if GetTriggerUnit() == F
+                JE = 3
+                BV = (BV*.94)
+                LX[8] = 2
+                SX[8] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],F,1,1)
+            if GetTriggerUnit() == D
+                HE = 3
+                IV = (IV*.94)
+                LX[9] = 2
+                SX[9] = 2
+                if YX[3] >= 3
+                    AddUnitToStockBJ(PX[3],D,1,1)
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(UO[4],GetTriggerUnit(),2,2)
+            if GetTriggerUnit() == C
+                PE = 3
+                FV = (FV*.94)
+                LX[$A] = 2
+                SX[$A] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],C,1,1)
+            if GetTriggerUnit() == B
+                ME = 3
+                DV = (DV*.94)
+                LX[$B] = 2
+                SX[$B] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],B,1,1)
+            if GetTriggerUnit() == M
+                LE = 3
+                AV = (AV*.94)
+                LX[$C] = 2
+                SX[$C] = 2
+                if YX[4] >= 3
+                    AddUnitToStockBJ(PX[4],M,1,1)
+
+    if id == MERCENARY_CAMP_LV4
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            AddUnitToStockBJ(YO[1],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == A
+                NE = 4
+                VV = (VV*.95)
+                KX[1] = 4
+                MX[1] = 3
+            if GetTriggerUnit() == N
+                BE = 4
+                JV = (JV*.95)
+                KX[2] = 4
+                MX[2] = 3
+            if GetTriggerUnit() == L
+                CE = 4
+                KV = (KV*.95)
+                KX[3] = 4
+                MX[3] = 3
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            AddUnitToStockBJ(YO[2],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == K
+                DE = 4
+                NV = (NV*.95)
+                KX[4] = 4
+                MX[4] = 3
+            if GetTriggerUnit() == J
+                FE = 4
+                GV = (GV*.95)
+                KX[5] = 4
+                MX[5] = 3
+            if GetTriggerUnit() == H
+                GE = 4
+                HV = (HV*.95)
+                KX[6] = 4
+                MX[6] = 3
+
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            AddUnitToStockBJ(YO[3],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == G
+                KE = 4
+                CV = (CV*.95)
+                KX[7] = 4
+                MX[7] = 3
+            if GetTriggerUnit() == F
+                JE = 4
+                BV = (BV*.95)
+                KX[8] = 4
+                MX[8] = 3
+            if GetTriggerUnit() == D
+                HE = 4
+                IV = (IV*.95)
+                KX[9] = 4
+                MX[9] = 3
+
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            AddUnitToStockBJ(YO[4],GetTriggerUnit(),1,1) 
+            if GetTriggerUnit() == C
+                PE = 4
+                FV = (FV*.95)
+                KX[$A] = 4
+                MX[$A] = 3
+            if GetTriggerUnit() == B
+                ME = 4
+                DV = (DV*.95)
+                KX[$B] = 4
+                MX[$B] = 3
+            if GetTriggerUnit() == M
+                LE = 4
+                AV = (AV*.95)
+                KX[$C] = 4
+                MX[$C] = 3
+
+    if id ==  MAIN_CASTLE_ROGUE_LVL2 
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            CTOL.addAbility(IR[1])
+            if IR[1] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)       
+            YX[1]=2
+            if NE >= 2
+                AddUnitToStockBJ(GX[1],A,1,1)
+                AddUnitToStockBJ(HX[1],A,1,1)
+                AddUnitToStockBJ(JX[1],A,1,1)
+            if BE >= 2
+                AddUnitToStockBJ(GX[1],N,1,1)
+                AddUnitToStockBJ(HX[1],N,1,1)
+                AddUnitToStockBJ(JX[1],N,1,1)
+            if CE >= 2
+                AddUnitToStockBJ(GX[1],L,1,1)
+                AddUnitToStockBJ(HX[1],L,1,1)
+                AddUnitToStockBJ(JX[1],L,1,1) 
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            CTOL.addAbility(IR[2])
+            if IR[2] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)       
+            YX[2]=2
+            if DE >= 2
+                AddUnitToStockBJ(GX[2],K,1,1)
+                AddUnitToStockBJ(HX[2],K,1,1)
+                AddUnitToStockBJ(JX[2],K,1,1)
+            if FE >= 2
+                AddUnitToStockBJ(GX[2],J,1,1)
+                AddUnitToStockBJ(HX[2],J,1,1)
+                AddUnitToStockBJ(JX[2],J,1,1)
+            if GE >= 2
+                AddUnitToStockBJ(GX[2],H,1,1)
+                AddUnitToStockBJ(HX[2],H,1,1)
+                AddUnitToStockBJ(JX[2],H,1,1) 
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            CTOL.addAbility(IR[3])
+            if IR[3] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)       
+            YX[3]=2
+            if KE >= 2
+                AddUnitToStockBJ(GX[3],G,1,1)
+                AddUnitToStockBJ(HX[3],G,1,1)
+                AddUnitToStockBJ(JX[3],G,1,1)
+            if JE >= 2
+                AddUnitToStockBJ(GX[3],F,1,1)
+                AddUnitToStockBJ(HX[3],F,1,1)
+                AddUnitToStockBJ(JX[3],F,1,1)
+            if HE >= 2
+                AddUnitToStockBJ(GX[3],D,1,1)
+                AddUnitToStockBJ(HX[3],D,1,1)
+                AddUnitToStockBJ(JX[3],D,1,1)   
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            CTOL.addAbility(IR[4])
+            if IR[4] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)       
+            YX[4]=2
+            if PE >= 2
+                AddUnitToStockBJ(GX[4],C,1,1)
+                AddUnitToStockBJ(HX[4],C,1,1)
+                AddUnitToStockBJ(JX[4],C,1,1)
+            if ME >= 2
+                AddUnitToStockBJ(GX[4],B,1,1)
+                AddUnitToStockBJ(HX[4],B,1,1)
+                AddUnitToStockBJ(JX[4],B,1,1)
+            if LE >= 2
+                AddUnitToStockBJ(GX[4],M,1,1)
+                AddUnitToStockBJ(HX[4],M,1,1)
+                AddUnitToStockBJ(JX[4],M,1,1)
+    if id ==  MAIN_CASTLE_ROGUE_LVL3
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            CTOL.addAbility(IR[1])
+            if IR[1] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)
+            YX[1]=3
+            if NE >= 3
+                AddUnitToStockBJ(PX[1],A,1,1)
+            if BE >= 3
+                AddUnitToStockBJ(PX[1],N,1,1)
+            if CE >= 3
+                AddUnitToStockBJ(PX[1],L,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            CTOL.addAbility(IR[2])
+            if IR[2] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)
+            YX[2]=3
+            if DE >= 3
+                AddUnitToStockBJ(PX[2],K,1,1)
+            if FE >= 3
+                AddUnitToStockBJ(PX[2],J,1,1)
+            if GE >= 3
+                AddUnitToStockBJ(PX[2],H,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            CTOL.addAbility(IR[3])
+            if IR[3] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)
+            YX[3]=3
+            if KE >= 3
+                AddUnitToStockBJ(PX[3],G,1,1)
+            if JE >= 3
+                AddUnitToStockBJ(PX[3],F,1,1)
+            if HE >= 3
+                AddUnitToStockBJ(PX[3],D,1,1)
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            CTOL.addAbility(IR[4])
+            if IR[4] != PICK_AURA_ROUGE
+                CTOL.removeAbility(PICK_AURA_ROUGE)
+            YX[4]=3
+            if PE >= 3
+                AddUnitToStockBJ(PX[4],C,1,1)
+            if ME >= 3
+                AddUnitToStockBJ(PX[4],B,1,1)
+            if LE >= 3
+                AddUnitToStockBJ(PX[4],M,1,1)
+
+        
+init 
+    let t = CreateTrigger()
+    t.addCondition(Condition(function pickSatyr))
+    t.registerAnyUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH)
+
+
+ function pickaura(int abil, unit caster)
+    if abil == 'A04A' and (caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL2 or caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL3)
+        // DisableTrigger(GetTriggeringTrigger())
+        caster.removeAbility(PICK_AURA_ROUGE)
+        caster.addAbility('A068')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A068'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A068'
+    if abil == 'A09T' and (caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL2 or caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL3)
+        // DisableTrigger(GetTriggeringTrigger())
+        caster.removeAbility(PICK_AURA_ROUGE)
+        caster.addAbility('A042')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A042'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A042'
+    if abil == 'A0A8' and (caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL2 or caster.getTypeId() == MAIN_CASTLE_ROGUE_LVL3)
+        // DisableTrigger(GetTriggeringTrigger())
+        caster.removeAbility(PICK_AURA_ROUGE)
+        caster.addAbility('A0A7')
+        if GetOwningPlayer(GetTriggerUnit()) == P
+            IR[1] = 'A0A7'
+        if GetOwningPlayer(GetTriggerUnit()) == S
+            IR[2] = 'A0A7'
+        if GetOwningPlayer(GetTriggerUnit()) == Q
+            IR[3] = 'A0A7'
+        if GetOwningPlayer(GetTriggerUnit()) == T
+            IR[4] = 'A0A7'
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+        pickaura(GetSpellAbilityId(),GetTriggerUnit())

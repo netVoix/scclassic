@@ -1,0 +1,34 @@
+package FloorElevatorConnector
+
+import SoundUtils
+import FloorElevator
+
+
+let s1 = new SoundDefinition("Units\\Creeps\\Bandit\\BanditPissed1.wav", false)
+
+function addFakeSkill()
+  if GetEnteringUnit().getTypeId() == FLOOR_ELEVATOR_ID
+    GetEnteringUnit().addAbility('Apiv')
+    GetTriggeringTrigger().disable()
+
+function selectSkills()
+  let u = GetTriggerUnit()
+  if u.getTypeId() == FLOOR_ELEVATOR_ID
+    u.selectSkill(FLAME_TONGUE_ID)
+    u.selectSkill('A05W')
+    u.selectSkill(COMPOSITE_ARMOR_ID)
+    u.selectSkill(BURNING_OIL_ID)
+
+function playSound()
+  if GetEnteringUnit().getTypeId() == FLOOR_ELEVATOR_ID
+    s1.play()
+
+init
+
+  let t = CreateTrigger()
+  TriggerRegisterEnterRectSimple(t, bj_mapInitialPlayableArea)
+  t.addCondition(Condition(function playSound))   
+
+  CreateTrigger()..registerAnyUnitEvent(EVENT_PLAYER_HERO_LEVEL)
+  ..addCondition(Condition(function selectSkills))
+    

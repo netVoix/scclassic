@@ -1,0 +1,81 @@
+package InspirationAura
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import MainCastleRogue
+import DishonoredKnights
+import BlackKnights
+import Marauder
+import RegisterEvents
+
+public let INSPIRATION_AURA = compiletime(UPGD_ID_GEN.next())
+
+trigger inspir = CreateTrigger()
+
+@compiletime function create_w3q_R057()
+	createObjectDefinition("w3q", INSPIRATION_AURA, 'Rhan')
+	..setLvlDataInt("gbpy", 0, 0, 1)
+	..setLvlDataString("gef1", 0, 0, "")
+	..setLvlDataUnreal("gba1", 0, 0, 0.0)
+	..setLvlDataInt("gglb", 0, 0, 500)
+	..setLvlDataInt("glmb", 0, 0, 0)
+	..setLvlDataString("greq", 1, 0, commaList(MAIN_CASTLE_ROGUE_LVL2))
+	..setLvlDataString("ghk1", 1, 0, "D")
+	..setLvlDataString("gnam", 1, 0, "Inspiration Aura")
+	..setLvlDataString("gtp1", 1, 0, "Research Inspiration Aura (|cffff0000Lv1|r) [|cffffcc00D|r]")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r bonus damage to nearby units |n|cffffcc00Affects:|r |cffffdeadMarauder|r |n|n|cff6c7b8bLv1: +10% damage in 400 AoE |nLv2: +20% damage in 500 AoE |nLv3: +30% damage in 600 AoE |nLv4: +40% damage in 700 AoE")
+	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNPillage.blp")
+	..setLvlDataInt("glvl", 0, 0, 5)
+	..setLvlDataString("gco1", 0, 0, "A00S")
+	..setLvlDataUnreal("gmo1", 0, 0, 1.0)
+	..setLvlDataInt("gglm", 0, 0, 200)
+	..setLvlDataInt("gtim", 0, 0, 60)
+	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNPillage.blp")
+	..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNPillage.blp")
+	..setLvlDataString("gnam", 2, 0, "Inspiration Aura")
+	..setLvlDataString("gnam", 3, 0, "Inspiration Aura")
+	..setLvlDataString("gtp1", 2, 0, "Research Inspiration Aura (|cffffff00Lv2|r) [|cffffcc00D|r]")
+	..setLvlDataString("gtp1", 3, 0, "Research Inspiration Aura (|cff00ff00Lv3|r) [|cffffcc00D|r]")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r bonus damage to nearby units |n|cffffcc00Affects:|r |cffffdeadMarauder|r |n|n|cffff0000Lv1:|r |cffffcc00+10%|r damage in |cffffcc00400|r AoE |n|cff6c7b8bLv2: +20% damage in 500 AoE |nLv3: +30% damage in 600 AoE |nLv4: +40% damage in 700 AoE")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r bonus damage to nearby units |n|cffffcc00Affects:|r |cffffdeadMarauder|r |n|n|cff6c7b8bLv1: +10% damage in 400 AoE|r |n|cffffff00Lv2:|r |cffffcc00+20%|r damage in |cffffcc00500|r AoE |n|cff6c7b8bLv3: +30% damage in 600 AoE |nLv4: +40% damage in 700 AoE")
+	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNPillage.blp")
+	..setLvlDataString("gnam", 4, 0, "Inspiration Aura")
+	..setLvlDataString("gtp1", 4, 0, "Research Inspiration Aura (|cff00ffffLv4|r) [|cffffcc00D|r]")
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r bonus damage to nearby units |n|cffffcc00Affects:|r |cffffdeadBlack Knight|r |n|n|cff6c7b8bLv1: +10% damage in 400 AoE |nLv2: +20% damage in 500 AoE|r |n|cff00ff00Lv3:|r |cffffcc00+30%|r damage in |cffffcc00600|r AoE |n|cff6c7b8bLv4: +40% damage in 700 AoE")
+	..setLvlDataInt("gtib", 0, 0, 90)
+	..setLvlDataString("ghk1", 3, 0, "D")
+	..setLvlDataString("ghk1", 2, 0, "D")
+	..setLvlDataString("ghk1", 4, 0, "D")
+	..setLvlDataString("gar1", 5, 0, "ReplaceableTextures\\CommandButtons\\BTNPillage.blp")
+	..setLvlDataString("greq", 5, 0, "Rnsb")
+	..setLvlDataString("ghk1", 5, 0, "D")
+	..setLvlDataString("gnam", 5, 0, "Inspiration Aura")
+	..setLvlDataString("gtp1", 5, 0, "Inspiration Aura (Max Level)")
+	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r bonus damage to nearby units |n|cffffcc00Affects:|r |cffffdeadBlack Knight|r |n|n|cff6c7b8bLv1: +10% damage in 400 AoE |nLv2: +20% damage in 500 AoE |nLv3: +30% damage in 600 AoE|r |n|cff00ffffLv4:|r |cffffcc00+40%|r damage in |cffffcc00700|r AoE")
+	..setLvlDataString("greq", 4, 0, commaList(DISHONORED_KNIGHTS_ID))
+
+
+function addInspirSkill()
+	let u = GetEnteringUnit()
+	let id = u.getTypeId()
+	if id == BLACK_KNIGHT or id == MARAUDER
+		if (GetPlayerTechCountSimple(INSPIRATION_AURA,GetOwningPlayer(GetEnteringUnit()))==1)
+			u.addAbility('A001')
+		if (GetPlayerTechCountSimple(INSPIRATION_AURA,GetOwningPlayer(GetEnteringUnit()))==2)
+			u.addAbility('A00S')
+		if (GetPlayerTechCountSimple(INSPIRATION_AURA,GetOwningPlayer(GetEnteringUnit()))==3)
+			u.addAbility('A02T')
+		if (GetPlayerTechCountSimple(INSPIRATION_AURA,GetOwningPlayer(GetEnteringUnit()))==4)
+			u.addAbility('A091')
+
+init 
+	TriggerRegisterEnterRectSimple(inspir, bj_mapInitialPlayableArea)
+	inspir.addCondition(Condition(function addInspirSkill))
+	inspir.disable()
+
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+		let r = GetResearched()
+		if r == INSPIRATION_AURA
+			let p = GetTriggerPlayer()
+			if GetPlayerTechCountSimple(INSPIRATION_AURA, p) == 1
+				inspir.enable()

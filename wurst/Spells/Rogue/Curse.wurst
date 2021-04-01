@@ -1,0 +1,23 @@
+package Curse
+import ObjEditingNatives
+import MainCastleRogue
+import ObjectIds
+
+
+
+@compiletime function create_w3a_A0R3()
+	createObjectDefinition("w3a", 'A1R3', 'Acrs')
+	..setLvlDataString("ahky", 0, 0, "")
+	..setLvlDataString("auhk", 0, 0, "")
+	..setLvlDataString("atp1", 1, 0, "Curse")
+	..setLvlDataInt("amcs", 1, 0, 30)
+	..setLvlDataUnreal("acdn", 1, 0, 15.0)
+	..setLvlDataUnreal("Crs", 1, 1, 0.25)
+	..setLvlDataString("aub1", 1, 0, "Curses an unit, causing it to have a 25% chance to miss on an attack. |nLasts 120 seconds.")
+	..setLvlDataUnreal("ahdu", 1, 0, 10.0)
+	..setLvlDataString("atar", 1, 0, "air,enemies,ground,neutral,nonancient,nonhero,organic")
+	..setLvlDataString("aut1", 1, 0, "|cffc3dbffRight-click to turn on auto-casting.|r")
+	..setLvlDataString("auu1", 1, 0, "|cffc3dbffRight-click to turn off auto-casting.|r")
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataString("areq", 0, 0, commaList(BLACK_MAGIC_ID))
+	..setLvlDataString("arqa", 0, 0, "1")

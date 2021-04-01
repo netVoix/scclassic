@@ -1,0 +1,106 @@
+package VeteranScum
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import Brigand
+
+public let VETERAN_SCUM_ID = compiletime(UNIT_ID_GEN.next())
+public let VETERAN_SCUM_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_nmg0()
+	createObjectDefinition("w3u", VETERAN_SCUM_ID, 'nmg0')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(VETERAN_SCUM_ABIL_ID))
+	..setInt("ubpy", 1)
+	..setString("uubs", "OMED")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBandit.blp")
+	..setString("umdl", "buildings\\other\\Mercenary\\Mercenary.mdl")
+	..setUnreal("uocc", 0.0)
+	..setReal("usca", 0.7)
+	..setReal("ussc", 4.0)
+	..setString("ushb", "ShadowMercenaryCamp")
+	..setUnreal("uacq", 0.0)
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setInt("udea", 2)
+	..setString("util", "*")
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "HumanBarracks")
+	..setInt("ubld", 1)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("unam", "Mercenary Camp")
+	..setString("uhot", "A")
+	..setString("ides", "")
+	..setString("utip", "Veteran Scum [|cffffcc00A|r]")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDirty Fighting|r |n|n|cffffcc00Brigand|r replaces |cffffcc00Enforcer|r |n|cffffcc00Melee Unit|r |n+4 damage |n+75 HP |n|cffffcc00Abilities:|r |n|cff00ffffBattle Frenzy|r |cff6c7b8b(Self Spell)|r |n |cffffdead(+30% damage after a kill)|r |n|cff00ffffShield Bash|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(15% for 1 second stun)|r |n |cff6c7b8b(affects non-Hero units only)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSteel Blades|r |n|cffffdeadLeather Armor|r |n|cffffdeadCritical Strike|r |n|cffffdeadDirty Fighting|r |n|cffffdeadShield Training|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
+
+@compiletime function create_w3a_A0XK()
+	createObjectDefinition("w3a", VETERAN_SCUM_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadDirty Fighting|r |n|n|cffffcc00Brigand|r replaces |cffffcc00Enforcer|r |n|cffffcc00Melee Unit|r |n+4 damage |n+75 HP |n|cffffcc00Abilities:|r |n|cff00ffffBattle Frenzy|r |cff6c7b8b(Self Spell)|r |n |cffffdead(+30% damage after a kill)|r |n|cff00ffffShield Bash|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(15% for 1 second stun)|r |n |cff6c7b8b(affects non-Hero units only)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSteel Blades|r |n|cffffdeadLeather Armor|r |n|cffffdeadCritical Strike|r |n|cffffdeadDirty Fighting|r |n|cffffdeadShield Training|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Veteran Scum")
+	..setLvlDataString("atp1", 1, 0, "Veteran Scum")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBandit.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+function addunit(unit u)
+	let OP = u.getOwner()
+	let SOTN = u.getTypeId()
+	if SOTN == VETERAN_SCUM_ID
+		if OP == P
+			RemoveUnitFromStock(A, OE[1])
+			RemoveUnitFromStock(N, OE[1])
+			RemoveUnitFromStock(L, OE[1])
+			OE[1] = BRIGAND
+			AddUnitToStockBJ(OE[1],A,1,3)
+			AddUnitToStockBJ(OE[1],N,1,3)
+			AddUnitToStockBJ(OE[1],L,1,3)
+		if OP == S
+			RemoveUnitFromStock(H, OE[2])
+			RemoveUnitFromStock(J, OE[2])
+			RemoveUnitFromStock(K, OE[2])
+			OE[2] = BRIGAND
+			AddUnitToStockBJ(OE[2],H,1,3)
+			AddUnitToStockBJ(OE[2],J,1,3)
+			AddUnitToStockBJ(OE[2],K,1,3)
+		if OP == Q
+			RemoveUnitFromStock(D, OE[3])
+			RemoveUnitFromStock(F, OE[3])
+			RemoveUnitFromStock(G, OE[3])
+			OE[3] = BRIGAND
+			AddUnitToStockBJ(OE[3],D,1,3)
+			AddUnitToStockBJ(OE[3],F,1,3)
+			AddUnitToStockBJ(OE[3],G,1,3)
+		if OP == T 
+			RemoveUnitFromStock(C, OE[4])
+			RemoveUnitFromStock(B, OE[4])
+			RemoveUnitFromStock(M, OE[4])
+			OE[4] = BRIGAND
+			AddUnitToStockBJ(OE[4],C,1,3)
+			AddUnitToStockBJ(OE[4],B,1,3)
+			AddUnitToStockBJ(OE[4],M,1,3)
+
+
+init
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		addunit(GetTriggerUnit())

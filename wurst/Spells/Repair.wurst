@@ -2,6 +2,7 @@ package Repair
 
 import ObjEditingNatives
 import RegisterEvents
+import MercenaryCamp
 
 
 @compiletime function create_w3a_A00C()
@@ -46,7 +47,7 @@ import RegisterEvents
 
 function repairLVL4(unit u)
     let barrack = u.getTypeId()
-    if barrack == 'h010' or barrack == 'h011' or barrack == 'h012' or barrack == 'h013' or barrack == 'h014' or barrack == 'h015' or barrack == 'h016'or barrack == 'h017' or barrack == 'h018' or barrack == 'h019' or barrack == 'h01A' or barrack == 'h01B'
+    if barrack == 'h010' or barrack == 'h011' or barrack == 'h012' or barrack == 'h013' or barrack == 'h014' or barrack == 'h015' or barrack == 'h016'or barrack == 'h017' or barrack == 'h018' or barrack == 'h019' or barrack == 'h01A' or barrack == 'h01B' or barrack == MERCENARY_CAMP_LV4
         u.setAbilityLevel('A00C', 4)
 
 init

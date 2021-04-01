@@ -1,0 +1,154 @@
+package AmbushTactics
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import FlintShadowmore
+import Sally
+import Garithos
+import FloorElevator
+import Enforcer
+import Marauder
+import PegasusRider
+import Mortar
+import RegisterEvents
+import MortarTower
+import MercenaryCamp
+import MainCastleRogue
+import Javeliner
+import RogueWizard
+
+trigger inviz = CreateTrigger()
+boolean array invizVzat
+
+public let AMBUSH_TACTICS_ID = 'n991'
+public let AMBUSH_TACTICS_ABIL_ID = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_nmg1()
+	createObjectDefinition("w3u", AMBUSH_TACTICS_ID, 'nmg1')
+	..setString("urac", "human")
+	..setInt("uspe", 0)
+	..setString("uabi", "Avul," + commaList(AMBUSH_TACTICS_ABIL_ID))
+	..setInt("ubpx", 1)
+	..setString("uubs", "OMED")
+	..setUnreal("uocc", 0.0)
+	..setReal("ussc", 4.0)
+	..setUnreal("uacq", 0.0)
+	..setString("ides", "")
+	..setString("umdl", "buildings\\other\\Mercenary\\Mercenary.mdl")
+	..setReal("usca", 0.7)
+	..setString("ushb", "ShadowMercenaryCamp")
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setString("util", "*")
+	..setInt("udea", 2)
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "BuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "HumanBarracks")
+	..setInt("ubld", 1)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("upri", 2)
+	..setInt("usid", 400)
+	..setInt("usin", 400)
+	..setString("utyp", "ancient,mechanical")
+	..setString("uhot", "W")
+	..setString("unam", "Mercenary Camp")
+	..setString("utip", "Ambush Tactics [|cffffcc00W|r]")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCritical Strike|r |n+1 level of |cffffdeadAnimal War Training|r |n|nReduces spell damage to |cffffcc00Enforcer|r, |cffffcc00Javelineer|r, |cffffcc00Rogue Wizard|r and |cffffcc00Marauder|r by 25%. Your units and buildings become invisible. Unit |cff00ffffEvasion|r is increased by 5%. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic Damage|r / |cffffff00Unit Power|r")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBanditHide.blp")
+
+@compiletime function create_w3a_A0XL()
+	createObjectDefinition("w3a", AMBUSH_TACTICS_ABIL_ID, 'ACev')
+	..setLvlDataString("arac", 0, 0, "human")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadCritical Strike|r |n+1 level of |cffffdeadAnimal War Training|r |n|nReduces spell damage to |cffffcc00Enforcer|r, |cffffcc00Javelineer|r, |cffffcc00Rogue Wizard|r and |cffffcc00Marauder|r by 25%. Your units and buildings become invisible. Unit |cff00ffffEvasion|r is increased by 5%. |n|n|cffffcc00Type:|r |cffff00ffAnti Magic Damage|r / |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Ambush Tactics")
+	..setLvlDataString("atp1", 1, 0, "Ambush Tactics")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNBanditHide.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+
+
+function addInvizSkill()
+	let u = GetEnteringUnit()
+	let id = u.getTypeId()
+	if id == FLINT_SHADOWMORE_ID or id == SALLY_ID or id == GARITHOS_ID or id == FLOOR_ELEVATOR_ID
+		if GetUnitAbilityLevelSwapped('Apiv', u) == 0
+			u.addAbility('Apiv')
+	if id == ENFORCER or id == MARAUDER or id == PEGASUS_RIDER or id == MORTAR or id == JAVELINER or id == ROGUE_WIZARD
+		u.addAbility('Apiv')
+		u.addAbility('A0JQ')
+
+function rogueBuildingFiler() returns boolean
+	let fid = GetFilterUnit().getTypeId()
+	return fid == MORTAR_TOWER or fid == MERCENARY_CAMP_LV1 or fid == MAIN_CASTLE_ROGUE_LVL1
+
+init 
+	TriggerRegisterEnterRectSimple(inviz, bj_mapInitialPlayableArea)
+	inviz.addCondition(Condition(function addInvizSkill))
+	inviz.disable()
+
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		let u = GetTriggerUnit()
+		let id = u.getTypeId()
+		if id == AMBUSH_TACTICS_ID
+			let p = GetTriggerPlayer()
+			inviz.enable()
+			let g = CreateGroup()
+			let boo = Filter(function rogueBuildingFiler)
+			GroupEnumUnitsOfPlayer(g, p, boo)
+			SetPlayerTechResearchedSwap('R02S',1, p)
+			boo.destr()
+			for u2 in g
+				u2.addAbility('Apiv')
+				SetUnitVertexColorBJ(u2,'d','d','d',45.)
+			g.destr()
+			invizVzat[GetPlayerId(p)] = true
+			if p == P
+				X.addAbility('Apiv')
+				EI[1]=true
+				AC[1]=true
+				OI[1]='Apiv'
+				SetUnitVertexColorBJ(X,'d','d','d',45.)
+				SetPlayerTechResearchedSwap('R02S',1,Z)
+			if p == S
+				O.addAbility('Apiv')
+				EI[2]=true
+				AC[2]=true
+				OI[2]='Apiv'
+				SetUnitVertexColorBJ(O,'d','d','d',45.)
+				SetPlayerTechResearchedSwap('R02S',1,Y)
+			if p == Q
+				R.addAbility('Apiv')
+				EI[3]=true
+				AC[3]=true
+				OI[3]='Apiv'
+				SetUnitVertexColorBJ(R,'d','d','d',45.)
+				SetPlayerTechResearchedSwap('R02S',1,U)
+			if p == T
+				I.addAbility('Apiv')
+				EI[4]=true
+				AC[4]=true
+				OI[4]='Apiv'
+				SetUnitVertexColorBJ(I,'d','d','d',45.)
+				SetPlayerTechResearchedSwap('R02S',1,W)
+
+	registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+		let p = GetTriggerPlayer()
+		if invizVzat[GetPlayerId(p)]
+			let u = GetTriggerUnit()
+			if u.isType(UNIT_TYPE_STRUCTURE)
+				SetUnitVertexColorBJ(u,'d','d','d',45.)
+				u.addAbility('Apiv')
+

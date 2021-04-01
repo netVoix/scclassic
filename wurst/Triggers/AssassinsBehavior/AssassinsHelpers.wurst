@@ -4,8 +4,9 @@ import ClosureForGroups
 import Orders
 import Iglarion
 import Valira
+import FlintShadowmore
 
-let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', IGLARION_ID, VALEERA_ID)
+let data = asList('Hapm', 'Ogrh', 'Osam', 'Nbbc', 'Uanb', 'Ewrd', 'Ekgg', IGLARION_ID, VALEERA_ID, FLINT_SHADOWMORE_ID)
 
 unit affectedUnit
 

@@ -12,11 +12,12 @@ import public MainCastleTauren
 import public MainCastleTroll
 import public MainCastleUndead
 import public MainCastleSatyr
+import public MainCastleRogue
 
 
 public let MAIN_CASTLES = [MAIN_CASTLE_BLOOD_ELF_ID, MAIN_CASTLE_DEMON_ID, MAIN_CASTLE_DWARF_ID,
                            MAIN_CASTLE_FEL_ORC_ID, MAIN_CASTLE_GOBLIN_ID, MAIN_CASTLE_HUMAN_ID,
                            MAIN_CASTLE_NAGA_ID, MAIN_CASTLE_NIGHT_ELD_ID, MAIN_CASTLE_ORC_ID,
                            MAIN_CASTLE_TAUREN_ID, MAIN_CASTLE_TROLL_ID, CORRUPTED_TREE_OF_LIFE_LV1,
-                           MAIN_CASTLE_UNDEAD_ID]
-public let MAIN_CASTLES_SIZE = 12
+                           MAIN_CASTLE_UNDEAD_ID, MAIN_CASTLE_ROGUE_LVL1]
+public let MAIN_CASTLES_SIZE = 14

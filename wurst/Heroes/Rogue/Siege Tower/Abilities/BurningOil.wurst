@@ -1,0 +1,44 @@
+package BurningOil
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import Abilities
+import Icons
+
+
+public let BURNING_OIL_ID = compiletime(ABIL_ID_GEN.next())
+
+
+@compiletime function createBurningOil()
+	new AbilityDefinitionBallsofFire(BURNING_OIL_ID)
+		..setRace(Race.Human)
+		..setLevels(7)
+		..presetManaCost(lvl -> 0)
+		..presetTargetsAllowed(lvl -> "{0},{1},{2},{3}".format(TargetsAllowed.enemies, TargetsAllowed.ground, TargetsAllowed.neutral, TargetsAllowed.structure))
+		..setMissileArc(0.1)
+		..setMissileSpeed(1200)
+		..setMissileArt(Abilities.redDragonMissile)
+		..presetDurationHero(lvl -> 3.01)
+		..presetDurationNormal(lvl -> 3.01)
+		..presetCooldown(lvl -> 3.0)
+		..presetFullDamageInterval(lvl -> 1.0)
+		..presetHalfDamageDealt(lvl -> 0.0)
+		..presetFullDamageDealt(lvl -> 15 + lvl * 5.0)
+		..presetHalfDamageInterval(lvl -> 1.0)
+		..presetBuildingReduction(lvl -> 0.5)
+		..presetTooltipNormalExtended(lvl -> "")
+		..setButtonPositionNormalX(3)
+		..setButtonPositionResearchX(3)
+		..presetTooltipNormal(lvl -> "")
+		..presetEffects(lvl -> "Xbof")
+		..presetCastRange(lvl -> 900)
+		..presetBuffs(lvl -> "B00C")
+		..presetAreaofEffect(lvl -> 150)
+		..presetIcon(Icons.bTNWallOfFire)
+		..setHeroAbility(true)
+		..setLevelSkipRequirement(4)
+		..setRequiredLevel(1)
+		..setRequirements("")
+		..presetTooltipLearn(lvl -> "")
+		..setTooltipLearnExtended("")
+		..setMissileHomingEnabled(true)

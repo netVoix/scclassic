@@ -1,0 +1,40 @@
+package FlameTongue
+
+import ObjectIdGenerator
+import AbilityObjEditing
+import Icons
+import Abilities
+
+
+public let FLAME_TONGUE_ID = compiletime(ABIL_ID_GEN.next())
+
+let ICON = Icons.bTNFireForTheCannon
+let NAME = "Flame Tongue"
+
+@compiletime function flameTongue()
+	new AbilityDefinitionBrewmasterBreathofFire(FLAME_TONGUE_ID)
+		..setRace(Race.Human)
+		..presetIcon(ICON)
+		..setName(NAME)
+		..setArtTarget(Abilities.breathOfFireDamage)
+		..setLevelSkipRequirement(4)
+		..setLevels(7)
+		..presetHotkey("")
+		..presetTooltipLearn(lvl -> "")
+		..presetTooltipNormal(lvl -> "")
+		..presetTooltipNormalExtended(lvl -> "")
+		..presetManaCost(lvl -> 25 + lvl * 5)
+		..presetCooldown(lvl -> 45.0)
+		..presetDurationHero(lvl -> 3.0)
+		..presetDurationNormal(lvl -> 3.0)
+		..presetTargetsAllowed(lvl -> "{0},{1},{2},{3},{4}".format(TargetsAllowed.air, TargetsAllowed.enemies, TargetsAllowed.ground,
+																																TargetsAllowed.neutral, TargetsAllowed.structure))
+		..presetCastRange(lvl -> 750)
+		..presetAreaofEffect(lvl -> 200)
+		..setTooltipLearnExtended("")
+		..setMissileSpeed(900)
+		..presetDamage(lvl -> 300 + lvl * 25.0)
+		..presetDistance(lvl -> 725 + lvl * 25.0)
+		..presetFinalArea(lvl -> 300.0)
+		..presetMaxDamage(lvl -> 99999)		
+		..presetDamagePerSecond(lvl -> 20)

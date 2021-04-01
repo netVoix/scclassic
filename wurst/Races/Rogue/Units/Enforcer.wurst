@@ -1,0 +1,50 @@
+package Enforcer
+import ObjEditingNatives
+// import ObjectIdGenerator
+import ObjectIds
+import MainCastleRogue
+import CriticalStrike
+
+public let ENFORCER = 'nenf'
+
+@compiletime function create_w3u_nenf()
+	createObjectDefinition("w3u", ENFORCER, 'nenf')
+	..setString("urac", "human")
+	..setReal("ussc", 1.2)
+	..setReal("ushh", 120.0)
+	..setReal("ushw", 120.0)
+	..setReal("usca", 1.05)
+	..setInt("ubpy", 1)
+	..setUnreal("uacq", 600.0)
+	..setUnreal("ua1c", 1.7)
+	..setInt("ua1b", 22)
+	..setInt("ua1s", 5)
+	..setInt("udu1", 4)
+	..setInt("ua1r", 90)
+	..setInt("uhos", 0)
+	..setString("util", "*")
+	..setInt("umvs", 240)
+	..setUnreal("umvr", 3.0)
+	..setUnreal("ucol", 15.0)
+	..setInt("ufoo", 0)
+	..setInt("ubba", 0)
+	..setInt("ubdi", 0)
+	..setInt("ubsi", 0)
+	..setInt("ugol", 35)
+	..setUnreal("uhpr", 3.0)
+	..setInt("ulev", 3)
+	..setInt("ulum", 0)
+	..setInt("upoi", 15)
+	..setInt("upri", 3)
+	..setInt("usid", 800)
+	..setInt("usrg", 180)
+	..setInt("usst", 0)
+	..setInt("usma", 4)
+	..setString("utub", "|cffffcc00Melee Unit|r |nStrong Vs Ranged Unit |nWeak Vs Spellcaster")
+	..setString("uhot", "")
+	..setString("utip", "Train Enforcer")
+	..setString("uarm", "Wood")
+	..setString("uabi", "A0XC,A0EM,A0WN,A0WR,Agyv,AInv")
+	..setString("upgr", "R056,R05D,R02S," + commaList(ROGUE_MELEE_WEAPON_ID, ROGUE_ARMOR_ID, CRITICAL_STRIKE))
+	..setInt("udef", 0)
+	..setInt("uhpm", 525)

@@ -1,0 +1,53 @@
+package FoundationRogue
+import ObjEditingNatives
+import ObjectIdGenerator
+import MainCastleRogue
+import ObjectIds
+import AmbushTactics
+import ItemsBonus
+import Axemen
+import BanishedSorcerers
+import DeathFromAfar
+import DishonoredKnights
+import MaximumOffence
+import Poison
+import SpikedFortification
+import TheLastGuardian
+import VeteranScum
+import AntiHeroBonus
+
+public let FOUNDATION_ROGUE = compiletime(UNIT_ID_GEN.next())
+
+
+@compiletime function create_w3u_o01V()
+	createObjectDefinition("w3u", FOUNDATION_ROGUE, 'ogre')
+	..setString("ures", "")
+	..setString("utra", "")
+	..setString("uabi", "Avul")
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setString("upgr", "")
+	..setInt("ufma", 0)
+	..setString("unam", "Foundation")
+	..setString("uhot", "")
+	..setString("uupt", "" + commaList(AMBUSH_TACTICS_ID,ITEM_MERCHANT_BONUS_ID,AXEMEN_ID,BANISHED_SORCERERS_ID,DEATH_FROM_AFAR_ID,DISHONORED_KNIGHTS_ID,MAXIMUM_OFFENCE_ID,POISON_ID,SPIKED_FORTIFICATION_ID,THE_LAST_GUARDIAN_ID,VETERAN_SCUM_ID,ANTI_HERO_ID))
+	..setString("urac", "other")
+	..setInt("ugol", 0)
+	..setInt("ulum", 0)
+	..setInt("ubld", 1)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNStoneArchitecture.blp")
+	..setString("umdl", "BirthMesh.mdl")
+	..setInt("udef", 2)
+	..setString("ushb", "ShadowHouse")
+	..setReal("ussc", 4.0)
+	..setUnreal("uabr", 0.0)
+	..setString("uabt", "")
+	..setString("utyp", "mechanical")
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setUnreal("ucol", 100.0)
+	..setString("uubs", "OMED")
+	..setString("utip", "Foundation")
+	..setString("utub", "Upgrades into other structures.")
+	..setString("ureq", "" + commaList(MAIN_CASTLE_ROGUE_LVL1))
+	..setReal("usca", 0.9)
+	..setInt("ubpx", 3)
