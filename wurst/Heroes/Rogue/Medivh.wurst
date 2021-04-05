@@ -632,7 +632,7 @@ int medivItteration = 0
 	..setString("iabi", "A0SG")
 	..setString("icid", "A0SG")
 	..setString("utip", "|cff00ffffFel Stone|r  |cff6c7b8b(Lv4)|r")
-	..setString("utub", "20 dmg/s to units |n|cff6c7b8b(affects organic units only)|r |n|cff6C7B8B(600 range)|r")
+	..setString("utub", "20 dmg/s to units |n|cff6C7B8B(600 range)|r")
 
 @compiletime function create_w3t_ledg()
 	createObjectDefinition("w3t", ATIESH_ID, 'ledg')

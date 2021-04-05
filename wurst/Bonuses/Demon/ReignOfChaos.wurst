@@ -207,7 +207,7 @@ unit golemBonus = null
     ..presetNumberofShards( lvl -> 0 )
     ..presetNumberofWaves( lvl -> 0 )
     ..presetManaCost( lvl -> 0 )
-    ..presetCooldown( lvl -> (200 - (20 * lvl)).toReal() )
+    ..presetCooldown( lvl -> (260 - (20 * lvl)).toReal() )
     ..setArtEffect("")
     ..setArtTarget("")
     ..setArtCaster("")
@@ -219,7 +219,7 @@ unit golemBonus = null
     ..setIconNormal("ReplaceableTextures\\CommandButtons\\BTNRainOfFel.blp")
     ..presetCastRange(lvl-> 999999 )
     ..presetTooltipNormal(lvl -> "Drop Golem [|cffffcc00LVL "+ lvl.toString() +"|r]")
-    ..presetTooltipNormalExtended(lvl -> "Throws golems to the specified point. Required your own unit nearby. Cooldown " + ((200 - (20 * lvl)).toReal()).toString())
+    ..presetTooltipNormalExtended(lvl -> "Throws golems to the specified point. Required your own unit nearby. Cooldown " + ((260 - (20 * lvl)).toReal()).toString())
         
          
         

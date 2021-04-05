@@ -18,7 +18,9 @@ public let FIRE_BOLT_WARLOC_ID = compiletime(ABIL_ID_GEN.next())
     ..presetDurationNormal(lvl -> 0.01)
     ..presetDurationHero(lvl -> 0.01)
     ..presetTooltipNormal(lvl -> "Fire Bolt " + lvl.toString()) 
-    ..presetTooltipNormalExtended(lvl -> "Deals " + (50 * lvl).toString() + " damage and " + (10 * lvl).toString() + "% chance removes cooldown") 
+    ..presetTooltipNormalExtended(lvl -> "Deals " + (50 * lvl).toString() + " damage and " + (10 * lvl).toString() + "% chance removes cooldown")
+    ..presetTargetsAllowed(lvl ->  "air,enemies,ground,neutral,nonstructure")
+         
         
         
         
