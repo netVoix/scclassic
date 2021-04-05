@@ -8,7 +8,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "orc")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpirit Realm|r |n|n|cffffcc00Spirit Wyvern|r replaces |cffffcc00Wyvern|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff00ffffPhase Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 sec cooldown)|r |n|cff1c86eeVorpal Missiles|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(burns 50 mana on hit)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSpiritism|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffMinor Anti Hero|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpirit Realm|r |n|n|cffffcc00Spirit Wyvern|r replaces |cffffcc00Wyvern|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff00ffffPhase Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 sec cooldown)|r |n|cff01cf0bSpirit Touch|r |cff6c7b8b(Healing Spell)|r |n |cffffdead(heals 50 hp to 5 units)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSpiritism|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffMinor Anti Hero|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Spirit Wyvern")
 	..setLvlDataString("atp1", 1, 0, "Spirit Wyvern")

@@ -73,7 +73,7 @@ function additem(unit u)
             u.addItemById(FEL_STONE_ID)
         if lvl >= 20 and UnitHasItemOfTypeBJ(u, ATIESH_ID) == false
             u.addItemById(ATIESH_ID)
-    if hero == 'Eevi'
+    if hero == 'Eevi' or hero == 'Edmm'
         if lvl >= 4 and UnitHasItemOfTypeBJ(u, BLOOD_PACT_ID) == false
             u.addItemById(BLOOD_PACT_ID)
 

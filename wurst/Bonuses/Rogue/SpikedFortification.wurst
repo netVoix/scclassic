@@ -45,7 +45,7 @@ boolean array fortVzat
 	..setString("uhot", "C")
 	..setString("ides", "")
 	..setString("utip", "Spiked Fortifications [|cffffcc00C|r]")
-	..setString("utub", "Increases hit points of all your buildings by 2000, deals 50 damage to melee attacker and reduces spell damage by 50%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadField Upgrade|r |n|nIncreases hit points of all your buildings by 2000, deals 50 damage to melee attacker and reduces spell damage by 50%. |n|n|cffffcc00Type:|r |cffff00ffAnti Ultimate Weapon|r / |cff00ff00Base Defence|r")
 	..setString("unam", "Lumber Mill")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNImprovedSpikedBarricades.blp")
 

@@ -42,7 +42,7 @@ public let MAXIMUM_OFFENCE_ABIL_ID = compiletime(ABIL_ID_GEN.next())
 	..setString("unam", "Mercenary Camp")
 	..setString("uhot", "R")
 	..setString("utip", "Maximum Offence [|cffffcc00R|r]")
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadField Upgrade|r |n|nYour chosen barracks will permanently spawn two |cffffcc00Outlaws|r with each spawn wave. |n|cffffcc00Outlaw|r is a melee unit. It has |cff00ffffShield Bash|r ability which gives 15% chance to stun target for 1 second. It can use |cffffdeadCritical Strike|r and |cffffdeadShield Training|r upgrades. |n|cff6c7b8b(can capture neutral buildings)|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffa020f0Revenge on Friend|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadHE Rounds|r |n|nYour chosen barracks will permanently spawn two |cffffcc00Outlaws|r with each spawn wave. |n|cffffcc00Outlaw|r is a melee unit. It has |cff00ffffShield Bash|r ability which gives 15% chance to stun target for 1 second. It can use |cffffdeadCritical Strike|r and |cffffdeadShield Training|r upgrades. |n|cff6c7b8b(can capture neutral buildings)|r |n|n|cffffcc00Type:|r |cff00ff00Early Push|r / |cffa020f0Revenge on Friend|r")
 	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNBandits.blp")
 
 @compiletime function create_w3a_A0XN()

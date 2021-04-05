@@ -3,6 +3,7 @@ import ObjEditingNatives
 import ObjectIdGenerator
 import ObjectIds
 import MainCastleRogue
+import MaximumOffence
 
 public let HE_ROUNDS = 'R05A'
 public let HE_ROUNDS_ABIL = compiletime(UPGD_ID_GEN.next())
@@ -50,7 +51,7 @@ public let HE_ROUNDS_ABIL = compiletime(UPGD_ID_GEN.next())
 	..setLvlDataString("greq", 5, 0, "Rnsb")
 	..setLvlDataString("gub1", 5, 0, "|cffffcc00Gives:|r chance to stun on each attack |n|cffffcc00Affects:|r |cffffdeadMortar|r and |cffffdeadMortar Tower|r |n|n|cff6c7b8bLv1: 15% chance for 2.2 sec stun |nLv2: 30% chance for 2.4 sec stun |nLv3: 45% chance for 2.6 sec stun|r |n|cff00ffffLv4:|r |cffffcc0060%|r chance for |cffffcc002.8|r sec stun")
 	..setLvlDataString("grac", 0, 0, "human")
-	..setLvlDataString("greq", 4, 0, "nttt")
+	..setLvlDataString("greq", 4, 0, commaList(MAXIMUM_OFFENCE_ID))
 
 @compiletime function create_w3a_A0WS()
 	createObjectDefinition("w3a", HE_ROUNDS_ABIL, 'ACbh')

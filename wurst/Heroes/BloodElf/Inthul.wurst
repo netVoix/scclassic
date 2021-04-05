@@ -48,7 +48,7 @@ import ObjectIds
 	..setInt("ubdi", 0)
 	..setInt("ubsi", 0)
 	..setInt("ugol", 2750)
-	..setInt("uhpm", 20000)
+	..setInt("uhpm", 21000)
 	..setUnreal("uhpr", 5.0)
 	..setString("uhrt", "always")
 	..setUnreal("uinp", 1.0)

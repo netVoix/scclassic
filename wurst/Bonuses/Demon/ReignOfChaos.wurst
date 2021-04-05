@@ -1,0 +1,305 @@
+package ReignOfChaos
+import AbilityObjEditing
+import ObjectIdGenerator
+import RegisterEvents
+import ClosureForGroups
+import ClosureTimers
+
+public let GOLEM_USAGE_ID = compiletime(ABIL_ID_GEN.next())
+
+player golemUser = null
+player golemOnwer = null
+integer golemNumber = 1
+integer golemCounter = 0
+unit golemBonus = null
+
+@compiletime function create_w3u_nmrc()
+	createObjectDefinition("w3u", 'nmrc', 'nmrc')
+	..setString("urac", "undead")
+	..setString("uabi", "Abgl,Avul,A0H3")
+	..setInt("ubpy", 1)
+	..setInt("ubpx", 3)
+	..setString("umdl", "doodads\\cinematic\\ShimmeringPortal\\ShimmeringPortal.mdl")
+	..setString("uubs", "")
+	..setUnreal("uocc", 0.0)
+	..setString("uaap", "medium")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNReignChaos.blp")
+	..setReal("usca", 0.7)
+	..setReal("ussc", 4.0)
+	..setString("ushb", "")
+	..setString("uspa", "Objects\\Spawnmodels\\Undead\\UCancelDeath\\UCancelDeath.mdl")
+	..setInt("utco", -1)
+	..setUnreal("uacq", 0.0)
+	..setString("uarm", "Ethereal")
+	..setInt("udef", 2)
+	..setInt("udup", 1)
+	..setInt("udea", 2)
+	..setString("util", "*")
+	..setUnreal("ucol", 100.0)
+	..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+	..setString("upap", "unbuildable")
+	..setString("ubsl", "UndeadBuildingConstructionLoop")
+	..setInt("ulfi", 512)
+	..setInt("ulfo", 512)
+	..setString("usnd", "DemonGate")
+	..setInt("ubld", 1)
+	..setInt("ugol", 0)
+	..setInt("uhpm", 2000)
+	..setUnreal("uhpr", 1.0)
+	..setString("uhrt", "always")
+	..setInt("unbm", 0)
+	..setInt("unbr", 0)
+	..setInt("upri", 2)
+	..setString("utyp", "ancient,mechanical")
+	..setInt("usid", 600)
+	..setInt("usin", 600)
+	..setString("useu", "")
+	..setString("unam", "Dimensional Portal")
+	..setString("ides", "")
+	..setString("utip", "Reign of Chaos [|cffffcc00F|r]")
+	..setString("ures", "R03A,R039,R03B")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSoul Echo|r |n|nAfter 180 seconds you can drop |cffffcc00Infernals|r manualy. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
+	..setString("uhot", "F")
+
+@compiletime function create_w3q_R03B()
+	createObjectDefinition("w3q", 'R03B', 'Rehs')
+	..setLvlDataInt("glmb", 0, 0, 0)
+	..setLvlDataString("ghk1", 1, 0, "Q")
+	..setLvlDataString("gnam", 1, 0, "Rain of Chaos")
+	..setLvlDataString("gtp1", 1, 0, "Basic Rain of Chaos [|cffffcc00Q|r]")
+	..setLvlDataInt("gbpy", 0, 0, 0)
+	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNInfernalStone.blp")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n+6 Infernal damage")
+	..setLvlDataInt("gglb", 0, 0, 200)
+	..setLvlDataInt("glvl", 0, 0, 3)
+	..setLvlDataInt("gglm", 0, 0, 50)
+	..setLvlDataInt("gtim", 0, 0, 10)
+	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNInfernalStone.blp")
+	..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNInfernalStone.blp")
+	..setLvlDataString("gnam", 2, 0, "Rain of Chaos")
+	..setLvlDataString("gnam", 3, 0, "Rain of Chaos")
+	..setLvlDataString("gtp1", 2, 0, "Improved Rain of Chaos [|cffffcc00Q|r]")
+	..setLvlDataString("gtp1", 3, 0, "Advanced Rain of Chaos [|cffffcc00Q|r]")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n+6 Infernal damage")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r |n+6 Infernal damage")
+	..setLvlDataString("gef1", 0, 0, "ratx")
+	..setLvlDataUnreal("gba1", 0, 0, 6.0)
+	..setLvlDataUnreal("gmo1", 0, 0, 6.0)
+	..setLvlDataUnreal("gmo2", 0, 0, 25.0)
+	..setLvlDataUnreal("gba2", 0, 0, 25.0)
+	..setLvlDataInt("gtib", 0, 0, 30)
+	..setLvlDataString("grac", 0, 0, "other")
+	..setLvlDataString("gnam", 4, 0, "Rain of Chaos")
+	..setLvlDataString("gtp1", 4, 0, "Supreme Rain of Chaos [|cffffcc00Q|r]")
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r |n+10% drop rate |n+8 Infernal damage")
+	..setLvlDataString("greq", 3, 0, "o00P")
+	..setLvlDataString("greq", 4, 0, "o00P")
+	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+	..setLvlDataString("greq", 2, 0, "o00O")
+	..setLvlDataInt("gbpx", 0, 0, 0)
+	..setLvlDataString("greq", 1, 0, "")
+	..setLvlDataString("ghk1", 2, 0, "Q")
+	..setLvlDataString("ghk1", 3, 0, "Q")
+	..setLvlDataString("ghk1", 4, 0, "Q")
+
+@compiletime function create_w3q_R039()
+	createObjectDefinition("w3q", 'R039', 'Rehs')
+	..setLvlDataInt("glmb", 0, 0, 0)
+	..setLvlDataString("ghk1", 1, 0, "W")
+	..setLvlDataString("gnam", 1, 0, "Dropsites Sites")
+	..setLvlDataString("gtp1", 1, 0, "Basic Dropsites Sites [|cffffcc00W|r]")
+	..setLvlDataInt("gbpy", 0, 0, 0)
+	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n-20 seconds drop cooldown |n+2 Infernal armor")
+	..setLvlDataInt("gglb", 0, 0, 500)
+	..setLvlDataInt("glvl", 0, 0, 3)
+	..setLvlDataInt("gglm", 0, 0, 250)
+	..setLvlDataInt("gtim", 0, 0, 10)
+	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+	..setLvlDataString("gar1", 3, 0, "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp")
+	..setLvlDataString("gnam", 2, 0, "Dropsites Sites")
+	..setLvlDataString("gnam", 3, 0, "Dropsites Sites")
+	..setLvlDataString("gtp1", 2, 0, "Improved Dropsites Sites [|cffffcc00W|r]")
+	..setLvlDataString("gtp1", 3, 0, "Advanced Dropsites Sites [|cffffcc00W|r]")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n-20 seconds drop cooldown |n+2 Infernal armor")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r |n-20 seconds drop cooldown |n+2 Infernal armor")
+	..setLvlDataString("gef1", 0, 0, "rarm")
+	..setLvlDataUnreal("gba1", 0, 0, 8.0)
+	..setLvlDataUnreal("gmo1", 0, 0, 8.0)
+	..setLvlDataUnreal("gmo2", 0, 0, 25.0)
+	..setLvlDataUnreal("gba2", 0, 0, 25.0)
+	..setLvlDataInt("gtib", 0, 0, 30)
+	..setLvlDataString("grac", 0, 0, "other")
+	..setLvlDataString("gnam", 4, 0, "Legion Stamina")
+	..setLvlDataString("gtp1", 4, 0, "Supreme Legion Stamina")
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r |n+25 Felguard hit points |n+25 Vile Succubus hit points |n+25 Elite Diabolist hit points |n+25 Fel Beast hit points")
+	..setLvlDataString("greq", 3, 0, "o00P")
+	..setLvlDataString("greq", 4, 0, "o00P")
+	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNDarkSummoning.blp")
+	..setLvlDataString("greq", 2, 0, "o00O")
+	..setLvlDataInt("gbpx", 0, 0, 1)
+	..setLvlDataString("greq", 1, 0, "")
+	..setLvlDataString("ghk1", 2, 0, "W")
+	..setLvlDataString("ghk1", 3, 0, "W")
+
+@compiletime function create_w3q_R03A()
+	createObjectDefinition("w3q", 'R03A', 'Rehs')
+	..setLvlDataInt("glmb", 0, 0, 0)
+	..setLvlDataString("ghk1", 1, 0, "E")
+	..setLvlDataString("gnam", 1, 0, "Extra Shards")
+	..setLvlDataString("gtp1", 1, 0, "Basic Extra Shards [|cffffcc00E|r]")
+	..setLvlDataInt("gbpy", 0, 0, 0)
+	..setLvlDataString("gar1", 1, 0, "ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp")
+	..setLvlDataString("gub1", 1, 0, "|cffffcc00Gives:|r |n+1 Infernal drop |n+200 Infernal hit points")
+	..setLvlDataInt("gglb", 0, 0, 1000)
+	..setLvlDataInt("glvl", 0, 0, 3)
+	..setLvlDataInt("gglm", 0, 0, 250)
+	..setLvlDataInt("gtim", 0, 0, 10)
+	..setLvlDataString("gar1", 2, 0, "ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp")
+	..setLvlDataString("gar1", 3, 0,  "ReplaceableTextures\\CommandButtons\\BTNHealthStone.blp")
+	..setLvlDataString("gnam", 2, 0, "Extra Shards")
+	..setLvlDataString("gnam", 3, 0, "Extra Shards")
+	..setLvlDataString("gtp1", 2, 0, "Improved Extra Shards [|cffffcc00E|r]")
+	..setLvlDataString("gtp1", 3, 0, "Advanced Extra Shards [|cffffcc00E|r]")
+	..setLvlDataString("gub1", 2, 0, "|cffffcc00Gives:|r |n+1 Infernal drop |n+200 Infernal hit points")
+	..setLvlDataString("gub1", 3, 0, "|cffffcc00Gives:|r |n+1 Infernal drop |n+200 Infernal hit points")
+	..setLvlDataString("gef1", 0, 0, "rhpx")
+	..setLvlDataUnreal("gba1", 0, 0, 200.0)
+	..setLvlDataUnreal("gmo1", 0, 0, 200.0)
+	..setLvlDataUnreal("gmo2", 0, 0, 25.0)
+	..setLvlDataUnreal("gba2", 0, 0, 25.0)
+	..setLvlDataInt("gtib", 0, 0, 30)
+	..setLvlDataString("grac", 0, 0, "other")
+	..setLvlDataString("gnam", 4, 0, "Legion Stamina")
+	..setLvlDataString("gtp1", 4, 0, "Supreme Legion Stamina")
+	..setLvlDataString("gub1", 4, 0, "|cffffcc00Gives:|r |n+25 Felguard hit points |n+25 Vile Succubus hit points |n+25 Elite Diabolist hit points |n+25 Fel Beast hit points")
+	..setLvlDataString("greq", 1, 0, "")
+	..setLvlDataString("greq", 3, 0, "o00P")
+	..setLvlDataString("greq", 4, 0, "o00P")
+	..setLvlDataString("gar1", 4, 0, "ReplaceableTextures\\CommandButtons\\BTNDarkSummoning.blp")
+	..setLvlDataString("greq", 2, 0, "o00O")
+	..setLvlDataString("ghk1", 2, 0, "E")
+
+
+@compiletime function create_w3a_A0H3()
+	createObjectDefinition("w3a", 'A0H3', 'ACev')
+	..setLvlDataString("arac", 0, 0, "undead")
+	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+	..setLvlDataInt("abpy", 0, 0, 1)
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSoul Echo|r |n|nAfter 180 seconds you can drop |cffffcc00Infernal|r manualy. |n|cff6c7b8b(can be upgraded inside this building)|r |n|n|cffffcc00Type:|r |cffffff00Unit Power|r")
+	..setLvlDataInt("achd", 0, 0, 1)
+	..setLvlDataString("anam", 0, 0, "Reign of Chaos")
+	..setLvlDataString("atp1", 1, 0, "Reign of Chaos")
+	..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNReignChaos.blp")
+	..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+	..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+	..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+	..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+	..setLvlDataInt("abpx", 0, 0, 0)
+
+@compiletime function fire()
+    new AbilityDefinitionRainofFire(GOLEM_USAGE_ID)
+    ..setLevels(4)
+    ..presetAreaofEffect( lvl -> 250 )
+    ..presetDamage( lvl -> 0 )
+    ..presetDurationHero( lvl -> 0.1 )
+    ..presetDurationNormal( lvl -> 0.1 )
+    ..presetNumberofShards( lvl -> 0 )
+    ..presetNumberofWaves( lvl -> 0 )
+    ..presetManaCost( lvl -> 0 )
+    ..presetCooldown( lvl -> (200 - (20 * lvl)).toReal() )
+    ..setArtEffect("")
+    ..setArtTarget("")
+    ..setArtCaster("")
+    ..setArtSpecial("")
+    ..presetEffects(lvl -> "")
+    ..setHotkeyNormal("F")
+    ..setButtonPositionNormalX(3)
+    ..setButtonPositionNormalY(1)
+    ..setIconNormal("ReplaceableTextures\\CommandButtons\\BTNRainOfFel.blp")
+    ..presetCastRange(lvl-> 999999 )
+    ..presetTooltipNormal(lvl -> "Drop Golem [|cffffcc00LVL "+ lvl.toString() +"|r]")
+    ..presetTooltipNormalExtended(lvl -> "Throws golems to the specified point. Required your own unit nearby. Cooldown " + ((200 - (20 * lvl)).toReal()).toString())
+        
+         
+        
+
+function isYour() returns boolean
+    let f = GetFilterUnit()
+    let uid = f.getTypeId()
+    return (f.getOwner() == golemUser or f.getOwner() == golemOnwer) and not (uid == 'u000' or uid == 'xdum')
+
+
+function stopTimer()
+    DestroyTextTag(LI[16])
+    golemBonus.addAbility(GOLEM_USAGE_ID)
+    SetPlayerTechMaxAllowed(golemUser, 'R03B', 3)
+    SetPlayerTechMaxAllowed(golemUser, 'R03A', 3)
+    SetPlayerTechMaxAllowed(golemUser, 'R039', 3)
+    printTimedToPlayer("You can use your |cffffcc00Infernals|r now!", 6, golemUser)
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        let u = GetTriggerUnit()
+        let uid = u.getTypeId()
+        if uid == 'nmrc'
+            golemBonus = u
+            golemUser = GetTriggerPlayer()
+            if golemUser == P
+                golemOnwer = Z
+            if golemUser == S
+                golemOnwer = Y
+            if golemUser == Q
+                golemOnwer = U
+            if golemUser == T
+                golemOnwer = W
+            // u.addAbility(GOLEM_USAGE_ID)
+            SetPlayerTechMaxAllowed(golemUser, 'R03B', 0)
+            SetPlayerTechMaxAllowed(golemUser, 'R03A', 0)
+            SetPlayerTechMaxAllowed(golemUser, 'R039', 0)
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        let aid = GetSpellAbilityId()
+        if aid == GOLEM_USAGE_ID
+            let loc = GetSpellTargetLoc()
+            let vecC = vec2(GetLocationX(loc), GetLocationY(loc))
+            forNearestUnit(vecC, 400, Filter(function isYour)) x ->
+                if x != null
+                    doPeriodically(1) cb ->
+                        if golemCounter == golemNumber
+                            destroy cb
+                            golemCounter = 0
+                            RemoveLocation(loc)
+                        else
+                            // print(golemCounter)
+                            // print(golemNumber)
+                            golemCounter = golemCounter + 1
+                            let dummy = CreateUnit(golemOnwer, 'u000', GetLocationX(loc), GetLocationY(loc), 180)
+                            UnitAddAbility(dummy ,'A0H2')
+                            IssuePointOrderByIdLoc(dummy,$D0100,loc)
+                            UnitApplyTimedLifeBJ(3.,'BTLF',bj_lastCreatedUnit)
+                else
+                    let u = GetSpellAbilityUnit()
+                    u.removeAbility(GOLEM_USAGE_ID)
+                    u.addAbility(GOLEM_USAGE_ID)
+                    u.setAbilityLevel(GOLEM_USAGE_ID, GetPlayerTechCountSimple('R039', golemUser) + 1)
+                    printTimedToPlayer("You can only use this near your units!", 5, golemUser)
+
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_RESEARCH_FINISH) ->
+        let r = GetResearched()
+        if r == 'R039'
+            let u = GetTriggerUnit()
+            u.setAbilityLevel(GOLEM_USAGE_ID, GetPlayerTechCountSimple('R039', golemUser) + 1)
+        if r == 'R03A'
+            golemNumber++
+        
+        
+    let t = CreateTrigger()
+    TriggerRegisterTimerExpireEvent(t, VA)
+    t.addAction(function stopTimer)
+        
+        
+        
+        
+        

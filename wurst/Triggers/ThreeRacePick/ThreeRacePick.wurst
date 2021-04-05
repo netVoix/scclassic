@@ -3,19 +3,20 @@ package ThreeRacePick
 import LinkedList
 import CorruptedTreeOfLife
 import AllPickRace
+import MainCastleRogue
 
 public timerdialog timdia
 timer emergencyRepairAfk = CreateTimer()
 
 function emergencyRepairAfkCond()
     // print("3333")
-    for i = 1 to 13
+    for i = 1 to 14
         X.issueImmediateOrderById(XE[i])
-    for i = 1 to 13
+    for i = 1 to 14
         O.issueImmediateOrderById(XE[i])
-    for i = 1 to 13
+    for i = 1 to 14
         R.issueImmediateOrderById(XE[i])
-    for i = 1 to 13
+    for i = 1 to 14
         I.issueImmediateOrderById(XE[i])
 
 public function threeRacePick()
@@ -32,7 +33,7 @@ public function threeRacePick()
         // let name3 = GetPlayerName(S)
         // let name4 = GetPlayerName(P)
 
-        mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W', CORRUPTED_TREE_OF_LIFE_LV1)
+        mainList.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W', CORRUPTED_TREE_OF_LIFE_LV1, MAIN_CASTLE_ROGUE_LVL1)
         //minussatyr.add(CORRUPTED_TREE_OF_LIFE_LV1)
         DisableTrigger(ZU)
         RR=true

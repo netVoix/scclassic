@@ -52,7 +52,7 @@ public let FIELD_UPGRADE = 'R05C'
 	..setLvlDataString("gco4", 0, 0, "A0Q5")
 	..setLvlDataString("gef1", 0, 0, "")
 	..setLvlDataString("greq", 1, 0, commaList(MAIN_CASTLE_ROGUE_LVL2))
-	..setLvlDataString("greq", 4, 0, commaList(MAXIMUM_OFFENCE_ID))
+	..setLvlDataString("greq", 4, 0, "nttt")
 
 @compiletime function create_w3a_A0X4()
 	createObjectDefinition("w3a", 'A0X4', 'AId5')

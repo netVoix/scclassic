@@ -8,6 +8,7 @@ import RegisterEvents
 import KnightOfNightmares
 import GoodCommander
 import SatyrLeader
+import ClosureTimers
 
 public let INSTILLING_FEAR_ID = compiletime(UPGD_ID_GEN.next())
 
@@ -30,11 +31,11 @@ public let INSTILLING_FEAR_ID = compiletime(UPGD_ID_GEN.next())
     ..setTooltip(4, "Research Instilling Fear (|cff00ffffLv4|r) [|cffffcc00X|r]")
     ..setTooltip(5, "Instilling Fear (Max Level)")
     ..presetIcon(lvl -> "ReplaceableTextures\\CommandButtons\\BTNBerserkForTrolls.blp")
-    ..setTooltipExtended(1, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 10% chance on each attack when the amount of HP of the unit is less than 10%  |nLv2: 10% chance on each attack when the amount of HP of the unit is less than 20% |nLv3: 10% chance on each attack when the amount of HP of the unit is less than 30% |nLv4: 10% chance on each attack when the amount of HP of the unit is less than 40%")
-    ..setTooltipExtended(2, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cffff0000Lv1:|r 10% chance on each attack when the amount of HP of the unit is less than |cffffcc0010%|r |n|cff6c7b8bLv2: 10% chance on each attack when the amount of HP of the unit is less than 20% |nLv3: 10% chance on each attack when the amount of HP of the unit is less than 30% |nLv4: 10% chance on each attack when the amount of HP of the unit is less than 40%")
-    ..setTooltipExtended(3, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 10% chance on each attack when the amount of HP of the unit is less than 10% |r |n|cffffff00Lv2:|r 10% chance on each attack when the amount of HP of the unit is less than |cffffcc0020%|r |n|cff6c7b8bLv3: 10% chance on each attack when the amount of HP of the unit is less than 30% |nLv4: 10% chance on each attack when the amount of HP of the unit is less than 40%")
-    ..setTooltipExtended(4, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadSatyr Leader|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 10% chance on each attack when the amount of HP of the unit is less than 10%  |nLv2: 10% chance on each attack when the amount of HP of the unit is less than 20%|r |n|cff00ff00Lv3:|r 10% chance on each attack when the amount of HP of the unit is less than |cffffcc0030%|r|n|cff6c7b8bLv4: 10% chance on each attack when the amount of HP of the unit is less than 40%")
-    ..setTooltipExtended(5, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadSatyr Leader|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 10% chance on each attack when the amount of HP of the unit is less than 10%  |nLv2: 10% chance on each attack when the amount of HP of the unit is less than 20%|r |nLv3: 10% chance on each attack when the amount of HP of the unit is less than 30% |n|cff00ffffLv4:|r 10% chance on each attack when the amount of HP of the unit is less than  |cffffcc0040%|r")
+    ..setTooltipExtended(1, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 2% chance for instant kill on each attack |nLv2: 4% chance for instant kill on each attack |nLv3: 6% chance for instant kill on each attack |nLv4: 8% chance for instant kill on each attack")
+    ..setTooltipExtended(2, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cffff0000Lv1:|r  |cffffcc002%|r chance for intant kill on each attack |n|cff6c7b8bLv2: 4% chance for instant kill on each attack |nLv3: 6% chance for instant kill on each attack |nLv4: 8% chance for instant kill on each attack")
+    ..setTooltipExtended(3, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadKnight Of Nightmares|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 2% chance for instant kill on each attack |r |n|cffffff00Lv2:|r |cffffcc004%|r chance for instant kill on each attack |r |n|cff6c7b8bLv3: 6% chance for instant kill on each attack |nLv4: 8% chance for instant kill on each attack")
+    ..setTooltipExtended(4, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadSatyr Leader|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 2% chance for instant kill on each attack  |nLv2: 4% chance for instant kill on each attack |r |n|cff00ff00Lv3:|r |cffffcc006%|r chance for instant kill on each attack |r|n|cff6c7b8bLv4: 8% chance for instant kill on each attack")
+    ..setTooltipExtended(5, "|cffffcc00Gives:|r chance to take over units |n|cffffcc00Affects:|r |cffffdeadSatyr Leader|r |n|cff6c7b8b(affects non-Hero units only)|r |n|n|cff6c7b8bLv1: 2% chance for instant kill on each attack  |nLv2: 4% chance for instant kill on each attack  |nLv3: 8% chance for instant kill on each attack |r|n|cff00ffffLv4:|r  |cffffcc008%|r chance for instant kill on each attack")
     ..setRequirements(1, "" + commaList(CORRUPTED_TREE_OF_LIFE_LV2))
     ..setRequirements(4, "" + commaList(GOOD_COMMANDER_BUILDING_ID))
     ..setRequirements(5, "Rnsb")
@@ -43,13 +44,22 @@ public let INSTILLING_FEAR_ID = compiletime(UPGD_ID_GEN.next())
 function spawningRate(player p, unit r, unit a)
     if r.getTypeId() == KNIGHT_OF_NIGHTMARES_ID or r.getTypeId() ==  SATYR_LEADER_ID
         let lvl = GetPlayerTechCountSimple(INSTILLING_FEAR_ID, p)
-        if lvl > 0 and GetUnitLifePercent(a).toInt() <= (10 * lvl) and not a.isType(UNIT_TYPE_HERO) and not a.isType(UNIT_TYPE_STRUCTURE)
+        if lvl > 0 and not a.isType(UNIT_TYPE_HERO) and not a.isType(UNIT_TYPE_STRUCTURE)
             let random = GetRandomInt(1, 100)
-            for i = 1 to 10
-                if i == random
-                    a.setOwner(p, true)
-
+            if random <= (2 * lvl)
+                let t = CreateTextTagUnitBJ("Instant Kill!", r, 0,$A,255.,.0,0.,0)
+                SetTextTagVelocityBJ(t,40.,90)
+                SetTextTagPermanentBJ(t,false)
+                SetTextTagLifespanBJ(t,7.)
+                SetTextTagFadepointBJ(t,4.)
+                let eff = AddSpecialEffect("Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl", a.getX(), a.getY())
+                doAfter(0.2) ->
+                    eff.destr()
+                for i = 0 to 12 
+                    if players[i].isAllyOf(GetOwningPlayer(r)) and players[i] != GetOwningPlayer(r)
+                        players[i].addGold(50)
+                a.kill()
 
 init 
     registerPlayerUnitEvent(EVENT_PLAYER_UNIT_ATTACKED) ->
-        spawningRate(GetOwningPlayer(GetAttacker()), GetAttacker(), GetAttackedUnitBJ())
+        spawningRate(GetOwningPlayer(GetAttacker()), GetAttacker(), GetTriggerUnit())

@@ -40,7 +40,7 @@ import ObjEditingNatives
 	..setLvlDataString("arac", 0, 0, "human")
 	..setLvlDataUnreal("Eev1", 1, 1, 0.0)
 	..setLvlDataInt("abpy", 0, 0, 1)
-	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadAdvanced Guns|r |n|n|cffffcc00Flying Machine|r replaces |cffffcc00Gyrocopter|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff0000AA Heatseekers|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(400 damage to Air unit)|r |n|cff00ffffGatling Gun|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(+50% attack rate after a kill)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadGunpowder|r |n|cffffdeadMithril Armor|r |n|cffffdeadFlaming Rounds|r |n|cffffdeadAdvanced Guns|r |n|cffffdeadMissile Launchers|r |n|cffffdeadRepair Bots|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Air|r")
+	..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadMissile Launchers|r |n|n|cffffcc00Flying Machine|r replaces |cffffcc00Gyrocopter|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cffff0000AA Heatseekers|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(400 damage to Air unit)|r |n|cff00ffffGatling Gun|r |cff6c7b8b(Passive Skill)|r |n |cffffdead(+50% attack rate after a kill)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadGunpowder|r |n|cffffdeadMithril Armor|r |n|cffffdeadFlaming Rounds|r |n|cffffdeadAdvanced Guns|r |n|cffffdeadMissile Launchers|r |n|cffffdeadRepair Bots|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffAnti Air|r")
 	..setLvlDataInt("achd", 0, 0, 1)
 	..setLvlDataString("anam", 0, 0, "Flying Machines")
 	..setLvlDataString("atp1", 1, 0, "Flying Machines")

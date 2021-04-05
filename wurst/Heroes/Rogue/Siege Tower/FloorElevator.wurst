@@ -56,7 +56,7 @@ let DESCRIPTION = "|cffffcc00Special Unit (Ranged/Mechanical)|r |nStrong Vs All 
 		..setAttack1DamageBase(499)
 		..setAttack1DamageNumberofDice(1)
 		..setAttack1DamageSidesperDie(91)
-		..setAttack1Range(400)
+		..setAttack1Range(350)
 		..setAttack1TargetsAllowed("{0},{1},{2},{3},{4},{5}".format(TargetsAllowed.ground, TargetsAllowed.structure, TargetsAllowed.debris,
 																																TargetsAllowed.air, TargetsAllowed.item_t, TargetsAllowed.ward))
 		..setAttack1WeaponSound(WeaponSound.Nothing)
@@ -70,7 +70,7 @@ let DESCRIPTION = "|cffffcc00Special Unit (Ranged/Mechanical)|r |nStrong Vs All 
 		..setGoldBountyAwardedNumberofDice(0)
 		..setGoldBountyAwardedSidesperDie(0)
 		..setGoldCost(2750)
-		..setHitPointsMaximumBase(20000)
+		..setHitPointsMaximumBase(21000)
 		..setHitPointsRegenerationRate(5.0)
 		..setManaInitialAmount(2000)
 		..setLumberCost(0)

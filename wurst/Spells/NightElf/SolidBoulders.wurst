@@ -38,7 +38,7 @@ import ObjEditingNatives
 	..setLvlDataString("abuf", 4, 0, "B00K")
 	..setLvlDataUnreal("ahdu", 4, 0, 1.4)
 	..setLvlDataUnreal("adur", 4, 0, 2.8)
-	..setLvlDataString("atar", 4, 0, "air,enemies,ground,neutral")
+	..setLvlDataString("atar", 4, 0, "air,enemies,ground,neutral,nonancient")
 	..setLvlDataString("atp1", 4, 0, "Solid Boulders (|cff00ffffLv4|r)")
 	..setLvlDataString("aub1", 4, 0, "45% chance to stun for 2.8 seconds. |n|n|cff6c7b8b(has half duration on Heroes)|r")
 	..setLvlDataInt("abpx", 0, 0, 0)

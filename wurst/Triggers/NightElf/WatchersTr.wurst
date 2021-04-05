@@ -50,9 +50,10 @@ function spiritofvengeance(unit u)
     if watcher == WATCHER_ID
         let random = GetRandomInt(1, 100)
         let lvl = GetPlayerTechCountSimple('Redt', GetOwningPlayer(u))
-        for i = 1 to 15 * (lvl + 1)
-            if i == random
-                CreateNUnitsAtLoc(1, 'even', u.getOwner(), GetUnitLoc(u), bj_UNIT_FACING)
+        if random <= (20 + 20 * (lvl + 1))
+            let loc = GetUnitLoc(u)
+            CreateNUnitsAtLoc(1, 'even', u.getOwner(), loc, bj_UNIT_FACING)
+            RemoveLocation(loc)
 
 
 function addVorpalDaggers(unit u)

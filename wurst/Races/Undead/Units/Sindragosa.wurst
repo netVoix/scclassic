@@ -14,7 +14,7 @@ import ObjEditingNatives
 	..setString("ua1p", "air,enemies,ground,organic")
 	..setString("ua1t", "chaos")
 	..setUnreal("ua1c", 2.0)
-	..setInt("ua1b", 100)
+	..setInt("ua1b", 150)
 	..setString("uarm", "Wood")
 	..setInt("ua1d", 1)
 	..setUnreal("uqd1", 0.0)

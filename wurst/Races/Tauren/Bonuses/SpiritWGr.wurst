@@ -5,7 +5,7 @@ import ObjEditingNatives
 
 @compiletime function create_w3u_ostr()
 	createObjectDefinition("w3u", 'ostr', 'ostr')
-	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpirit Realm|r |n|n|cffffcc00Spirit Wyvern|r replaces |cffffcc00Wyvern|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff00ffffPhase Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 sec cooldown)|r |n|cff1c86eeVorpal Missiles|r |cff6c7b8b(Orb Effect)|r |n |cffffdead(burns 50 mana on hit)|r |n |cff6c7b8b(does not affect Special unit)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSpiritism|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffMinor Anti Hero|r")
+	..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadSpirit Realm|r |n|n|cffffcc00Spirit Wyvern|r replaces |cffffcc00Wyvern|r |n|cffffcc00Air Unit|r |n+200 HP |n|cffffcc00Abilities:|r |n|cff00ffffPhase Shift|r |cff6c7b8b(Self Spell)|r |n |cffffdead(15 sec cooldown)|r |n|cff01cf0bSpirit Touch|r |cff6c7b8b(Healing Spell)|r |n |cffffdead(heals 50 hp to 5 units)|r |n|cffffcc00Upgrades used:|r |n|cffffdeadSpiritism|r |n|cffffdeadArcanite Armor|r |n|n|cffffcc00Type:|r |cffFE8A0EAir Power|r / |cffff00ffMinor Anti Hero|r")
 	..setString("unam", "Beastiary")
 	..setString("utip", "Spirit Wyvern [|cffffcc00D|r]")
 	..setString("uhot", "D")

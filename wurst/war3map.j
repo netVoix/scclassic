@@ -1922,7 +1922,7 @@ set XE[$A]='e001'
 set XE[$B]='o00T'
 set XE[$C]='o00W'
 set XE[13]='u99T'
-set XE[14]='u99T'
+set XE[14]='o02C'
 set A=BAA
 set N=ICA
 set L=BOA
@@ -2646,60 +2646,60 @@ set bj_forLoopAIndex=1
 loop
 call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, P)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
-exitwhen bj_forLoopAIndex == 13
+exitwhen bj_forLoopAIndex == 14
 endloop
 set bj_forLoopAIndex=1
 loop
 call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, S)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
-exitwhen bj_forLoopAIndex == 13
+exitwhen bj_forLoopAIndex == 14
 endloop
 set bj_forLoopAIndex=1
 loop
 call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, Q)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
-exitwhen bj_forLoopAIndex == 13
+exitwhen bj_forLoopAIndex == 14
 endloop
 set bj_forLoopAIndex=1
 loop
 call SetPlayerUnitAvailableBJ(XE[bj_forLoopAIndex], false, T)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
-exitwhen bj_forLoopAIndex == 13
+exitwhen bj_forLoopAIndex == 14
 endloop
-set OR[1]=GetRandomInt(1,13)
+set OR[1]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[1]], true, P)
-set OR[2]=GetRandomInt(1,13)
+set OR[2]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[2]], true, S)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=50
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(PQB())then
-set OR[2]=GetRandomInt(1,13)
+set OR[2]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[2]], true, S)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-set OR[3]=GetRandomInt(1,13)
+set OR[3]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[3]], true, Q)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd='d'
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(PZB())then
-set OR[3]=GetRandomInt(1,13)
+set OR[3]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[3]], true, Q)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-set OR[4]=GetRandomInt(1,13)
+set OR[4]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[4]], true, T)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=$96
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 if(P4B())then
-set OR[4]=GetRandomInt(1,13)
+set OR[4]=GetRandomInt(1,14)
 call SetPlayerUnitAvailableBJ(XE[OR[4]], true, T)
 endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
@@ -11622,7 +11622,7 @@ function U2D takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[1])))or(GetOwningPlayer(KO[1])==Player($F))
 endfunction
 function U3D takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function U4D takes nothing returns boolean
 return(U2D())and(U3D())
@@ -11747,7 +11747,7 @@ function WID takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[2])))or(GetOwningPlayer(KO[2])==Player($F))
 endfunction
 function WAD takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt'or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4])))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt'or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4])))!=false)!=false
 endfunction
 function WND takes nothing returns boolean
 return(WID())and(WAD())
@@ -11872,7 +11872,7 @@ function WPD takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[3])))or(GetOwningPlayer(KO[3])==Player($F))
 endfunction
 function WQD takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function WSD takes nothing returns boolean
 return(WPD())and(WQD())
@@ -11997,7 +11997,7 @@ function W4D takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[4])))or(GetOwningPlayer(KO[4])==Player($F))
 endfunction
 function W5D takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function W6D takes nothing returns boolean
 return(W4D())and(W5D())
@@ -12122,7 +12122,7 @@ function YND takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[5])))or(GetOwningPlayer(KO[5])==Player($F))
 endfunction
 function YBD takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function YCD takes nothing returns boolean
 return(YND())and(YBD())
@@ -12247,7 +12247,7 @@ function YSD takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[6])))or(GetOwningPlayer(KO[6])==Player($F))
 endfunction
 function YTD takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function YUD takes nothing returns boolean
 return(YSD())and(YTD())
@@ -12372,7 +12372,7 @@ function Y6D takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[7])))or(GetOwningPlayer(KO[7])==Player($F))
 endfunction
 function Y7D takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function Y8D takes nothing returns boolean
 return(Y6D())and(Y7D())
@@ -12497,7 +12497,7 @@ function ZCD takes nothing returns boolean
 return(IsPlayerEnemy(GetOwningPlayer(GetEnteringUnit()),GetOwningPlayer(KO[8])))or(GetOwningPlayer(KO[8])==Player($F))
 endfunction
 function ZDD takes nothing returns boolean
-return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='ninf')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
+return(((IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO))or(GetUnitTypeId(GetEnteringUnit())==AE[1])or(GetUnitTypeId(GetEnteringUnit())==AE[2])or(GetUnitTypeId(GetEnteringUnit())==AE[3])or(GetUnitTypeId(GetEnteringUnit())==AE[4])or(GetUnitTypeId(GetEnteringUnit())=='ncaw')or(GetUnitTypeId(GetEnteringUnit())=='hmil')or(GetUnitTypeId(GetEnteringUnit())=='nrog')or(GetUnitTypeId(GetEnteringUnit())=='nwwg')or(GetUnitTypeId(GetEnteringUnit())=='ngsp')or(GetUnitTypeId(GetEnteringUnit())=='nftr')or(GetUnitTypeId(GetEnteringUnit())=='osw2')or(GetUnitTypeId(GetEnteringUnit())=='nplb')or(GetUnitTypeId(GetEnteringUnit())=='nspp')or(GetUnitTypeId(GetEnteringUnit())=='nzom')or(GetUnitTypeId(GetEnteringUnit())=='npfm')or(GetUnitTypeId(GetEnteringUnit())=='nwat')or(GetUnitTypeId(GetEnteringUnit())=='nmfs')or(GetUnitTypeId(GetEnteringUnit())=='narg')or(GetUnitTypeId(GetEnteringUnit())=='nsts')or(GetUnitTypeId(GetEnteringUnit())=='nitw')or(GetUnitTypeId(GetEnteringUnit())=='nfod')or(GetUnitTypeId(GetEnteringUnit())=='hspt')or(GetUnitTypeId(GetEnteringUnit())==GR[1])or(GetUnitTypeId(GetEnteringUnit())==GR[2])or(GetUnitTypeId(GetEnteringUnit())==GR[3])or(GetUnitTypeId(GetEnteringUnit())==GR[4]))!=false)!=false
 endfunction
 function ZFD takes nothing returns boolean
 return(ZCD())and(ZDD())
@@ -20626,7 +20626,7 @@ function ZKGG takes nothing returns boolean
 return(GetUnitTypeId(GetKillingUnit())=='nenf')or(GetUnitTypeId(GetKillingUnit())=='nrig')or(GetUnitTypeId(GetKillingUnit())=='nbrg')or(GetUnitTypeId(GetKillingUnit())=='nntr')or(GetUnitTypeId(GetKillingUnit())=='nmed')or(GetUnitTypeId(GetKillingUnit())=='nyym')or(GetUnitTypeId(GetKillingUnit())=='nano')or(GetUnitTypeId(GetKillingUnit())=='nlld')
 endfunction
 function ZMGG takes nothing returns boolean
-return((IsUnitType(GetDyingUnit(),UNIT_TYPE_MECHANICAL)==false)and(IsUnitAliveBJ(GetKillingUnit()))and(ZKGG()))!=false
+return((IsUnitType(GetDyingUnit(),UNIT_TYPE_MECHANICAL)==false)and(IsUnitAliveBJ(GetKillingUnit()))and(UnitItemInSlot(GetKillingUnit(), 5) == null)and(ZKGG()))!=false
 endfunction
 function ZNGG takes nothing returns boolean
 return(UnitHasItemOfTypeBJ(GetKillingUnit(),'fwss'))or(UnitHasItemOfTypeBJ(GetKillingUnit(),'bzbf'))or(UnitHasItemOfTypeBJ(GetKillingUnit(),'gmfr'))or(UnitHasItemOfTypeBJ(GetKillingUnit(),'gemt'))
@@ -25906,7 +25906,7 @@ function F7H takes nothing returns boolean
 return(GetHeroLevel(GetTriggerUnit())>=$E)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'asbl')==false)
 endfunction
 function F8H takes nothing returns boolean
-return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'tmmt')==false)
+return(GetHeroLevel(GetTriggerUnit())>=20)and(UnitHasItemOfTypeBJ(GetTriggerUnit(),'tmmm')==false)
 endfunction
 function F9H takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='Eevi')or(GetUnitTypeId(GetTriggerUnit())=='Edmm')
@@ -25972,7 +25972,7 @@ if(F7H())then
 call UnitAddItemByIdSwapped('asbl',GetTriggerUnit())
 endif
 if(F8H())then
-call UnitAddItemByIdSwapped('tmmt',GetTriggerUnit())
+call UnitAddItemByIdSwapped('tmmm',GetTriggerUnit())
 endif
 endif
 endfunction
@@ -43335,6 +43335,7 @@ function PRL takes nothing returns boolean
 return(GetOwningPlayer(GetTriggerUnit())==P)
 endfunction
 function PIL takes nothing returns boolean
+//return false
 return(GetUnitTypeId(GetTriggerUnit())=='nmrc')
 endfunction
 function PAL takes nothing returns boolean
@@ -43802,24 +43803,24 @@ endif
 else
 if(PIL())then
 call SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
-call EnableTrigger(H7O)
-call EnableTrigger(JEO)
-set HB[32]=GetTriggerUnit()
+// call EnableTrigger(H7O)
+// call EnableTrigger(JEO)
+// set HB[32]=GetTriggerUnit()
 set ZI=180.
 set MI[16]=R2I(ZI)
 call CreateTextTagUnitBJ(I2S(MI[16]),GetTriggerUnit(),100.,13.,.0,100.,.0,0)
 call ShowTextTagForceBJ(true,bj_lastCreatedTextTag,bj_FORCE_ALL_PLAYERS)
 set LI[16]=bj_lastCreatedTextTag
-set WI[1]=1
-set WI[2]=1
-set YI[1]=IF
-set YI[2]=AF
-set YI[3]=NF
-set YI[4]=BF
-set YI[5]=CF
-set YI[6]=DF
-set YI[7]=FF
-set YI[8]=GF
+// set WI[1]=1
+// set WI[2]=1
+// set YI[1]=IF
+// set YI[2]=AF
+// set YI[3]=NF
+// set YI[4]=BF
+// set YI[5]=CF
+// set YI[6]=DF
+// set YI[7]=FF
+// set YI[8]=GF
 call StartTimerBJ(VA,false,ZI)
 if(PRL())then
 set UI[1]=Z
