@@ -184,9 +184,9 @@ function removeFakePoisonSkill()
 	let u = GetDyingUnit()
 	let id = u.getTypeId()
 	if id == ENFORCER or id == MARAUDER 
-		u.addAbility('A0XE')
+		u.removeAbility('A0XE')
 	if id == JAVELINER
-		u.addAbility('A0XF')
+		u.removeAbility('A0XF')
 
 
 init 

@@ -3,7 +3,6 @@ import ObjEditingNatives
 import ObjectIds
 import MainCastleRogue
 import RegisterEvents
-import MaximumOffence
 
 public let FIELD_UPGRADE = 'R05C'
 

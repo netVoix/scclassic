@@ -10,6 +10,10 @@ import MainCastleRogue
 import MercenaryCamp
 import MortarTower
 import FoundationRogue
+import MainCastleSilithid
+import Barracks
+import PlagueSpreader
+import FoundationSilithid
 
 
 //Главка
@@ -24,7 +28,7 @@ import FoundationRogue
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "o002,o005,o007,o00B,o00A,o00E,o00N,o00K,o00Q,e001,o00T,o00W," + commaList(CORRUPTED_TREE_OF_LIFE_LV1, MAIN_CASTLE_ROGUE_LVL1))
+	..setString("uupt", "o002,o005,o007,o00B,o00A,o00E,o00N,o00K,o00Q,e001,o00T,o00W," + commaList(CORRUPTED_TREE_OF_LIFE_LV1, MAIN_CASTLE_ROGUE_LVL1, MAIN_CASTLE_SILITHID_LVL1))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
@@ -56,7 +60,7 @@ import FoundationRogue
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "h001,h003,h002,h004,h005,h000,h007,h006,h008,h00A,h009,h00B," + commaList(CORRUPTED_ANCIENT_OF_WAR_LV1, MERCENARY_CAMP_LV1))
+	..setString("uupt", "h001,h003,h002,h004,h005,h000,h007,h006,h008,h00A,h009,h00B," + commaList(CORRUPTED_ANCIENT_OF_WAR_LV1, MERCENARY_CAMP_LV1, BARRACK_LVL1))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
@@ -87,7 +91,7 @@ import FoundationRogue
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "o014,o015,o013,o011,o010,o012,o017,o018,o016,o019,o01A,o01B," + commaList(CORRUPTED_ANCIENT_PROTECTOR, MORTAR_TOWER))
+	..setString("uupt", "o014,o015,o013,o011,o010,o012,o017,o018,o016,o019,o01A,o01B," + commaList(CORRUPTED_ANCIENT_PROTECTOR, MORTAR_TOWER,PLAGUE_SPREADER_ID))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)
@@ -119,7 +123,7 @@ import FoundationRogue
 	..setInt("ufma", 0)
 	..setString("unam", "Foundation")
 	..setString("uhot", "")
-	..setString("uupt", "o01M,o01N,o01O,o01P,o01Q,o01R,o01S,o01T,o01U,o01V,o01W,o01X," + commaList(FOUNDATION_SATYR, FOUNDATION_ROGUE))
+	..setString("uupt", "o01M,o01N,o01O,o01P,o01Q,o01R,o01S,o01T,o01U,o01V,o01W,o01X," + commaList(FOUNDATION_SATYR,FOUNDATION_ROGUE,FOUNDATION_SILITHID))
 	..setString("urac", "other")
 	..setInt("ugol", 0)
 	..setInt("ulum", 0)

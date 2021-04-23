@@ -36,6 +36,10 @@ import Whirlwind
 import ValeeraSWrath
 import PoisonedWeapons
 import SmokeBomb
+import SwarmCaretaker
+import RoyalBeetle
+import SwarmQueen
+import ElderCultist
 
 
 function selectSkill(unit u)
@@ -100,6 +104,36 @@ function selectSkill(unit u)
 		u.selectSkill('A02P')
 		u.selectSkill(FLAMES_TOTEM_SU_ID)
 		u.selectSkill('A0NU')
+	if hero == SWARM_CARETAKER_ID
+		u.selectSkill('AUau')
+		u.selectSkill('AUcs')
+		u.selectSkill('A0RH')
+		u.selectSkill(SWARM_CARETAKER_PARASITE_ID)
+	if hero == ROYAL_BEETLE_ID
+		u.selectSkill('AOws')
+		u.selectSkill('AEah')
+		u.selectSkill('A04V')
+	if hero == SWARM_QUEEN_ID
+		u.selectSkill('AEar')
+		u.selectSkill('A0M2')
+		u.selectSkill(BLACK_VENOM_ID)
+		let lvl = GetHeroLevel(u)
+		if lvl >= 4 and (u.hasAbility(TRIPLESHOT_ID)) == false
+			u.addAbility(TRIPLESHOT_ID)
+			u.addAbility(TRIPLESHOT_DEBUFF_ID)
+		if lvl == 16
+			u.removeAbility(TRIPLESHOT_DEBUFF_ID)
+			u.addAbility(TRIPLESHOT_DEBUFF2_ID)
+		if lvl == 28
+			u.removeAbility(TRIPLESHOT_DEBUFF2_ID)
+			u.addAbility(TRIPLESHOT_DEBUFF3_ID)
+	if hero == ELDER_CULTIST_ID
+		u.selectSkill(ELDER_CULTIST_SWARM_ID)
+		u.selectSkill(ELDER_CULTIST_SLOW_AURA_ID)
+		u.selectSkill(ELDER_CULTIST_DRAIN_ID)
+		let lvl = GetHeroLevel(u)
+		if lvl >= 4 and (u.hasAbility(ELDER_PYLON_FAKE_ID)) == false
+			u.addAbility(ELDER_PYLON_FAKE_ID)
 		// let tp = GetOwningPlayer(u)
 		// for i = 0 to 12 
 		// 	if players[i].isAllyOf(tp) and players[i] != tp and u.getLevel() == 2

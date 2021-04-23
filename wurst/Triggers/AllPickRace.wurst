@@ -5,6 +5,7 @@ import RegisterEvents
 import ChannelAbilityPreset
 import ClosureForGroups
 import MainCastleRogue
+import MainCastleSilithid
 
 
 public button alliance 
@@ -22,10 +23,10 @@ public let CHOOSE_FACTION_ID = compiletime(ABIL_ID_GEN.next())
 function allPickRace()
     if GetClickedButton() == GO
         DialogClear(FO)
-        allrace.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W',CORRUPTED_TREE_OF_LIFE_LV1, MAIN_CASTLE_ROGUE_LVL1)
+        allrace.add('o002','o005','o007','o00B','o00A','o00E','o00N','o00K','o00Q','e001','o00T','o00W',CORRUPTED_TREE_OF_LIFE_LV1, MAIN_CASTLE_ROGUE_LVL1, MAIN_CASTLE_SILITHID_LVL1)
         allianceL.add('o002','o005', MAIN_CASTLE_ROGUE_LVL1)
         hordeL.add('o00B','o00A','o00E','o007')
-        chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1)
+        chaosL.add('o00N','o00K','o00Q',CORRUPTED_TREE_OF_LIFE_LV1,MAIN_CASTLE_SILITHID_LVL1)
         ancientsL.add('e001','o00T','o00W')
         DialogAddButtonBJ(FO, "|cff0099ffAlliance|r")
         alliance = GetLastCreatedButtonBJ()

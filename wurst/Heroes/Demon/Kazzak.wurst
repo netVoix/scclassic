@@ -84,7 +84,7 @@ function pricklyrootsuse(unit attaker, unit attaked)
 	let lvl = GetHeroLevel(attaker)
 	let lvla = GetUnitAbilityLevel(attaker, 'A0M9')
 	if attaker.getTypeId() == 'Ucrl' and not attaked.isType(UNIT_TYPE_STRUCTURE) and lvl >= 2 and GetUnitLifePercent(attaked) - 0.05 - 0.05 * lvla > 0
-		SetUnitLifePercentBJ(attaked, GetUnitLifePercent(attaked) - 0.05 - 0.05 * lvla)
+		SetUnitLifePercentBJ(attaked, GetUnitLifePercent(attaked) - 0.025 - 0.025 * lvla)
 
 
 init

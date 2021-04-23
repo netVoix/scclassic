@@ -10,12 +10,20 @@ import Valira
 import ThistForMagic
 import XZ
 import TechnologicalBreakthrought
+import SwarmCaretaker
+import RoyalBeetle
+import SwarmQueen
+import ElderCultist
 
 let XAVIUS_SOUND = CreateSound("Units\\Creeps\\Satyr\\SatyreReady1.wav",false,false,false,$A,$A,"DefaultEAXON")
 let KEPERETER_SOUND = CreateSound("Units\\Undead\\Necromancer\\NecromancerYesAttack3.wav",false,false,false,$A,$A,"DefaultEAXON")
 let ELERET_SOUND1 = CreateSound("Units\\NightElf\\Maiev\\MaievYesAttack1.wav",false,false,false,$A,$A,"DefaultEAXON")
 let ELERET_SOUND2 = CreateSound("Units\\NightElf\\Maiev\\MaievYesAttack3.wav",false,false,false,$A,$A,"DefaultEAXON")
 let ILGINOT_SOUND = CreateSound("Units\\Creeps\\SludgeMonster\\SludgeBeastDeath1.wav",false,false,false,$A,$A,"DefaultEAXON")
+let HAZZALI_SOUND = CreateSound("Units\\Undead\\CryptFiend\\CryptFiendYesAttack2.wav",false,false,false,$A,$A,"DefaultEAXON")
+let ZARA_SOUND = CreateSound("SwarmQueen.mp3",false,false,false,$7F,$7F,"DefaultEAXON")
+let ASHI1_SOUND = CreateSound("Units\\Undead\\Varimathras\\VarimathrasYesAttack1.wav",false,false,false,$A,$A,"DefaultEAXON")
+let ASHI2_SOUND = CreateSound("Units\\Undead\\Varimathras\\VarimathrasYesAttack2.wav",false,false,false,$A,$A,"DefaultEAXON")
 
 
 function heroSound()
@@ -41,6 +49,18 @@ function heroSound()
             PlaySoundBJ(VALEERA_SOUND2)
         if id == XZ_ID
             PlaySoundBJ(XZ_SOUND)
+        if id == SWARM_CARETAKER_ID
+            PlaySoundBJ(SWARM_CARETAKER_SOUND)
+        if id == ROYAL_BEETLE_ID
+            PlaySoundBJ(HAZZALI_SOUND)
+        if id == SWARM_QUEEN_ID
+            PlaySoundBJ(ZARA_SOUND)
+        if id == ELDER_CULTIST_ID
+            let i = GetRandomInt(1, 2)
+            if i == 1
+                PlaySoundBJ(ASHI1_SOUND)
+            else
+                PlaySoundBJ(ASHI2_SOUND)
 
 
         
@@ -65,3 +85,10 @@ init
     SetSoundDuration(ILGINOT_SOUND,5374)
     SetSoundChannel(ILGINOT_SOUND,0)
     SetSoundPitch(ILGINOT_SOUND,1.)
+    SetSoundDuration(HAZZALI_SOUND,5374)
+    SetSoundChannel(HAZZALI_SOUND,0)
+    SetSoundPitch(HAZZALI_SOUND,1.)
+    SetSoundDuration(ZARA_SOUND,5374)
+    SetSoundChannel(ZARA_SOUND,0)
+    SetSoundPitch(ZARA_SOUND,1.)
+    SetSoundVolume(ZARA_SOUND,200)

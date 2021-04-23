@@ -1,0 +1,157 @@
+package SwarmCaretaker
+import AbilityObjEditing
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import Orders
+import ClosureTimers
+
+public let SWARM_CARETAKER_ID = 'Olld'
+public let SWARM_CARETAKER_PARASITE_ID = compiletime(ABIL_ID_GEN.next())
+public let DUMMY_PARASITE_ID = compiletime(ABIL_ID_GEN.next())
+
+public sound SWARM_CARETAKER_SOUND = CreateSound("NagaMyrmadonYesAttack3.wav",false,false,false,$7F,$7F,"DefaultEAXON")
+integer parasitItteration = 0
+
+@compiletime function create_w3u_Ogld()
+    createObjectDefinition("w3u", SWARM_CARETAKER_ID, 'Ogld')
+    ..setInt("ucam", 0)
+    ..setString("uabi", "AInv,A016,A0ES")
+    ..setInt("ubpx", 2)
+    ..setInt("ubpy", 2)
+    ..setUnreal("uacq", 700.0)
+    ..setString("uarm", "Flesh")
+    ..setUnreal("ua1c", 2.3)
+    ..setString("ua1t", "hero")
+    ..setInt("ua1b", 214)
+    ..setInt("ua1d", 1)
+    ..setInt("ua1s", 21)
+    ..setInt("ua1z", 1400)
+    ..setString("ua1m", "Needle.mdl")
+    ..setInt("umvs", 240)
+    ..setUnreal("umvr", 3.0)
+    ..setUnreal("ucol", 30.0)
+    ..setString("usnd", "")
+    ..setUnreal("uagp", 1.0)
+    ..setReal("usca", 1.4)
+    ..setInt("ubld", 1)
+    ..setInt("ufor", 2)
+    ..setInt("ubsi", 0)
+    ..setInt("ubba", 0)
+    ..setInt("ubdi", 0)
+    ..setInt("ugol", 1000)
+    ..setInt("upoi", 360)
+    ..setInt("uhpm", 5000)
+    ..setUnreal("uhpr", 5.0)
+    ..setUnreal("uinp", 1.0)
+    ..setInt("ulum", 0)
+    ..setInt("umpi", 2000)
+    ..setInt("umpm", 250)
+    ..setInt("upri", 3)
+    ..setInt("usma", 1)
+    ..setInt("ustr", 10)
+    ..setInt("uint", 16)
+    ..setInt("uagi", 4)
+    ..setInt("usrg", 600)
+    ..setUnreal("ustp", 1.0)
+    ..setInt("usst", 0)
+    ..setString("utyp", "tauren")
+    ..setString("uhot", "")
+    ..setString("unam", "Swarm Caretaker")
+    ..setString("uico","ReplaceableTextures\\CommandButtons\\BTNNerubianWidow.blp")
+    ..setString("ussi","ReplaceableTextures\\CommandButtons\\BTNNerubianWidow.blp")
+    ..setString("umdl", "Drone.mdl")
+    ..setReal("ussc", 2.0)
+    ..setUnreal("ulpx", 30.0)
+    ..setReal("urun", 170.0)
+    ..setReal("uwal", 170.0)
+    ..setString("upra", "INT")
+    ..setString("utub", "|cffffcc00Hero Unit (Ranged)|r |nStrong Vs All Units |nWeak Vs Buildings |n|n|cffffcc00Role:|r |cffffff00Support|r |n|n|cffffcc00Can learn:|r |n|cffff0000Carrion Swarm|r |cff6c7b8b(Damage Spell)|r |n  |cffffdead225-325 area damage|r |n|n|cffff00c80Parasite|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadSend parasite up to 2-8 units|r |n|n|cffffff00Arcane Aura|r |cff6c7b8b(Support Aura)|r |n  |cffffdead1-7 HP/s regeneration bonus|r |n  |cff6c7b8b(affects organic units only)|r |n|n|cffa020f0Call of the swarm|r |cff6c7b8b(Summoning Spell)|r |n  |cffffdeadSummon 1-3 wrinkless for 30-60sec|r")
+    ..setString("upro", "Vekniss")
+    ..setInt("ua1r", 600)
+    ..setString("utip", "Train Swarm Caretaker")
+    ..setUnreal("uma1", 0.05)
+    ..setString("uhab", "AUau,AUcs,A0RH," + commaList(SWARM_CARETAKER_PARASITE_ID))
+    ..setUnreal("ucbs", 1.0)
+    ..setInt("udef", 12)
+    ..setUnreal("umpr", 1.5)
+    ..setInt("usid", 1000)
+
+@compiletime function create_w3u_Ogl2()
+    new AbilityDefinitionParasite(SWARM_CARETAKER_PARASITE_ID)
+    ..setLevels(7)
+    ..presetDurationNormal(lvl -> 25 )
+    ..presetDurationHero(lvl -> 25 )
+    ..presetDamageperSecond(lvl -> 20 )
+    ..presetManaCost(lvl-> 50 + 5 * lvl)
+    ..presetCooldown(lvl -> (45 + 5 * lvl).toReal())
+    ..presetSummonedUnitDuration(lvl -> 30 )
+    ..presetUnitType(lvl -> "ucs1")
+    ..presetCastRange(lvl -> 500 )
+        
+
+@compiletime function create_w3u_Ogl3()
+    new AbilityDefinitionParasite(DUMMY_PARASITE_ID)
+    ..setLevels(1)
+    ..presetDurationNormal(lvl -> 25 )
+    ..presetDurationHero(lvl -> 25 )
+    ..presetDamageperSecond(lvl -> 20 )
+    ..presetManaCost(lvl-> 0)
+    ..presetCooldown(lvl -> 0)
+    ..presetSummonedUnitDuration(lvl -> 30 )
+    ..presetUnitType(lvl -> "ucs1")
+    ..presetCastRange(lvl -> 900 )
+
+function isEnemyUnit() returns bool
+    let fu = GetFilterUnit()
+    let uid = fu.getTypeId()
+    return fu.isEnemyOf(GetTriggerUnit().getOwner()) and not fu.isType(UNIT_TYPE_STRUCTURE) and not fu.isType(UNIT_TYPE_HERO) and not (uid == 'u000' or uid == 'xdum') and not (fu == GetSpellTargetUnit()) and fu.isAlive()
+    
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_CAST) ->
+        let u =  GetSpellAbilityUnit()
+        if GetSpellAbilityId() == SWARM_CARETAKER_PARASITE_ID
+            let g = CreateGroup()
+            GroupEnumUnitsInRange(g, u.getX(), u.getY(), 700, Filter(function isEnemyUnit))
+            let p = GetTriggerPlayer()
+            let itterMax = (GetHeroLevel(u) / 4).toInt() + 1
+            parasitItteration = 0
+            doPeriodically(0.1) cb ->
+                if parasitItteration != itterMax
+                    let x = FirstOfGroup(g)
+                    g.removeUnit(x)
+                    // print(parasitItteration)
+                    // print(x.getName())
+                    let dummy = CreateUnit(p, 'u000', u.getX(), u.getY(), 180)
+                    //print(x.getName())
+                    UnitAddAbility(dummy, DUMMY_PARASITE_ID)
+                    UnitApplyTimedLifeBJ(3., 'BTLF', dummy)
+                    dummy.issueTargetOrderById(OrderIds.parasite, x)
+                    parasitItteration++
+                else
+                    destroy cb
+                    g.destr()
+        if GetSpellAbilityId() == DUMMY_PARASITE_ID
+            doAfter(0.5) ->
+                u.removeAbility(DUMMY_PARASITE_ID)
+
+
+    
+
+init
+    SetSoundDuration(SWARM_CARETAKER_SOUND,5374)
+    SetSoundChannel(SWARM_CARETAKER_SOUND,0)
+    SetSoundVolume(SWARM_CARETAKER_SOUND,150)
+    SetSoundPitch(SWARM_CARETAKER_SOUND,1.)
+
+
+
+        
+
+        
+        
+
+        
+        
+        
+        

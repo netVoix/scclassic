@@ -4849,10 +4849,10 @@ call DestroyGroup(XC[6])
 if(U8C())then
 set IR[1]='A0AK'
 set TB[1]='A0OY'
-set GX[1]='Otch'
-set HX[1]='Osam'
-set JX[1]='Ogld'
-set PX[1]='Ocb2'
+set GX[1]='Hlgl'
+set HX[1]='Nbrr'
+set JX[1]='Olld'
+set PX[1]='Hhll'
 set NX[1]='o00I'
 set BX[1]='o00H'
 set CX[1]='h00I'
@@ -4914,10 +4914,10 @@ else
 if(UWC())then
 set IR[2]='A0AK'
 set TB[2]='A0OY'
-set GX[2]='Otch'
-set HX[2]='Osam'
-set JX[2]='Ogld'
-set PX[2]='Ocb2'
+set GX[2]='Hlgl'
+set HX[2]='Nbrr'
+set JX[2]='Olld'
+set PX[2]='Hhll'
 set NX[2]='o00I'
 set BX[2]='o00H'
 set CX[2]='h00I'
@@ -4979,10 +4979,10 @@ else
 if(UMC())then
 set IR[3]='A0AK'
 set TB[3]='A0OY'
-set GX[3]='Otch'
-set HX[3]='Osam'
-set JX[3]='Ogld'
-set PX[3]='Ocb2'
+set GX[3]='Hlgl'
+set HX[3]='Nbrr'
+set JX[3]='Olld'
+set PX[3]='Hhll'
 set NX[3]='o00I'
 set BX[3]='o00H'
 set CX[3]='h00I'
@@ -5044,10 +5044,10 @@ else
 if(T1C())then
 set IR[4]='A0AK'
 set TB[4]='A0OY'
-set GX[4]='Otch'
-set HX[4]='Osam'
-set JX[4]='Ogld'
-set PX[4]='Ocb2'
+set GX[4]='Hlgl'
+set HX[4]='Nbrr'
+set JX[4]='Olld'
+set PX[4]='Hhll'
 set NX[4]='o00I'
 set BX[4]='o00H'
 set CX[4]='h00I'
@@ -31048,13 +31048,13 @@ call UnitApplyTimedLifeBJ(13.,'BTLF',bj_lastCreatedUnit)
 call RemoveLocation(XO[32])
 endfunction
 function P5J takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='Nsjs')or(GetUnitTypeId(GetAttacker())=='nspp')or(GetUnitTypeId(GetAttacker())=='Ogrh')or(GetUnitTypeId(GetAttacker())=='Nbbc')or(GetUnitTypeId(GetAttacker())=='owar')or(GetUnitTypeId(GetAttacker())=='ngns')
+return(GetUnitTypeId(GetAttacker())=='Nsjs')or(GetUnitTypeId(GetAttacker())=='nspp')or(GetUnitTypeId(GetAttacker())=='Ogrh')or(GetUnitTypeId(GetAttacker())=='Nbbc')or(GetUnitTypeId(GetAttacker())=='owar')or(GetUnitTypeId(GetAttacker())=='ngns')or(GetUnitTypeId(GetAttacker())=='Nbrr')
 endfunction
 function P6J takes nothing returns boolean
 return(IsUnitIllusion(GetAttacker())==false)and(P5J())
 endfunction
 function P7J takes nothing returns boolean
-return(GetUnitTypeId(GetAttacker())=='Nsjs')or(GetUnitTypeId(GetAttacker())=='nspp')
+return(GetUnitTypeId(GetAttacker())=='Nsjs')or(GetUnitTypeId(GetAttacker())=='nspp')or(GetUnitTypeId(GetAttacker())=='Nbrr')
 endfunction
 function P8J takes nothing returns boolean
 return(P7J())

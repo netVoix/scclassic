@@ -1,0 +1,89 @@
+package MindslayerBuilding
+import ObjEditingNatives
+import ObjectIdGenerator
+import ObjectIds
+import RegisterEvents
+import Mindslayer
+
+public let MINDSLAYER_BUILDING_ID  = compiletime(UNIT_ID_GEN.next())
+public let MINDSLAYER_DESCRIPTION_ID  = compiletime(ABIL_ID_GEN.next())
+
+@compiletime function create_w3u_ncbe()
+    createObjectDefinition("w3u", MINDSLAYER_BUILDING_ID, 'ncbe')
+    ..setString("uabi", "Avul," + commaList(MINDSLAYER_DESCRIPTION_ID))
+    ..setString("urac", "nightelf")
+    ..setInt("ucam", 0)
+    ..setString("unam", "Mind Pool")
+    ..setString("ides", "")
+    ..setString("utyp", "ancient,mechanical")
+    ..setInt("usin", 600)
+    ..setInt("uhpm", 2000)
+    ..setUnreal("uhpr", 1.0)
+    ..setString("uhrt", "always")
+    ..setInt("ubld", 1)
+    ..setString("usnd", "HuntersHall")
+    ..setInt("ulfo", 512)
+    ..setInt("ulfi", 512)
+    ..setString("ubsl", "BuildingConstructionLoop")
+    ..setString("upap", "unbuildable")
+    ..setString("upat", "PathTextures\\8x8SimpleSolid.tga")
+    ..setUnreal("ucol", 100.0)
+    ..setString("util", "*")
+    ..setInt("udef", 2)
+    ..setUnreal("uacq", 0.0)
+    ..setString("uspa", "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl")
+    ..setString("ushb", "ShadowAncientofWind")
+    ..setReal("usca", 1.2)
+    ..setString("uaap", "Alternate")
+    ..setString("uani", "Alternate")
+    ..setUnreal("uimz", 120.0)
+    ..setString("umdl", "buildings\\other\\BarrowDens\\BarrowDens.mdl")
+    ..setReal("umxr", 0.0)
+    ..setReal("umxp", 0.0)
+    ..setUnreal("uocc", 0.0)
+    ..setInt("uori", 3)
+    ..setString("uubs", "EMDB")
+    ..setInt("ubpy", 0)
+    ..setInt("ubpx", 2)
+    ..setReal("ufrd", 0.0)
+    ..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNNerubianSniper.blp")
+    ..setString("utip", "Mind Pool [|cffffcc00E|r]")
+    ..setString("utub", "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadRoot System|r |n|n|cffffcc00indslayer|r replaces |cffffcc00Silithid Guardian|r |n|cffffcc00Siege Unit (Ranged)|r |n+60% attack rate |n+600 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Mind blast|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(125 area damage and 0.5 sec stun)|r |n|cffff00aaDistortion|r |cff6c7b8b(Disable Aura)|r |n |cffffdead(15% attack speed reduction)|r |n |cffffcc00Upgrades used:|r |n|cffffdeadCorrupted Branches|r |n|cffffdeadCorrupted Armor|r |n|cffffdeadRoot Sistem|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r  |cffffff00Unit Power|r")
+    ..setString("uhot", "E")
+
+
+@compiletime function create_w3a_A0JU()
+    createObjectDefinition("w3a", MINDSLAYER_DESCRIPTION_ID, 'ACev')
+    ..setLvlDataInt("wurs", 0, 0, 42)
+    ..setLvlDataString("arac", 0, 0, "nightelf")
+    ..setLvlDataUnreal("Eev1", 1, 1, 0.0)
+    ..setLvlDataInt("abpx", 0, 0, 0)
+    ..setLvlDataInt("abpy", 0, 0, 1)
+    ..setLvlDataString("aub1", 1, 0, "|cffffcc00Unlocked upgrades:|r |n+1 level of |cffffdeadRoot System|r |n|n|cffffcc00Mindslayer|r replaces |cffffcc00Silithid Guardian|r |n|cffffcc00Siege Unit (Ranged)|r |n+60% attack rate |n+600 HP |n+3 armor |n|cffffcc00Abilities:|r |n|cffff0000Mind blast|r |cff6c7b8b(Damage Spell)|r |n |cffffdead(125 area damage and 0.5 sec stun)|r |n|cffff00aaDistortion|r |cff6c7b8b(Disable Aura)|r |n |cffffdead(15% attack speed reduction)|r |n |cffffcc00Upgrades used:|r |n|cffffdeadCorrupted Branches|r |n|cffffdeadCorrupted Armor|r |n|cffffdeadRoot Sistem|r |n|n|cffffcc00Type:|r |cffff0000Late Game Push|r  |cffffff00Unit Power|r")
+    ..setLvlDataInt("achd", 0, 0, 1)
+    ..setLvlDataString("anam", 0, 0, "Servants Of The Night")
+    ..setLvlDataString("atp1", 1, 0, "Servants Of The Night")
+    ..setLvlDataString("aart", 0, 0, "ReplaceableTextures\\CommandButtons\\BTNNerubianSniper.blp")
+    ..setLvlDataString("atp1", 2, 0, "Searing Arrows (|cffffff00Lv2|r)")
+    ..setLvlDataString("atp1", 3, 0, "Searing Arrows (|cff00ff00Lv3|r)")
+    ..setLvlDataString("aub1", 2, 0, "Searing arrows reduce targeted unit's armor by 6 for 10 seconds.")
+    ..setLvlDataString("aub1", 3, 0, "Searing arrows reduce targeted unit's armor by 9 for 10 seconds.")
+
+function addunit(unit u)
+    let OP = u.getOwner()
+    let SOTN = u.getTypeId()
+    if SOTN == MINDSLAYER_BUILDING_ID
+        SetUnitScalePercent(GetTriggerUnit(),70.,70.,70.)
+        if OP == P
+            YO[1] = MINDSLAYER_ID
+        if OP == S
+            YO[2] = MINDSLAYER_ID
+        if OP == Q
+            YO[3] = MINDSLAYER_ID
+        if OP == T 
+            YO[4] = MINDSLAYER_ID
+
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_UPGRADE_FINISH) ->
+        addunit(GetTriggerUnit())
